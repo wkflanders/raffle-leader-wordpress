@@ -1,4 +1,7 @@
 <?php
+/**
+ * @package RaffleLeader
+ */
 
 /**
  * Plugin Name: RaffleLeader
@@ -6,26 +9,46 @@
  * Description: A leader in market lead generation
  */
 
-if (!defined('ABSPATH')) {
-    die();
-}
+defined( 'ABSPATH' ) or die( "Hey, you can't be here!" );
 
-if (!class_exists('RaffleLeader')) {
+if ( !class_exists( 'RaffleLeader' ) ){
+
     class RaffleLeader{
 
-        public function __construct(){
-            define('PLUGIN_PATH', plugin_dir_path(__FILE__));
-            require_once(PLUGIN_PATH . '/vendor/autoload.php');
+        function register(){
+            add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ));
         }
 
-        public function initialize(){
-            include_once PLUGIN_PATH . '/includes/utils.php';
-            include_once PLUGIN_PATH . '/includes/settings/settings.php';
+        protected function create_post_type(){
+            add_action( 'init', array( $this, 'custom_post_type' ) );
+        }
+
+        function custom_post_type(){
+            register_post_type( 'book', ['public' => true, 'label' => 'Books'] );
+        }
+
+        function enqueue(){
+            // enqueue all scripts
+            wp_enqueue_style( 'raffleleader-style', plugins_url( '/assets/styles.css', __FILE__ ) );
+            wp_enqueue_style( 'raffleleader-script', plugins_url( '/assets/index.js', __FILE__ ) );
+        }
+
+        function activate(){
+            require_once plugin_dir_path( __FILE__ ) . 'includes/raffleleader-activate.php';
+            RaffleLeaderActivate::activate();
         }
 
     }
 
-    $raffleLeader = new RaffleLeader;
+    if ( class_exists( 'RaffleLeader' ) ){
+        $raffleLeader = new RaffleLeader;
+        $raffleLeader->register();
+    }
 
-    $raffleLeader->initialize();
+    // Activate
+    register_activation_hook(  __FILE__, array( $raffleLeader, 'activate' ) );
+
+    // Deactivate
+    require_once plugin_dir_path( __FILE__ ) . 'includes/raffleleader-deactivate.php';
+    register_deactivation_hook(  __FILE__, array( 'RaffleLeaderDeactivate', 'deactivate' ) );
 }

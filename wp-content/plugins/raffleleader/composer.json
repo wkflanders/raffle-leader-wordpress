@@ -1,2 +1,14 @@
 {
+    "name": "william/raffleleader",
+    "description": "A leader in market lead generation",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "William",
+            "email": "william@lloydequity.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
 }

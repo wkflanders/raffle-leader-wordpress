@@ -3,7 +3,7 @@
  * @package RaffleLeader
  */
 
- namespace Includes;
+ namespace Includes\Base;
 
  class Deactivate{
     public static function deactivate(){

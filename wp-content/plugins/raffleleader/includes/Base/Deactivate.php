@@ -3,10 +3,12 @@
  * @package RaffleLeader
  */
 
- namespace Includes\Base;
+namespace Includes\Base;
 
- class Deactivate{
-    public static function deactivate(){
+class Deactivate
+{
+    public static function deactivate()
+    {
         flush_rewrite_rules();
     }
- }
+}

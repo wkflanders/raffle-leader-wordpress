@@ -5,32 +5,48 @@
 
 namespace Includes\Pages;
 
-use Includes\Base\BaseController;
 use Includes\API\SettingsAPI;
+use Includes\Base\BaseController;
+use Includes\API\Callbacks\AdminCallbacks;
 
 class Admin extends BaseController{
 
     public $settings;
 
+    public $callbacks;
+
     public $pages = array();
 
     public $subpages = array();
 
-    public function __construct(){
+    public function register(){
         $this-> settings = new SettingsAPI();
 
+        $this->callbacks = new AdminCallbacks();
+
+        $this->setPages();
+
+        $this->setSubpages();
+
+        $this->settings->addPages( $this->pages )->withSubPage( 'Dashboard' )->addSubPages( $this->subpages )->
+        register();
+    }
+
+    public function setPages(){
         $this->pages = array(
             array(
                 'page_title' => 'RaffleLeader Plugin',
                 'menu_title' => 'RaffleLeader',
                 'capability' => 'manage_options',
                 'menu_slug' => 'raffleleader_plugin',
-                'callback' => function() { echo '<h1>RaffleLeader</h1>'; },
+                'callback' => array( $this->callbacks, 'adminDashboard' ),
                 'icon_url' => 'dashicons-store',
                 'position' => 67
             )
         );
+    }
 
+    public function setSubpages(){
         $this->subpages = array(
             array(
                 'parent_slug' => 'raffleleader_plugin',
@@ -49,17 +65,5 @@ class Admin extends BaseController{
                 'callback' => function() { echo '<h1>Widgets Manager</h1>'; }
             )
         );
-    }
-
-    public function register(){
-        $this->settings->addPages( $this->pages )->withSubPage( 'Dashboard' )->addSubPages( $this->subpages )->register();
-    }
-
-    public function add_admin_pages(){
-        add_menu_page( 'RaffleLeader Plugin', 'RaffleLeader', 'manage_options', 'raffleleader_plugin', array( $this, 'admin_index' ), 'dashicons-store', 67 );
-    }
-
-    public function admin_index(){
-        require_once $this->plugin_path . 'templates/admin.php';
     }
 }

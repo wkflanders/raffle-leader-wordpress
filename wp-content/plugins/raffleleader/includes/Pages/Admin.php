@@ -31,7 +31,7 @@ class Admin extends BaseController{
     }
 
     public function register(){
-        $this->settings->addPages( $this->pages )->register();
+        $this->settings->addPages( $this->pages )->withSubPage( 'Dashboard' )->register();
     }
 
     public function add_admin_pages(){

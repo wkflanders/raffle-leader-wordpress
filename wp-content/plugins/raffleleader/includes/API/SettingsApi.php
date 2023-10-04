@@ -2,6 +2,7 @@
 /**
  * @package RaffleLeader
  */
+
 namespace Includes\API;
 
 class SettingsAPI{

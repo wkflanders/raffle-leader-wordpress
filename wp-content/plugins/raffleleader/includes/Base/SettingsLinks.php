@@ -3,9 +3,9 @@
  * @package RaffleLeader
  */
 
- namespace Includes\Base;
+namespace Includes\Base;
 
- class SettingsLinks extends BaseController{
+class SettingsLinks extends BaseController{
 
     public function register(){
         add_filter( "plugin_action_links_$this->plugin_name", array( $this, 'settings_link' ) );
@@ -16,4 +16,4 @@
         array_push( $links, $settings_link );
         return $links;
     }
- }
+}

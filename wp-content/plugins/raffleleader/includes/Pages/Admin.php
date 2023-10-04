@@ -6,11 +6,32 @@
 namespace Includes\Pages;
 
 use Includes\Base\BaseController;
+use Includes\API\SettingsAPI;
 
 class Admin extends BaseController{
 
+    public $settings;
+
+    public $pages = array();
+
+    public function __construct(){
+        $this-> settings = new SettingsAPI();
+
+        $this->pages = array(
+            array(
+                'page_title' => 'RaffleLeader Plugin',
+                'menu_title' => 'RaffleLeader',
+                'capability' => 'manage_options',
+                'menu_slug' => 'raffleleader_plugin',
+                'callback' => function() { echo '<h1>RaffleLeader</h1>'; },
+                'icon_url' => 'dashicons-store',
+                'position' => 67
+            )
+        );
+    }
+
     public function register(){
-        add_action( 'admin_menu', array( $this, 'add_admin_pages' ) );
+        $this->settings->addPages( $this->pages )->register();
     }
 
     public function add_admin_pages(){

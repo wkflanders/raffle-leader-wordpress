@@ -33,7 +33,7 @@ class SettingsAPI{
             array(
                 'parent_slug' => $admin_page['menu_slug'],
                 'page_title' => $admin_page['page_title'],
-                'menu_title' => $admin_page['menu_title'],
+                'menu_title' => ($title) ? $title : $admin_page['menu_title'],
                 'capability' => $admin_page['capability'],
                 'menu_slug' => $admin_page['menu_slug'],
                 'callback' => $admin_page['callback']
@@ -42,6 +42,12 @@ class SettingsAPI{
 
         $this->admin_subpages = $subpage;
         
+        return $this;
+    }
+
+    public function addSubPages( array $pages ){
+        $this->admin_subpages = array_merge( $this->admin_subpages, $pages );
+
         return $this;
     }
 

@@ -14,6 +14,8 @@ class Admin extends BaseController{
 
     public $pages = array();
 
+    public $subpages = array();
+
     public function __construct(){
         $this-> settings = new SettingsAPI();
 
@@ -28,10 +30,29 @@ class Admin extends BaseController{
                 'position' => 67
             )
         );
+
+        $this->subpages = array(
+            array(
+                'parent_slug' => 'raffleleader_plugin',
+                'page_title' => 'Custom Post Types',
+                'menu_title' => 'CPT',
+                'capability' => 'manage_options',
+                'menu_slug' => 'raffleleader_cpt',
+                'callback' => function() { echo '<h1>CPT Manager</h1>'; }
+            ),
+            array(
+                'parent_slug' => 'raffleleader_plugin',
+                'page_title' => 'Custom Widgets',
+                'menu_title' => 'Widgets',
+                'capability' => 'manage_options',
+                'menu_slug' => 'raffleleader_widgets',
+                'callback' => function() { echo '<h1>Widgets Manager</h1>'; }
+            )
+        );
     }
 
     public function register(){
-        $this->settings->addPages( $this->pages )->withSubPage( 'Dashboard' )->register();
+        $this->settings->addPages( $this->pages )->withSubPage( 'Dashboard' )->addSubPages( $this->subpages )->register();
     }
 
     public function add_admin_pages(){

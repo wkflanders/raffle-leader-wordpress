@@ -20,7 +20,7 @@ class Admin extends BaseController{
     public $subpages = array();
 
     public function register(){
-        $this-> settings = new SettingsAPI();
+        $this->settings = new SettingsAPI();
 
         $this->callbacks = new AdminCallbacks();
 

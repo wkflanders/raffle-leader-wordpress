@@ -32,7 +32,7 @@ class Admin extends BaseController{
         $this->setSections();
         $this->setFields();
 
-        $this->settings->addPages( $this->pages )->withSubPage( 'Dashboard' )->addSubPages( $this->subpages )->
+        $this->settings->addPages( $this->pages )->withSubPage( 'Campaigns' )->addSubPages( $this->subpages )->
         register();
     }
 
@@ -54,20 +54,28 @@ class Admin extends BaseController{
         $this->subpages = array(
             array(
                 'parent_slug' => 'raffleleader_plugin',
-                'page_title' => 'Custom Post Types',
-                'menu_title' => 'CPT',
+                'page_title' => 'Create New',
+                'menu_title' => 'Create New',
                 'capability' => 'manage_options',
-                'menu_slug' => 'raffleleader_cpt',
-                'callback' => function() { echo '<h1>CPT Manager</h1>'; }
+                'menu_slug' => 'raffleleader_create_new',
+                'callback' => function() { echo '<h1>Create New</h1>'; }
             ),
             array(
                 'parent_slug' => 'raffleleader_plugin',
-                'page_title' => 'Custom Widgets',
-                'menu_title' => 'Widgets',
+                'page_title' => 'Settings',
+                'menu_title' => 'Settings',
                 'capability' => 'manage_options',
-                'menu_slug' => 'raffleleader_widgets',
-                'callback' => function() { echo '<h1>Widgets Manager</h1>'; }
-            )
+                'menu_slug' => 'raffleleader_settings',
+                'callback' => function() { echo '<h1>Settings</h1>'; }
+            ),
+            array(
+                'parent_slug' => 'raffleleader_plugin',
+                'page_title' => 'About Us',
+                'menu_title' => 'About',
+                'capability' => 'manage_options',
+                'menu_slug' => 'raffleleader_about',
+                'callback' => function() { echo '<h1>About Us</h1>'; }
+            ),
         );
     }
 

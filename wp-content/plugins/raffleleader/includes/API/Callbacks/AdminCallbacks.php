@@ -18,19 +18,25 @@ class AdminCallbacks extends BaseController{
         return $input;
     }
 
-    public function raffleleaderAdminSection(){
-        echo 'Check this section';
+    public function raffleleaderLicenseSection(){
+        echo "If you've purchased a pro version of the plugin, please enter your key here.";
     }
 
-    public function raffleleaderTextExample(){
-        $value = esc_attr( get_option( 'text_example' ) );
-        echo '<input type="text" class="regular-text" name="text_example" value="' . $value . '" 
-        placeholder="Write Something Here">';
+    public function raffleleaderLicenseKey(){
+        $value = esc_attr( get_option( 'license_key' ) );
+        echo '
+        <div class=license_input>
+            <input type="text" class="regular-text" name="license_key" value="' . $value . '" 
+            placeholder="Enter License Key Here">
+            <button class="license_button">Submit</button>
+        </div>    ';
     }
 
-    public function raffleleaderFirstName(){
-        $value = esc_attr( get_option( 'first_name' ) );
-        echo '<input type="text" class="regular-text" name="first_name" value="' . $value . '" 
-        placeholder="Write Your First Name">';
+    public function raffleleaderSettings(){
+        echo "General Settings";
+    }
+
+    public function raffleleaderSettingsSection(){
+        echo "General settings for the plugin.";
     }
 }

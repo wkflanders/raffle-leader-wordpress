@@ -39,11 +39,11 @@ class Admin extends BaseController{
     public function setPages(){
         $this->pages = array(
             array(
-                'page_title' => 'RaffleLeader Plugin',
+                'page_title' => 'Campaign Overview',
                 'menu_title' => 'RaffleLeader',
                 'capability' => 'manage_options',
                 'menu_slug' => 'raffleleader_plugin',
-                'callback' => array( $this->callbacks, 'adminDashboard' ),
+                'callback' => function() {echo '<h1>Campaign Overview</h1>'; },
                 'icon_url' => 'dashicons-store',
                 'position' => 67
             )
@@ -66,15 +66,15 @@ class Admin extends BaseController{
                 'menu_title' => 'Settings',
                 'capability' => 'manage_options',
                 'menu_slug' => 'raffleleader_settings',
-                'callback' => function() { echo '<h1>Settings</h1>'; }
+                'callback' => array( $this->callbacks, 'adminDashboard' )
             ),
             array(
                 'parent_slug' => 'raffleleader_plugin',
-                'page_title' => 'About Us',
-                'menu_title' => 'About',
+                'page_title' => 'Info',
+                'menu_title' => 'Info',
                 'capability' => 'manage_options',
-                'menu_slug' => 'raffleleader_about',
-                'callback' => function() { echo '<h1>About Us</h1>'; }
+                'menu_slug' => 'raffleleader_info',
+                'callback' => function() { echo '<h1>Info</h1>'; }
             ),
         );
     }
@@ -83,13 +83,9 @@ class Admin extends BaseController{
         $args = array(
             array(
                 'option_group' => 'raffleleader_options_group',
-                'option_name' => 'text_example',
+                'option_name' => 'license_key',
                 'callback' => array( $this->callbacks, 'raffleleaderOptionsGroup' )
             ),
-            array(
-                'option_group' => 'raffleleader_options_group',
-                'option_name' => 'first_name'
-            )
         );
 
         $this->settings->setSettings( $args );
@@ -98,9 +94,15 @@ class Admin extends BaseController{
     public function setSections(){
         $args = array(
             array(
-                'id' => 'raffleleader_admin_index',
-                'title' => 'Settings',
-                'callback' => array( $this->callbacks, 'raffleleaderAdminSection' ),
+                'id' => 'raffleleader_license_key',
+                'title' => 'License Key',
+                'callback' => array( $this->callbacks, 'raffleleaderLicenseSection' ),
+                'page' => 'raffleleader_plugin'
+            ),
+            array(
+                'id' => 'raffleleader_general_settings',
+                'title' => 'General Settings',
+                'callback' => array( $this->callbacks, 'raffleleaderSettingsSection' ),
                 'page' => 'raffleleader_plugin'
             )
         );
@@ -113,27 +115,27 @@ class Admin extends BaseController{
         // Field page should be same as section page
         $args = array(
             array(
-                'id' => 'text_example',
-                'title' => 'Text Example',
-                'callback' => array( $this->callbacks, 'raffleleaderTextExample' ),
+                'id' => 'license_key',
+                'title' => 'License Key',
+                'callback' => array( $this->callbacks, 'raffleleaderLicenseKey' ),
                 'page' => 'raffleleader_plugin',
-                'section' => 'raffleleader_admin_index',
+                'section' => 'raffleleader_license_key',
                 'args' => array(
-                    'label_for' => 'text_example',
-                    'class' => 'example-class'
+                    'label_for' => 'license_key',
+                    'class' => 'license_class'
                 )
             ),
             array(
-                'id' => 'first_name',
-                'title' => 'First Name',
-                'callback' => array( $this->callbacks, 'raffleleaderFirstName' ),
+                'id' => 'settings',
+                'title' => 'General Settings',
+                'callback' => array( $this->callbacks, 'raffleleaderSettings' ),
                 'page' => 'raffleleader_plugin',
-                'section' => 'raffleleader_admin_index',
+                'section' => 'raffleleader_general_settings',
                 'args' => array(
-                    'label_for' => 'first_name',
-                    'class' => 'example-class'
+                    'label_for' => 'settings',
+                    'class' => 'settings_class'
                 )
-            )
+            ),
         );
 
         $this->settings->setFields( $args );

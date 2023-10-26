@@ -8,12 +8,15 @@ namespace Includes\Pages;
 use Includes\API\SettingsAPI;
 use Includes\Base\BaseController;
 use Includes\API\Callbacks\AdminCallbacks;
+use Includes\API\Callbacks\BuilderCallbacks;
 
 class Admin extends BaseController{
 
     public $settings;
 
-    public $callbacks;
+    public $adminCallbacks;
+
+    public $builderCallbacks;
 
     public $pages = array();
 
@@ -22,7 +25,8 @@ class Admin extends BaseController{
     public function register(){
         $this->settings = new SettingsAPI();
 
-        $this->callbacks = new AdminCallbacks();
+        $this->adminCallbacks = new AdminCallbacks();
+        $this->builderCallbacks = new BuilderCallbacks();
 
         $this->setPages();
 
@@ -45,7 +49,8 @@ class Admin extends BaseController{
                 'menu_slug' => 'raffleleader_plugin',
                 'callback' => function() {echo '<h1>Campaign Overview</h1>'; },
                 'icon_url' => 'dashicons-store',
-                'position' => 67
+                'position' => 67,
+                'id' => 10252326
             )
         );
     }
@@ -58,7 +63,7 @@ class Admin extends BaseController{
                 'menu_title' => 'Create New',
                 'capability' => 'manage_options',
                 'menu_slug' => 'raffleleader_create_new',
-                'callback' => function() { echo '<h1>Create New</h1>'; }
+                'callback' => array( $this->builderCallbacks, 'builderDashboard' ),
             ),
             array(
                 'parent_slug' => 'raffleleader_plugin',
@@ -66,7 +71,7 @@ class Admin extends BaseController{
                 'menu_title' => 'Settings',
                 'capability' => 'manage_options',
                 'menu_slug' => 'raffleleader_settings',
-                'callback' => array( $this->callbacks, 'adminDashboard' )
+                'callback' => array( $this->adminCallbacks, 'adminDashboard' ),
             ),
             array(
                 'parent_slug' => 'raffleleader_plugin',
@@ -74,7 +79,7 @@ class Admin extends BaseController{
                 'menu_title' => 'Info',
                 'capability' => 'manage_options',
                 'menu_slug' => 'raffleleader_info',
-                'callback' => function() { echo '<h1>Info</h1>'; }
+                'callback' => function() { echo '<h1>Info</h1>'; },
             ),
         );
     }
@@ -84,7 +89,7 @@ class Admin extends BaseController{
             array(
                 'option_group' => 'raffleleader_options_group',
                 'option_name' => 'license_key',
-                'callback' => array( $this->callbacks, 'raffleleaderOptionsGroup' )
+                'callback' => array( $this->adminCallbacks, 'raffleleaderOptionsGroup' )
             ),
         );
 
@@ -96,13 +101,13 @@ class Admin extends BaseController{
             array(
                 'id' => 'raffleleader_license_key',
                 'title' => 'License Key',
-                'callback' => array( $this->callbacks, 'raffleleaderLicenseSection' ),
+                'callback' => array( $this->adminCallbacks, 'raffleleaderLicenseSection' ),
                 'page' => 'raffleleader_plugin'
             ),
             array(
                 'id' => 'raffleleader_general_settings',
                 'title' => 'General Settings',
-                'callback' => array( $this->callbacks, 'raffleleaderSettingsSection' ),
+                'callback' => array( $this->adminCallbacks, 'raffleleaderSettingsSection' ),
                 'page' => 'raffleleader_plugin'
             )
         );
@@ -117,7 +122,7 @@ class Admin extends BaseController{
             array(
                 'id' => 'license_key',
                 'title' => 'License Key',
-                'callback' => array( $this->callbacks, 'raffleleaderLicenseKey' ),
+                'callback' => array( $this->adminCallbacks, 'raffleleaderLicenseKey' ),
                 'page' => 'raffleleader_plugin',
                 'section' => 'raffleleader_license_key',
                 'args' => array(
@@ -128,7 +133,7 @@ class Admin extends BaseController{
             array(
                 'id' => 'settings',
                 'title' => 'General Settings',
-                'callback' => array( $this->callbacks, 'raffleleaderSettings' ),
+                'callback' => array( $this->adminCallbacks, 'raffleleaderSettings' ),
                 'page' => 'raffleleader_plugin',
                 'section' => 'raffleleader_general_settings',
                 'args' => array(

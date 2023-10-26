@@ -4,9 +4,11 @@
  */
 
 namespace Includes\API;
+use Includes\Base\Enqueue;
 
 class SettingsAPI{
 
+    public $enqueue;
     public $admin_pages = array();
     
     public $admin_subpages = array();
@@ -18,6 +20,9 @@ class SettingsAPI{
     public $fields = array();
 
     public function register(){
+
+        $this->enqueue = new Enqueue();
+
         if ( !empty( $this->admin_pages ) ){
             add_action( 'admin_menu', array( $this, 'addAdminMenu' ) );
         }
@@ -64,13 +69,17 @@ class SettingsAPI{
 
     public function addAdminMenu(){
         foreach( $this->admin_pages as $page ){
-            add_menu_page( $page['page_title'], $page['menu_title'], $page['capability'], $page['menu_slug'], 
+            $hook_suffix = add_menu_page( $page['page_title'], $page['menu_title'], $page['capability'], $page['menu_slug'], 
             $page['callback'], $page['icon_url'], $page['position'] );
+
+            add_action( 'load-' . $hook_suffix, array( $this->enqueue, 'load' ) );
         }
 
         foreach( $this->admin_subpages as $page ){
-            add_submenu_page( $page['parent_slug'], $page['page_title'], $page['menu_title'], $page['capability'], $page['menu_slug'], 
+            $hook_suffix = add_submenu_page( $page['parent_slug'], $page['page_title'], $page['menu_title'], $page['capability'], $page['menu_slug'], 
             $page['callback'] );
+
+            add_action( 'load-' . $hook_suffix, array( $this->enqueue, 'load' ) );
         }
     }
 

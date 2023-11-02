@@ -11,7 +11,7 @@ use Includes\Base\BaseController;
 class AdminCallbacks extends BaseController{
     
     public function adminDashboard(){
-        return require_once( "$this->plugin_path/Content/admin_content.php" );
+        return require_once( "$this->plugin_path/includes/Content/admin_content.php" );
     }
 
     public function raffleleaderOptionsGroup( $input ){

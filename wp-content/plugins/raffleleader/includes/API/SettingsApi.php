@@ -72,14 +72,14 @@ class SettingsAPI{
             $hook_suffix = add_menu_page( $page['page_title'], $page['menu_title'], $page['capability'], $page['menu_slug'], 
             $page['callback'], $page['icon_url'], $page['position'] );
 
-            add_action( 'load-' . $hook_suffix, array( $this->enqueue, 'load' ) );
+            add_action( 'load-' . $hook_suffix, array( $this->enqueue, 'load' . $page['page_title'] ) );
         }
 
         foreach( $this->admin_subpages as $page ){
             $hook_suffix = add_submenu_page( $page['parent_slug'], $page['page_title'], $page['menu_title'], $page['capability'], $page['menu_slug'], 
             $page['callback'] );
 
-            add_action( 'load-' . $hook_suffix, array( $this->enqueue, 'load' ) );
+            add_action( 'load-' . $hook_suffix, array( $this->enqueue, 'load' . $page['page_title'] ) );
         }
     }
 

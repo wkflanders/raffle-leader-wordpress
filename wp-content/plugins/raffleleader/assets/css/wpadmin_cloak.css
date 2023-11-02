@@ -1,0 +1,18 @@
+html.wp-toolbar { 
+    padding-top:0 !important; 
+    padding-right:0 !important;
+}
+
+#wpadminbar, #adminmenumain,
+#adminmenu, #wpfooter {
+    display: none !important;
+}
+
+#wpcontent {
+    margin-left:0 !important;
+    padding-left: 0 !important;
+}
+
+#wpbody {
+    padding-top: 0 !important;
+}

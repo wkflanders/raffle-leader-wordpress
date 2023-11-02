@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+
+#templates{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.giveaway-name{
+    display: block;
+    align-items: center;
+    background-color: #fafafa;
+    box-shadow: 0 4px 6px rgba(91, 91, 92, 0.18);
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.giveaway-name > label, 
+.giveaway-name > input {
+    margin-left: 1.75rem;
+}
+
+.giveaway-name > label{
+    cursor: default;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.giveaway-name > input {
+    cursor: text;
+    width: 15rem;
+    height: 2.5rem;
+}

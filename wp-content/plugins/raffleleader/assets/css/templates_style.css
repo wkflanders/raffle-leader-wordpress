@@ -11,7 +11,7 @@
     display: block;
     align-items: center;
     background-color: #fafafa;
-    box-shadow: 0 4px 6px rgba(91, 91, 92, 0.18);
+    box-shadow: 0 1px 4px rgba(91, 91, 92, 0.18);
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
 }
@@ -24,7 +24,7 @@
 .giveaway-name > label{
     cursor: default;
     font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 500;
 }
 
@@ -32,4 +32,19 @@
     cursor: text;
     width: 15rem;
     height: 2.5rem;
+}
+
+.template-wrapper{
+    margin: 3rem 3rem 3rem 3rem;
+}
+
+.template-wrapper > h1 {
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 0.75rem;
+}
+
+.text-prompt{
+    font-size: 0.9rem;
+    font-family: 'Inter', sans-serif;
 }

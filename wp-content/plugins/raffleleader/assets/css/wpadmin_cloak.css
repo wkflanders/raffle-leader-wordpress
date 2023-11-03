@@ -11,6 +11,7 @@ html.wp-toolbar {
 #wpcontent {
     margin-left:0 !important;
     padding-left: 0 !important;
+    outline-color: transparent;
 }
 
 #wpbody {

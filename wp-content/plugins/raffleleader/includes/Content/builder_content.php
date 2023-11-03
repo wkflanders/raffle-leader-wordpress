@@ -4,9 +4,9 @@
             <img class="text-logo" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/TEXT-LOGO.png">
         </div>
         <ul class="nav-tabs">
-            <li class="active"><a href="#templates">Templates</a></li>
-            <li><a href="#setup">Set Up</a></li>
-            <li><a href="#publish">Publish</a></li>
+            <li class="active"><a class="noSelect" href="#templates">Templates</a></li>
+            <li><a class="noSelect" href="#setup">Set Up</a></li>
+            <li><a class="noSelect" href="#publish">Publish</a></li>
         </ul>
         <ul class="nav-extras">
             <li><a class="close" href="admin.php?page=raffleleader_plugin"></a></li>
@@ -18,10 +18,12 @@
                 <label>Campaign Name</label>
                 <input name="name" placeholder="Ex. Twitter Contest">
             </div>
-            <h2>Choose A Template</h2>
-            <p>Choose from one of our professionally pre-built templates or feel free to completely design your own!</p>
             <div class="template-wrapper">
-
+                <h1>Choose a Template</h1>
+                <p class="text-prompt">Choose from one of our professionally pre-built templates or feel free to completely design your own!</p>
+                <div class="panels">
+                    
+                </div>
             </div>
         </div>
         <div id="setup" class="tab-pane">

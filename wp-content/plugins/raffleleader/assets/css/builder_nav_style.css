@@ -1,6 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
 
+/* 
+ideas:
+gpt that can grab info from X betting (could be any type tbh) accts and provides popular takes
+artist concert/tour tracker (honestly can just implement wext into a gpt)
+code proofreader?
+
+date/activity idea generator/optimizer
+product page optimizer
+product generator (put in what your store is and what it recommends etc.)
+various gpt tutors (just upload textbooks etc.)
+
+
+*/
+
+
 .raffleleader-container{
     margin: 0;
     padding: 0;

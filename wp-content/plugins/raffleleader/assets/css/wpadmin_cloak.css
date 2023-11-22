@@ -4,7 +4,7 @@ html.wp-toolbar {
 }
 
 #wpadminbar, #adminmenumain,
-#adminmenu, #wpfooter {
+#adminmenu, #wpfooter, .update-nag {
     display: none !important;
 }
 
@@ -17,3 +17,4 @@ html.wp-toolbar {
 #wpbody {
     padding-top: 0 !important;
 }
+

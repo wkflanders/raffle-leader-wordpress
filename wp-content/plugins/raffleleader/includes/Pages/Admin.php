@@ -22,8 +22,6 @@ class Admin extends BaseController{
 
     public $pages = array();
 
-    public $subpages = array();
-
     public function register(){
         $this->settings = new SettingsAPI();
 
@@ -32,57 +30,25 @@ class Admin extends BaseController{
 
         $this->setPages();
 
-        $this->setSubpages();
-
         $this->setSettings();
         $this->setSections();
         $this->setFields();
 
-        $this->settings->addPages( $this->pages )->withSubPage( 'Campaigns' )->addSubPages( $this->subpages )->
-        register();
+        $this->settings->addPages( $this->pages )->withSubPage( 'Raffles' )->register();
     }
 
     public function setPages(){
         $this->pages = array(
             array(
-                'page_title' => 'CampaignOverview',
+                'page_title' => 'Raffle Overview',
                 'menu_title' => 'RaffleLeader',
                 'capability' => 'manage_options',
-                'menu_slug' => 'raffleleader_plugin',
-                'callback' => function() {echo '<h1>Campaign Overview</h1>'; },
+                'menu_slug' => $this->parent_slug,
+                'callback' => array(),
                 'icon_url' => $this->icon_url,
                 'position' => 67,
                 'id' => 10252326
             )
-        );
-    }
-
-    public function setSubpages(){
-        $this->subpages = array(
-            array(
-                'parent_slug' => 'raffleleader_plugin',
-                'page_title' => 'CreateNew',
-                'menu_title' => 'Create New',
-                'capability' => 'manage_options',
-                'menu_slug' => 'raffleleader_create_new',
-                'callback' => array( $this->builderCallbacks, 'builderDashboard' ),
-            ),
-            array(
-                'parent_slug' => 'raffleleader_plugin',
-                'page_title' => 'Settings',
-                'menu_title' => 'Settings',
-                'capability' => 'manage_options',
-                'menu_slug' => 'raffleleader_settings',
-                'callback' => array( $this->adminCallbacks, 'adminDashboard' ),
-            ),
-            array(
-                'parent_slug' => 'raffleleader_plugin',
-                'page_title' => 'Info',
-                'menu_title' => 'Info',
-                'capability' => 'manage_options',
-                'menu_slug' => 'raffleleader_info',
-                'callback' => function() { echo '<h1>Info</h1>'; },
-            ),
         );
     }
 

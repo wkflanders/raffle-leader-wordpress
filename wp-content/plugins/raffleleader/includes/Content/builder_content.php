@@ -1,3 +1,6 @@
+<?php 
+global $current_raffle_id;
+if ( isset( $current_raffle_id ) ){ ?>
 <div class="raffleleader-container">
     <nav class="navbar">
         <div class="nav-logo">
@@ -9,7 +12,7 @@
             <li><a class="noSelect" href="#publish">Publish</a></li>
         </ul>
         <ul class="nav-extras">
-            <li><a class="close" href="admin.php?page=raffleleader_plugin"></a></li>
+            <li><a class="close" href="edit.php?post_type=raffleleader_raffle"></a></li>
         </ul>
     </nav>
     <div class="tab-content">
@@ -30,3 +33,6 @@
         </div>
     </div>
 </div>
+<?php 
+}
+?>

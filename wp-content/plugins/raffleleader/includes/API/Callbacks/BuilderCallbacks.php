@@ -6,48 +6,56 @@
 
 namespace Includes\API\Callbacks;
 
+use Includes\API\RaffleAPI;
 use Includes\Base\BaseController;
-use Includes\Base\RaffleController;
 
 class BuilderCallbacks extends BaseController{
 
-    public $raffle = array();
+    public $raffleAPI;
+
+    public $raffle_instance = array();
 
     public $builderRaffle = array();
 
-    public $raffleController;
 
-    public function builderHandler(){
+    public function builderCreateNew(){
 
-        // Will need to abstract this to custom naming
+        $this->raffleAPI = new RaffleAPI();
 
-        $this->raffle = array(
-            'post_title' => 'New Raffle',
-            'post_status' => 'draft',
-            'post_type' => 'raffleleader_raffle'
+        $this->raffle_instance = array(
+            'post_title'    => 'New Raffle',
+            'post_status'   => 'draft',
+            'post_type'     => 'rl_raffle'
         );
 
-        $this->raffleController = new RaffleController();
+        $this->raffleAPI->addRaffle( $this->raffle_instance );
 
-        $this->builderRaffle = $this->raffleController->newRaffle( $this->raffle );
-
-        $new_raffle_id = wp_insert_post( $this->builderRaffle );
+        $new_raffle_id = $this->raffleAPI->getRaffle()['id'];
 
         if( $new_raffle_id && ! is_wp_error( $new_raffle_id ) ){
 
-            global $current_raffle_id;
+            echo '<script>window.location.href="' . esc_js(admin_url('admin.php?page=raffleleader_builder&post_id=' . $new_raffle_id)) . '";</script>';
 
-            $current_raffle_id = $new_raffle_id;
-
-            include( "$this->plugin_path/includes/Content/builder_content.php" );
-            
         } else {
             echo 'Error creating new raffle';
         }
     }
 
-    public function builderDashboard(){
-            return require_once( "$this->plugin_path/includes/Content/builder_content.php" );
+    public function builderContent(){
+        $post_id = isset( $_GET['post_id'] ) ? intval( $_GET['post_id'] ) : 0;
+
+        if( $post_id ){
+            $post = get_post( $post_id );
+            if( !$post ){
+                echo 'Post not found';
+                return;
+            }
+            // Load data and initialize builder
+        } else {
+            echo 'No post ID provided';
+        }
+        
+        include( "$this->plugin_path/includes/Content/builder_content.php" );
     }
 
 }

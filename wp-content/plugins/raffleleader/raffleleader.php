@@ -23,6 +23,8 @@ if( file_exists( dirname(__FILE__) . '/vendor/autoload.php' ) ){
 // Activation
 function activate_raffleleader_plugin(){
     Includes\Base\Activate::activate();
+    define( 'WP_DEBUG', true );
+    define ( 'WP_DEBUG_DISPLAY', true );
 }
 register_activation_hook( __FILE__, 'activate_raffleleader_plugin' );
 

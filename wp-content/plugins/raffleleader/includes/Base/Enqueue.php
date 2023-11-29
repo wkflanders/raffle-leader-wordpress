@@ -9,16 +9,21 @@ use Includes\Base\BaseController;
 
 class Enqueue extends BaseController{
 
-    public function loadCampaignOverview(){
-        add_action( 'admin_enqueue_scripts', array( $this, 'enqueueCampaignOverview' ) );
+    public function loadRaffleOverview(){
+        add_action( 'admin_enqueue_scripts', array( $this, 'enqueueRaffleOverview' ) );
     }
 
     public function loadSettings(){
         add_action( 'admin_enqueue_scripts', array( $this, 'enqueueSettings' ) );
     }
 
+    public function loadBuilder(){
+        add_action( 'admin_enqueue_scripts', array( $this, 'enqueueBuilder' ) );
+    }
+
     public function loadCreateNew(){
-        add_action( 'admin_enqueue_scripts', array( $this, 'enqueueCreateNew' ) );
+        // Dummy callback
+        return;
     }
 
     public function loadInfo(){
@@ -30,7 +35,7 @@ class Enqueue extends BaseController{
         wp_enqueue_script( 'raffleleader_settings_script', $this->plugin_url . '/assets/js/settings_script.js', array(), rand(111, 9999) );             
     }
 
-    public function enqueueCreateNew(){
+    public function enqueueBuilder(){
         wp_enqueue_style( 'raffleleader_wpadmin_cloak_style', $this->plugin_url . '/assets/css/wpadmin_cloak.css', array(), rand(111, 9999) );
         wp_enqueue_style( 'raffleleader_builder_navbar_style', $this->plugin_url . '/assets/css/builder_nav_style.css', array(), rand(111, 9999) );
         wp_enqueue_style( 'raffleleader_templates_style', $this->plugin_url . '/assets/css/templates_style.css', array(), rand(111, 9999) );
@@ -38,8 +43,8 @@ class Enqueue extends BaseController{
         wp_enqueue_script( 'raffleleader_panel_select_script', $this->plugin_url . '/assets/js/panel_select_script.js', array(), rand(111, 9999) );
     }
 
-    public function enqueueCampaignOverview(){
-        echo "";
+    public function enqueueRaffleOverview(){
+        wp_enqueue_style( 'raffleleader_overview_table_style', $this->plugin_url . '/assets/css/overview_table_style.css', array(), rand(111, 9999) );
     }
 
     public function enqueueInfo(){

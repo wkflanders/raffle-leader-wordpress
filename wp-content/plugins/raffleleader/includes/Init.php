@@ -16,7 +16,7 @@ final class Init{
             Pages\Admin::class,
             Base\SettingsLinks::class,
             Base\BuilderController::class,
-            Base\RaffleController::class,
+            API\RaffleAPI::class,
         ];
     }
 

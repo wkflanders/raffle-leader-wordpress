@@ -1,0 +1,6 @@
+.trash-post {
+    color: #a00;
+}
+.trash-post:hover {
+    color: #f00;
+}

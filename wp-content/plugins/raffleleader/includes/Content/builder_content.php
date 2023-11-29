@@ -1,6 +1,3 @@
-<?php 
-global $current_raffle_id;
-if ( isset( $current_raffle_id ) ){ ?>
 <div class="raffleleader-container">
     <nav class="navbar">
         <div class="nav-logo">
@@ -12,13 +9,13 @@ if ( isset( $current_raffle_id ) ){ ?>
             <li><a class="noSelect" href="#publish">Publish</a></li>
         </ul>
         <ul class="nav-extras">
-            <li><a class="close" href="edit.php?post_type=raffleleader_raffle"></a></li>
+            <li><a class="close" href="admin.php?page=raffleleader_plugin"></a></li>
         </ul>
     </nav>
     <div class="tab-content">
         <div id="templates" class="tab-pane active">
             <div class="giveaway-name">
-                <label>Campaign Name</label>
+                <label>Raffle Name</label>
                 <input name="name" placeholder="Ex. Twitter Contest">
             </div>
             <div class="template-wrapper">
@@ -33,6 +30,3 @@ if ( isset( $current_raffle_id ) ){ ?>
         </div>
     </div>
 </div>
-<?php 
-}
-?>

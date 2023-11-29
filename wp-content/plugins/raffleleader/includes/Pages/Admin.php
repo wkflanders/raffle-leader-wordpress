@@ -9,6 +9,7 @@ use Includes\API\SettingsAPI;
 use Includes\Base\BaseController;
 use Includes\API\Callbacks\AdminCallbacks;
 use Includes\API\Callbacks\BuilderCallbacks;
+use Includes\API\Callbacks\OverviewCallbacks;
 
 class Admin extends BaseController{
 
@@ -20,6 +21,8 @@ class Admin extends BaseController{
 
     public $builderCallbacks;
 
+    public $overviewCallbacks;
+
     public $pages = array();
 
     public function register(){
@@ -27,6 +30,7 @@ class Admin extends BaseController{
 
         $this->adminCallbacks = new AdminCallbacks();
         $this->builderCallbacks = new BuilderCallbacks();
+        $this->overviewCallbacks = new OverviewCallbacks();
 
         $this->setPages();
 
@@ -40,11 +44,11 @@ class Admin extends BaseController{
     public function setPages(){
         $this->pages = array(
             array(
-                'page_title' => 'Raffle Overview',
+                'page_title' => 'RaffleOverview',
                 'menu_title' => 'RaffleLeader',
                 'capability' => 'manage_options',
                 'menu_slug' => $this->parent_slug,
-                'callback' => array(),
+                'callback' => array( $this->overviewCallbacks, 'overviewPostManager' ),
                 'icon_url' => $this->icon_url,
                 'position' => 67,
                 'id' => 10252326

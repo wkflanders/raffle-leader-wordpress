@@ -29,6 +29,7 @@ class BuilderController extends BaseController{
     }
 
     public function setSubpages(){
+
         $this->subpages = array(
             array(
                 'parent_slug' => $this->parent_slug,
@@ -36,8 +37,16 @@ class BuilderController extends BaseController{
                 'menu_title' => 'Create New',
                 'capability' => 'manage_options',
                 'menu_slug' => 'raffleleader_create_new',
-                'callback' => array( $this->builderCallbacks, 'builderHandler' ),
-            )
+                'callback' => array( $this->builderCallbacks, 'builderCreateNew' ),
+            ),
+            array(
+                'parent_slug' => null,
+                'page_title' => 'Builder',
+                'menu_title' => null,
+                'capability' => 'manage_options',
+                'menu_slug' => 'raffleleader_builder',
+                'callback' => array( $this->builderCallbacks, 'builderContent' ),
+            ),
         );
     }
 }

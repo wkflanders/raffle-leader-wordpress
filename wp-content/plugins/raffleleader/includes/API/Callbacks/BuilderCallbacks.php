@@ -34,8 +34,10 @@ class BuilderCallbacks extends BaseController{
 
         if( $new_raffle_id && ! is_wp_error( $new_raffle_id ) ){
 
-            echo '<script>window.location.href="' . esc_js(admin_url('admin.php?page=raffleleader_builder&post_id=' . $new_raffle_id)) . '";</script>';
+            $redirectUrl = admin_url('admin.php?page=raffleleader_builder&post_id=' . $new_raffle_id);
 
+            echo '<script>window.location.href="' . $redirectUrl . '";</script>';
+            
         } else {
             echo 'Error creating new raffle';
         }

@@ -16,6 +16,9 @@
                 <tr>
                     <td class="title column-title has-row-actions column-primary"><?php echo esc_html($post->post_title) ?>
                         <div class="row-actions">
+                            <span class="edit">
+                                <a href="<?php echo esc_url(admin_url('admin.php?page=raffleleader_builder&post_id=' . $post->ID)) ?>" class="edit-post">Edit |</a>
+                            </span>
                             <span class="delete">
                                 <a href="<?php echo esc_url(wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=trash&post=' . $post->ID), 'trash_post_' . $post->ID)) ?>" class="trash-post">Trash</a>
                             </span>

@@ -1,3 +1,7 @@
+body{
+    background: white !important;
+}
+
 html.wp-toolbar { 
     padding-top:0 !important; 
     padding-right:0 !important;

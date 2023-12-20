@@ -1,40 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
 
+body{
+    overflow-y: hidden;
+}
+
 #templates{
     margin: 0;
     padding: 0;
     border: 0;
+    font-family: 'Overpass', sans-serif;
 }
 
-.giveaway-name{
-    display: block;
-    align-items: center;
-    background-color: #fafafa;
-    box-shadow: 0 1px 4px rgba(91, 91, 92, 0.18);
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+
+/* template styles */
+
+
+.rl-template-wrapper{
+    padding: 50px 50px;
 }
 
-.giveaway-name > label, 
-.giveaway-name > input {
-    margin-left: 3rem;
+.rl-template-wrapper > .grid-row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #1501FE;
 }
 
-.giveaway-name > label{
-    cursor: default;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
+.rl-template-wrapper > .grid-row > .grid-item{
+    border: 1px solid #727272;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1;
+    margin: 0 10px;
+}
+
+.rl-template-wrapper > .grid-row > .grid-item > .grid-text{
+    padding: none;
+    text-align: left;
+    color: black;
+    font-weight: 900;
+}
+
+.rl-template-wrapper > .grid-row > .grid-item > .grid-text p{
     font-weight: 500;
 }
 
-.giveaway-name > input {
-    cursor: text;
-    width: 15rem;
-    height: 2.5rem;
+.rl-template-wrapper > .grid-row > .label{
+    border: none;
+    padding: 20px;
+    width: 20%;
+    margin: 0;
+    text-align: left;
 }
 
-
+.rl-box{
+    text-align: center;
+    position: relative;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* .panel > .panel-action{
     width:100%;
@@ -45,6 +73,21 @@
     background: rgba(0,0,0,0.75);
     border-radius: 7px;
 } */
+
+.rl-template-wrapper h2 {
+    margin-top: 48px;
+    margin-bottom: 12px;
+    font-style: normal;
+    font-weight: 1 1000;
+    font-size: 30px;
+    color: black;
+}
+
+.rl-template-wrapper p {
+    font-style: normal;
+    font-size: 16px;
+    color: black;
+}
 
 
 

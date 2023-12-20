@@ -1,21 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
 
-/* 
-ideas:
-gpt that can grab info from X betting (could be any type tbh) accts and provides popular takes
-artist concert/tour tracker (honestly can just implement wext into a gpt)
-code proofreader?
-
-date/activity idea generator/optimizer
-product page optimizer
-product generator (put in what your store is and what it recommends etc.)
-various gpt tutors (just upload textbooks etc.)
-
-
-*/
-
-
 .raffleleader-container{
     margin: 0;
     padding: 0;
@@ -23,82 +8,94 @@ various gpt tutors (just upload textbooks etc.)
     overflow-x: hidden;
 }
 
-.navbar {
-    margin-left: -1rem;
+/* nav styling */
+
+.rl-navbar {
     list-style-type: none;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     color: #c4bfff;
     display: flex;
     align-items: center;
     background-color: white;
-    box-shadow: 0 1px 4px rgba(91, 91, 92, 0.18);
+    box-shadow: 0 6px 16px rgba(91, 91, 92, 0.18);
     position: relative;
     z-index: 999;
 }
 
-.nav-tabs {
+.rl-nav-tabs {
     display: flex;
     justify-content: space-between;
     margin-left: 2rem;
+    margin-top: 0.5rem;
     margin-bottom: 0;
 }
 
-.nav-logo {
+.rl-nav-logo {
     display: inline-block;
     margin-left: 2rem;
 }
 
-.text-logo {
-    width: auto;
-    height: 4.5rem;
-}
-
-.nav-tabs > li {
+.rl-nav-tabs > li {
     display: inline-block;
     margin-right: auto;
     margin-bottom: 0;
 }
 
-.nav-tabs > li > a {
+.rl-nav-tabs > li > a {
     color: inherit;
     display: flex;
     height: 100%;
     line-height: 1.5;
-    padding: 0.5rem 2.5rem 0.5rem 2.5rem;
+    padding: 0rem 1.5rem 0.5rem 1.5rem;
     float: left;
     text-decoration: none;
-    font-family: 'Overpass', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     letter-spacing: 1px;
     box-shadow: none !important;
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
 }
 
-.nav-tabs > li > a:hover {
+.rl-nav-tabs > li > a:hover {
     color: #1501FE;;
 }
 
-.nav-tabs > li.active > a,
-.nav-tabs > li.active > a:hover,
-.nav-tabs > li.active > a:focus {
+.rl-nav-tabs > li.active > a,
+.rl-nav-tabs > li.active > a:hover,
+.rl-nav-tabs > li.active > a:focus {
     color: #1501FE;
     background-color: #fff;
     outline: 0 !important;
 }
 
-.nav-tabs > li > a:active {
+.rl-nav-tabs > li > a:active {
     outline: none !important;
 }
 
-.nav-tabs > li.active > a {
-    box-shadow: inset 0 -0.15rem 0 0 #1501FE !important;
+.rl-nav-tabs > li.active > a {
+    /* box-shadow: inset 0 -0.15rem 0 0 #1501FE !important; */
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
+
+.rl-tab-content > .rl-tab-pane{
+    float: left;
+    width: 100%;
+    display: none;
+}
+
+.rl-tab-content > .rl-tab-pane.active{
+    display: block;
+    padding: 10px;
+} 
 
 .close {
     position: absolute;
     right: 32px;
-    top: 32px;
+    top: 36px;
     width: 32px;
     height: 32px;
     opacity: 0.3;
@@ -123,15 +120,4 @@ various gpt tutors (just upload textbooks etc.)
   
 .close:after {
     transform: rotate(-45deg);
-}
-
-.tab-content > .tab-pane{
-    float: left;
-    width: 100%;
-    display: none;
-}
-
-.tab-content > .tab-pane.active{
-    display: block;
-    padding: 10px;
 }

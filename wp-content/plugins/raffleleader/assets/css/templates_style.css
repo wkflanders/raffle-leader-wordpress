@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
 
-body{
+body {
     overflow-y: hidden;
 }
 
-#templates{
+#templates {
     margin: 0;
     padding: 0;
     border: 0;
@@ -16,46 +16,50 @@ body{
 /* template styles */
 
 
-.rl-template-wrapper{
-    padding: 50px 50px;
+.rl-template-wrapper {
+    padding: 3vh 6vw;
 }
 
-.rl-template-wrapper > .grid-row{
+.rl-template-wrapper>.grid-row {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 40px;
-    padding-bottom: 50px;
     border-bottom: 1px solid #1501FE;
+    padding-bottom: 2vh;
+    margin-bottom: 2vh;
 }
 
-.rl-template-wrapper > .grid-row > .grid-item{
+.rl-template-wrapper>.first-row {
+    border-top: 1px solid #1501FE;
+    padding-top: 3vh
+}
+
+.rl-template-wrapper>.grid-row>.grid-item {
     border: 1px solid #727272;
     border-radius: 8px;
-    padding: 20px;
     flex: 1;
-    margin: 0 10px;
+    padding: 3vh 2vh;
+    margin: 0 1vh;
 }
 
-.rl-template-wrapper > .grid-row > .grid-item > .grid-text{
+.rl-template-wrapper>.grid-row>.grid-item>.grid-text {
     padding: none;
     text-align: left;
     color: black;
     font-weight: 900;
 }
 
-.rl-template-wrapper > .grid-row > .grid-item > .grid-text p{
+.rl-template-wrapper>.grid-row>.grid-item>.grid-text p {
     font-weight: 500;
 }
 
-.rl-template-wrapper > .grid-row > .label{
+.rl-template-wrapper>.grid-row>.label {
     border: none;
-    padding: 20px;
     width: 20%;
     margin: 0;
     text-align: left;
 }
 
-.rl-box{
+.rl-box {
     text-align: center;
     position: relative;
     background: white;
@@ -64,31 +68,49 @@ body{
     justify-content: center;
 }
 
-/* .panel > .panel-action{
-    width:100%;
-    height:100%;
-    top: 0;
-    left: 0;
-    position: absolute;
-    background: rgba(0,0,0,0.75);
-    border-radius: 7px;
-} */
-
 .rl-template-wrapper h2 {
-    margin-top: 48px;
-    margin-bottom: 12px;
     font-style: normal;
     font-weight: 1 1000;
-    font-size: 30px;
+    font-size: 3vh;
     color: black;
 }
 
 .rl-template-wrapper p {
     font-style: normal;
-    font-size: 16px;
+    font-size: 2vh;
     color: black;
 }
 
+.rl-template-wrapper>.grid-row>.rl-box>.rl-box-action {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 7px;
+}
 
+.rl-box-action>.template-button-wrap {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.template-button-wrap>.select-template {
+    padding: 1.5vh 2.5vw;
+    color: white;
+    background-color: #1501FE;
+    font-family: 'Inter', sans-serif;
+    font-size: 2vh;
+    letter-spacing: 0.3vh;
+    border: none;
+    border-radius: 1vh;
+    font-weight: 600;
+}
 
+.template-button-wrap>.active-select-btn {
+    color: white;
+    background-color: #1000c1;
+}

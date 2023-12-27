@@ -15,19 +15,36 @@
     <div class="rl-tab-content">
         <div id="templates" class="rl-tab-pane active">
             <div class="rl-template-wrapper">
-                <div class="rl-basics grid-row">
+                <div class="rl-basics grid-row first-row">
                     <div class="label grid-item">
                         <h2>The Basics</h2>
                         <p>Your license key provides access to the plugin's features.</p>
                     </div>
                     <div class="rl-box grid-item">
+                        <div class="rl-box-action" style="display: none">
+                            <div class="template-button-wrap">
+                                <button class="select-template">Select</button>
+                            </div>
+                        </div>
                         <div class="grid-text">
                             <h3>Blank Raffle</h3>
                             <p>Your license key provides access to the plugin's features.</p>
                         </div>
                     </div>
-                    <div class="rl-box grid-item"></div>
-                    <div class="rl-box grid-item"></div>
+                    <div class="rl-box grid-item">
+                        <div class="rl-box-action" style="display: none">
+                            <div class="template-button-wrap">
+                                <button class="select-template">Select</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rl-box grid-item">
+                        <div class="rl-box-action" style="display: none">
+                            <div class="template-button-wrap">
+                                <button class="select-template">Select</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="rl-campaigns grid-row">
                     <div class="label grid-item">
@@ -35,18 +52,33 @@
                         <p>Your license key provides access to the plugin's features.</p>
                     </div>
                     <div class="rl-box grid-item">
+                        <div class="rl-box-action" style="display: none">
+                            <div class="template-button-wrap">
+                                <button class="select-template">Select</button>
+                            </div>
+                        </div>
                         <div class="grid-text">
                             <h3>Pre-Launch</h3>
                             <p>Your license key provides access to the plugin's features.</p>
                         </div>
                     </div>
                     <div class="rl-box grid-item">
+                        <div class="rl-box-action" style="display: none">
+                            <div class="template-button-wrap">
+                                <button class="select-template">Select</button>
+                            </div>
+                        </div>
                         <div class="grid-text">
                             <h3>Email</h3>
                             <p>Your license key provides access to the plugin's features.</p>
                         </div>
                     </div>
                     <div class="rl-box grid-item">
+                        <div class="rl-box-action" style="display: none">
+                            <div class="template-button-wrap">
+                                <button class="select-template">Select</button>
+                            </div>
+                        </div>
                         <div class="grid-text">
                             <h3>Refer-a-Friend</h3>
                             <p>Your license key provides access to the plugin's features.</p>
@@ -59,18 +91,33 @@
                         <p>Your license key provides access to the plugin's features.</p>
                     </div>
                     <div class="rl-box grid-item">
+                        <div class="rl-box-action" style="display: none">
+                            <div class="template-button-wrap">
+                                <button class="select-template">Select</button>
+                            </div>
+                        </div>
                         <div class=grid-text>
                             <h3>Instagram</h3>
                             <p>Your license key provides access to the plugin's features.</p>
                         </div>
                     </div>
                     <div class="rl-box grid-item">
+                        <div class="rl-box-action" style="display: none">
+                            <div class="template-button-wrap">
+                                <button class="select-template">Select</button>
+                            </div>
+                        </div>
                         <div class="grid-text">
                             <h3>TikTok</h3>
                             <p>Your license key provides access to the plugin's features.</p>
                         </div>
                     </div>
                     <div class="rl-box grid-item">
+                        <div class="rl-box-action" style="display: none">
+                            <div class="template-button-wrap">
+                                <button class="select-template">Select</button>
+                            </div>
+                        </div>
                         <div class="grid-text">
                             <h3>Twitter/X</h3>
                             <p>Your license key provides access to the plugin's features.</p>

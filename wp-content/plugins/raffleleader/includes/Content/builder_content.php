@@ -23,7 +23,7 @@
                     <div class="rl-box grid-item">
                         <div class="rl-box-action" style="display: none">
                             <div class="template-button-wrap">
-                                <button class="select-template">Select</button>
+                                <button class="select-template blank_temp" data-template-id="blank_temp">Select</button>
                             </div>
                         </div>
                         <div class="grid-text">
@@ -32,18 +32,8 @@
                         </div>
                     </div>
                     <div class="rl-box grid-item">
-                        <div class="rl-box-action" style="display: none">
-                            <div class="template-button-wrap">
-                                <button class="select-template">Select</button>
-                            </div>
-                        </div>
                     </div>
                     <div class="rl-box grid-item">
-                        <div class="rl-box-action" style="display: none">
-                            <div class="template-button-wrap">
-                                <button class="select-template">Select</button>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="rl-campaigns grid-row">
@@ -54,7 +44,7 @@
                     <div class="rl-box grid-item">
                         <div class="rl-box-action" style="display: none">
                             <div class="template-button-wrap">
-                                <button class="select-template">Select</button>
+                                <button class="select-template plaunch_temp" data-template-id="plaunch_temp">Select</button>
                             </div>
                         </div>
                         <div class="grid-text">
@@ -65,7 +55,7 @@
                     <div class="rl-box grid-item">
                         <div class="rl-box-action" style="display: none">
                             <div class="template-button-wrap">
-                                <button class="select-template">Select</button>
+                                <button class="select-template email_temp" data-template-id="email_temp">Select</button>
                             </div>
                         </div>
                         <div class="grid-text">
@@ -76,7 +66,7 @@
                     <div class="rl-box grid-item">
                         <div class="rl-box-action" style="display: none">
                             <div class="template-button-wrap">
-                                <button class="select-template">Select</button>
+                                <button class="select-template refer_temp" data-template-id="refer_temp">Select</button>
                             </div>
                         </div>
                         <div class="grid-text">
@@ -93,7 +83,7 @@
                     <div class="rl-box grid-item">
                         <div class="rl-box-action" style="display: none">
                             <div class="template-button-wrap">
-                                <button class="select-template">Select</button>
+                                <button class="select-template insta_temp" data-template-id="insta_temp">Select</button>
                             </div>
                         </div>
                         <div class=grid-text>
@@ -104,7 +94,7 @@
                     <div class="rl-box grid-item">
                         <div class="rl-box-action" style="display: none">
                             <div class="template-button-wrap">
-                                <button class="select-template">Select</button>
+                                <button class="select-template tiktok_temp" data-template-id="tiktok_temp">Select</button>
                             </div>
                         </div>
                         <div class="grid-text">
@@ -115,7 +105,7 @@
                     <div class="rl-box grid-item">
                         <div class="rl-box-action" style="display: none">
                             <div class="template-button-wrap">
-                                <button class="select-template">Select</button>
+                                <button class="select-template x_temp" data-template-id="x_temp">Select</button>
                             </div>
                         </div>
                         <div class="grid-text">

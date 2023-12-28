@@ -16,16 +16,22 @@ window.addEventListener("load", ()=>{
 
     function hoverPanel(event){
         let panelTarget = event.currentTarget;
-        let panelActionTarget = panelTarget.querySelector("div.rl-box-action");
-
-        panelActionTarget.style.display = "";
+        try {
+            let panelActionTarget = panelTarget.querySelector("div.rl-box-action");
+            
+            panelActionTarget.style.display = "";
+        } catch (error) {}
+        
     }
 
     function stopHoverPanel(event){
         let panelTarget = event.currentTarget;
-        let panelActionTarget = panelTarget.querySelector("div.rl-box-action");
+        try{
+            let panelActionTarget = panelTarget.querySelector("div.rl-box-action");
 
-        panelActionTarget.style.display = "none";
+            panelActionTarget.style.display = "none";
+        } catch (error) {}
+        
     }
 
     function hoverBtn(event){

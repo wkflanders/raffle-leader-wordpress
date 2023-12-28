@@ -4,7 +4,6 @@
  */
 
 namespace Includes\API;
-use Includes\Base\Enqueue;
 
 class RaffleAPI{
 

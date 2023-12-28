@@ -47,12 +47,14 @@ class BuilderCallbacks extends BaseController{
         $post_id = isset( $_GET['post_id'] ) ? intval( $_GET['post_id'] ) : 0;
 
         if( $post_id ){
+
             $post = get_post( $post_id );
+
             if( !$post ){
                 echo 'Post not found';
                 return;
             }
-            // Load data and initialize builder
+
         } else {
             echo 'No post ID provided';
         }

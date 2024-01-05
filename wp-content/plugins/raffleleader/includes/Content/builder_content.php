@@ -4,8 +4,8 @@
             <img class="rl-text-logo" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/TEXT-LOGO.svg">
         </div>
         <ul class="rl-nav-tabs">
-            <li class="active"><a class="noSelect" href="#templates">Templates</a></li>
-            <li><a class="noSelect" href="#setup">Set Up</a></li>
+            <li><a class="noSelect" href="#templates">Templates</a></li>
+            <li class="active-tab"><a class="noSelect" href="#setup">Set Up</a></li>
             <li><a class="noSelect" href="#publish">Publish</a></li>
         </ul>
         <ul class="rl-nav-extras">
@@ -13,7 +13,7 @@
         </ul>
     </nav>
     <div class="rl-tab-content">
-        <div id="templates" class="rl-tab-pane active">
+        <div id="templates" class="rl-tab-pane">
             <div class="rl-template-wrapper">
                 <div class="rl-basics grid-row first-row">
                     <div class="label grid-item">
@@ -116,8 +116,29 @@
                 </div>
             </div>
         </div>
-        <div id="setup" class="rl-tab-pane">
-            <h3>Setup</h3>
+        <div id="setup" class="rl-tab-pane active-tab">
+            <div class="rl-setup-wrapper">
+                <div class="customize-nav">
+                    <div class="customize-box active-box">
+                        <a class="customize-box-link details-link" href='#details'>Detials</a>
+                    </div>
+                    <div class="customize-box">
+                        <a class="customize-box-link design-link" href='#design'>Design</a>
+                    </div>
+                    <div class="customize-box">
+                        <a class="customize-box-link settings-link" href='#settings'>Settings</a>
+                    </div>
+                </div>
+                <div id="details" class="customize-box-content active-box-content">
+                    details
+                </div>
+                <div id="design" class="customize-box-content">
+                    design
+                </div>
+                <div id="settings" class="customize-box-content">
+                    settings
+                </div>
+            </div>
         </div>
         <div id="publish" class="rl-tab-pane">
             <h3>Publish</h3>

@@ -33,7 +33,7 @@
 
 .rl-nav-logo {
     display: inline-block;
-    margin-left: 2rem;
+    margin-left: 1.5vw;
 }
 
 .rl-nav-tabs > li {
@@ -51,8 +51,8 @@
     float: left;
     text-decoration: none;
     font-family: 'Inter', sans-serif;
-    font-weight: bold;
-    font-size: 0.9rem;
+    font-weight: bolder;
+    font-size: 2vh;
     letter-spacing: 1px;
     box-shadow: none !important;
     -moz-box-shadow: none !important;
@@ -63,9 +63,9 @@
     color: #1501FE;;
 }
 
-.rl-nav-tabs > li.active > a,
-.rl-nav-tabs > li.active > a:hover,
-.rl-nav-tabs > li.active > a:focus {
+.rl-nav-tabs > li.active-tab > a,
+.rl-nav-tabs > li.active-tab > a:hover,
+.rl-nav-tabs > li.active-tab > a:focus {
     color: #1501FE;
     background-color: #fff;
     outline: 0 !important;
@@ -75,7 +75,7 @@
     outline: none !important;
 }
 
-.rl-nav-tabs > li.active > a {
+.rl-nav-tabs > li.active-tab > a {
     /* box-shadow: inset 0 -0.15rem 0 0 #1501FE !important; */
     text-decoration: underline;
     text-underline-offset: 4px;
@@ -87,7 +87,7 @@
     display: none;
 }
 
-.rl-tab-content > .rl-tab-pane.active{
+.rl-tab-content > .rl-tab-pane.active-tab{
     display: block;
     padding: 10px;
 } 

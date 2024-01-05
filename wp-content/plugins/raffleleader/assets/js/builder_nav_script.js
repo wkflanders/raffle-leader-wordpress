@@ -10,15 +10,15 @@ window.addEventListener("load", () => {
     function switchTab(event){
         event.preventDefault();
         
-        document.querySelector("ul.rl-nav-tabs li.active").classList.remove("active");
-        document.querySelector(".rl-tab-pane.active").classList.remove("active");
+        document.querySelector("ul.rl-nav-tabs li.active-tab").classList.remove("active-tab");
+        document.querySelector(".rl-tab-pane.active-tab").classList.remove("active-tab");
 
         let clickedTab = event.currentTarget
         let anchor = event.target;
         let activePaneID = anchor.getAttribute("href");
 
-        clickedTab.classList.add("active");
-        document.querySelector(activePaneID).classList.add("active");
+        clickedTab.classList.add("active-tab");
+        document.querySelector(activePaneID).classList.add("active-tab");
 
     }
 

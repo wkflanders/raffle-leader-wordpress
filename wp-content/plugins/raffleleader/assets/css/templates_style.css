@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+
+body {
+    overflow-y: hidden;
+}
+
+#templates {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Overpass', sans-serif;
+}
+
+
+/* template styles */
+
+
+.rl-template-wrapper {
+    padding: 3vh 6vw;
+}
+
+.rl-template-wrapper>.grid-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #1501FE;
+    padding-bottom: 2vh;
+    margin-bottom: 2vh;
+}
+
+.rl-template-wrapper>.first-row {
+    border-top: 1px solid #1501FE;
+    padding-top: 3vh
+}
+
+.rl-template-wrapper>.grid-row>.grid-item {
+    border: 1px solid #727272;
+    border-radius: 8px;
+    flex: 1;
+    padding: 3vh 2vh;
+    margin: 0 1vh;
+}
+
+.rl-template-wrapper>.grid-row>.grid-item>.grid-text {
+    padding: none;
+    text-align: left;
+    color: black;
+    font-weight: 900;
+}
+
+.rl-template-wrapper>.grid-row>.grid-item>.grid-text p {
+    font-weight: 500;
+}
+
+.rl-template-wrapper>.grid-row>.label {
+    border: none;
+    width: 20%;
+    margin: 0;
+    text-align: left;
+}
+
+.rl-box {
+    text-align: center;
+    position: relative;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rl-template-wrapper h2 {
+    font-style: normal;
+    font-weight: 1 1000;
+    font-size: 3vh;
+    color: black;
+}
+
+.rl-template-wrapper p {
+    font-style: normal;
+    font-size: 2vh;
+    color: black;
+}
+
+.rl-template-wrapper>.grid-row>.rl-box>.rl-box-action {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+}
+
+.rl-box-action>.template-button-wrap {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.template-button-wrap>.select-template {
+    padding: 1.5vh 2.5vw;
+    color: white;
+    background-color: #1501FE;
+    font-family: 'Inter', sans-serif;
+    font-size: 2vh;
+    letter-spacing: 0.3vh;
+    border: none;
+    border-radius: 1vh;
+    font-weight: 600;
+}
+
+.template-button-wrap>.active-select-btn {
+    color: white;
+    background-color: #1000c1;
+}
+
+.chosen-template {
+    position: relative;
+    border: 3px solid #1501FE !important; /* Adjust the border as needed */
+    padding: 10px;
+    margin-top: 20px; /* Enough space for the label */
+}
+
+.chosen-template::before {
+    content: "Selected";
+    position: absolute;
+    color: white;
+    top: 0; /* Half of the height of the label to center it on the border */
+    left: 2vh; /* Adjust as needed */
+    background: #1501FE; /* Match the background of the container or page */
+    padding: 0 1vh;
+    font-size: 2vh; /* Adjust the font styling as needed */
+    border-bottom-left-radius: 1.3vh;
+    border-bottom-right-radius: 1.3vh;
+}

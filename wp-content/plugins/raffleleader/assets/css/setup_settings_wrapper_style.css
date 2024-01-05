@@ -1,0 +1,11 @@
+.settings-wrapper{
+    margin-left: auto;
+}
+
+.settings-content{
+    display: flex;
+    background-color: white;
+    width: 25vw;
+    height: 99vh;
+    border: 2px solid #1501FE;
+}

@@ -17,6 +17,7 @@ body {
 .rl-setup-wrapper{
     display: flex;
     height: 100vh;    
+    /* justify-content: space-between; */
 }
 
 .customize-nav {
@@ -55,7 +56,7 @@ body {
 }
 
 .customize-box:hover {
-    background-color: #5344ff !important;
+    background-color: #1501FE !important;
 }
 
 .customize-box-content{

@@ -133,7 +133,12 @@
                 <div class="settings-wrapper">
                     <div class="settings-content">
                         <div id="details" class="customize-box-content active-box-content">
-                            details
+                            <div class="dropdown-wrapper">
+                                <div class="header-box">
+                                    <h2 class="header-box-title">Details</h2>
+                                    <button class="dropdown-button"><i class="header-box-down header-box-arrow"></i></button>
+                                </div>
+                            </div>
                         </div>
                         <div id="design" class="customize-box-content">
                             design

@@ -135,17 +135,30 @@
                         <div id="details" class="customize-box-content active-box-content">
                             <div class="dropdown-wrapper">
                                 <div class="header-box">
+                                    <div class="spacer"></div>
                                     <h2 class="header-box-title">Details</h2>
                                     <button class="dropdown-button"><i class="header-box-down header-box-arrow"></i></button>
                                 </div>
                             </div>
                         </div>
                         <div id="design" class="customize-box-content">
-                            design
-                        </div>
+                            <div class="dropdown-wrapper">
+                                    <div class="header-box">
+                                        <div class="spacer"></div>
+                                        <h2 class="header-box-title">Design</h2>
+                                        <button class="dropdown-button"><i class="header-box-down header-box-arrow"></i></button>
+                                    </div>
+                                </div>
+                            </div>
                         <div id="settings" class="customize-box-content">
-                            settings
-                        </div>
+                            <div class="dropdown-wrapper">
+                                    <div class="header-box">
+                                        <div class="spacer"></div>
+                                        <h2 class="header-box-title">Settings</h2>
+                                        <button class="dropdown-button"><i class="header-box-down header-box-arrow"></i></button>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
                 </div>
             </div>

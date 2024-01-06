@@ -1,8 +1,8 @@
-.settings-wrapper{
+.settings-wrapper {
     margin-left: auto;
 }
 
-.settings-content{
+.settings-content {
     display: flex;
     background-color: white;
     width: 25vw;
@@ -16,28 +16,42 @@
     width: 25vw;
 }
 
-.header-box{
+.header-box {
     display: flex;
-    border-bottom: 2px solid #1501FE
+    border-bottom: 2px solid #1501FE;
+    justify-content: flex-start;
+    align-items: center;
+    height: 8vh;
 }
 
 .header-box-arrow {
-    border: solid black;
-    border-width: 0 3px 3px 0;
+    border: solid #1501FE;
+    border-width: 0 1.8px 1.8px 0;
     display: inline-block;
-    padding: 3px;
+    padding: 6px;
 }
 
 .header-box-down {
     transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
 }
 
-.dropdown-button{
-    margin-left: 7vw;
+.spacer{
+    flex: 0.6;
+    width: 10%;
 }
 
-.header-box-title{
-    margin-left: 10.5vw;
+.dropdown-button {
+    border: none;
+    background: white;
+    cursor: pointer;
+    padding: 0 1vw;
+    margin-left: auto;
 }
 
+.header-box-title {
+    text-align: center;
+    margin-top: 3.5vh;
+    font-size: 3vh;
+    color: #1501FE;
+    letter-spacing: 0.3vh;
+}

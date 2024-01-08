@@ -7,6 +7,7 @@ window.addEventListener("load", ()=>{
     }
 
     function selectCustomizeBox(event){
+        
         const activeBox = document.querySelector(".active-box");
         const activeBoxContent = document.querySelector(".active-box-content");        
 

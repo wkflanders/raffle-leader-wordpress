@@ -129,7 +129,11 @@
                         <a class="customize-box-link settings-link" href='#settings'>Settings</a>
                     </div>
                 </div>
-                <div class="preview-wrapper">preview</div>
+                <div class="preview-wrapper">
+                    <div class="preview-box">
+                        <div class="header">Test</div>
+                    </div>
+                </div>
                 <div class="settings-wrapper">
                     <div class="settings-content">
                         <div id="details" class="customize-box-content active-box-content">

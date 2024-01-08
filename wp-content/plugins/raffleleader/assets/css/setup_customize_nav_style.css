@@ -22,7 +22,8 @@ body {
 
 .customize-nav {
     width: 9vw;
-    border: 2px solid #1501FE;
+    border-right: 2px solid #1501FE;
+    border-left: 2px solid #1501FE;
     background-color: #fff !important;
 }
 

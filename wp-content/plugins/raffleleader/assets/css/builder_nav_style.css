@@ -20,7 +20,7 @@
     background-color: white;
     box-shadow: 0 6px 16px rgba(91, 91, 92, 0.18);
     position: relative;
-    z-index: 999;
+    z-index: 1000;
 }
 
 .rl-nav-tabs {
@@ -33,7 +33,7 @@
 
 .rl-nav-logo {
     display: inline-block;
-    /* margin-left: 1.5vw; */
+    margin-left: -0.2vw;
 }
 
 .rl-nav-tabs > li {

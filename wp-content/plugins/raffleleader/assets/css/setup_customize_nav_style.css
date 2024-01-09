@@ -6,24 +6,23 @@ body {
 }
 
 #setup {
+    position: relative;
+    z-index: 80;
     margin: 0;
     padding: 0;
     border: 0;
     font-family: 'Overpass', sans-serif;
-    height: 100vh;
-    background-color: #ececec;
 }
 
 .rl-setup-wrapper{
-    display: flex;
-    height: 100vh;    
-    /* justify-content: space-between; */
+    display: flex; 
 }
 
 .customize-nav {
-    width: 9vw;
+    position: relative;
+    z-index: 100;
+    width: 13vw;
     border-right: 2px solid #1501FE;
-    border-left: 2px solid #1501FE;
     background-color: #fff !important;
 }
 

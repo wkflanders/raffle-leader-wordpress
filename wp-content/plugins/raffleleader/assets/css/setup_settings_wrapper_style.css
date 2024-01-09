@@ -1,5 +1,7 @@
 .settings-wrapper {
     margin-left: auto;
+    position: relative;
+    z-index: 100;
 }
 
 .settings-content {
@@ -7,7 +9,6 @@
     background-color: white;
     width: 25vw;
     height: 99vh;
-    border-right: 2px solid #1501FE;
     border-left: 2px solid #1501FE;
 }
 

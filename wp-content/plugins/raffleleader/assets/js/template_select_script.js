@@ -17,8 +17,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
             const templateBox = btnTarget.parentNode.parentNode.parentNode;
 
-            console.log(templateBox);
-
             templateBox.classList.add('chosen-template');
         }
     })

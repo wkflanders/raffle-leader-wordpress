@@ -147,22 +147,22 @@
                         </div>
                         <div id="design" class="customize-box-content">
                             <div class="dropdown-wrapper">
-                                    <div class="header-box">
-                                        <div class="spacer"></div>
-                                        <h2 class="header-box-title">Design</h2>
-                                        <button class="dropdown-button"><i class="header-box-down header-box-arrow"></i></button>
-                                    </div>
+                                <div class="header-box">
+                                    <div class="spacer"></div>
+                                    <h2 class="header-box-title">Design</h2>
+                                    <button class="dropdown-button"><i class="header-box-down header-box-arrow"></i></button>
                                 </div>
                             </div>
+                        </div>
                         <div id="settings" class="customize-box-content">
                             <div class="dropdown-wrapper">
-                                    <div class="header-box">
-                                        <div class="spacer"></div>
-                                        <h2 class="header-box-title">Settings</h2>
-                                        <button class="dropdown-button"><i class="header-box-down header-box-arrow"></i></button>
-                                    </div>
+                                <div class="header-box">
+                                    <div class="spacer"></div>
+                                    <h2 class="header-box-title">Settings</h2>
+                                    <button class="dropdown-button"><i class="header-box-down header-box-arrow"></i></button>
                                 </div>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>

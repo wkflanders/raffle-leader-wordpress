@@ -1,17 +1,16 @@
 .preview-wrapper{
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-    height: 100vw;
-    position: relative;
+    width: 150vw;
+    height: 90vw;
+    position: fixed;
     z-index: 1;
     background-color: rgb(233, 233, 233);
+    flex: 0 1 auto;
 }
 
 .preview-box{
     position: absolute;
-    top: 40%;
-    left: 30%;
+    top: 28%;
+    left: 35%;
     height: 80vh;
     width: 55vh;;
     background-color: white;

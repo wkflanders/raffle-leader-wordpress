@@ -12,6 +12,7 @@ body {
     padding: 0;
     border: 0;
     font-family: 'Overpass', sans-serif;
+    /* background-color: rgb(233, 233, 233); */
 }
 
 .rl-setup-wrapper{
@@ -21,7 +22,7 @@ body {
 .customize-nav {
     position: relative;
     z-index: 100;
-    width: 13vw;
+    width: 8vw;
     border-right: 2px solid #1501FE;
     background-color: #fff !important;
 }

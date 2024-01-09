@@ -61,7 +61,7 @@ body {
 }
 
 .customize-box-content{
-    display: none;
+    position: absolute;
 }
 
 .active-box {
@@ -72,6 +72,15 @@ body {
     color: white !important;
 }
 
+.hidden-box-content{
+    transform: translateY(-100%);
+    transition: transform 0.5s ease;
+    visibility: hidden;
+}
+
 .active-box-content {
-    display: block;
+    transform: translateY(0);
+    transition: transform 0.5s ease;
+    visibility: visible;
+    height: auto;
 }

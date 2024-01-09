@@ -145,7 +145,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="design" class="customize-box-content">
+                        <div id="design" class="customize-box-content hidden-box-content">
                             <div class="dropdown-wrapper">
                                 <div class="header-box">
                                     <div class="spacer"></div>
@@ -154,7 +154,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="settings" class="customize-box-content">
+                        <div id="settings" class="customize-box-content hidden-box-content">
                             <div class="dropdown-wrapper">
                                 <div class="header-box">
                                     <div class="spacer"></div>

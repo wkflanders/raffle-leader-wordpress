@@ -7,16 +7,19 @@ window.addEventListener("load", ()=>{
     }
 
     function selectCustomizeBox(event){
-        event.preventDefault();
-
-        document.querySelector(".active-box").classList.remove("active-box");
-        document.querySelector(".active-box-content").classList.remove("active-box-content");        
+        const activeBox = document.querySelector(".active-box");
+        const activeBoxContent = document.querySelector(".active-box-content");        
 
         let anchor = event.target;
         let clickedBox = anchor.parentNode;
         let boxID = anchor.getAttribute("href");
 
+        activeBox.classList.remove("active-box");
+        activeBoxContent.classList.remove("active-box-content"); 
+        activeBoxContent.classList.add("hidden-box-content");
+
         clickedBox.classList.add("active-box");
+        document.querySelector(boxID).classList.remove("hidden-box-content");
         document.querySelector(boxID).classList.add("active-box-content");
     }
 

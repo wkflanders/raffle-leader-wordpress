@@ -1,3 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+
+body {
+    overflow-y: hidden;
+}
+
+#setup {
+    position: relative;
+    z-index: 80;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Overpass', sans-serif;
+    /* background-color: rgb(233, 233, 233); */
+}
+
+.rl-setup-wrapper{
+    display: flex; 
+}
+
+.customize-box-content{
+    position: absolute;
+}
+
 .settings-wrapper {
     margin-left: auto;
     position: relative;
@@ -7,15 +32,19 @@
 .settings-content {
     display: flex;
     background-color: white;
-    width: 25vw;
+    width: 20vw;
     height: 99vh;
     border-left: 2px solid #1501FE;
+}
+
+.hidden-content{
+    visibility: hidden;
 }
 
 .dropdown-wrapper {
     display: block;
     height: 96%;
-    width: 25vw;
+    width: 20vw;
 }
 
 .header-box {
@@ -24,6 +53,7 @@
     justify-content: flex-start;
     align-items: center;
     height: 8vh;
+    width: 100%;
 }
 
 .header-box-arrow {

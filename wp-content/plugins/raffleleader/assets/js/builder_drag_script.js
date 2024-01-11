@@ -51,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function centerBackground() {
         const viewportWidth = window.innerWidth;
-        console.log(viewportWidth);
         const viewportHeight = window.innerHeight;
         const backgroundWidth = viewportWidth * 1.5;  // Assuming 150% of the viewport
         const backgroundHeight = viewportHeight * 2;

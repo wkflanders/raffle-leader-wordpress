@@ -86,7 +86,7 @@
                                 <button class="select-template insta_temp" data-template-id="insta_temp">Select</button>
                             </div>
                         </div>
-                        <div class=grid-text>
+                        <div class="grid-text">
                             <h3>Instagram</h3>
                             <p>Your license key provides access to the plugin's features.</p>
                         </div>
@@ -118,25 +118,33 @@
         </div>
         <div id="setup" class="rl-tab-pane active-tab">
             <div class="rl-setup-wrapper">
-                <div class="customize-nav">
-                    <div class="customize-box active-box">
-                        <a class="customize-box-link details-link" href='#details'>Detials</a>
+                <div class="layout-wrapper">
+                    <div class="layout">
+                        <div class="header-box layout-header">
+                            <h2 class="header-box-title">Layout</h2>
+                        </div>
+                        <!-- <div class="">
+
+                        </div> -->
                     </div>
-                    <div class="customize-box">
-                        <a class="customize-box-link design-link" href='#design'>Design</a>
-                    </div>
-                    <div class="customize-box">
-                        <a class="customize-box-link settings-link" href='#settings'>Settings</a>
+                </div>  
+                <div id="previewWrapper" class="preview-wrapper">
+                    <div class="preview-box">
+                        <div class="header">Test</div>
                     </div>
                 </div>
-                <div id="details" class="customize-box-content active-box-content">
-                    details
-                </div>
-                <div id="design" class="customize-box-content">
-                    design
-                </div>
-                <div id="settings" class="customize-box-content">
-                    settings
+                <div class="settings-wrapper">
+                    <div class="settings-content hidden-content">
+                        <div id="details" class="customize-box-content hidden-box-content">
+                            <div class="dropdown-wrapper">
+                                <div class="header-box">
+                                    <div class="spacer"></div>
+                                    <h2 class="header-box-title">Details</h2>
+                                    <button class="dropdown-button"><i class="header-box-down header-box-arrow"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

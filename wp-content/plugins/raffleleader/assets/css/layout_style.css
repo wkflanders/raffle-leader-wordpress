@@ -1,0 +1,23 @@
+.layout-wrapper{
+    display: block;
+}
+
+.layout{
+    /* visibility: hidden; */
+    display: flex;
+    position: relative;
+    z-index: 80;
+    width: 15vw;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    border-right: 2px solid #1501FE;
+    border-bottom: 2px solid #1501FE;
+}
+
+.layout-header{
+    display: block;
+    text-align: center;
+}
+
+
+

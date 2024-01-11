@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+
+body {
+    overflow-y: hidden;
+}
+
+#setup {
+    position: relative;
+    z-index: 80;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Overpass', sans-serif;
+    /* background-color: rgb(233, 233, 233); */
+}
+
+.rl-setup-wrapper{
+    display: flex; 
+}
+
+.customize-box-content{
+    position: absolute;
+}
+
+.settings-wrapper {
+    margin-left: auto;
+    position: relative;
+    z-index: 100;
+}
+
+.settings-content {
+    display: flex;
+    background-color: white;
+    width: 20vw;
+    height: 99vh;
+    border-left: 2px solid #1501FE;
+}
+
+.hidden-content{
+    visibility: hidden;
+}
+
+.dropdown-wrapper {
+    display: block;
+    height: 96%;
+    width: 20vw;
+}
+
+.header-box {
+    display: flex;
+    border-bottom: 2px solid #1501FE;
+    justify-content: flex-start;
+    align-items: center;
+    height: 8vh;
+    width: 100%;
+}
+
+.header-box-arrow {
+    border: solid #1501FE;
+    border-width: 0 1.8px 1.8px 0;
+    display: inline-block;
+    padding: 6px;
+}
+
+.header-box-down {
+    transform: rotate(45deg);
+}
+
+.spacer{
+    flex: 0.6;
+    width: 10%;
+}
+
+.dropdown-button {
+    border: none;
+    background: white;
+    cursor: pointer;
+    padding: 0 1vw;
+    margin-left: auto;
+}
+
+.header-box-title {
+    text-align: center;
+    margin-top: 3.5vh;
+    font-size: 3vh;
+    color: #1501FE;
+    letter-spacing: 0.3vh;
+}

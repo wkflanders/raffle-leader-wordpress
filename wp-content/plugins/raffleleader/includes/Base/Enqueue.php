@@ -39,7 +39,12 @@ class Enqueue extends BaseController{
         wp_enqueue_style( 'raffleleader_wpadmin_cloak_style', $this->plugin_url . '/assets/css/wpadmin_cloak.css', array(), rand(111, 9999) );
         wp_enqueue_style( 'raffleleader_builder_navbar_style', $this->plugin_url . '/assets/css/builder_nav_style.css', array(), rand(111, 9999) );
         wp_enqueue_style( 'raffleleader_templates_style', $this->plugin_url . '/assets/css/templates_style.css', array(), rand(111, 9999) );
-        wp_enqueue_style( 'raffleleader_customize_nav_style', $this->plugin_url . '/assets/css/setup_customize_nav_style.css', array(), rand(111, 9999) );
+        wp_enqueue_style( 'raffleleader_settings_wrapper_style', $this->plugin_url . '/assets/css/setup_settings_wrapper_style.css', array(), rand(111, 9999) );
+        wp_enqueue_style( 'raffleleader_details_dropdown_style', $this->plugin_url . '/assets/css/details_dropdown_style.css', array(), rand(111, 9999) );
+        wp_enqueue_style( 'raffleleader_preview_default_style', $this->plugin_url . '/assets/css/preview_default_style.css', array(), rand(111, 9999) );
+        wp_enqueue_style( 'raffleleader_layout_style', $this->plugin_url . '/assets/css/layout_style.css', array(), rand(111, 9999) );
+
+        wp_enqueue_script( 'raffleleader_builder_drag_script', $this->plugin_url . '/assets/js/builder_drag_script.js', array(), rand(111, 9999) );
 
         wp_enqueue_script( 'raffleleader_builder_navbar_script', $this->plugin_url . '/assets/js/builder_nav_script.js', array(), rand(111, 9999) );
         
@@ -51,7 +56,6 @@ class Enqueue extends BaseController{
             'security' => wp_create_nonce( 'nonce' ),
          ) );
 
-         wp_enqueue_script( 'raffleleader_customize_nav_select_script', $this->plugin_url . '/assets/js/customize_nav_select_script.js', array(), rand(111, 9999) );
     }
 
     public function enqueueRaffleOverview(){

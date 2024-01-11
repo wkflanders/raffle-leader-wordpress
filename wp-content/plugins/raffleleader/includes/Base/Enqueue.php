@@ -50,7 +50,7 @@ class Enqueue extends BaseController{
         
         wp_enqueue_script( 'raffleleader_panel_select_script', $this->plugin_url . '/assets/js/panel_select_script.js', array(), rand(111, 9999) );
         
-        wp_enqueue_script( 'raffleleader_layout_script', $this->plugin_url . '/assets/js/layout_script.js', array(), rand(111, 9999) );
+        wp_enqueue_script( 'raffleleader_layout_drag_script', $this->plugin_url . '/assets/js/layout_drag_script.js', array(), rand(111, 9999) );
 
         wp_enqueue_script( 'raffleleader_template_select_script', $this->plugin_url . '/assets/js/template_select_script.js', array(), rand(111, 9999) );
         wp_localize_script( 'raffleleader_template_select_script', 'raffleleader_template_select_object', array( 

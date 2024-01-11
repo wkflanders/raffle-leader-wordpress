@@ -123,14 +123,28 @@
                         <div class="header-box layout-header">
                             <h2 class="header-box-title">Layout</h2>
                         </div>
-                        <!-- <div class="">
-
-                        </div> -->
+                        <div class="layout-options">
+                            <p>Drag & Drop to Add Sections to your Raffle!</p>
+                            <div id="headerBox" draggable="true" class="layout-option-box">
+                                <p>+ Header</p>
+                            </div>
+                            <div id="subheaderBox" draggable="true" class="layout-option-box">
+                                <p>+ Subheader</p>
+                            </div>
+                            <div id="bodyBox" draggable="true" class="layout-option-box">
+                                <p>+ Body Text</p>
+                            </div>
+                            <div id="formBox" draggable="true" class="layout-option-box">
+                                <p>+ Form</p>
+                            </div>
+                            <div id="counterBox" draggable="true" class="layout-option-box">
+                                <p>+ Counter</p>
+                            </div>
+                        </div>
                     </div>
                 </div>  
                 <div id="previewWrapper" class="preview-wrapper">
-                    <div class="preview-box">
-                        <div class="header">Test</div>
+                    <div id="preview" class="preview-box">
                     </div>
                 </div>
                 <div class="settings-wrapper">

@@ -5,9 +5,10 @@
 .layout{
     /* visibility: hidden; */
     display: flex;
+    flex-direction: column;
     position: relative;
     z-index: 80;
-    width: 15vw;
+    width: 18vw;
     height: 100vh;
     background-color: rgb(255, 255, 255);
     border-right: 2px solid #1501FE;
@@ -19,5 +20,30 @@
     text-align: center;
 }
 
+.layout-options{
+    display: flex;
+    flex-direction: column;
+}
 
+.layout-options > p{
+    color: gray;
+    text-align: center;
+}
+
+.layout-option-box{
+    border: 2px solid gray;
+    opacity: 0.999; /* Fix white square box around draggable */
+    width: auto;
+    border-radius: 15px;
+    margin-bottom: 1.5vw;
+    margin-left: 3vh;
+    margin-right: 3vh;
+}
+
+.layout-option-box > p{
+    color: black;
+    margin: 1vh 0 1vh 2vh;
+    font-weight: 900;
+    font-size: 2vh;
+}
 

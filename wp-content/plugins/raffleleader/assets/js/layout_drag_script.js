@@ -46,7 +46,15 @@ window.addEventListener('load', ()=>{
 
         const htmlToAppend = generateHTML(dragElement.id);
 
+        const currentlySelected = document.querySelector('.selected-section');
+
+        try{
+            currentlySelected.classList.remove('selected-section');
+        } catch {}
+
         const newElement = document.createElement('div');
+        newElement.classList.add('section');
+        newElement.classList.add('selected-section');
         newElement.innerHTML = htmlToAppend;
 
         if(closest.index === -1){

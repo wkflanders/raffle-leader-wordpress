@@ -1,6 +1,5 @@
 window.addEventListener('load', ()=>{
     const preview = document.getElementById('preview');
-    const parent = document.getElementById('setup');
     const boxes = document.querySelectorAll('.layout-option-box');
     let currentDragElement = null;
 

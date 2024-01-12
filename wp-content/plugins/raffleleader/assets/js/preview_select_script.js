@@ -1,5 +1,5 @@
 window.addEventListener("load", ()=>{
-    const preview = document.getElementById('preview');
+    const preview = document.getElementById('dropzone');
 
     preview.addEventListener('click', (event)=>{
 

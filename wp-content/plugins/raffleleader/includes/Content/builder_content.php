@@ -145,6 +145,14 @@
                 </div>  
                 <div id="previewWrapper" class="preview-wrapper">
                     <div id="preview" class="preview-box">
+                        <div id="dropzone"></div>
+                        <div class="footer-wrapper">
+                            <div class="footer">
+                                <a class="footer-content">Rules and Terms</a>
+                                <p>|</p>
+                                <a class="footer-content" target="_blank" href="https://raffleleader.com">Not Using RaffleLeader Yet?</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="settings-wrapper">

@@ -16,7 +16,7 @@
     min-height: 15vh;
     width: 55vh;
     background-color: white;
-    border: 2px solid black;
+    outline: 2px solid black;
     border-radius: 10px;
     overflow: auto;
 }
@@ -25,12 +25,8 @@
     flex-grow: 1;
 }
 
-.selected-section{
-    border: 2px solid black;
-}
-
 .footer-wrapper{
-    height: 8vh;
+    height: 7vh;
     width: 100%;
     border-top: 1px solid black;
     overflow: none;
@@ -53,4 +49,28 @@
     color:black;
     text-decoration: none;
     font-weight: bold;
+}
+
+.footer-content:hover{
+    color: black;
+}
+
+.rl_link:hover{
+    color: #1501FE;
+}
+
+.selected-section{
+    border: 3px solid #1501FE;
+}
+
+.header-section{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+.header-section > h2 {
+    color: white;
 }

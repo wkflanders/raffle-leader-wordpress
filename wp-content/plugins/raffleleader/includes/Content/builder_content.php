@@ -150,7 +150,7 @@
                             <div class="footer">
                                 <a class="footer-content">Rules and Terms</a>
                                 <p>|</p>
-                                <a class="footer-content" target="_blank" href="https://raffleleader.com">Not Using RaffleLeader Yet?</a>
+                                <a class="footer-content rl_link" target="_blank" href="https://raffleleader.com">Not Using RaffleLeader Yet?</a>
                             </div>
                         </div>
                     </div>

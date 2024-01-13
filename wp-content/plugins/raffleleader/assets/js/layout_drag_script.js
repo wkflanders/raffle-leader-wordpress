@@ -1,5 +1,5 @@
 window.addEventListener('load', ()=>{
-    const preview = document.getElementById('dropzone');
+    const dropzone = document.getElementById('dropzone');
     const boxes = document.querySelectorAll('.layout-option-box');
     let currentDragElement = null;
 
@@ -7,9 +7,9 @@ window.addEventListener('load', ()=>{
         boxes[i].addEventListener('dragstart', dragStart);
     }
 
-    preview.addEventListener('dragover', dragOver);
+    dropzone.addEventListener('dragover', dragOver);
 
-    preview.addEventListener('drop', drop);
+    dropzone.addEventListener('drop', drop);
 
     function dragStart(event){
         currentDragElement = event.target;
@@ -75,7 +75,9 @@ window.addEventListener('load', ()=>{
     function generateHTML(ID){
         switch(ID){
             case 'headerBox':
-                return '<p>Header</p>';
+                return `<div class="header-section">
+                            <h2>Header</h2>
+                        </div>`;
             case 'subheaderBox':
                 return '<p>Subheader</p>';
             case 'bodyBox':

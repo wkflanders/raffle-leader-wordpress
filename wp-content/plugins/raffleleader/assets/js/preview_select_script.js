@@ -1,20 +1,40 @@
 window.addEventListener("load", ()=>{
-    const preview = document.getElementById('dropzone');
+    const dropzone = document.getElementById('dropzone');
+    const preview = document.getElementById('preview');
 
-    preview.addEventListener('click', (event)=>{
+    preview.addEventListener('mousedown', (event)=>{
 
-        console.log('fired');
+        if(event.button === 0){
 
-        const selectedElement = event.target.parentNode;
+            console.log('fired');
+
+            let selectedElement = event.target;
+            const currentElement = document.querySelector('.selected-section');
+
+            while(selectedElement != dropzone){
+                if(selectedElement.classList.contains('section')){
+                    try{
+                        currentElement.classList.remove('selected-section');
+                    } catch {}
+                    selectedElement.classList.add('selected-section');
+                    break;
+                }
+                selectedElement = selectedElement.parentElement;
+            }
+        }
+    })
+
+    document.addEventListener("keydown", ({key}) => {
         const currentElement = document.querySelector('.selected-section');
 
-        console.log(selectedElement);
-
-        if(selectedElement.classList.contains('section')){
+        if(key === "Escape"){
             try{
                 currentElement.classList.remove('selected-section');
             } catch {}
-            selectedElement.classList.add('selected-section');
         }
     })
+
+    // For moving boxes around inside of preview
+
+
 })

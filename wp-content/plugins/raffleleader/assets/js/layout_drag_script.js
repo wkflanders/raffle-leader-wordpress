@@ -79,13 +79,19 @@ window.addEventListener('load', ()=>{
                             <h2>Header</h2>
                         </div>`;
             case 'subheaderBox':
-                return '<p>Subheader</p>';
+                return `<div class="subheader-section">
+                            <h4>Subheader</h4>
+                        </div>`;
             case 'bodyBox':
-                return '<p>Body</p>';
+                return `<div class="body-section">
+                            <p>Body Text</p>
+                        </div>`;
             case 'formBox':
                 return '<p>Form</p>';
             case 'counterBox':
                 return '<p>Counter</p>';
+            case 'imageBox':
+                return '<p>Image</p>';
         }
     }
 });

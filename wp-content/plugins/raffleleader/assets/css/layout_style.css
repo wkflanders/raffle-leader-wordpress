@@ -28,6 +28,7 @@
 .layout-options > p{
     color: gray;
     text-align: center;
+    font-size: 1.8vh;
 }
 
 .layout-option-box{

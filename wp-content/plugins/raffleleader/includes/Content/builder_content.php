@@ -140,6 +140,9 @@
                             <div id="counterBox" draggable="true" class="layout-option-box">
                                 <p>+ Counter</p>
                             </div>
+                            <div id="imageBox" draggable="true" class="layout-option-box">
+                                <p>+ Image Section</p>
+                            </div>
                         </div>
                     </div>
                 </div>  

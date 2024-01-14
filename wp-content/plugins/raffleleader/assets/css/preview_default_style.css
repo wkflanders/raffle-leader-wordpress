@@ -61,6 +61,7 @@
 
 .selected-section{
     border: 3px solid #1501FE;
+    background: white;
 }
 
 .header-section{
@@ -73,4 +74,34 @@
 
 .header-section > h2 {
     color: white;
+}
+
+.subheader-section{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+.subheader-section > h4 {
+    color: black;
+    font-weight: 900;
+    font-size: 2.1vh;
+}
+
+.body-section{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+.body-section > p {
+    color: black;
+    font-size: 1.75vh;
+}
+
+.dragging{
+    opacity: 0.3;
 }

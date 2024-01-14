@@ -6,8 +6,6 @@ window.addEventListener("load", ()=>{
 
         if(event.button === 0){
 
-            console.log('fired');
-
             let selectedElement = event.target;
             const currentElement = document.querySelector('.selected-section');
 
@@ -33,8 +31,4 @@ window.addEventListener("load", ()=>{
             } catch {}
         }
     })
-
-    // For moving boxes around inside of preview
-
-
 })

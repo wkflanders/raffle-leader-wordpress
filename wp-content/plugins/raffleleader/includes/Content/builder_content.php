@@ -117,7 +117,7 @@
             </div>
         </div>
         <div id="setup" class="rl-tab-pane active-tab">
-            <div class="rl-setup-wrapper">
+            <div id="setupWrapper" class="rl-setup-wrapper">
                 <div class="layout-wrapper">
                     <div class="layout">
                         <div class="header-box layout-header">

@@ -67,7 +67,7 @@
 .header-section{
     display: flex;
     justify-content: center;
-    height: 100%;
+    height: 8vh;
     width: 100%;
     background-color: black;
 }
@@ -79,7 +79,8 @@
 .subheader-section{
     display: flex;
     justify-content: center;
-    height: 100%;
+    align-items: center;
+    height: 7vh;
     width: 100%;
     border-bottom: 1px solid black;
 }
@@ -87,19 +88,35 @@
 .subheader-section > h4 {
     color: black;
     font-weight: 900;
-    font-size: 2.1vh;
+    font-size: 2.5vh;
 }
 
 .body-section{
     display: flex;
-    height: 100%;
+    align-items: center;
+    height: 8vh;
     width: 100%;
     border-bottom: 1px solid black;
 }
 
 .body-section > p {
     color: black;
-    font-size: 1.75vh;
+    font-size: 2vh;
+    letter-spacing: -0.05vh;
+}
+
+.image-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    border-bottom: 1px solid black;
+}
+
+.image-section > p{
+    font-size: 2.5vh;
+    color: darkgray;
+    font-weight: bold;
 }
 
 .dragging{

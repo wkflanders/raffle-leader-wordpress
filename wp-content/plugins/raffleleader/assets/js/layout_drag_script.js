@@ -91,7 +91,9 @@ window.addEventListener('load', ()=>{
             case 'counterBox':
                 return '<p>Counter</p>';
             case 'imageBox':
-                return '<p>Image</p>';
+                return `<div class="image-section">
+                            <p>Drag & Drop an Image Here</p>
+                        </div>`;
         }
     }
 });

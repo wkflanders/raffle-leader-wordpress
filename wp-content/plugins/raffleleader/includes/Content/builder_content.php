@@ -159,8 +159,8 @@
                     </div>
                 </div>
                 <div class="settings-wrapper">
-                    <div class="settings-content hidden-content">
-                        <div id="details" class="customize-box-content hidden-box-content">
+                    <div class="settings-content">
+                        <div id="details" class="customize-box-content">
                             <div class="dropdown-wrapper">
                                 <div class="header-box">
                                     <div class="spacer"></div>

@@ -19,6 +19,16 @@ window.addEventListener("load", ()=>{
                 }
                 selectedElement = selectedElement.parentElement;
             }
+
+            const editingElement = selectedElement.firstChild;
+            const elementType = editingElement.getAttribute('data-type');
+
+            switch(elementType){
+                case 'header':
+                    return;
+            }
+
+
         }
     })
 

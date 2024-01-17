@@ -46,15 +46,9 @@ window.addEventListener('load', ()=>{
 
         const htmlToAppend = generateHTML(dragElement.id);
 
-        const currentlySelected = document.querySelector('.selected-section');
-
-        try{
-            currentlySelected.classList.remove('selected-section');
-        } catch {}
-
         const newElement = document.createElement('div');
         newElement.classList.add('section');
-        newElement.classList.add('selected-section');
+        // newElement.classList.add('selected-section');
         newElement.innerHTML = htmlToAppend;
 
         if(closest.index === -1){
@@ -75,23 +69,27 @@ window.addEventListener('load', ()=>{
     function generateHTML(ID){
         switch(ID){
             case 'headerBox':
-                return `<div class="header-section">
+                return `<div data-type="header" class="header-section">
                             <h2>Header</h2>
                         </div>`;
             case 'subheaderBox':
-                return `<div class="subheader-section">
+                return `<div data-type="subheader" class="subheader-section">
                             <h4>Subheader</h4>
                         </div>`;
             case 'bodyBox':
-                return `<div class="body-section">
+                return `<div data-type="body" class="body-section">
                             <p>Body Text</p>
                         </div>`;
             case 'formBox':
-                return '<p>Form</p>';
+                return `<div data-type="form" class="form-section">
+                            <p>Form</p>
+                        </div>`;
             case 'counterBox':
-                return '<p>Counter</p>';
+                return `<div data-type="counter" class="counter-section">
+                            <p>Counter</p>
+                        </div>`;
             case 'imageBox':
-                return `<div class="image-section">
+                return `<div data-type="image" class="image-section">
                             <p>Drag & Drop an Image Here</p>
                         </div>`;
         }

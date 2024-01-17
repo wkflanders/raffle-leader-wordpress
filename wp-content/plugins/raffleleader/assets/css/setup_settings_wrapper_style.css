@@ -28,10 +28,19 @@ body {
     margin-left: auto;
     position: relative;
     z-index: 100;
+    left: 100%;
+    transition: all 0.7s ease;
+}
+
+.slide-right-to-left{
+    left: 0%;
+}
+
+.slide-top-to-bottom{
+    
 }
 
 .settings-content {
-    display: flex;
     background-color: white;
     width: 25vw;
     height: 99vh;

@@ -1,6 +1,7 @@
 window.addEventListener("load", ()=>{
     const dropzone = document.getElementById('dropzone');
     const preview = document.getElementById('preview');
+    const customizeBox = document.getElementById('settingsWrapper')
 
     preview.addEventListener('mousedown', (event)=>{
 
@@ -20,17 +21,27 @@ window.addEventListener("load", ()=>{
                 selectedElement = selectedElement.parentElement;
             }
 
-            const editingElement = selectedElement.firstChild;
-            const elementType = editingElement.getAttribute('data-type');
+            selectedElement = selectedElement.firstChild;
+            const elementType = selectedElement.getAttribute('data-type');
 
-            switch(elementType){
-                case 'header':
-                    return;
-            }
-
-
+            openEditingBox(elementType);
         }
     })
+
+    function openEditingBox(elementType){
+        const editingElement = document.getElementById(elementType);
+
+        if(!customizeBox.classList.contains('slide-right-to-left')){
+            customizeBox.classList.toggle('slide-right-to-left');
+            let alreadyOpen = true;
+        }
+
+        switch(elementType){
+            case 'headerDetails':
+                
+        }
+
+    }
 
     document.addEventListener("keydown", ({key}) => {
         const currentElement = document.querySelector('.selected-section');
@@ -38,6 +49,9 @@ window.addEventListener("load", ()=>{
         if(key === "Escape"){
             try{
                 currentElement.classList.remove('selected-section');
+                if(customizeBox.classList.contains('slide-right-to-left')){
+                    customizeBox.classList.toggle('slide-right-to-left');
+                }
             } catch {}
         }
     })

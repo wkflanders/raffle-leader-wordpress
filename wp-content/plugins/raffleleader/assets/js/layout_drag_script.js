@@ -69,27 +69,27 @@ window.addEventListener('load', ()=>{
     function generateHTML(ID){
         switch(ID){
             case 'headerBox':
-                return `<div data-type="header" class="header-section">
+                return `<div data-type="headerDetails" class="header-section">
                             <h2>Header</h2>
                         </div>`;
             case 'subheaderBox':
-                return `<div data-type="subheader" class="subheader-section">
+                return `<div data-type="subheaderDetails" class="subheader-section">
                             <h4>Subheader</h4>
                         </div>`;
             case 'bodyBox':
-                return `<div data-type="body" class="body-section">
+                return `<div data-type="bodyDetails" class="body-section">
                             <p>Body Text</p>
                         </div>`;
             case 'formBox':
-                return `<div data-type="form" class="form-section">
+                return `<div data-type="formDetails" class="form-section">
                             <p>Form</p>
                         </div>`;
             case 'counterBox':
-                return `<div data-type="counter" class="counter-section">
+                return `<div data-type="counterDetails" class="counter-section">
                             <p>Counter</p>
                         </div>`;
             case 'imageBox':
-                return `<div data-type="image" class="image-section">
+                return `<div data-type="imageDetails" class="image-section">
                             <p>Drag & Drop an Image Here</p>
                         </div>`;
         }

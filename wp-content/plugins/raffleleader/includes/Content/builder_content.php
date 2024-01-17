@@ -158,9 +158,54 @@
                         </div>
                     </div>
                 </div>
-                <div class="settings-wrapper">
+                <div id="settingsWrapper" class="settings-wrapper hidden-customize">
                     <div class="settings-content">
-                        <div id="details" class="customize-box-content">
+                        <div id="headerDetails" class="customize-box-content hidden-customize">
+                            <div class="dropdown-wrapper">
+                                <div class="header-box">
+                                    <div class="spacer"></div>
+                                    <h2 class="header-box-title">Details</h2>
+                                    <button class="dropdown-button"><i class="header-box-down header-box-arrow"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="subheaderDetails" class="customize-box-content hidden-customize">
+                            <div class="dropdown-wrapper">
+                                <div class="header-box">
+                                    <div class="spacer"></div>
+                                    <h2 class="header-box-title">Details</h2>
+                                    <button class="dropdown-button"><i class="header-box-down header-box-arrow"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="bodyDetails" class="customize-box-content hidden-customize">
+                            <div class="dropdown-wrapper">
+                                <div class="header-box">
+                                    <div class="spacer"></div>
+                                    <h2 class="header-box-title">Details</h2>
+                                    <button class="dropdown-button"><i class="header-box-down header-box-arrow"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="formDetails" class="customize-box-content hidden-customize">
+                            <div class="dropdown-wrapper">
+                                <div class="header-box">
+                                    <div class="spacer"></div>
+                                    <h2 class="header-box-title">Details</h2>
+                                    <button class="dropdown-button"><i class="header-box-down header-box-arrow"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="counterDetails" class="customize-box-content hidden-customize">
+                            <div class="dropdown-wrapper">
+                                <div class="header-box">
+                                    <div class="spacer"></div>
+                                    <h2 class="header-box-title">Details</h2>
+                                    <button class="dropdown-button"><i class="header-box-down header-box-arrow"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="imageDetails" class="customize-box-content hidden-customize">
                             <div class="dropdown-wrapper">
                                 <div class="header-box">
                                     <div class="spacer"></div>

@@ -90,6 +90,29 @@ input[type="text"]::placeholder{
     color: rgb(164, 164, 164);
 }
 
+.dropdown-align{
+    border: none;
+    margin-left: 2vw;
+    padding-right: 0;
+    width: 17vw;
+}
+
+.align-btn{
+    height: 3vh;
+    background-color: rgb(243, 243, 243);
+    padding: 1vh 1vh 1vh 1vh;
+    border-radius: 10px;
+}
+
+.align-btn:hover{
+    background-color: rgb(217, 217, 217);
+    cursor: pointer;
+}
+
+.align-btn:active{
+    background-color: rgb(243, 243, 243);
+}
+
 /* ******************************************** */
 
 

@@ -57,7 +57,7 @@ class BuilderController extends BaseController{
         check_ajax_referer( 'nonce', 'security' );
 
         $post_id = isset( $_POST['post_id'] ) ? intval( $_POST['post_id'] ) : 0;
-        $template_id = isset($_POST['template_id']) ? sanitize_text_field( $_POST['template_id'] ) : '';
+        $template_id = isset( $_POST['template_id']) ? sanitize_text_field( $_POST['template_id'] ) : '';
 
         if( $post_id && $template_id ){
             update_post_meta( $post_id, '_raffle_template', $template_id );

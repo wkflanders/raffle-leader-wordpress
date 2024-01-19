@@ -161,11 +161,43 @@
                 <div id="settingsWrapper" class="settings-wrapper">
                     <div class="settings-content">
                         <div id="headerDetails" class="customize-box-content">
-                            <div class="dropdown-wrapper">
+                            <div class="dropdown-wrapper text-design">
                                 <div class="header-box">
                                     <div class="spacer"></div>
                                     <h2 class="header-box-title">Text Design</h2>
                                     <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Header Text</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-text">
+                                            <form>
+                                                <input id="headerTextForm" class="text-input" data-type="headerText" type="text" placeholder="Enter Header Text">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Header Text Alignment</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display">
+                                            <p>Overview (Bold)</p>
+                                            <p class="dropdown-btn">▼</p>
+                                        </div>
+                                        <div class="dropdown-content">
+                                            <ul>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="customize-settings-box">
                                     <p>Header Text Font</p>
@@ -184,7 +216,186 @@
                                                 <li>Inter</li>
                                                 <li>Overpass</li>
                                                 <li>Inter</li>
-                                                
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Header Font Color</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display">
+                                            <p>Overview (Bold)</p>
+                                            <p class="dropdown-btn">▼</p>
+                                        </div>
+                                        <div class="dropdown-content">
+                                            <ul>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Header Font Size</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display">
+                                            <p>Overview (Bold)</p>
+                                            <p class="dropdown-btn">▼</p>
+                                        </div>
+                                        <div class="dropdown-content">
+                                            <ul>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Header Font Weight </p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display">
+                                            <p>Overview (Bold)</p>
+                                            <p class="dropdown-btn">▼</p>
+                                        </div>
+                                        <div class="dropdown-content">
+                                            <ul>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Header Background Color</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display">
+                                            <p>Overview (Bold)</p>
+                                            <p class="dropdown-btn">▼</p>
+                                        </div>
+                                        <div class="dropdown-content">
+                                            <ul>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-wrapper section-design">
+                                <div class="header-box">
+                                    <div class="spacer"></div>
+                                    <h2 class="header-box-title">Section Design</h2>
+                                    <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Header Height</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display">
+                                            <p>Overview (Bold)</p>
+                                            <p class="dropdown-btn">▼</p>
+                                        </div>
+                                        <div class="dropdown-content">
+                                            <ul>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Header Width</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display">
+                                            <p>Overview (Bold)</p>
+                                            <p class="dropdown-btn">▼</p>
+                                        </div>
+                                        <div class="dropdown-content">
+                                            <ul>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Border Stroke</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display">
+                                            <p>Overview (Bold)</p>
+                                            <p class="dropdown-btn">▼</p>
+                                        </div>
+                                        <div class="dropdown-content">
+                                            <ul>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Border Color</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display">
+                                            <p>Overview (Bold)</p>
+                                            <p class="dropdown-btn">▼</p>
+                                        </div>
+                                        <div class="dropdown-content">
+                                            <ul>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
                                             </ul>
                                         </div>
                                     </div>

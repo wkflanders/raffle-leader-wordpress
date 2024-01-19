@@ -7,22 +7,24 @@ window.addEventListener("load", ()=>{
 
         if(event.button === 0){
 
-            let selectedElement = event.target;
-            const currentElement = document.querySelector('.selected-section');
+            let selectedSection = event.target;
+            const currentSection = document.querySelector('.selected-section');
 
-            while(selectedElement != dropzone){
-                if(selectedElement.classList.contains('section')){
+            while(selectedSection != dropzone){
+                if(selectedSection.classList.contains('section')){
                     try{
-                        currentElement.classList.remove('selected-section');
+                        currentSection.classList.remove('selected-section');
                     } catch {}
-                    selectedElement.classList.add('selected-section');
+                    selectedSection.classList.add('selected-section');
                     break;
                 }
-                selectedElement = selectedElement.parentElement;
+                selectedSection = selectedSection.parentElement;
             }
 
-            selectedElement = selectedElement.firstChild;
+            const selectedElement = selectedSection.firstChild;
             const elementType = selectedElement.getAttribute('data-type');
+
+            loadCustomizeSettings(selectedElement, elementType);
 
             openEditingBox(elementType);
         }
@@ -42,6 +44,17 @@ window.addEventListener("load", ()=>{
             editingElement.classList.add('visible-customize');
         } else {
             editingElement.classList.add('visible-customize');
+        }
+    }
+
+    function loadCustomizeSettings(element, elementType){
+        switch(elementType){
+            case 'headerDetails':
+                // Load header settings
+                const headerTextForm = document.getElementById('headerTextForm');
+                const headerTextElement = element.querySelector('h2');
+                const headerText = headerTextElement.textContent;
+                headerTextForm.value = headerText;
         }
     }
 

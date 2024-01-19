@@ -40,7 +40,6 @@ class Enqueue extends BaseController{
         wp_enqueue_style( 'raffleleader_builder_navbar_style', $this->plugin_url . '/assets/css/builder_nav_style.css', array(), rand(111, 9999) );
         wp_enqueue_style( 'raffleleader_templates_style', $this->plugin_url . '/assets/css/templates_style.css', array(), rand(111, 9999) );
         wp_enqueue_style( 'raffleleader_settings_wrapper_style', $this->plugin_url . '/assets/css/setup_settings_wrapper_style.css', array(), rand(111, 9999) );
-        wp_enqueue_style( 'raffleleader_details_dropdown_style', $this->plugin_url . '/assets/css/details_dropdown_style.css', array(), rand(111, 9999) );
         wp_enqueue_style( 'raffleleader_preview_default_style', $this->plugin_url . '/assets/css/preview_default_style.css', array(), rand(111, 9999) );
         wp_enqueue_style( 'raffleleader_layout_style', $this->plugin_url . '/assets/css/layout_style.css', array(), rand(111, 9999) );
         wp_enqueue_style( 'raffleleader_customize_settings_style', $this->plugin_url . '/assets/css/customize_settings_style.css', array(), rand(111, 9999) );

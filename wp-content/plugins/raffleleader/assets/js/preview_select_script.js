@@ -33,14 +33,16 @@ window.addEventListener("load", ()=>{
 
         if(!customizeBox.classList.contains('slide-right-to-left')){
             customizeBox.classList.toggle('slide-right-to-left');
-            let alreadyOpen = true;
         }
-
-        switch(elementType){
-            case 'headerDetails':
-                
+        
+        const currentEditingElement = document.querySelector('.visible-customize')
+        
+        if(currentEditingElement && currentEditingElement != editingElement){
+            currentEditingElement.classList.remove('visible-customize');
+            editingElement.classList.add('visible-customize');
+        } else {
+            editingElement.classList.add('visible-customize');
         }
-
     }
 
     document.addEventListener("keydown", ({key}) => {

@@ -21,6 +21,7 @@ body {
 }
 
 .customize-box-content{
+    display: none;
     width: 100%;
 }
 
@@ -29,7 +30,7 @@ body {
     position: relative;
     z-index: 100;
     left: 100%;
-    transition: all 0.7s ease;
+    transition: all 0.5s ease;
 }
 
 .slide-right-to-left{
@@ -37,7 +38,11 @@ body {
 }
 
 .slide-top-to-bottom{
-    
+    bottom: 0%;
+}
+
+.visible-customize{
+    display: block;
 }
 
 .settings-content {
@@ -78,7 +83,7 @@ body {
     width: 10%;
 }
 
-.dropdown-button {
+.header-dropdown {
     border: none;
     background: white;
     cursor: pointer;

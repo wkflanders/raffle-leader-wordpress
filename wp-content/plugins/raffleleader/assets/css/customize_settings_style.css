@@ -1,0 +1,88 @@
+.customize-settings-box{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: left;
+}
+
+.customize-settings-box > p{
+    font-weight: bold;
+    color: gray;
+    margin-bottom: 0.5vh;
+    margin-left: 5vw;
+}
+
+.dropdown-display{
+    height: 5vh;
+    width: 15vw;
+    margin-left: 4vw;
+    padding: 0.2vh 2vh 0 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+}
+
+.dropdown-display > p{
+    margin: 0;
+    font-size: 2.6vh;
+}
+
+.dropdown-btn{
+    color: rgb(215, 215, 215);
+    cursor: pointer;
+}
+
+.dropdown-btn:hover{
+    color: rgb(188, 188, 188);
+}
+
+.dropdown-btn:active{
+    color: rgb(215, 215, 215);
+}
+
+.dropdown-content{
+    width: 14vw;
+    margin-left: 4.5vw;
+    margin-right: 5vw;
+    padding: 0 2vh 0 2vh;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: auto;
+    max-height: 0;
+    border-color: black;
+    border-style: solid;
+    border-width: 0;
+    transition: max-height 0.5s ease-out, border-width 0.5s ease;
+}
+
+.dropdown-content > ul{
+    margin-top: 1vh;
+}
+
+.show-dropdown{
+    max-height: 15vh;
+    border-width: 1px;
+    border-top: 0;
+}
+
+
+/* ******************************************** */
+
+
+::-webkit-scrollbar {
+    width: 1.2vh; /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(196, 196, 196, 0.493); /* color of the scroll thumb */
+    border-radius: 6px; /* roundness of the scroll thumb */
+    border: 3px solid transparent; /* creates padding around scroll thumb */
+}

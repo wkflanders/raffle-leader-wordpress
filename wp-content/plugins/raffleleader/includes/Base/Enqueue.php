@@ -43,6 +43,7 @@ class Enqueue extends BaseController{
         wp_enqueue_style( 'raffleleader_details_dropdown_style', $this->plugin_url . '/assets/css/details_dropdown_style.css', array(), rand(111, 9999) );
         wp_enqueue_style( 'raffleleader_preview_default_style', $this->plugin_url . '/assets/css/preview_default_style.css', array(), rand(111, 9999) );
         wp_enqueue_style( 'raffleleader_layout_style', $this->plugin_url . '/assets/css/layout_style.css', array(), rand(111, 9999) );
+        wp_enqueue_style( 'raffleleader_customize_settings_style', $this->plugin_url . '/assets/css/customize_settings_style.css', array(), rand(111, 9999) );
 
         wp_enqueue_script( 'raffleleader_builder_drag_script', $this->plugin_url . '/assets/js/builder_drag_script.js', array(), rand(111, 9999) );
 
@@ -58,7 +59,7 @@ class Enqueue extends BaseController{
         
         wp_enqueue_script( 'raffleleader_preview_zoom_script', $this->plugin_url . '/assets/js/preview_zoom_script.js', array(), rand(111, 9999) );
 
-        wp_enqueue_script( 'raffleleader_customize_slide_script', $this->plugin_url . '/assets/js/customize_slide_script.js', array(), rand(111, 9999) );
+        wp_enqueue_script( 'raffleleader_customize_settings_script', $this->plugin_url . '/assets/js/customize_settings_script.js', array(), rand(111, 9999) );
 
         wp_enqueue_script( 'raffleleader_template_select_script', $this->plugin_url . '/assets/js/template_select_script.js', array(), rand(111, 9999) );
         wp_localize_script( 'raffleleader_template_select_script', 'raffleleader_template_select_object', array( 

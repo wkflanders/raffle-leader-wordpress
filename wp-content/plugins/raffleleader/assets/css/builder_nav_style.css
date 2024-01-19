@@ -96,7 +96,7 @@
 .close {
     position: absolute;
     right: 32px;
-    top: 36px;
+    top: 34px;
     width: 32px;
     height: 32px;
     opacity: 0.3;
@@ -121,4 +121,50 @@
   
 .close:after {
     transform: rotate(-45deg);
+}
+
+.save-btn{
+    position: absolute;
+    right: 160px;
+    top: 26px;
+    border: 0;
+    background-color:#1501FE;
+    border-radius: 10px;
+    color: white;
+    font-size: 2.2vh;
+    padding: 0.7rem 3rem 0.8rem 3rem;
+    font-family: "Inter";
+}
+
+.save-btn:hover{
+    background-color:#1200dd; 
+    color: rgb(226, 226, 226);
+    cursor: pointer;
+}
+
+.save-btn:active{
+    background-color:#1501FE;
+    color: white;
+}
+
+.help{
+    position: absolute;
+    right: 90px;
+    top: 38px;
+    color:#1501FE;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 2vh;
+    font-family: "Inter";
+    box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+
+.help:hover{
+    color:#0c0090; 
+}
+
+.help:active{
+    outline: none !important;
 }

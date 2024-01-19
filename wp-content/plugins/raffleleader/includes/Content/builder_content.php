@@ -10,6 +10,8 @@
         </ul>
         <ul class="rl-nav-extras">
             <li><a class="close" href="admin.php?page=raffleleader_plugin"></a></li>
+            <li><a class="help" href="">? Help</a></li>
+            <button class="save-btn">Save</button>
         </ul>
     </nav>
     <div class="rl-tab-content">
@@ -180,22 +182,10 @@
                                 <div class="customize-settings-box">
                                     <p>Header Text Alignment</p>
                                     <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display">
-                                            <p>Overview (Bold)</p>
-                                            <p class="dropdown-btn">▼</p>
-                                        </div>
-                                        <div class="dropdown-content">
-                                            <ul>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-
-                                            </ul>
+                                        <div class="dropdown-display dropdown-align">
+                                            <img class="align-btn align-left" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left-text-align.png">
+                                            <img class="align-btn align-center" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/center-text-align.png">
+                                            <img class="align-btn align-right" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right-text-align.png">
                                         </div>
                                     </div>
                                 </div>

@@ -193,20 +193,13 @@
                                     <p>Header Text Font</p>
                                     <div class="customize-settings-dropdown">
                                         <div class="dropdown-display">
-                                            <p>Overview (Bold)</p>
+                                            <p>Overview</p>
                                             <p class="dropdown-btn">▼</p>
                                         </div>
                                         <div class="dropdown-content">
                                             <ul>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-
+                                                <li class="font-title selected-font">Overpass</li>
+                                                <li class="font-title">Inter</li>
                                             </ul>
                                         </div>
                                     </div>

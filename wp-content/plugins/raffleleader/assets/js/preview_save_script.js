@@ -7,15 +7,11 @@ window.addEventListener('load', ()=>{
 
     function btnSavePreview(){
         const preview = document.getElementById('preview');
-        try{
-            let selectedElement = document.querySelector('.selected-section');
-            selectedElement.classList.remove('selected-section');
-        } catch {}
+        let selectedElement = document.querySelector('.selected-section');
+        selectedElement.classList.remove('selected-section');
         const previewContent = preview.innerHTML;
         savePreview(postID, previewContent);
-        try{    
-            selectedElement.classList.add('selected-section');
-        } catch {}
+        selectedElement.classList.add('selected-section'); // Need to fix saving when not selecting
     }
 });
 

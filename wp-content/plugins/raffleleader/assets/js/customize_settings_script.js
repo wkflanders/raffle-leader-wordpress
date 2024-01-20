@@ -4,6 +4,7 @@ window.addEventListener('load', ()=>{
     const leftAlignBtns = document.querySelectorAll('.align-left');
     const rightAlignBtns = document.querySelectorAll('.align-right');
     const centerAlignBtns = document.querySelectorAll('.align-center');
+    const fonts = document.querySelectorAll('.font-title');
 
     dropDownBtns.forEach((dropDownBtn)=>{
         dropDownBtn.addEventListener('click', openDropDown);
@@ -25,6 +26,10 @@ window.addEventListener('load', ()=>{
         leftAlignBtn.addEventListener('click', alignTextRight);
     });
 
+    fonts.forEach((font)=>{
+        font.addEventListener('click', selectFont);
+    })
+
     function openDropDown(event){
         const dropDownBtn = event.target;
         const parentDropDown = dropDownBtn.parentNode.parentNode;
@@ -36,7 +41,7 @@ window.addEventListener('load', ()=>{
     function editPreviewText(event){
         const inputTextForm = event.target;
         const elementType = inputTextForm.getAttribute('data-type');
-        const selectedSection = document.querySelector('.selected-section').firstChild;
+        const selectedSection = document.querySelector('.selected-section');
 
         switch(elementType){
             case 'headerText':
@@ -45,24 +50,35 @@ window.addEventListener('load', ()=>{
         }
     }
 
-    function alignTextLeft(event){
-        const leftTextBtn = event.target;
-        const elementType = leftTextBtn.getAttribute('data-type');
+    function alignTextLeft(){
         const selectedSection = document.querySelector('.selected-section').firstChild;
         selectedSection.style.justifyContent = 'left';
     }
 
-    function alignTextRight(event){
-        const rightTxtBtn = event.target;
-        const elementType = rightTxtBtn.getAttribute('data-type');
+    function alignTextRight(){
         const selectedSection = document.querySelector('.selected-section').firstChild;
         selectedSection.style.justifyContent = 'right';
     }
 
-    function alignTextCenter(event){
-        const centerTxtBtn = event.target;
-        const elementType = centerTxtBtn.getAttribute('data-type');
+    function alignTextCenter(){
         const selectedSection = document.querySelector('.selected-section').firstChild;
         selectedSection.style.justifyContent = 'center';
+    }
+
+    function selectFont(event){
+        const inputFontElement = event.target;
+        const fontName = inputFontElement.innerText;
+        const elementType = inputFontElement.getAttribute('data-type');
+        const selectedSection = document.querySelector('.selected-section');
+
+        switch(elementType){
+            case 'headerText':
+                const selectedElement = selectedSection.querySelector('h2');
+                selectedElement.style.fontFamily = `${fontName}`;
+        }
+
+        const currentFont = document.querySelector('.selected-font');
+        inputFontElement.classList.add('selected-font');
+        currentFont.classList.remove('selected-font');
     }
 })

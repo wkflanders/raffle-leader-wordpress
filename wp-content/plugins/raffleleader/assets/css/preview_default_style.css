@@ -121,6 +121,30 @@
     font-weight: bold;
 }
 
+.font-title{
+    font-size: 2vh;
+    color: black;
+}
+
+.font-title:hover{
+    cursor: pointer;
+    color: rgb(128, 128, 128);
+}
+
+.font-title:active{
+    color: black;
+}
+
+.selected-font{
+    font-weight: 900;
+    color: #1501FE;
+}
+
+.selected-font:hover{
+    cursor: default;
+    color: #1501FE;
+}
+
 .dragging{
     opacity: 1;
 }

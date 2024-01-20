@@ -1,4 +1,4 @@
-window.addEventListener('load', ()=>{
+document.addEventListener('previewLoaded', ()=>{
     const saveBtn = document.querySelector('.save-btn');
     const urlParams = new URLSearchParams(window.location.search);
     const postID = urlParams.get('post_id');

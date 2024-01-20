@@ -1,4 +1,4 @@
-window.addEventListener("load", ()=>{
+document.addEventListener("previewLoaded", ()=>{
     const dropzone = document.getElementById('dropzone');
     const preview = document.getElementById('preview');
     const customizeBox = document.getElementById('settingsWrapper')

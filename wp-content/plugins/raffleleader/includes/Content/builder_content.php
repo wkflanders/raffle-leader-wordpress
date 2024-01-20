@@ -198,8 +198,10 @@
                                         </div>
                                         <div class="dropdown-content">
                                             <ul>
-                                                <li class="font-title selected-font">Overpass</li>
-                                                <li class="font-title">Inter</li>
+                                                <!-- Need to add more fonts -->
+                                                <li class="font-title selected-font" data-type="headerText">Overpass</li>
+                                                <li class="font-title" data-type="headerText">Inter</li>
+                                                <li class="font-title" data-type="headerText">Courier New</li>
                                             </ul>
                                         </div>
                                     </div>

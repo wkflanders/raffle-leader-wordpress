@@ -1,8 +1,15 @@
-window.addEventListener('load', ()=>{
+document.addEventListener('previewLoaded', ()=>{
     const dropzone = document.getElementById('dropzone');
 
     dropzone.addEventListener('dragover', handleDragOver);
     dropzone.addEventListener('drop', handleDrop);
+
+     // Initial elements loaded in
+
+     const sections = document.querySelectorAll('.section');
+     sections.forEach((section)=>{
+        makeElementDraggable(section);
+     })
     
     // Mutation observer for dropzone container
 

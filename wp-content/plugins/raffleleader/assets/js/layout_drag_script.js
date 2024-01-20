@@ -1,4 +1,4 @@
-window.addEventListener('load', ()=>{
+document.addEventListener('previewLoaded', ()=>{
     const dropzone = document.getElementById('dropzone');
     const boxes = document.querySelectorAll('.layout-option-box');
     let currentDragElement = null;

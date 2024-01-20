@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
         .then(data => console.log(data))
         .catch(error => console.error('Error:', error));
 
-        console.log(templateBox);
         if(currentTemplate){
             currentTemplate.classList.remove('chosen-template');
             templateBox.classList.add('chosen-template');

@@ -10,6 +10,10 @@ window.addEventListener("load", ()=>{
             let selectedSection = event.target;
             const currentSection = document.querySelector('.selected-section');
 
+            if(selectedSection.classList.contains('footer') || selectedSection.classList.contains('footer-wrapper') || selectedSection.classList.contains('footer-content')){
+                return;
+            }
+
             while(selectedSection != dropzone){
                 if(selectedSection.classList.contains('section')){
                     try{

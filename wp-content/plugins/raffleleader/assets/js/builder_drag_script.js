@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('previewLoaded', () => {
     const container = document.getElementById('previewWrapper');
     let isDragging = false;
     let lastX, lastY;

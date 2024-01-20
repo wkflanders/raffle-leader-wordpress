@@ -16,6 +16,8 @@ class BuilderController extends BaseController{
 
     public $subpages = array();
 
+    public $allowed_html = array();
+
     public function register(){
         
         $this->builderCallbacks = new BuilderCallbacks();
@@ -24,11 +26,43 @@ class BuilderController extends BaseController{
 
         $this->setSubpages();
 
+        $this->allowed_html = array(
+            'a' => array(
+                'href' => true,
+                'title' => true,
+                'class' => true,
+                'id' => true,
+                'style' => true,
+                'target' => true,
+            ),
+            'div' => array(
+                'class' => true,
+                'id' => true,
+                'style' => true,
+                'data-type' => true,
+            ),
+            'p' => array(
+                'class' => true,
+                'id' => true,
+                'style' => true
+            ),
+            'h4' => array(
+                'class' => true,
+                'id' => true,
+                'style' => true,
+            ),
+            'h2' => array(
+                'class' => true,
+                'id' => true,
+                'style' => true,
+            )
+        );
+
         $this->settings->addSubPages( $this->subpages )->register();
 
         add_action( 'wp_ajax_saveTemplate', array( $this, 'saveTemplate' ) );
         add_action( 'wp_ajax_loadBuilderData', array( $this, 'loadBuilderData' ) );
-
+        add_action( 'wp_ajax_savePreview', array( $this, 'savePreview' ) );
     }
 
     public function setSubpages(){
@@ -65,6 +99,22 @@ class BuilderController extends BaseController{
         } else {
             wp_send_json_error( 'Failed to save template choice' );
         }
+        wp_die();
+    }
+
+    public function savePreview(){
+        check_ajax_referer( 'nonce', 'security' );
+
+        $post_id = isset( $_POST['post_id'] ) ? intval( $_POST['post_id'] ) : 0;
+        $content = isset( $_POST['content'] ) ? wp_kses( $_POST['content'], $this->allowed_html ) : '';
+
+        if( $post_id && $content ){
+            update_post_meta( $post_id, '_raffle_content', $content );
+            wp_send_json_success( 'Preview saved successfully' );
+        } else {
+            wp_send_json_error( 'Failed to save preview content' );
+        }
+        wp_die();
     }
 
     public function loadBuilderData(){
@@ -72,8 +122,10 @@ class BuilderController extends BaseController{
 
         if( $post_id ){
             $template = get_post_meta( $post_id, '_raffle_template', true );
+            $previewContent = get_post_meta( $post_id, '_raffle_content', true );
             $data = array(
                 'template' => $template,
+                'content' => $previewContent,
             );
             wp_send_json($data);
         } else {

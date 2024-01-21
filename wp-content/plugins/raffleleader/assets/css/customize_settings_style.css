@@ -97,19 +97,19 @@ input[type="text"]::placeholder{
     width: 17vw;
 }
 
-.align-btn{
+.inline-btn{
     height: 3vh;
     background-color: rgb(243, 243, 243);
     padding: 1vh 1vh 1vh 1vh;
     border-radius: 10px;
 }
 
-.align-btn:hover{
+.inline-btn:hover{
     background-color: rgb(217, 217, 217);
     cursor: pointer;
 }
 
-.align-btn:active{
+.inline-btn:active{
     background-color: rgb(243, 243, 243);
 }
 

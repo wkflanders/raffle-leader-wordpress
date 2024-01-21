@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
             preview.innerHTML = HTMLContent;
 
             document.dispatchEvent(loadPreviewEvent);
+        } else{
+            document.dispatchEvent(loadPreviewEvent);
         }
     })
     .catch(error => console.error('Error:', error));

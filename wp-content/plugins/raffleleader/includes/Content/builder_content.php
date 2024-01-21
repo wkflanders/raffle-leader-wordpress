@@ -181,9 +181,9 @@
                                     <p>Header Text Alignment</p>
                                     <div class="customize-settings-dropdown">
                                         <div class="dropdown-display dropdown-align">
-                                            <img class="align-btn align-left" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left-text-align.png">
-                                            <img class="align-btn align-center" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/center-text-align.png">
-                                            <img class="align-btn align-right" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right-text-align.png">
+                                            <img class="inline-btn align-left" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left-text-align.png">
+                                            <img class="inline-btn align-center" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/center-text-align.png">
+                                            <img class="inline-btn align-right" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right-text-align.png">
                                         </div>
                                     </div>
                                 </div>
@@ -223,24 +223,14 @@
                                     </div>
                                 </div>
                                 <div class="customize-settings-box">
-                                    <p>Header Font Weight </p>
+                                    <p>Header Font Style </p>
                                     <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display">
-                                            <p>Overview (Bold)</p>
-                                            <p class="dropdown-btn">▼</p>
-                                        </div>
-                                        <div class="dropdown-content">
-                                            <ul>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-
-                                            </ul>
+                                        <div class="dropdown-display dropdown-align">
+                                            <img class="inline-btn bold" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                                            <img class="inline-btn italicize" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                                            <img class="inline-btn underline" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                                            <img class="inline-btn strike" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                                            <img class="inline-btn overline" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
                                         </div>
                                     </div>
                                 </div>

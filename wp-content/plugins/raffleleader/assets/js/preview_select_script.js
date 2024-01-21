@@ -54,12 +54,47 @@ document.addEventListener("previewLoaded", ()=>{
     function loadCustomizeSettings(element, elementType){
         switch(elementType){
             case 'headerDetails':
-                // Load header settings
-                const headerTextForm = document.getElementById('headerTextForm');
-                const headerTextElement = element.querySelector('h2');
-                const headerText = headerTextElement.textContent;
-                headerTextForm.value = headerText;
+                loadHeaderSettings(element);
         }
+    }
+
+    function loadHeaderSettings(element){
+        // Load header settings
+        const headerTextForm = document.getElementById('headerTextForm');
+        const headerTextElement = element.querySelector('h2');
+        const headerColorForm = document.getElementById('headerFontColorForm');
+        const headerFontSizeForm = document.getElementById('headerFontSizeForm');
+
+        // header text
+        const headerText = headerTextElement.textContent;
+        headerTextForm.value = headerText;
+        
+        // header font 
+        const headerFontList = document.getElementById('headerFontList');
+        const headerFontDisplay = document.getElementById('headerDropDownTitle');
+        const font = window.getComputedStyle(headerTextElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        headerFontDisplay.innerText = font;
+        
+        Array.from(headerFontList.children).forEach((child)=>{
+            const childFont = child.innerText;
+            if(child.classList.contains('selected-font')){
+                child.classList.remove('selected-font');
+            }
+            if(childFont === font){
+                child.classList.add('selected-font');
+            }
+        })
+
+        // header text color
+        const headerHexBox = document.getElementById('headerFontColorClick');
+        const headerTextColorRGB = window.getComputedStyle(headerTextElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const headerTextColorHex = rgbToHex(headerTextColorRGB);
+        headerColorForm.value = headerTextColorHex;
+        headerHexBox.style.backgroundColor = headerTextColorHex;
+
+        // header font size
+        const headerFontSize = window.getComputedStyle(headerTextElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        headerFontSizeForm.value = headerFontSize;
     }
 
     document.addEventListener("keydown", ({key}) => {
@@ -75,3 +110,19 @@ document.addEventListener("previewLoaded", ()=>{
         }
     })
 })
+
+function rgbToHex(rgb) {
+    // Find the numbers in the rgb string and split them into an array
+    var rgbValues = rgb.match(/\d+/g).map(function(value) {
+        return parseInt(value, 10);
+    });
+
+    // Convert each number to a hexadecimal string and ensure it's two characters
+    var hex = rgbValues.map(function(value) {
+        var hexString = value.toString(16);
+        return hexString.length === 1 ? '0' + hexString : hexString;
+    });
+
+    // Combine the hex values and prepend with a hash
+    return '#' + hex.join('');
+}

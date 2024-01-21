@@ -79,7 +79,7 @@
 input[type="text"]{
     height: 5.5vh;
     width: 17vw;
-    padding: 0vw 2vh 0 2vh;
+    padding: 0vw 6vh 0 2vh;
     font-size: 2.5vh;
     border-radius: 10px;
     border: 1px solid black;
@@ -111,6 +111,58 @@ input[type="text"]::placeholder{
 
 .align-btn:active{
     background-color: rgb(243, 243, 243);
+}
+
+.font-title{
+    font-size: 2vh;
+    color: black;
+}
+
+.font-title:hover{
+    cursor: pointer;
+    color: rgb(128, 128, 128);
+}
+
+.font-title:active{
+    color: black;
+}
+
+.selected-font{
+    font-weight: 900;
+    color: #1501FE;
+}
+
+.selected-font:hover{
+    cursor: default;
+    color: #1501FE;
+}
+
+.dropdown-color{
+    border: 0;
+    margin-left: 2.2vw;
+    width: 17vw;
+}
+
+input[type="text"].color-input{
+    width: 14vw;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: 0
+}
+
+.dropdown-color-click{
+    width: 10vw;
+    height: 5.3vh;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: white;
+}
+
+.dropdown-color-click:hover{
+    cursor: pointer;
 }
 
 /* ******************************************** */

@@ -147,7 +147,7 @@
                             </div>
                         </div>
                     </div>
-                </div>  
+                </div>
                 <div id="previewWrapper" class="preview-wrapper">
                     <div id="preview" class="preview-box">
                         <div id="dropzone"></div>
@@ -173,9 +173,7 @@
                                     <p>Header Text</p>
                                     <div class="customize-settings-dropdown">
                                         <div class="dropdown-display dropdown-text">
-                                            <form>
-                                                <input id="headerTextForm" class="text-input" data-type="headerText" type="text" placeholder="Enter Header Text">
-                                            </form>
+                                            <input id="headerTextForm" class="text-input" data-type="headerText" type="text" placeholder="Enter Header Text">
                                         </div>
                                     </div>
                                 </div>
@@ -193,13 +191,13 @@
                                     <p>Header Text Font</p>
                                     <div class="customize-settings-dropdown">
                                         <div class="dropdown-display">
-                                            <p>Overview</p>
+                                            <p id="headerDropDownTitle">Overview</p>
                                             <p class="dropdown-btn">▼</p>
                                         </div>
                                         <div class="dropdown-content">
-                                            <ul>
+                                            <ul id="headerFontList">
                                                 <!-- Need to add more fonts -->
-                                                <li class="font-title selected-font" data-type="headerText">Overpass</li>
+                                                <li class="font-title" data-type="headerText">Overpass</li>
                                                 <li class="font-title" data-type="headerText">Inter</li>
                                                 <li class="font-title" data-type="headerText">Courier New</li>
                                             </ul>
@@ -209,44 +207,18 @@
                                 <div class="customize-settings-box">
                                     <p>Header Font Color</p>
                                     <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display">
-                                            <p>Overview (Bold)</p>
-                                            <p class="dropdown-btn">▼</p>
-                                        </div>
-                                        <div class="dropdown-content">
-                                            <ul>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-
-                                            </ul>
+                                        <div class="dropdown-display dropdown-color">
+                                            <div id="colorGradient"></div>
+                                            <div id="headerFontColorClick" class="dropdown-color-click" data-type="headerColor"></div>
+                                            <input id="headerFontColorForm" class="color-input" data-type="headerColor" type="text" placeholder="Enter a hexidecimal">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="customize-settings-box">
                                     <p>Header Font Size</p>
                                     <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display">
-                                            <p>Overview (Bold)</p>
-                                            <p class="dropdown-btn">▼</p>
-                                        </div>
-                                        <div class="dropdown-content">
-                                            <ul>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-
-                                            </ul>
+                                        <div class="dropdown-display dropdown-text">
+                                            <input id="headerFontSizeForm" class="font-size-input" data-type="headerFontSize" type="text" placeholder="Enter a font size">
                                         </div>
                                     </div>
                                 </div>
@@ -273,7 +245,7 @@
                                     </div>
                                 </div>
                                 <div class="customize-settings-box">
-                                    <p>Header Background Color</p>
+                                    <p>Header Letter Spacing</p>
                                     <div class="customize-settings-dropdown">
                                         <div class="dropdown-display">
                                             <p>Overview (Bold)</p>
@@ -339,6 +311,28 @@
                                                 <li>Inter</li>
                                                 <li>Overpass</li>
                                                 <li>Inter</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Header Background Color</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display">
+                                            <p>Overview (Bold)</p>
+                                            <p class="dropdown-btn">▼</p>
+                                        </div>
+                                        <div class="dropdown-content">
+                                            <ul>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+                                                <li>Overpass</li>
+                                                <li>Inter</li>
+
                                             </ul>
                                         </div>
                                     </div>

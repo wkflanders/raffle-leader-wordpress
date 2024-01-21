@@ -106,7 +106,7 @@ class BuilderController extends BaseController{
         check_ajax_referer( 'nonce', 'security' );
 
         $post_id = isset( $_POST['post_id'] ) ? intval( $_POST['post_id'] ) : 0;
-        $content = isset( $_POST['content'] ) ? wp_kses( $_POST['content'], $this->allowed_html ) : '';
+        $content = isset( $_POST['content'] ) ? $_POST['content'] /*wp_kses( $_POST['content'], $this->allowed_html )*/ : '';
 
         if( $post_id && $content ){
             update_post_meta( $post_id, '_raffle_content', $content );

@@ -379,6 +379,17 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="customize-settings-box">
+                                    <div class="customize-settings-dropdown">
+                                        <div id="headerDelete" class="dropdown-display delete-display" data-type="headerDelete">
+                                            <span>Delete</span>
+                                        </div>
+                                        <div id="headerConfirmDelete" class="dropdown-display confirm-delete" style="display: none;" data-type="headerDelete">
+                                            <span>Confirm Delete</span>
+                                        </div>
+                                        <p id="headerCancelDelete" class="cancel-delete" style="display: none;" data-type="headerDelete">Cancel</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div id="subheaderDetails" class="customize-box-content">

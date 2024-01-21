@@ -165,6 +165,69 @@ input[type="text"].color-input{
     cursor: pointer;
 }
 
+.delete-display{
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    border-color: red;
+    justify-content: center;
+}
+
+.delete-display:hover{
+    background-color: red;
+    cursor: pointer;
+}
+
+.delete-display > span{
+    color: red;
+    font-size: 2.5vh;
+}
+
+.delete-display:hover > span{
+    color: white;
+}
+
+.delete-display:active{
+    background-color: rgb(197, 0, 0);
+}
+
+.confirm-delete{
+    margin-top: 3vh;
+    background-color: red;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.confirm-delete:hover{
+    background-color: rgb(219, 0, 0);
+}
+
+.confirm-delete:active{
+    background-color: red;
+}
+
+.confirm-delete > span{
+    color: white;
+    font-size: 2.5vh;
+}
+
+.cancel-delete{
+    color: gray;
+    text-align: center;
+    font-size: 2.2vh;
+    font-weight: bolder;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+    margin-left: 1.5vw;
+}
+
+.cancel-delete:hover{
+    color: rgb(74, 74, 74);
+    cursor: pointer;
+}
+
+.cancel-delete:active{
+    color: gray;
+}
 /* ******************************************** */
 
 

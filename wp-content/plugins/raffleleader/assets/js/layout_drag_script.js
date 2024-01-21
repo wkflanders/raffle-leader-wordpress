@@ -70,15 +70,15 @@ document.addEventListener('previewLoaded', ()=>{
         switch(ID){
             case 'headerBox':
                 return `<div data-type="headerDetails" class="header-section">
-                            <h2>Header</h2>
+                            <h2 style="white-space: pre-wrap;">Header</h2>
                         </div>`;
             case 'subheaderBox':
                 return `<div data-type="subheaderDetails" class="subheader-section">
-                            <h4>Subheader</h4>
+                            <h4 style="white-space: pre-wrap;">Subheader</h4>
                         </div>`;
             case 'bodyBox':
                 return `<div data-type="bodyDetails" class="body-section">
-                            <p>Body Text</p>
+                            <p style="white-space: pre-wrap;">Body Text</p>
                         </div>`;
             case 'formBox':
                 return `<div data-type="formDetails" class="form-section">

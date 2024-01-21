@@ -9,6 +9,11 @@ document.addEventListener('previewLoaded', ()=>{
     const colorGradientPanel = document.getElementById('colorGradient');
     const colorForms = document.querySelectorAll('.color-input');
     const fontSizeForms = document.querySelectorAll('.font-size-input');
+    
+    const deleteBtns = document.querySelectorAll('.delete-display');
+    const confirmDeleteBtns = document.querySelectorAll('.confirm-delete');
+    const cancelDeleteBtns = document.querySelectorAll('.cancel-delete');
+
     let pickrHeader = undefined;
 
     dropDownBtns.forEach((dropDownBtn)=>{
@@ -45,6 +50,18 @@ document.addEventListener('previewLoaded', ()=>{
 
     fontSizeForms.forEach((fontSizeForm)=>{
         fontSizeForm.addEventListener('input', setFontSize);
+    })
+
+    deleteBtns.forEach((deleteBtn)=>{
+        deleteBtn.addEventListener('click', deleteSection);
+    })
+
+    confirmDeleteBtns.forEach((confirmDeleteBtn)=>{
+        confirmDeleteBtn.addEventListener('click', confirmDelete);
+    })
+
+    cancelDeleteBtns.forEach((cancelDeleteBtn)=>{
+        cancelDeleteBtn.addEventListener('click', cancelDelete);
     })
 
     function openDropDown(event){
@@ -187,7 +204,61 @@ document.addEventListener('previewLoaded', ()=>{
                 selectedElement.style.fontSize = `${fontSize}px`;
         }
     }
+
+    function deleteSection(event){
+        event.preventDefault();
+        const deleteBtn = event.target.tagName === 'DIV' ? event.target : event.target.parentNode;
+        const elementType = deleteBtn.getAttribute('data-type');
+
+        switch(elementType){
+            case 'headerDelete':
+                const confirmBtn = document.getElementById('headerConfirmDelete');
+                const cancelDelete = document.getElementById('headerCancelDelete');
+                deleteBtn.style.display = "none";
+                confirmBtn.style.display = "flex";
+                cancelDelete.style.display = "block";
+        }
+    }
+
+    function confirmDelete(event){
+        event.preventDefault();
+        const confirmDelete = event.target.tagName === 'DIV' ? event.target : event.target.parentNode;
+        const elementType = confirmDelete.getAttribute('data-type');
+        const customizeBox = document.getElementById('settingsWrapper');
+
+        switch(elementType){
+            case 'headerDelete':
+                const selectedSection = document.querySelector('.selected-section');
+                selectedSection.remove();
+
+                const deleteBtn = document.getElementById('headerDelete');
+                const cancelDelete = document.getElementById('headerCancelDelete');
+                deleteBtn.style.display = "flex";
+                confirmDelete.style.display = "none";
+                cancelDelete.style.display = "none";
+
+                customizeBox.scrollTop = 0;
+                customizeBox.classList.toggle('slide-right-to-left');
+        }
+    }
+
+    function cancelDelete(event){
+        event.preventDefault();
+        const cancelBtn = event.target;
+        const elementType = cancelBtn.getAttribute('data-type');
+
+        switch(elementType){
+            case 'headerDelete':
+                const deleteBtn = document.getElementById('headerDelete');
+                const confirmBtn = document.getElementById('headerConfirmDelete');
+                deleteBtn.style.display = "flex";
+                confirmBtn.style.display = "none";
+                cancelBtn.style.display = "none";
+        }
+    }
 })
+
+// Util
 
 function rgbToHex(rgb) {
     // Find the numbers in the rgb string and split them into an array

@@ -7,11 +7,15 @@ document.addEventListener('previewLoaded', ()=>{
 
     function btnSavePreview(){
         const preview = document.getElementById('preview');
-        let selectedElement = document.querySelector('.selected-section');
-        selectedElement.classList.remove('selected-section');
+        try{
+            let selectedElement = document.querySelector('.selected-section');
+            selectedElement.classList.remove('selected-section');
+        } catch {}
         const previewContent = preview.innerHTML;
         savePreview(postID, previewContent);
-        selectedElement.classList.add('selected-section'); // Need to fix saving when not selecting
+        try{
+            selectedElement.classList.add('selected-section'); // Need to fix saving when not selecting
+        } catch {}
     }
 });
 

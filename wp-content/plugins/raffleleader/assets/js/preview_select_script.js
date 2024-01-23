@@ -95,7 +95,40 @@ document.addEventListener("previewLoaded", ()=>{
         // header font size
         const headerFontSize = window.getComputedStyle(headerTextElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
         headerFontSizeForm.value = headerFontSize;
+
+        // header styles
+        const headerFontWeight = window.getComputedStyle(headerTextElement).getPropertyValue('font-weight').replace(/^"|"$/g, '');
+        console.log(headerFontWeight);
+        const headerFontStyle = headerTextElement.style.fontStyle;
+        const headerFontDecoration = headerTextElement.style.textDecoration;
+
+        const headerBoldBtn = document.getElementById('headerBoldBtn');
+        const headerItalicizeBtn = document.getElementById('headerItalicizeBtn');
+        const headerUnderlineBtn = document.getElementById('headerUnderlineBtn');
+        const headerStrikeBtn = document.getElementById('headerStrikeBtn');
+        const headerOverlineBtn = document.getElementById('headerOverlineBtn');
+
+        if(headerFontWeight === 'bold' || headerFontWeight >= 500){
+            headerBoldBtn.classList.add('font-style-active');
+        }
+
+        if(headerFontStyle.includes('italicize')){
+            headerItalicizeBtn.classList.add('font-style-active');
+        }
+
+        if(headerFontDecoration.includes('underline')){
+            headerUnderlineBtn.classList.add('font-style-active');
+        }
+
+        if(headerFontDecoration.includes('line-through')){
+            headerStrikeBtn.classList.add('font-style-active');
+        }
+
+        if(headerFontDecoration.includes('overline')){
+            headerOverlineBtn.classList.add('font-style-active');
+        }
     }
+    
 
     document.addEventListener("keydown", ({key}) => {
         const currentElement = document.querySelector('.selected-section');
@@ -109,7 +142,7 @@ document.addEventListener("previewLoaded", ()=>{
             } catch {}
         }
     })
-})
+});
 
 function rgbToHex(rgb) {
     // Find the numbers in the rgb string and split them into an array

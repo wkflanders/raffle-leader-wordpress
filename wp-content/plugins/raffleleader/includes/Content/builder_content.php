@@ -181,9 +181,9 @@
                                     <p>Header Text Alignment</p>
                                     <div class="customize-settings-dropdown">
                                         <div class="dropdown-display dropdown-inline-btns">
-                                            <img class="inline-btn align-left" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left-text-align.png">
-                                            <img class="inline-btn align-center" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/center-text-align.png">
-                                            <img class="inline-btn align-right" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right-text-align.png">
+                                            <img class="inline-btn align-left" data-type="headerAlign" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left-text-align.png">
+                                            <img class="inline-btn align-center" data-type="headerAlign" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/center-text-align.png">
+                                            <img class="inline-btn align-right" data-type="headerAlign" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right-text-align.png">
                                         </div>
                                     </div>
                                 </div>
@@ -226,11 +226,11 @@
                                     <p>Header Font Style </p>
                                     <div class="customize-settings-dropdown">
                                         <div class="dropdown-display dropdown-inline-btns">
-                                            <img class="inline-btn bold-btn" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                                            <img class="inline-btn italicize-btn" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                                            <img class="inline-btn underline-btn" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                                            <img class="inline-btn strike-btn" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                                            <img class="inline-btn overline-btn" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                                            <img id="headerBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                                            <img id="headerItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                                            <img id="headerUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                                            <img id="headerStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                                            <img id="headerInlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
                                         </div>
                                     </div>
                                 </div>

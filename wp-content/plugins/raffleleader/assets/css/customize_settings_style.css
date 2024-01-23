@@ -98,10 +98,11 @@ input[type="text"]::placeholder{
 }
 
 .inline-btn{
-    height: 3vh;
+    height: 5vh;
     background-color: rgb(243, 243, 243);
     padding: 1vh 1vh 1vh 1vh;
     border-radius: 10px;
+    box-sizing: border-box;
 }
 
 .inline-btn:hover{
@@ -163,6 +164,19 @@ input[type="text"].color-input{
 
 .dropdown-color-click:hover{
     cursor: pointer;
+}
+
+.font-style-active{
+    background-color: rgb(196, 196, 196);
+    border: 1px solid black;
+}
+
+.font-style-active:hover{
+    background-color: rgb(216, 216, 216);
+}
+
+.font-style-active:active{
+    background-color: rgb(196, 196, 196);
 }
 
 .delete-display{
@@ -228,6 +242,8 @@ input[type="text"].color-input{
 .cancel-delete:active{
     color: gray;
 }
+
+
 /* ******************************************** */
 
 

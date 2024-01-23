@@ -9,6 +9,11 @@ document.addEventListener('previewLoaded', ()=>{
     const colorGradientPanel = document.getElementById('colorGradient');
     const colorForms = document.querySelectorAll('.color-input');
     const fontSizeForms = document.querySelectorAll('.font-size-input');
+    const boldBtns = document.querySelectorAll('.bold-btn');
+    const italicizeBtns = document.querySelectorAll('.italicize-btn');
+    const underlineBtns = document.querySelectorAll('.underline-btn');
+    const strikeBtns = document.querySelectorAll('.strike-btn');
+    const overlineBtns = document.querySelectorAll('.overline-btn');
     
     const deleteBtns = document.querySelectorAll('.delete-display');
     const confirmDeleteBtns = document.querySelectorAll('.confirm-delete');
@@ -64,6 +69,26 @@ document.addEventListener('previewLoaded', ()=>{
         cancelDeleteBtn.addEventListener('click', cancelDelete);
     })
 
+    boldBtns.forEach((boldBtn)=>{
+        boldBtn.addEventListener('click', toggleBold);
+    })
+
+    italicizeBtns.forEach((italicizeBtn)=>{
+        italicizeBtn.addEventListener('click', toggleItalicize);
+    })
+
+    underlineBtns.forEach((underlineBtn)=>{
+        underlineBtn.addEventListener('click', toggleUnderline);
+    })
+
+    strikeBtns.forEach((strikeBtn)=>{
+        strikeBtn.addEventListener('click', toggleStrike);
+    })
+
+    overlineBtns.forEach((overlineBtn)=>{
+        overlineBtn.addEventListener('click', toggleOverline);
+    })
+
     function openDropDown(event){
         const dropDownBtn = event.target;
         const parentDropDown = dropDownBtn.parentNode.parentNode;
@@ -85,19 +110,40 @@ document.addEventListener('previewLoaded', ()=>{
         }
     }
 
-    function alignTextLeft(){
-        const selectedSection = document.querySelector('.selected-section').firstChild;
-        selectedSection.style.justifyContent = 'left';
+    function alignTextLeft(event){
+        const inputLeftBtn = event.target;
+        const elementType = inputLeftBtn.getAttribute('data-type');
+        const selectedSection = document.querySelector('.selected-section');
+
+        switch(elementType){
+            case 'headerAlign':
+                selectedElement = selectedSection.querySelector('.header-section');
+                selectedElement.style.justifyContent = 'left';
+        }
     }
 
-    function alignTextRight(){
-        const selectedSection = document.querySelector('.selected-section').firstChild;
-        selectedSection.style.justifyContent = 'right';
+    function alignTextRight(event){
+        const inputRightBtn = event.target;
+        const elementType = inputRightBtn.getAttribute('data-type');
+        const selectedSection = document.querySelector('.selected-section');
+
+        switch(elementType){
+            case 'headerAlign':
+                selectedElement = selectedSection.querySelector('.header-section');
+                selectedElement.style.justifyContent = 'right';
+        }
     }
 
-    function alignTextCenter(){
-        const selectedSection = document.querySelector('.selected-section').firstChild;
-        selectedSection.style.justifyContent = 'center';
+    function alignTextCenter(event){
+        const inputCenterBtn = event.target;
+        const elementType = inputCenterBtn.getAttribute('data-type');
+        const selectedSection = document.querySelector('.selected-section');
+
+        switch(elementType){
+            case 'headerAlign':
+                selectedElement = selectedSection.querySelector('.header-section');
+                selectedElement.style.justifyContent = 'center';
+        }
     }
 
     function selectFont(event){
@@ -204,6 +250,116 @@ document.addEventListener('previewLoaded', ()=>{
                 selectedElement.style.fontSize = `${fontSize}px`;
         }
     }
+
+    function toggleBold(event){
+        const inputBoldBtn = event.target;
+        const elementType = inputBoldBtn.getAttribute('data-type');
+        const selectedSection = document.querySelector('.selected-section');
+
+        switch(elementType){
+            case 'headerfStyle':
+                selectedElement = selectedSection.querySelector('h2');
+                const headerFontWeight = window.getComputedStyle(selectedElement).getPropertyValue('font-weight').replace(/^"|"$/g, '');
+                selectedElement.style.fontWeight = headerFontWeight === "bold" ? 'normal'
+                                                 : headerFontWeight >= "500" ? 'normal'
+                                                 : 'bold'; 
+                if(!inputBoldBtn.classList.contains('font-style-active')){
+                    inputBoldBtn.classList.add('font-style-active');
+                } else {
+                    inputBoldBtn.classList.remove('font-style-active');
+                }
+        }
+    }
+
+    function toggleItalicize(event){
+        const inputItalicizeBtn = event.target;
+        const elementType = inputItalicizeBtn.getAttribute('data-type');
+        const selectedSection = document.querySelector('.selected-section');
+
+        switch(elementType){
+            case 'headerfStyle':
+                selectedElement = selectedSection.querySelector('h2');
+                selectedElement.style.fontStyle = selectedElement.style.fontStyle === "italic" ? 'normal' : 'italic';
+                if(!inputItalicizeBtn.classList.contains('font-style-active')){
+                    inputItalicizeBtn.classList.add('font-style-active');
+                } else {
+                    inputItalicizeBtn.classList.remove('font-style-active');
+                }
+        }
+    }
+
+    function toggleUnderline(event){
+        const inputUnderlineBtn = event.target;
+        const elementType = inputUnderlineBtn.getAttribute('data-type');
+        const selectedSection = document.querySelector('.selected-section');
+
+        switch(elementType){
+            case 'headerfStyle':
+                selectedElement = selectedSection.querySelector('h2');
+
+                let currentStyle = selectedElement.style.textDecoration;
+                if(currentStyle.includes('underline')){
+                    selectedElement.style.textDecoration = currentStyle.replace('underline', '').trim();
+                } else {
+                    selectedElement.style.textDecoration = currentStyle + ' underline';
+                }
+                
+                if(!inputUnderlineBtn.classList.contains('font-style-active')){
+                    inputUnderlineBtn.classList.add('font-style-active');
+                } else {
+                    inputUnderlineBtn.classList.remove('font-style-active');
+                }
+        }
+    }
+
+    function toggleStrike(event){
+        const inputStrikeBtn = event.target;
+        const elementType = inputStrikeBtn.getAttribute('data-type');
+        const selectedSection = document.querySelector('.selected-section');
+
+        switch(elementType){
+            case 'headerfStyle':
+                selectedElement = selectedSection.querySelector('h2');
+                
+                let currentStyle = selectedElement.style.textDecoration;
+                if(currentStyle.includes('line-through')){
+                    selectedElement.style.textDecoration = currentStyle.replace('line-through', '').trim();
+                } else {
+                    selectedElement.style.textDecoration = currentStyle + ' line-through';
+                }             
+
+                if(!inputStrikeBtn.classList.contains('font-style-active')){
+                    inputStrikeBtn.classList.add('font-style-active');
+                } else {
+                    inputStrikeBtn.classList.remove('font-style-active');
+                }
+        }
+    }
+
+    function toggleOverline(event){
+        const inputOverlineBtn = event.target;
+        const elementType = inputOverlineBtn.getAttribute('data-type');
+        const selectedSection = document.querySelector('.selected-section');
+
+        switch(elementType){
+            case 'headerfStyle':
+                selectedElement = selectedSection.querySelector('h2');
+                
+                let currentStyle = selectedElement.style.textDecoration;
+                if(currentStyle.includes('overline')){
+                    selectedElement.style.textDecoration = currentStyle.replace('overline', '').trim();
+                } else {
+                    selectedElement.style.textDecoration = currentStyle + ' overline';
+                }             
+
+                if(!inputOverlineBtn.classList.contains('font-style-active')){
+                    inputOverlineBtn.classList.add('font-style-active');
+                } else {
+                    inputOverlineBtn.classList.remove('font-style-active');
+                }
+        }
+    }
+
 
     function deleteSection(event){
         event.preventDefault();

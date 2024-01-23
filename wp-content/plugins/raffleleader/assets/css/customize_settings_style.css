@@ -90,7 +90,7 @@ input[type="text"]::placeholder{
     color: rgb(164, 164, 164);
 }
 
-.dropdown-align{
+.dropdown-inline-btns{
     border: none;
     margin-left: 2vw;
     padding-right: 0;

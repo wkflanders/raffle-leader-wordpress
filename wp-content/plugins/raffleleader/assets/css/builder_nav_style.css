@@ -96,7 +96,7 @@
 .close {
     position: absolute;
     right: 32px;
-    top: 34px;
+    top: 36px;
     width: 32px;
     height: 32px;
     opacity: 0.3;
@@ -125,8 +125,8 @@
 
 .save-btn{
     position: absolute;
-    right: 160px;
-    top: 26px;
+    right: 10vw;
+    top: 2.5vh;
     border: 0;
     background-color:#1501FE;
     border-radius: 10px;
@@ -149,8 +149,8 @@
 
 .help{
     position: absolute;
-    right: 90px;
-    top: 38px;
+    right: 5vw;
+    top: 4.2vh;
     color:#1501FE;
     text-decoration: none;
     font-weight: 600;

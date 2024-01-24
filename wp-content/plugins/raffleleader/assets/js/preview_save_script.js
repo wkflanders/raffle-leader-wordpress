@@ -40,7 +40,7 @@ document.addEventListener("previewLoaded", () => {
 
   function updateUI() {
     const selectedSectionList = document.querySelectorAll(".selected-section");
-    if (selectedSectionList > 0) {
+    if (selectedSectionList.length > 0) {
       selectedSection = document.querySelector(".selected-section");
     }
 
@@ -49,6 +49,7 @@ document.addEventListener("previewLoaded", () => {
         '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>';
       if (selectedSection) {
         selectedSection.classList.remove("selected-section");
+        console.log(selectedSection.classList);
       }
     } else {
       saveBtn.innerHTML = "Save";

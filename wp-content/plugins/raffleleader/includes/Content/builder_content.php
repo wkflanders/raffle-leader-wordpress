@@ -230,7 +230,7 @@
                                             <img id="headerItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
                                             <img id="headerUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
                                             <img id="headerStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                                            <img id="headerInlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                                            <img id="headerOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
                                         </div>
                                     </div>
                                 </div>

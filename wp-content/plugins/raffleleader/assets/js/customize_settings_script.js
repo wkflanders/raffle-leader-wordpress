@@ -245,7 +245,6 @@ document.addEventListener('previewLoaded', ()=>{
 
         switch(elementType){
             case 'headerFontSize':
-                console.log(fontSize);
                 const selectedElement = selectedSection.querySelector('h2');
                 selectedElement.style.fontSize = `${fontSize}px`;
         }

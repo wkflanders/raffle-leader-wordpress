@@ -98,7 +98,6 @@ document.addEventListener("previewLoaded", ()=>{
 
         // header styles
         const headerFontWeight = window.getComputedStyle(headerTextElement).getPropertyValue('font-weight').replace(/^"|"$/g, '');
-        console.log(headerFontWeight);
         const headerFontStyle = headerTextElement.style.fontStyle;
         const headerFontDecoration = headerTextElement.style.textDecoration;
 
@@ -110,22 +109,42 @@ document.addEventListener("previewLoaded", ()=>{
 
         if(headerFontWeight === 'bold' || headerFontWeight >= 500){
             headerBoldBtn.classList.add('font-style-active');
+        } else {
+            try{
+                headerBoldBtn.classList.remove('font-style-active')
+            } catch {}
         }
 
-        if(headerFontStyle.includes('italicize')){
+        if(headerFontStyle.includes('italic')){
             headerItalicizeBtn.classList.add('font-style-active');
+        } else {
+            try{
+                headerItalicizeBtn.classList.remove('font-style-active')
+            } catch {}
         }
 
         if(headerFontDecoration.includes('underline')){
             headerUnderlineBtn.classList.add('font-style-active');
+        } else {
+            try{
+                headerUnderlineBtn.classList.remove('font-style-active')
+            } catch {}
         }
 
         if(headerFontDecoration.includes('line-through')){
             headerStrikeBtn.classList.add('font-style-active');
+        } else {
+            try{
+                headerStrikeBtn.classList.remove('font-style-active')
+            } catch {}
         }
 
         if(headerFontDecoration.includes('overline')){
             headerOverlineBtn.classList.add('font-style-active');
+        } else {
+            try{
+                headerOverlineBtn.classList.remove('font-style-active')
+            } catch {}
         }
     }
     

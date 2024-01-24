@@ -1,39 +1,60 @@
-document.addEventListener('previewLoaded', ()=>{
-    const saveBtn = document.querySelector('.save-btn');
-    const urlParams = new URLSearchParams(window.location.search);
-    const postID = urlParams.get('post_id');
+document.addEventListener("previewLoaded", () => {
+  // State variables
+  let isLoading = false;
+  let selectedSection = null;
 
-    saveBtn.addEventListener('click', btnSavePreview);
+  const saveBtn = document.querySelector(".save-btn");
+  saveBtn.addEventListener("click", savePreview);
 
-    function btnSavePreview(){
-        const preview = document.getElementById('preview');
-        try{
-            let selectedElement = document.querySelector('.selected-section');
-            selectedElement.classList.remove('selected-section');
-        } catch {}
-        const previewContent = preview.innerHTML;
-        savePreview(postID, previewContent);
-        try{
-            selectedElement.classList.add('selected-section'); // Need to fix saving when not selecting
-        } catch {}
-    }
-});
+  const preview = document.getElementById("preview");
+  const urlParams = new URLSearchParams(window.location.search);
+  const postID = urlParams.get("post_id");
 
-function savePreview(postID, HTMLContent){
+  async function savePreview() {
+    isLoading = true;
+    updateUI();
+    const HTMLContent = preview.innerHTML;
 
-    fetch(raffleleader_preview_save_object.ajax_url, {
-        method: 'POST',
+    try {
+      const response = await fetch(raffleleader_preview_save_object.ajax_url, {
+        method: "POST",
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+          "Content-Type": "application/x-www-form-urlencoded",
         },
         body: new URLSearchParams({
-            'action': 'savePreview',
-            'post_id': postID,
-            'content': HTMLContent,
-            'security': raffleleader_preview_save_object.security
-        })
-    })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error('Error:', error));
-}
+          action: "savePreview",
+          post_id: postID,
+          content: HTMLContent,
+          security: raffleleader_preview_save_object.security,
+        }),
+      });
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error("Fetch error", error);
+    } finally {
+      isLoading = false;
+      updateUI();
+    }
+  }
+
+  function updateUI() {
+    const selectedSectionList = document.querySelectorAll(".selected-section");
+    if (selectedSectionList > 0) {
+      selectedSection = document.querySelector(".selected-section");
+    }
+
+    if (isLoading) {
+      saveBtn.innerHTML =
+        '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>';
+      if (selectedSection) {
+        selectedSection.classList.remove("selected-section");
+      }
+    } else {
+      saveBtn.innerHTML = "Save";
+      if (selectedSection) {
+        selectedSection.classList.add("selected-section");
+      }
+    }
+  }
+});

@@ -64,6 +64,7 @@ document.addEventListener("previewLoaded", ()=>{
         const headerTextElement = element.querySelector('h2');
         const headerColorForm = document.getElementById('headerFontColorForm');
         const headerFontSizeForm = document.getElementById('headerFontSizeForm');
+        const headerLetterSpacingForm = document.getElementById('headerLetterSpacingForm');
 
         // header text
         const headerText = headerTextElement.textContent;
@@ -146,6 +147,10 @@ document.addEventListener("previewLoaded", ()=>{
                 headerOverlineBtn.classList.remove('font-style-active')
             } catch {}
         }
+
+        // header letter spacing
+        const headerLetterSpacing = window.getComputedStyle(headerTextElement).getPropertyValue('letter-spacing').replace(/^"|"$/g, '');
+        headerLetterSpacingForm.value = headerLetterSpacing;
     }
     
 

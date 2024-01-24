@@ -237,22 +237,8 @@
                                 <div class="customize-settings-box">
                                     <p>Header Letter Spacing</p>
                                     <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display">
-                                            <p>Overview (Bold)</p>
-                                            <p class="dropdown-btn">▼</p>
-                                        </div>
-                                        <div class="dropdown-content">
-                                            <ul>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-
-                                            </ul>
+                                        <div class="dropdown-display dropdown-text">
+                                            <input id="headerLetterSpacingForm" class="letter-spacing-input" data-type="headerLetterSpacing" type="text" placeholder="Enter letter spacing">
                                         </div>
                                     </div>
                                 </div>

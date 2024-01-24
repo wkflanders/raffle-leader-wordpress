@@ -14,6 +14,7 @@ document.addEventListener('previewLoaded', ()=>{
     const underlineBtns = document.querySelectorAll('.underline-btn');
     const strikeBtns = document.querySelectorAll('.strike-btn');
     const overlineBtns = document.querySelectorAll('.overline-btn');
+    const letterSpacingForms = document.querySelectorAll('.letter-spacing-input')
     
     const deleteBtns = document.querySelectorAll('.delete-display');
     const confirmDeleteBtns = document.querySelectorAll('.confirm-delete');
@@ -87,6 +88,10 @@ document.addEventListener('previewLoaded', ()=>{
 
     overlineBtns.forEach((overlineBtn)=>{
         overlineBtn.addEventListener('click', toggleOverline);
+    })
+
+    letterSpacingForms.forEach((letterSpacingForm)=>{
+        letterSpacingForm.addEventListener('input', setLetterSpacing);
     })
 
     function openDropDown(event){
@@ -358,6 +363,19 @@ document.addEventListener('previewLoaded', ()=>{
                 }
         }
     }
+
+    function setLetterSpacing(event){
+        const inputLetterSpacingElement = event.target;
+        const letterSpacing = inputLetterSpacingElement.value;
+        const elementType = inputLetterSpacingElement.getAttribute('data-type');
+        const selectedSection = document.querySelector('.selected-section');
+
+        switch(elementType){
+            case 'headerLetterSpacing':
+                const selectedElement = selectedSection.querySelector('h2');
+                selectedElement.style.letterSpacing = `${letterSpacing}px`;
+        }
+    } 
 
 
     function deleteSection(event){

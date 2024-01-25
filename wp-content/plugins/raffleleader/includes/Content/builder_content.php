@@ -252,42 +252,16 @@
                                 <div class="customize-settings-box">
                                     <p>Header Height</p>
                                     <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display">
-                                            <p>Overview (Bold)</p>
-                                            <p class="dropdown-btn">▼</p>
-                                        </div>
-                                        <div class="dropdown-content">
-                                            <ul>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                            </ul>
+                                        <div class="dropdown-display dropdown-slide">
+                                            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="customize-settings-box">
                                     <p>Header Width</p>
                                     <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display">
-                                            <p>Overview (Bold)</p>
-                                            <p class="dropdown-btn">▼</p>
-                                        </div>
-                                        <div class="dropdown-content">
-                                            <ul>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                            </ul>
+                                        <div class="dropdown-display dropdown-slide">
+                                            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
                                         </div>
                                     </div>
                                 </div>

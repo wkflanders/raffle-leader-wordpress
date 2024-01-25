@@ -1,7 +1,7 @@
 document.addEventListener("previewLoaded", ()=>{
     const dropzone = document.getElementById('dropzone');
     const preview = document.getElementById('preview');
-    const customizeBox = document.getElementById('settingsWrapper')
+    const customizeBox = document.getElementById('settingsWrapper');
 
     preview.addEventListener('mousedown', (event)=>{
 
@@ -18,8 +18,10 @@ document.addEventListener("previewLoaded", ()=>{
                 if(selectedSection.classList.contains('section')){
                     try{
                         currentSection.classList.remove('selected-section');
+                        currentSection.querySelector('.resize-handle').style.display = 'none';
                     } catch {}
                     selectedSection.classList.add('selected-section');
+                    selectedSection.querySelector('.resize-handle').style.display = 'block';
                     break;
                 }
                 selectedSection = selectedSection.parentElement;
@@ -160,6 +162,7 @@ document.addEventListener("previewLoaded", ()=>{
         if(key === "Escape"){
             try{
                 currentElement.classList.remove('selected-section');
+                currentElement.querySelector('.resize-handle').style.display = 'none';
                 if(customizeBox.classList.contains('slide-right-to-left')){
                     customizeBox.classList.toggle('slide-right-to-left');
                 }

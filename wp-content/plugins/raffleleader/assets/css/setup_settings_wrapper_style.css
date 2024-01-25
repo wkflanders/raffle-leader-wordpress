@@ -29,7 +29,7 @@ body {
 .settings-wrapper {
     margin-left: auto;
     position: relative;
-    z-index: 100;
+    z-index: 90;
     left: 100%;
     transition: all 0.5s ease;
 }

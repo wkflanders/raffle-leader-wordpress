@@ -42,6 +42,7 @@ document.addEventListener("previewLoaded", () => {
     const selectedSectionList = document.querySelectorAll(".selected-section");
     if (selectedSectionList.length > 0) {
       selectedSection = document.querySelector(".selected-section");
+      resizeHandle = selectedSection.querySelector('.resize-handle');
     }
 
     if (isLoading) {
@@ -49,12 +50,13 @@ document.addEventListener("previewLoaded", () => {
         '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>';
       if (selectedSection) {
         selectedSection.classList.remove("selected-section");
-        console.log(selectedSection.classList);
+        resizeHandle.style.display = 'none';
       }
     } else {
       saveBtn.innerHTML = "Save";
       if (selectedSection) {
         selectedSection.classList.add("selected-section");
+        resizeHandle.style.display = 'block';
       }
     }
   }

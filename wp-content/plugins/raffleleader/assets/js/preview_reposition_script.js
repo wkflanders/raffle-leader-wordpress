@@ -33,45 +33,44 @@ document.addEventListener('previewLoaded', ()=>{
         });
 
         function resize(e) {
-            const zoomLevel = window.zoomScale;
+            const zoomLevel = window.zoomScale || 1;  // Ensure there's a default zoom level
         
             let newWidth = originalWidth + (e.clientX - originalMouseX) / zoomLevel;
             let newHeight = originalHeight + (e.clientY - originalMouseY) / zoomLevel;
         
-            const snapMargin = 10; // Distance within which snapping occurs
-            const elRect = el.getBoundingClientRect(); // Get the element's rect before looping
+            const snapMargin = 5 / zoomLevel;  // Snap margin should also consider zoom level
+            const elRect = el.getBoundingClientRect();
         
             document.querySelectorAll('.section').forEach(otherEl => {
                 if (otherEl === el) return;
         
                 const rect = otherEl.getBoundingClientRect();
         
-                // Snap horizontally
-                if (Math.abs(rect.right - elRect.left - newWidth) < snapMargin) {
-                    newWidth = rect.right - elRect.left;
-                } else if (Math.abs(rect.left - elRect.left - newWidth) < snapMargin) {
-                    newWidth = rect.left - elRect.left;
+                // Adjust snapping calculations for zoom
+                if (Math.abs(rect.right - elRect.left - (newWidth * zoomLevel)) < snapMargin) {
+                    newWidth = (rect.right - elRect.left - 1.5) / zoomLevel;
+                } else if (Math.abs(rect.left - elRect.left - (newWidth * zoomLevel)) < snapMargin) {
+                    newWidth = (rect.left - elRect.left - 1.5) / zoomLevel;
                 }
         
-                // Snap vertically
-                if (Math.abs(rect.bottom - elRect.top - newHeight) < snapMargin) {
-                    newHeight = rect.bottom - elRect.top;
-                } else if (Math.abs(rect.top - elRect.top - newHeight) < snapMargin) {
-                    newHeight = rect.top - elRect.top;
+                if (Math.abs(rect.bottom - elRect.top - (newHeight * zoomLevel)) < snapMargin) {
+                    newHeight = (rect.bottom - elRect.top - 1.5) / zoomLevel;
+                } else if (Math.abs(rect.top - elRect.top - (newHeight * zoomLevel)) < snapMargin) {
+                    newHeight = (rect.top - elRect.top - 1.5) / zoomLevel;
                 }
             });
         
-            // Boundary checks after snapping logic
+            // Adjust boundary checks for zoom
             const parentRect = dropzone.getBoundingClientRect();
-            let maxWidth = parentRect.width - (elRect.left - parentRect.left);
-            let maxHeight = parentRect.height - (elRect.top - parentRect.top);
+            let maxWidth = (parentRect.width / zoomLevel) - ((elRect.left - parentRect.left) / zoomLevel);
+            let maxHeight = (parentRect.height / zoomLevel) - ((elRect.top - parentRect.top) / zoomLevel);
         
             if (newWidth > maxWidth) newWidth = maxWidth;
             if (newHeight > maxHeight) newHeight = maxHeight;
         
-            // Set new dimensions with snapping and boundaries applied
-            el.style.width = `${Math.max(100, newWidth)}px`;
-            el.style.height = `${Math.max(100, newHeight)}px`;
+            // Apply the adjusted dimensions
+            el.style.width = `${Math.max(50, newWidth)}px`;
+            el.style.height = `${Math.max(50, newHeight)}px`;
         }
 
         function stopResize() {
@@ -121,7 +120,7 @@ document.addEventListener('previewLoaded', ()=>{
             if (y > bottomBoundary) y = bottomBoundary;
         
             // Snapping Logic
-            const snapMargin = 10 / zoomLevel;
+            const snapMargin = 5 / zoomLevel;
         
             document.querySelectorAll('.section').forEach(otherEl => {
                 if (otherEl === el) return;
@@ -189,6 +188,7 @@ document.addEventListener('previewLoaded', ()=>{
     });
 });
 
+// Depreceated
 
 // document.addEventListener('previewLoaded', ()=>{
 //     const dropzone = document.getElementById('dropzone');

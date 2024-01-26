@@ -72,6 +72,49 @@ document.addEventListener("previewLoaded", ()=>{
         const text = textElement.textContent;
         textForm.value = text;
         
+        // text align
+        const textHorizontalAlign = document.querySelector('.text-horizontal-align');
+        const textVerticalAlign = document.querySelector('.text-vertical-align');
+        const textOrientation = document.querySelector('.text-orientation');
+
+        const textJustifyContent = window.getComputedStyle(element).getPropertyValue('justify-content').replace(/^"|"$/g, '');
+        const textAlignItems = window.getComputedStyle(element).getPropertyValue('align-items').replace(/^"|"$/g, '');
+        const textWritingMode = window.getComputedStyle(element).getPropertyValue('writing-mode').replace(/^"|"$/g, '');
+
+        try{
+            textHorizontalAlign.querySelector('.inline-btn-halign-active').classList.remove('inline-btn-halign-active');
+            textVerticalAlign.querySelector('.inline-btn-valign-active').classList.remove('inline-btn-valign-active');
+            textOrientation.querySelector('.inline-btn-orient-active').classList.remove('inline-btn-orient-active');
+        } catch {}
+
+        if(textJustifyContent === 'left'){
+            textHorizontalAlign.querySelector('.align-left').classList.add('inline-btn-halign-active');
+        } else if(textJustifyContent === 'center'){
+            textHorizontalAlign.querySelector('.align-center').classList.add('inline-btn-halign-active');
+        } else if(textJustifyContent === 'right'){
+            textHorizontalAlign.querySelector('.align-right').classList.add('inline-btn-halign-active');
+        } else {
+            textHorizontalAlign.querySelector('.inline-btn-halign-active').classList.remove('inline-btn-halign-active');
+        }
+
+        if(textAlignItems === 'start'){
+            textVerticalAlign.querySelector('.align-top').classList.add('inline-btn-valign-active');
+        } else if(textAlignItems === 'center'){
+            textVerticalAlign.querySelector('.align-middle').classList.add('inline-btn-valign-active');
+        } else if(textAlignItems === 'end'){
+            textVerticalAlign.querySelector('.align-bottom').classList.add('inline-btn-valign-active');
+        } else {
+            textVerticalAlign.querySelector('.inline-btn-valign-active').classList.remove('inline-btn-valign-active');
+        }
+
+        if(textWritingMode === 'horizontal-tb'){
+            textOrientation.querySelector('.horizontal-orient').classList.add('inline-btn-orient-active');
+        } else if(textWritingMode === 'vertical-rl'){
+            textOrientation.querySelector('.vertical-orient').classList.add('inline-btn-orient-active');
+        } else {
+            textOrientation.querySelector('.inline-btn-orient-active').classList.remove('inline-btn-orient-active');
+        }
+
         // text font 
         const textFontList = document.getElementById('textFontList');
         const textFontDisplay = document.getElementById('textDropDownTitle');

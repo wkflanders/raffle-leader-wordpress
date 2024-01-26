@@ -150,6 +150,9 @@ document.addEventListener('previewLoaded', ()=>{
             case 'textAlign':
                 selectedElement = selectedSection.querySelector('.text-section');
                 selectedElement.style.justifyContent = 'left';
+
+                document.querySelector('.inline-btn-halign-active').classList.remove('inline-btn-halign-active');;
+                inputLeftBtn.classList.add('inline-btn-halign-active');
         }
     }
 
@@ -162,6 +165,9 @@ document.addEventListener('previewLoaded', ()=>{
             case 'textAlign':
                 selectedElement = selectedSection.querySelector('.text-section');
                 selectedElement.style.justifyContent = 'right';
+
+                document.querySelector('.inline-btn-halign-active').classList.remove('inline-btn-halign-active');;
+                inputRightBtn.classList.add('inline-btn-halign-active');
         }
     }
 
@@ -174,6 +180,9 @@ document.addEventListener('previewLoaded', ()=>{
             case 'textAlign':
                 selectedElement = selectedSection.querySelector('.text-section');
                 selectedElement.style.justifyContent = 'center';
+
+                document.querySelector('.inline-btn-halign-active').classList.remove('inline-btn-halign-active');;
+                inputCenterBtn.classList.add('inline-btn-halign-active');
         }
     }
 
@@ -186,6 +195,9 @@ document.addEventListener('previewLoaded', ()=>{
             case 'textVert':
                 selectedElement = selectedSection.querySelector('.text-section');
                 selectedElement.style.alignItems = 'start';
+
+                document.querySelector('.inline-btn-valign-active').classList.remove('inline-btn-valign-active');;
+                inputerTopBtn.classList.add('inline-btn-valign-active');
         }
     }
 
@@ -198,6 +210,9 @@ document.addEventListener('previewLoaded', ()=>{
             case 'textVert':
                 selectedElement = selectedSection.querySelector('.text-section');
                 selectedElement.style.alignItems = 'center';
+
+                document.querySelector('.inline-btn-valign-active').classList.remove('inline-btn-valign-active');;
+                inputMiddleBtn.classList.add('inline-btn-valign-active');
         }
     }
 
@@ -210,11 +225,13 @@ document.addEventListener('previewLoaded', ()=>{
             case 'textVert':
                 selectedElement = selectedSection.querySelector('.text-section');
                 selectedElement.style.alignItems = 'end';
+
+                document.querySelector('.inline-btn-valign-active').classList.remove('inline-btn-valign-active');;
+                inputBottomBtn.classList.add('inline-btn-valign-active');
         }
     }
 
     function orientTextHorizontal(event){
-        console.log('fired');
         const inputHBtn = event.target;
         const elementType = inputHBtn.getAttribute('data-type');
         const selectedSection = document.querySelector('.selected-section');
@@ -222,13 +239,15 @@ document.addEventListener('previewLoaded', ()=>{
         switch(elementType){
             case 'textOrient':
                 selectedElement = selectedSection.querySelector('.text-section');
-                selectedElement.style.writingMode = 'horizontal-rl';
+                selectedElement.style.writingMode = 'horizontal-tb';
                 selectedElement.style.textOrientation = 'upright';
+
+                document.querySelector('.inline-btn-orient-active').classList.remove('inline-btn-orient-active');;
+                inputHBtn.classList.add('inline-btn-orient-active');
         }
     }
 
     function orientTextVertical(event){
-        console.log('fired');
         const inputVBtn = event.target;
         const elementType = inputVBtn.getAttribute('data-type');
         const selectedSection = document.querySelector('.selected-section');
@@ -238,6 +257,9 @@ document.addEventListener('previewLoaded', ()=>{
                 selectedElement = selectedSection.querySelector('.text-section');
                 selectedElement.style.writingMode = 'vertical-rl';
                 selectedElement.style.textOrientation = 'upright';
+
+                document.querySelector('.inline-btn-orient-active').classList.remove('inline-btn-orient-active');;
+                inputVBtn.classList.add('inline-btn-orient-active');
         }
     }
 

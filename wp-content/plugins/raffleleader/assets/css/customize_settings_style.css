@@ -183,6 +183,44 @@ input[type="text"].color-input{
     background-color: rgb(196, 196, 196);
 }
 
+.inline-btn-halign-active{
+    background-color: rgb(196, 196, 196);
+    border: 1px solid black;
+}
+
+.inline-btn-halign-active:hover{
+    background-color: rgb(216, 216, 216);
+}
+
+.inline-btn-halign-active:active{
+    background-color: rgb(196, 196, 196);
+}
+
+.inline-btn-valign-active{
+    background-color: rgb(196, 196, 196);
+    border: 1px solid black;
+}
+
+.inline-btn-valign-active:hover{
+    background-color: rgb(216, 216, 216);
+}
+
+.inline-btn-valign-active:active{
+    background-color: rgb(196, 196, 196);
+}
+
+.inline-btn-orient-active{
+    background-color: rgb(196, 196, 196);
+    border: 1px solid black;
+}
+
+.inline-btn-orient-active:hover{
+    background-color: rgb(216, 216, 216);
+}
+
+.inline-btn-orient-active:active{
+    background-color: rgb(196, 196, 196);
+}
 
 
 

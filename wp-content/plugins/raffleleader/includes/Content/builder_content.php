@@ -142,7 +142,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="previewWrapper" class="preview-wrapper">
+                <div id="previewWrapper" class="preview-wrapper" style="display: none;">
                     <div id="preview" class="preview-box">
                         <div id="dropzone"></div>
                         <div class="footer-wrapper">
@@ -173,8 +173,8 @@
                                 </div>
                                 <div class="customize-settings-box">
                                     <p>Horizontal Text Alignment</p>
-                                    <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display dropdown-inline-btns">
+                                    <div class="customize-settings-dropdown text">
+                                        <div class="dropdown-display dropdown-inline-btns text-horizontal-align">
                                             <img class="inline-btn align-left" data-type="textAlign" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left-text-align.png">
                                             <img class="inline-btn align-center" data-type="textAlign" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/center-text-align.png">
                                             <img class="inline-btn align-right" data-type="textAlign" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right-text-align.png">
@@ -183,7 +183,7 @@
                                 </div>
                                 <div class="customize-settings-box">
                                     <p>Vertical Text Alignment</p>
-                                    <div class="customize-settings-dropdown">
+                                    <div class="customize-settings-dropdown text-vertical-align">
                                         <div class="dropdown-display dropdown-inline-btns">
                                             <img class="inline-btn align-top" data-type="textVert" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top-vert.png">
                                             <img class="inline-btn align-middle" data-type="textVert" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/center-vert.png">
@@ -193,7 +193,7 @@
                                 </div>
                                 <div class="customize-settings-box">
                                     <p>Text Orientation</p>
-                                    <div class="customize-settings-dropdown">
+                                    <div class="customize-settings-dropdown text-orientation">
                                         <div class="dropdown-display dropdown-inline-btns dropdown-two-btns">
                                             <img class="inline-btn horizontal-orient" data-type="textOrient" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/horizontal-orient.png">
                                             <img class="inline-btn vertical-orient" data-type="textOrient" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/vertical-orient.png">

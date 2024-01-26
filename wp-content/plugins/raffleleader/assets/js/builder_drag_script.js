@@ -1,5 +1,7 @@
 document.addEventListener('previewLoaded', () => {
     const container = document.getElementById('previewWrapper');
+    container.style.display = 'flex';
+    
     let isDragging = false;
     let lastX, lastY;
     let offsetX = 0, offsetY = 0;

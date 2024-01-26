@@ -10,7 +10,7 @@ document.addEventListener("previewLoaded", ()=>{
             let selectedSection = event.target;
             const currentSection = document.querySelector('.selected-section');
 
-            if(selectedSection.classList.contains('footer') || selectedSection.classList.contains('footer-wrapper') || selectedSection.classList.contains('footer-content')){
+            if(selectedSection.classList.contains('footer') || selectedSection.classList.contains('footer-wrapper') || selectedSection.classList.contains('footer-content') || selectedSection.id === 'dropzone'){
                 return;
             }
 

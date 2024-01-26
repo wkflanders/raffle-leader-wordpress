@@ -1,74 +1,60 @@
-document.addEventListener('previewLoaded', ()=>{
+document.addEventListener('previewLoaded', () => {
     const dropzone = document.getElementById('dropzone');
     const boxes = document.querySelectorAll('.layout-option-box');
     let currentDragElement = null;
 
-    for(i = 0; i < boxes.length; i++){
+    for (let i = 0; i < boxes.length; i++) {
         boxes[i].addEventListener('dragstart', dragStart);
     }
 
     dropzone.addEventListener('dragover', dragOver);
-
     dropzone.addEventListener('drop', drop);
 
-    function dragStart(event){
+    function dragStart(event) {
         currentDragElement = event.target;
     }
 
-    function dragOver(event){
+    function dragOver(event) {
         event.preventDefault();
     }
 
-    function drop(event){
+    function drop(event) {
         event.preventDefault();
 
-        const mouseY = event.clientY;
+        const dropzoneRect = dropzone.getBoundingClientRect();
+        const mouseX = event.clientX - dropzoneRect.left;
+        const mouseY = event.clientY - dropzoneRect.top;
 
-        if(currentDragElement){
-            handleDrop(mouseY, this, currentDragElement);
+        if (currentDragElement) {
+            handleDrop(mouseX, mouseY, this, currentDragElement);
         }
 
         currentDragElement = null;
     }
 
-    function handleDrop(mouseY, container, dragElement){
-        const childElements = Array.from(container.children);
-        let closest = { index: -1, distance: Infinity };
-
-        childElements.forEach((child, index) => {
-            const rect = child.getBoundingClientRect();
-            const midY = rect.top + rect.height / 2;
-            const distance = Math.abs(midY - mouseY);
-            if(distance < closest.distance){
-                closest = { index, distance };
-            }
-        });
-
+    function handleDrop(mouseX, mouseY, container, dragElement) {
         const htmlToAppend = generateHTML(dragElement.id);
-
         const newElement = document.createElement('div');
         newElement.classList.add('section');
         newElement.innerHTML = htmlToAppend;
 
-        if(closest.index === -1){
-            container.appendChild(newElement);
-        } else {
-            const rect = childElements[closest.index].getBoundingClientRect();
-            const midY = rect.top + rect.height / 2;
+        // Append first to get dimensions, then position
+        container.appendChild(newElement);
+        const rect = newElement.getBoundingClientRect();
+        
+        // Adjust position so the center of the element is at the mouse position
+        const centerX = mouseX - rect.width / 2;
+        const centerY = mouseY - rect.height / 2;
 
-            if(mouseY < midY){
-                container.insertBefore(newElement, childElements[closest.index]);
-            } else {
-                const nextSibling = childElements[closest.index].nextElementSibling;
-                container.insertBefore(newElement, nextSibling);
-            }
-        }
+        newElement.style.position = 'absolute';
+        newElement.style.left = `${centerX}px`;
+        newElement.style.top = `${centerY}px`;
     }
 
     function generateHTML(ID){
         switch(ID){
             case 'headerBox':
-                return `<div data-type="headerDetails" class="header-section">
+                return `<div style="height: 100%; width: 100%;" data-type="headerDetails" class="header-section">
                             <h2 style="white-space: pre-wrap;">Header</h2>
                         </div>
                         <div style="display: none;" class="resize-handle"></div>`;

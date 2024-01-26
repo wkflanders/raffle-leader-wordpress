@@ -4,6 +4,11 @@ document.addEventListener('previewLoaded', ()=>{
     const leftAlignBtns = document.querySelectorAll('.align-left');
     const rightAlignBtns = document.querySelectorAll('.align-right');
     const centerAlignBtns = document.querySelectorAll('.align-center');
+    const topAlignBtns = document.querySelectorAll('.align-top');
+    const middleAlignBtns = document.querySelectorAll('.align-middle');
+    const bottomAlignBtns = document.querySelectorAll('.align-bottom');
+    const verticalOrientBtns = document.querySelectorAll('.vertical-orient');
+    const horizontalOrientBtns = document.querySelectorAll('.horizontal-orient');
     const fonts = document.querySelectorAll('.font-title');
     const colorBtns = document.querySelectorAll('.dropdown-color-click');
     const colorGradientPanel = document.getElementById('colorGradient');
@@ -42,57 +47,78 @@ document.addEventListener('previewLoaded', ()=>{
         leftAlignBtn.addEventListener('click', alignTextRight);
     });
 
+    topAlignBtns.forEach((topAlignBtn)=>{
+        topAlignBtn.addEventListener('click', alignTextTop);
+    });
+
+    middleAlignBtns.forEach((middleAlignBtn)=>{
+        middleAlignBtn.addEventListener('click', alignTextMiddle);
+    });
+    
+    bottomAlignBtns.forEach((bottomAlignBtn)=>{
+        bottomAlignBtn.addEventListener('click', alignTextBottom);
+    });
+
+    verticalOrientBtns.forEach((verticalOrientBtn)=>{
+        verticalOrientBtn.addEventListener('click', orientTextVertical);
+    });
+
+    horizontalOrientBtns.forEach((horizontalOrientBtn)=>{
+        horizontalOrientBtn.addEventListener('click', orientTextHorizontal);
+    });
+
     fonts.forEach((font)=>{
         font.addEventListener('click', selectFont);
-    })
+    });
 
     colorBtns.forEach((colorBtn)=>{
         colorBtn.addEventListener('click', showColorGradient);
-    })
+    });
 
     colorForms.forEach((colorForm)=>{
         colorForm.addEventListener('input', enterHex);
-    })
+    });
 
     fontSizeForms.forEach((fontSizeForm)=>{
         fontSizeForm.addEventListener('input', setFontSize);
-    })
+    });
 
     deleteBtns.forEach((deleteBtn)=>{
         deleteBtn.addEventListener('click', deleteSection);
-    })
+    });
 
     confirmDeleteBtns.forEach((confirmDeleteBtn)=>{
         confirmDeleteBtn.addEventListener('click', confirmDelete);
-    })
+    });
 
     cancelDeleteBtns.forEach((cancelDeleteBtn)=>{
         cancelDeleteBtn.addEventListener('click', cancelDelete);
-    })
+    });
 
     boldBtns.forEach((boldBtn)=>{
         boldBtn.addEventListener('click', toggleBold);
-    })
+    });
 
     italicizeBtns.forEach((italicizeBtn)=>{
         italicizeBtn.addEventListener('click', toggleItalicize);
-    })
+    });
 
     underlineBtns.forEach((underlineBtn)=>{
         underlineBtn.addEventListener('click', toggleUnderline);
-    })
+    });
 
     strikeBtns.forEach((strikeBtn)=>{
         strikeBtn.addEventListener('click', toggleStrike);
-    })
+    });
 
     overlineBtns.forEach((overlineBtn)=>{
         overlineBtn.addEventListener('click', toggleOverline);
-    })
+    });
 
     letterSpacingForms.forEach((letterSpacingForm)=>{
         letterSpacingForm.addEventListener('input', setLetterSpacing);
-    })
+    });
+
 
     function openDropDown(event){
         const dropDownBtn = event.target;
@@ -148,6 +174,70 @@ document.addEventListener('previewLoaded', ()=>{
             case 'textAlign':
                 selectedElement = selectedSection.querySelector('.text-section');
                 selectedElement.style.justifyContent = 'center';
+        }
+    }
+
+    function alignTextTop(event){
+        const inputerTopBtn = event.target;
+        const elementType = inputerTopBtn.getAttribute('data-type');
+        const selectedSection = document.querySelector('.selected-section');
+
+        switch(elementType){
+            case 'textVert':
+                selectedElement = selectedSection.querySelector('.text-section');
+                selectedElement.style.alignItems = 'start';
+        }
+    }
+
+    function alignTextMiddle(event){
+        const inputMiddleBtn = event.target;
+        const elementType = inputMiddleBtn.getAttribute('data-type');
+        const selectedSection = document.querySelector('.selected-section');
+
+        switch(elementType){
+            case 'textVert':
+                selectedElement = selectedSection.querySelector('.text-section');
+                selectedElement.style.alignItems = 'center';
+        }
+    }
+
+    function alignTextBottom(event){
+        const inputBottomBtn = event.target;
+        const elementType = inputBottomBtn.getAttribute('data-type');
+        const selectedSection = document.querySelector('.selected-section');
+
+        switch(elementType){
+            case 'textVert':
+                selectedElement = selectedSection.querySelector('.text-section');
+                selectedElement.style.alignItems = 'end';
+        }
+    }
+
+    function orientTextHorizontal(event){
+        console.log('fired');
+        const inputHBtn = event.target;
+        const elementType = inputHBtn.getAttribute('data-type');
+        const selectedSection = document.querySelector('.selected-section');
+
+        switch(elementType){
+            case 'textOrient':
+                selectedElement = selectedSection.querySelector('.text-section');
+                selectedElement.style.writingMode = 'horizontal-rl';
+                selectedElement.style.textOrientation = 'upright';
+        }
+    }
+
+    function orientTextVertical(event){
+        console.log('fired');
+        const inputVBtn = event.target;
+        const elementType = inputVBtn.getAttribute('data-type');
+        const selectedSection = document.querySelector('.selected-section');
+
+        switch(elementType){
+            case 'textOrient':
+                selectedElement = selectedSection.querySelector('.text-section');
+                selectedElement.style.writingMode = 'vertical-rl';
+                selectedElement.style.textOrientation = 'upright';
         }
     }
 
@@ -267,10 +357,10 @@ document.addEventListener('previewLoaded', ()=>{
                 selectedElement.style.fontWeight = textFontWeight === "bold" ? 'normal'
                                                  : textFontWeight >= "500" ? 'normal'
                                                  : 'bold'; 
-                if(!inputBoldBtn.classList.contains('font-style-active')){
-                    inputBoldBtn.classList.add('font-style-active');
+                if(!inputBoldBtn.classList.contains('inline-btn-style-active')){
+                    inputBoldBtn.classList.add('inline-btn-style-active');
                 } else {
-                    inputBoldBtn.classList.remove('font-style-active');
+                    inputBoldBtn.classList.remove('inline-btn-style-active');
                 }
         }
     }
@@ -284,10 +374,10 @@ document.addEventListener('previewLoaded', ()=>{
             case 'textfStyle':
                 selectedElement = selectedSection.querySelector('h2');
                 selectedElement.style.fontStyle = selectedElement.style.fontStyle === "italic" ? 'normal' : 'italic';
-                if(!inputItalicizeBtn.classList.contains('font-style-active')){
-                    inputItalicizeBtn.classList.add('font-style-active');
+                if(!inputItalicizeBtn.classList.contains('inline-btn-style-active')){
+                    inputItalicizeBtn.classList.add('inline-btn-style-active');
                 } else {
-                    inputItalicizeBtn.classList.remove('font-style-active');
+                    inputItalicizeBtn.classList.remove('inline-btn-style-active');
                 }
         }
     }
@@ -308,10 +398,10 @@ document.addEventListener('previewLoaded', ()=>{
                     selectedElement.style.textDecoration = currentStyle + ' underline';
                 }
                 
-                if(!inputUnderlineBtn.classList.contains('font-style-active')){
-                    inputUnderlineBtn.classList.add('font-style-active');
+                if(!inputUnderlineBtn.classList.contains('inline-btn-style-active')){
+                    inputUnderlineBtn.classList.add('inline-btn-style-active');
                 } else {
-                    inputUnderlineBtn.classList.remove('font-style-active');
+                    inputUnderlineBtn.classList.remove('inline-btn-style-active');
                 }
         }
     }
@@ -332,10 +422,10 @@ document.addEventListener('previewLoaded', ()=>{
                     selectedElement.style.textDecoration = currentStyle + ' line-through';
                 }             
 
-                if(!inputStrikeBtn.classList.contains('font-style-active')){
-                    inputStrikeBtn.classList.add('font-style-active');
+                if(!inputStrikeBtn.classList.contains('inline-btn-style-active')){
+                    inputStrikeBtn.classList.add('inline-btn-style-active');
                 } else {
-                    inputStrikeBtn.classList.remove('font-style-active');
+                    inputStrikeBtn.classList.remove('inline-btn-style-active');
                 }
         }
     }
@@ -356,10 +446,10 @@ document.addEventListener('previewLoaded', ()=>{
                     selectedElement.style.textDecoration = currentStyle + ' overline';
                 }             
 
-                if(!inputOverlineBtn.classList.contains('font-style-active')){
-                    inputOverlineBtn.classList.add('font-style-active');
+                if(!inputOverlineBtn.classList.contains('inline-btn-style-active')){
+                    inputOverlineBtn.classList.add('inline-btn-style-active');
                 } else {
-                    inputOverlineBtn.classList.remove('font-style-active');
+                    inputOverlineBtn.classList.remove('inline-btn-style-active');
                 }
         }
     }

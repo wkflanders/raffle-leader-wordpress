@@ -20,7 +20,7 @@ document.addEventListener('previewLoaded', ()=>{
     const confirmDeleteBtns = document.querySelectorAll('.confirm-delete');
     const cancelDeleteBtns = document.querySelectorAll('.cancel-delete');
 
-    let pickrHeader = undefined;
+    let pickrText = undefined;
 
     dropDownBtns.forEach((dropDownBtn)=>{
         dropDownBtn.addEventListener('click', openDropDown);
@@ -109,7 +109,7 @@ document.addEventListener('previewLoaded', ()=>{
         const selectedSection = document.querySelector('.selected-section');
 
         switch(elementType){
-            case 'headerText':
+            case 'editText':
                 const selectedElement = selectedSection.querySelector('h2');
                 selectedElement.textContent = this.value;
         }
@@ -121,8 +121,8 @@ document.addEventListener('previewLoaded', ()=>{
         const selectedSection = document.querySelector('.selected-section');
 
         switch(elementType){
-            case 'headerAlign':
-                selectedElement = selectedSection.querySelector('.header-section');
+            case 'textAlign':
+                selectedElement = selectedSection.querySelector('.text-section');
                 selectedElement.style.justifyContent = 'left';
         }
     }
@@ -133,8 +133,8 @@ document.addEventListener('previewLoaded', ()=>{
         const selectedSection = document.querySelector('.selected-section');
 
         switch(elementType){
-            case 'headerAlign':
-                selectedElement = selectedSection.querySelector('.header-section');
+            case 'textAlign':
+                selectedElement = selectedSection.querySelector('.text-section');
                 selectedElement.style.justifyContent = 'right';
         }
     }
@@ -145,8 +145,8 @@ document.addEventListener('previewLoaded', ()=>{
         const selectedSection = document.querySelector('.selected-section');
 
         switch(elementType){
-            case 'headerAlign':
-                selectedElement = selectedSection.querySelector('.header-section');
+            case 'textAlign':
+                selectedElement = selectedSection.querySelector('.text-section');
                 selectedElement.style.justifyContent = 'center';
         }
     }
@@ -154,12 +154,12 @@ document.addEventListener('previewLoaded', ()=>{
     function selectFont(event){
         const inputFontElement = event.target;
         const fontName = inputFontElement.innerText;
-        const dropDownDisplay = document.getElementById('headerDropDownTitle');
+        const dropDownDisplay = document.getElementById('textDropDownTitle');
         const elementType = inputFontElement.getAttribute('data-type');
         const selectedSection = document.querySelector('.selected-section');
 
         switch(elementType){
-            case 'headerText':
+            case 'textFont':
                 const selectedElement = selectedSection.querySelector('h2');
                 selectedElement.style.fontFamily = `${fontName}`;
         }
@@ -175,24 +175,24 @@ document.addEventListener('previewLoaded', ()=>{
     function showColorGradient(event){
         const inputColorElement = event.target;
         const elementType = inputColorElement.getAttribute('data-type');
-        const currentHeaderTextColor = document.getElementById('headerFontColorForm').value;
+        const currentTextFontColor = document.getElementById('textFontColorForm').value;
 
         switch(elementType){
-            case 'headerColor':
-                    pickrHeader = Pickr.create({
+            case 'textColor':
+                    pickrText = Pickr.create({
                     el: colorGradientPanel,
                     theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentHeaderTextColor,
+                    default: currentTextFontColor,
                     useAsButton: true,
                     padding: 15,
                     components: {
                         hue: true,
                     }
                 });
-                pickrHeader.setColorRepresentation('HEX');
-                pickrHeader.show();
+                pickrText.setColorRepresentation('HEX');
+                pickrText.show();
 
-                pickrHeader.on('change', (color)=>{
+                pickrText.on('change', (color)=>{
                     const selectedColor = '#'.concat(...color.toHEXA());
                     this.style.backgroundColor = selectedColor;
                     
@@ -215,10 +215,10 @@ document.addEventListener('previewLoaded', ()=>{
     function pickColor(color, elementType, fromPickr){
 
         switch(elementType){
-            case 'headerColor':
+            case 'textColor':
                 if(fromPickr === false){
-                    if(pickrHeader === undefined){
-                            pickrHeader = Pickr.create({
+                    if(pickrText === undefined){
+                            pickrText = Pickr.create({
                             el: colorGradientPanel,
                             theme: 'classic', // or 'monolith', or 'nano'
                             default: color,
@@ -229,12 +229,12 @@ document.addEventListener('previewLoaded', ()=>{
                             }
                         });
                     } else {
-                        pickrHeader.setColor(color);
-                        const hexBoxClick = document.getElementById('headerFontColorClick');
+                        pickrText.setColor(color);
+                        const hexBoxClick = document.getElementById('textFontColorClick');
                         hexBoxClick.style.backgroundColor = color;
                     }
                 } else {
-                    const hexBoxText = document.getElementById('headerFontColorForm');
+                    const hexBoxText = document.getElementById('textFontColorForm');
                     hexBoxText.value = color;
                 }
                 const editElement = document.querySelector('.selected-section').querySelector('h2');
@@ -249,7 +249,7 @@ document.addEventListener('previewLoaded', ()=>{
         const selectedSection = document.querySelector('.selected-section');
 
         switch(elementType){
-            case 'headerFontSize':
+            case 'textFontSize':
                 const selectedElement = selectedSection.querySelector('h2');
                 selectedElement.style.fontSize = `${fontSize}px`;
         }
@@ -261,11 +261,11 @@ document.addEventListener('previewLoaded', ()=>{
         const selectedSection = document.querySelector('.selected-section');
 
         switch(elementType){
-            case 'headerfStyle':
+            case 'textfStyle':
                 selectedElement = selectedSection.querySelector('h2');
-                const headerFontWeight = window.getComputedStyle(selectedElement).getPropertyValue('font-weight').replace(/^"|"$/g, '');
-                selectedElement.style.fontWeight = headerFontWeight === "bold" ? 'normal'
-                                                 : headerFontWeight >= "500" ? 'normal'
+                const textFontWeight = window.getComputedStyle(selectedElement).getPropertyValue('font-weight').replace(/^"|"$/g, '');
+                selectedElement.style.fontWeight = textFontWeight === "bold" ? 'normal'
+                                                 : textFontWeight >= "500" ? 'normal'
                                                  : 'bold'; 
                 if(!inputBoldBtn.classList.contains('font-style-active')){
                     inputBoldBtn.classList.add('font-style-active');
@@ -281,7 +281,7 @@ document.addEventListener('previewLoaded', ()=>{
         const selectedSection = document.querySelector('.selected-section');
 
         switch(elementType){
-            case 'headerfStyle':
+            case 'textfStyle':
                 selectedElement = selectedSection.querySelector('h2');
                 selectedElement.style.fontStyle = selectedElement.style.fontStyle === "italic" ? 'normal' : 'italic';
                 if(!inputItalicizeBtn.classList.contains('font-style-active')){
@@ -298,7 +298,7 @@ document.addEventListener('previewLoaded', ()=>{
         const selectedSection = document.querySelector('.selected-section');
 
         switch(elementType){
-            case 'headerfStyle':
+            case 'textfStyle':
                 selectedElement = selectedSection.querySelector('h2');
 
                 let currentStyle = selectedElement.style.textDecoration;
@@ -322,7 +322,7 @@ document.addEventListener('previewLoaded', ()=>{
         const selectedSection = document.querySelector('.selected-section');
 
         switch(elementType){
-            case 'headerfStyle':
+            case 'textfStyle':
                 selectedElement = selectedSection.querySelector('h2');
                 
                 let currentStyle = selectedElement.style.textDecoration;
@@ -346,7 +346,7 @@ document.addEventListener('previewLoaded', ()=>{
         const selectedSection = document.querySelector('.selected-section');
 
         switch(elementType){
-            case 'headerfStyle':
+            case 'textfStyle':
                 selectedElement = selectedSection.querySelector('h2');
                 
                 let currentStyle = selectedElement.style.textDecoration;
@@ -371,7 +371,7 @@ document.addEventListener('previewLoaded', ()=>{
         const selectedSection = document.querySelector('.selected-section');
 
         switch(elementType){
-            case 'headerLetterSpacing':
+            case 'textLetterSpacing':
                 const selectedElement = selectedSection.querySelector('h2');
                 selectedElement.style.letterSpacing = `${letterSpacing}px`;
         }
@@ -384,9 +384,9 @@ document.addEventListener('previewLoaded', ()=>{
         const elementType = deleteBtn.getAttribute('data-type');
 
         switch(elementType){
-            case 'headerDelete':
-                const confirmBtn = document.getElementById('headerConfirmDelete');
-                const cancelDelete = document.getElementById('headerCancelDelete');
+            case 'textDelete':
+                const confirmBtn = document.getElementById('textConfirmDelete');
+                const cancelDelete = document.getElementById('textCancelDelete');
                 deleteBtn.style.display = "none";
                 confirmBtn.style.display = "flex";
                 cancelDelete.style.display = "block";
@@ -400,12 +400,12 @@ document.addEventListener('previewLoaded', ()=>{
         const customizeBox = document.getElementById('settingsWrapper');
 
         switch(elementType){
-            case 'headerDelete':
+            case 'textDelete':
                 const selectedSection = document.querySelector('.selected-section');
                 selectedSection.remove();
 
-                const deleteBtn = document.getElementById('headerDelete');
-                const cancelDelete = document.getElementById('headerCancelDelete');
+                const deleteBtn = document.getElementById('textDelete');
+                const cancelDelete = document.getElementById('textCancelDelete');
                 deleteBtn.style.display = "flex";
                 confirmDelete.style.display = "none";
                 cancelDelete.style.display = "none";
@@ -421,9 +421,9 @@ document.addEventListener('previewLoaded', ()=>{
         const elementType = cancelBtn.getAttribute('data-type');
 
         switch(elementType){
-            case 'headerDelete':
-                const deleteBtn = document.getElementById('headerDelete');
-                const confirmBtn = document.getElementById('headerConfirmDelete');
+            case 'textDelete':
+                const deleteBtn = document.getElementById('textDelete');
+                const confirmBtn = document.getElementById('textConfirmDelete');
                 deleteBtn.style.display = "flex";
                 confirmBtn.style.display = "none";
                 cancelBtn.style.display = "none";

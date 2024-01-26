@@ -127,14 +127,8 @@
                         </div>
                         <div class="layout-options">
                             <p>Drag & Drop to Add Sections to your Raffle!</p>
-                            <div id="headerBox" draggable="true" class="layout-option-box">
-                                <p>+ Header</p>
-                            </div>
-                            <div id="subheaderBox" draggable="true" class="layout-option-box">
-                                <p>+ Subheader</p>
-                            </div>
-                            <div id="bodyBox" draggable="true" class="layout-option-box">
-                                <p>+ Body Text</p>
+                            <div id="textBox" draggable="true" class="layout-option-box">
+                                <p>+ Text</p>
                             </div>
                             <div id="formBox" draggable="true" class="layout-option-box">
                                 <p>+ Form</p>
@@ -162,7 +156,7 @@
                 </div>
                 <div id="settingsWrapper" class="settings-wrapper">
                     <div class="settings-content">
-                        <div id="headerDetails" class="customize-box-content">
+                        <div id="textDetails" class="customize-box-content">
                             <div class="dropdown-wrapper text-design">
                                 <div class="header-box">
                                     <div class="spacer"></div>
@@ -170,75 +164,75 @@
                                     <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
                                 </div>
                                 <div class="customize-settings-box">
-                                    <p>Header Text</p>
+                                    <p>Edit Text</p>
                                     <div class="customize-settings-dropdown">
                                         <div class="dropdown-display dropdown-text">
-                                            <input id="headerTextForm" class="text-input" data-type="headerText" type="text" placeholder="Enter Header Text">
+                                            <input id="textTextForm" class="text-input" data-type="editText" type="text" placeholder="Enter Text">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="customize-settings-box">
-                                    <p>Header Text Alignment</p>
+                                    <p>Horizontal Text Alignment</p>
                                     <div class="customize-settings-dropdown">
                                         <div class="dropdown-display dropdown-inline-btns">
-                                            <img class="inline-btn align-left" data-type="headerAlign" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left-text-align.png">
-                                            <img class="inline-btn align-center" data-type="headerAlign" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/center-text-align.png">
-                                            <img class="inline-btn align-right" data-type="headerAlign" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right-text-align.png">
+                                            <img class="inline-btn align-left" data-type="textAlign" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left-text-align.png">
+                                            <img class="inline-btn align-center" data-type="textAlign" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/center-text-align.png">
+                                            <img class="inline-btn align-right" data-type="textAlign" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right-text-align.png">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="customize-settings-box">
-                                    <p>Header Text Font</p>
+                                    <p>Text Font</p>
                                     <div class="customize-settings-dropdown">
                                         <div class="dropdown-display">
-                                            <p id="headerDropDownTitle">Overview</p>
+                                            <p id="textDropDownTitle">Overview</p>
                                             <p class="dropdown-btn">▼</p>
                                         </div>
                                         <div class="dropdown-content">
-                                            <ul id="headerFontList">
+                                            <ul id="textFontList">
                                                 <!-- Need to add more fonts -->
-                                                <li class="font-title" data-type="headerText">Overpass</li>
-                                                <li class="font-title" data-type="headerText">Inter</li>
-                                                <li class="font-title" data-type="headerText">Courier New</li>
+                                                <li class="font-title" data-type="textFont">Overpass</li>
+                                                <li class="font-title" data-type="textFont">Inter</li>
+                                                <li class="font-title" data-type="textFont">Courier New</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="customize-settings-box">
-                                    <p>Header Font Color</p>
+                                    <p>Font Color</p>
                                     <div class="customize-settings-dropdown">
                                         <div class="dropdown-display dropdown-color">
                                             <div id="colorGradient"></div>
-                                            <div id="headerFontColorClick" class="dropdown-color-click" data-type="headerColor"></div>
-                                            <input id="headerFontColorForm" class="color-input" data-type="headerColor" type="text" placeholder="Enter a hexidecimal">
+                                            <div id="textFontColorClick" class="dropdown-color-click" data-type="textColor"></div>
+                                            <input id="textFontColorForm" class="color-input" data-type="textColor" type="text" placeholder="Enter a hexidecimal">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="customize-settings-box">
-                                    <p>Header Font Size</p>
+                                    <p>Font Size</p>
                                     <div class="customize-settings-dropdown">
                                         <div class="dropdown-display dropdown-text">
-                                            <input id="headerFontSizeForm" class="font-size-input" data-type="headerFontSize" type="text" placeholder="Enter a font size">
+                                            <input id="textFontSizeForm" class="font-size-input" data-type="textFontSize" type="text" placeholder="Enter a font size">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="customize-settings-box">
-                                    <p>Header Font Style </p>
+                                    <p>Font Style </p>
                                     <div class="customize-settings-dropdown">
                                         <div class="dropdown-display dropdown-inline-btns">
-                                            <img id="headerBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                                            <img id="headerItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                                            <img id="headerUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                                            <img id="headerStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                                            <img id="headerOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                                            <img id="textBoldBtn" class="inline-btn bold-btn" data-type="textfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                                            <img id="textItalicizeBtn" class="inline-btn italicize-btn" data-type="textfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                                            <img id="textUnderlineBtn" class="inline-btn underline-btn" data-type="textfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                                            <img id="textStrikeBtn" class="inline-btn strike-btn" data-type="textfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                                            <img id="textOverlineBtn" class="inline-btn overline-btn" data-type="textfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="customize-settings-box">
-                                    <p>Header Letter Spacing</p>
+                                    <p>Letter Spacing</p>
                                     <div class="customize-settings-dropdown">
                                         <div class="dropdown-display dropdown-text">
-                                            <input id="headerLetterSpacingForm" class="letter-spacing-input" data-type="headerLetterSpacing" type="text" placeholder="Enter letter spacing">
+                                            <input id="textLetterSpacingForm" class="letter-spacing-input" data-type="textLetterSpacing" type="text" placeholder="Enter letter spacing">
                                         </div>
                                     </div>
                                 </div>
@@ -248,22 +242,6 @@
                                     <div class="spacer"></div>
                                     <h2 class="header-box-title">Section Design</h2>
                                     <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
-                                </div>
-                                <div class="customize-settings-box">
-                                    <p>Header Height</p>
-                                    <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display dropdown-slide">
-                                            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="customize-settings-box">
-                                    <p>Header Width</p>
-                                    <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display dropdown-slide">
-                                            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="customize-settings-box">
                                     <p>Header Background Color</p>
@@ -331,32 +309,14 @@
                                 </div>
                                 <div class="customize-settings-box">
                                     <div class="customize-settings-dropdown">
-                                        <div id="headerDelete" class="dropdown-display delete-display" data-type="headerDelete">
+                                        <div id="textDelete" class="dropdown-display delete-display" data-type="textDelete">
                                             <span>Delete</span>
                                         </div>
-                                        <div id="headerConfirmDelete" class="dropdown-display confirm-delete" style="display: none;" data-type="headerDelete">
+                                        <div id="textConfirmDelete" class="dropdown-display confirm-delete" style="display: none;" data-type="textDelete">
                                             <span>Confirm Delete</span>
                                         </div>
-                                        <p id="headerCancelDelete" class="cancel-delete" style="display: none;" data-type="headerDelete">Cancel</p>
+                                        <p id="textCancelDelete" class="cancel-delete" style="display: none;" data-type="textDelete">Cancel</p>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="subheaderDetails" class="customize-box-content">
-                            <div class="dropdown-wrapper">
-                                <div class="header-box">
-                                    <div class="spacer"></div>
-                                    <h2 class="header-box-title">Subheader</h2>
-                                    <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="bodyDetails" class="customize-box-content">
-                            <div class="dropdown-wrapper">
-                                <div class="header-box">
-                                    <div class="spacer"></div>
-                                    <h2 class="header-box-title">Body</h2>
-                                    <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
                                 </div>
                             </div>
                         </div>

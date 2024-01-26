@@ -55,30 +55,30 @@ document.addEventListener("previewLoaded", ()=>{
 
     function loadCustomizeSettings(element, elementType){
         switch(elementType){
-            case 'headerDetails':
-                loadHeaderSettings(element);
+            case 'textDetails':
+                loadTextSettings(element);
         }
     }
 
-    function loadHeaderSettings(element){
-        // Load header settings
-        const headerTextForm = document.getElementById('headerTextForm');
-        const headerTextElement = element.querySelector('h2');
-        const headerColorForm = document.getElementById('headerFontColorForm');
-        const headerFontSizeForm = document.getElementById('headerFontSizeForm');
-        const headerLetterSpacingForm = document.getElementById('headerLetterSpacingForm');
+    function loadTextSettings(element){
+        // Load text settings
+        const textTextForm = document.getElementById('textTextForm');
+        const textTextElement = element.querySelector('h2');
+        const textColorForm = document.getElementById('textFontColorForm');
+        const textFontSizeForm = document.getElementById('textFontSizeForm');
+        const textLetterSpacingForm = document.getElementById('textLetterSpacingForm');
 
-        // header text
-        const headerText = headerTextElement.textContent;
-        headerTextForm.value = headerText;
+        // text text
+        const textText = textTextElement.textContent;
+        textTextForm.value = textText;
         
-        // header font 
-        const headerFontList = document.getElementById('headerFontList');
-        const headerFontDisplay = document.getElementById('headerDropDownTitle');
-        const font = window.getComputedStyle(headerTextElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
-        headerFontDisplay.innerText = font;
+        // text font 
+        const textFontList = document.getElementById('textFontList');
+        const textFontDisplay = document.getElementById('textDropDownTitle');
+        const font = window.getComputedStyle(textTextElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        textFontDisplay.innerText = font;
         
-        Array.from(headerFontList.children).forEach((child)=>{
+        Array.from(textFontList.children).forEach((child)=>{
             const childFont = child.innerText;
             if(child.classList.contains('selected-font')){
                 child.classList.remove('selected-font');
@@ -88,71 +88,71 @@ document.addEventListener("previewLoaded", ()=>{
             }
         })
 
-        // header text color
-        const headerHexBox = document.getElementById('headerFontColorClick');
-        const headerTextColorRGB = window.getComputedStyle(headerTextElement).getPropertyValue('color').replace(/^"|"$/g, '');
-        const headerTextColorHex = rgbToHex(headerTextColorRGB);
-        headerColorForm.value = headerTextColorHex;
-        headerHexBox.style.backgroundColor = headerTextColorHex;
+        // text text color
+        const textHexBox = document.getElementById('textFontColorClick');
+        const textTextColorRGB = window.getComputedStyle(textTextElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const textTextColorHex = rgbToHex(textTextColorRGB);
+        textColorForm.value = textTextColorHex;
+        textHexBox.style.backgroundColor = textTextColorHex;
 
-        // header font size
-        const headerFontSize = window.getComputedStyle(headerTextElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
-        headerFontSizeForm.value = headerFontSize;
+        // text font size
+        const textFontSize = window.getComputedStyle(textTextElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        textFontSizeForm.value = textFontSize;
 
-        // header styles
-        const headerFontWeight = window.getComputedStyle(headerTextElement).getPropertyValue('font-weight').replace(/^"|"$/g, '');
-        const headerFontStyle = headerTextElement.style.fontStyle;
-        const headerFontDecoration = headerTextElement.style.textDecoration;
+        // text styles
+        const textFontWeight = window.getComputedStyle(textTextElement).getPropertyValue('font-weight').replace(/^"|"$/g, '');
+        const textFontStyle = textTextElement.style.fontStyle;
+        const textFontDecoration = textTextElement.style.textDecoration;
 
-        const headerBoldBtn = document.getElementById('headerBoldBtn');
-        const headerItalicizeBtn = document.getElementById('headerItalicizeBtn');
-        const headerUnderlineBtn = document.getElementById('headerUnderlineBtn');
-        const headerStrikeBtn = document.getElementById('headerStrikeBtn');
-        const headerOverlineBtn = document.getElementById('headerOverlineBtn');
+        const textBoldBtn = document.getElementById('textBoldBtn');
+        const textItalicizeBtn = document.getElementById('textItalicizeBtn');
+        const textUnderlineBtn = document.getElementById('textUnderlineBtn');
+        const textStrikeBtn = document.getElementById('textStrikeBtn');
+        const textOverlineBtn = document.getElementById('textOverlineBtn');
 
-        if(headerFontWeight === 'bold' || headerFontWeight >= 500){
-            headerBoldBtn.classList.add('font-style-active');
+        if(textFontWeight === 'bold' || textFontWeight >= 500){
+            textBoldBtn.classList.add('font-style-active');
         } else {
             try{
-                headerBoldBtn.classList.remove('font-style-active')
+                textBoldBtn.classList.remove('font-style-active')
             } catch {}
         }
 
-        if(headerFontStyle.includes('italic')){
-            headerItalicizeBtn.classList.add('font-style-active');
+        if(textFontStyle.includes('italic')){
+            textItalicizeBtn.classList.add('font-style-active');
         } else {
             try{
-                headerItalicizeBtn.classList.remove('font-style-active')
+                textItalicizeBtn.classList.remove('font-style-active')
             } catch {}
         }
 
-        if(headerFontDecoration.includes('underline')){
-            headerUnderlineBtn.classList.add('font-style-active');
+        if(textFontDecoration.includes('underline')){
+            textUnderlineBtn.classList.add('font-style-active');
         } else {
             try{
-                headerUnderlineBtn.classList.remove('font-style-active')
+                textUnderlineBtn.classList.remove('font-style-active')
             } catch {}
         }
 
-        if(headerFontDecoration.includes('line-through')){
-            headerStrikeBtn.classList.add('font-style-active');
+        if(textFontDecoration.includes('line-through')){
+            textStrikeBtn.classList.add('font-style-active');
         } else {
             try{
-                headerStrikeBtn.classList.remove('font-style-active')
+                textStrikeBtn.classList.remove('font-style-active')
             } catch {}
         }
 
-        if(headerFontDecoration.includes('overline')){
-            headerOverlineBtn.classList.add('font-style-active');
+        if(textFontDecoration.includes('overline')){
+            textOverlineBtn.classList.add('font-style-active');
         } else {
             try{
-                headerOverlineBtn.classList.remove('font-style-active')
+                textOverlineBtn.classList.remove('font-style-active')
             } catch {}
         }
 
-        // header letter spacing
-        const headerLetterSpacing = window.getComputedStyle(headerTextElement).getPropertyValue('letter-spacing').replace(/^"|"$/g, '');
-        headerLetterSpacingForm.value = headerLetterSpacing;
+        // text letter spacing
+        const textLetterSpacing = window.getComputedStyle(textTextElement).getPropertyValue('letter-spacing').replace(/^"|"$/g, '');
+        textLetterSpacingForm.value = textLetterSpacing;
     }
     
 

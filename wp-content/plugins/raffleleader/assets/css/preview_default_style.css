@@ -88,7 +88,7 @@
     outline-offset: -4px;
 }
 
-.header-section{
+.text-section{
     display: flex;
     flex-wrap:wrap;
     justify-content: center;
@@ -98,42 +98,13 @@
     background-color: black;
 }
 
-.header-section > h2 {
+.text-section > h2 {
     color: white;
     font-size: 30px;
     padding: 0vh 1vh 0vh 1vh;
     margin: 0;
     font-weight: bold;
     letter-spacing: 1px;
-}
-
-.subheader-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    outline: 1px solid black;
-    background-color: white;
-}
-
-.subheader-section > h4 {
-    color: black;
-    font-weight: 900;
-    font-size: 2.5vh;
-}
-
-.body-section{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    outline: 1px solid black;
-}
-
-.body-section > p {
-    color: black;
-    font-size: 2vh;
-    letter-spacing: -0.05vh;
 }
 
 .image-section{

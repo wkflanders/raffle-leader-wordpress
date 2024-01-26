@@ -53,19 +53,9 @@ document.addEventListener('previewLoaded', () => {
 
     function generateHTML(ID){
         switch(ID){
-            case 'headerBox':
-                return `<div style="height: 100%; width: 100%;" data-type="headerDetails" class="header-section">
-                            <h2 style="white-space: pre-wrap;">Header</h2>
-                        </div>
-                        <div style="display: none;" class="resize-handle"></div>`;
-            case 'subheaderBox':
-                return `<div data-type="subheaderDetails" class="subheader-section">
-                            <h4 style="white-space: pre-wrap;">Subheader</h4>
-                        </div>
-                        <div style="display: none;" class="resize-handle"></div>`;
-            case 'bodyBox':
-                return `<div data-type="bodyDetails" class="body-section">
-                            <p style="white-space: pre-wrap;">Body Text</p>
+            case 'textBox':
+                return `<div style="height: 100%; width: 100%;" data-type="textDetails" class="text-section">
+                            <h2 style="white-space: pre-wrap;">Text</h2>
                         </div>
                         <div style="display: none;" class="resize-handle"></div>`;
             case 'formBox':

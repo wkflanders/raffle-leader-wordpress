@@ -166,8 +166,8 @@
                                 <div class="customize-settings-box">
                                     <p>Edit Text</p>
                                     <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display dropdown-text">
-                                            <input id="textForm" class="text-input" data-type="editText" type="text" placeholder="Enter Text">
+                                        <div class="dropdown-display dropdown-text dropdown-edit-text">
+                                            <textarea id="textForm" class="text-input" data-type="editText" type="text" placeholder="Enter Text"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -265,22 +265,10 @@
                                 <div class="customize-settings-box">
                                     <p>Background Color</p>
                                     <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display">
-                                            <p>Overview (Bold)</p>
-                                            <p class="dropdown-btn">▼</p>
-                                        </div>
-                                        <div class="dropdown-content">
-                                            <ul>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-
-                                            </ul>
+                                        <div class="dropdown-display dropdown-color">
+                                            <div id="colorGradientBackground"></div>
+                                            <div id="textBackgroundColorClick" class="dropdown-color-click" data-type="textBackgroundColor"></div>
+                                            <input id="textBackgroundColorForm" class="color-input" data-type="textBackgroundColor" type="text" placeholder="Enter a hexidecimal">
                                         </div>
                                     </div>
                                 </div>

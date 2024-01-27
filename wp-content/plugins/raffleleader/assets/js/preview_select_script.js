@@ -65,6 +65,7 @@ document.addEventListener("previewLoaded", ()=>{
         const textForm = document.getElementById('textForm');
         const textElement = element.querySelector('h2');
         const textColorForm = document.getElementById('textFontColorForm');
+        const textBackgroundColorForm = document.getElementById('textBackgroundColorForm');
         const textFontSizeForm = document.getElementById('textFontSizeForm');
         const textLetterSpacingForm = document.getElementById('textLetterSpacingForm');
 
@@ -137,6 +138,13 @@ document.addEventListener("previewLoaded", ()=>{
         const textColorHex = rgbToHex(textColorRGB);
         textColorForm.value = textColorHex;
         textHexBox.style.backgroundColor = textColorHex;
+
+        // background color
+        const textBackgroundHexBox = document.getElementById('textBackgroundColorClick');
+        const textBackgroundColorRGB = window.getComputedStyle(element).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const textBackgroundColorHex = rgbToHex(textBackgroundColorRGB);
+        textBackgroundColorForm.value = textBackgroundColorHex;
+        textBackgroundHexBox.style.backgroundColor = textBackgroundColorHex;
 
         // font size
         const textFontSize = window.getComputedStyle(textElement).getPropertyValue('font-size').replace(/^"|"$/g, '');

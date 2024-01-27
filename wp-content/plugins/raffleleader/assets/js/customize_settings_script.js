@@ -21,11 +21,13 @@ document.addEventListener('previewLoaded', ()=>{
     const overlineBtns = document.querySelectorAll('.overline-btn');
     const letterSpacingForms = document.querySelectorAll('.letter-spacing-input')
     
+    const colorGradientPanelBackground = document.getElementById('colorGradientBackground');
     const deleteBtns = document.querySelectorAll('.delete-display');
     const confirmDeleteBtns = document.querySelectorAll('.confirm-delete');
     const cancelDeleteBtns = document.querySelectorAll('.cancel-delete');
 
     let pickrText = undefined;
+    let pickrBackground = undefined;
 
     dropDownBtns.forEach((dropDownBtn)=>{
         dropDownBtn.addEventListener('click', openDropDown);
@@ -288,10 +290,11 @@ document.addEventListener('previewLoaded', ()=>{
         const inputColorElement = event.target;
         const elementType = inputColorElement.getAttribute('data-type');
         const currentTextFontColor = document.getElementById('textFontColorForm').value;
+        const currentTextBackgroundColor = document.getElementById('textBackgroundColorForm').value;
 
         switch(elementType){
             case 'textColor':
-                    pickrText = Pickr.create({
+                pickrText = Pickr.create({
                     el: colorGradientPanel,
                     theme: 'classic', // or 'monolith', or 'nano'
                     default: currentTextFontColor,
@@ -310,6 +313,29 @@ document.addEventListener('previewLoaded', ()=>{
                     
                     pickColor(selectedColor, elementType, true);
                 })
+                break;
+
+            case 'textBackgroundColor':
+                pickrBackground = Pickr.create({
+                    el: colorGradientPanelBackground,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentTextBackgroundColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrBackground.setColorRepresentation('HEX');
+                pickrBackground.show();
+
+                pickrBackground.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                })
+                break;
         }
         
     }
@@ -325,7 +351,6 @@ document.addEventListener('previewLoaded', ()=>{
     }
 
     function pickColor(color, elementType, fromPickr){
-
         switch(elementType){
             case 'textColor':
                 if(fromPickr === false){
@@ -349,8 +374,35 @@ document.addEventListener('previewLoaded', ()=>{
                     const hexBoxText = document.getElementById('textFontColorForm');
                     hexBoxText.value = color;
                 }
-                const editElement = document.querySelector('.selected-section').querySelector('h2');
-                editElement.style.color = color;
+                const editElementFont = document.querySelector('.selected-section').querySelector('h2');
+                editElementFont.style.color = color;
+                break;
+                
+            case 'textBackgroundColor':
+                if(fromPickr === false){
+                    if(pickrBackground === undefined){
+                        pickrBackground = Pickr.create({
+                            el: colorGradientPanelBackground,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrBackground.setColor(color);
+                        const hexBoxClick = document.getElementById('textBackgroundColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('textBackgroundColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementBackground = document.querySelector('.selected-section').querySelector('.text-section');
+                editElementBackground.style.backgroundColor = color;
+                break;
         }
     }
 

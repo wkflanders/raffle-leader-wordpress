@@ -479,7 +479,7 @@ document.addEventListener('previewLoaded', ()=>{
 
     function setFontSize(event){
         const inputFontSizeElement = event.target;
-        const fontSize = inputFontSizeElement.value;
+        const fontSize = inputFontSizeElement.value.includes('px') ? inputFontSizeElement.value.replace('px', '') : inputFontSizeElement.value;
         const elementType = inputFontSizeElement.getAttribute('data-type');
         const selectedSection = document.querySelector('.selected-section');
 
@@ -601,7 +601,7 @@ document.addEventListener('previewLoaded', ()=>{
 
     function setLetterSpacing(event){
         const inputLetterSpacingElement = event.target;
-        const letterSpacing = inputLetterSpacingElement.value;
+        const letterSpacing = inputLetterSpacingElement.value.includes('px') ? inputLetterSpacingElement.value.replace('px', '') : inputLetterSpacingElement.value;
         const elementType = inputLetterSpacingElement.getAttribute('data-type');
         const selectedSection = document.querySelector('.selected-section');
 
@@ -614,7 +614,7 @@ document.addEventListener('previewLoaded', ()=>{
 
     function setBorderStroke(event){
         const inputBorderStrokeForm = event.target;
-        const borderStroke = inputBorderStrokeForm.value;
+        const borderStroke = inputBorderStrokeForm.value.includes('px') ? inputBorderStrokeForm.value.replace('px', '') : inputBorderStrokeForm.value;
         const strokeFormID = inputBorderStrokeForm.id;
         const elementType = inputBorderStrokeForm.getAttribute('data-type');
         const selectedSection = document.querySelector('.selected-section');
@@ -637,7 +637,7 @@ document.addEventListener('previewLoaded', ()=>{
 
     function setBorderRadius(event){
         const inputBorderRadiusForm = event.target;
-        const borderRadius = inputBorderRadiusForm.value;
+        const borderRadius = inputBorderRadiusForm.value.includes('px') ? inputBorderRadiusForm.value.replace('px', '') : inputBorderRadiusForm.value;
         const radiusFormID = inputBorderRadiusForm.id;
         const elementType = inputBorderRadiusForm.getAttribute('data-type');
         const selectedSection = document.querySelector('.selected-section');

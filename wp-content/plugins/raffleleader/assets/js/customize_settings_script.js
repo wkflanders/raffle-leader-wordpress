@@ -21,6 +21,9 @@ document.addEventListener('previewLoaded', ()=>{
     const overlineBtns = document.querySelectorAll('.overline-btn');
     const letterSpacingForms = document.querySelectorAll('.letter-spacing-input')
     
+    const borderStrokeForms = document.querySelectorAll('.border-stroke-input');
+    const borderRadiusForms = document.querySelectorAll('.border-radius-input');
+    const colorGradientPanelBorder = document.getElementById('colorGradientBorder');
     const colorGradientPanelBackground = document.getElementById('colorGradientBackground');
     const deleteBtns = document.querySelectorAll('.delete-display');
     const confirmDeleteBtns = document.querySelectorAll('.confirm-delete');
@@ -28,6 +31,7 @@ document.addEventListener('previewLoaded', ()=>{
 
     let pickrText = undefined;
     let pickrBackground = undefined;
+    let pickrBorder = undefined;
 
     dropDownBtns.forEach((dropDownBtn)=>{
         dropDownBtn.addEventListener('click', openDropDown);
@@ -120,6 +124,14 @@ document.addEventListener('previewLoaded', ()=>{
     letterSpacingForms.forEach((letterSpacingForm)=>{
         letterSpacingForm.addEventListener('input', setLetterSpacing);
     });
+
+    borderStrokeForms.forEach((borderStrokeForm)=>{
+        borderStrokeForm.addEventListener('input', setBorderStroke);
+    });
+
+    borderRadiusForms.forEach((borderRadiusForm)=>{
+        borderRadiusForm.addEventListener('input', setBorderRadius);
+    })
 
 
     function openDropDown(event){
@@ -291,6 +303,7 @@ document.addEventListener('previewLoaded', ()=>{
         const elementType = inputColorElement.getAttribute('data-type');
         const currentTextFontColor = document.getElementById('textFontColorForm').value;
         const currentTextBackgroundColor = document.getElementById('textBackgroundColorForm').value;
+        const currentBorderColor = document.getElementById('textBorderColorForm').value;
 
         switch(elementType){
             case 'textColor':
@@ -330,6 +343,28 @@ document.addEventListener('previewLoaded', ()=>{
                 pickrBackground.show();
 
                 pickrBackground.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                })
+                break;
+            
+            case 'textBorderColor':
+                pickrBorder = Pickr.create({
+                    el: colorGradientPanelBorder,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentBorderColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrBorder.setColorRepresentation('HEX');
+                pickrBorder.show();
+
+                pickrBorder.on('change', (color)=>{
                     const selectedColor = '#'.concat(...color.toHEXA());
                     this.style.backgroundColor = selectedColor;
                     
@@ -402,6 +437,42 @@ document.addEventListener('previewLoaded', ()=>{
                 }
                 const editElementBackground = document.querySelector('.selected-section').querySelector('.text-section');
                 editElementBackground.style.backgroundColor = color;
+                break;
+
+            case 'textBorderColor':
+                if(fromPickr === false){
+                    if(pickrBorder === undefined){
+                        pickrBorder = Pickr.create({
+                            el: colorGradientPanelBorder,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrBorder.setColor(color);
+                        const hexBoxClick = document.getElementById('textBorderColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('textBorderColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementBorder = document.querySelector('.selected-section').querySelector('.text-section');
+                
+                const currentBorderStrokeTop = getComputedStyle(editElementBorder).borderTopWidth;
+                const currentBorderStrokeLeft = getComputedStyle(editElementBorder).borderLeftWidth;
+                const currentBorderStrokeBottom = getComputedStyle(editElementBorder).borderBottomWidth;
+                const currentBorderStrokeRight = getComputedStyle(editElementBorder).borderRightWidth;
+
+                editElementBorder.style.borderTop = `${currentBorderStrokeTop} solid ${color}`;
+                editElementBorder.style.borderLeft = `${currentBorderStrokeLeft} solid ${color}`;
+                editElementBorder.style.borderBottom = `${currentBorderStrokeBottom} solid ${color}`;
+                editElementBorder.style.borderRight = `${currentBorderStrokeRight} solid ${color}`;
+
                 break;
         }
     }
@@ -541,6 +612,46 @@ document.addEventListener('previewLoaded', ()=>{
         }
     } 
 
+    function setBorderStroke(event){
+        const inputBorderStrokeForm = event.target;
+        const borderStroke = inputBorderStrokeForm.value;
+        const strokeFormID = inputBorderStrokeForm.id;
+        const elementType = inputBorderStrokeForm.getAttribute('data-type');
+        const selectedSection = document.querySelector('.selected-section');
+
+        switch(elementType){
+            case 'textBorderStroke':
+                const textSection = selectedSection.querySelector('.text-section');
+
+                const currentBorderColorTop = getComputedStyle(textSection).borderTopColor;
+                const currentBorderColorLeft = getComputedStyle(textSection).borderLeftColor;
+                const currentBorderColorBottom = getComputedStyle(textSection).borderBottomColor;
+                const currentBorderColorRight = getComputedStyle(textSection).borderRightColor;
+
+                if(strokeFormID === 'borderTopStroke') textSection.style.borderTop = `${borderStroke}px solid ${currentBorderColorTop}`;
+                if(strokeFormID === 'borderLeftStroke') textSection.style.borderLeft = `${borderStroke}px solid ${currentBorderColorLeft}`;
+                if(strokeFormID === 'borderBottomStroke') textSection.style.borderBottom = `${borderStroke}px solid ${currentBorderColorBottom}`;
+                if(strokeFormID === 'borderRightStroke') textSection.style.borderRight = `${borderStroke}px solid ${currentBorderColorRight}`;
+        }
+    }
+
+    function setBorderRadius(event){
+        const inputBorderRadiusForm = event.target;
+        const borderRadius = inputBorderRadiusForm.value;
+        const radiusFormID = inputBorderRadiusForm.id;
+        const elementType = inputBorderRadiusForm.getAttribute('data-type');
+        const selectedSection = document.querySelector('.selected-section');
+
+        switch(elementType){
+            case 'textBorderRadius':
+                const textSection = selectedSection.querySelector('.text-section');
+
+                if(radiusFormID === 'borderTopLeftRadius') textSection.style.borderTopLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'borderTopRightRadius') textSection.style.borderTopRightRadius = `${borderRadius}px`;
+                if(radiusFormID === 'borderBottomLeftRadius') textSection.style.borderBottomLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'borderBottomRightRadius') textSection.style.borderBottomRightRadius = `${borderRadius}px`;
+        }
+    }
 
     function deleteSection(event){
         event.preventDefault();

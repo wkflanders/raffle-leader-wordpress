@@ -68,6 +68,17 @@ document.addEventListener("previewLoaded", ()=>{
         const textBackgroundColorForm = document.getElementById('textBackgroundColorForm');
         const textFontSizeForm = document.getElementById('textFontSizeForm');
         const textLetterSpacingForm = document.getElementById('textLetterSpacingForm');
+        const textBorderColorForm = document.getElementById('textBorderColorForm');
+
+        const textBorderFormTopStroke = document.getElementById('borderTopStroke');
+        const textBorderFormLeftStroke = document.getElementById('borderLeftStroke');
+        const textBorderFormBottomStroke = document.getElementById('borderBottomStroke');
+        const textBorderFormRightStroke = document.getElementById('borderRightStroke');
+
+        const textBorderFormTopLeftRadius = document.getElementById('borderTopLeftRadius');
+        const textBorderFormTopRightRadius = document.getElementById('borderTopRightRadius');
+        const textBorderFormBottomLeftRadius = document.getElementById('borderBottomLeftRadius');
+        const textBorderFormBottomRightRadius = document.getElementById('borderBottomRightRadius');
 
         // text
         const text = textElement.textContent;
@@ -204,6 +215,35 @@ document.addEventListener("previewLoaded", ()=>{
         // text letter spacing
         const textLetterSpacing = window.getComputedStyle(textElement).getPropertyValue('letter-spacing').replace(/^"|"$/g, '');
         textLetterSpacingForm.value = textLetterSpacing;
+
+        //text border stroke
+        const borderStrokeTop = window.getComputedStyle(element).getPropertyValue('border-top-width').replace(/^"|"$/g, '');
+        const borderStrokeLeft = window.getComputedStyle(element).getPropertyValue('border-left-width').replace(/^"|"$/g, '');
+        const borderStrokeBottom = window.getComputedStyle(element).getPropertyValue('border-bottom-width').replace(/^"|"$/g, '');
+        const borderStrokeRight = window.getComputedStyle(element).getPropertyValue('border-right-width').replace(/^"|"$/g, '');
+
+        textBorderFormTopStroke.value = borderStrokeTop;
+        textBorderFormLeftStroke.value = borderStrokeLeft;
+        textBorderFormBottomStroke.value = borderStrokeBottom;
+        textBorderFormRightStroke.value = borderStrokeRight;
+
+        //text border radius
+        const borderRadiusTopLeft = window.getComputedStyle(element).getPropertyValue('border-top-left-radius').replace(/^"|"$/g, '');
+        const borderRadiusTopRight = window.getComputedStyle(element).getPropertyValue('border-top-right-radius').replace(/^"|"$/g, '');
+        const borderRadiusBottomLeft = window.getComputedStyle(element).getPropertyValue('border-bottom-left-radius').replace(/^"|"$/g, '');
+        const borderRadiusBottomRight = window.getComputedStyle(element).getPropertyValue('border-bottom-right-radius').replace(/^"|"$/g, '');
+
+        textBorderFormTopLeftRadius.value = borderRadiusTopLeft;
+        textBorderFormTopRightRadius.value = borderRadiusTopRight;
+        textBorderFormBottomLeftRadius.value = borderRadiusBottomLeft;
+        textBorderFormBottomRightRadius.value = borderRadiusBottomRight;
+
+        //text border color
+        const textBorderHexBox = document.getElementById('textBorderColorClick');
+        const textBorderColorRGB = window.getComputedStyle(element).getPropertyValue('border-color').replace(/^"|"$/g, '');
+        const textBorderColorHex = rgbToHex(textBorderColorRGB);
+        textBorderColorForm.value = textBorderColorHex;
+        textBorderHexBox.style.backgroundColor = textBorderColorHex;
     }
     
 

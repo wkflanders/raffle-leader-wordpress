@@ -52,6 +52,7 @@ body {
     height: 90vh;
     border-left: 2px solid #1501FE;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .dropdown-wrapper {

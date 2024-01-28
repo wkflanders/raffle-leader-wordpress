@@ -275,42 +275,56 @@
                                 <div class="customize-settings-box">
                                     <p>Border Stroke</p>
                                     <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display">
-                                            <p>Overview (Bold)</p>
-                                            <p class="dropdown-btn">▼</p>
+                                        <div class="dropdown-display dropdown-multi-input multi-input-stroke">
+                                            <div class="dropdown-row">
+                                                <p>Top</p>
+                                                <input id="borderTopStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row">
+                                                <p>Left</p>
+                                                <input id="borderLeftStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row">
+                                                <p>Right</p>
+                                                <input id="borderRightStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row">
+                                                <p>Bottom</p>
+                                                <input id="borderBottomStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" placeholder="Enter a size">
+                                            </div>
                                         </div>
-                                        <div class="dropdown-content">
-                                            <ul>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                            </ul>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Border Radius</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-multi-input multi-input-radius">
+                                            <div class="dropdown-row row-radius">
+                                                <p>Top-Left Corner</p>
+                                                <input id="borderTopLeftRadius" class="border-radius-input" data-type="textBorderRadius" type="text" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row row-radius">
+                                                <p>Top-Right Corner</p>
+                                                <input id="borderTopRightRadius" class="border-radius-input" data-type="textBorderRadius" type="text" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row row-radius">
+                                                <p>Bottom-Left Corner</p>
+                                                <input id="borderBottomLeftRadius" class="border-radius-input" data-type="textBorderRadius" type="text" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row row-radius">
+                                                <p>Bottom-Right Corner</p>
+                                                <input id="borderBottomRightRadius" class="border-radius-input" data-type="textBorderRadius" type="text" placeholder="Enter a size">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="customize-settings-box">
                                     <p>Border Color</p>
                                     <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display">
-                                            <p>Overview (Bold)</p>
-                                            <p class="dropdown-btn">▼</p>
-                                        </div>
-                                        <div class="dropdown-content">
-                                            <ul>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                                <li>Overpass</li>
-                                                <li>Inter</li>
-                                            </ul>
+                                        <div class="dropdown-display dropdown-color dropdown-border-color">
+                                            <div id="colorGradientBorder"></div>
+                                            <div id="textBorderColorClick" class="dropdown-color-click" data-type="textBorderColor"></div>
+                                            <input id="textBorderColorForm" class="color-input" data-type="textBorderColor" type="text" placeholder="Enter a hexidecimal">
                                         </div>
                                     </div>
                                 </div>

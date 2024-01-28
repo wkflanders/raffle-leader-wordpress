@@ -13,7 +13,7 @@ document.addEventListener("previewLoaded", () => {
   async function savePreview() {
     isLoading = true;
     updateUI();
-    const HTMLContent = preview.innerHTML;
+    const HTMLContent = preview.outerHTML;
 
     try {
       const response = await fetch(raffleleader_preview_save_object.ajax_url, {

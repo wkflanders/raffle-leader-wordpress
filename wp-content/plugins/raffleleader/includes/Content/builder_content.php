@@ -140,6 +140,22 @@
                                 <p>+ Image Section</p>
                             </div>
                         </div>
+                        <div class="layout-size">
+                            <p>Raffle Size</p>
+                            <div class="layout-size-row-wrapper">
+                                <div class="layout-size-row layout-size-input">
+                                    <input id="layoutWidthForm" class="layout-size-form" type="text" placeholder="Width">
+                                    <p>X</p>
+                                    <input id="layoutHeightForm" class="layout-size-form" type="text" placeholder="Height">
+                                </div>
+                                <div class="layout-size-row layout-size-error">
+                                    <p class="layout-min-width-error" style="display: none;">Width must be greater than 500px!</p>
+                                    <p class="layout-min-height-error" style="display: none;">Height must be greater than 100px!</p>
+                                    <p class="layout-max-width-error" style="display: none;">Width must be less than 2000px!</p>
+                                    <p class="layout-max-height-error" style="display: none;">Height must be greater than 2000px!</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div id="previewWrapper" class="preview-wrapper" style="display: none;">

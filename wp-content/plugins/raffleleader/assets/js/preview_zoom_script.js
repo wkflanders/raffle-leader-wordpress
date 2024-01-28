@@ -1,6 +1,6 @@
 window.zoomScale = 1;
 
-window.addEventListener('load', ()=>{
+document.addEventListener('previewLoaded', ()=>{
     const viewport = document.getElementById('previewWrapper');
     const zoomable = document.getElementById('preview');
     const ZOOM_SPEED = 0.1;

@@ -50,15 +50,16 @@ document.addEventListener('previewLoaded', ()=>{
         
                 // Adjust snapping calculations for zoom
                 if (Math.abs(rect.right - elRect.left - (newWidth * zoomLevel)) < snapMargin) {
-                    newWidth = (rect.right - elRect.left - 1.5) / zoomLevel;
+                    newWidth = (rect.right - elRect.left) / zoomLevel;
                 } else if (Math.abs(rect.left - elRect.left - (newWidth * zoomLevel)) < snapMargin) {
-                    newWidth = (rect.left - elRect.left - 1.5) / zoomLevel;
+                    newWidth = (rect.left - elRect.left) / zoomLevel;
                 }
-        
+            
+                // Snapping for height
                 if (Math.abs(rect.bottom - elRect.top - (newHeight * zoomLevel)) < snapMargin) {
-                    newHeight = (rect.bottom - elRect.top - 1.5) / zoomLevel;
+                    newHeight = (rect.bottom - elRect.top) / zoomLevel;
                 } else if (Math.abs(rect.top - elRect.top - (newHeight * zoomLevel)) < snapMargin) {
-                    newHeight = (rect.top - elRect.top - 1.5) / zoomLevel;
+                    newHeight = (rect.top - elRect.top) / zoomLevel;
                 }
             });
         

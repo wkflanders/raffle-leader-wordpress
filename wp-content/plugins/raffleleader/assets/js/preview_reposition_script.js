@@ -2,6 +2,7 @@ document.addEventListener('previewLoaded', ()=>{
 
     let highestZIndex = 10; // Global z-index
     const dropzone = document.getElementById('dropzone');
+    const preview = document.getElementById('preview');
     // Function to apply resizing and dragging logic to an element
     function applyLogicToElement(el) {
         const resizeHandle = el.querySelector('.resize-handle');
@@ -33,7 +34,8 @@ document.addEventListener('previewLoaded', ()=>{
         });
 
         function resize(e) {
-            const zoomLevel = window.zoomScale || 1;  // Ensure there's a default zoom level
+            const zoomLevel = window.zoomScale;  // Ensure there's a default zoom level
+            console.log(zoomLevel);
         
             let newWidth = originalWidth + (e.clientX - originalMouseX) / zoomLevel;
             let newHeight = originalHeight + (e.clientY - originalMouseY) / zoomLevel;
@@ -61,9 +63,10 @@ document.addEventListener('previewLoaded', ()=>{
             });
         
             // Adjust boundary checks for zoom
-            const parentRect = dropzone.getBoundingClientRect();
-            let maxWidth = (parentRect.width / zoomLevel) - ((elRect.left - parentRect.left) / zoomLevel);
-            let maxHeight = (parentRect.height / zoomLevel) - ((elRect.top - parentRect.top) / zoomLevel);
+            const parentRectHeight = dropzone.getBoundingClientRect();
+            const parentRectWidth = preview.getBoundingClientRect();
+            let maxWidth = (parentRectWidth.width / zoomLevel) - ((elRect.left - parentRectWidth.left) / zoomLevel);
+            let maxHeight = (parentRectHeight.height / zoomLevel) - ((elRect.top - parentRectHeight.top) / zoomLevel);
         
             if (newWidth > maxWidth) newWidth = maxWidth;
             if (newHeight > maxHeight) newHeight = maxHeight;
@@ -96,10 +99,11 @@ document.addEventListener('previewLoaded', ()=>{
         function drag(e) {
             if (!isDragging) return;
             const zoomLevel = window.zoomScale; // Assuming scale is global
-            const parentRect = dropzone.getBoundingClientRect();
+            const parentRectHeight = dropzone.getBoundingClientRect();
+            const parentRectWidth = preview.getBoundingClientRect();
 
-            let mouseX = (e.clientX - parentRect.left) / zoomLevel;
-            let mouseY = (e.clientY - parentRect.top) / zoomLevel;
+            let mouseX = (e.clientX - parentRectWidth.left) / zoomLevel;
+            let mouseY = (e.clientY - parentRectHeight.top) / zoomLevel;
 
             let x = mouseX - dragStartX;
             let y = mouseY - dragStartY;
@@ -114,8 +118,8 @@ document.addEventListener('previewLoaded', ()=>{
             // Boundary checks
             if (x < 0) x = 0;
             if (y < 0) y = 0;
-            let rightBoundary = (parentRect.width / zoomLevel) - el.offsetWidth;
-            let bottomBoundary = (parentRect.height / zoomLevel) - el.offsetHeight;
+            let rightBoundary = (parentRectWidth.width / zoomLevel) - el.offsetWidth;
+            let bottomBoundary = (parentRectHeight.height / zoomLevel) - el.offsetHeight;
             if (x > rightBoundary) x = rightBoundary;
             if (y > bottomBoundary) y = bottomBoundary;
         
@@ -127,10 +131,10 @@ document.addEventListener('previewLoaded', ()=>{
         
                 const otherRect = otherEl.getBoundingClientRect();
                 const scaledOtherRect = {
-                    left: (otherRect.left - parentRect.left) / zoomLevel,
-                    right: (otherRect.right - parentRect.left) / zoomLevel,
-                    top: (otherRect.top - parentRect.top) / zoomLevel,
-                    bottom: (otherRect.bottom - parentRect.top) / zoomLevel
+                    left: (otherRect.left - parentRectWidth.left) / zoomLevel,
+                    right: (otherRect.right - parentRectWidth.left) / zoomLevel,
+                    top: (otherRect.top - parentRectHeight.top) / zoomLevel,
+                    bottom: (otherRect.bottom - parentRectHeight.top) / zoomLevel
                 };
         
                 // Adjusted Horizontal snapping

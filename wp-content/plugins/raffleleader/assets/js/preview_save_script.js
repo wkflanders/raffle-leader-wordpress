@@ -19,6 +19,7 @@ document.addEventListener("previewLoaded", () => {
     isLoading = true;
     updateUI();
     const HTMLContent = preview.outerHTML;
+    const cleanedHTMLContent = cleanHTML(HTMLContent);
 
     try {
       const response = await fetch(raffleleader_preview_save_object.ajax_url, {
@@ -29,7 +30,7 @@ document.addEventListener("previewLoaded", () => {
         body: new URLSearchParams({
           action: "savePreview",
           post_id: postID,
-          content: HTMLContent,
+          content: cleanedHTMLContent,
           security: raffleleader_preview_save_object.security,
         }),
       });
@@ -82,5 +83,11 @@ document.addEventListener("previewLoaded", () => {
         resizeHandle.style.display = 'block';
       }
     }
+  }
+
+  function cleanHTML(htmlString){
+    const regex = /transform:\s*scale\([^)]*\)/gi;
+
+    return htmlString.replace(regex, 'transform: scale(1.0);');
   }
 });

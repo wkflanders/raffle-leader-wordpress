@@ -34,7 +34,7 @@ document.addEventListener('previewLoaded', ()=>{
         });
 
         function resize(e) {
-            const zoomLevel = window.zoomScale;  // Ensure there's a default zoom level
+            const zoomLevel = window.zoomScale || 1;  // Ensure there's a default zoom level
             console.log(zoomLevel);
         
             let newWidth = originalWidth + (e.clientX - originalMouseX) / zoomLevel;
@@ -99,7 +99,7 @@ document.addEventListener('previewLoaded', ()=>{
 
         function drag(e) {
             if (!isDragging) return;
-            const zoomLevel = window.zoomScale; // Assuming scale is global
+            const zoomLevel = window.zoomScale || 1; // Assuming scale is global
             const parentRectHeight = dropzone.getBoundingClientRect();
             const parentRectWidth = preview.getBoundingClientRect();
 

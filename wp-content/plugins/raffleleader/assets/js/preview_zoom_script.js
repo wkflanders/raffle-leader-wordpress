@@ -1,4 +1,4 @@
-window.zoomScale = 0.8;
+window.zoomScale = 1;
 
 document.addEventListener('previewLoaded', ()=>{
     const viewport = document.getElementById('previewWrapper');

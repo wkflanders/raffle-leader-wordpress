@@ -32,6 +32,9 @@ document.addEventListener('previewLoaded', ()=>{
     let pickrText = undefined;
     let pickrBackground = undefined;
     let pickrBorder = undefined;
+    let pickrCounter = undefined;
+    let pickerCounterBackground = undefined;
+    let pickrCounterBorder = undefined;
 
     dropDownBtns.forEach((dropDownBtn)=>{
         dropDownBtn.addEventListener('click', openDropDown);
@@ -280,33 +283,39 @@ document.addEventListener('previewLoaded', ()=>{
     function selectFont(event){
         const inputFontElement = event.target;
         const fontName = inputFontElement.innerText;
-        const dropDownDisplay = document.getElementById('textDropDownTitle');
         const elementType = inputFontElement.getAttribute('data-type');
         const selectedSection = document.querySelector('.selected-section');
 
         switch(elementType){
             case 'textFont':
                 const selectedElement = selectedSection.querySelector('h2');
+                const textDropDownDisplay = document.getElementById('textDropDownTitle');
                 selectedElement.style.fontFamily = `${fontName}`;
+                textDropDownDisplay.innerText = fontName;
+                break;
+            
+            case 'counterFont':
+                const counterSelectedElement = selectedSection.querySelector('h2');
+                const counterDropDownDisplay = document.getElementById('counterDropDownTitle');
+                counterSelectedElement.style.fontFamily = `${fontName}`;
+                counterDropDownDisplay.innerText = fontName;
+                break;
         }
 
         const currentFont = document.querySelector('.selected-font');
         inputFontElement.classList.add('selected-font');
         currentFont.classList.remove('selected-font');
-
-        dropDownDisplay.innerText = fontName;
     }
 
 
     function showColorGradient(event){
         const inputColorElement = event.target;
         const elementType = inputColorElement.getAttribute('data-type');
-        const currentTextFontColor = document.getElementById('textFontColorForm').value;
-        const currentTextBackgroundColor = document.getElementById('textBackgroundColorForm').value;
-        const currentBorderColor = document.getElementById('textBorderColorForm').value;
-
+        
         switch(elementType){
             case 'textColor':
+                const currentTextFontColor = document.getElementById('textFontColorForm').value;
+
                 pickrText = Pickr.create({
                     el: colorGradientPanel,
                     theme: 'classic', // or 'monolith', or 'nano'
@@ -329,6 +338,8 @@ document.addEventListener('previewLoaded', ()=>{
                 break;
 
             case 'textBackgroundColor':
+                const currentTextBackgroundColor = document.getElementById('textBackgroundColorForm').value;
+
                 pickrBackground = Pickr.create({
                     el: colorGradientPanelBackground,
                     theme: 'classic', // or 'monolith', or 'nano'
@@ -351,6 +362,8 @@ document.addEventListener('previewLoaded', ()=>{
                 break;
             
             case 'textBorderColor':
+                const currentBorderColor = document.getElementById('textBorderColorForm').value;
+
                 pickrBorder = Pickr.create({
                     el: colorGradientPanelBorder,
                     theme: 'classic', // or 'monolith', or 'nano'
@@ -365,6 +378,78 @@ document.addEventListener('previewLoaded', ()=>{
                 pickrBorder.show();
 
                 pickrBorder.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                })
+                break;
+            
+            case 'counterColor':
+                const currentCounterFontColor = document.getElementById('counterFontColorForm').value;
+
+                pickrCounter = Pickr.create({
+                    el: counterColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentCounterFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrCounter.setColorRepresentation('HEX');
+                pickrCounter.show();
+
+                pickrCounter.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                })
+                break;
+
+            case 'counterBackgroundColor':
+                const currentCounterBackgroundColor = document.getElementById('counterBackgroundColorForm').value;
+
+                pickerCounterBackground = Pickr.create({
+                    el: counterColorGradientBackground,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentCounterBackgroundColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickerCounterBackground.setColorRepresentation('HEX');
+                pickerCounterBackground.show();
+
+                pickerCounterBackground.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                })
+                break;
+
+            case 'counterBorderColor':
+                const counterCurrentBorderColor = document.getElementById('counterBorderColorForm').value;
+
+                pickrCounterBorder = Pickr.create({
+                    el: counterColorGradientBorder,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: counterCurrentBorderColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrCounterBorder.setColorRepresentation('HEX');
+                pickrCounterBorder.show();
+
+                pickrCounterBorder.on('change', (color)=>{
                     const selectedColor = '#'.concat(...color.toHEXA());
                     this.style.backgroundColor = selectedColor;
                     
@@ -472,7 +557,93 @@ document.addEventListener('previewLoaded', ()=>{
                 editElementBorder.style.borderLeft = `${currentBorderStrokeLeft} solid ${color}`;
                 editElementBorder.style.borderBottom = `${currentBorderStrokeBottom} solid ${color}`;
                 editElementBorder.style.borderRight = `${currentBorderStrokeRight} solid ${color}`;
+                break;
 
+            case 'counterColor':
+                if(fromPickr === false){
+                    if(pickrCounter === undefined){
+                        pickrCounter = Pickr.create({
+                            el: counterColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrCounter.setColor(color);
+                        const hexBoxClick = document.getElementById('counterFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('counterFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const counterEditElementFont = document.querySelector('.selected-section').querySelector('h2');
+                counterEditElementFont.style.color = color;
+                break;
+
+            case 'counterBackgroundColor':
+                if(fromPickr === false){
+                    if(pickerCounterBackground === undefined){
+                        pickerCounterBackground = Pickr.create({
+                            el: counterColorGradientBackground,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickerCounterBackground.setColor(color);
+                        const hexBoxClick = document.getElementById('counterBackgroundColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('counterBackgroundColorForm');
+                    hexBoxText.value = color;
+                }
+                const counterEditElementBackground = document.querySelector('.selected-section').querySelector('.counter-section');
+                counterEditElementBackground.style.backgroundColor = color;
+                break;
+
+            case 'counterBorderColor':
+                if(fromPickr === false){
+                    if(pickrCounterBorder === undefined){
+                        pickrCounterBorder = Pickr.create({
+                            el: counterColorGradientBorder,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrCounterBorder.setColor(color);
+                        const hexBoxClick = document.getElementById('counterBorderColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('counterBorderColorForm');
+                    hexBoxText.value = color;
+                }
+                const counterEditElementBorder = document.querySelector('.selected-section').querySelector('.counter-section');
+                
+                const counterCurrentBorderStrokeTop = getComputedStyle(counterEditElementBorder).borderTopWidth;
+                const counterCurrentBorderStrokeLeft = getComputedStyle(counterEditElementBorder).borderLeftWidth;
+                const counterCurrentBorderStrokeBottom = getComputedStyle(counterEditElementBorder).borderBottomWidth;
+                const counterCurrentBorderStrokeRight = getComputedStyle(counterEditElementBorder).borderRightWidth;
+
+                counterEditElementBorder.style.borderTop = `${counterCurrentBorderStrokeTop} solid ${color}`;
+                counterEditElementBorder.style.borderLeft = `${counterCurrentBorderStrokeLeft} solid ${color}`;
+                counterEditElementBorder.style.borderBottom = `${counterCurrentBorderStrokeBottom} solid ${color}`;
+                counterEditElementBorder.style.borderRight = `${counterCurrentBorderStrokeRight} solid ${color}`;
                 break;
         }
     }
@@ -487,6 +658,11 @@ document.addEventListener('previewLoaded', ()=>{
             case 'textFontSize':
                 const selectedElement = selectedSection.querySelector('h2');
                 selectedElement.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'counterFontSize':
+                const counterSelectedElement = selectedSection.querySelector('h2');
+                counterSelectedElement.style.fontSize = `${fontSize}px`;
         }
     }
 
@@ -609,6 +785,9 @@ document.addEventListener('previewLoaded', ()=>{
             case 'textLetterSpacing':
                 const selectedElement = selectedSection.querySelector('h2');
                 selectedElement.style.letterSpacing = `${letterSpacing}px`;
+            case 'counterLetterSpacing':
+                const counterSelectedElement = selectedSection.querySelector('h2');
+                counterSelectedElement.style.letterSpacing = `${letterSpacing}px`;
         }
     } 
 
@@ -632,7 +811,22 @@ document.addEventListener('previewLoaded', ()=>{
                 if(strokeFormID === 'borderLeftStroke') textSection.style.borderLeft = `${borderStroke}px solid ${currentBorderColorLeft}`;
                 if(strokeFormID === 'borderBottomStroke') textSection.style.borderBottom = `${borderStroke}px solid ${currentBorderColorBottom}`;
                 if(strokeFormID === 'borderRightStroke') textSection.style.borderRight = `${borderStroke}px solid ${currentBorderColorRight}`;
-        }
+                break;
+            
+            case 'counterBorderStroke':
+                const counterSection = selectedSection.querySelector('.counter-section');
+
+                const counterCurrentBorderColorTop = getComputedStyle(counterSection).borderTopColor;
+                const counterCurrentBorderColorLeft = getComputedStyle(counterSection).borderLeftColor;
+                const counterCurrentBorderColorBottom = getComputedStyle(counterSection).borderBottomColor;
+                const counterCurrentBorderColorRight = getComputedStyle(counterSection).borderRightColor;
+
+                if(strokeFormID === 'counterBorderTopStroke') counterSection.style.borderTop = `${borderStroke}px solid ${counterCurrentBorderColorTop}`;
+                if(strokeFormID === 'counterBorderLeftStroke') counterSection.style.borderLeft = `${borderStroke}px solid ${counterCurrentBorderColorLeft}`;
+                if(strokeFormID === 'counterBorderBottomStroke') counterSection.style.borderBottom = `${borderStroke}px solid ${counterCurrentBorderColorBottom}`;
+                if(strokeFormID === 'counterBorderRightStroke') counterSection.style.borderRight = `${borderStroke}px solid ${counterCurrentBorderColorRight}`;
+                break;
+            }
     }
 
     function setBorderRadius(event){
@@ -650,6 +844,16 @@ document.addEventListener('previewLoaded', ()=>{
                 if(radiusFormID === 'borderTopRightRadius') textSection.style.borderTopRightRadius = `${borderRadius}px`;
                 if(radiusFormID === 'borderBottomLeftRadius') textSection.style.borderBottomLeftRadius = `${borderRadius}px`;
                 if(radiusFormID === 'borderBottomRightRadius') textSection.style.borderBottomRightRadius = `${borderRadius}px`;
+                break;
+
+            case 'counterBorderRadius':
+                const counterSection = selectedSection.querySelector('.counter-section');
+
+                if(radiusFormID === 'counterBorderTopLeftRadius') counterSection.style.borderTopLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'counterBorderTopRightRadius') counterSection.style.borderTopRightRadius = `${borderRadius}px`;
+                if(radiusFormID === 'counterBorderBottomLeftRadius') counterSection.style.borderBottomLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'counterBorderBottomRightRadius') counterSection.style.borderBottomRightRadius = `${borderRadius}px`;
+                break;
         }
     }
 
@@ -665,6 +869,15 @@ document.addEventListener('previewLoaded', ()=>{
                 deleteBtn.style.display = "none";
                 confirmBtn.style.display = "flex";
                 cancelDelete.style.display = "block";
+                break;
+            
+            case 'counterDelete':
+                const counterConfirmBtn = document.getElementById('counterConfirmDelete');
+                const counterCancelDelete = document.getElementById('counterCancelDelete');
+                deleteBtn.style.display = "none";
+                counterConfirmBtn.style.display = "flex";
+                counterCancelDelete.style.display = "block";
+                break;
         }
     }
 
@@ -674,9 +887,10 @@ document.addEventListener('previewLoaded', ()=>{
         const elementType = confirmDelete.getAttribute('data-type');
         const customizeBox = document.getElementById('settingsWrapper');
 
+        const selectedSection = document.querySelector('.selected-section');
+
         switch(elementType){
             case 'textDelete':
-                const selectedSection = document.querySelector('.selected-section');
                 selectedSection.remove();
 
                 const deleteBtn = document.getElementById('textDelete');
@@ -687,6 +901,20 @@ document.addEventListener('previewLoaded', ()=>{
 
                 customizeBox.scrollTop = 0;
                 customizeBox.classList.toggle('slide-right-to-left');
+                break;
+            
+            case 'counterDelete':
+                selectedSection.remove();
+
+                const counterDeleteBtn = document.getElementById('counterDelete');
+                const counterCancelDelete = document.getElementById('counterCancelDelete');
+                counterDeleteBtn.style.display = "flex";
+                confirmDelete.style.display = "none";
+                counterCancelDelete.style.display = "none";
+
+                customizeBox.scrollTop = 0;
+                customizeBox.classList.toggle('slide-right-to-left');
+                break;
         }
     }
 
@@ -702,6 +930,15 @@ document.addEventListener('previewLoaded', ()=>{
                 deleteBtn.style.display = "flex";
                 confirmBtn.style.display = "none";
                 cancelBtn.style.display = "none";
+                break;
+
+            case 'counterDelete':
+                const counterDeleteBtn = document.getElementById('counterDelete');
+                const counterConfirmBtn = document.getElementById('counterConfirmDelete');
+                counterDeleteBtn.style.display = "flex";
+                counterConfirmBtn.style.display = "none";
+                cancelBtn.style.display = "none";
+                break;
         }
     }
 })

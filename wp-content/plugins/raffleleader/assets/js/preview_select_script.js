@@ -57,6 +57,8 @@ document.addEventListener("previewLoaded", ()=>{
         switch(elementType){
             case 'textDetails':
                 loadTextSettings(element);
+            case 'counterDetails':
+                loadCounterSettings(element);
         }
     }
 
@@ -246,6 +248,91 @@ document.addEventListener("previewLoaded", ()=>{
         textBorderHexBox.style.backgroundColor = textBorderColorHex;
     }
     
+    function loadCounterSettings(element){
+        const counterTextElement = element.querySelector('h2');
+
+        // counter font
+        const counterFontList = document.getElementById('counterFontList');
+        const counterFontDisplay = document.getElementById('counterDropDownTitle');
+        const font = window.getComputedStyle(counterTextElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        counterFontDisplay.innerText = font;
+        
+        Array.from(counterFontList.children).forEach((child)=>{
+            const childFont = child.innerText;
+            if(child.classList.contains('selected-font')){
+                child.classList.remove('selected-font');
+            }
+            if(childFont === font){
+                child.classList.add('selected-font');
+            }
+        })
+
+        // counter text color
+        const counterColorForm = document.getElementById('counterFontColorForm');
+        const counterHexBox = document.getElementById('counterFontColorClick');
+        const counterColorRGB = window.getComputedStyle(counterTextElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const counterColorHex = rgbToHex(counterColorRGB);
+        counterColorForm.value = counterColorHex;
+        counterHexBox.style.backgroundColor = counterColorHex;
+
+        // counter font size
+        const counterFontSizeForm = document.getElementById('counterFontSizeForm');
+        const counterFontSize = window.getComputedStyle(counterTextElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        counterFontSizeForm.value = counterFontSize;
+
+        // counter letter spacing
+        const counterLetterSpacingForm = document.getElementById('counterLetterSpacingForm');
+        const counterLetterSpacing = window.getComputedStyle(counterTextElement).getPropertyValue('letter-spacing').replace(/^"|"$/g, '');
+        counterLetterSpacingForm.value = counterLetterSpacing;
+
+        // counter background color
+        const counterBackgroundColorForm = document.getElementById('counterBackgroundColorForm');
+        const counterBackgroundHexBox = document.getElementById('counterBackgroundColorClick');
+        const counterBackgroundColorRGB = window.getComputedStyle(element).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const counterBackgroundColorHex = rgbToHex(counterBackgroundColorRGB);
+        counterBackgroundColorForm.value = counterBackgroundColorHex;
+        counterBackgroundHexBox.style.backgroundColor = counterBackgroundColorHex;
+
+        // counter border stroke
+        const counterBorderFormTopStroke = document.getElementById('counterBorderTopStroke');
+        const counterBorderFormLeftStroke = document.getElementById('counterBorderLeftStroke');
+        const counterBorderFormBottomStroke = document.getElementById('counterBorderBottomStroke');
+        const counterBorderFormRightStroke = document.getElementById('counterBorderRightStroke');
+
+        const counterBorderStrokeTop = window.getComputedStyle(element).getPropertyValue('border-top-width').replace(/^"|"$/g, '');
+        const counterBorderStrokeLeft = window.getComputedStyle(element).getPropertyValue('border-left-width').replace(/^"|"$/g, '');
+        const counterBorderStrokeBottom = window.getComputedStyle(element).getPropertyValue('border-bottom-width').replace(/^"|"$/g, '');
+        const counterBorderStrokeRight = window.getComputedStyle(element).getPropertyValue('border-right-width').replace(/^"|"$/g, '');
+
+        counterBorderFormTopStroke.value = counterBorderStrokeTop;
+        counterBorderFormLeftStroke.value = counterBorderStrokeLeft;
+        counterBorderFormBottomStroke.value = counterBorderStrokeBottom;
+        counterBorderFormRightStroke.value = counterBorderStrokeRight;
+
+        // counter border radius
+        const counterBorderFormTopLeftRadius = document.getElementById('counterBorderTopLeftRadius');
+        const counterBorderFormTopRightRadius = document.getElementById('counterBorderTopRightRadius');
+        const counterBorderFormBottomLeftRadius = document.getElementById('counterBorderBottomLeftRadius');
+        const counterBorderFormBottomRightRadius = document.getElementById('counterBorderBottomRightRadius');
+
+        const counterBorderRadiusTopLeft = window.getComputedStyle(element).getPropertyValue('border-top-left-radius').replace(/^"|"$/g, '');
+        const counterBorderRadiusTopRight = window.getComputedStyle(element).getPropertyValue('border-top-right-radius').replace(/^"|"$/g, '');
+        const counterBorderRadiusBottomLeft = window.getComputedStyle(element).getPropertyValue('border-bottom-left-radius').replace(/^"|"$/g, '');
+        const counterBorderRadiusBottomRight = window.getComputedStyle(element).getPropertyValue('border-bottom-right-radius').replace(/^"|"$/g, '');
+
+        counterBorderFormTopLeftRadius.value = counterBorderRadiusTopLeft;
+        counterBorderFormTopRightRadius.value = counterBorderRadiusTopRight;
+        counterBorderFormBottomLeftRadius.value = counterBorderRadiusBottomLeft;
+        counterBorderFormBottomRightRadius.value = counterBorderRadiusBottomRight;
+
+        //counter border color
+        const counterBorderColorForm = document.getElementById('counterBorderColorForm');
+        const counterBorderHexBox = document.getElementById('counterBorderColorClick');
+        const counterBorderColorRGB = window.getComputedStyle(element).getPropertyValue('border-color').replace(/^"|"$/g, '');
+        const counterBorderColorHex = rgbToHex(counterBorderColorRGB);
+        counterBorderColorForm.value = counterBorderColorHex;
+        counterBorderHexBox.style.backgroundColor = counterBorderColorRGB;
+    }
 
     document.addEventListener("keydown", ({key}) => {
         const currentElement = document.querySelector('.selected-section');

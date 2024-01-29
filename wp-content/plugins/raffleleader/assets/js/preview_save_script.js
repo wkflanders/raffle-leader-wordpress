@@ -67,7 +67,7 @@ document.addEventListener("previewLoaded", () => {
         failModal.style.display = 'block';
       }
 
-      saveModal.style.animation = 'slideDown 1.5s forwards';
+      saveModal.style.animation = 'slideDown 1s forwards';
 
       setTimeout(()=>{
         saveModal.style.animation = 'slideUp 1.5s forwards';

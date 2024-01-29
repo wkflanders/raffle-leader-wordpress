@@ -114,6 +114,25 @@
     line-height: 3vh;
 }
 
+.counter-section{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    border: 1px solid black;
+}
+
+.counter-section > h2{
+    margin: 0;
+    font-size: 60px;
+    letter-spacing: 1px;
+}
+
 .image-section{
     display: flex;
     justify-content: center;

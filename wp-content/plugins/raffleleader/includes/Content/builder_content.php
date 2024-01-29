@@ -138,13 +138,13 @@
                         <div class="layout-options">
                             <p>Drag & Drop to Add Sections to your Raffle!</p>
                             <div id="textBox" draggable="true" class="layout-option-box">
-                                <p>+ Text</p>
+                                <p>+ Text Section</p>
                             </div>
                             <div id="formBox" draggable="true" class="layout-option-box">
-                                <p>+ Form</p>
+                                <p>+ Form Section</p>
                             </div>
                             <div id="counterBox" draggable="true" class="layout-option-box">
-                                <p>+ Counter</p>
+                                <p>+ Counter Section</p>
                             </div>
                             <div id="imageBox" draggable="true" class="layout-option-box">
                                 <p>+ Image Section</p>
@@ -397,8 +397,159 @@
                             <div class="dropdown-wrapper">
                                 <div class="header-box">
                                     <div class="spacer"></div>
-                                    <h2 class="header-box-title">Counter</h2>
+                                    <h2 class="header-box-title">Actions</h2>
                                     <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+                                </div>
+                            </div>
+                            <div class="dropdown-wrapper">
+                                <div class="header-box">
+                                    <div class="spacer"></div>
+                                    <h2 class="header-box-title">Text Design</h2>
+                                    <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Text Font</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display">
+                                            <p id="counterDropDownTitle">Overview</p>
+                                            <p class="dropdown-btn">▼</p>
+                                        </div>
+                                        <div class="dropdown-content">
+                                            <ul id="counterFontList">
+                                                <li class="font-title" data-type="counterFont">Overpass</li>
+                                                <li class="font-title" data-type="counterFont">Inter</li>
+                                                <li class="font-title" data-type="counterFont">Times New Roman</li>
+                                                <li class="font-title" data-type="counterFont">Garamond</li>
+                                                <li class="font-title" data-type="counterFont">Georgia</li>
+                                                <li class="font-title" data-type="counterFont">Palatino</li>
+                                                <li class="font-title" data-type="counterFont">Baskerville</li>
+                                                <li class="font-title" data-type="counterFont">Arial</li>
+                                                <li class="font-title" data-type="counterFont">Verdana</li>
+                                                <li class="font-title" data-type="counterFont">Helvetica</li>
+                                                <li class="font-title" data-type="counterFont">Tahoma</li>
+                                                <li class="font-title" data-type="counterFont">Trebuchet MS</li>
+                                                <li class="font-title" data-type="counterFont">Impact</li>
+                                                <li class="font-title" data-type="counterFont">Gill Sans</li>
+                                                <li class="font-title" data-type="counterFont">Lucida Console</li>
+                                                <li class="font-title" data-type="counterFont">Courier New</li>
+                                                <li class="font-title" data-type="counterFont">Monaco</li>
+                                                <li class="font-title" data-type="counterFont">Brush Script MT</li>
+                                                <li class="font-title" data-type="counterFont">Lucida Handwriting</li>
+                                                <li class="font-title" data-type="counterFont">Copperplate</li>
+                                                <li class="font-title" data-type="counterFont">Papyrus</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Font Color</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-color">
+                                            <div id="counterColorGradient"></div>
+                                            <div id="counterFontColorClick" class="dropdown-color-click" data-type="counterColor"></div>
+                                            <input id="counterFontColorForm" class="color-input" data-type="counterColor" type="text" placeholder="Enter a hexidecimal">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Font Size</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-text">
+                                            <input id="counterFontSizeForm" class="font-size-input" data-type="counterFontSize" type="text" placeholder="Enter a font size">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Letter Spacing</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-text">
+                                            <input id="counterLetterSpacingForm" class="letter-spacing-input" data-type="counterLetterSpacing" type="text" placeholder="Enter letter spacing">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-wrapper section-design">
+                                <div class="header-box">
+                                    <div class="spacer"></div>
+                                    <h2 class="header-box-title">Section Design</h2>
+                                    <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Background Color</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-color">
+                                            <div id="counterColorGradientBackground"></div>
+                                            <div id="counterBackgroundColorClick" class="dropdown-color-click" data-type="counterBackgroundColor"></div>
+                                            <input id="counterBackgroundColorForm" class="color-input" data-type="counterBackgroundColor" type="text" placeholder="Enter a hexidecimal">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Border Stroke</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-multi-input multi-input-stroke">
+                                            <div class="dropdown-row">
+                                                <p>Top</p>
+                                                <input id="counterBorderTopStroke" class="border-stroke-input" data-type="counterBorderStroke" type="text" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row">
+                                                <p>Left</p>
+                                                <input id="counterBorderLeftStroke" class="border-stroke-input" data-type="counterBorderStroke" type="text" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row">
+                                                <p>Right</p>
+                                                <input id="counterBorderRightStroke" class="border-stroke-input" data-type="counterBorderStroke" type="text" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row">
+                                                <p>Bottom</p>
+                                                <input id="counterBorderBottomStroke" class="border-stroke-input" data-type="counterBorderStroke" type="text" placeholder="Enter a size">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Border Radius</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-multi-input multi-input-radius">
+                                            <div class="dropdown-row row-radius">
+                                                <p>Top-Left Corner</p>
+                                                <input id="counterBorderTopLeftRadius" class="border-radius-input" data-type="counterBorderRadius" type="text" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row row-radius">
+                                                <p>Top-Right Corner</p>
+                                                <input id="counterBorderTopRightRadius" class="border-radius-input" data-type="counterBorderRadius" type="text" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row row-radius">
+                                                <p>Bottom-Left Corner</p>
+                                                <input id="counterBorderBottomLeftRadius" class="border-radius-input" data-type="counterBorderRadius" type="text" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row row-radius">
+                                                <p>Bottom-Right Corner</p>
+                                                <input id="counterBorderBottomRightRadius" class="border-radius-input" data-type="counterBorderRadius" type="text" placeholder="Enter a size">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Border Color</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-color dropdown-border-color">
+                                            <div id="counterColorGradientBorder"></div>
+                                            <div id="counterBorderColorClick" class="dropdown-color-click" data-type="counterBorderColor"></div>
+                                            <input id="counterBorderColorForm" class="color-input" data-type="counterBorderColor" type="text" placeholder="Enter a hexidecimal">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <div class="customize-settings-dropdown">
+                                        <div id="counterDelete" class="dropdown-display delete-display" data-type="counterDelete">
+                                            <span>Delete</span>
+                                        </div>
+                                        <div id="counterConfirmDelete" class="dropdown-display confirm-delete" style="display: none;" data-type="counterDelete">
+                                            <span>Confirm Delete</span>
+                                        </div>
+                                        <p id="counterCancelDelete" class="cancel-delete" style="display: none;" data-type="counterDelete">Cancel</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

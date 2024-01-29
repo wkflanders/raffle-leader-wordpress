@@ -136,7 +136,7 @@
                             <h2 class="header-box-title">Layout</h2>
                         </div>
                         <div class="layout-options">
-                            <p>Drag & Drop to Add Sections to your Raffle!</p>
+                            <p>Drag & Drop to Add Sections to your Raffle</p>
                             <div id="textBox" draggable="true" class="layout-option-box">
                                 <p>+ Text Section</p>
                             </div>
@@ -151,7 +151,7 @@
                             </div>
                         </div>
                         <div class="layout-size">
-                            <p>Raffle Size</p>
+                            <p>Adjust Your Raffle's Height and Width</p>
                             <div class="layout-size-row-wrapper">
                                 <div class="layout-size-row layout-size-input">
                                     <input id="layoutWidthForm" class="layout-size-form" type="text" placeholder="Width">

@@ -3,7 +3,7 @@ window.zoomScale = 1;
 document.addEventListener('previewLoaded', ()=>{
     const viewport = document.getElementById('previewWrapper');
     const zoomable = document.getElementById('preview');
-    const ZOOM_SPEED = 0.05;
+    const ZOOM_SPEED = 0.03;
 
     viewport.addEventListener('wheel', (event) => {
         event.preventDefault();

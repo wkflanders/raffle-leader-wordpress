@@ -1,4 +1,14 @@
 <div class="raffleleader-container">
+    <div id="saveModal" class="rl-save-modal">
+        <div class="modal-content success-modal-content">
+            <h2>Success!</h2>
+            <p>Save was completed successfully</p>
+        </div>
+        <div class="modal-content fail-modal-content">
+            <h2>Failed!</h2>
+            <p>Save was not completed successfully</p>
+        </div>
+    </div>
     <nav class="rl-navbar">
         <div class="rl-nav-logo">
             <img class="rl-text-logo" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/TEXT-LOGO.svg">

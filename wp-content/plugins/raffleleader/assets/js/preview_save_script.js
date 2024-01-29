@@ -2,9 +2,14 @@ document.addEventListener("previewLoaded", () => {
   // State variables
   let isLoading = false;
   let selectedSection = null;
+  let isSuccess = true;
 
   const saveBtn = document.querySelector(".save-btn");
   saveBtn.addEventListener("click", savePreview);
+
+  const saveModal = document.getElementById('saveModal');
+  const successModal = saveModal.querySelector('.success-modal-content');
+  const failModal = saveModal.querySelector('.fail-modal-content');
 
   const preview = document.getElementById("preview");
   const urlParams = new URLSearchParams(window.location.search);
@@ -32,6 +37,7 @@ document.addEventListener("previewLoaded", () => {
       console.log(data);
     } catch (error) {
       console.error("Fetch error", error);
+      isSuccess = false;
     } finally {
       isLoading = false;
       updateUI();
@@ -54,6 +60,23 @@ document.addEventListener("previewLoaded", () => {
       }
     } else {
       saveBtn.innerHTML = "Save";
+
+      if(isSuccess){
+        successModal.style.display = 'block';
+      } else {
+        failModal.style.display = 'block';
+      }
+
+      saveModal.style.animation = 'slideDown 1.5s forwards';
+
+      setTimeout(()=>{
+        saveModal.style.animation = 'slideUp 1.5s forwards';
+        setTimeout(()=>{ 
+          if(isSuccess) successModal.style.display = 'none';
+          if(!isSuccess) failModal.style.display = 'none';
+         }, 500);
+      }, 5000);
+
       if (selectedSection) {
         selectedSection.classList.add("selected-section");
         resizeHandle.style.display = 'block';

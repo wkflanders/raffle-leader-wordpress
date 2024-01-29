@@ -235,10 +235,27 @@
                                         </div>
                                         <div class="dropdown-content">
                                             <ul id="textFontList">
-                                                <!-- Need to add more fonts -->
                                                 <li class="font-title" data-type="textFont">Overpass</li>
                                                 <li class="font-title" data-type="textFont">Inter</li>
+                                                <li class="font-title" data-type="textFont">Times New Roman</li>
+                                                <li class="font-title" data-type="textFont">Garamond</li>
+                                                <li class="font-title" data-type="textFont">Georgia</li>
+                                                <li class="font-title" data-type="textFont">Palatino</li>
+                                                <li class="font-title" data-type="textFont">Baskerville</li>
+                                                <li class="font-title" data-type="textFont">Arial</li>
+                                                <li class="font-title" data-type="textFont">Verdana</li>
+                                                <li class="font-title" data-type="textFont">Helvetica</li>
+                                                <li class="font-title" data-type="textFont">Tahoma</li>
+                                                <li class="font-title" data-type="textFont">Trebuchet MS</li>
+                                                <li class="font-title" data-type="textFont">Impact</li>
+                                                <li class="font-title" data-type="textFont">Gill Sans</li>
+                                                <li class="font-title" data-type="textFont">Lucida Console</li>
                                                 <li class="font-title" data-type="textFont">Courier New</li>
+                                                <li class="font-title" data-type="textFont">Monaco</li>
+                                                <li class="font-title" data-type="textFont">Brush Script MT</li>
+                                                <li class="font-title" data-type="textFont">Lucida Handwriting</li>
+                                                <li class="font-title" data-type="textFont">Copperplate</li>
+                                                <li class="font-title" data-type="textFont">Papyrus</li>
                                             </ul>
                                         </div>
                                     </div>

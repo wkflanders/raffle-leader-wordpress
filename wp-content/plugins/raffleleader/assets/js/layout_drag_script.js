@@ -36,6 +36,10 @@ document.addEventListener('previewLoaded', () => {
         const htmlToAppend = generateHTML(dragElement.id);
         const newElement = document.createElement('div');
         newElement.classList.add('section');
+        if(dragElement.id === 'imageBox'){
+            newElement.style.width = '400px';
+            newElement.style.height = '300px';
+        }
         newElement.innerHTML = htmlToAppend;
 
         // Append first to get dimensions, then position

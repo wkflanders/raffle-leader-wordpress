@@ -35,6 +35,7 @@ document.addEventListener('previewLoaded', ()=>{
     let pickrCounter = undefined;
     let pickerCounterBackground = undefined;
     let pickrCounterBorder = undefined;
+    let pickrImageBorder = undefined;
 
     dropDownBtns.forEach((dropDownBtn)=>{
         dropDownBtn.addEventListener('click', openDropDown);
@@ -456,6 +457,30 @@ document.addEventListener('previewLoaded', ()=>{
                     pickColor(selectedColor, elementType, true);
                 })
                 break;
+
+            case 'imageBorderColor':
+                const imageCurrentBorderColor = document.getElementById('imageBorderColorForm').value;
+
+                pickrImageBorder = Pickr.create({
+                    el: imageColorGradientBorder,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: imageCurrentBorderColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrImageBorder.setColorRepresentation('HEX');
+                pickrImageBorder.show();
+
+                pickrImageBorder.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                })
+                break;
         }
         
     }
@@ -609,6 +634,41 @@ document.addEventListener('previewLoaded', ()=>{
                 }
                 const counterEditElementBackground = document.querySelector('.selected-section').querySelector('.counter-section');
                 counterEditElementBackground.style.backgroundColor = color;
+                break;
+
+            case 'imageBorderColor':
+                if(fromPickr === false){
+                    if(pickrImageBorder === undefined){
+                        pickrImageBorder = Pickr.create({
+                            el: imageColorGradientBorder,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrImageBorder.setColor(color);
+                        const hexBoxClick = document.getElementById('imageBorderColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('imageBorderColorForm');
+                    hexBoxText.value = color;
+                }
+                const imageEditElementBorder = document.querySelector('.selected-section').querySelector('.image-section');
+                
+                const imageCurrentBorderStrokeTop = getComputedStyle(imageEditElementBorder).borderTopWidth;
+                const imageCurrentBorderStrokeLeft = getComputedStyle(imageEditElementBorder).borderLeftWidth;
+                const imageCurrentBorderStrokeBottom = getComputedStyle(imageEditElementBorder).borderBottomWidth;
+                const imageCurrentBorderStrokeRight = getComputedStyle(imageEditElementBorder).borderRightWidth;
+
+                imageEditElementBorder.style.borderTop = `${imageCurrentBorderStrokeTop} solid ${color}`;
+                imageEditElementBorder.style.borderLeft = `${imageCurrentBorderStrokeLeft} solid ${color}`;
+                imageEditElementBorder.style.borderBottom = `${imageCurrentBorderStrokeBottom} solid ${color}`;
+                imageEditElementBorder.style.borderRight = `${imageCurrentBorderStrokeRight} solid ${color}`;
                 break;
 
             case 'counterBorderColor':
@@ -826,6 +886,20 @@ document.addEventListener('previewLoaded', ()=>{
                 if(strokeFormID === 'counterBorderBottomStroke') counterSection.style.borderBottom = `${borderStroke}px solid ${counterCurrentBorderColorBottom}`;
                 if(strokeFormID === 'counterBorderRightStroke') counterSection.style.borderRight = `${borderStroke}px solid ${counterCurrentBorderColorRight}`;
                 break;
+
+            case 'imageBorderStroke':
+                const imageSection = selectedSection.querySelector('.image-section');
+
+                const imageCurrentBorderColorTop = getComputedStyle(imageSection).borderTopColor;
+                const imageCurrentBorderColorLeft = getComputedStyle(imageSection).borderLeftColor;
+                const imageCurrentBorderColorBottom = getComputedStyle(imageSection).borderBottomColor;
+                const imageCurrentBorderColorRight = getComputedStyle(imageSection).borderRightColor;
+
+                if(strokeFormID === 'imageBorderTopStroke') imageSection.style.borderTop = `${borderStroke}px solid ${imageCurrentBorderColorTop}`;
+                if(strokeFormID === 'imageBorderLeftStroke') imageSection.style.borderLeft = `${borderStroke}px solid ${imageCurrentBorderColorLeft}`;
+                if(strokeFormID === 'imageBorderBottomStroke') imageSection.style.borderBottom = `${borderStroke}px solid ${imageCurrentBorderColorBottom}`;
+                if(strokeFormID === 'imageBorderRightStroke') imageSection.style.borderRight = `${borderStroke}px solid ${imageCurrentBorderColorRight}`;
+                break;
             }
     }
 
@@ -854,6 +928,15 @@ document.addEventListener('previewLoaded', ()=>{
                 if(radiusFormID === 'counterBorderBottomLeftRadius') counterSection.style.borderBottomLeftRadius = `${borderRadius}px`;
                 if(radiusFormID === 'counterBorderBottomRightRadius') counterSection.style.borderBottomRightRadius = `${borderRadius}px`;
                 break;
+
+            case 'imageBorderRadius':
+                const imageSection = selectedSection.querySelector('.image-section');
+
+                if(radiusFormID === 'imageBorderTopLeftRadius') imageSection.style.borderTopLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'imageBorderTopRightRadius') imageSection.style.borderTopRightRadius = `${borderRadius}px`;
+                if(radiusFormID === 'imageBorderBottomLeftRadius') imageSection.style.borderBottomLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'imageBorderBottomRightRadius') imageSection.style.borderBottomRightRadius = `${borderRadius}px`;
+                break;
         }
     }
 
@@ -878,7 +961,15 @@ document.addEventListener('previewLoaded', ()=>{
                 counterConfirmBtn.style.display = "flex";
                 counterCancelDelete.style.display = "block";
                 break;
-        }
+
+            case 'imageDelete':
+                const imageConfirmBtn = document.getElementById('imageConfirmDelete');
+                const imageCancelDelete = document.getElementById('imageCancelDelete');
+                deleteBtn.style.display = "none";
+                imageConfirmBtn.style.display = "flex";
+                imageCancelDelete.style.display = "block";
+                break;
+        }   
     }
 
     function confirmDelete(event){
@@ -915,6 +1006,19 @@ document.addEventListener('previewLoaded', ()=>{
                 customizeBox.scrollTop = 0;
                 customizeBox.classList.toggle('slide-right-to-left');
                 break;
+
+            case 'imageDelete':
+                selectedSection.remove();
+
+                const imageDeleteBtn = document.getElementById('imageDelete');
+                const imageCancelDelete = document.getElementById('imageCancelDelete');
+                imageDeleteBtn.style.display = "flex";
+                confirmDelete.style.display = "none";
+                imageCancelDelete.style.display = "none";
+
+                customizeBox.scrollTop = 0;
+                customizeBox.classList.toggle('slide-right-to-left');
+                break;
         }
     }
 
@@ -937,6 +1041,14 @@ document.addEventListener('previewLoaded', ()=>{
                 const counterConfirmBtn = document.getElementById('counterConfirmDelete');
                 counterDeleteBtn.style.display = "flex";
                 counterConfirmBtn.style.display = "none";
+                cancelBtn.style.display = "none";
+                break;
+
+            case 'imageDelete':
+                const imageDeleteBtn = document.getElementById('imageDelete');
+                const imageConfirmBtn = document.getElementById('imageConfirmDelete');
+                imageDeleteBtn.style.display = "flex";
+                imageConfirmBtn.style.display = "none";
                 cancelBtn.style.display = "none";
                 break;
         }

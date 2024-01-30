@@ -557,8 +557,89 @@
                             <div class="dropdown-wrapper">
                                 <div class="header-box">
                                     <div class="spacer"></div>
-                                    <h2 class="header-box-title">Image</h2>
+                                    <h2 class="header-box-title">Image Details</h2>
                                     <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Image Gallery</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-image">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-wrapper section-design">
+                                <div class="header-box">
+                                    <div class="spacer"></div>
+                                    <h2 class="header-box-title">Section Design</h2>
+                                    <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Border Stroke</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-multi-input multi-input-stroke">
+                                            <div class="dropdown-row">
+                                                <p>Top</p>
+                                                <input id="imageBorderTopStroke" class="border-stroke-input" data-type="imageBorderStroke" type="text" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row">
+                                                <p>Left</p>
+                                                <input id="imageBorderLeftStroke" class="border-stroke-input" data-type="imageBorderStroke" type="text" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row">
+                                                <p>Right</p>
+                                                <input id="imageBorderRightStroke" class="border-stroke-input" data-type="imageBorderStroke" type="text" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row">
+                                                <p>Bottom</p>
+                                                <input id="imageBorderBottomStroke" class="border-stroke-input" data-type="imageBorderStroke" type="text" placeholder="Enter a size">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Border Radius</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-multi-input multi-input-radius">
+                                            <div class="dropdown-row row-radius">
+                                                <p>Top-Left Corner</p>
+                                                <input id="imageBorderTopLeftRadius" class="border-radius-input" data-type="imageBorderRadius" type="text" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row row-radius">
+                                                <p>Top-Right Corner</p>
+                                                <input id="imageBorderTopRightRadius" class="border-radius-input" data-type="imageBorderRadius" type="text" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row row-radius">
+                                                <p>Bottom-Left Corner</p>
+                                                <input id="imageBorderBottomLeftRadius" class="border-radius-input" data-type="imageBorderRadius" type="text" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row row-radius">
+                                                <p>Bottom-Right Corner</p>
+                                                <input id="imageBorderBottomRightRadius" class="border-radius-input" data-type="imageBorderRadius" type="text" placeholder="Enter a size">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Border Color</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-color dropdown-border-color">
+                                            <div id="imageColorGradientBorder"></div>
+                                            <div id="imageBorderColorClick" class="dropdown-color-click" data-type="imageBorderColor"></div>
+                                            <input id="imageBorderColorForm" class="color-input" data-type="imageBorderColor" type="text" placeholder="Enter a hexidecimal">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <div class="customize-settings-dropdown">
+                                        <div id="imageDelete" class="dropdown-display delete-display" data-type="imageDelete">
+                                            <span>Delete</span>
+                                        </div>
+                                        <div id="imageConfirmDelete" class="dropdown-display confirm-delete" style="display: none;" data-type="imageDelete">
+                                            <span>Confirm Delete</span>
+                                        </div>
+                                        <p id="imageCancelDelete" class="cancel-delete" style="display: none;" data-type="imageDelete">Cancel</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

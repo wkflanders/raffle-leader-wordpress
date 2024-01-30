@@ -35,7 +35,6 @@ document.addEventListener('previewLoaded', ()=>{
 
         function resize(e) {
             const zoomLevel = window.zoomScale || 1;  // Ensure there's a default zoom level
-            console.log(zoomLevel);
         
             let newWidth = originalWidth + (e.clientX - originalMouseX) / zoomLevel;
             let newHeight = originalHeight + (e.clientY - originalMouseY) / zoomLevel;

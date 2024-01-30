@@ -57,8 +57,13 @@ document.addEventListener("previewLoaded", ()=>{
         switch(elementType){
             case 'textDetails':
                 loadTextSettings(element);
+                break;
             case 'counterDetails':
                 loadCounterSettings(element);
+                break;
+            case 'imageDetails':
+                loadImageSettings(element);
+                break;
         }
     }
 
@@ -325,13 +330,55 @@ document.addEventListener("previewLoaded", ()=>{
         counterBorderFormBottomLeftRadius.value = counterBorderRadiusBottomLeft;
         counterBorderFormBottomRightRadius.value = counterBorderRadiusBottomRight;
 
-        //counter border color
+        // counter border color
         const counterBorderColorForm = document.getElementById('counterBorderColorForm');
         const counterBorderHexBox = document.getElementById('counterBorderColorClick');
         const counterBorderColorRGB = window.getComputedStyle(element).getPropertyValue('border-color').replace(/^"|"$/g, '');
         const counterBorderColorHex = rgbToHex(counterBorderColorRGB);
         counterBorderColorForm.value = counterBorderColorHex;
         counterBorderHexBox.style.backgroundColor = counterBorderColorRGB;
+    }
+
+    function loadImageSettings(element){
+        // image border stroke
+        const imageBorderFormTopStroke = document.getElementById('imageBorderTopStroke');
+        const imageBorderFormLeftStroke = document.getElementById('imageBorderLeftStroke');
+        const imageBorderFormBottomStroke = document.getElementById('imageBorderBottomStroke');
+        const imageBorderFormRightStroke = document.getElementById('imageBorderRightStroke');
+
+        const imageBorderStrokeTop = window.getComputedStyle(element).getPropertyValue('border-top-width').replace(/^"|"$/g, '');
+        const imageBorderStrokeLeft = window.getComputedStyle(element).getPropertyValue('border-left-width').replace(/^"|"$/g, '');
+        const imageBorderStrokeBottom = window.getComputedStyle(element).getPropertyValue('border-bottom-width').replace(/^"|"$/g, '');
+        const imageBorderStrokeRight = window.getComputedStyle(element).getPropertyValue('border-right-width').replace(/^"|"$/g, '');
+
+        imageBorderFormTopStroke.value = imageBorderStrokeTop;
+        imageBorderFormLeftStroke.value = imageBorderStrokeLeft;
+        imageBorderFormBottomStroke.value = imageBorderStrokeBottom;
+        imageBorderFormRightStroke.value = imageBorderStrokeRight;
+
+        // image border radius
+        const imageBorderFormTopLeftRadius = document.getElementById('imageBorderTopLeftRadius');
+        const imageBorderFormTopRightRadius = document.getElementById('imageBorderTopRightRadius');
+        const imageBorderFormBottomLeftRadius = document.getElementById('imageBorderBottomLeftRadius');
+        const imageBorderFormBottomRightRadius = document.getElementById('imageBorderBottomRightRadius');
+
+        const imageBorderRadiusTopLeft = window.getComputedStyle(element).getPropertyValue('border-top-left-radius').replace(/^"|"$/g, '');
+        const imageBorderRadiusTopRight = window.getComputedStyle(element).getPropertyValue('border-top-right-radius').replace(/^"|"$/g, '');
+        const imageBorderRadiusBottomLeft = window.getComputedStyle(element).getPropertyValue('border-bottom-left-radius').replace(/^"|"$/g, '');
+        const imageBorderRadiusBottomRight = window.getComputedStyle(element).getPropertyValue('border-bottom-right-radius').replace(/^"|"$/g, '');
+
+        imageBorderFormTopLeftRadius.value = imageBorderRadiusTopLeft;
+        imageBorderFormTopRightRadius.value = imageBorderRadiusTopRight;
+        imageBorderFormBottomLeftRadius.value = imageBorderRadiusBottomLeft;
+        imageBorderFormBottomRightRadius.value = imageBorderRadiusBottomRight;
+
+        // image border color
+        const imageBorderColorForm = document.getElementById('imageBorderColorForm');
+        const imageBorderHexBox = document.getElementById('imageBorderColorClick');
+        const imageBorderColorRGB = window.getComputedStyle(element).getPropertyValue('border-color').replace(/^"|"$/g, '');
+        const imageBorderColorHex = rgbToHex(imageBorderColorRGB);
+        imageBorderColorForm.value = imageBorderColorHex;
+        imageBorderHexBox.style.backgroundColor = imageBorderColorHex
     }
 
     document.addEventListener("keydown", ({key}) => {

@@ -938,11 +938,31 @@ document.addEventListener('previewLoaded', ()=>{
 
             case 'imageBorderRadius':
                 const imageSection = selectedSection.querySelector('.image-section');
-
-                if(radiusFormID === 'imageBorderTopLeftRadius') imageSection.style.borderTopLeftRadius = `${borderRadius}px`;
-                if(radiusFormID === 'imageBorderTopRightRadius') imageSection.style.borderTopRightRadius = `${borderRadius}px`;
-                if(radiusFormID === 'imageBorderBottomLeftRadius') imageSection.style.borderBottomLeftRadius = `${borderRadius}px`;
-                if(radiusFormID === 'imageBorderBottomRightRadius') imageSection.style.borderBottomRightRadius = `${borderRadius}px`;
+                const imageElement = selectedSection.querySelector('img') ? selectedSection.querySelector('img') : undefined;
+                
+                if(imageElement){
+                    if(radiusFormID === 'imageBorderTopLeftRadius'){
+                        imageSection.style.borderTopLeftRadius = `${borderRadius}px`;
+                        imageElement.style.borderTopLeftRadius = `${borderRadius}px`;
+                    } 
+                    if(radiusFormID === 'imageBorderTopRightRadius'){
+                        imageSection.style.borderTopRightRadius = `${borderRadius}px`;
+                        imageElement.style.borderTopRightRadius = `${borderRadius}px`;
+                    }
+                    if(radiusFormID === 'imageBorderBottomLeftRadius'){
+                        imageSection.style.borderBottomLeftRadius = `${borderRadius}px`;
+                        imageElement.style.borderBottomLeftRadius = `${borderRadius}px`;
+                    } 
+                    if(radiusFormID === 'imageBorderBottomRightRadius'){
+                        imageSection.style.borderBottomRightRadius = `${borderRadius}px`;
+                        imageElement.style.borderBottomRightRadius = `${borderRadius}px`;
+                    } 
+                } else {
+                    if(radiusFormID === 'imageBorderTopLeftRadius') imageSection.style.borderTopLeftRadius = `${borderRadius}px`;
+                    if(radiusFormID === 'imageBorderTopRightRadius') imageSection.style.borderTopRightRadius = `${borderRadius}px`;
+                    if(radiusFormID === 'imageBorderBottomLeftRadius') imageSection.style.borderBottomLeftRadius = `${borderRadius}px`;
+                    if(radiusFormID === 'imageBorderBottomRightRadius') imageSection.style.borderBottomRightRadius = `${borderRadius}px`;
+                }
                 break;
         }
     }

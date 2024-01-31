@@ -561,9 +561,14 @@
                                     <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
                                 </div>
                                 <div class="customize-settings-box">
-                                    <p>Image Gallery</p>
+                                    <p>Insert Image</p>
                                     <div class="customize-settings-dropdown">
                                         <div class="dropdown-display dropdown-image">
+                                            <div class="img-details">
+                                                <a id="imgURL" class="img-url" target="_blank"></a>
+                                                <button id="imgDelete" class="img-delete">Delete</button>
+                                            </div>
+                                            <button id="insertImageBtn" class="insert-img-btn">Insert Image</button>
                                         </div>
                                     </div>
                                 </div>

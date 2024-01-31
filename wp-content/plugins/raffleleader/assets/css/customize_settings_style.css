@@ -281,7 +281,76 @@ input[type="text"].color-input{
     width: 5vw;
 }
 
+.dropdown-image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0;
+    height: 8vh;
+    margin-left: 3vw;
+}
 
+.insert-img-btn{
+    border: 0;
+    background-color:#1501FE;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.7vh;
+    padding: 0.7rem 1.5rem 0.8rem 1.5rem;
+    margin-top: 2vh;
+    font-family: "Inter";
+}
+
+.insert-img-btn:hover{
+    background-color:#1200dd; 
+    color: rgb(226, 226, 226);
+    cursor: pointer;
+}
+
+.insert-img-btn:active{
+    background-color:#1501FE;
+    color: white;
+}
+
+.img-details{
+    border: 1px solid gray;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.img-details > p{
+    margin: 0;
+}
+
+.img-url{
+    height: 3vh;
+    width: 14vw;
+    font-size: 1.5vh;
+    line-height: 2;
+}
+
+.img-delete{
+    background-color: white;
+    border: 0;
+    padding: 0;
+    margin: 0 1vh 0 0;
+    font-size: 1.5vh;
+    color: red;
+    height: 3.25vh;
+    width: 3vw;
+    line-height: 2;
+}
+
+.img-delete:hover{
+    cursor: pointer;
+    color: rgb(179, 0, 0);
+}
+
+.img-delete:active{
+    cursor: pointer;
+    color: red;
+}
 
 .delete-display{
     margin-top: 3vh;

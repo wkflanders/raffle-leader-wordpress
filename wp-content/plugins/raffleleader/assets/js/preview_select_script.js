@@ -340,6 +340,21 @@ document.addEventListener("previewLoaded", ()=>{
     }
 
     function loadImageSettings(element){
+        // image
+        const imageFormURL = document.getElementById('imgURL');
+        const imageElement = element.querySelector('img');
+        if(imageElement){
+            const imageSRC = imageElement.src ? imageElement.src : '';
+            const imageURL = new URL(imageSRC);
+            const filename = imageURL.pathname.split('/').pop();
+
+            imageFormURL.href = imageSRC;
+            imageFormURL.innerText = filename;
+        } else {
+            imageFormURL.href = '';
+            imageFormURL.innerText = '';
+        }
+        
         // image border stroke
         const imageBorderFormTopStroke = document.getElementById('imageBorderTopStroke');
         const imageBorderFormLeftStroke = document.getElementById('imageBorderLeftStroke');

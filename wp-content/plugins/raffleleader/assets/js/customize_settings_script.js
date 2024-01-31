@@ -29,6 +29,9 @@ document.addEventListener('previewLoaded', ()=>{
     const confirmDeleteBtns = document.querySelectorAll('.confirm-delete');
     const cancelDeleteBtns = document.querySelectorAll('.cancel-delete');
 
+    const imageBtn = document.getElementById('insertImageBtn');
+    const imageDeleteBtn = document.getElementById('imgDelete');
+
     let pickrText = undefined;
     let pickrBackground = undefined;
     let pickrBorder = undefined;
@@ -135,7 +138,11 @@ document.addEventListener('previewLoaded', ()=>{
 
     borderRadiusForms.forEach((borderRadiusForm)=>{
         borderRadiusForm.addEventListener('input', setBorderRadius);
-    })
+    });
+
+    imageBtn.addEventListener('click', insertImage);
+
+    imageDeleteBtn.addEventListener('click', deleteImage);
 
 
     function openDropDown(event){
@@ -939,6 +946,59 @@ document.addEventListener('previewLoaded', ()=>{
                 break;
         }
     }
+
+    function insertImage(event){
+        event.preventDefault();
+        const selectedSection = document.querySelector('.selected-section');
+        const imgContainer = selectedSection.querySelector('.image-section');
+        const imgElement = document.createElement('img');
+        const imgFormURL = document.getElementById('imgURL');
+
+        const file_frame = wp.media.frames.file_frame = wp.media({
+            title: 'Select Image',
+            button: {
+                text: 'Use This Image',
+            },
+            multiple: false
+        });
+
+        file_frame.on('select', ()=>{
+            const attachment = file_frame.state().get('selection').first().toJSON();
+
+            imgElement.src = attachment.url;
+
+            imgElement.alt = attachment.alt || 'Raffle Image';
+            imgElement.title = attachment.title || '';
+
+            imgContainer.innerHTML = '';
+            imgContainer.appendChild(imgElement);
+
+            const filename = new URL(attachment.url).pathname.split('/').pop();
+
+            imgFormURL.href = imgElement.src;
+            imgFormURL.innerText = filename;
+        });
+
+        file_frame.open();
+    }
+
+    function deleteImage(event){
+        event.preventDefault();
+
+        const selectedSection = document.querySelector('.selected-section');
+        const imgContainer = selectedSection.querySelector('.image-section');
+        const imgFormURL = document.getElementById('imgURL');
+
+        imgFormURL.innerText = '';
+        imgFormURL.href = '';
+
+        const defaultText = document.createElement('p');
+        defaultText.textContent = 'Insert An Image Here';
+
+        imgContainer.innerHTML = '';
+        imgContainer.appendChild(defaultText);
+    }
+
 
     function deleteSection(event){
         event.preventDefault();

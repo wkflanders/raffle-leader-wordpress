@@ -82,7 +82,8 @@ class Enqueue extends BaseController{
             'ajax_url' => admin_url( 'admin-ajax.php' ),
             'security' => wp_create_nonce( 'nonce' ),
          ) );
-
+            
+        wp_enqueue_media();
     }
 
     public function enqueueRaffleOverview(){

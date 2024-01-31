@@ -74,7 +74,7 @@ document.addEventListener('previewLoaded', () => {
                         <div style="display: none;" class="resize-handle"></div>`;
             case 'imageBox':
                 return `<div data-type="imageDetails" class="image-section">
-                            <p>Drag & Drop an Image Here</p>
+                            <p>Insert An Image Here</p>
                         </div>
                         <div style="display: none;" class="resize-handle"></div>`;
         }

@@ -50,7 +50,7 @@
 .layout-size{
     display: flex;
     flex-direction: column;
-    margin-top: 4vh;
+    margin-top: 1vh;
 }
 
 .layout-size > p{

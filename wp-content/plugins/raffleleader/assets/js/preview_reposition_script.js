@@ -107,13 +107,6 @@ document.addEventListener('previewLoaded', ()=>{
 
             let x = mouseX - dragStartX;
             let y = mouseY - dragStartY;
-
-            // Correcting the initial position calculation
-            // if (initialDrag) {
-            //     x += el.offsetLeft;
-            //     y += el.offsetTop;
-            //     initialDrag = false; // Reset the flag after the initial drag
-            // }
         
             // Boundary checks
             if (x < 0) x = 0;
@@ -142,6 +135,13 @@ document.addEventListener('previewLoaded', ()=>{
                     x = scaledOtherRect.left - el.offsetWidth;
                 } else if (Math.abs(scaledOtherRect.right - x) < snapMargin) {
                     x = scaledOtherRect.right;
+                }
+
+                // New Horizontal snapping - left to left and right to right
+                if (Math.abs(scaledOtherRect.left - x) < snapMargin) {
+                    x = scaledOtherRect.left;
+                } else if (Math.abs(scaledOtherRect.right - x - el.offsetWidth) < snapMargin) {
+                    x = scaledOtherRect.right - el.offsetWidth;
                 }
         
                 // Vertical snapping

@@ -1,0 +1,23 @@
+.general-settings-wrapper{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    margin-left: 19vw;
+    height: 100vh;
+    width: 81vw;
+    background-color: white;
+}
+
+.active-settings-wrapper{
+    display: block;
+}
+
+.general-settings-menu{
+    display: none;
+    height: 100vh;
+    width: 81vw;
+}
+
+.active-settings-menu{
+    display: block;
+}

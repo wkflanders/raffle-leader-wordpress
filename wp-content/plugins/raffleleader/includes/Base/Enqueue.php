@@ -47,6 +47,7 @@ class Enqueue extends BaseController{
         wp_enqueue_style( 'raffleleader_layout_style', $this->plugin_url . '/assets/css/layout_style.css', array(), rand(111, 9999) );
         wp_enqueue_style( 'raffleleader_customize_settings_style', $this->plugin_url . '/assets/css/customize_settings_style.css', array(), rand(111, 9999) );
         wp_enqueue_style( 'raffleleader_preview_save_modal_style', $this->plugin_url . '/assets/css/preview_save_modal_style.css', array(), rand(111, 9999) );
+        wp_enqueue_style( 'raffleleader_setup_general_settings_style', $this->plugin_url . '/assets/css/setup_general_settings_style.css', array(), rand(111, 9999) );
 
         // Loading JS libraries
         wp_enqueue_script( 'raffleleader_pickr_script', 'https://cdn.jsdelivr.net/npm/@simonwep/pickr@1.8.0/dist/pickr.min.js', array(), rand(111, 9999) );
@@ -70,6 +71,8 @@ class Enqueue extends BaseController{
         wp_enqueue_script( 'raffleleader_customize_settings_script', $this->plugin_url . '/assets/js/customize_settings_script.js', array(), rand(111, 9999) );
 
         wp_enqueue_script( 'raffleleader_preview_size_script', $this->plugin_url . '/assets/js/preview_size_script.js', array(), rand(111, 9999) );
+
+        wp_enqueue_script( 'raffleleader_setup_general_settings_script', $this->plugin_url . '/assets/js/setup_general_settings_script.js', array(), rand(111, 9999) );
 
         wp_enqueue_script( 'raffleleader_preview_save_script', $this->plugin_url . '/assets/js/preview_save_script.js', array(), rand(111, 9999) );
         wp_localize_script( 'raffleleader_preview_save_script', 'raffleleader_preview_save_object', array( 

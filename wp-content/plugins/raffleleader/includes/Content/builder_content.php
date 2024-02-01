@@ -130,9 +130,9 @@
         </div>
         <div id="setup" class="rl-tab-pane active-tab">
             <div id="setupWrapper" class="rl-setup-wrapper">
-                <div class="layout-wrapper">
-                    <div class="layout">
-                        <div class="header-box layout-header">
+                <div class="raffle-options-wrapper">
+                    <div class="raffle-options raffle-layout">
+                        <div class="header-box raffle-options-header">
                             <h2 class="header-box-title">Layout</h2>
                         </div>
                         <div class="layout-options">
@@ -153,19 +153,60 @@
                         <div class="layout-size">
                             <p>Adjust Your Raffle's Height and Width</p>
                             <div class="layout-size-row-wrapper">
+                                <div class="layout-size-row layout-size-text">
+                                    <p>Width</p>
+                                    <p>Height</p>
+                                </div>
                                 <div class="layout-size-row layout-size-input">
                                     <input id="layoutWidthForm" class="layout-size-form" type="text" placeholder="Width">
                                     <p>X</p>
                                     <input id="layoutHeightForm" class="layout-size-form" type="text" placeholder="Height">
                                 </div>
                                 <div class="layout-size-row layout-size-error">
-                                    <p class="layout-min-width-error" style="display: none;">Width must be greater than 500px!</p>
-                                    <p class="layout-min-height-error" style="display: none;">Height must be greater than 100px!</p>
-                                    <p class="layout-max-width-error" style="display: none;">Width must be less than 2000px!</p>
-                                    <p class="layout-max-height-error" style="display: none;">Height must be greater than 2000px!</p>
+                                    <p class="layout-min-width-error" style="display: none;">Width must be ≥ 500px!</p>
+                                    <p class="layout-min-height-error" style="display: none;">Height must be ≥ 100px!</p>
+                                    <p class="layout-max-width-error" style="display: none;">Width must be ≤ 2000px!</p>
+                                    <p class="layout-max-height-error" style="display: none;">Height must be ≤ 2000px!</p>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="raffle-options raffle-settings">
+                        <div class="header-box raffle-options-header">
+                            <h2 class="header-box-title">Settings</h2>
+                        </div>
+                        <div class="settings-options">
+                            <a href="#timeAndDate" class="settings-tab-open"><button class="settings-options-btn">Time and Date</button></a>
+                            <a href="#rulesAndTerms" class="settings-tab-open"><button class="settings-options-btn">Rules and Terms</button></a>
+                            <a href="#emailSettings" class="settings-tab-open"><button class="settings-options-btn">Email Settings</button></a>
+                            <a href="#successSettings" class="settings-tab-open"><button class="settings-options-btn">Success Settings</button></a>
+                            <a href="#GPDR" class="settings-tab-open"><button class="settings-options-btn">GPDR Consent</button></a>
+                            <a href="#recaptcha" class="settings-tab-open"><button class="settings-options-btn">Recaptcha</button></a>
+                            <a href="#webhooks" class="settings-tab-open"><button class="settings-options-btn">Webhooks</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="general-settings-wrapper">
+                    <div class="general-settings-menu" id='timeAndDate'>
+                        <p>timeAndDate</p>
+                    </div>
+                    <div class="general-settings-menu" id='rulesAndTerms'>
+                        <p>rulesAndTerms</p>
+                    </div>
+                    <div class="general-settings-menu" id='emailSettings'>
+                        <p>emailSettings</p>
+                    </div>
+                    <div class="general-settings-menu" id='successSettings'>
+                        <p>successSettings</p>
+                    </div>
+                    <div class="general-settings-menu" id='GPDR'>
+                        <p>GPDR</p>
+                    </div>
+                    <div class="general-settings-menu" id='recaptcha'>
+                        <p>recaptcha</p>
+                    </div>
+                    <div class="general-settings-menu" id='webhooks'>
+                        <p>webhooks</p>
                     </div>
                 </div>
                 <div id="previewWrapper" class="preview-wrapper" style="display: none;">
@@ -198,31 +239,14 @@
                                     </div>
                                 </div>
                                 <div class="customize-settings-box">
-                                    <p>Horizontal Text Alignment</p>
-                                    <div class="customize-settings-dropdown text">
-                                        <div class="dropdown-display dropdown-inline-btns text-horizontal-align">
-                                            <img class="inline-btn align-left" data-type="textAlign" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left-text-align.png">
-                                            <img class="inline-btn align-center" data-type="textAlign" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/center-text-align.png">
-                                            <img class="inline-btn align-right" data-type="textAlign" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right-text-align.png">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="customize-settings-box">
-                                    <p>Vertical Text Alignment</p>
-                                    <div class="customize-settings-dropdown text-vertical-align">
+                                    <p>Font Style </p>
+                                    <div class="customize-settings-dropdown">
                                         <div class="dropdown-display dropdown-inline-btns">
-                                            <img class="inline-btn align-top" data-type="textVert" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top-vert.png">
-                                            <img class="inline-btn align-middle" data-type="textVert" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/center-vert.png">
-                                            <img class="inline-btn align-bottom" data-type="textVert" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom-vert.png">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="customize-settings-box">
-                                    <p>Text Orientation</p>
-                                    <div class="customize-settings-dropdown text-orientation">
-                                        <div class="dropdown-display dropdown-inline-btns dropdown-two-btns">
-                                            <img class="inline-btn horizontal-orient" data-type="textOrient" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/horizontal-orient.png">
-                                            <img class="inline-btn vertical-orient" data-type="textOrient" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/vertical-orient.png">
+                                            <img id="textBoldBtn" class="inline-btn bold-btn" data-type="textfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                                            <img id="textItalicizeBtn" class="inline-btn italicize-btn" data-type="textfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                                            <img id="textUnderlineBtn" class="inline-btn underline-btn" data-type="textfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                                            <img id="textStrikeBtn" class="inline-btn strike-btn" data-type="textfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                                            <img id="textOverlineBtn" class="inline-btn overline-btn" data-type="textfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
                                         </div>
                                     </div>
                                 </div>
@@ -279,22 +303,39 @@
                                     </div>
                                 </div>
                                 <div class="customize-settings-box">
-                                    <p>Font Style </p>
-                                    <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display dropdown-inline-btns">
-                                            <img id="textBoldBtn" class="inline-btn bold-btn" data-type="textfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                                            <img id="textItalicizeBtn" class="inline-btn italicize-btn" data-type="textfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                                            <img id="textUnderlineBtn" class="inline-btn underline-btn" data-type="textfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                                            <img id="textStrikeBtn" class="inline-btn strike-btn" data-type="textfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                                            <img id="textOverlineBtn" class="inline-btn overline-btn" data-type="textfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="customize-settings-box">
                                     <p>Letter Spacing</p>
                                     <div class="customize-settings-dropdown">
                                         <div class="dropdown-display dropdown-text">
                                             <input id="textLetterSpacingForm" class="letter-spacing-input" data-type="textLetterSpacing" type="text" placeholder="Enter letter spacing">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Horizontal Text Alignment</p>
+                                    <div class="customize-settings-dropdown text">
+                                        <div class="dropdown-display dropdown-inline-btns text-horizontal-align">
+                                            <img class="inline-btn align-left" data-type="textAlign" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left-text-align.png">
+                                            <img class="inline-btn align-center" data-type="textAlign" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/center-text-align.png">
+                                            <img class="inline-btn align-right" data-type="textAlign" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right-text-align.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Vertical Text Alignment</p>
+                                    <div class="customize-settings-dropdown text-vertical-align">
+                                        <div class="dropdown-display dropdown-inline-btns">
+                                            <img class="inline-btn align-top" data-type="textVert" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top-vert.png">
+                                            <img class="inline-btn align-middle" data-type="textVert" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/center-vert.png">
+                                            <img class="inline-btn align-bottom" data-type="textVert" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom-vert.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Text Orientation</p>
+                                    <div class="customize-settings-dropdown text-orientation">
+                                        <div class="dropdown-display dropdown-inline-btns dropdown-two-btns">
+                                            <img class="inline-btn horizontal-orient" data-type="textOrient" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/horizontal-orient.png">
+                                            <img class="inline-btn vertical-orient" data-type="textOrient" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/vertical-orient.png">
                                         </div>
                                     </div>
                                 </div>

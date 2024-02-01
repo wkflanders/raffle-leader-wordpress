@@ -5,7 +5,7 @@ document.addEventListener('previewLoaded', ()=>{
 
     layoutMinHeightError = document.querySelector('.layout-min-height-error');
     layoutMinWidthError = document.querySelector('.layout-min-width-error');
-    layoutMaxWidthError = document.querySelector('.layout-max-width-error');
+    layoutMaxHeightError = document.querySelector('.layout-max-height-error');
     layoutMaxWidthError = document.querySelector('.layout-max-width-error');
 
     layoutSizeForms.forEach((layoutSizeForm)=>{

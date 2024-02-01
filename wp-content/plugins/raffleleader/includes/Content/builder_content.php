@@ -175,38 +175,96 @@
                         <div class="header-box raffle-options-header">
                             <h2 class="header-box-title">Settings</h2>
                         </div>
-                        <div class="settings-options">
-                            <a href="#timeAndDate" class="settings-tab-open"><button class="settings-options-btn">Time and Date</button></a>
-                            <a href="#rulesAndTerms" class="settings-tab-open"><button class="settings-options-btn">Rules and Terms</button></a>
-                            <a href="#emailSettings" class="settings-tab-open"><button class="settings-options-btn">Email Settings</button></a>
-                            <a href="#successSettings" class="settings-tab-open"><button class="settings-options-btn">Success Settings</button></a>
-                            <a href="#GPDR" class="settings-tab-open"><button class="settings-options-btn">GPDR Consent</button></a>
-                            <a href="#recaptcha" class="settings-tab-open"><button class="settings-options-btn">Recaptcha</button></a>
-                            <a href="#webhooks" class="settings-tab-open"><button class="settings-options-btn">Webhooks</button></a>
+                        <div class="general-settings-options">
+                            <a href="#dateAndTime" class="settings-tab-open"><button class="general-settings-btn">Date and Time</button></a>
+                            <a href="#rulesAndTerms" class="settings-tab-open"><button class="general-settings-btn">Rules and Terms</button></a>
+                            <a href="#emailSettings" class="settings-tab-open"><button class="general-settings-btn">Email Settings</button></a>
+                            <a href="#successSettings" class="settings-tab-open"><button class="general-settings-btn">Success Settings</button></a>
+                            <a href="#GPDR" class="settings-tab-open"><button class="general-settings-btn">GPDR Consent</button></a>
+                            <a href="#recaptcha" class="settings-tab-open"><button class="general-settings-btn">Recaptcha</button></a>
+                            <a href="#webhooks" class="settings-tab-open"><button class="general-settings-btn">Webhooks</button></a>
                         </div>
                     </div>
                 </div>
                 <div class="general-settings-wrapper">
-                    <div class="general-settings-menu" id='timeAndDate'>
-                        <p>timeAndDate</p>
+                    <div class="general-settings-menu" id='dateAndTime'>
+                        <div class="header-box settings-menu-header">
+                            <h2 class="header-box-title">Date and Time</h2>
+                            <button class="close close-settings-menu"></button>
+                        </div>
+                        <div class="customize-settings-box">
+                            <p>Timezone</p>
+                            <div class="customize-settings-dropdown">
+                                <div class="dropdown-display time-and-date-display">
+                                    <p id="timeZoneDropDownTitle">EST</p>
+                                    <p class="dropdown-btn">▼</p>
+                                </div>
+                                <div class="dropdown-content time-and-date-content">
+                                    <ul id="timeZoneList">
+                                        <li class="time-zone" data-type="timezone">ANAT</li>
+                                        <li class="time-zone" data-type="timezone">AEDT</li>
+                                        <li class="time-zone" data-type="timezone">AEST</li>
+                                        <li class="time-zone" data-type="timezone">JST</li>
+                                        <li class="time-zone" data-type="timezone">CST</li>
+                                        <li class="time-zone" data-type="timezone">WIB</li>
+                                        <li class="time-zone" data-type="timezone">BST</li>
+                                        <li class="time-zone" data-type="timezone">UZT</li>
+                                        <li class="time-zone" data-type="timezone">GST</li>
+                                        <li class="time-zone" data-type="timezone">MSK</li>
+                                        <li class="time-zone" data-type="timezone">EET</li>
+                                        <li class="time-zone" data-type="timezone">CET</li>
+                                        <li class="time-zone" data-type="timezone">GMT</li>
+                                        <li class="time-zone" data-type="timezone">CVT</li>
+                                        <li class="time-zone" data-type="timezone">CGT</li>
+                                        <li class="time-zone" data-type="timezone">ART</li>
+                                        <li class="time-zone" data-type="timezone">VET</li>
+                                        <li class="time-zone" data-type="timezone">EST</li>
+                                        <li class="time-zone" data-type="timezone">CST</li>
+                                        <li class="time-zone" data-type="timezone">MST</li>
+                                        <li class="time-zone" data-type="timezone">AKST</li>
+                                        <li class="time-zone" data-type="timezone">HST</li>
+                                        <li class="time-zone" data-type="timezone">NUT</li>
+                                        <li class="time-zone" data-type="timezone">AoE</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="general-settings-menu" id='rulesAndTerms'>
-                        <p>rulesAndTerms</p>
+                        <div class="header-box settings-menu-header">
+                            <h2 class="header-box-title">Rules and Terms</h2>
+                            <button class="close close-settings-menu"></button>
+                        </div>
                     </div>
                     <div class="general-settings-menu" id='emailSettings'>
-                        <p>emailSettings</p>
+                        <div class="header-box settings-menu-header">
+                            <h2 class="header-box-title">Email Settings</h2>
+                            <button class="close close-settings-menu"></button>
+                        </div>
                     </div>
                     <div class="general-settings-menu" id='successSettings'>
-                        <p>successSettings</p>
+                        <div class="header-box settings-menu-header">
+                            <h2 class="header-box-title">Success Settings</h2>
+                            <button class="close close-settings-menu"></button>
+                        </div>
                     </div>
                     <div class="general-settings-menu" id='GPDR'>
-                        <p>GPDR</p>
+                        <div class="header-box settings-menu-header">
+                            <h2 class="header-box-title">GPDR Consent</h2>
+                            <button class="close close-settings-menu"></button>
+                        </div>
                     </div>
                     <div class="general-settings-menu" id='recaptcha'>
-                        <p>recaptcha</p>
+                        <div class="header-box settings-menu-header">
+                            <h2 class="header-box-title">Recaptcha</h2>
+                            <button class="close close-settings-menu"></button>
+                        </div>
                     </div>
                     <div class="general-settings-menu" id='webhooks'>
-                        <p>webhooks</p>
+                        <div class="header-box settings-menu-header">
+                            <h2 class="header-box-title">Webhooks</h2>
+                            <button class="close close-settings-menu"></button>
+                        </div>
                     </div>
                 </div>
                 <div id="previewWrapper" class="preview-wrapper" style="display: none;">

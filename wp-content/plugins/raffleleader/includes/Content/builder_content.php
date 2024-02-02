@@ -158,9 +158,9 @@
                                     <p>Height</p>
                                 </div>
                                 <div class="layout-size-row layout-size-input">
-                                    <input id="layoutWidthForm" class="layout-size-form" type="text" placeholder="Width">
+                                    <input id="layoutWidthForm" class="layout-size-form" type="text" name="layoutWidth" placeholder="Width">
                                     <p>X</p>
-                                    <input id="layoutHeightForm" class="layout-size-form" type="text" placeholder="Height">
+                                    <input id="layoutHeightForm" class="layout-size-form" type="text" name="layoutHeight" placeholder="Height">
                                 </div>
                                 <div class="layout-size-row layout-size-error">
                                     <p class="layout-min-width-error" style="display: none;">Width must be ≥ 500px!</p>
@@ -192,40 +192,81 @@
                             <h2 class="header-box-title">Date and Time</h2>
                             <button class="close close-settings-menu"></button>
                         </div>
-                        <div class="customize-settings-box">
-                            <p>Timezone</p>
-                            <div class="customize-settings-dropdown">
-                                <div class="dropdown-display time-and-date-display">
-                                    <p id="timeZoneDropDownTitle">EST</p>
-                                    <p class="dropdown-btn">▼</p>
+                        <div class="general-settings-text">
+                            <p>Your Raffle's Start Date & Time and End Date & Time</p>
+                        </div>
+                        <div class="general-settings-row">
+                            <div class="customize-settings-box">
+                                <p>Timezone</p>
+                                <div class="customize-settings-dropdown">
+                                    <div class="dropdown-display date-and-time-display dropdown-timezone">
+                                        <p id="timeZoneDropDownTitle">EST</p>
+                                        <p class="dropdown-btn">▼</p>
+                                    </div>
+                                    <div class="dropdown-content date-and-time-content">
+                                        <ul id="timeZoneList">
+                                            <li class="time-zone" data-type="timezone">ANAT</li>
+                                            <li class="time-zone" data-type="timezone">AEDT</li>
+                                            <li class="time-zone" data-type="timezone">AEST</li>
+                                            <li class="time-zone" data-type="timezone">JST</li>
+                                            <li class="time-zone" data-type="timezone">CST</li>
+                                            <li class="time-zone" data-type="timezone">WIB</li>
+                                            <li class="time-zone" data-type="timezone">BST</li>
+                                            <li class="time-zone" data-type="timezone">UZT</li>
+                                            <li class="time-zone" data-type="timezone">GST</li>
+                                            <li class="time-zone" data-type="timezone">MSK</li>
+                                            <li class="time-zone" data-type="timezone">EET</li>
+                                            <li class="time-zone" data-type="timezone">CET</li>
+                                            <li class="time-zone" data-type="timezone">GMT</li>
+                                            <li class="time-zone" data-type="timezone">CVT</li>
+                                            <li class="time-zone" data-type="timezone">CGT</li>
+                                            <li class="time-zone" data-type="timezone">ART</li>
+                                            <li class="time-zone" data-type="timezone">VET</li>
+                                            <li class="time-zone" data-type="timezone">EST</li>
+                                            <li class="time-zone" data-type="timezone">CST</li>
+                                            <li class="time-zone" data-type="timezone">MST</li>
+                                            <li class="time-zone" data-type="timezone">AKST</li>
+                                            <li class="time-zone" data-type="timezone">HST</li>
+                                            <li class="time-zone" data-type="timezone">NUT</li>
+                                            <li class="time-zone" data-type="timezone">AoE</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="dropdown-content time-and-date-content">
-                                    <ul id="timeZoneList">
-                                        <li class="time-zone" data-type="timezone">ANAT</li>
-                                        <li class="time-zone" data-type="timezone">AEDT</li>
-                                        <li class="time-zone" data-type="timezone">AEST</li>
-                                        <li class="time-zone" data-type="timezone">JST</li>
-                                        <li class="time-zone" data-type="timezone">CST</li>
-                                        <li class="time-zone" data-type="timezone">WIB</li>
-                                        <li class="time-zone" data-type="timezone">BST</li>
-                                        <li class="time-zone" data-type="timezone">UZT</li>
-                                        <li class="time-zone" data-type="timezone">GST</li>
-                                        <li class="time-zone" data-type="timezone">MSK</li>
-                                        <li class="time-zone" data-type="timezone">EET</li>
-                                        <li class="time-zone" data-type="timezone">CET</li>
-                                        <li class="time-zone" data-type="timezone">GMT</li>
-                                        <li class="time-zone" data-type="timezone">CVT</li>
-                                        <li class="time-zone" data-type="timezone">CGT</li>
-                                        <li class="time-zone" data-type="timezone">ART</li>
-                                        <li class="time-zone" data-type="timezone">VET</li>
-                                        <li class="time-zone" data-type="timezone">EST</li>
-                                        <li class="time-zone" data-type="timezone">CST</li>
-                                        <li class="time-zone" data-type="timezone">MST</li>
-                                        <li class="time-zone" data-type="timezone">AKST</li>
-                                        <li class="time-zone" data-type="timezone">HST</li>
-                                        <li class="time-zone" data-type="timezone">NUT</li>
-                                        <li class="time-zone" data-type="timezone">AoE</li>
-                                    </ul>
+                            </div>
+                        </div>
+                        <div class="general-settings-row">
+                            <div class="customize-settings-box">
+                                <p>Start Date</p>
+                                <div class="customize-settings-dropdown">
+                                    <div class="dropdown-display date-and-time-display dropdown-date">
+                                        <input id="startDate" type="date" name="startDate">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="customize-settings-box">
+                                <p>Start Time</p>
+                                <div class="customize-settings-dropdown">
+                                    <div class="dropdown-display date-and-time-display dropdown-date">
+                                        <input id="startTime" type="time" name="startTime">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="general-settings-row">
+                            <div class="customize-settings-box">
+                                <p>End Date</p>
+                                <div class="customize-settings-dropdown">
+                                    <div class="dropdown-display date-and-time-display dropdown-date">
+                                        <input id="endDate" type="date" name="endDate">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="customize-settings-box">
+                                <p>End Time</p>
+                                <div class="customize-settings-dropdown">
+                                    <div class="dropdown-display date-and-time-display dropdown-date">
+                                        <input id="endTime" type="time" name="endTime">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -235,11 +276,93 @@
                             <h2 class="header-box-title">Rules and Terms</h2>
                             <button class="close close-settings-menu"></button>
                         </div>
+                        <div class="general-settings-text">
+                            <p>Your Raffle's Rules and Terms</p>
+                        </div>
+                        <div class="general-settings-row rules-and-terms-row">
+                            <textarea id="rulesAndTermsForm" class="rules-and-terms-input" type="text" placeholder="Enter Rules and Terms"></textarea>
+                        </div>
                     </div>
                     <div class="general-settings-menu" id='emailSettings'>
                         <div class="header-box settings-menu-header">
                             <h2 class="header-box-title">Email Settings</h2>
                             <button class="close close-settings-menu"></button>
+                        </div>
+                        <div class="general-settings-text">
+                            <p>Your Raffle's Email Verification Settings</p>
+                        </div>
+                        <div class="general-settings-row email-verify-switch">
+                            <p>Toggle Email Verification</p>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="general-settings-row email-verify-info">
+                            <p>Email verification requires that a participant would need to verify via a confirmation link sent to their email.
+                            Entries will still be counted, but a 'verified' tag will be visible in the raffle manager if the participant successfully opened the confirmation link.
+                            </p>
+                        </div>
+                        <div class="general-settings-row email-verify-input">
+                            <p>Sender (Your) Email</p>
+                        </div>
+                        <div class="general-settings-row email-verify-input">
+                            <input class="email-verify-form" type="text" name="emailSender" placeholder="Enter Sender Email">
+                        </div>
+                        <div class="general-settings-row email-verify-input">
+                            <p>Sender (Your) Name</p>
+                        </div>
+                        <div class="general-settings-row email-verify-input">
+                            <input class="email-verify-form" type="text" name="senderName" placeholder="Enter Sender Name">
+                        </div>
+                        <div class="general-settings-row email-verify-input">
+                            <p>Verification Email Subject</p>
+                        </div>
+                        <div class="general-settings-row email-verify-input">
+                            <input class="email-verify-form" type="text" name="emailSubject" placeholder="Enter Email Subject">
+                        </div>
+                        <div class="general-settings-row email-verify-input">
+                            <p>Verification Email Body</p>
+                        </div>
+                        <div class="general-settings-row email-verify-input">
+                            <textarea class="email-verify-body" type="text" name="emailBody" placeholder="Enter Email Body"></textarea>
+                        </div>
+                        <div class="general-settings-text">
+                            <p>Your Raffle's Email Reciept Settings</p>
+                        </div>
+                        <div class="general-settings-row email-verify-switch">
+                            <p>Toggle Email Receipt</p>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="general-settings-row email-verify-info">
+                            <p>Email receipts are sent to a participant upon successful submission of an email <span class="inline-form-section">Form Section</span>. If email verification is enabled, then the receipt is sent after verification.</p>
+                        </div>
+                        <div class="general-settings-row email-verify-input">
+                            <p>Sender (Your) Email</p>
+                        </div>
+                        <div class="general-settings-row email-verify-input">
+                            <input class="email-verify-form" type="text" name="emailSender" placeholder="Enter Sender Email">
+                        </div>
+                        <div class="general-settings-row email-verify-input">
+                            <p>Sender (Your) Name</p>
+                        </div>
+                        <div class="general-settings-row email-verify-input">
+                            <input class="email-verify-form" type="text" name="senderName" placeholder="Enter Sender Name">
+                        </div>
+                        <div class="general-settings-row email-verify-input">
+                            <p>Email Receipt Subject</p>
+                        </div>
+                        <div class="general-settings-row email-verify-input">
+                            <input class="email-verify-form" type="text" name="emailSubject" placeholder="Enter Email Subject">
+                        </div>
+                        <div class="general-settings-row email-verify-input">
+                            <p>Email Receipt Body</p>
+                        </div>
+                        <div class="general-settings-row email-verify-input">
+                            <textarea class="email-verify-body" type="text" name="emailBody" placeholder="Enter Email Body"></textarea>
                         </div>
                     </div>
                     <div class="general-settings-menu" id='successSettings'>
@@ -348,7 +471,7 @@
                                         <div class="dropdown-display dropdown-color">
                                             <div id="colorGradient"></div>
                                             <div id="textFontColorClick" class="dropdown-color-click" data-type="textColor"></div>
-                                            <input id="textFontColorForm" class="color-input" data-type="textColor" type="text" placeholder="Enter a hexidecimal">
+                                            <input id="textFontColorForm" class="color-input" data-type="textColor" type="text" name="textFontColor" placeholder="Enter a hexidecimal">
                                         </div>
                                     </div>
                                 </div>
@@ -356,7 +479,7 @@
                                     <p>Font Size</p>
                                     <div class="customize-settings-dropdown">
                                         <div class="dropdown-display dropdown-text">
-                                            <input id="textFontSizeForm" class="font-size-input" data-type="textFontSize" type="text" placeholder="Enter a font size">
+                                            <input id="textFontSizeForm" class="font-size-input" data-type="textFontSize" type="text" name="textFontSize" placeholder="Enter a font size">
                                         </div>
                                     </div>
                                 </div>
@@ -364,7 +487,7 @@
                                     <p>Letter Spacing</p>
                                     <div class="customize-settings-dropdown">
                                         <div class="dropdown-display dropdown-text">
-                                            <input id="textLetterSpacingForm" class="letter-spacing-input" data-type="textLetterSpacing" type="text" placeholder="Enter letter spacing">
+                                            <input id="textLetterSpacingForm" class="letter-spacing-input" data-type="textLetterSpacing" name="textLetterSpacing" type="text" placeholder="Enter letter spacing">
                                         </div>
                                     </div>
                                 </div>
@@ -410,7 +533,7 @@
                                         <div class="dropdown-display dropdown-color">
                                             <div id="colorGradientBackground"></div>
                                             <div id="textBackgroundColorClick" class="dropdown-color-click" data-type="textBackgroundColor"></div>
-                                            <input id="textBackgroundColorForm" class="color-input" data-type="textBackgroundColor" type="text" placeholder="Enter a hexidecimal">
+                                            <input id="textBackgroundColorForm" class="color-input" data-type="textBackgroundColor" type="text" name="textBackgroundColor" placeholder="Enter a hexidecimal">
                                         </div>
                                     </div>
                                 </div>
@@ -420,19 +543,19 @@
                                         <div class="dropdown-display dropdown-multi-input multi-input-stroke">
                                             <div class="dropdown-row">
                                                 <p>Top</p>
-                                                <input id="borderTopStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" placeholder="Enter a size">
+                                                <input id="borderTopStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" name="textBorderTopStroke" placeholder="Enter a size">
                                             </div>
                                             <div class="dropdown-row">
                                                 <p>Left</p>
-                                                <input id="borderLeftStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" placeholder="Enter a size">
+                                                <input id="borderLeftStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" name="textBorderLeftStroke" placeholder="Enter a size">
                                             </div>
                                             <div class="dropdown-row">
                                                 <p>Right</p>
-                                                <input id="borderRightStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" placeholder="Enter a size">
+                                                <input id="borderRightStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" name="textBorderRightStroke" placeholder="Enter a size">
                                             </div>
                                             <div class="dropdown-row">
                                                 <p>Bottom</p>
-                                                <input id="borderBottomStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" placeholder="Enter a size">
+                                                <input id="borderBottomStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" name="textBorderBottomStroke" placeholder="Enter a size">
                                             </div>
                                         </div>
                                     </div>
@@ -443,19 +566,19 @@
                                         <div class="dropdown-display dropdown-multi-input multi-input-radius">
                                             <div class="dropdown-row row-radius">
                                                 <p>Top-Left Corner</p>
-                                                <input id="borderTopLeftRadius" class="border-radius-input" data-type="textBorderRadius" type="text" placeholder="Enter a size">
+                                                <input id="borderTopLeftRadius" class="border-radius-input" data-type="textBorderRadius" type="text" name="textBorderTopLeftRadius" placeholder="Enter a size">
                                             </div>
                                             <div class="dropdown-row row-radius">
                                                 <p>Top-Right Corner</p>
-                                                <input id="borderTopRightRadius" class="border-radius-input" data-type="textBorderRadius" type="text" placeholder="Enter a size">
+                                                <input id="borderTopRightRadius" class="border-radius-input" data-type="textBorderRadius" type="text" name="textBorderTopRightRadius" placeholder="Enter a size">
                                             </div>
                                             <div class="dropdown-row row-radius">
                                                 <p>Bottom-Left Corner</p>
-                                                <input id="borderBottomLeftRadius" class="border-radius-input" data-type="textBorderRadius" type="text" placeholder="Enter a size">
+                                                <input id="borderBottomLeftRadius" class="border-radius-input" data-type="textBorderRadius" type="text" name="textBorderBottomLeftRadius" placeholder="Enter a size">
                                             </div>
                                             <div class="dropdown-row row-radius">
                                                 <p>Bottom-Right Corner</p>
-                                                <input id="borderBottomRightRadius" class="border-radius-input" data-type="textBorderRadius" type="text" placeholder="Enter a size">
+                                                <input id="borderBottomRightRadius" class="border-radius-input" data-type="textBorderRadius" type="text" name="textBorderBottomRightRadius" placeholder="Enter a size">
                                             </div>
                                         </div>
                                     </div>
@@ -466,7 +589,7 @@
                                         <div class="dropdown-display dropdown-color dropdown-border-color">
                                             <div id="colorGradientBorder"></div>
                                             <div id="textBorderColorClick" class="dropdown-color-click" data-type="textBorderColor"></div>
-                                            <input id="textBorderColorForm" class="color-input" data-type="textBorderColor" type="text" placeholder="Enter a hexidecimal">
+                                            <input id="textBorderColorForm" class="color-input" data-type="textBorderColor" type="text" name="textBorderColor" placeholder="Enter a hexidecimal">
                                         </div>
                                     </div>
                                 </div>
@@ -546,7 +669,7 @@
                                         <div class="dropdown-display dropdown-color">
                                             <div id="counterColorGradient"></div>
                                             <div id="counterFontColorClick" class="dropdown-color-click" data-type="counterColor"></div>
-                                            <input id="counterFontColorForm" class="color-input" data-type="counterColor" type="text" placeholder="Enter a hexidecimal">
+                                            <input id="counterFontColorForm" class="color-input" data-type="counterColor" type="text" name="counterFontColor" placeholder="Enter a hexidecimal">
                                         </div>
                                     </div>
                                 </div>
@@ -554,7 +677,7 @@
                                     <p>Font Size</p>
                                     <div class="customize-settings-dropdown">
                                         <div class="dropdown-display dropdown-text">
-                                            <input id="counterFontSizeForm" class="font-size-input" data-type="counterFontSize" type="text" placeholder="Enter a font size">
+                                            <input id="counterFontSizeForm" class="font-size-input" data-type="counterFontSize" type="text" name="counterFontSize" placeholder="Enter a font size">
                                         </div>
                                     </div>
                                 </div>
@@ -562,7 +685,7 @@
                                     <p>Letter Spacing</p>
                                     <div class="customize-settings-dropdown">
                                         <div class="dropdown-display dropdown-text">
-                                            <input id="counterLetterSpacingForm" class="letter-spacing-input" data-type="counterLetterSpacing" type="text" placeholder="Enter letter spacing">
+                                            <input id="counterLetterSpacingForm" class="letter-spacing-input" data-type="counterLetterSpacing" type="text" name="counterLetterSpacing" placeholder="Enter letter spacing">
                                         </div>
                                     </div>
                                 </div>
@@ -579,7 +702,7 @@
                                         <div class="dropdown-display dropdown-color">
                                             <div id="counterColorGradientBackground"></div>
                                             <div id="counterBackgroundColorClick" class="dropdown-color-click" data-type="counterBackgroundColor"></div>
-                                            <input id="counterBackgroundColorForm" class="color-input" data-type="counterBackgroundColor" type="text" placeholder="Enter a hexidecimal">
+                                            <input id="counterBackgroundColorForm" class="color-input" data-type="counterBackgroundColor" type="text" name="counterBackgroundColor" placeholder="Enter a hexidecimal">
                                         </div>
                                     </div>
                                 </div>
@@ -589,19 +712,19 @@
                                         <div class="dropdown-display dropdown-multi-input multi-input-stroke">
                                             <div class="dropdown-row">
                                                 <p>Top</p>
-                                                <input id="counterBorderTopStroke" class="border-stroke-input" data-type="counterBorderStroke" type="text" placeholder="Enter a size">
+                                                <input id="counterBorderTopStroke" class="border-stroke-input" data-type="counterBorderStroke" type="text" name="counterBorderTopStroke" placeholder="Enter a size">
                                             </div>
                                             <div class="dropdown-row">
                                                 <p>Left</p>
-                                                <input id="counterBorderLeftStroke" class="border-stroke-input" data-type="counterBorderStroke" type="text" placeholder="Enter a size">
+                                                <input id="counterBorderLeftStroke" class="border-stroke-input" data-type="counterBorderStroke" type="text" name="counterBorderLeftStroke" placeholder="Enter a size">
                                             </div>
                                             <div class="dropdown-row">
                                                 <p>Right</p>
-                                                <input id="counterBorderRightStroke" class="border-stroke-input" data-type="counterBorderStroke" type="text" placeholder="Enter a size">
+                                                <input id="counterBorderRightStroke" class="border-stroke-input" data-type="counterBorderStroke" type="text" name="counterBorderRightStroke" placeholder="Enter a size">
                                             </div>
                                             <div class="dropdown-row">
                                                 <p>Bottom</p>
-                                                <input id="counterBorderBottomStroke" class="border-stroke-input" data-type="counterBorderStroke" type="text" placeholder="Enter a size">
+                                                <input id="counterBorderBottomStroke" class="border-stroke-input" data-type="counterBorderStroke" type="text" name="counterBorderBottomStroke" placeholder="Enter a size">
                                             </div>
                                         </div>
                                     </div>
@@ -612,19 +735,19 @@
                                         <div class="dropdown-display dropdown-multi-input multi-input-radius">
                                             <div class="dropdown-row row-radius">
                                                 <p>Top-Left Corner</p>
-                                                <input id="counterBorderTopLeftRadius" class="border-radius-input" data-type="counterBorderRadius" type="text" placeholder="Enter a size">
+                                                <input id="counterBorderTopLeftRadius" class="border-radius-input" data-type="counterBorderRadius" type="text" name="counterBorderTopLeftRadius" placeholder="Enter a size">
                                             </div>
                                             <div class="dropdown-row row-radius">
                                                 <p>Top-Right Corner</p>
-                                                <input id="counterBorderTopRightRadius" class="border-radius-input" data-type="counterBorderRadius" type="text" placeholder="Enter a size">
+                                                <input id="counterBorderTopRightRadius" class="border-radius-input" data-type="counterBorderRadius" type="text" name="counterBorderTopRightRadius" placeholder="Enter a size">
                                             </div>
                                             <div class="dropdown-row row-radius">
                                                 <p>Bottom-Left Corner</p>
-                                                <input id="counterBorderBottomLeftRadius" class="border-radius-input" data-type="counterBorderRadius" type="text" placeholder="Enter a size">
+                                                <input id="counterBorderBottomLeftRadius" class="border-radius-input" data-type="counterBorderRadius" type="text" name="counterBorderBottomLeftRadius" placeholder="Enter a size">
                                             </div>
                                             <div class="dropdown-row row-radius">
                                                 <p>Bottom-Right Corner</p>
-                                                <input id="counterBorderBottomRightRadius" class="border-radius-input" data-type="counterBorderRadius" type="text" placeholder="Enter a size">
+                                                <input id="counterBorderBottomRightRadius" class="border-radius-input" data-type="counterBorderRadius" type="text" name="counterBorderBottomRightRadius" placeholder="Enter a size">
                                             </div>
                                         </div>
                                     </div>
@@ -635,7 +758,7 @@
                                         <div class="dropdown-display dropdown-color dropdown-border-color">
                                             <div id="counterColorGradientBorder"></div>
                                             <div id="counterBorderColorClick" class="dropdown-color-click" data-type="counterBorderColor"></div>
-                                            <input id="counterBorderColorForm" class="color-input" data-type="counterBorderColor" type="text" placeholder="Enter a hexidecimal">
+                                            <input id="counterBorderColorForm" class="color-input" data-type="counterBorderColor" type="text" name="counterBorderColor" placeholder="Enter a hexidecimal">
                                         </div>
                                     </div>
                                 </div>
@@ -684,19 +807,19 @@
                                         <div class="dropdown-display dropdown-multi-input multi-input-stroke">
                                             <div class="dropdown-row">
                                                 <p>Top</p>
-                                                <input id="imageBorderTopStroke" class="border-stroke-input" data-type="imageBorderStroke" type="text" placeholder="Enter a size">
+                                                <input id="imageBorderTopStroke" class="border-stroke-input" data-type="imageBorderStroke" type="text" name="imageBorderTopStroke" placeholder="Enter a size">
                                             </div>
                                             <div class="dropdown-row">
                                                 <p>Left</p>
-                                                <input id="imageBorderLeftStroke" class="border-stroke-input" data-type="imageBorderStroke" type="text" placeholder="Enter a size">
+                                                <input id="imageBorderLeftStroke" class="border-stroke-input" data-type="imageBorderStroke" type="text" name="imageBorderLeftStroke" placeholder="Enter a size">
                                             </div>
                                             <div class="dropdown-row">
                                                 <p>Right</p>
-                                                <input id="imageBorderRightStroke" class="border-stroke-input" data-type="imageBorderStroke" type="text" placeholder="Enter a size">
+                                                <input id="imageBorderRightStroke" class="border-stroke-input" data-type="imageBorderStroke" type="text" name="imageBorderRightStroke" placeholder="Enter a size">
                                             </div>
                                             <div class="dropdown-row">
                                                 <p>Bottom</p>
-                                                <input id="imageBorderBottomStroke" class="border-stroke-input" data-type="imageBorderStroke" type="text" placeholder="Enter a size">
+                                                <input id="imageBorderBottomStroke" class="border-stroke-input" data-type="imageBorderStroke" type="text" name="imageBorderBottomStroke" placeholder="Enter a size">
                                             </div>
                                         </div>
                                     </div>
@@ -707,19 +830,19 @@
                                         <div class="dropdown-display dropdown-multi-input multi-input-radius">
                                             <div class="dropdown-row row-radius">
                                                 <p>Top-Left Corner</p>
-                                                <input id="imageBorderTopLeftRadius" class="border-radius-input" data-type="imageBorderRadius" type="text" placeholder="Enter a size">
+                                                <input id="imageBorderTopLeftRadius" class="border-radius-input" data-type="imageBorderRadius" type="text" name="imageBorderTopLeftRadius" placeholder="Enter a size">
                                             </div>
                                             <div class="dropdown-row row-radius">
                                                 <p>Top-Right Corner</p>
-                                                <input id="imageBorderTopRightRadius" class="border-radius-input" data-type="imageBorderRadius" type="text" placeholder="Enter a size">
+                                                <input id="imageBorderTopRightRadius" class="border-radius-input" data-type="imageBorderRadius" type="text" name="imageBorderTopRightRadius" placeholder="Enter a size">
                                             </div>
                                             <div class="dropdown-row row-radius">
                                                 <p>Bottom-Left Corner</p>
-                                                <input id="imageBorderBottomLeftRadius" class="border-radius-input" data-type="imageBorderRadius" type="text" placeholder="Enter a size">
+                                                <input id="imageBorderBottomLeftRadius" class="border-radius-input" data-type="imageBorderRadius" type="text" name="imageBorderBottomLeftRadius" placeholder="Enter a size">
                                             </div>
                                             <div class="dropdown-row row-radius">
                                                 <p>Bottom-Right Corner</p>
-                                                <input id="imageBorderBottomRightRadius" class="border-radius-input" data-type="imageBorderRadius" type="text" placeholder="Enter a size">
+                                                <input id="imageBorderBottomRightRadius" class="border-radius-input" data-type="imageBorderRadius" type="text" name="imageBorderBottomRightRadius" placeholder="Enter a size">
                                             </div>
                                         </div>
                                     </div>
@@ -730,7 +853,7 @@
                                         <div class="dropdown-display dropdown-color dropdown-border-color">
                                             <div id="imageColorGradientBorder"></div>
                                             <div id="imageBorderColorClick" class="dropdown-color-click" data-type="imageBorderColor"></div>
-                                            <input id="imageBorderColorForm" class="color-input" data-type="imageBorderColor" type="text" placeholder="Enter a hexidecimal">
+                                            <input id="imageBorderColorForm" class="color-input" data-type="imageBorderColor" type="text" name="imageBorderColor" placeholder="Enter a hexidecimal">
                                         </div>
                                     </div>
                                 </div>

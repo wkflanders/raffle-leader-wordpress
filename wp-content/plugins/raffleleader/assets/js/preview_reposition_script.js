@@ -83,14 +83,16 @@ document.addEventListener('previewLoaded', ()=>{
 
         // Dragging logic
         el.addEventListener('mousedown', function(e) {
+            const zoomLevel = window.zoomScale || 1; // Assuming scale is global
+
             e.preventDefault();
             if (e.target === resizeHandle) return;
             updateZIndex();
 
             isDragging = true;
             initialDrag = true;
-            dragStartX = e.clientX - el.getBoundingClientRect().left;
-            dragStartY = e.clientY - el.getBoundingClientRect().top;
+            dragStartX = (e.clientX - el.getBoundingClientRect().left) / zoomLevel;
+            dragStartY = (e.clientY - el.getBoundingClientRect().top) / zoomLevel;
 
             document.addEventListener('mousemove', drag);
             document.addEventListener('mouseup', stopDrag);

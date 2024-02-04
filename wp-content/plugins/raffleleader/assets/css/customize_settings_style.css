@@ -280,6 +280,40 @@ input[type="text"].color-input{
     width: 5vw;
 }
 
+.dropdown-counter{
+    border: 0;
+    padding: 0;
+    width: 17vw;
+    height: 5vh;
+}
+
+.dropdown-counter-btn{
+    border: 1px solid black;
+    background-color: white;
+    font-size: 2.2vh;
+    height: 100%;
+    width: 100%;
+    text-align: left;
+    padding: 0 0 0 2vh;
+    border-radius: 10px;
+}
+
+.dropdown-counter-btn:hover{
+    background-color: #1501FE;
+    color: white;
+    cursor: pointer;
+}
+
+.dropdown-counter-btn:active{
+    background-color: #1501FE;
+    color: white;
+    cursor: pointer;
+}
+
+.active-counter{
+    border: 3px solid #1501FE;
+}
+
 .dropdown-image{
     display: flex;
     flex-direction: column;

@@ -29,6 +29,8 @@ document.addEventListener('previewLoaded', ()=>{
     const confirmDeleteBtns = document.querySelectorAll('.confirm-delete');
     const cancelDeleteBtns = document.querySelectorAll('.cancel-delete');
 
+    const counterBtns = document.querySelectorAll('.dropdown-counter-btn');
+
     const imageBtn = document.getElementById('insertImageBtn');
     const imageDeleteBtn = document.getElementById('imgDelete');
 
@@ -139,6 +141,10 @@ document.addEventListener('previewLoaded', ()=>{
     borderRadiusForms.forEach((borderRadiusForm)=>{
         borderRadiusForm.addEventListener('input', setBorderRadius);
     });
+
+    counterBtns.forEach((counterBtn)=>{
+        counterBtn.addEventListener('click', selectCounter);
+    })
 
     imageBtn.addEventListener('click', insertImage);
 
@@ -303,9 +309,11 @@ document.addEventListener('previewLoaded', ()=>{
                 break;
             
             case 'counterFont':
-                const counterSelectedElement = selectedSection.querySelector('h2');
+                const counterSelectedElementh2 = selectedSection.querySelector('h2');
+                const counterSelectedElementp = selectedSection.querySelector('p');
                 const counterDropDownDisplay = document.getElementById('counterDropDownTitle');
-                counterSelectedElement.style.fontFamily = `${fontName}`;
+                counterSelectedElementh2.style.fontFamily = `${fontName}`;
+                counterSelectedElementp.style.fontFamily = `${fontName}`;
                 counterDropDownDisplay.innerText = fontName;
                 break;
         }
@@ -613,8 +621,10 @@ document.addEventListener('previewLoaded', ()=>{
                     const hexBoxText = document.getElementById('counterFontColorForm');
                     hexBoxText.value = color;
                 }
-                const counterEditElementFont = document.querySelector('.selected-section').querySelector('h2');
-                counterEditElementFont.style.color = color;
+                const counterEditElementFonth2 = document.querySelector('.selected-section').querySelector('h2');
+                const counterEditElementFontp = document.querySelector('.selected-section').querySelector('p');
+                counterEditElementFonth2.style.color = color;
+                counterEditElementFontp.style.color = color;
                 break;
 
             case 'counterBackgroundColor':
@@ -963,6 +973,172 @@ document.addEventListener('previewLoaded', ()=>{
                     if(radiusFormID === 'imageBorderBottomLeftRadius') imageSection.style.borderBottomLeftRadius = `${borderRadius}px`;
                     if(radiusFormID === 'imageBorderBottomRightRadius') imageSection.style.borderBottomRightRadius = `${borderRadius}px`;
                 }
+                break;
+        }
+    }
+
+    function selectCounter(event){
+        const selectedBtn = event.target;
+        const selectedSection = document.querySelector('.selected-section');
+        const counterSection = selectedSection.querySelector('.counter-section');
+        const currentBtn = document.querySelector('.active-counter') ? document.querySelector('.active-counter') : undefined;
+
+        const counterType = selectedBtn.getAttribute('data-type');
+
+        if(currentBtn){
+            if(currentBtn === selectedBtn){
+                currentBtn.classList.remove('active-counter');
+                Array.from(counterSection.classList).forEach((className)=>{
+                    if(className != 'counter-section'){
+                        counterSection.classList.remove(className);
+                    }
+                })
+                stopWatch(counterSection, counterType);
+            } else {
+                currentBtn.classList.remove('active-counter');
+                selectedBtn.classList.add('active-counter');
+                Array.from(counterSection.classList).forEach((className)=>{
+                    if(className != 'counter-section'){
+                        counterSection.classList.remove(className);
+                    }
+                })
+                switch(counterType){
+                    case 'counterTimeLeft':
+                        counterSection.classList.add('show-time-left');
+                        watchTimeLeft(counterSection);
+                        break;
+                    case 'counterTimeStart':
+                        counterSection.classList.add('show-time-start');
+                        watchTimeStart(counterSection);
+                        break;
+                    case 'counterUserEntries':
+                        counterSection.classList.add('show-user-entries');
+                        // watchUserEntries(counterSection);
+                        break;
+                    case 'counterTotalEntries':
+                        counterSection.classList.add('show-total-entries');
+                        // watchTotalEntries(counterSection);
+                        break;
+                }
+            }
+        } else {
+            selectedBtn.classList.add('active-counter');
+            switch(counterType){
+                case 'counterTimeLeft':
+                    counterSection.classList.add('show-time-left');
+                    watchTimeLeft(counterSection);
+                    break;
+                case 'counterTimeStart':
+                    counterSection.classList.add('show-time-start');
+                    watchTimeStart(counterSection);
+                    break;
+                case 'counterUserEntries':
+                    counterSection.classList.add('show-user-entries');
+                    // watchUserEntries(counterSection);
+                    break;
+                case 'counterTotalEntries':
+                    counterSection.classList.add('show-total-entries');
+                    // watchTotalEntries(counterSection);
+                    break;
+            }
+        }
+    }
+
+    function watchTimeLeft(element){
+        const endDateInput = document.getElementById('endDate').value;
+        const endTimeInput = document.getElementById('endTime').value;
+
+        const endDateTime = new Date(`${endDateInput}T${endTimeInput}`);
+        const now = new Date();
+
+        const difference = endDateTime.getTime() - now.getTime();
+
+        let timeLeft = {
+            days: (0).toString().padStart(2, '0'),
+            hours: (0).toString().padStart(2, '0'),
+            minutes: (0).toString().padStart(2, '0'),
+            seconds: (0).toString().padStart(2, '0')
+        };
+
+        if(difference > 0){
+            timeLeft = {
+                days: Math.floor(difference / (1000 * 60 * 60 * 24)).toString().padStart(2, '0'),
+                hours: Math.floor((difference / (1000 * 60 * 60)) % 24).toString().padStart(2, '0'),
+                minutes: Math.floor((difference / 1000 / 60) % 60).toString().padStart(2, '0'),
+                seconds: Math.floor((difference / 1000) % 60).toString().padStart(2, '0')
+            }
+        }
+
+        if(timeLeft.days > 0){
+            element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.days}</h2> 
+                                 <p>DAYS</p>`;
+        } else if(timeLeft.hours > 0) {
+            element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.hours}</h2> 
+                                 <p>HOURS</p>`;
+        } else if(timeLeft.minutes > 0){
+            element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.minutes}</h2> 
+                                 <p>MINUTES</p>`;
+        } else {
+            element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.seconds}</h2> 
+                                 <p>SECONDS</p>`;
+        }
+    }
+
+    function watchTimeStart(element){
+        const startDateInput = document.getElementById('startDate').value;
+        const startTimeInput = document.getElementById('startTime').value;
+
+        const startDateTime = new Date(`${startDateInput}T${startTimeInput}`);
+        const now = new Date();
+
+        const difference = startDateTime.getTime() - now.getTime();
+
+        let timeLeft = {
+            days: (0).toString().padStart(2, '0'),
+            hours: (0).toString().padStart(2, '0'),
+            minutes: (0).toString().padStart(2, '0'),
+            seconds: (0).toString().padStart(2, '0')
+        };
+
+        if(difference > 0){
+            timeLeft = {
+                days: Math.floor(difference / (1000 * 60 * 60 * 24)).toString().padStart(2, '0'),
+                hours: Math.floor((difference / (1000 * 60 * 60)) % 24).toString().padStart(2, '0'),
+                minutes: Math.floor((difference / 1000 / 60) % 60).toString().padStart(2, '0'),
+                seconds: Math.floor((difference / 1000) % 60).toString().padStart(2, '0')
+            }
+        }
+
+        if(timeLeft.days > 0){
+            element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.days}</h2> 
+                                 <p>DAYS</p>`;
+        } else if(timeLeft.hours > 0) {
+            element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.hours}</h2> 
+                                 <p>HOURS</p>`;
+        } else if(timeLeft.minutes > 0){
+            element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.minutes}</h2> 
+                                 <p>MINUTES</p>`;
+        } else {
+            element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.seconds}</h2> 
+                                 <p>SECONDS</p>`;
+        }
+    }
+
+    function stopWatch(element, counterType){
+        element.innerHTML = `<h2 style="padding-top: 0">00</h2>`;
+
+        switch(counterType){
+            case 'counterTimeLeft':
+                element.classList.remove('show-time-left');
+                break;
+            case 'counterTimeStart':
+                element.classList.remove('show-time-start');
+                break;
+            case 'counterTUserEntries':
+                element.classList.remove('show-user-entries');
+                break;
+            case 'counterTotalEntries':
+                element.classList.remove('show-total-entries');
                 break;
         }
     }

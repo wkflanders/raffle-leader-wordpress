@@ -337,6 +337,26 @@ document.addEventListener("previewLoaded", ()=>{
         const counterBorderColorHex = rgbToHex(counterBorderColorRGB);
         counterBorderColorForm.value = counterBorderColorHex;
         counterBorderHexBox.style.backgroundColor = counterBorderColorRGB;
+
+        // counter value
+        const counterTimeLeftBtn = document.getElementById('counterTimeLeft');
+        const counterTimeStartBtn = document.getElementById('counterTimeStart');
+        const counterUserEntriesBtn = document.getElementById('counterUserEntries');
+        const counterTotalEntriesBtn = document.getElementById('counterTotalEntries');
+
+        if(element.classList.contains('show-time-left')){
+            counterTimeLeftBtn.classList.add('active-counter');
+
+        } else if(element.classList.contains('show-time-start')){
+            counterTimeStartBtn.classList.add('active-counter');
+
+        } else if(element.classList.contains('show-user-entries')){
+            counterUserEntriesBtn.classList.add('active-counter');
+
+        } else if(element.classList.contains('show-total-entries')){
+            counterTotalEntriesBtn.classList.add('active-counter');
+
+        }
     }
 
     function loadImageSettings(element){

@@ -26,12 +26,16 @@ body {
     width: 100%;
 }
 
+.visible-customize{
+    display: block;
+}
+
 .settings-wrapper {
     margin-left: auto;
     position: relative;
     z-index: 90;
     left: 100%;
-    transition: all 0.5s ease;
+    transition: all 0.7s ease;
 }
 
 .slide-right-to-left{
@@ -40,10 +44,6 @@ body {
 
 .slide-top-to-bottom{
     bottom: 0%;
-}
-
-.visible-customize{
-    display: block;
 }
 
 .settings-content {
@@ -101,4 +101,5 @@ body {
     font-size: 3vh;
     color: #1501FE;
     letter-spacing: 0.3vh;
+    line-height: 3.5vh;
 }

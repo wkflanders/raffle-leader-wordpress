@@ -619,8 +619,38 @@
                             <div class="dropdown-wrapper">
                                 <div class="header-box">
                                     <div class="spacer"></div>
-                                    <h2 class="header-box-title">Actions</h2>
+                                    <h2 class="header-box-title">Counts</h2>
                                     <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Track Time</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-counter">
+                                            <button id="counterTimeLeft" class="dropdown-counter-btn" data-type="counterTimeLeft">Time Left</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-counter">
+                                            <button id="counterTimeStart" class="dropdown-counter-btn" data-type="counterTimeStart">Time Until Start</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Track Entries</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-counter">
+                                            <button id="counterUserEntries" class="dropdown-counter-btn" data-type="counterUserEntries">Participant Entries</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-counter">
+                                            <button id="counterTotalEntries" class="dropdown-counter-btn" data-type="counterTotalEntries">Total Entries</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="dropdown-wrapper">

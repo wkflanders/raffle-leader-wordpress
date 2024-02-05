@@ -1,7 +1,12 @@
-document.addEventListener('previewLoaded', ()=>{
+document.addEventListener('DOMContentLoaded', ()=>{
     const generalSettings = document.querySelector('.general-settings-wrapper');
     const generalSettingsBtns = document.querySelectorAll('.general-settings-btn');
     const generalSettingsCloseBtns = document.querySelectorAll('.close-settings-menu');
+
+    const endDateInput = document.getElementById('endDate');
+    const startDateInput = document.getElementById('startDate');
+    const endTimeInput = document.getElementById('endTime');
+    const startTimeInput = document.getElementById('startTime');
 
     generalSettingsBtns.forEach((generalSettingBtn)=>{
         generalSettingBtn.addEventListener('click', openSettingWindow);

@@ -34,6 +34,11 @@ document.addEventListener('previewLoaded', ()=>{
     const imageBtn = document.getElementById('insertImageBtn');
     const imageDeleteBtn = document.getElementById('imgDelete');
 
+    const endDateInput = document.getElementById('endDate');
+    const startDateInput = document.getElementById('startDate');
+    const endTimeInput = document.getElementById('endTime');
+    const startTimeInput = document.getElementById('startTime');
+
     let pickrText = undefined;
     let pickrBackground = undefined;
     let pickrBorder = undefined;
@@ -150,6 +155,33 @@ document.addEventListener('previewLoaded', ()=>{
 
     imageDeleteBtn.addEventListener('click', deleteImage);
 
+    endDateInput.addEventListener('input', ()=>{
+        const endDateCounters = document.querySelectorAll('.show-time-left');
+        endDateCounters.forEach(endDateCounter => {
+            watchTimeLeft(endDateCounter);
+        })
+    })
+
+    startDateInput.addEventListener('input', ()=>{
+        const startDateCounters = document.querySelectorAll('.show-time-start');
+        startDateCounters.forEach(startDateCounter => {
+            watchTimeStart(startDateCounter);
+        })
+    })
+
+    endTimeInput.addEventListener('input', ()=>{
+        const endTimeCounters = document.querySelectorAll('.show-time-left');
+        endTimeCounters.forEach(endTimeCounter => {
+            watchTimeLeft(endTimeCounter);
+        })
+    })
+
+    startTimeInput.addEventListener('input', ()=>{
+        const startTimeCounters = document.querySelectorAll('.show-time-start');
+        startTimeCounters.forEach(startTimeCounter => {
+            watchTimeStart(startTimeCounter);
+        })
+    })
 
     function openDropDown(event){
         const dropDownBtn = event.target;

@@ -344,19 +344,25 @@ document.addEventListener("previewLoaded", ()=>{
         const counterUserEntriesBtn = document.getElementById('counterUserEntries');
         const counterTotalEntriesBtn = document.getElementById('counterTotalEntries');
 
+        const counterBtns = document.querySelectorAll('.dropdown-counter-btn');
+
+        counterBtns.forEach((counterBtn) => {
+            Array.from(counterBtn.classList).forEach((className)=>{
+                if(className != 'dropdown-counter-btn'){
+                    counterBtn.classList.remove(className);
+                }
+            })
+        })
+
         if(element.classList.contains('show-time-left')){
             counterTimeLeftBtn.classList.add('active-counter');
-
         } else if(element.classList.contains('show-time-start')){
             counterTimeStartBtn.classList.add('active-counter');
-
         } else if(element.classList.contains('show-user-entries')){
             counterUserEntriesBtn.classList.add('active-counter');
-
         } else if(element.classList.contains('show-total-entries')){
             counterTotalEntriesBtn.classList.add('active-counter');
-
-        }
+        } 
     }
 
     function loadImageSettings(element){

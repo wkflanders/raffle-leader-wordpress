@@ -107,13 +107,19 @@ class BuilderController extends BaseController{
 
         $post_id = isset( $_POST['post_id'] ) ? intval( $_POST['post_id'] ) : 0;
         $content = isset( $_POST['content'] ) ? $_POST['content'] /*wp_kses( $_POST['content'], $this->allowed_html )*/ : '';
+        $start_date = isset( $_POST['start_date'] ) ? $_POST['start_date'] : 0;
+        $end_date = isset( $_POST['end_date'] ) ? $_POST['end_date'] : 0;
 
-        if( $post_id && $content ){
+        if( $post_id && $content && $start_date && $end_date ){
             update_post_meta( $post_id, '_raffle_content', $content );
-            wp_send_json_success( 'Preview saved successfully' );
+            update_post_meta( $post_id, '_raffle_start', $start_date );
+            update_post_meta( $post_id, '_raffle_end', $end_date );
+
+            wp_send_json_success( 'Raffle saved successfully' );
         } else {
-            wp_send_json_error( 'Failed to save preview content' );
+            wp_send_json_error( 'Failed to save raffle' );
         }
+
         wp_die();
     }
 

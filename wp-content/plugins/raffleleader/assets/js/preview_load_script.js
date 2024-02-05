@@ -10,22 +10,30 @@ document.addEventListener('DOMContentLoaded', ()=>{
     fetch('/wp-admin/admin-ajax.php?action=loadBuilderData&post_id=' + postId)
     .then(response => response.json())
     .then(data => {
-        if(data.content){
-            const HTMLContent = data.content;
+        return loadPreview(data);
+    })
+    .catch(error => console.error('Error:', error));
+
+    function loadPreview(raffleData){
+        // Bulk preview data
+        if(raffleData.content){
+            const HTMLContent = raffleData.content;
             preview.outerHTML = HTMLContent;
 
+            // Load counter data
+            console.log(raffleData);
+    
             document.dispatchEvent(loadPreviewEvent);
         } else {
             document.dispatchEvent(loadPreviewEvent);
         }
-    })
-    .then(() => {
-        const preview = document.getElementById('preview');
+
+        // Load preview height and width
         const dropzone = document.getElementById('dropzone');
+        const newPreview = document.getElementById('preview');
 
         layoutHeightForm.value = getComputedStyle(dropzone).getPropertyValue('height').replace(/^"|"$/g, '');
-        layoutWidthForm.value = getComputedStyle(preview).getPropertyValue('width').replace(/^"|"$/g, '');
-    })
-    .catch(error => console.error('Error:', error));
+        layoutWidthForm.value = getComputedStyle(newPreview).getPropertyValue('width').replace(/^"|"$/g, '');
+    }
 })
 

@@ -128,10 +128,14 @@ class BuilderController extends BaseController{
 
         if( $post_id ){
             $template = get_post_meta( $post_id, '_raffle_template', true );
-            $previewContent = get_post_meta( $post_id, '_raffle_content', true );
+            $preview_content = get_post_meta( $post_id, '_raffle_content', true );
+            $start_date = get_post_meta( $post_id, '_raffle_start', true );
+            $end_date = get_post_meta( $post_id, '_raffle_end', true );
             $data = array(
                 'template' => $template,
-                'content' => $previewContent,
+                'content' => $preview_content,
+                'startDate' => $start_date,
+                'endDate' => $end_date,
             );
             wp_send_json($data);
         } else {

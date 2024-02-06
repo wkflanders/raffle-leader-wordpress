@@ -105,8 +105,34 @@
 
 .date-and-time-content {
   background-color: white;
-  margin-left: 0vw;
+  margin-left: 0.5vw;
   margin-right: 0;
+  width: 13.5vw;
+  padding-left: 0.7vw;
+}
+
+.timezone{
+  font-size: 1.8vh;
+  color: black;
+}
+
+.timezone:hover{
+  cursor: pointer;
+  color: rgb(128, 128, 128);
+}
+
+.timezone:active{
+  color: black;
+}
+
+.selected-timezone{
+  font-weight: 900;
+  color: #1501FE;
+}
+
+.selected-timezone:hover{
+  cursor: default;
+  color: #1501FE;
 }
 
 .date-and-time-display > input[type="date"] {

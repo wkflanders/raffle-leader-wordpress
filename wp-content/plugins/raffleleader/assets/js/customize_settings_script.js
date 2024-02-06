@@ -38,6 +38,7 @@ document.addEventListener('previewLoaded', ()=>{
     const startDateInput = document.getElementById('startDate');
     const endTimeInput = document.getElementById('endTime');
     const startTimeInput = document.getElementById('startTime');
+    const timezones = document.querySelectorAll('timezone');
 
     let pickrText = undefined;
     let pickrBackground = undefined;
@@ -149,7 +150,7 @@ document.addEventListener('previewLoaded', ()=>{
 
     counterBtns.forEach((counterBtn)=>{
         counterBtn.addEventListener('click', selectCounter);
-    })
+    });
 
     imageBtn.addEventListener('click', insertImage);
 
@@ -159,29 +160,33 @@ document.addEventListener('previewLoaded', ()=>{
         const endDateCounters = document.querySelectorAll('.show-time-left');
         endDateCounters.forEach(endDateCounter => {
             watchTimeLeft(endDateCounter);
-        })
-    })
+        });
+    });
 
     startDateInput.addEventListener('input', ()=>{
         const startDateCounters = document.querySelectorAll('.show-time-start');
         startDateCounters.forEach(startDateCounter => {
             watchTimeStart(startDateCounter);
-        })
-    })
+        });
+    });
 
     endTimeInput.addEventListener('input', ()=>{
         const endTimeCounters = document.querySelectorAll('.show-time-left');
         endTimeCounters.forEach(endTimeCounter => {
             watchTimeLeft(endTimeCounter);
-        })
-    })
+        });
+    });
 
     startTimeInput.addEventListener('input', ()=>{
         const startTimeCounters = document.querySelectorAll('.show-time-start');
         startTimeCounters.forEach(startTimeCounter => {
             watchTimeStart(startTimeCounter);
-        })
-    })
+        });
+    });
+
+    timezones.forEach((timezone)=>{
+        timezone.addEventListener('click', setTimezone(event));
+    });
 
     function openDropDown(event){
         const dropDownBtn = event.target;
@@ -1173,6 +1178,11 @@ document.addEventListener('previewLoaded', ()=>{
                 element.classList.remove('show-total-entries');
                 break;
         }
+    }
+
+    function setTimezone(event){
+        const inputTimezone = event.target;
+        
     }
 
     function insertImage(event){

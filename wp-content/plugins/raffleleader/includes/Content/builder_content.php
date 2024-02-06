@@ -204,31 +204,31 @@
                                         <p class="dropdown-btn">▼</p>
                                     </div>
                                     <div class="dropdown-content date-and-time-content">
-                                        <ul id="timeZoneList">
-                                            <li class="time-zone" data-type="timezone">ANAT</li>
-                                            <li class="time-zone" data-type="timezone">AEDT</li>
-                                            <li class="time-zone" data-type="timezone">AEST</li>
-                                            <li class="time-zone" data-type="timezone">JST</li>
-                                            <li class="time-zone" data-type="timezone">CST</li>
-                                            <li class="time-zone" data-type="timezone">WIB</li>
-                                            <li class="time-zone" data-type="timezone">BST</li>
-                                            <li class="time-zone" data-type="timezone">UZT</li>
-                                            <li class="time-zone" data-type="timezone">GST</li>
-                                            <li class="time-zone" data-type="timezone">MSK</li>
-                                            <li class="time-zone" data-type="timezone">EET</li>
-                                            <li class="time-zone" data-type="timezone">CET</li>
-                                            <li class="time-zone" data-type="timezone">GMT</li>
-                                            <li class="time-zone" data-type="timezone">CVT</li>
-                                            <li class="time-zone" data-type="timezone">CGT</li>
-                                            <li class="time-zone" data-type="timezone">ART</li>
-                                            <li class="time-zone" data-type="timezone">VET</li>
-                                            <li class="time-zone" data-type="timezone">EST</li>
-                                            <li class="time-zone" data-type="timezone">CST</li>
-                                            <li class="time-zone" data-type="timezone">MST</li>
-                                            <li class="time-zone" data-type="timezone">AKST</li>
-                                            <li class="time-zone" data-type="timezone">HST</li>
-                                            <li class="time-zone" data-type="timezone">NUT</li>
-                                            <li class="time-zone" data-type="timezone">AoE</li>
+                                        <ul id="timezoneList">
+                                            <li class="timezone" data-type="timezone">AEDT</li>
+                                            <li class="timezone" data-type="timezone">AEST</li>
+                                            <li class="timezone" data-type="timezone">ANAT</li>
+                                            <li class="timezone" data-type="timezone">JST</li>
+                                            <li class="timezone" data-type="timezone">CST</li>
+                                            <li class="timezone" data-type="timezone">WIB</li>
+                                            <li class="timezone" data-type="timezone">BST</li>
+                                            <li class="timezone" data-type="timezone">UZT</li>
+                                            <li class="timezone" data-type="timezone">GST</li>
+                                            <li class="timezone" data-type="timezone">MSK</li>
+                                            <li class="timezone" data-type="timezone">EET</li>
+                                            <li class="timezone" data-type="timezone">CET</li>
+                                            <li class="timezone" data-type="timezone">GMT</li>
+                                            <li class="timezone" data-type="timezone">CVT</li>
+                                            <li class="timezone" data-type="timezone">CGT</li>
+                                            <li class="timezone" data-type="timezone">ART</li>
+                                            <li class="timezone" data-type="timezone">VET</li>
+                                            <li class="timezone" data-type="timezone">EST</li>
+                                            <li class="timezone" data-type="timezone">CST</li>
+                                            <li class="timezone" data-type="timezone">MST</li>
+                                            <li class="timezone" data-type="timezone">AKST</li>
+                                            <li class="timezone" data-type="timezone">HST</li>
+                                            <li class="timezone" data-type="timezone">NUT</li>
+                                            <li class="timezone" data-type="timezone">AoE</li>
                                         </ul>
                                     </div>
                                 </div>

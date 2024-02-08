@@ -200,7 +200,7 @@
                                 <p>Timezone</p>
                                 <div class="customize-settings-dropdown">
                                     <div class="dropdown-display date-and-time-display dropdown-timezone">
-                                        <p id="timeZoneDropDownTitle">EST</p>
+                                        <p id="timeZoneDropDownTitle">UTC</p>
                                         <p class="dropdown-btn">▼</p>
                                     </div>
                                     <div class="dropdown-content date-and-time-content">

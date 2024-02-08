@@ -3,18 +3,51 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const generalSettingsBtns = document.querySelectorAll('.general-settings-btn');
     const generalSettingsCloseBtns = document.querySelectorAll('.close-settings-menu');
 
-    const endDateInput = document.getElementById('endDate');
-    const startDateInput = document.getElementById('startDate');
-    const endTimeInput = document.getElementById('endTime');
-    const startTimeInput = document.getElementById('startTime');
-
     generalSettingsBtns.forEach((generalSettingBtn)=>{
         generalSettingBtn.addEventListener('click', openSettingWindow);
     });
 
     generalSettingsCloseBtns.forEach((generalSettingsCloseBtn)=>{
         generalSettingsCloseBtn.addEventListener('click', closeSettingWindow);
-    })
+    });
+
+    (function(){
+        const timezoneDropdown = document.getElementById('timezoneList');
+
+        const timezones = Intl.supportedValuesOf('timeZone');
+
+        timezones.forEach((timezone)=>{
+            const li = document.createElement('li');
+            li.classList.add('timezone');
+            li.textContent = timezone;
+            timezoneDropdown.appendChild(li);
+            li.addEventListener('click', ()=>{
+                const currentTimezone = document.querySelector('.selected-timezone')
+                currentTimezone.classList.remove('selected-timezone');
+
+                const timezoneDisplay = document.getElementById('timeZoneDropDownTitle');
+                timezoneDisplay.textContent = this.textContent;
+
+                this.classList.add('selected-timezone');
+            });
+        });
+
+        const UTCli = document.createElement('li');
+        UTCli.classList.add('timezone');
+        UTCli.textContent = 'UTC';
+        UTCli.addEventListener('click', ()=>{
+            const currentTimezone = document.querySelector('.selected-timezone')
+            currentTimezone.classList.remove('selected-timezone');
+
+            const timezoneDisplay = document.getElementById('timeZoneDropDownTitle');
+            timezoneDisplay.textContent = this.textContent;
+
+            this.classList.add('selected-timezone');
+        });
+        timezoneDropdown.appendChild(UTCli);
+    })();
+
+    populateTimezoneList();
 
     function openSettingWindow(event){
         event.preventDefault();

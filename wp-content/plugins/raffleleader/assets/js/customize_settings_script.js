@@ -38,7 +38,6 @@ document.addEventListener('previewLoaded', ()=>{
     const startDateInput = document.getElementById('startDate');
     const endTimeInput = document.getElementById('endTime');
     const startTimeInput = document.getElementById('startTime');
-    const timezones = document.querySelectorAll('timezone');
 
     let pickrText = undefined;
     let pickrBackground = undefined;
@@ -182,10 +181,6 @@ document.addEventListener('previewLoaded', ()=>{
         startTimeCounters.forEach(startTimeCounter => {
             watchTimeStart(startTimeCounter);
         });
-    });
-
-    timezones.forEach((timezone)=>{
-        timezone.addEventListener('click', setTimezone(event));
     });
 
     function openDropDown(event){
@@ -1178,11 +1173,6 @@ document.addEventListener('previewLoaded', ()=>{
                 element.classList.remove('show-total-entries');
                 break;
         }
-    }
-
-    function setTimezone(event){
-        const inputTimezone = event.target;
-        
     }
 
     function insertImage(event){

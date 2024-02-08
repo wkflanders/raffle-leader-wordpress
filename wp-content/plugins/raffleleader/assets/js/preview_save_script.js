@@ -16,6 +16,7 @@ document.addEventListener("previewLoaded", () => {
   const endTimeInput = document.getElementById('endTime');
   const startDateInput = document.getElementById('startDate');
   const startTimeInput = document.getElementById('startTime');
+  const timezoneDisplay = document.getElementById('timeZoneDropDownTitle');
 
   const urlParams = new URLSearchParams(window.location.search);
   const postID = urlParams.get("post_id");
@@ -26,16 +27,14 @@ document.addEventListener("previewLoaded", () => {
     const HTMLContent = preview.outerHTML;
     const cleanedHTMLContent = cleanHTML(HTMLContent);
 
-    endDateValue = endDateInput.value;
-    startDateValue = startDateInput.value;
-    endTimeValue = endTimeInput.value;
-    startTimeValue = startTimeInput.value;
+    const endDateValue = endDateInput.value;
+    const startDateValue = startDateInput.value;
+    const endTimeValue = endTimeInput.value;
+    const startTimeValue = startTimeInput.value;
+    const timezoneValue = timezoneDisplay.textContent;
 
-    const endDateString = `${endDateValue}T${endTimeValue}`;
-    const startDateString = `${startDateValue}T${startTimeValue}`;
-
-    const endDate = new Date(endDateString);
-    const startDate = new Date(startDateString);
+    const endDate = moment.tz(`${endDateValue}T${endTimeValue}`, timezoneValue).utc().format();
+    const startDate = moment.tz(`${startDateValue}T${startTimeValue}`, timezoneValue).utc().format();
 
     try {
       const response = await fetch(raffleleader_preview_save_object.ajax_url, {
@@ -49,6 +48,7 @@ document.addEventListener("previewLoaded", () => {
           content: cleanedHTMLContent,
           start_date: startDate,
           end_date: endDate,
+          timezone: timezoneValue,
           security: raffleleader_preview_save_object.security,
         }),
       });

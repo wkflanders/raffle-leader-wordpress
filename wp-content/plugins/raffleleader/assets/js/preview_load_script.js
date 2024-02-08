@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener('generalSettingsLoaded', ()=>{
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get('post_id');
     const preview = document.getElementById('preview');
@@ -11,10 +11,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const endDateInput = document.getElementById('endDate');
     const startTimeInput = document.getElementById('startTime');
     const endTimeInput = document.getElementById('endTime');
+    const timezone = document.getElementById('timeZoneDropDownTitle');
 
     fetch('/wp-admin/admin-ajax.php?action=loadBuilderData&post_id=' + postId)
     .then(response => response.json())
     .then(data => {
+        loadDateAndTime(data);
         return loadPreview(data);
     })
     .catch(error => console.error('Error:', error));
@@ -24,80 +26,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
         if(raffleData.content){
             const HTMLContent = raffleData.content;
             preview.outerHTML = HTMLContent;
-        }
-
-        // Load time data
-        if(raffleData.startDate && raffleData.endDate){
-            const startTimeObject = new Date(raffleData.startDate);
-            const startDate = startTimeObject.toISOString().split('T')[0];
-            const startTime = startTimeObject.toISOString().split('T')[1].slice(0, 5);
-
-            startDateInput.value = startDate;
-            startTimeInput.value = startTime;
-
-            const endTimeObject = new Date(raffleData.endDate);
-            const endDate = endTimeObject.toISOString().split('T')[0]
-            const endTime = endTimeObject.toISOString().split('T')[1].slice(0, 5)
-
-            endDateInput.value = endDate;
-            endTimeInput.value = endTime;
-
-            initializeCounters(startTimeObject, endTimeObject);
-
-        } else if(raffleData.startDate){
-            const startTimeObject = new Date(raffleData.startDate);
-            const startDate = startTimeObject.toISOString().split('T')[0];
-            const startTime = startTimeObject.toISOString().split('T')[1].slice(0, 5);
-
-            startDateInput.value = startDate;
-            startTimeInput.value = startTime;
-
-            const defaultEndDateObject = startTimeObject;
-            defaultEndDateObject.setDate(defaultEndDateObject.getDate() + 3);
-            defaultEndDate = defaultEndDateObject.toISOString().split('T')[0];
-            defaultEndTime = defaultEndDateObject.toISOString().split('T')[1].slice(0, 5);
-
-            endDateInput.value = defaultEndDate;
-            endTimeInput.value = defaultEndTime;
-
-            initializeCounters(startTimeObject, defaultEndDateObject);
-            
-        } else if(raffleData.endDate){
-            const endTimeObject = new Date(raffleData.endDate);
-            const endDate = endTimeObject.toISOString().split('T')[0]
-            const endTime = endTimeObject.toISOString().split('T')[1].slice(0, 5)
-
-            endDateInput.value = endDate;
-            endTimeInput.value = endTime;
-
-            const defaultStartDateObject = new Date();
-            defaultStartDateObject.setDate(defaultStartDateObject.getDate() + 1);
-            defaultStartDate = defaultStartDateObject.toISOString().split('T')[0];
-            defaultStartTime = defaultStartDateObject.toISOString().split('T')[1].slice(0, 5);
-
-            startDateInput.value = defaultStartDate;
-            startTimeInput.value = defaultStartTime;
-
-            initializeCounters(defaultStartDateObject, endTimeObject);
-
-        } else {
-            const defaultStartDateObject = new Date();
-            defaultStartDateObject.setDate(defaultStartDateObject.getDate() + 1);
-            defaultStartDate = defaultStartDateObject.toISOString().split('T')[0];
-            defaultStartTime = defaultStartDateObject.toISOString().split('T')[1].slice(0, 5);
-
-            startDateInput.value = defaultStartDate;
-            startTimeInput.value = defaultStartTime;
-
-            const defaultEndDateObject = new Date();
-            defaultEndDateObject.setDate(defaultEndDateObject.getDate() + 4);
-            defaultEndDate = defaultEndDateObject.toISOString().split('T')[0];
-            defaultEndTime = defaultEndDateObject.toISOString().split('T')[1].slice(0, 5);
-
-            endDateInput.value = defaultEndDate;
-            endTimeInput.value = defaultEndTime;
-
-            initializeCounters(defaultStartDateObject, defaultEndDateObject);
         }
 
         document.dispatchEvent(loadPreviewEvent);
@@ -110,8 +38,77 @@ document.addEventListener('DOMContentLoaded', ()=>{
         layoutWidthForm.value = getComputedStyle(newPreview).getPropertyValue('width').replace(/^"|"$/g, '');
     }
 
-    function initializeCounters(startTime, endTime){
-        const now = new Date();
+    function loadDateAndTime(raffleData){
+
+        // Load time data
+
+        if(raffleData.startDate && raffleData.endDate){
+            timezone.textContent = raffleData.timezone;
+            document.querySelector(`[data-type="${raffleData.timezone}"]`).classList.add('selected-timezone');
+
+            const localStart = moment.tz(raffleData.startDate, 'UTC').tz(raffleData.timezone);
+
+            startDateInput.value = localStart.format('YYYY-MM-DD');
+            startTimeInput.value = localStart.format('HH:mm:ss');
+
+            const localEnd = moment.tz(raffleData.endDate, 'UTC').tz(raffleData.timezone);
+
+            endDateInput.value = localEnd.format('YYYY-MM-DD');
+            endTimeInput.value = localEnd.format('HH:mm:ss');
+
+            initializeCounters(localStart, localEnd, raffleData.timezone);
+
+        } else if(raffleData.startDate){
+            timezone.textContent = raffleData.timezone;
+            document.querySelector(`[data-type="${raffleData.timezone}"]`).classList.add('selected-timezone');
+
+            const localStart = moment.tz(raffleData.startDate, 'UTC').tz(raffleData.timezone);
+
+            startDateInput.value = localStart.format('YYYY-MM-DD');
+            startTimeInput.value = localStart.format('HH:mm:ss');
+
+            const defaultLocalEnd = localStart.add(3, 'days');
+
+            endDateInput.value = defaultLocalEnd.format('YYYY-MM-DD');
+            endTimeInput.value = defaultLocalEnd.format('HH:mm:ss');
+
+            initializeCounters(localStart, defaultLocalEnd, raffleData.timezone);
+            
+        } else if(raffleData.endDate){
+            timezone.textContent = raffleData.timezone;
+            document.querySelector(`[data-type="${raffleData.timezone}"]`).classList.add('selected-timezone');
+
+            const localEnd = moment.tz(raffleData.endDate, 'UTC').tz(raffleData.timezone);
+
+            endDateInput.value = localEnd.format('YYYY-MM-DD');
+            endTimeInput.value = localEnd.format('HH:mm:ss');
+
+            const defaultLocalStart = localStart.subtract(1, 'days');
+
+            startDateInput.value = defaultLocalStart.format('YYYY-MM-DD');
+            startTimeInput.value = defaultLocalStart.format('HH:mm:ss');
+
+            initializeCounters(defaultLocalStart, localEnd, raffleData.timezone);
+
+        } else {
+            document.getElementById('timezoneList').querySelector('.default-timezone').classList.add('selected-timezone');
+
+            const defaultUTCStart = moment().utc().add(1, 'days');
+
+            startDateInput.value = defaultUTCStart.format('YYYY-MM-DD');
+            startTimeInput.value = defaultUTCStart.format('HH:mm:ss');
+
+            const defaultUTCEnd = moment().utc().add(3, 'days');
+
+            endDateInput.value = defaultUTCEnd.format('YYYY-MM-DD');
+            endTimeInput.value = defaultUTCEnd.format('HH:mm:ss');
+
+            initializeCounters(defaultUTCStart, defaultUTCEnd, 'UTC');
+        }
+    }
+
+    function initializeCounters(startTime, endTime, timezone){
+        const now = moment.tz(timezone);
 
         const timeLeftCounters = document.querySelectorAll('.show-time-left');
         timeLeftCounters.forEach((timeLeftCounter)=>{

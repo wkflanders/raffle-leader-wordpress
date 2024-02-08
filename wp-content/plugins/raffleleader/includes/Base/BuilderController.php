@@ -107,13 +107,15 @@ class BuilderController extends BaseController{
 
         $post_id = isset( $_POST['post_id'] ) ? intval( $_POST['post_id'] ) : 0;
         $content = isset( $_POST['content'] ) ? $_POST['content'] /*wp_kses( $_POST['content'], $this->allowed_html )*/ : '';
-        $start_date = isset( $_POST['start_date'] ) ? $_POST['start_date'] : 0;
-        $end_date = isset( $_POST['end_date'] ) ? $_POST['end_date'] : 0;
+        $start_date = isset( $_POST['start_date'] ) ? $_POST['start_date'] : '';
+        $end_date = isset( $_POST['end_date'] ) ? $_POST['end_date'] : '';
+        $timezone = isset( $_POST['timezone'] ) ? $_POST['timezone'] : '';
 
         if( $post_id && $content && $start_date && $end_date ){
             update_post_meta( $post_id, '_raffle_content', $content );
             update_post_meta( $post_id, '_raffle_start', $start_date );
             update_post_meta( $post_id, '_raffle_end', $end_date );
+            update_post_meta( $post_id, '_raffle_timezone', $timezone );
 
             wp_send_json_success( 'Raffle saved successfully' );
         } else {
@@ -131,11 +133,13 @@ class BuilderController extends BaseController{
             $preview_content = get_post_meta( $post_id, '_raffle_content', true );
             $start_date = get_post_meta( $post_id, '_raffle_start', true );
             $end_date = get_post_meta( $post_id, '_raffle_end', true );
+            $timezone = get_post_meta( $post_id, '_raffle_timezone', true );
             $data = array(
                 'template' => $template,
                 'content' => $preview_content,
                 'startDate' => $start_date,
                 'endDate' => $end_date,
+                'timezone' => $timezone,
             );
             wp_send_json($data);
         } else {

@@ -51,6 +51,8 @@ class Enqueue extends BaseController{
 
         // Loading JS libraries
         wp_enqueue_script( 'raffleleader_pickr_script', 'https://cdn.jsdelivr.net/npm/@simonwep/pickr@1.8.0/dist/pickr.min.js', array(), rand(111, 9999) );
+        wp_enqueue_script('moment-js', 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js', array(), '2.29.1', true);
+        wp_enqueue_script('moment-timezone-js', 'https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data-1970-2030.min.js', array('moment-js'), '0.5.33', true);
 
         wp_enqueue_script( 'raffleleader_builder_drag_script', $this->plugin_url . '/assets/js/builder_drag_script.js', array(), rand(111, 9999) );
 

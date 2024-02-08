@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const generalSettingsBtns = document.querySelectorAll('.general-settings-btn');
     const generalSettingsCloseBtns = document.querySelectorAll('.close-settings-menu');
 
+    const generalSettingsLoaded = new CustomEvent('generalSettingsLoaded');
+
     generalSettingsBtns.forEach((generalSettingBtn)=>{
         generalSettingBtn.addEventListener('click', openSettingWindow);
     });
@@ -20,34 +22,38 @@ document.addEventListener('DOMContentLoaded', ()=>{
             const li = document.createElement('li');
             li.classList.add('timezone');
             li.textContent = timezone;
+            li.setAttribute('data-type', timezone);
             timezoneDropdown.appendChild(li);
-            li.addEventListener('click', ()=>{
+            li.addEventListener('click', (event)=>{
+                const liElement = event.target;
                 const currentTimezone = document.querySelector('.selected-timezone')
                 currentTimezone.classList.remove('selected-timezone');
 
                 const timezoneDisplay = document.getElementById('timeZoneDropDownTitle');
-                timezoneDisplay.textContent = this.textContent;
-
-                this.classList.add('selected-timezone');
+                timezoneDisplay.textContent = liElement.textContent;
+                liElement.classList.add('selected-timezone');
             });
         });
 
         const UTCli = document.createElement('li');
         UTCli.classList.add('timezone');
+        UTCli.classList.add('default-timezone');
+        UTCli.setAttribute('data-type', 'UTC');
         UTCli.textContent = 'UTC';
-        UTCli.addEventListener('click', ()=>{
+        UTCli.addEventListener('click', (event)=>{
+            const UTCliElement = event.target;
             const currentTimezone = document.querySelector('.selected-timezone')
             currentTimezone.classList.remove('selected-timezone');
 
             const timezoneDisplay = document.getElementById('timeZoneDropDownTitle');
-            timezoneDisplay.textContent = this.textContent;
+            timezoneDisplay.textContent = UTCliElement.textContent;
 
-            this.classList.add('selected-timezone');
+            UTCliElement.classList.add('selected-timezone');
         });
         timezoneDropdown.appendChild(UTCli);
-    })();
 
-    populateTimezoneList();
+        document.dispatchEvent(generalSettingsLoaded);
+    })();
 
     function openSettingWindow(event){
         event.preventDefault();

@@ -124,35 +124,35 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     function watchTimeLeft(element, endTime, nowTime){
         const difference = endTime.getTime() - nowTime.getTime();
 
-        let timeLeft = {
-            days: (0).toString().padStart(2, '0'),
-            hours: (0).toString().padStart(2, '0'),
-            minutes: (0).toString().padStart(2, '0'),
-            seconds: (0).toString().padStart(2, '0')
-        };
+        // let timeLeft = {
+        //     days: (0).toString().padStart(2, '0'),
+        //     hours: (0).toString().padStart(2, '0'),
+        //     minutes: (0).toString().padStart(2, '0'),
+        //     seconds: (0).toString().padStart(2, '0')
+        // };
 
-        if(difference > 0){
-            timeLeft = {
-                days: Math.floor(difference / (1000 * 60 * 60 * 24)).toString().padStart(2, '0'),
-                hours: Math.floor((difference / (1000 * 60 * 60)) % 24).toString().padStart(2, '0'),
-                minutes: Math.floor((difference / 1000 / 60) % 60).toString().padStart(2, '0'),
-                seconds: Math.floor((difference / 1000) % 60).toString().padStart(2, '0')
-            }
-        }
+        // if(difference > 0){
+        //     timeLeft = {
+        //         days: Math.floor(difference / (1000 * 60 * 60 * 24)).toString().padStart(2, '0'),
+        //         hours: Math.floor((difference / (1000 * 60 * 60)) % 24).toString().padStart(2, '0'),
+        //         minutes: Math.floor((difference / 1000 / 60) % 60).toString().padStart(2, '0'),
+        //         seconds: Math.floor((difference / 1000) % 60).toString().padStart(2, '0')
+        //     }
+        // }
 
-        if(timeLeft.days > 0){
-            element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.days}</h2> 
-                                 <p>DAYS</p>`;
-        } else if(timeLeft.hours > 0) {
-            element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.hours}</h2> 
-                                 <p>HOURS</p>`;
-        } else if(timeLeft.minutes > 0){
-            element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.minutes}</h2> 
-                                 <p>MINUTES</p>`;
-        } else {
-            element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.seconds}</h2> 
-                                 <p>SECONDS</p>`;
-        }
+        // if(timeLeft.days > 0){
+        //     element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.days}</h2> 
+        //                          <p>DAYS</p>`;
+        // } else if(timeLeft.hours > 0) {
+        //     element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.hours}</h2> 
+        //                          <p>HOURS</p>`;
+        // } else if(timeLeft.minutes > 0){
+        //     element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.minutes}</h2> 
+        //                          <p>MINUTES</p>`;
+        // } else {
+        //     element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.seconds}</h2> 
+        //                          <p>SECONDS</p>`;
+        // }
     }
 
     function watchTimeStart(element, startTime, nowTime){

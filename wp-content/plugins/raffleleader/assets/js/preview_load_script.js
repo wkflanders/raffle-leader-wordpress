@@ -16,8 +16,12 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     fetch('/wp-admin/admin-ajax.php?action=loadBuilderData&post_id=' + postId)
     .then(response => response.json())
     .then(data => {
+        loadPreview(data);
+        return data;
+    })
+    .then(data =>{
         loadDateAndTime(data);
-        return loadPreview(data);
+        return data;
     })
     .catch(error => console.error('Error:', error));
 
@@ -108,85 +112,79 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     }
 
     function initializeCounters(startTime, endTime, timezone){
-        const now = moment.tz(timezone);
+        const now = moment();
 
         const timeLeftCounters = document.querySelectorAll('.show-time-left');
         timeLeftCounters.forEach((timeLeftCounter)=>{
             watchTimeLeft(timeLeftCounter, endTime, now);
-        })
+        });
 
         const timeStartCounters = document.querySelectorAll('.show-time-start');
+        console.log(timeStartCounters);
         timeStartCounters.forEach((timeStartCounter)=>{
             watchTimeStart(timeStartCounter, startTime, now);
-        })
+        });
     }
 
     function watchTimeLeft(element, endTime, nowTime){
-        const difference = endTime.getTime() - nowTime.getTime();
+        const difference = endTime.diff(nowTime);
+        const duration = moment.duration(difference);
 
-        // let timeLeft = {
-        //     days: (0).toString().padStart(2, '0'),
-        //     hours: (0).toString().padStart(2, '0'),
-        //     minutes: (0).toString().padStart(2, '0'),
-        //     seconds: (0).toString().padStart(2, '0')
-        // };
+        counterHeader = element.querySelector('h2');
+        counterText = element.querySelector('p');
 
-        // if(difference > 0){
-        //     timeLeft = {
-        //         days: Math.floor(difference / (1000 * 60 * 60 * 24)).toString().padStart(2, '0'),
-        //         hours: Math.floor((difference / (1000 * 60 * 60)) % 24).toString().padStart(2, '0'),
-        //         minutes: Math.floor((difference / 1000 / 60) % 60).toString().padStart(2, '0'),
-        //         seconds: Math.floor((difference / 1000) % 60).toString().padStart(2, '0')
-        //     }
-        // }
-
-        // if(timeLeft.days > 0){
-        //     element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.days}</h2> 
-        //                          <p>DAYS</p>`;
-        // } else if(timeLeft.hours > 0) {
-        //     element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.hours}</h2> 
-        //                          <p>HOURS</p>`;
-        // } else if(timeLeft.minutes > 0){
-        //     element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.minutes}</h2> 
-        //                          <p>MINUTES</p>`;
-        // } else {
-        //     element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.seconds}</h2> 
-        //                          <p>SECONDS</p>`;
-        // }
+        if(duration.days() > 0){
+            counterHeader.innerText = `${duration.days()}`;
+            counterHeader.style.paddingTop = '3vh';
+            counterText.innerText = 'DAYS';
+        } else if(duration.hours() > 0) {
+            counterHeader.innerText = `${duration.hours()}`;
+            counterHeader.style.paddingTop = '3vh';
+            counterText.innerText = 'HOURS';
+        } else if(duration.minutes() > 0){
+            counterHeader.innerText = `${duration.minutes()}`;
+            counterHeader.style.paddingTop = '3vh';
+            counterText.innerText = 'MINUTES';
+        } else if(duration.seconds() > 0){
+            counterHeader.innerText = `${duration.seconds()}`;
+            counterHeader.style.paddingTop = '3vh';
+            counterText.innerText = 'SECONDS';
+        } else {
+            counterHeader.innerText = `00`;
+            counterHeader.style.paddingTop = '3vh';
+            counterText.innerText = 'ENDED';
+        }
     }
 
     function watchTimeStart(element, startTime, nowTime){
-        const difference = startTime.getTime() - nowTime.getTime();
+        const difference = startTime.diff(nowTime);
+        const duration = moment.duration(difference);
+        console.log('test');
 
-        // let timeLeft = {
-        //     days: (0).toString().padStart(2, '0'),
-        //     hours: (0).toString().padStart(2, '0'),
-        //     minutes: (0).toString().padStart(2, '0'),
-        //     seconds: (0).toString().padStart(2, '0')
-        // };
+        counterHeader = element.querySelector('h2');
+        counterText = element.querySelector('p');
 
-        // if(difference > 0){
-        //     timeLeft = {
-        //         days: Math.floor(difference / (1000 * 60 * 60 * 24)).toString().padStart(2, '0'),
-        //         hours: Math.floor((difference / (1000 * 60 * 60)) % 24).toString().padStart(2, '0'),
-        //         minutes: Math.floor((difference / 1000 / 60) % 60).toString().padStart(2, '0'),
-        //         seconds: Math.floor((difference / 1000) % 60).toString().padStart(2, '0')
-        //     }
-        // }
-
-        // if(timeLeft.days > 0){
-        //     element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.days}</h2> 
-        //                          <p>DAYS</p>`;
-        // } else if(timeLeft.hours > 0) {
-        //     element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.hours}</h2> 
-        //                          <p>HOURS</p>`;
-        // } else if(timeLeft.minutes > 0){
-        //     element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.minutes}</h2> 
-        //                          <p>MINUTES</p>`;
-        // } else {
-        //     element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.seconds}</h2> 
-        //                          <p>SECONDS</p>`;
-        // }
+        if(duration.days() > 0){
+            counterHeader.innerText = `${duration.days()}`;
+            counterHeader.style.paddingTop = '3vh';
+            counterText.innerText = 'DAYS';
+        } else if(duration.hours() > 0) {
+            counterHeader.innerText = `${duration.hours()}`;
+            counterHeader.style.paddingTop = '3vh';
+            counterText.innerText = 'HOURS';
+        } else if(duration.minutes() > 0){
+            counterHeader.innerText = `${duration.minutes()}`;
+            counterHeader.style.paddingTop = '3vh';
+            counterText.innerText = 'MINUTES';
+        } else if(duration.seconds() > 0) {
+            counterHeader.innerText = `${duration.seconds()}`;
+            counterHeader.style.paddingTop = '3vh';
+            counterText.innerText = 'SECONDS';
+        } else {
+            counterHeader.innerText = `00`;
+            counterHeader.style.paddingTop = '3vh';
+            counterText.innerText = 'STARTED';
+        }
     }
 })
 

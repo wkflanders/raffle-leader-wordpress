@@ -5,50 +5,46 @@
 
 namespace Includes\API;
 
-class RaffleAPI{
+class RaffleAPI {
 
     public $raffle = array();
 
-    public function register(){
-        add_action( 'init', array( $this, 'registerRaffle' ) );
-    }
+    public function addRaffle( array $raffleData ){
+        global $wpdb;
+        $tableName = $wpdb->prefix . 'raffleleader_raffles';
 
-    public function registerRaffle(){
-        
-        $raffle = array(
-            'labels' => array(
-                'name' => 'Raffles',
-                'singular_name' => 'Raffle',
-            ),
-            'show_ui' => true,
-            'show_in_menu' => false,
-        );
-
-        register_post_type( 'rl_raffle', $raffle );
-    }
-
-    public function addRaffle( array $args ){
-
-        if ( $args['post_type'] != 'rl_raffle' ){
-            return null;
+        if( !is_array( $raffleData ) || empty( $raffleData ) ){
+            return -1;
         }
 
-        $raffle_id = wp_insert_post( $args );
+        $keys = array_keys( $raffleData );
+        if ( empty( $keys ) || !is_string( $keys[0] ) ){
+            return -2;
+        }
 
-        $this->raffle = array(
-            'raffle' => $args,
-            'id' => $raffle_id,
-        );
-
-        return $this;
-
+        $wpdb->insert($tableName, $raffleData);
+        return $wpdb->insert_id;
     }
 
-    public function getRaffle(){
-        if( !empty( $this->raffle ) ){
-            return $this->raffle;
-        } else {
-            return null;
-        }
+    public function getRaffle( $raffleID ){
+        global $wpdb;
+        $tableName = $wpdb->prefix . 'raffleleader_raffles';
+
+        $query = $wpdb->prepare( "SELECT * FROM $tableName WHERE raffleID = %d", $raffleID );
+        return $wpdb->get_row( $query, ARRAY_A );
+    }
+
+    public function updateRaffle( $raffleID, $raffleData ){
+        global $wpdb;
+        $tableName = $wpdb->prefix . 'raffleleader_raffles';
+
+        return $wpdb->update( $tableName, $raffleData, array( 'raffle_id' => $raffleID ) );
+    }
+
+    public function deleteRaffle( $raffleID ){
+        global $wpdb;
+        $tableName = $wpdb->prefix . 'raffleleader_raffles';
+
+        return $wpdb->delete( $tableName, array( 'raffle_id' => $raffleID ) );
     }
 }

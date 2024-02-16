@@ -97,12 +97,12 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         } else {
             document.getElementById('timezoneList').querySelector('.default-timezone').classList.add('selected-timezone');
 
-            const defaultUTCStart = moment().utc().add(1, 'days');
+            const defaultUTCStart = moment().add(1, 'days');
 
             startDateInput.value = defaultUTCStart.format('YYYY-MM-DD');
             startTimeInput.value = defaultUTCStart.format('HH:mm:ss');
 
-            const defaultUTCEnd = moment().utc().add(3, 'days');
+            const defaultUTCEnd = moment().add(3, 'days');
 
             endDateInput.value = defaultUTCEnd.format('YYYY-MM-DD');
             endTimeInput.value = defaultUTCEnd.format('HH:mm:ss');
@@ -120,7 +120,6 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         });
 
         const timeStartCounters = document.querySelectorAll('.show-time-start');
-        console.log(timeStartCounters);
         timeStartCounters.forEach((timeStartCounter)=>{
             watchTimeStart(timeStartCounter, startTime, now);
         });
@@ -130,8 +129,8 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         const difference = endTime.diff(nowTime);
         const duration = moment.duration(difference);
 
-        counterHeader = element.querySelector('h2');
-        counterText = element.querySelector('p');
+        const counterHeader = element.querySelector('h2');
+        const counterText = element.querySelector('p');
 
         if(duration.days() > 0){
             counterHeader.innerText = `${duration.days()}`;
@@ -159,10 +158,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     function watchTimeStart(element, startTime, nowTime){
         const difference = startTime.diff(nowTime);
         const duration = moment.duration(difference);
-        console.log('test');
 
-        counterHeader = element.querySelector('h2');
-        counterText = element.querySelector('p');
+        const counterHeader = element.querySelector('h2');
+        const counterText = element.querySelector('p');
 
         if(duration.days() > 0){
             counterHeader.innerText = `${duration.days()}`;

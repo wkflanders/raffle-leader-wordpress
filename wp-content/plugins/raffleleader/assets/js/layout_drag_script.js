@@ -69,7 +69,8 @@ document.addEventListener('previewLoaded', () => {
                         <div style="display: none;" class="resize-handle"></div>`;
             case 'counterBox':
                 return `<div style="height: 100%; width: 100%;" data-type="counterDetails" class="counter-section">
-                            <h2>00</h2>
+                            <h2 style="padding-top: 3vh;">00</h2>
+                            <p></p>
                         </div>
                         <div style="display: none;" class="resize-handle"></div>`;
             case 'imageBox':

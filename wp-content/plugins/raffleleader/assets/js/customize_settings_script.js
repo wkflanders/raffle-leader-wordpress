@@ -1077,82 +1077,70 @@ document.addEventListener('previewLoaded', ()=>{
     }
 
     function watchTimeLeft(element){
+        const counterHeader = element.querySelector('h2');
+        const counterText = element.querySelector('p');
+
         const endDateInput = document.getElementById('endDate').value;
         const endTimeInput = document.getElementById('endTime').value;
+        const timezone = document.getElementById('timeZoneDropDownTitle').textContent;
 
-        const endDateTime = new Date(`${endDateInput}T${endTimeInput}`);
-        const now = new Date();
+        const endDate = endDateInput + ' ' + endTimeInput;
+        const adjustedEndDate = moment.tz(endDate, timezone);
 
-        const difference = endDateTime.getTime() - now.getTime();
+        const nowTime = moment()
 
-        let timeLeft = {
-            days: (0).toString().padStart(2, '0'),
-            hours: (0).toString().padStart(2, '0'),
-            minutes: (0).toString().padStart(2, '0'),
-            seconds: (0).toString().padStart(2, '0')
-        };
+        const difference = adjustedEndDate.diff(nowTime)
+        const duration = moment.duration(difference);
 
-        if(difference > 0){
-            timeLeft = {
-                days: Math.floor(difference / (1000 * 60 * 60 * 24)).toString().padStart(2, '0'),
-                hours: Math.floor((difference / (1000 * 60 * 60)) % 24).toString().padStart(2, '0'),
-                minutes: Math.floor((difference / 1000 / 60) % 60).toString().padStart(2, '0'),
-                seconds: Math.floor((difference / 1000) % 60).toString().padStart(2, '0')
-            }
-        }
-
-        if(timeLeft.days > 0){
-            element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.days}</h2> 
-                                 <p>DAYS</p>`;
-        } else if(timeLeft.hours > 0) {
-            element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.hours}</h2> 
-                                 <p>HOURS</p>`;
-        } else if(timeLeft.minutes > 0){
-            element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.minutes}</h2> 
-                                 <p>MINUTES</p>`;
+        if(duration.days() > 0){
+            counterHeader.innerText = `${duration.days()}`;
+            counterText.innerText = 'DAYS';
+        } else if(duration.hours() > 0) {
+            counterHeader.innerText = `${duration.hours()}`;
+            counterText.innerText = 'HOURS';
+        } else if(duration.minutes() > 0){
+            counterHeader.innerText = `${duration.minutes()}`;
+            counterText.innerText = 'MINUTES';
+        } else if(duration.seconds() > 0){
+            counterHeader.innerText = `${duration.seconds()}`;
+            counterText.innerText = 'SECONDS';
         } else {
-            element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.seconds}</h2> 
-                                 <p>SECONDS</p>`;
+            counterHeader.innerText = `00`;
+            counterText.innerText = 'ENDED';
         }
     }
 
     function watchTimeStart(element){
+        const counterHeader = element.querySelector('h2');
+        const counterText = element.querySelector('p');
+
         const startDateInput = document.getElementById('startDate').value;
         const startTimeInput = document.getElementById('startTime').value;
+        const timezone = document.getElementById('timeZoneDropDownTitle').textContent;
 
-        const startDateTime = new Date(`${startDateInput}T${startTimeInput}`);
-        const now = new Date();
+        const startDate = startDateInput + ' ' + startTimeInput;
+        const adjustedStartDate = moment.tz(startDate, timezone);
 
-        const difference = startDateTime.getTime() - now.getTime();
+        const nowTime = moment()
 
-        let timeLeft = {
-            days: (0).toString().padStart(2, '0'),
-            hours: (0).toString().padStart(2, '0'),
-            minutes: (0).toString().padStart(2, '0'),
-            seconds: (0).toString().padStart(2, '0')
-        };
+        const difference = adjustedStartDate.diff(nowTime)
+        const duration = moment.duration(difference);
 
-        if(difference > 0){
-            timeLeft = {
-                days: Math.floor(difference / (1000 * 60 * 60 * 24)).toString().padStart(2, '0'),
-                hours: Math.floor((difference / (1000 * 60 * 60)) % 24).toString().padStart(2, '0'),
-                minutes: Math.floor((difference / 1000 / 60) % 60).toString().padStart(2, '0'),
-                seconds: Math.floor((difference / 1000) % 60).toString().padStart(2, '0')
-            }
-        }
-
-        if(timeLeft.days > 0){
-            element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.days}</h2> 
-                                 <p>DAYS</p>`;
-        } else if(timeLeft.hours > 0) {
-            element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.hours}</h2> 
-                                 <p>HOURS</p>`;
-        } else if(timeLeft.minutes > 0){
-            element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.minutes}</h2> 
-                                 <p>MINUTES</p>`;
+        if(duration.days() > 0){
+            counterHeader.innerText = `${duration.days()}`;
+            counterText.innerText = 'DAYS';
+        } else if(duration.hours() > 0) {
+            counterHeader.innerText = `${duration.hours()}`;
+            counterText.innerText = 'HOURS';
+        } else if(duration.minutes() > 0){
+            counterHeader.innerText = `${duration.minutes()}`;
+            counterText.innerText = 'MINUTES';
+        } else if(duration.seconds() > 0){
+            counterHeader.innerText = `${duration.seconds()}`;
+            counterText.innerText = 'SECONDS';
         } else {
-            element.innerHTML = `<h2 style="padding-top: 3vh">${timeLeft.seconds}</h2> 
-                                 <p>SECONDS</p>`;
+            counterHeader.innerText = `00`;
+            counterText.innerText = 'STARTED';
         }
     }
 

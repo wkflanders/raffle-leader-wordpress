@@ -112,18 +112,23 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
             if(durationStart.days() > 0){
                 counterHeader.innerText = `${durationStart.days()}`;
+                counterHeader.style.paddingTop = '2.5vh';
                 counterText.innerText = 'DAYS';
             } else if(durationStart.hours() > 0) {
                 counterHeader.innerText = `${durationStart.hours()}`;
+                counterHeader.style.paddingTop = '2.5vh';
                 counterText.innerText = 'HOURS';
             } else if(durationStart.minutes() > 0){
                 counterHeader.innerText = `${durationStart.minutes()}`;
+                counterHeader.style.paddingTop = '2.5vh';
                 counterText.innerText = 'MINUTES';
             } else if(durationStart.seconds() > 0) {
                 counterHeader.innerText = `${durationStart.seconds()}`;
+                counterHeader.style.paddingTop = '2.5vh';
                 counterText.innerText = 'SECONDS';
             } else {
                 counterHeader.innerText = `00`;
+                counterHeader.style.paddingTop = '2.5vh';
                 counterText.innerText = 'STARTED';
             }
         });
@@ -134,18 +139,23 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
             if(durationLeft.days() > 0){
                 counterHeader.innerText = `${durationLeft.days()}`;
+                counterHeader.style.paddingTop = '2.5vh';
                 counterText.innerText = 'DAYS';
             } else if(durationLeft.hours() > 0) {
                 counterHeader.innerText = `${durationLeft.hours()}`;
+                counterHeader.style.paddingTop = '2.5vh';
                 counterText.innerText = 'HOURS';
             } else if(durationLeft.minutes() > 0){
                 counterHeader.innerText = `${durationLeft.minutes()}`;
+                counterHeader.style.paddingTop = '2.5vh';
                 counterText.innerText = 'MINUTES';
             } else if(durationLeft.seconds() > 0) {
                 counterHeader.innerText = `${durationLeft.seconds()}`;
+                counterHeader.style.paddingTop = '2.5vh';
                 counterText.innerText = 'SECONDS';
             } else {
                 counterHeader.innerText = `00`;
+                counterHeader.style.paddingTop = '2.5vh';
                 counterText.innerText = 'ENDED';
             }
         });

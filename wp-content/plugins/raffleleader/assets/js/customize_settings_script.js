@@ -1094,18 +1094,23 @@ document.addEventListener('previewLoaded', ()=>{
 
         if(duration.days() > 0){
             counterHeader.innerText = `${duration.days()}`;
+            counterHeader.style.paddingTop = '2.5vh';
             counterText.innerText = 'DAYS';
         } else if(duration.hours() > 0) {
             counterHeader.innerText = `${duration.hours()}`;
+            counterHeader.style.paddingTop = '2.5vh';
             counterText.innerText = 'HOURS';
         } else if(duration.minutes() > 0){
             counterHeader.innerText = `${duration.minutes()}`;
+            counterHeader.style.paddingTop = '2.5vh';
             counterText.innerText = 'MINUTES';
         } else if(duration.seconds() > 0){
             counterHeader.innerText = `${duration.seconds()}`;
+            counterHeader.style.paddingTop = '2.5vh';
             counterText.innerText = 'SECONDS';
         } else {
             counterHeader.innerText = `00`;
+            counterHeader.style.paddingTop = '2.5vh';
             counterText.innerText = 'ENDED';
         }
     }
@@ -1128,25 +1133,34 @@ document.addEventListener('previewLoaded', ()=>{
 
         if(duration.days() > 0){
             counterHeader.innerText = `${duration.days()}`;
+            counterHeader.style.paddingTop = '2.5vh';
             counterText.innerText = 'DAYS';
         } else if(duration.hours() > 0) {
             counterHeader.innerText = `${duration.hours()}`;
+            counterHeader.style.paddingTop = '2.5vh';
             counterText.innerText = 'HOURS';
         } else if(duration.minutes() > 0){
             counterHeader.innerText = `${duration.minutes()}`;
+            counterHeader.style.paddingTop = '2.5vh';
             counterText.innerText = 'MINUTES';
         } else if(duration.seconds() > 0){
             counterHeader.innerText = `${duration.seconds()}`;
+            counterHeader.style.paddingTop = '2.5vh';
             counterText.innerText = 'SECONDS';
         } else {
             counterHeader.innerText = `00`;
+            counterHeader.style.paddingTop = '2.5vh';
             counterText.innerText = 'STARTED';
         }
     }
 
     function stopWatch(element, counterType){
-        element.innerHTML = `<h2 style="padding-top: 3vh;">00</h2>
-                             <p></p>`;
+        const counterHeader = element.querySelector('h2');
+        const counterText = element.querySelector('p');
+
+        counterHeader.innerText = `00`;
+        counterHeader.style.paddingTop = '2vh';
+        counterText.innerText = '';
 
         switch(counterType){
             case 'counterTimeLeft':

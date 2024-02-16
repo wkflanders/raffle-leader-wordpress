@@ -131,6 +131,7 @@
     margin: 0;
     font-size: 60px;
     letter-spacing: 1px;
+    padding-top: 2vh;
 }
 
 .counter-section > p{

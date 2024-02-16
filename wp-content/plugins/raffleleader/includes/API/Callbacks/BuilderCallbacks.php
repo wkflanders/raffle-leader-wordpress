@@ -13,28 +13,22 @@ class BuilderCallbacks extends BaseController{
 
     public $raffleAPI;
 
-    public $raffle_instance = array();
-
-    public $builderRaffle = array();
-
+    public $raffleInstance = array();
 
     public function builderCreateNew(){
 
         $this->raffleAPI = new RaffleAPI();
 
-        $this->raffle_instance = array(
-            'post_title'    => 'New Raffle',
-            'post_status'   => 'draft',
-            'post_type'     => 'rl_raffle'
+        $this->raffleInstance = array(
+            'name' => 'New Raffle',
+            'status' => 'Draft',
         );
 
-        $this->raffleAPI->addRaffle( $this->raffle_instance );
+        $raffleID = $this->raffleAPI->addRaffle( $this->raffleInstance );
 
-        $new_raffle_id = $this->raffleAPI->getRaffle()['id'];
+        if( $raffleID > 0 ){
 
-        if( $new_raffle_id && ! is_wp_error( $new_raffle_id ) ){
-
-            $redirectUrl = admin_url('admin.php?page=raffleleader_builder&post_id=' . $new_raffle_id);
+            $redirectUrl = admin_url('admin.php?page=raffleleader_builder&post_id=' . $raffleID);
 
             echo '<script>window.location.href="' . $redirectUrl . '";</script>';
             

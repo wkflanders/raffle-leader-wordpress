@@ -6,9 +6,12 @@
 namespace Includes\Base;
 
 use Includes\API\Callbacks\BuilderCallbacks;
+use Includes\API\RaffleAPI;
 use Includes\API\SettingsAPI;
 
 class BuilderController extends BaseController{
+
+    public $raffleAPI;
 
     public $builderCallbacks;
 
@@ -19,6 +22,8 @@ class BuilderController extends BaseController{
     public $allowed_html = array();
 
     public function register(){
+
+        $this->raffleAPI = new RaffleAPI();
         
         $this->builderCallbacks = new BuilderCallbacks();
 
@@ -94,7 +99,7 @@ class BuilderController extends BaseController{
         $template_id = isset( $_POST['template_id']) ? sanitize_text_field( $_POST['template_id'] ) : '';
 
         if( $post_id && $template_id ){
-            update_post_meta( $post_id, '_raffle_template', $template_id );
+            $this->raffleAPI->updateRaffle($post_id, array( 'template_id' => $template_id ) );
             wp_send_json_success( 'Template choice saved successfully' );
         } else {
             wp_send_json_error( 'Failed to save template choice' );
@@ -111,11 +116,11 @@ class BuilderController extends BaseController{
         $end_date = isset( $_POST['end_date'] ) ? $_POST['end_date'] : '';
         $timezone = isset( $_POST['timezone'] ) ? $_POST['timezone'] : '';
 
-        if( $post_id && $content && $start_date && $end_date ){
-            update_post_meta( $post_id, '_raffle_content', $content );
-            update_post_meta( $post_id, '_raffle_start', $start_date );
-            update_post_meta( $post_id, '_raffle_end', $end_date );
-            update_post_meta( $post_id, '_raffle_timezone', $timezone );
+        if( $post_id && $content && $start_date && $end_date && $timezone ){
+            $this->raffleAPI->updateRaffle($post_id, array( 'content' => $content ) );
+            $this->raffleAPI->updateRaffle($post_id, array( 'start_date' => $content ) );
+            $this->raffleAPI->updateRaffle($post_id, array( 'end_date' => $content ) );
+            $this->raffleAPI->updateRaffle($post_id, array( 'timezone' => $content ) );
 
             wp_send_json_success( 'Raffle saved successfully' );
         } else {
@@ -129,11 +134,14 @@ class BuilderController extends BaseController{
         $post_id = isset( $_GET['post_id'] ) ? intval( $_GET['post_id'] ) : 0;
 
         if( $post_id ){
-            $template = get_post_meta( $post_id, '_raffle_template', true );
-            $preview_content = get_post_meta( $post_id, '_raffle_content', true );
-            $start_date = get_post_meta( $post_id, '_raffle_start', true );
-            $end_date = get_post_meta( $post_id, '_raffle_end', true );
-            $timezone = get_post_meta( $post_id, '_raffle_timezone', true );
+            $raffleInstance = $this->raffleAPI->getRaffle($post_id);
+
+            $template = ( !is_null( $raffleInstance['template_id'] ) ) ? $raffleInstance['template_id'] : '';
+            $preview_content = ( !is_null( $raffleInstance['content'] ) ) ? $raffleInstance['content'] : '';
+            $start_date = ( !is_null( $raffleInstance['start_date'] ) ) ? $raffleInstance['start_date'] : '';
+            $end_date = ( !is_null( $raffleInstance['end_date'] ) ) ? $raffleInstance['end_date'] : '';
+            $timezone = ( !is_null( $raffleInstance['timezone'] ) ) ? $raffleInstance['timezone'] : '';
+            
             $data = array(
                 'template' => $template,
                 'content' => $preview_content,

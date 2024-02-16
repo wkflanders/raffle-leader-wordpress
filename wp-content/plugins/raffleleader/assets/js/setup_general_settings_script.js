@@ -90,17 +90,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const endTimeInput = document.getElementById('endTime').value;
 
         const startDate = startDateInput + ' ' + startTimeInput;
-        const adjustedStartDate = moment.tz(startDate, previousTimezone).tz(currentTimezone);
+        const adjustedStartDate = moment.tz(startDate, currentTimezone);
 
         const endDate = endDateInput + ' ' + endTimeInput;
-        const endDateAdjusted = moment.tz(endDate, previousTimezone).tz(currentTimezone);
+        const adjustedEndDate = moment.tz(endDate, currentTimezone);
 
         const nowTime = moment();
         
         const differenceStart = adjustedStartDate.diff(nowTime);
         const durationStart = moment.duration(differenceStart)
 
-        const differenceLeft = endDateAdjusted.diff(nowTime);
+        const differenceLeft = adjustedEndDate.diff(nowTime);
         const durationLeft = moment.duration(differenceLeft);
 
         const timeLeftCounters = document.querySelectorAll('.show-time-left');

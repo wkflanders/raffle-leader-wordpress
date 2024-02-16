@@ -1145,7 +1145,8 @@ document.addEventListener('previewLoaded', ()=>{
     }
 
     function stopWatch(element, counterType){
-        element.innerHTML = `<h2 style="padding-top: 0">00</h2>`;
+        element.innerHTML = `<h2 style="padding-top: 3vh;">00</h2>
+                             <p></p>`;
 
         switch(counterType){
             case 'counterTimeLeft':

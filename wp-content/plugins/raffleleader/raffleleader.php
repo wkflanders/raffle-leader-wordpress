@@ -39,8 +39,10 @@ function create_raffleleader_tables(){
     $raffleContestantsTableSQL = "CREATE TABLE {$wpdb->prefix}raffleleader_contestants (
         contestant_id INT AUTO_INCREMENT,
         name VARCHAR(255) NOT NULL,
-        email VARCHAR(255) UNIQUE NOT NULL,
+        email VARCHAR(255) NOT NULL,
+        ip VARCHAR(255) NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        deleted_at TIMESTAMP NULL,
         PRIMARY KEY (contestant_id)
     ) $charset_collate;";
 
@@ -48,6 +50,10 @@ function create_raffleleader_tables(){
         entry_id INT AUTO_INCREMENT,
         raffle_id INT NOT NULL,
         contestant_id INT NOT NULL,
+        referrer_id INT NULL,
+        winner VARCHAR(255) NULL,
+        rules_consented VARCHAR(255) NULL,
+        email_confirmation ENUM('unconfirmed', 'confirmed')DEFAULT 'unconfirmed',
         entry_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (raffle_id) REFERENCES {$wpdb->prefix}raffleleader_raffles(raffle_id),
         FOREIGN KEY (contestant_id) REFERENCES {$wpdb->prefix}raffleleader_contestants(contestant_id),

@@ -10,22 +10,25 @@
         </thead>
         <tbody id="the-list">
             <?php
-            $posts = get_posts(array('post_type' => 'rl_raffle', 'posts_per_page' => -1, 'post_status' => 'any'));
+            use Includes\API\RaffleAPI;
+
+            $raffleAPI = new RaffleAPI();   
+            $posts = $raffleAPI->getMultipleRaffles( array( 'per_page' => -1 ) );
             foreach ($posts as $post) {
             ?>
                 <tr>
-                    <td class="title column-title has-row-actions column-primary"><?php echo esc_html($post->post_title) ?>
+                    <td class="title column-title has-row-actions column-primary"><?php echo esc_html($post['name']) ?>
                         <div class="row-actions">
                             <span class="edit">
-                                <a href="<?php echo esc_url(admin_url('admin.php?page=raffleleader_builder&post_id=' . $post->ID)) ?>" class="edit-post">Edit |</a>
+                                <a href="<?php echo esc_url(admin_url('admin.php?page=raffleleader_builder&post_id=' . $post['raffle_id'])) ?>" class="edit-post">Edit |</a>
                             </span>
                             <span class="delete">
-                                <a href="<?php echo esc_url(wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=trash&post=' . $post->ID), 'trash_post_' . $post->ID)) ?>" class="trash-post">Trash</a>
+                                <a href="<?php echo esc_url(wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=trash&post=' . $post['raffle_id']), 'trash_post_' . $post['raffle_id'])) ?>" class="trash-post">Trash</a>
                             </span>
                         </div>
                         <!-- close .row-actions -->
                     </td>
-                    <td><?php echo esc_html($post->post_status) ?></td>
+                    <td><?php echo esc_html($post['status']) ?></td>
                     <!-- Output other columns here -->
                 </tr>
             <?php

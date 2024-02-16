@@ -371,9 +371,9 @@
                         <div id="dropzone"></div>
                         <div class="footer-wrapper">
                             <div class="footer">
-                                <a class="footer-content">Rules and Terms</a>
-                                <p>|</p>
-                                <a class="footer-content rl_link" target="_blank" href="https://raffleleader.com">Not Using RaffleLeader Yet?</a>
+                                <a class="footer-content">Raffle Rules and Terms</a>
+                                <img id="footer-logo" class="footer-content footer-logo" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/footer_logo.svg">
+                                <a class="footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="footer-text-logo" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/footer_text_logo.svg"> For Yourself!</a>
                             </div>
                         </div>
                     </div>
@@ -586,8 +586,24 @@
                             <div class="dropdown-wrapper">
                                 <div class="header-box">
                                     <div class="spacer"></div>
-                                    <h2 class="header-box-title">Form</h2>
+                                    <h2 class="header-box-title">Form Details</h2>
                                     <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Email Form</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-counter">
+                                            <button id="counterTimeLeft" class="dropdown-counter-btn" data-type="counterTimeLeft">Time Left</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>X Form</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-counter">
+                                            <button id="counterTimeLeft" class="dropdown-counter-btn" data-type="counterTimeLeft">Time Left</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -595,7 +611,7 @@
                             <div class="dropdown-wrapper">
                                 <div class="header-box">
                                     <div class="spacer"></div>
-                                    <h2 class="header-box-title">Counts</h2>
+                                    <h2 class="header-box-title">Counter Details</h2>
                                     <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
                                 </div>
                                 <div class="customize-settings-box">

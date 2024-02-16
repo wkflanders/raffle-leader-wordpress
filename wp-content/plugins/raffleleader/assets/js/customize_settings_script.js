@@ -19,7 +19,7 @@ document.addEventListener('previewLoaded', ()=>{
     const underlineBtns = document.querySelectorAll('.underline-btn');
     const strikeBtns = document.querySelectorAll('.strike-btn');
     const overlineBtns = document.querySelectorAll('.overline-btn');
-    const letterSpacingForms = document.querySelectorAll('.letter-spacing-input')
+    const letterSpacingForms = document.querySelectorAll('.letter-spacing-input');
     
     const borderStrokeForms = document.querySelectorAll('.border-stroke-input');
     const borderRadiusForms = document.querySelectorAll('.border-radius-input');

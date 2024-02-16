@@ -45,7 +45,7 @@ class Admin extends BaseController{
         $this->pages = array(
             array(
                 'page_title' => 'RaffleOverview',
-                'menu_title' => 'RaffleLeader',
+                'menu_title' => 'Raffle Leader',
                 'capability' => 'manage_options',
                 'menu_slug' => $this->parent_slug,
                 'callback' => array( $this->overviewCallbacks, 'overviewPostManager' ),

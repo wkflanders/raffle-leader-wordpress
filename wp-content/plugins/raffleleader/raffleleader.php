@@ -25,10 +25,14 @@ function create_raffleleader_tables(){
     $raffleTableSQL = "CREATE TABLE {$wpdb->prefix}raffleleader_raffles (
         raffle_id INT AUTO_INCREMENT,
         name VARCHAR(255) NOT NULL,
+        content TEXT NULL,
         start_date DATETIME NULL,
         end_date DATETIME NULL,
-        settings TEXT NULL,
+        timezone VARCHAR(255) NULL,
+        status VARCHAR(255) NOT NULL,
+        template_id VARCHAR(255) NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        deleted_at TIMESTAMP DEFAULT NULL,
         PRIMARY KEY (raffle_id)
     ) $charset_collate;";
 

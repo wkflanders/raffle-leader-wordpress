@@ -7,8 +7,6 @@ namespace Includes\API;
 
 class RaffleAPI {
 
-    public $raffle = array();
-
     public function addRaffle( array $raffleData ){
         global $wpdb;
         $tableName = $wpdb->prefix . 'raffleleader_raffles';
@@ -76,7 +74,6 @@ class RaffleAPI {
         $wpdb->update( $tableName, $raffleData, array( 'raffle_id' => $raffleID ) );
 
         return $this->getRaffle( $raffleID );
-
     }
 
     public function deleteRaffle( $raffleID ){

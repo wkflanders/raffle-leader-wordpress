@@ -30,7 +30,7 @@ class RaffleAPI {
         global $wpdb;
         $tableName = $wpdb->prefix . 'raffleleader_raffles';
 
-        $query = $wpdb->prepare( "SELECT * FROM $tableName WHERE raffleID = %d", $raffleID );
+        $query = $wpdb->prepare( "SELECT * FROM $tableName WHERE raffle_id = %d", $raffleID );
         return $wpdb->get_row( $query, ARRAY_A );
     }
 
@@ -73,7 +73,10 @@ class RaffleAPI {
         global $wpdb;
         $tableName = $wpdb->prefix . 'raffleleader_raffles';
 
-        return $wpdb->update( $tableName, $raffleData, array( 'raffle_id' => $raffleID ) );
+        $wpdb->update( $tableName, $raffleData, array( 'raffle_id' => $raffleID ) );
+
+        return $this->getRaffle( $raffleID );
+
     }
 
     public function deleteRaffle( $raffleID ){

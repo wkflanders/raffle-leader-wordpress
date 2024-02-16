@@ -118,9 +118,9 @@ class BuilderController extends BaseController{
 
         if( $post_id && $content && $start_date && $end_date && $timezone ){
             $this->raffleAPI->updateRaffle($post_id, array( 'content' => $content ) );
-            $this->raffleAPI->updateRaffle($post_id, array( 'start_date' => $content ) );
-            $this->raffleAPI->updateRaffle($post_id, array( 'end_date' => $content ) );
-            $this->raffleAPI->updateRaffle($post_id, array( 'timezone' => $content ) );
+            $this->raffleAPI->updateRaffle($post_id, array( 'start_date' => $start_date ) );
+            $this->raffleAPI->updateRaffle($post_id, array( 'end_date' => $end_date ) );
+            $this->raffleAPI->updateRaffle($post_id, array( 'timezone' => $timezone ) );
 
             wp_send_json_success( 'Raffle saved successfully' );
         } else {
@@ -136,11 +136,11 @@ class BuilderController extends BaseController{
         if( $post_id ){
             $raffleInstance = $this->raffleAPI->getRaffle($post_id);
 
-            $template = ( !is_null( $raffleInstance['template_id'] ) ) ? $raffleInstance['template_id'] : '';
-            $preview_content = ( !is_null( $raffleInstance['content'] ) ) ? $raffleInstance['content'] : '';
-            $start_date = ( !is_null( $raffleInstance['start_date'] ) ) ? $raffleInstance['start_date'] : '';
-            $end_date = ( !is_null( $raffleInstance['end_date'] ) ) ? $raffleInstance['end_date'] : '';
-            $timezone = ( !is_null( $raffleInstance['timezone'] ) ) ? $raffleInstance['timezone'] : '';
+            $template = !is_null( $raffleInstance['template_id'] ) ? $raffleInstance['template_id'] : '';
+            $preview_content = !is_null( $raffleInstance['content'] ) ? stripslashes( $raffleInstance['content'] ) : '';
+            $start_date = !is_null( $raffleInstance['start_date'] ) ? $raffleInstance['start_date'] : '';
+            $end_date = !is_null( $raffleInstance['end_date'] ) ? $raffleInstance['end_date'] : '';
+            $timezone = !is_null( $raffleInstance['timezone'] ) ? $raffleInstance['timezone'] : '';
             
             $data = array(
                 'template' => $template,

@@ -63,8 +63,11 @@ document.addEventListener('previewLoaded', () => {
                         </div>
                         <div style="display: none;" class="resize-handle"></div>`;
             case 'formBox':
-                return `<div data-type="formDetails" class="form-section">
-                            <p>Form</p>
+                return `<div style="height: 100%; width: 100%;"data-type="formDetails" class="form-section">
+                            <form action="/submit-email" method="post">
+                                <input type="email" name="email" placeholder="email...">
+                                <button type="submit">&rarr;</button>
+                            </form>
                         </div>
                         <div style="display: none;" class="resize-handle"></div>`;
             case 'counterBox':

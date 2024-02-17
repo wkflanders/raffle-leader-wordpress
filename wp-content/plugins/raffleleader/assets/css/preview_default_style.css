@@ -75,11 +75,23 @@
     color:black;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.5vh;
+    font-size: 1.3vh;
 }
 
 .footer-content:hover{
     color: black;
+}
+
+.footer-logo{
+    margin-left: 0.6vw;
+    margin-right: 0.6vw;
+}
+
+.footer-text-logo{
+    vertical-align: middle;
+    margin-left: 0.1vw;
+    margin-right: 0.1vw;
+    height: 1.1vh;
 }
 
 .rl_link:hover{
@@ -158,6 +170,10 @@
 .image-section > img{
     height: 100%;
     width: 100%;
+}
+
+.form-section{
+    
 }
 
 .dragging{

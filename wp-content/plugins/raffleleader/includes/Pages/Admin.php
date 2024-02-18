@@ -28,6 +28,8 @@ class Admin extends BaseController{
     public function register(){
         $this->settings = new SettingsAPI();
 
+        $this->icon_url = $this->plugin_url . 'assets/images/admin_menu_logo.svg';
+
         $this->adminCallbacks = new AdminCallbacks();
         $this->builderCallbacks = new BuilderCallbacks();
         $this->overviewCallbacks = new OverviewCallbacks();
@@ -49,7 +51,7 @@ class Admin extends BaseController{
                 'capability' => 'manage_options',
                 'menu_slug' => $this->parent_slug,
                 'callback' => array( $this->overviewCallbacks, 'overviewPostManager' ),
-                'icon_url' => $this->icon_url,
+                'icon_url' => 'data:image/svg+xml;base64,' . base64_encode('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14"><path fill="#9ca2a7" d="M14.5 11.4h4c1 0 1.4-.3 1.3-1.2V4.8c0-1-.5-1-1-1l-6.6-.2a3 3 0 0 1-1.8-.7l-.3-.2c-.6-.6-1.2-1-2-1H3.4c-.8 0-1.5 0-1.5 1.1V8c.1 1 .6 1.4 1.4 1.4l6.2.2c.8 0 1.2.1 2 .5l1.1.8c.7.4 1.4.5 2 .5Z"/><path fill="#9ca2a7" d="M22 3.3h-.2c-.7 0-1.2-.6-1.2-1.2V2h-7.9c-.7 0-1.5-.3-2-.9a4.3 4.3 0 0 0-3-1.1H1.3v.2A1.2 1.2 0 0 1 1 1c-.3.2-.6.4-1 .4v8.2h.2A1.2 1.2 0 0 1 1.4 11H9c1 0 1.9.4 2.7 1l.4.3c.5.5 1.2.7 2 .7h6.5v-.3c0-.6.6-1.2 1.2-1.1l.1-8.2Zm-3 8.4h-4.3c-.6 0-1.3-.1-2-.6l-1.2-.8c-.8-.4-1.3-.5-2-.5H3c-1 0-1.4-.4-1.5-1.5V2.5c0-1 .6-1.2 1.6-1.2h4.8c.9 0 1.6.6 2.2 1.2l.3.2c.4.4 1.3.7 1.9.7h7c.4 0 1 0 1 1v6.1c0 1-.4 1.3-1.4 1.2Z"/></svg>'),
                 'position' => 67,
                 'id' => 10252326
             )

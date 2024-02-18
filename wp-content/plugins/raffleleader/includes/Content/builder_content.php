@@ -140,8 +140,8 @@
                             <div id="textBox" draggable="true" class="layout-option-box">
                                 <p>+ Text Section</p>
                             </div>
-                            <div id="formBox" draggable="true" class="layout-option-box">
-                                <p>+ Form Section</p>
+                            <div id="entryBox" draggable="true" class="layout-option-box">
+                                <p>+ Entry Section</p>
                             </div>
                             <div id="counterBox" draggable="true" class="layout-option-box">
                                 <p>+ Counter Section</p>
@@ -582,15 +582,15 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="formDetails" class="customize-box-content">
+                        <div id="entryDetails" class="customize-box-content">
                             <div class="dropdown-wrapper">
                                 <div class="header-box">
                                     <div class="spacer"></div>
-                                    <h2 class="header-box-title">Form Details</h2>
+                                    <h2 class="header-box-title">Additional Entries</h2>
                                     <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
                                 </div>
                                 <div class="customize-settings-box">
-                                    <p>Email Form</p>
+                                    <p>X/Twitter Follow Entry</p>
                                     <div class="customize-settings-dropdown">
                                         <div class="dropdown-display dropdown-counter">
                                             <button id="counterTimeLeft" class="dropdown-counter-btn" data-type="counterTimeLeft">Time Left</button>
@@ -598,7 +598,15 @@
                                     </div>
                                 </div>
                                 <div class="customize-settings-box">
-                                    <p>X Form</p>
+                                    <p>X/Twitter Repost Entry</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-counter">
+                                            <button id="counterTimeLeft" class="dropdown-counter-btn" data-type="counterTimeLeft">Time Left</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>X/Twitter Like Entry</p>
                                     <div class="customize-settings-dropdown">
                                         <div class="dropdown-display dropdown-counter">
                                             <button id="counterTimeLeft" class="dropdown-counter-btn" data-type="counterTimeLeft">Time Left</button>

@@ -39,6 +39,8 @@ document.addEventListener('previewLoaded', () => {
         if(dragElement.id === 'imageBox'){
             newElement.style.width = '400px';
             newElement.style.height = '300px';
+        } else if(dragElement.id === 'entryBox'){
+            newElement.style.width = '400px';
         }
         newElement.innerHTML = htmlToAppend;
 
@@ -62,8 +64,8 @@ document.addEventListener('previewLoaded', () => {
                             <h2 style="white-space: pre-wrap;">Text</h2>
                         </div>
                         <div style="display: none;" class="resize-handle"></div>`;
-            case 'formBox':
-                return `<div style="height: 100%; width: 100%;"data-type="formDetails" class="form-section">
+            case 'entryBox':
+                return `<div style="height: 100%; width: 100%;"data-type="entryDetails" class="entry-section">
                             <form action="/submit-email" method="post">
                                 <input type="email" name="email" placeholder="email...">
                                 <button type="submit">&rarr;</button>

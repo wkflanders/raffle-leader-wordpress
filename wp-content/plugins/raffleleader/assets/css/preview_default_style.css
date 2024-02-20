@@ -184,8 +184,8 @@
 }
 
 .entry-section input[type="email"]{
-    width: 80%;
-    height: 46%;
+    width: 100%;
+    height: 70%;
     border: 1px solid gray;
     border-radius: 10px;
 }
@@ -197,7 +197,7 @@
 }
 
 .entry-section button[type="submit"]{
-    height: 45%;
+    height: 70%;
     width: 12%;
     border-radius: 10px;
     border: none;

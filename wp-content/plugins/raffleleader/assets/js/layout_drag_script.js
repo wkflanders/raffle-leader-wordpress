@@ -41,6 +41,7 @@ document.addEventListener('previewLoaded', () => {
             newElement.style.height = '300px';
         } else if(dragElement.id === 'entryBox'){
             newElement.style.width = '400px';
+            newElement.style.height = '80px';
         }
         newElement.innerHTML = htmlToAppend;
 

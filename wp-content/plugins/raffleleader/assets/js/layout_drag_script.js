@@ -1,6 +1,7 @@
 document.addEventListener('previewLoaded', () => {
     const dropzone = document.getElementById('dropzone');
     const boxes = document.querySelectorAll('.layout-option-box');
+
     let currentDragElement = null;
 
     for (let i = 0; i < boxes.length; i++) {
@@ -35,21 +36,23 @@ document.addEventListener('previewLoaded', () => {
     function handleDrop(mouseX, mouseY, container, dragElement) {
         const htmlToAppend = generateHTML(dragElement.id);
         const newElement = document.createElement('div');
+        const entryFormID = `entry${Math.floor(Math.random() * 1000)}`;
+
         newElement.classList.add('section');
+
         if(dragElement.id === 'imageBox'){
             newElement.style.width = '400px';
             newElement.style.height = '300px';
         } else if(dragElement.id === 'entryBox'){
             newElement.style.width = '400px';
             newElement.style.height = '80px';
+            newElement.id = entryFormID;
         }
-        newElement.innerHTML = htmlToAppend;
 
-        // Append first to get dimensions, then position
+        newElement.innerHTML = htmlToAppend;
         container.appendChild(newElement);
+
         const rect = newElement.getBoundingClientRect();
-        
-        // Adjust position so the center of the element is at the mouse position
         const centerX = mouseX - rect.width / 2;
         const centerY = mouseY - rect.height / 2;
 
@@ -66,7 +69,7 @@ document.addEventListener('previewLoaded', () => {
                         </div>
                         <div style="display: none;" class="resize-handle"></div>`;
             case 'entryBox':
-                return `<div style="height: 100%; width: 100%;"data-type="entryDetails" class="entry-section">
+                return `<div data-type="entryDetails" class="entry-section">
                             <form action="/submit-email" method="post">
                                 <input type="email" name="email" placeholder="email...">
                                 <button type="submit">&rarr;</button>

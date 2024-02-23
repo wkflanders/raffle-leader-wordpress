@@ -314,6 +314,26 @@ input[type="text"].color-input{
     border: 3px solid #1501FE;
 }
 
+.dropdown-additional-entry{
+    border: 1px solid black;
+    background-color: white;
+    text-align: left;
+    padding: 0 0 0 2vh;
+    border-radius: 10px;
+    width: 16vw;
+    height: 5vh;
+    justify-content: flex-start;
+}
+
+.entry-img {
+    width: 7%;
+    vertical-align: middle;
+}
+
+.entry-text{
+    font-size: 2.2vh !important;
+}
+
 .dropdown-image{
     display: flex;
     flex-direction: column;

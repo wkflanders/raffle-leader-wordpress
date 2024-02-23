@@ -590,26 +590,24 @@
                                     <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
                                 </div>
                                 <div class="customize-settings-box">
-                                    <p>X/Twitter Follow Entry</p>
+                                    <p>X/Twitter Entries</p>
                                     <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display dropdown-counter">
-                                            <button id="counterTimeLeft" class="dropdown-counter-btn" data-type="counterTimeLeft">Time Left</button>
+                                        <div id="XFollowEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
+                                            <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/X_logo.svg"> Follow</p>                                        
                                         </div>
                                     </div>
                                 </div>
                                 <div class="customize-settings-box">
-                                    <p>X/Twitter Repost Entry</p>
                                     <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display dropdown-counter">
-                                            <button id="counterTimeLeft" class="dropdown-counter-btn" data-type="counterTimeLeft">Time Left</button>
+                                        <div id="XRepostEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
+                                            <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/X_logo.svg"> Repost</p>                                        
                                         </div>
                                     </div>
                                 </div>
                                 <div class="customize-settings-box">
-                                    <p>X/Twitter Like Entry</p>
                                     <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display dropdown-counter">
-                                            <button id="counterTimeLeft" class="dropdown-counter-btn" data-type="counterTimeLeft">Time Left</button>
+                                        <div id="XLikeEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
+                                            <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/X_logo.svg"> Like</p>                                        
                                         </div>
                                     </div>
                                 </div>

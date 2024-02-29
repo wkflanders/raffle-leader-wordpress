@@ -19,7 +19,7 @@ document.addEventListener("previewLoaded", () => {
   const timezoneDisplay = document.getElementById('timeZoneDropDownTitle');
 
   const urlParams = new URLSearchParams(window.location.search);
-  const postID = urlParams.get("post_id");
+  const raffleID = urlParams.get("raffle_id");
 
   async function savePreview() {
     isLoading = true;
@@ -44,7 +44,7 @@ document.addEventListener("previewLoaded", () => {
         },
         body: new URLSearchParams({
           action: "savePreview",
-          post_id: postID,
+          raffle_id: raffleID,
           content: cleanedHTMLContent,
           start_date: startDate,
           end_date: endDate,

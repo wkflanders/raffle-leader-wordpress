@@ -95,32 +95,33 @@ class BuilderController extends BaseController{
     public function saveTemplate(){
         check_ajax_referer( 'nonce', 'security' );
 
-        $post_id = isset( $_POST['post_id'] ) ? intval( $_POST['post_id'] ) : 0;
+        $raffle_id = isset( $_POST['raffle_id'] ) ? intval( $_POST['raffle_id'] ) : 0;
         $template_id = isset( $_POST['template_id']) ? sanitize_text_field( $_POST['template_id'] ) : '';
 
-        if( $post_id && $template_id ){
-            $this->raffleAPI->updateRaffle($post_id, array( 'template_id' => $template_id ) );
+        if( $raffle_id && $template_id ){
+            $this->raffleAPI->updateRaffle($raffle_id, array( 'template_id' => $template_id ) );
             wp_send_json_success( 'Template choice saved successfully' );
         } else {
             wp_send_json_error( 'Failed to save template choice' );
         }
+        
         wp_die();
     }
 
     public function savePreview(){
         check_ajax_referer( 'nonce', 'security' );
 
-        $post_id = isset( $_POST['post_id'] ) ? intval( $_POST['post_id'] ) : 0;
+        $raffle_id = isset( $_POST['raffle_id'] ) ? intval( $_POST['raffle_id'] ) : 0;
         $content = isset( $_POST['content'] ) ? $_POST['content'] /*wp_kses( $_POST['content'], $this->allowed_html )*/ : '';
         $start_date = isset( $_POST['start_date'] ) ? $_POST['start_date'] : '';
         $end_date = isset( $_POST['end_date'] ) ? $_POST['end_date'] : '';
         $timezone = isset( $_POST['timezone'] ) ? $_POST['timezone'] : '';
 
-        if( $post_id && $content && $start_date && $end_date && $timezone ){
-            $this->raffleAPI->updateRaffle($post_id, array( 'content' => $content ) );
-            $this->raffleAPI->updateRaffle($post_id, array( 'start_date' => $start_date ) );
-            $this->raffleAPI->updateRaffle($post_id, array( 'end_date' => $end_date ) );
-            $this->raffleAPI->updateRaffle($post_id, array( 'timezone' => $timezone ) );
+        if( $raffle_id && $content && $start_date && $end_date && $timezone ){
+            $this->raffleAPI->updateRaffle( $raffle_id, array( 'content' => $content ) );
+            $this->raffleAPI->updateRaffle( $raffle_id, array( 'start_date' => $start_date ) );
+            $this->raffleAPI->updateRaffle( $raffle_id, array( 'end_date' => $end_date ) );
+            $this->raffleAPI->updateRaffle( $raffle_id, array( 'timezone' => $timezone ) );
 
             wp_send_json_success( 'Raffle saved successfully' );
         } else {
@@ -131,10 +132,10 @@ class BuilderController extends BaseController{
     }
 
     public function loadBuilderData(){
-        $post_id = isset( $_GET['post_id'] ) ? intval( $_GET['post_id'] ) : 0;
+        $raffle_id = isset( $_GET['raffle_id'] ) ? intval( $_GET['raffle_id'] ) : 0;
 
-        if( $post_id ){
-            $raffleInstance = $this->raffleAPI->getRaffle($post_id);
+        if( $raffle_id ){
+            $raffleInstance = $this->raffleAPI->getRaffle( $raffle_id );
 
             $template = !is_null( $raffleInstance['template_id'] ) ? $raffleInstance['template_id'] : '';
             $preview_content = !is_null( $raffleInstance['content'] ) ? stripslashes( $raffleInstance['content'] ) : '';
@@ -149,9 +150,11 @@ class BuilderController extends BaseController{
                 'endDate' => $end_date,
                 'timezone' => $timezone,
             );
-            wp_send_json($data);
+            wp_send_json( $data );
         } else {
-            wp_send_json_error('Post ID not provided');
+            wp_send_json_error( 'Raffle ID not provided' );
         }
+
+        wp_die();
     }
 }

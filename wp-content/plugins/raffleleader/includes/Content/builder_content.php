@@ -367,8 +367,8 @@
                     </div>
                 </div>
                 <div id="previewWrapper" class="preview-wrapper" style="display: none;">
-                    <div id="preview" class="preview-box">
-                        <div id="dropzone"></div>
+                    <div id="preview" class="preview-box" style="width: 500px">
+                        <div id="dropzone" style="height: 600px"></div>
                         <div class="footer-wrapper">
                             <div class="footer">
                                 <a class="footer-content">Raffle Rules and Terms</a>

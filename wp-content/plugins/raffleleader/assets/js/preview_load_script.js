@@ -1,6 +1,6 @@
 document.addEventListener('generalSettingsLoaded', ()=>{
     const urlParams = new URLSearchParams(window.location.search);
-    const postId = urlParams.get('post_id');
+    const raffleID = urlParams.get('raffle_id');
     const preview = document.getElementById('preview');
     const loadPreviewEvent = new CustomEvent('previewLoaded');
 
@@ -13,7 +13,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     const endTimeInput = document.getElementById('endTime');
     const timezone = document.getElementById('timeZoneDropDownTitle');
 
-    fetch('/wp-admin/admin-ajax.php?action=loadBuilderData&post_id=' + postId)
+    fetch('/wp-admin/admin-ajax.php?action=loadBuilderData&raffle_id=' + raffleID)
     .then(response => response.json())
     .then(data => {
         loadPreview(data);

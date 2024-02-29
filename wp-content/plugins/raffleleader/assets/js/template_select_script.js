@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', ()=>{
 
     const urlParams = new URLSearchParams(window.location.search);
-    const postId = urlParams.get('post_id');
+    const raffleID = urlParams.get('raffle_id');
     
     const selectBtns = document.querySelectorAll('.select-template');
 
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         selectBtns[i].addEventListener('click', selectTemplate);
     }
 
-    fetch('/wp-admin/admin-ajax.php?action=loadBuilderData&post_id=' + postId)
+    fetch('/wp-admin/admin-ajax.php?action=loadBuilderData&raffle_id=' + raffleID)
     .then(response => response.json())
     .then(data => {
         if(data.template){
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             },
             body: new URLSearchParams({
                 'action': 'saveTemplate',
-                'post_id': postId,
+                'raffle_id': raffleID,
                 'template_id': templateId,
                 'security': raffleleader_template_select_object.security,
             })

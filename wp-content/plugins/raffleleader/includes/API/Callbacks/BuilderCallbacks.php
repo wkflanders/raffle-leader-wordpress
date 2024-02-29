@@ -28,7 +28,7 @@ class BuilderCallbacks extends BaseController{
 
         if( $raffleID > 0 ){
 
-            $redirectUrl = admin_url('admin.php?page=raffleleader_builder&post_id=' . $raffleID);
+            $redirectUrl = admin_url('admin.php?page=raffleleader_builder&raffle_id=' . $raffleID);
 
             echo '<script>window.location.href="' . $redirectUrl . '";</script>';
             
@@ -38,11 +38,11 @@ class BuilderCallbacks extends BaseController{
     }
 
     public function builderContent(){
-        $post_id = isset( $_GET['post_id'] ) ? intval( $_GET['post_id'] ) : 0;
+        $raffle_id = isset( $_GET['raffle_id'] ) ? intval( $_GET['raffle_id'] ) : 0;
 
-        if( $post_id ){
+        if( $raffle_id ){
 
-            $post = get_post( $post_id );
+            $post = get_post( $raffle_id );
 
             if( !$post ){
                 echo 'Post not found';

@@ -20,7 +20,7 @@
                     <td class="title column-title has-row-actions column-primary"><?php echo esc_html($post['name']) ?>
                         <div class="row-actions">
                             <span class="edit">
-                                <a href="<?php echo esc_url(admin_url('admin.php?page=raffleleader_builder&post_id=' . $post['raffle_id'])) ?>" class="edit-post">Edit |</a>
+                                <a href="<?php echo esc_url(admin_url('admin.php?page=raffleleader_builder&raffle_id=' . $post['raffle_id'])) ?>" class="edit-post">Edit |</a>
                             </span>
                             <span class="delete">
                                 <a href="<?php echo esc_url(wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=trash&post=' . $post['raffle_id']), 'trash_post_' . $post['raffle_id'])) ?>" class="trash-post">Trash</a>

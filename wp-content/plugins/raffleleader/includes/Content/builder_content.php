@@ -612,6 +612,90 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="dropdown-wrapper section-design">
+                                <div class="header-box">
+                                    <div class="spacer"></div>
+                                    <h2 class="header-box-title">Section Design</h2>
+                                    <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Button Color</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-color">
+                                            <div id="entryColorGradientButton"></div>
+                                            <div id="entryButtonColorClick" class="dropdown-color-click" data-type="entryButtonColor"></div>
+                                            <input id="entryButtonColorForm" class="color-input" data-type="entryButtonColor" type="text" name="entryButtonColor" placeholder="Enter a hexidecimal">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Background Color</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-color">
+                                            <div id="colorGradientBackground"></div>
+                                            <div id="textBackgroundColorClick" class="dropdown-color-click" data-type="textBackgroundColor"></div>
+                                            <input id="textBackgroundColorForm" class="color-input" data-type="textBackgroundColor" type="text" name="textBackgroundColor" placeholder="Enter a hexidecimal">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Border Stroke</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-multi-input multi-input-stroke">
+                                            <div class="dropdown-row">
+                                                <p>Top</p>
+                                                <input id="borderTopStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" name="textBorderTopStroke" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row">
+                                                <p>Left</p>
+                                                <input id="borderLeftStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" name="textBorderLeftStroke" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row">
+                                                <p>Right</p>
+                                                <input id="borderRightStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" name="textBorderRightStroke" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row">
+                                                <p>Bottom</p>
+                                                <input id="borderBottomStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" name="textBorderBottomStroke" placeholder="Enter a size">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Border Radius</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-multi-input multi-input-radius">
+                                            <div class="dropdown-row row-radius">
+                                                <p>Top-Left Corner</p>
+                                                <input id="borderTopLeftRadius" class="border-radius-input" data-type="textBorderRadius" type="text" name="textBorderTopLeftRadius" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row row-radius">
+                                                <p>Top-Right Corner</p>
+                                                <input id="borderTopRightRadius" class="border-radius-input" data-type="textBorderRadius" type="text" name="textBorderTopRightRadius" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row row-radius">
+                                                <p>Bottom-Left Corner</p>
+                                                <input id="borderBottomLeftRadius" class="border-radius-input" data-type="textBorderRadius" type="text" name="textBorderBottomLeftRadius" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row row-radius">
+                                                <p>Bottom-Right Corner</p>
+                                                <input id="borderBottomRightRadius" class="border-radius-input" data-type="textBorderRadius" type="text" name="textBorderBottomRightRadius" placeholder="Enter a size">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <div class="customize-settings-dropdown">
+                                        <div id="entryDelete" class="dropdown-display delete-display" data-type="entryDelete">
+                                            <span>Delete</span>
+                                        </div>
+                                        <div id="entryConfirmDelete" class="dropdown-display confirm-delete" style="display: none;" data-type="entryDelete">
+                                            <span>Confirm Delete</span>
+                                        </div>
+                                        <p id="entryCancelDelete" class="cancel-delete" style="display: none;" data-type="entryDelete">Cancel</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div id="counterDetails" class="customize-box-content">
                             <div class="dropdown-wrapper">

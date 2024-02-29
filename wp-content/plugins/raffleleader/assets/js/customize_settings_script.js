@@ -46,6 +46,8 @@ document.addEventListener('previewLoaded', ()=>{
     let pickerCounterBackground = undefined;
     let pickrCounterBorder = undefined;
     let pickrImageBorder = undefined;
+    let pickrEntryBtn = undefined;
+    let pickrEntryBackground = undefined;
 
     dropDownBtns.forEach((dropDownBtn)=>{
         dropDownBtn.addEventListener('click', openDropDown);
@@ -382,7 +384,7 @@ document.addEventListener('previewLoaded', ()=>{
                     this.style.backgroundColor = selectedColor;
                     
                     pickColor(selectedColor, elementType, true);
-                })
+                });
                 break;
 
             case 'textBackgroundColor':
@@ -406,7 +408,7 @@ document.addEventListener('previewLoaded', ()=>{
                     this.style.backgroundColor = selectedColor;
                     
                     pickColor(selectedColor, elementType, true);
-                })
+                });
                 break;
             
             case 'textBorderColor':
@@ -430,7 +432,7 @@ document.addEventListener('previewLoaded', ()=>{
                     this.style.backgroundColor = selectedColor;
                     
                     pickColor(selectedColor, elementType, true);
-                })
+                });
                 break;
             
             case 'counterColor':
@@ -454,7 +456,7 @@ document.addEventListener('previewLoaded', ()=>{
                     this.style.backgroundColor = selectedColor;
                     
                     pickColor(selectedColor, elementType, true);
-                })
+                });
                 break;
 
             case 'counterBackgroundColor':
@@ -478,7 +480,7 @@ document.addEventListener('previewLoaded', ()=>{
                     this.style.backgroundColor = selectedColor;
                     
                     pickColor(selectedColor, elementType, true);
-                })
+                });
                 break;
 
             case 'counterBorderColor':
@@ -502,7 +504,7 @@ document.addEventListener('previewLoaded', ()=>{
                     this.style.backgroundColor = selectedColor;
                     
                     pickColor(selectedColor, elementType, true);
-                })
+                });
                 break;
 
             case 'imageBorderColor':
@@ -526,7 +528,31 @@ document.addEventListener('previewLoaded', ()=>{
                     this.style.backgroundColor = selectedColor;
                     
                     pickColor(selectedColor, elementType, true);
-                })
+                });
+                break;
+
+            case 'entryButtonColor':
+                const entryCurrentButtonColor = document.getElementById('entryButtonColorForm').value;
+
+                pickrEntryBtn = Pickr.create({
+                    el: entryColorGradientButton,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: entryCurrentButtonColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrEntryBtn.setColorRepresentation('HEX');
+                pickrEntryBtn.show();
+
+                pickrEntryBtn.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
                 break;
         }
         
@@ -753,6 +779,32 @@ document.addEventListener('previewLoaded', ()=>{
                 counterEditElementBorder.style.borderLeft = `${counterCurrentBorderStrokeLeft} solid ${color}`;
                 counterEditElementBorder.style.borderBottom = `${counterCurrentBorderStrokeBottom} solid ${color}`;
                 counterEditElementBorder.style.borderRight = `${counterCurrentBorderStrokeRight} solid ${color}`;
+                break;
+
+            case 'entryButtonColor':
+                if(fromPickr === false){
+                    if(pickrEntryBtn === undefined){
+                        pickrEntryBtn = Pickr.create({
+                            el: entryColorGradientButton,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrEntryBtn.setColor(color);
+                        const hexBoxClick = document.getElementById('entryButtonColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('entryButtonColorForm');
+                    hexBoxText.value = color;
+                }
+                const entryEditElementButton = document.querySelector('.selected-section').querySelector('button');
+                entryEditElementButton.style.backgroundColor = color;
                 break;
         }
     }
@@ -1260,6 +1312,14 @@ document.addEventListener('previewLoaded', ()=>{
                 imageConfirmBtn.style.display = "flex";
                 imageCancelDelete.style.display = "block";
                 break;
+            
+            case 'entryDelete':
+                const entryConfirmBtn = document.getElementById('entryConfirmDelete');
+                const entryCancelDelete = document.getElementById('entryCancelDelete');
+                deleteBtn.style.display = "none";
+                entryConfirmBtn.style.display = "flex";
+                entryCancelDelete.style.display = "block";
+                break;
         }   
     }
 
@@ -1306,6 +1366,26 @@ document.addEventListener('previewLoaded', ()=>{
                 imageDeleteBtn.style.display = "flex";
                 confirmDelete.style.display = "none";
                 imageCancelDelete.style.display = "none";
+
+                customizeBox.scrollTop = 0;
+                customizeBox.classList.toggle('slide-right-to-left');
+                break;
+
+            case 'entryDelete':
+                const entriesID = selectedSection.id;
+                const additionalEntries = document.querySelectorAll(`[data-entry='${entriesID}']`);
+
+                additionalEntries.forEach((additionalEntry)=>{
+                    additionalEntry.remove();
+                });
+
+                selectedSection.remove();
+
+                const entryDeleteBtn = document.getElementById('entryDelete');
+                const entryCancelDelete = document.getElementById('entryCancelDelete');
+                entryDeleteBtn.style.display = "flex";
+                confirmDelete.style.display = "none";
+                entryCancelDelete.style.display = "none";
 
                 customizeBox.scrollTop = 0;
                 customizeBox.classList.toggle('slide-right-to-left');

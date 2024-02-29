@@ -76,8 +76,6 @@ class Enqueue extends BaseController{
 
         wp_enqueue_script( 'raffleleader_setup_general_settings_script', $this->plugin_url . '/assets/js/setup_general_settings_script.js', array(), rand(111, 9999) );
 
-        wp_enqueue_script( 'raffleleader_entry_drag_script', $this->plugin_url . '/assets/js/entry_drag_script.js', array(), rand(111, 9999) );
-
         wp_enqueue_script( 'raffleleader_preview_save_script', $this->plugin_url . '/assets/js/preview_save_script.js', array(), rand(111, 9999) );
         wp_localize_script( 'raffleleader_preview_save_script', 'raffleleader_preview_save_object', array( 
             'ajax_url' => admin_url( 'admin-ajax.php' ),

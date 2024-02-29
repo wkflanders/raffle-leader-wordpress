@@ -58,6 +58,9 @@ document.addEventListener("previewLoaded", ()=>{
             case 'textDetails':
                 loadTextSettings(element);
                 break;
+            case 'entryDetails':
+                loadEntrySettings(element);
+                break;
             case 'counterDetails':
                 loadCounterSettings(element);
                 break;
@@ -251,6 +254,18 @@ document.addEventListener("previewLoaded", ()=>{
         const textBorderColorHex = rgbToHex(textBorderColorRGB);
         textBorderColorForm.value = textBorderColorHex;
         textBorderHexBox.style.backgroundColor = textBorderColorHex;
+    }
+
+    function loadEntrySettings(element){
+        const entryButtonElement = element.querySelector('button');
+        const entryButtonColorForm = document.getElementById('entryButtonColorForm');
+        
+        //button color
+        const entryButtonHexBox = document.getElementById('entryButtonColorClick');
+        const entryButtonColorRGB = window.getComputedStyle(entryButtonElement).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const entryButtonColorHex = rgbToHex(entryButtonColorRGB);
+        entryButtonColorForm.value = entryButtonColorHex;
+        entryButtonHexBox.style.backgroundColor = entryButtonColorHex;
     }
     
     function loadCounterSettings(element){

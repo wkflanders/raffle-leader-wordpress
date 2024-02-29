@@ -73,7 +73,7 @@ document.addEventListener('previewLoaded', ()=>{
         
             // Apply the adjusted dimensions
             el.style.width = `${Math.max(50, newWidth)}px`;
-            el.style.height = `${Math.max(50, newHeight)}px`;
+            el.style.height = `${Math.max(10, newHeight)}px`;
         }
 
         function stopResize() {

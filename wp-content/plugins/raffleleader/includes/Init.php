@@ -16,6 +16,8 @@ final class Init{
             Pages\Admin::class,
             Base\SettingsLinks::class,
             Base\BuilderController::class,
+            Base\PublishController::class,
+            Base\Enqueue::class,
         ];
     }
 

@@ -9,6 +9,14 @@ use Includes\Base\BaseController;
 
 class Enqueue extends BaseController{
 
+    public function register(){
+        $this->loadFrontEnd();
+    }
+
+    public function loadFrontEnd(){
+        add_action( 'wp_enqueue_scripts', array( $this, 'enqueueFrontEnd' ) );
+    }
+
     public function loadRaffleOverview(){
         add_action( 'admin_enqueue_scripts', array( $this, 'enqueueRaffleOverview' ) );
     }
@@ -28,6 +36,20 @@ class Enqueue extends BaseController{
 
     public function loadInfo(){
         add_action( 'admin_enqueue_scripts', array( $this, 'enqueueInfo' ) );
+    }
+
+    public function enqueueFrontEnd(){
+        global $post;
+        if( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, 'raffleleader' ) ){
+            wp_enqueue_script( 'raffleleader_load_raffle_script', $this->plugin_url . '/assets/js/raffle_load_script.js', array(), rand(111, 9999) );
+            wp_localize_script( 'raffleleader_load_raffle_script', 'raffleleader_load_raffle_object', array( 
+                'ajax_url' => admin_url( 'admin-ajax.php' ),
+                'security' => wp_create_nonce( 'nonce' ),
+             ) );
+            
+            wp_enqueue_style( 'raffleleader_preview_default_style', $this->plugin_url . '/assets/css/preview_default_style.css', array(), rand(111, 9999) );
+
+        }
     }
 
     public function enqueueSettings(){
@@ -51,8 +73,8 @@ class Enqueue extends BaseController{
 
         // Loading JS libraries
         wp_enqueue_script( 'raffleleader_pickr_script', 'https://cdn.jsdelivr.net/npm/@simonwep/pickr@1.8.0/dist/pickr.min.js', array(), rand(111, 9999) );
-        wp_enqueue_script('moment-js', 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js', array(), '2.29.1', true);
-        wp_enqueue_script('moment-timezone-js', 'https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data-1970-2030.min.js', array('moment-js'), '0.5.33', true);
+        wp_enqueue_script( 'moment-js', 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js', array(), '2.29.1', true);
+        wp_enqueue_script( 'moment-timezone-js', 'https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data-1970-2030.min.js', array('moment-js'), '0.5.33', true);
 
         wp_enqueue_script( 'raffleleader_builder_drag_script', $this->plugin_url . '/assets/js/builder_drag_script.js', array(), rand(111, 9999) );
 

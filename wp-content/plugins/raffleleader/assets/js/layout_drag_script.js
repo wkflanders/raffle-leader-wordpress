@@ -51,7 +51,7 @@ document.addEventListener('previewLoaded', () => {
             newElement.style.height = '300px';
         } else if(dragElement.id === 'entryBox'){
             newElement.style.width = '500px';
-            newElement.style.height = '150px';
+            newElement.style.height = '100px';
             newElement.id = entryFormID;
         } else if(dragElement.id === 'XFollowEntry' || dragElement.id === 'XRepostEntry' || dragElement.id === 'XLikeEntry'){
             newElement.style.width = '500px';

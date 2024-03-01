@@ -1146,23 +1146,18 @@ document.addEventListener('previewLoaded', ()=>{
 
         if(duration.days() > 0){
             counterHeader.innerText = `${duration.days()}`;
-            counterHeader.style.paddingTop = '2.5vh';
             counterText.innerText = 'DAYS';
         } else if(duration.hours() > 0) {
             counterHeader.innerText = `${duration.hours()}`;
-            counterHeader.style.paddingTop = '2.5vh';
             counterText.innerText = 'HOURS';
         } else if(duration.minutes() > 0){
             counterHeader.innerText = `${duration.minutes()}`;
-            counterHeader.style.paddingTop = '2.5vh';
             counterText.innerText = 'MINUTES';
         } else if(duration.seconds() > 0){
             counterHeader.innerText = `${duration.seconds()}`;
-            counterHeader.style.paddingTop = '2.5vh';
             counterText.innerText = 'SECONDS';
         } else {
             counterHeader.innerText = `00`;
-            counterHeader.style.paddingTop = '2.5vh';
             counterText.innerText = 'ENDED';
         }
     }
@@ -1185,23 +1180,18 @@ document.addEventListener('previewLoaded', ()=>{
 
         if(duration.days() > 0){
             counterHeader.innerText = `${duration.days()}`;
-            counterHeader.style.paddingTop = '2.5vh';
             counterText.innerText = 'DAYS';
         } else if(duration.hours() > 0) {
             counterHeader.innerText = `${duration.hours()}`;
-            counterHeader.style.paddingTop = '2.5vh';
             counterText.innerText = 'HOURS';
         } else if(duration.minutes() > 0){
             counterHeader.innerText = `${duration.minutes()}`;
-            counterHeader.style.paddingTop = '2.5vh';
             counterText.innerText = 'MINUTES';
         } else if(duration.seconds() > 0){
             counterHeader.innerText = `${duration.seconds()}`;
-            counterHeader.style.paddingTop = '2.5vh';
             counterText.innerText = 'SECONDS';
         } else {
             counterHeader.innerText = `00`;
-            counterHeader.style.paddingTop = '2.5vh';
             counterText.innerText = 'STARTED';
         }
     }

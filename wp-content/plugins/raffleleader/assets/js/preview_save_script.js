@@ -116,8 +116,8 @@ document.addEventListener("previewLoaded", () => {
     const transformRegex = /transform:\s*scale\([^)]*\)/gi;
     const zIndexRegex = /z-index:\s*[^;]+/gi;
 
-    let cleanedHTMLString = htmlString.replace(transformRegex, "transform: scale(1.0);");
-    cleanedHTMLString = cleanedHTMLString.replace(zIndexRegex, 'z-index: 10;');
+    let cleanedHTMLString = htmlString.replace(transformRegex, "transform: scale(1.0)");
+    cleanedHTMLString = cleanedHTMLString.replace(zIndexRegex, 'z-index: 10');
 
     return cleanedHTMLString
   }

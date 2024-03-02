@@ -102,7 +102,7 @@ document.addEventListener('previewLoaded', () => {
                         <div style="display: none;" class="resize-handle"></div>`;
 
             case 'XFollowEntry':
-                return `<div data-type="XFollowEntry" class="additional-entry-section">
+                return `<div data-type="XFollowDetails" class="additional-entry-section">
                             <div class="additional-entry-text-column">
                                 <h2>Follow us on X/Twitter</h2>
                                 <p>for an extra entry!</p>
@@ -114,7 +114,7 @@ document.addEventListener('previewLoaded', () => {
                         <div style="display: none;" class="resize-handle"></div>`
 
             case 'XRepostEntry':
-                return `<div data-type="XRepostEntry" class="additional-entry-section">
+                return `<div data-type="XRepostDetails" class="additional-entry-section">
                             <div class="additional-entry-text-column">
                                 <h2>Repost us on X/Twitter</h2>
                                 <p>for an extra entry!</p>
@@ -126,7 +126,7 @@ document.addEventListener('previewLoaded', () => {
                         <div style="display: none;" class="resize-handle"></div>`
 
             case 'XLikeEntry':
-                return `<div data-type="XLikeEntry" class="additional-entry-section">
+                return `<div data-type="XLikeDetails" class="additional-entry-section">
                             <div class="additional-entry-text-column">
                                 <h2>Like us on X/Twitter</h2>
                                 <p>for an extra entry!</p>

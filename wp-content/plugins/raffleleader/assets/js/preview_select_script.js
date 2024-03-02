@@ -260,12 +260,60 @@ document.addEventListener("previewLoaded", ()=>{
         const entryButtonElement = element.querySelector('button');
         const entryButtonColorForm = document.getElementById('entryButtonColorForm');
         
-        //button color
+        // entry button color
         const entryButtonHexBox = document.getElementById('entryButtonColorClick');
         const entryButtonColorRGB = window.getComputedStyle(entryButtonElement).getPropertyValue('background-color').replace(/^"|"$/g, '');
         const entryButtonColorHex = rgbToHex(entryButtonColorRGB);
         entryButtonColorForm.value = entryButtonColorHex;
         entryButtonHexBox.style.backgroundColor = entryButtonColorHex;
+
+        // entry background color
+        const entryBackgroundColorForm = document.getElementById('entryBackgroundColorForm');
+        const entryBackgroundHexBox = document.getElementById('entryBackgroundColorClick');
+        const entryBackgroundColorRGB = window.getComputedStyle(element).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const entryBackgroundColorHex = rgbToHex(entryBackgroundColorRGB);
+        entryBackgroundColorForm.value = entryBackgroundColorHex;
+        entryBackgroundHexBox.style.backgroundColor = entryBackgroundColorHex;
+
+        // entry border stroke
+        const entryBorderFormTopStroke = document.getElementById('entryBorderTopStroke');
+        const entryBorderFormLeftStroke = document.getElementById('entryBorderLeftStroke');
+        const entryBorderFormBottomStroke = document.getElementById('entryBorderBottomStroke');
+        const entryBorderFormRightStroke = document.getElementById('entryBorderRightStroke');
+
+        const entryBorderStrokeTop = window.getComputedStyle(element).getPropertyValue('border-top-width').replace(/^"|"$/g, '');
+        const entryBorderStrokeLeft = window.getComputedStyle(element).getPropertyValue('border-left-width').replace(/^"|"$/g, '');
+        const entryBorderStrokeBottom = window.getComputedStyle(element).getPropertyValue('border-bottom-width').replace(/^"|"$/g, '');
+        const entryBorderStrokeRight = window.getComputedStyle(element).getPropertyValue('border-right-width').replace(/^"|"$/g, '');
+
+        entryBorderFormTopStroke.value = entryBorderStrokeTop;
+        entryBorderFormLeftStroke.value = entryBorderStrokeLeft;
+        entryBorderFormBottomStroke.value = entryBorderStrokeBottom;
+        entryBorderFormRightStroke.value = entryBorderStrokeRight;
+
+        // entry border radius
+        const entryBorderFormTopLeftRadius = document.getElementById('entryBorderTopLeftRadius');
+        const entryBorderFormTopRightRadius = document.getElementById('entryBorderTopRightRadius');
+        const entryBorderFormBottomLeftRadius = document.getElementById('entryBorderBottomLeftRadius');
+        const entryBorderFormBottomRightRadius = document.getElementById('entryBorderBottomRightRadius');
+
+        const entryBorderRadiusTopLeft = window.getComputedStyle(element).getPropertyValue('border-top-left-radius').replace(/^"|"$/g, '');
+        const entryBorderRadiusTopRight = window.getComputedStyle(element).getPropertyValue('border-top-right-radius').replace(/^"|"$/g, '');
+        const entryBorderRadiusBottomLeft = window.getComputedStyle(element).getPropertyValue('border-bottom-left-radius').replace(/^"|"$/g, '');
+        const entryBorderRadiusBottomRight = window.getComputedStyle(element).getPropertyValue('border-bottom-right-radius').replace(/^"|"$/g, '');
+
+        entryBorderFormTopLeftRadius.value = entryBorderRadiusTopLeft;
+        entryBorderFormTopRightRadius.value = entryBorderRadiusTopRight;
+        entryBorderFormBottomLeftRadius.value = entryBorderRadiusBottomLeft;
+        entryBorderFormBottomRightRadius.value = entryBorderRadiusBottomRight;
+
+        // counter border color
+        const entryBorderColorForm = document.getElementById('entryBorderColorForm');
+        const entryBorderHexBox = document.getElementById('entryBorderColorClick');
+        const entryBorderColorRGB = window.getComputedStyle(element).getPropertyValue('border-color').replace(/^"|"$/g, '');
+        const entryBorderColorHex = rgbToHex(entryBorderColorRGB);
+        entryBorderColorForm.value = entryBorderColorHex;
+        entryBorderHexBox.style.backgroundColor = entryBorderColorRGB;
     }
     
     function loadCounterSettings(element){

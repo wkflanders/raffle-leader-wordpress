@@ -31,6 +31,13 @@
     font-size: 2.6vh;
 }
 
+.dropdown-wrapper-text{
+    color: gray;
+    text-align: center;
+    font-size: 1.8vh;
+    margin-bottom: 0;
+}
+
 .dropdown-btn{
     color: rgb(215, 215, 215);
     cursor: pointer;
@@ -77,8 +84,6 @@
 
 input[type="text"]{
     height: 5.5vh;
-    width: 17vw;
-    padding: 0vw 6vh 0 2vh;
     font-size: 2.5vh;
     border-radius: 10px;
     border: 1px solid black;
@@ -242,42 +247,32 @@ input[type="text"].color-input{
     border: 0;
     display: flex;
     flex-direction: column;
-    width: 13vw;
-    height: 37vh;
-}
-
-.multi-input-stroke{
-    height: 30vh;
-}
-
-.multi-input-radius{
-    width: 16vw;
+    width: 5vw;
+    height: 12vh;
+    margin-left: 2vw;
 }
 
 .dropdown-row{
     display: flex;
     width: 100%;
+    height: 100%;
 }
 
-.dropdown-row > p{
-    font-weight: bold;
-    font-size: 1.3vh;
-    color: gray;
-    width: 1vw;
-    margin-right: 2vw;
-    margin-left: -0.5vw;
+.border-icon{
+    height: 5vh;
+    margin-right: 0.5vw;
 }
 
 .border-stroke-input{
-    width: 13.5vw !important;
+    width: 5vw !important;
+    margin-bottom: 1.5vh;
+    margin-right: 1vw;
 }
 
 .border-radius-input{
-    width: 10vw !important;
-}
-
-.row-radius > p{
-    width: 5vw;
+    width: 5vw !important;
+    margin-bottom: 1.5vh;
+    margin-right: 1vw;
 }
 
 .dropdown-counter{

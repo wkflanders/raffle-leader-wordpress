@@ -11,7 +11,6 @@ document.addEventListener('previewLoaded', ()=>{
     const horizontalOrientBtns = document.querySelectorAll('.horizontal-orient');
     const fonts = document.querySelectorAll('.font-title');
     const colorBtns = document.querySelectorAll('.dropdown-color-click');
-    const colorGradientPanel = document.getElementById('colorGradient');
     const colorForms = document.querySelectorAll('.color-input');
     const fontSizeForms = document.querySelectorAll('.font-size-input');
     const boldBtns = document.querySelectorAll('.bold-btn');
@@ -23,6 +22,7 @@ document.addEventListener('previewLoaded', ()=>{
     
     const borderStrokeForms = document.querySelectorAll('.border-stroke-input');
     const borderRadiusForms = document.querySelectorAll('.border-radius-input');
+    const colorGradientPanel = document.getElementById('colorGradient');
     const colorGradientPanelBorder = document.getElementById('colorGradientBorder');
     const colorGradientPanelBackground = document.getElementById('colorGradientBackground');
     const deleteBtns = document.querySelectorAll('.delete-display');
@@ -48,6 +48,7 @@ document.addEventListener('previewLoaded', ()=>{
     let pickrImageBorder = undefined;
     let pickrEntryBtn = undefined;
     let pickrEntryBackground = undefined;
+    let pickrEntryBorder = undefined;
 
     dropDownBtns.forEach((dropDownBtn)=>{
         dropDownBtn.addEventListener('click', openDropDown);
@@ -554,6 +555,54 @@ document.addEventListener('previewLoaded', ()=>{
                     pickColor(selectedColor, elementType, true);
                 });
                 break;
+
+            case 'entryBackgroundColor':
+                const entryCurrentBackgroundColor = document.getElementById('entryBackgroundColorForm').value;
+
+                pickrEntryBackground = Pickr.create({
+                    el: entryColorGradientBackground,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: entryCurrentBackgroundColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrEntryBackground.setColorRepresentation('HEX');
+                pickrEntryBackground.show();
+
+                pickrEntryBackground.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'entryBorderColor':
+                const entryCurrentBorderColor = document.getElementById('entryBorderColorForm').value;
+
+                pickrEntryBorder = Pickr.create({
+                    el: entryColorGradientBorder,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: entryCurrentBorderColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrEntryBorder.setColorRepresentation('HEX');
+                pickrEntryBorder.show();
+
+                pickrEntryBorder.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
         }
         
     }
@@ -806,6 +855,67 @@ document.addEventListener('previewLoaded', ()=>{
                 const entryEditElementButton = document.querySelector('.selected-section').querySelector('button');
                 entryEditElementButton.style.backgroundColor = color;
                 break;
+
+            case 'entryBackgroundColor':
+                if(fromPickr === false){
+                    if(pickrEntryBackground === undefined){
+                        pickrEntryBackground = Pickr.create({
+                            el: entryColorGradientBackground,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrEntryBackground.setColor(color);
+                        const hexBoxClick = document.getElementById('entryBackgroundColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('entryBackgroundColorForm');
+                    hexBoxText.value = color;
+                }
+                const entryEditElementBackground = document.querySelector('.selected-section').querySelector('.entry-section');
+                entryEditElementBackground.style.backgroundColor = color;
+                break;
+        
+            case 'entryBorderColor':
+                if(fromPickr === false){
+                    if(pickrEntryBorder === undefined){
+                        pickrEntryBorder = Pickr.create({
+                            el: entryColorGradientBorder,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrEntryBorder.setColor(color);
+                        const hexBoxClick = document.getElementById('entryBorderColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('entryBorderColorForm');
+                    hexBoxText.value = color;
+                }
+                const entryEditElementBorder = document.querySelector('.selected-section').querySelector('.entry-section');
+                
+                const entryCurrentBorderStrokeTop = getComputedStyle(entryEditElementBorder).borderTopWidth;
+                const entryCurrentBorderStrokeLeft = getComputedStyle(entryEditElementBorder).borderLeftWidth;
+                const entryCurrentBorderStrokeBottom = getComputedStyle(entryEditElementBorder).borderBottomWidth;
+                const entryCurrentBorderStrokeRight = getComputedStyle(entryEditElementBorder).borderRightWidth;
+
+                entryEditElementBorder.style.borderTop = `${entryCurrentBorderStrokeTop} solid ${color}`;
+                entryEditElementBorder.style.borderLeft = `${entryCurrentBorderStrokeLeft} solid ${color}`;
+                entryEditElementBorder.style.borderBottom = `${entryCurrentBorderStrokeBottom} solid ${color}`;
+                entryEditElementBorder.style.borderRight = `${entryCurrentBorderStrokeRight} solid ${color}`;
+                break;
         }
     }
 
@@ -1001,6 +1111,20 @@ document.addEventListener('previewLoaded', ()=>{
                 if(strokeFormID === 'imageBorderBottomStroke') imageSection.style.borderBottom = `${borderStroke}px solid ${imageCurrentBorderColorBottom}`;
                 if(strokeFormID === 'imageBorderRightStroke') imageSection.style.borderRight = `${borderStroke}px solid ${imageCurrentBorderColorRight}`;
                 break;
+
+            case 'entryBorderStroke':
+                const entrySection = selectedSection.querySelector('.entry-section');
+
+                const entryCurrentBorderColorTop = getComputedStyle(entrySection).borderTopColor;
+                const entryCurrentBorderColorLeft = getComputedStyle(entrySection).borderLeftColor;
+                const entryCurrentBorderColorBottom = getComputedStyle(entrySection).borderBottomColor;
+                const entryCurrentBorderColorRight = getComputedStyle(entrySection).borderRightColor;
+
+                if(strokeFormID === 'entryBorderTopStroke') entrySection.style.borderTop = `${borderStroke}px solid ${entryCurrentBorderColorTop}`;
+                if(strokeFormID === 'entryBorderLeftStroke') entrySection.style.borderLeft = `${borderStroke}px solid ${entryCurrentBorderColorLeft}`;
+                if(strokeFormID === 'entryBorderBottomStroke') entrySection.style.borderBottom = `${borderStroke}px solid ${entryCurrentBorderColorBottom}`;
+                if(strokeFormID === 'entryBorderRightStroke') entrySection.style.borderRight = `${borderStroke}px solid ${entryCurrentBorderColorRight}`;
+                break;
             }
     }
 
@@ -1057,6 +1181,15 @@ document.addEventListener('previewLoaded', ()=>{
                     if(radiusFormID === 'imageBorderBottomLeftRadius') imageSection.style.borderBottomLeftRadius = `${borderRadius}px`;
                     if(radiusFormID === 'imageBorderBottomRightRadius') imageSection.style.borderBottomRightRadius = `${borderRadius}px`;
                 }
+                break;
+
+            case 'entryBorderRadius':
+                const entrySection = selectedSection.querySelector('.entry-section');
+
+                if(radiusFormID === 'entryBorderTopLeftRadius') entrySection.style.borderTopLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'entryBorderTopRightRadius') entrySection.style.borderTopRightRadius = `${borderRadius}px`;
+                if(radiusFormID === 'entryBorderBottomLeftRadius') entrySection.style.borderBottomLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'entryBorderBottomRightRadius') entrySection.style.borderBottomRightRadius = `${borderRadius}px`;
                 break;
         }
     }

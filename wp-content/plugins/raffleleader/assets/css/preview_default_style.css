@@ -59,14 +59,14 @@
 }
 
 .resize-handle{
-    width: 1vh;
-    height: 1vh;
+    width: 1.8vh;
+    height: 1.8vh;
     background-color:white;
     box-sizing: border-box;
-    outline: 3px solid #1501FE;
+    border: 4px solid #1601fe8c;
     position: absolute;
-    bottom: 1px;
-    right: 1px;
+    bottom: -1px;
+    right: -1px;
     cursor: nwse-resize;
 }
 
@@ -115,7 +115,7 @@
 }
 
 .selected-section{
-    outline: 5px solid #1501FE;
+    outline: 6px dashed #1601fe8c;
     outline-offset: -4px;
 }
 
@@ -162,7 +162,7 @@
 
 .counter-section > p{
     font-size: 1.5vh;
-    color: gray;
+    color: black;
     position: absolute;
     bottom: -1vh;
 }
@@ -194,6 +194,8 @@
     box-sizing: border-box;
     width: 100%;
     height: 100%;
+    background-color: white;
+    border: 1px solid black;
 }
 
 .entry-section > form{

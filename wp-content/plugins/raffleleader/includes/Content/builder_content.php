@@ -136,7 +136,7 @@
                             <h2 class="header-box-title">Layout</h2>
                         </div>
                         <div class="layout-options">
-                            <p>Drag & Drop to Add Sections to your Raffle</p>
+                            <p>Drag & drop to add sections to your raffle</p>
                             <div id="textBox" draggable="true" class="layout-option-box">
                                 <p>+ Text Section</p>
                             </div>
@@ -514,24 +514,30 @@
                                     </div>
                                 </div>
                                 <div class="customize-settings-box">
+                                    <p>Border Color</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-color dropdown-border-color">
+                                            <div id="colorGradientBorder"></div>
+                                            <div id="textBorderColorClick" class="dropdown-color-click" data-type="textBorderColor"></div>
+                                            <input id="textBorderColorForm" class="color-input" data-type="textBorderColor" type="text" name="textBorderColor" placeholder="Enter a hexidecimal">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
                                     <p>Border Stroke</p>
                                     <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display dropdown-multi-input multi-input-stroke">
+                                        <div class="dropdown-display dropdown-multi-input">
                                             <div class="dropdown-row">
-                                                <p>Top</p>
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
                                                 <input id="borderTopStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" name="textBorderTopStroke" placeholder="Enter a size">
-                                            </div>
-                                            <div class="dropdown-row">
-                                                <p>Left</p>
-                                                <input id="borderLeftStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" name="textBorderLeftStroke" placeholder="Enter a size">
-                                            </div>
-                                            <div class="dropdown-row">
-                                                <p>Right</p>
-                                                <input id="borderRightStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" name="textBorderRightStroke" placeholder="Enter a size">
-                                            </div>
-                                            <div class="dropdown-row">
-                                                <p>Bottom</p>
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
                                                 <input id="borderBottomStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" name="textBorderBottomStroke" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row">
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                                                <input id="borderLeftStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" name="textBorderLeftStroke" placeholder="Enter a size">
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                                                <input id="borderRightStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" name="textBorderRightStroke" placeholder="Enter a size">
                                             </div>
                                         </div>
                                     </div>
@@ -539,33 +545,19 @@
                                 <div class="customize-settings-box">
                                     <p>Border Radius</p>
                                     <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display dropdown-multi-input multi-input-radius">
+                                        <div class="dropdown-display dropdown-multi-input">
                                             <div class="dropdown-row row-radius">
-                                                <p>Top-Left Corner</p>
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
                                                 <input id="borderTopLeftRadius" class="border-radius-input" data-type="textBorderRadius" type="text" name="textBorderTopLeftRadius" placeholder="Enter a size">
-                                            </div>
-                                            <div class="dropdown-row row-radius">
-                                                <p>Top-Right Corner</p>
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
                                                 <input id="borderTopRightRadius" class="border-radius-input" data-type="textBorderRadius" type="text" name="textBorderTopRightRadius" placeholder="Enter a size">
                                             </div>
                                             <div class="dropdown-row row-radius">
-                                                <p>Bottom-Left Corner</p>
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
                                                 <input id="borderBottomLeftRadius" class="border-radius-input" data-type="textBorderRadius" type="text" name="textBorderBottomLeftRadius" placeholder="Enter a size">
-                                            </div>
-                                            <div class="dropdown-row row-radius">
-                                                <p>Bottom-Right Corner</p>
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
                                                 <input id="borderBottomRightRadius" class="border-radius-input" data-type="textBorderRadius" type="text" name="textBorderBottomRightRadius" placeholder="Enter a size">
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="customize-settings-box">
-                                    <p>Border Color</p>
-                                    <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display dropdown-color dropdown-border-color">
-                                            <div id="colorGradientBorder"></div>
-                                            <div id="textBorderColorClick" class="dropdown-color-click" data-type="textBorderColor"></div>
-                                            <input id="textBorderColorForm" class="color-input" data-type="textBorderColor" type="text" name="textBorderColor" placeholder="Enter a hexidecimal">
                                         </div>
                                     </div>
                                 </div>
@@ -589,6 +581,7 @@
                                     <h2 class="header-box-title">Additional Entries</h2>
                                     <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
                                 </div>
+                                <p class="dropdown-wrapper-text">Drag & drop to add additional entries</p>
                                 <div class="customize-settings-box">
                                     <p>X/Twitter Entries</p>
                                     <div class="customize-settings-dropdown">
@@ -632,31 +625,37 @@
                                     <p>Background Color</p>
                                     <div class="customize-settings-dropdown">
                                         <div class="dropdown-display dropdown-color">
-                                            <div id="colorGradientBackground"></div>
-                                            <div id="textBackgroundColorClick" class="dropdown-color-click" data-type="textBackgroundColor"></div>
-                                            <input id="textBackgroundColorForm" class="color-input" data-type="textBackgroundColor" type="text" name="textBackgroundColor" placeholder="Enter a hexidecimal">
+                                            <div id="entryColorGradientBackground"></div>
+                                            <div id="entryBackgroundColorClick" class="dropdown-color-click" data-type="entryBackgroundColor"></div>
+                                            <input id="entryBackgroundColorForm" class="color-input" data-type="entryBackgroundColor" type="text" name="entryBackgroundColor" placeholder="Enter a hexidecimal">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
+                                    <p>Border Color</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-color">
+                                            <div id="entryColorGradientBorder"></div>
+                                            <div id="entryBorderColorClick" class="dropdown-color-click" data-type="entryBorderColor"></div>
+                                            <input id="entryBorderColorForm" class="color-input" data-type="entryBorderColor" type="text" name="entryBorderColor" placeholder="Enter a hexidecimal">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="customize-settings-box">
                                     <p>Border Stroke</p>
                                     <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display dropdown-multi-input multi-input-stroke">
+                                        <div class="dropdown-display dropdown-multi-input">
                                             <div class="dropdown-row">
-                                                <p>Top</p>
-                                                <input id="borderTopStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" name="textBorderTopStroke" placeholder="Enter a size">
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                                                <input id="entryBorderTopStroke" class="border-stroke-input" data-type="entryBorderStroke" type="text" name="entryBorderTopStroke" placeholder="Enter a size">
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                                                <input id="entryBorderBottomStroke" class="border-stroke-input" data-type="entryBorderStroke" type="text" name="entryBorderBottomStroke" placeholder="Enter a size">
                                             </div>
                                             <div class="dropdown-row">
-                                                <p>Left</p>
-                                                <input id="borderLeftStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" name="textBorderLeftStroke" placeholder="Enter a size">
-                                            </div>
-                                            <div class="dropdown-row">
-                                                <p>Right</p>
-                                                <input id="borderRightStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" name="textBorderRightStroke" placeholder="Enter a size">
-                                            </div>
-                                            <div class="dropdown-row">
-                                                <p>Bottom</p>
-                                                <input id="borderBottomStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" name="textBorderBottomStroke" placeholder="Enter a size">
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                                                <input id="entryBorderLeftStroke" class="border-stroke-input" data-type="entryBorderStroke" type="text" name="entryBorderLeftStroke" placeholder="Enter a size">
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                                                <input id="entryBorderRightStroke" class="border-stroke-input" data-type="entryBorderStroke" type="text" name="entryBorderRightStroke" placeholder="Enter a size">
                                             </div>
                                         </div>
                                     </div>
@@ -664,22 +663,18 @@
                                 <div class="customize-settings-box">
                                     <p>Border Radius</p>
                                     <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display dropdown-multi-input multi-input-radius">
+                                        <div class="dropdown-display dropdown-multi-input">
                                             <div class="dropdown-row row-radius">
-                                                <p>Top-Left Corner</p>
-                                                <input id="borderTopLeftRadius" class="border-radius-input" data-type="textBorderRadius" type="text" name="textBorderTopLeftRadius" placeholder="Enter a size">
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                                                <input id="entryBorderTopLeftRadius" class="border-radius-input" data-type="entryBorderRadius" type="text" name="entryBorderTopLeftRadius" placeholder="Enter a size">
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                                                <input id="entryBorderTopRightRadius" class="border-radius-input" data-type="entryBorderRadius" type="text" name="entryBorderTopRightRadius" placeholder="Enter a size">
                                             </div>
                                             <div class="dropdown-row row-radius">
-                                                <p>Top-Right Corner</p>
-                                                <input id="borderTopRightRadius" class="border-radius-input" data-type="textBorderRadius" type="text" name="textBorderTopRightRadius" placeholder="Enter a size">
-                                            </div>
-                                            <div class="dropdown-row row-radius">
-                                                <p>Bottom-Left Corner</p>
-                                                <input id="borderBottomLeftRadius" class="border-radius-input" data-type="textBorderRadius" type="text" name="textBorderBottomLeftRadius" placeholder="Enter a size">
-                                            </div>
-                                            <div class="dropdown-row row-radius">
-                                                <p>Bottom-Right Corner</p>
-                                                <input id="borderBottomRightRadius" class="border-radius-input" data-type="textBorderRadius" type="text" name="textBorderBottomRightRadius" placeholder="Enter a size">
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                                                <input id="entryBorderBottomLeftRadius" class="border-radius-input" data-type="entryBorderRadius" type="text" name="entryBorderBottomLeftRadius" placeholder="Enter a size">
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                                                <input id="entryBorderBottomRightRadius" class="border-radius-input" data-type="entryBorderRadius" type="text" name="entryBorderBottomRightRadius" placeholder="Enter a size">
                                             </div>
                                         </div>
                                     </div>
@@ -819,24 +814,30 @@
                                     </div>
                                 </div>
                                 <div class="customize-settings-box">
+                                    <p>Border Color</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-color dropdown-border-color">
+                                            <div id="counterColorGradientBorder"></div>
+                                            <div id="counterBorderColorClick" class="dropdown-color-click" data-type="counterBorderColor"></div>
+                                            <input id="counterBorderColorForm" class="color-input" data-type="counterBorderColor" type="text" name="counterBorderColor" placeholder="Enter a hexidecimal">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
                                     <p>Border Stroke</p>
                                     <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display dropdown-multi-input multi-input-stroke">
+                                        <div class="dropdown-display dropdown-multi-input">
                                             <div class="dropdown-row">
-                                                <p>Top</p>
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
                                                 <input id="counterBorderTopStroke" class="border-stroke-input" data-type="counterBorderStroke" type="text" name="counterBorderTopStroke" placeholder="Enter a size">
-                                            </div>
-                                            <div class="dropdown-row">
-                                                <p>Left</p>
-                                                <input id="counterBorderLeftStroke" class="border-stroke-input" data-type="counterBorderStroke" type="text" name="counterBorderLeftStroke" placeholder="Enter a size">
-                                            </div>
-                                            <div class="dropdown-row">
-                                                <p>Right</p>
-                                                <input id="counterBorderRightStroke" class="border-stroke-input" data-type="counterBorderStroke" type="text" name="counterBorderRightStroke" placeholder="Enter a size">
-                                            </div>
-                                            <div class="dropdown-row">
-                                                <p>Bottom</p>
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
                                                 <input id="counterBorderBottomStroke" class="border-stroke-input" data-type="counterBorderStroke" type="text" name="counterBorderBottomStroke" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row">
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                                                <input id="counterBorderLeftStroke" class="border-stroke-input" data-type="counterBorderStroke" type="text" name="counterBorderLeftStroke" placeholder="Enter a size">
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                                                <input id="counterBorderRightStroke" class="border-stroke-input" data-type="counterBorderStroke" type="text" name="counterBorderRightStroke" placeholder="Enter a size">
                                             </div>
                                         </div>
                                     </div>
@@ -844,33 +845,19 @@
                                 <div class="customize-settings-box">
                                     <p>Border Radius</p>
                                     <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display dropdown-multi-input multi-input-radius">
+                                        <div class="dropdown-display dropdown-multi-input">
                                             <div class="dropdown-row row-radius">
-                                                <p>Top-Left Corner</p>
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
                                                 <input id="counterBorderTopLeftRadius" class="border-radius-input" data-type="counterBorderRadius" type="text" name="counterBorderTopLeftRadius" placeholder="Enter a size">
-                                            </div>
-                                            <div class="dropdown-row row-radius">
-                                                <p>Top-Right Corner</p>
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
                                                 <input id="counterBorderTopRightRadius" class="border-radius-input" data-type="counterBorderRadius" type="text" name="counterBorderTopRightRadius" placeholder="Enter a size">
                                             </div>
                                             <div class="dropdown-row row-radius">
-                                                <p>Bottom-Left Corner</p>
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
                                                 <input id="counterBorderBottomLeftRadius" class="border-radius-input" data-type="counterBorderRadius" type="text" name="counterBorderBottomLeftRadius" placeholder="Enter a size">
-                                            </div>
-                                            <div class="dropdown-row row-radius">
-                                                <p>Bottom-Right Corner</p>
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
                                                 <input id="counterBorderBottomRightRadius" class="border-radius-input" data-type="counterBorderRadius" type="text" name="counterBorderBottomRightRadius" placeholder="Enter a size">
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="customize-settings-box">
-                                    <p>Border Color</p>
-                                    <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display dropdown-color dropdown-border-color">
-                                            <div id="counterColorGradientBorder"></div>
-                                            <div id="counterBorderColorClick" class="dropdown-color-click" data-type="counterBorderColor"></div>
-                                            <input id="counterBorderColorForm" class="color-input" data-type="counterBorderColor" type="text" name="counterBorderColor" placeholder="Enter a hexidecimal">
                                         </div>
                                     </div>
                                 </div>
@@ -914,24 +901,30 @@
                                     <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
                                 </div>
                                 <div class="customize-settings-box">
+                                    <p>Border Color</p>
+                                    <div class="customize-settings-dropdown">
+                                        <div class="dropdown-display dropdown-color dropdown-border-color">
+                                            <div id="imageColorGradientBorder"></div>
+                                            <div id="imageBorderColorClick" class="dropdown-color-click" data-type="imageBorderColor"></div>
+                                            <input id="imageBorderColorForm" class="color-input" data-type="imageBorderColor" type="text" name="imageBorderColor" placeholder="Enter a hexidecimal">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="customize-settings-box">
                                     <p>Border Stroke</p>
                                     <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display dropdown-multi-input multi-input-stroke">
+                                        <div class="dropdown-display dropdown-multi-input">
                                             <div class="dropdown-row">
-                                                <p>Top</p>
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
                                                 <input id="imageBorderTopStroke" class="border-stroke-input" data-type="imageBorderStroke" type="text" name="imageBorderTopStroke" placeholder="Enter a size">
-                                            </div>
-                                            <div class="dropdown-row">
-                                                <p>Left</p>
-                                                <input id="imageBorderLeftStroke" class="border-stroke-input" data-type="imageBorderStroke" type="text" name="imageBorderLeftStroke" placeholder="Enter a size">
-                                            </div>
-                                            <div class="dropdown-row">
-                                                <p>Right</p>
-                                                <input id="imageBorderRightStroke" class="border-stroke-input" data-type="imageBorderStroke" type="text" name="imageBorderRightStroke" placeholder="Enter a size">
-                                            </div>
-                                            <div class="dropdown-row">
-                                                <p>Bottom</p>
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
                                                 <input id="imageBorderBottomStroke" class="border-stroke-input" data-type="imageBorderStroke" type="text" name="imageBorderBottomStroke" placeholder="Enter a size">
+                                            </div>
+                                            <div class="dropdown-row">
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                                                <input id="imageBorderLeftStroke" class="border-stroke-input" data-type="imageBorderStroke" type="text" name="imageBorderLeftStroke" placeholder="Enter a size">
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                                                <input id="imageBorderRightStroke" class="border-stroke-input" data-type="imageBorderStroke" type="text" name="imageBorderRightStroke" placeholder="Enter a size">
                                             </div>
                                         </div>
                                     </div>
@@ -939,33 +932,19 @@
                                 <div class="customize-settings-box">
                                     <p>Border Radius</p>
                                     <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display dropdown-multi-input multi-input-radius">
+                                        <div class="dropdown-display dropdown-multi-input">
                                             <div class="dropdown-row row-radius">
-                                                <p>Top-Left Corner</p>
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
                                                 <input id="imageBorderTopLeftRadius" class="border-radius-input" data-type="imageBorderRadius" type="text" name="imageBorderTopLeftRadius" placeholder="Enter a size">
-                                            </div>
-                                            <div class="dropdown-row row-radius">
-                                                <p>Top-Right Corner</p>
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
                                                 <input id="imageBorderTopRightRadius" class="border-radius-input" data-type="imageBorderRadius" type="text" name="imageBorderTopRightRadius" placeholder="Enter a size">
                                             </div>
                                             <div class="dropdown-row row-radius">
-                                                <p>Bottom-Left Corner</p>
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
                                                 <input id="imageBorderBottomLeftRadius" class="border-radius-input" data-type="imageBorderRadius" type="text" name="imageBorderBottomLeftRadius" placeholder="Enter a size">
-                                            </div>
-                                            <div class="dropdown-row row-radius">
-                                                <p>Bottom-Right Corner</p>
+                                                <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
                                                 <input id="imageBorderBottomRightRadius" class="border-radius-input" data-type="imageBorderRadius" type="text" name="imageBorderBottomRightRadius" placeholder="Enter a size">
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="customize-settings-box">
-                                    <p>Border Color</p>
-                                    <div class="customize-settings-dropdown">
-                                        <div class="dropdown-display dropdown-color dropdown-border-color">
-                                            <div id="imageColorGradientBorder"></div>
-                                            <div id="imageBorderColorClick" class="dropdown-color-click" data-type="imageBorderColor"></div>
-                                            <input id="imageBorderColorForm" class="color-input" data-type="imageBorderColor" type="text" name="imageBorderColor" placeholder="Enter a hexidecimal">
                                         </div>
                                     </div>
                                 </div>

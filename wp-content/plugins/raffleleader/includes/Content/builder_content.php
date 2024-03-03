@@ -14,8 +14,8 @@
             <img class="rl-text-logo" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/TEXT-LOGO.svg">
         </div>
         <ul class="rl-nav-tabs">
-            <li><a class="noSelect" href="#templates">Templates</a></li>
-            <li class="active-tab"><a class="noSelect" href="#setup">Set Up</a></li>
+            <li class="active-tab"><a class="noSelect" href="#templates">Templates</a></li>
+            <li><a class="noSelect" href="#setup">Set Up</a></li>
             <li><a class="noSelect" href="#publish">Publish</a></li>
         </ul>
         <ul class="rl-nav-extras">
@@ -26,7 +26,7 @@
     </nav>
     <div class="rl-tab-content">
         <?php require plugin_dir_path( __FILE__ ) . 'templates_content.php'  ?>
-        <div id="setup" class="rl-tab-pane active-tab">
+        <div id="setup" class="rl-tab-pane">
             <div id="setupWrapper" class="rl-setup-wrapper">
                 <div class="raffle-options-wrapper">
                     <div class="raffle-options raffle-layout">
@@ -265,8 +265,8 @@
                     </div>
                 </div>
                 <div id="previewWrapper" class="preview-wrapper" style="display: none;">
-                    <div id="preview" class="preview-box" style="width: 500px">
-                        <div id="dropzone" style="height: 600px"></div>
+                    <div id="preview" class="preview-box preview-reset" style="width: 500px">
+                        <div id="dropzone" class="dropzone" style="height: 600px"></div>
                         <div class="footer-wrapper">
                             <div class="footer">
                                 <a class="footer-content">Raffle Rules and Terms</a>

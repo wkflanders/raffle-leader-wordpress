@@ -20,7 +20,7 @@ class RaffleAPI {
             return -2;
         }
 
-        $wpdb->insert($tableName, $raffleData);
+        $wpdb->insert( $tableName, $raffleData );
         return $wpdb->insert_id;
     }
 

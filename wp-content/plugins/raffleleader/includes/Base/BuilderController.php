@@ -8,23 +8,28 @@ namespace Includes\Base;
 use Includes\API\Callbacks\BuilderCallbacks;
 use Includes\API\RaffleAPI;
 use Includes\API\SettingsAPI;
+use Includes\API\TemplateAPI;
 
 class BuilderController extends BaseController{
 
-    public $raffleAPI;
+    private $raffleAPI;
 
-    public $builderCallbacks;
+    private $templateAPI;
 
-    public $settings;
+    private $builderCallbacks;
 
-    public $subpages = array();
+    private $settings;
 
-    public $allowed_html = array();
+    private $subpages = array();
+
+    private $allowed_html = array();
 
     public function register(){
 
         $this->raffleAPI = new RaffleAPI();
         
+        $this->templateAPI = new TemplateAPI();
+
         $this->builderCallbacks = new BuilderCallbacks();
 
         $this->settings = new SettingsAPI();
@@ -65,7 +70,9 @@ class BuilderController extends BaseController{
 
         $this->settings->addSubPages( $this->subpages )->register();
 
+        add_action( 'wp_ajax_loadTemplates', array( $this, 'loadTemplates' ) );
         add_action( 'wp_ajax_saveTemplate', array( $this, 'saveTemplate' ) );
+        add_action( 'wp_ajax_sendTemplate', array( $this, 'sendTemplate' ) );
         add_action( 'wp_ajax_loadBuilderData', array( $this, 'loadBuilderData' ) );
         add_action( 'wp_ajax_savePreview', array( $this, 'savePreview' ) );
     }
@@ -92,6 +99,20 @@ class BuilderController extends BaseController{
         );
     }
 
+    public function loadTemplates(){
+        check_ajax_referer( 'nonce', 'security' );
+
+        $templatesList = $this->templateAPI->getAllTemplates();
+
+        $data = array(
+            'templates' => $templatesList,
+        );
+        
+        wp_send_json($data);
+
+        wp_die();
+    }
+
     public function saveTemplate(){
         check_ajax_referer( 'nonce', 'security' );
 
@@ -99,10 +120,39 @@ class BuilderController extends BaseController{
         $template_id = isset( $_POST['template_id']) ? sanitize_text_field( $_POST['template_id'] ) : '';
 
         if( $raffle_id && $template_id ){
-            $this->raffleAPI->updateRaffle($raffle_id, array( 'template_id' => $template_id ) );
+            $this->raffleAPI->updateRaffle( $raffle_id, array( 'template_id' => $template_id ) );
             wp_send_json_success( 'Template choice saved successfully' );
         } else {
             wp_send_json_error( 'Failed to save template choice' );
+        }
+        
+        wp_die();
+    }
+
+    public function sendTemplate(){
+        check_ajax_referer( 'nonce', 'security' );
+
+        $raffle_id = isset( $_GET['raffle_id'] ) ? intval( $_GET['raffle_id'] ) : 0;
+        
+        if( $raffle_id ){
+            $raffleInstance = $this->raffleAPI->getRaffle( $raffle_id );
+        
+            $template_id = !is_null( $raffleInstance['template_id'] ) ? $raffleInstance['content'] : '';
+
+            if( $template_id ){
+                $templateInstance = $this->templateAPI->getTemplate( $template_id );
+                $template_content = !is_null( $templateInstance['content'] ) ? stripslashes( $templateInstance['content'] ) : '';
+                
+                $data = array(
+                    'template_id' => $template_id,
+                    'template_content' => $template_content,
+                );
+                wp_send_json( $data );
+            } else {
+                wp_send_json_error( 'Failed getting template: Template not selected or no ID provided' );
+            }
+        } else {
+            wp_send_json_error( 'Raffle ID not provided' );
         }
         
         wp_die();
@@ -137,14 +187,12 @@ class BuilderController extends BaseController{
         if( $raffle_id ){
             $raffleInstance = $this->raffleAPI->getRaffle( $raffle_id );
 
-            $template = !is_null( $raffleInstance['template_id'] ) ? $raffleInstance['template_id'] : '';
             $preview_content = !is_null( $raffleInstance['content'] ) ? stripslashes( $raffleInstance['content'] ) : '';
             $start_date = !is_null( $raffleInstance['start_date'] ) ? $raffleInstance['start_date'] : '';
             $end_date = !is_null( $raffleInstance['end_date'] ) ? $raffleInstance['end_date'] : '';
             $timezone = !is_null( $raffleInstance['timezone'] ) ? $raffleInstance['timezone'] : '';
             
             $data = array(
-                'template' => $template,
                 'content' => $preview_content,
                 'startDate' => $start_date,
                 'endDate' => $end_date,

@@ -8,7 +8,7 @@ use Includes\API\RaffleAPI;
 
 class PublishController extends BaseController{
 
-    public $raffleAPI;
+    private $raffleAPI;
 
     public function register(){
         $this->raffleAPI = new RaffleAPI();

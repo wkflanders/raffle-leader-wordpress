@@ -9,7 +9,7 @@
             <p>Save was not completed successfully</p>
         </div>
     </div>
-    <nav class="rl-navbar">
+    <nav id="rlNavbar" class="rl-navbar">
         <div class="rl-nav-logo">
             <img class="rl-text-logo" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/TEXT-LOGO.svg">
         </div>
@@ -270,7 +270,6 @@
                         <div class="footer-wrapper">
                             <div class="footer">
                                 <a class="footer-content">Raffle Rules and Terms</a>
-                                <img id="footer-logo" class="footer-content footer-logo" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/footer_logo.svg">
                                 <a class="footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="footer-text-logo" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/footer_text_logo.svg"> For Yourself!</a>
                             </div>
                         </div>

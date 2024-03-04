@@ -30,9 +30,8 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         if(raffleData.content){
             const HTMLContent = raffleData.content;
             preview.outerHTML = HTMLContent;
+            document.dispatchEvent(loadPreviewEvent);
         }
-
-        document.dispatchEvent(loadPreviewEvent);
 
         // Load preview height and width
         const dropzone = document.getElementById('dropzone');

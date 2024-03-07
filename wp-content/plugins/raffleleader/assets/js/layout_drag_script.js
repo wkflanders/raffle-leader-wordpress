@@ -54,6 +54,8 @@ document.addEventListener('previewLoaded', () => {
 
         newElement.classList.add('raffleleader-section');
 
+        newElement.innerHTML = htmlToAppend;
+
         if(dragElement.id === 'imageBox'){
             newElement.style.width = '400px';
             newElement.style.height = '300px';
@@ -61,13 +63,15 @@ document.addEventListener('previewLoaded', () => {
             newElement.style.width = '500px';
             newElement.style.height = '100px';
             newElement.id = entryFormID;
+            newElement.querySelector('button').addEventListener('click', (event)=>{
+                event.preventDefault();
+            });
         } else if(dragElement.id === 'XFollowEntry' || dragElement.id === 'XRepostEntry' || dragElement.id === 'XLikeEntry'){
             newElement.style.width = '500px';
             newElement.style.height = '75px';
             newElement.setAttribute('data-entry', dropzone.querySelector('.selected-raffleleader-section').id);
         }
 
-        newElement.innerHTML = htmlToAppend;
         container.appendChild(newElement);
 
         const rect = newElement.getBoundingClientRect();
@@ -92,7 +96,7 @@ document.addEventListener('previewLoaded', () => {
                 return `<div data-type="entryDetails" class="raffleleader-entry-section">
                             <form action="/submit-email" method="post">
                                 <input type="email" name="email" placeholder="email...">
-                                <button type="submit">&rarr;</button>
+                                <button class="raffleleader-entry-submit-btn" type="submit">&rarr;</button>
                             </form>
                         </div>
                         <div style="display: none;" class="raffleleader-resize-handle"></div>`;

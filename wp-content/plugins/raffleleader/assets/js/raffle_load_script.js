@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const raffleContainer = document.getElementById('raffleleader-raffle-container');
     const raffleID = raffleContainer.getAttribute('data-raffle-id');
 
+    const raffleLoaded = new CustomEvent('raffleLoaded');
+
     if(raffleID){
         fetch(raffleleader_load_raffle_object.ajax_url + '?action=loadRaffleData&raffle_id=' + raffleID + '&security=' + encodeURIComponent(raffleleader_load_raffle_object.security))
         .then(response => {
@@ -27,8 +29,15 @@ document.addEventListener('DOMContentLoaded', ()=>{
             const HTMLContent = raffleData.content;
             raffleContainer.innerHTML = HTMLContent;
 
-            const preview = raffleContainer.querySelector('.preview-box');
+            const preview = raffleContainer.querySelector('.raffleleader-preview-box');
             preview.style.position = "static";
+
+            const sections = preview.querySelectorAll('.raffleleader-section');
+            sections.forEach((section)=>{
+                section.style.position = null;
+            });
+
+            document.dispatchEvent(raffleLoaded);
         }
     }
 

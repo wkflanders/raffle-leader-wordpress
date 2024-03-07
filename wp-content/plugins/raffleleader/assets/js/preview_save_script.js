@@ -1,4 +1,4 @@
-document.addEventListener("previewLoaded", () => {
+document.addEventListener("generalSettingsLoaded", () => {
   // State variables
   let isLoading = false;
   let selectedSection = null;
@@ -11,7 +11,6 @@ document.addEventListener("previewLoaded", () => {
   const successModal = saveModal.querySelector(".success-modal-content");
   const failModal = saveModal.querySelector(".fail-modal-content");
 
-  const preview = document.getElementById("preview");
   const endDateInput = document.getElementById('endDate');
   const endTimeInput = document.getElementById('endTime');
   const startDateInput = document.getElementById('startDate');
@@ -24,6 +23,7 @@ document.addEventListener("previewLoaded", () => {
   async function savePreview() {
     isLoading = true;
     updateUI();
+    const preview = document.getElementById("preview");
     const HTMLContent = preview.outerHTML;
     const cleanedHTMLContent = cleanHTML(HTMLContent);
 
@@ -54,15 +54,12 @@ document.addEventListener("previewLoaded", () => {
       });
       const data = await response.json();
 
-      console.log(data);
-
       if(!data.success){
         throw new Error(`$HTTP error: ${response.status}`);
       }
 
     } catch (error) {
       isSuccess = false;
-      console.log(isSuccess);
       console.error("Fetch error", error);
 
     } finally {
@@ -72,18 +69,18 @@ document.addEventListener("previewLoaded", () => {
   }
 
   function updateUI() {
-    const selectedSectionList = document.querySelectorAll(".selected-section");
+    const selectedSectionList = document.querySelectorAll(".selected-raffleleader-section");
     
     if (selectedSectionList.length > 0) {
-      selectedSection = document.querySelector(".selected-section");
-      resizeHandle = selectedSection.querySelector(".resize-handle");
+      selectedSection = document.querySelector(".selected-raffleleader-section");
+      resizeHandle = selectedSection.querySelector(".raffleleader-resize-handle");
     }
 
     if (isLoading) {
       saveBtn.innerHTML =
         '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>';
       if (selectedSection) {
-        selectedSection.classList.remove("selected-section");
+        selectedSection.classList.remove("selected-raffleleader-section");
         resizeHandle.style.display = "none";
       }
     } else {
@@ -106,7 +103,7 @@ document.addEventListener("previewLoaded", () => {
       }, 5000);
 
       if (selectedSection) {
-        selectedSection.classList.add("selected-section");
+        selectedSection.classList.add("selected-raffleleader-section");
         resizeHandle.style.display = "block";
       }
     }

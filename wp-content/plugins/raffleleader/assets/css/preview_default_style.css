@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
 
-.preview-wrapper{
+.raffleleader-preview-wrapper{
     width: 175vw;
     height: 300vh;
     position: fixed;
@@ -12,7 +12,7 @@
     overflow: hidden;
 }
 
-.preview-reset * {
+.raffleleader-preview-reset * {
     margin: 0;
     padding: 0;
     border: 0;
@@ -22,7 +22,7 @@
     box-sizing: border-box; /* Ensures padding and border are included in the element's size */
 }
 
-.preview-box{
+.raffleleader-preview-box{
     display: flex;
     flex-wrap: wrap;
     position: absolute;
@@ -38,18 +38,18 @@
     font-family: 'Overpass';
 }
 
-.preview-box p {
+.raffleleader-preview-box p {
     color: gray;
     font-size: 1.3vh;
 }
 
-.preview-box h2 {
+.raffleleader-preview-box h2 {
     color: black;
     font-size: 2vh;
     font-weight: bold;
 }
 
-.dropzone{
+.raffleleader-dropzone{
     display: flex;
     /* flex-direction: column; */
     flex-wrap: wrap;
@@ -59,7 +59,7 @@
     width: 100%;
 }
 
-.section{
+.raffleleader-section{
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -68,7 +68,7 @@
     overflow: hidden;
 }
 
-.resize-handle{
+.raffleleader-resize-handle{
     width: 1.8vh;
     height: 1.8vh;
     background-color:white;
@@ -80,14 +80,14 @@
     cursor: nwse-resize;
 }
 
-.footer-wrapper{
+.raffleleader-footer-wrapper{
     height: 7vh;
     width: 100%;
     border-top: 1px solid black;
     overflow: none;
 }
 
-.footer{
+.raffleleader-footer{
     margin-top: 3vh;
     justify-content: center;
     display: flex;
@@ -95,7 +95,7 @@
     width: 100%;
 }
 
-.footer-content{
+.raffleleader-footer-content{
     color:black;
     text-decoration: none;
     font-weight: bold;
@@ -103,17 +103,17 @@
     line-height: 2vh;
 }
 
-.footer-content:hover{
+.raffleleader-footer-content:hover{
     color: black;
     cursor: pointer;
 }
 
-.footer-logo{
+.raffleleader-footer-logo{
     margin-left: 0.6vw;
     margin-right: 0.6vw;
 }
 
-.footer-text-logo{
+.raffleleader-footer-text-logo{
     vertical-align: middle;
     margin-left: 0.1vw;
     margin-right: 0.1vw;
@@ -128,12 +128,12 @@
     color: #1501FE;
 }
 
-.selected-section{
+.selected-raffleleader-section{
     outline: 2px dashed #1601feba;
     outline-offset: -4px;
 }
 
-.text-section{
+.raffleleader-text-section{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -145,7 +145,7 @@
     /* border: 1px solid black; */
 }
 
-.text-section > h2 {
+.raffleleader-text-section > h2 {
     color: black;
     font-size: 30px;
     padding: 1vh 1vh 1vh 1vh;
@@ -155,7 +155,7 @@
     line-height: 2vh;
 }
 
-.counter-section{
+.raffleleader-counter-section{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -167,21 +167,21 @@
     /* border: 1px solid black; */
 }
 
-.counter-section > h2{
+.raffleleader-counter-section > h2{
     margin: 0;
     font-size: 60px;
     letter-spacing: 1px;
     line-height: 18px;
 }
 
-.counter-section > p{
+.raffleleader-counter-section > p{
     font-size: 1.5vh;
     color: black;
     position: absolute;
-    bottom: -1.8vh;
+    bottom: 0vh;
 }
 
-.image-section{
+.raffleleader-image-section{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -192,18 +192,18 @@
     background-color: white;
 }
 
-.image-section > p{
+.raffleleader-image-section > p{
     font-size: 2.5vh;
     color: darkgray;
     font-weight: bold;
 }
 
-.image-section > img{
+.raffleleader-image-section > img{
     height: 100%;
     width: 100%;
 }
 
-.entry-section{
+.raffleleader-entry-section{
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
@@ -213,7 +213,7 @@
     /* border: 1px solid black; */
 }
 
-.entry-section > form{
+.raffleleader-entry-section > form{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -221,7 +221,7 @@
     height: 100%;
 }
 
-.entry-section input[type="email"]{
+.raffleleader-entry-section input[type="email"]{
     width: 95%;
     height: 60%;
     border: 1px solid gray;
@@ -229,17 +229,17 @@
     cursor: horizontal-text;
 }
 
-.entry-section input[type="email"]:hover{
+.raffleleader-entry-section input[type="email"]:hover{
     cursor: horizontal-text;
 }
 
-.entry-section input[type="email"]::placeholder{
+.raffleleader-entry-section input[type="email"]::placeholder{
     font-size: 140%;
     color: rgb(176, 176, 176);
     font-weight: 500;
 }
 
-.entry-section button[type="submit"]{
+.raffleleader-entry-section button[type="submit"]{
     height: 62%;
     width: 12%;
     border-radius: 10px;
@@ -251,19 +251,19 @@
     font-size: 2.5vh;
 }
 
-.entry-section button[type="submit"]:hover{
+.raffleleader-entry-section button[type="submit"]:hover{
     background-color:#1200dd; 
     color: rgb(226, 226, 226);
     cursor: pointer;
 }
 
-.entry-section button[type="submit"]:active{
+.raffleleader-entry-section button[type="submit"]:active{
     background-color: #1501FE;
     color: white;
     cursor: pointer;
 }
 
-.additional-entry-section{
+.raffleleader-additional-entry-section{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -276,30 +276,30 @@
     /* border: 1px solid black; */
 }
 
-.additional-entry-text-column{
+.raffleleader-additional-entry-text-column{
     width: 50%;
 }
 
-.additional-entry-text-column > h2{
+.raffleleader-additional-entry-text-column > h2{
     font-size: 2vh;
     padding: 0;
     margin: 0.5vh 0 0 0;
 }
 
-.additional-entry-text-column > p{
+.raffleleader-additional-entry-text-column > p{
     padding: 0;
     margin: 0.1vh 0 0 0;
 }
 
 
-.additional-entry-button-column{
+.raffleleader-additional-entry-button-column{
     display: flex;
     justify-content: center;
     width: 10%;
     height: 4.5vh;
 }
 
-.additional-entry-button-column > button{
+.raffleleader-additional-entry-button-column > button{
     color: white;
     background-color: #1501FE;
     border: none;
@@ -308,12 +308,12 @@
     font-size: 1.6vh;
 }
 
-.additional-entry-button-column > button:hover{
+.raffleleader-additional-entry-button-column > button:hover{
     background-color: #1200dd;
     cursor: pointer;
 }
 
-.additional-entry-button-column > button:active{
+.raffleleader-additional-entry-button-column > button:active{
     background-color: #1501FE;
     cursor: default;
 }

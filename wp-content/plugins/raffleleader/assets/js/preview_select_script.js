@@ -8,31 +8,32 @@ document.addEventListener("previewLoaded", ()=>{
         if(event.button === 0){
 
             let selectedSection = event.target;
-            const currentSection = document.querySelector('.selected-section');
+            const currentSection = document.querySelector('.selected-raffleleader-section');
 
-            if(selectedSection.classList.contains('footer') || selectedSection.classList.contains('footer-wrapper') || selectedSection.classList.contains('footer-content') || selectedSection.id === 'dropzone'){
+            if(selectedSection.classList.contains('raffleleader-footer') || selectedSection.classList.contains('raffleleader-footer-wrapper') || selectedSection.classList.contains('raffleleader-footer-content') || selectedSection.id === 'raffleleader-dropzone'){
                 return;
             }
 
             while(selectedSection != dropzone){
-                if(selectedSection.classList.contains('section')){
+                if(selectedSection.classList.contains('raffleleader-section')){
                     try{
-                        currentSection.classList.remove('selected-section');
-                        currentSection.querySelector('.resize-handle').style.display = 'none';
+                        currentSection.classList.remove('selected-raffleleader-section');
+                        currentSection.querySelector('.raffleleader-resize-handle').style.display = 'none';
                     } catch {}
-                    selectedSection.classList.add('selected-section');
-                    selectedSection.querySelector('.resize-handle').style.display = 'block';
+                    selectedSection.classList.add('selected-raffleleader-section');
+                    selectedSection.querySelector('.raffleleader-resize-handle').style.display = 'block';
                     break;
                 }
                 selectedSection = selectedSection.parentElement;
             }
+            if(selectedSection != dropzone){
+                const selectedElement = selectedSection.firstChild;
+                const elementType = selectedElement.getAttribute('data-type');
 
-            const selectedElement = selectedSection.firstChild;
-            const elementType = selectedElement.getAttribute('data-type');
+                loadCustomizeSettings(selectedElement, elementType);
 
-            loadCustomizeSettings(selectedElement, elementType);
-
-            openEditingBox(elementType);
+                openEditingBox(elementType);
+            }
         }
     })
 
@@ -486,12 +487,12 @@ document.addEventListener("previewLoaded", ()=>{
     }
 
     document.addEventListener("keydown", ({key}) => {
-        const currentElement = document.querySelector('.selected-section');
+        const currentElement = document.querySelector('.selected-raffleleader-section');
 
         if(key === "Escape"){
             try{
-                currentElement.classList.remove('selected-section');
-                currentElement.querySelector('.resize-handle').style.display = 'none';
+                currentElement.classList.remove('selected-raffleleader-section');
+                currentElement.querySelector('.raffleleader-resize-handle').style.display = 'none';
                 if(customizeBox.classList.contains('slide-right-to-left')){
                     customizeBox.classList.toggle('slide-right-to-left');
                 }

@@ -1,4 +1,4 @@
-document.addEventListener('previewLoaded', ()=>{
+document.addEventListener('generalSettingsLoaded', ()=>{
     const dropDownBtns = document.querySelectorAll('.dropdown-btn');
     const textForms = document.querySelectorAll('.text-input');
     const leftAlignBtns = document.querySelectorAll('.align-left');
@@ -198,7 +198,7 @@ document.addEventListener('previewLoaded', ()=>{
         event.preventDefault();
         const inputTextForm = event.target;
         const elementType = inputTextForm.getAttribute('data-type');
-        const selectedSection = document.querySelector('.selected-section');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
 
         switch(elementType){
             case 'editText':
@@ -210,11 +210,11 @@ document.addEventListener('previewLoaded', ()=>{
     function alignTextLeft(event){
         const inputLeftBtn = event.target;
         const elementType = inputLeftBtn.getAttribute('data-type');
-        const selectedSection = document.querySelector('.selected-section');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
 
         switch(elementType){
             case 'textAlign':
-                selectedElement = selectedSection.querySelector('.text-section');
+                selectedElement = selectedSection.querySelector('.raffleleader-text-section');
                 selectedElement.style.justifyContent = 'left';
 
                 document.querySelector('.inline-btn-halign-active').classList.remove('inline-btn-halign-active');;
@@ -225,11 +225,11 @@ document.addEventListener('previewLoaded', ()=>{
     function alignTextRight(event){
         const inputRightBtn = event.target;
         const elementType = inputRightBtn.getAttribute('data-type');
-        const selectedSection = document.querySelector('.selected-section');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
 
         switch(elementType){
             case 'textAlign':
-                selectedElement = selectedSection.querySelector('.text-section');
+                selectedElement = selectedSection.querySelector('.raffleleader-text-section');
                 selectedElement.style.justifyContent = 'right';
 
                 document.querySelector('.inline-btn-halign-active').classList.remove('inline-btn-halign-active');;
@@ -240,11 +240,11 @@ document.addEventListener('previewLoaded', ()=>{
     function alignTextCenter(event){
         const inputCenterBtn = event.target;
         const elementType = inputCenterBtn.getAttribute('data-type');
-        const selectedSection = document.querySelector('.selected-section');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
 
         switch(elementType){
             case 'textAlign':
-                selectedElement = selectedSection.querySelector('.text-section');
+                selectedElement = selectedSection.querySelector('.raffleleader-text-section');
                 selectedElement.style.justifyContent = 'center';
 
                 document.querySelector('.inline-btn-halign-active').classList.remove('inline-btn-halign-active');;
@@ -255,11 +255,11 @@ document.addEventListener('previewLoaded', ()=>{
     function alignTextTop(event){
         const inputerTopBtn = event.target;
         const elementType = inputerTopBtn.getAttribute('data-type');
-        const selectedSection = document.querySelector('.selected-section');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
 
         switch(elementType){
             case 'textVert':
-                selectedElement = selectedSection.querySelector('.text-section');
+                selectedElement = selectedSection.querySelector('.raffleleader-text-section');
                 selectedElement.style.alignItems = 'start';
 
                 document.querySelector('.inline-btn-valign-active').classList.remove('inline-btn-valign-active');;
@@ -270,11 +270,11 @@ document.addEventListener('previewLoaded', ()=>{
     function alignTextMiddle(event){
         const inputMiddleBtn = event.target;
         const elementType = inputMiddleBtn.getAttribute('data-type');
-        const selectedSection = document.querySelector('.selected-section');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
 
         switch(elementType){
             case 'textVert':
-                selectedElement = selectedSection.querySelector('.text-section');
+                selectedElement = selectedSection.querySelector('.raffleleader-text-section');
                 selectedElement.style.alignItems = 'center';
 
                 document.querySelector('.inline-btn-valign-active').classList.remove('inline-btn-valign-active');;
@@ -285,11 +285,11 @@ document.addEventListener('previewLoaded', ()=>{
     function alignTextBottom(event){
         const inputBottomBtn = event.target;
         const elementType = inputBottomBtn.getAttribute('data-type');
-        const selectedSection = document.querySelector('.selected-section');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
 
         switch(elementType){
             case 'textVert':
-                selectedElement = selectedSection.querySelector('.text-section');
+                selectedElement = selectedSection.querySelector('.raffleleader-text-section');
                 selectedElement.style.alignItems = 'end';
 
                 document.querySelector('.inline-btn-valign-active').classList.remove('inline-btn-valign-active');;
@@ -300,11 +300,11 @@ document.addEventListener('previewLoaded', ()=>{
     function orientTextHorizontal(event){
         const inputHBtn = event.target;
         const elementType = inputHBtn.getAttribute('data-type');
-        const selectedSection = document.querySelector('.selected-section');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
 
         switch(elementType){
             case 'textOrient':
-                selectedElement = selectedSection.querySelector('.text-section');
+                selectedElement = selectedSection.querySelector('.raffleleader-text-section');
                 selectedElement.style.writingMode = 'horizontal-tb';
                 selectedElement.style.textOrientation = 'upright';
 
@@ -316,11 +316,11 @@ document.addEventListener('previewLoaded', ()=>{
     function orientTextVertical(event){
         const inputVBtn = event.target;
         const elementType = inputVBtn.getAttribute('data-type');
-        const selectedSection = document.querySelector('.selected-section');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
 
         switch(elementType){
             case 'textOrient':
-                selectedElement = selectedSection.querySelector('.text-section');
+                selectedElement = selectedSection.querySelector('.raffleleader-text-section');
                 selectedElement.style.writingMode = 'vertical-rl';
                 selectedElement.style.textOrientation = 'upright';
 
@@ -333,7 +333,7 @@ document.addEventListener('previewLoaded', ()=>{
         const inputFontElement = event.target;
         const fontName = inputFontElement.innerText;
         const elementType = inputFontElement.getAttribute('data-type');
-        const selectedSection = document.querySelector('.selected-section');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
 
         switch(elementType){
             case 'textFont':
@@ -641,7 +641,7 @@ document.addEventListener('previewLoaded', ()=>{
                     const hexBoxText = document.getElementById('textFontColorForm');
                     hexBoxText.value = color;
                 }
-                const editElementFont = document.querySelector('.selected-section').querySelector('h2');
+                const editElementFont = document.querySelector('.selected-raffleleader-section').querySelector('h2');
                 editElementFont.style.color = color;
                 break;
                 
@@ -667,7 +667,7 @@ document.addEventListener('previewLoaded', ()=>{
                     const hexBoxText = document.getElementById('textBackgroundColorForm');
                     hexBoxText.value = color;
                 }
-                const editElementBackground = document.querySelector('.selected-section').querySelector('.text-section');
+                const editElementBackground = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-text-section');
                 editElementBackground.style.backgroundColor = color;
                 break;
 
@@ -693,7 +693,7 @@ document.addEventListener('previewLoaded', ()=>{
                     const hexBoxText = document.getElementById('textBorderColorForm');
                     hexBoxText.value = color;
                 }
-                const editElementBorder = document.querySelector('.selected-section').querySelector('.text-section');
+                const editElementBorder = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-text-section');
                 
                 const currentBorderStrokeTop = getComputedStyle(editElementBorder).borderTopWidth;
                 const currentBorderStrokeLeft = getComputedStyle(editElementBorder).borderLeftWidth;
@@ -728,8 +728,8 @@ document.addEventListener('previewLoaded', ()=>{
                     const hexBoxText = document.getElementById('counterFontColorForm');
                     hexBoxText.value = color;
                 }
-                const counterEditElementFonth2 = document.querySelector('.selected-section').querySelector('h2');
-                const counterEditElementFontp = document.querySelector('.selected-section').querySelector('p');
+                const counterEditElementFonth2 = document.querySelector('.selected-raffleleader-section').querySelector('h2');
+                const counterEditElementFontp = document.querySelector('.selected-raffleleader-section').querySelector('p');
                 counterEditElementFonth2.style.color = color;
                 counterEditElementFontp.style.color = color;
                 break;
@@ -756,7 +756,7 @@ document.addEventListener('previewLoaded', ()=>{
                     const hexBoxText = document.getElementById('counterBackgroundColorForm');
                     hexBoxText.value = color;
                 }
-                const counterEditElementBackground = document.querySelector('.selected-section').querySelector('.counter-section');
+                const counterEditElementBackground = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-counter-section');
                 counterEditElementBackground.style.backgroundColor = color;
                 break;
 
@@ -782,7 +782,7 @@ document.addEventListener('previewLoaded', ()=>{
                     const hexBoxText = document.getElementById('imageBorderColorForm');
                     hexBoxText.value = color;
                 }
-                const imageEditElementBorder = document.querySelector('.selected-section').querySelector('.image-section');
+                const imageEditElementBorder = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-image-section');
                 
                 const imageCurrentBorderStrokeTop = getComputedStyle(imageEditElementBorder).borderTopWidth;
                 const imageCurrentBorderStrokeLeft = getComputedStyle(imageEditElementBorder).borderLeftWidth;
@@ -817,7 +817,7 @@ document.addEventListener('previewLoaded', ()=>{
                     const hexBoxText = document.getElementById('counterBorderColorForm');
                     hexBoxText.value = color;
                 }
-                const counterEditElementBorder = document.querySelector('.selected-section').querySelector('.counter-section');
+                const counterEditElementBorder = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-counter-section');
                 
                 const counterCurrentBorderStrokeTop = getComputedStyle(counterEditElementBorder).borderTopWidth;
                 const counterCurrentBorderStrokeLeft = getComputedStyle(counterEditElementBorder).borderLeftWidth;
@@ -852,7 +852,7 @@ document.addEventListener('previewLoaded', ()=>{
                     const hexBoxText = document.getElementById('entryButtonColorForm');
                     hexBoxText.value = color;
                 }
-                const entryEditElementButton = document.querySelector('.selected-section').querySelector('button');
+                const entryEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
                 entryEditElementButton.style.backgroundColor = color;
                 break;
 
@@ -878,7 +878,7 @@ document.addEventListener('previewLoaded', ()=>{
                     const hexBoxText = document.getElementById('entryBackgroundColorForm');
                     hexBoxText.value = color;
                 }
-                const entryEditElementBackground = document.querySelector('.selected-section').querySelector('.entry-section');
+                const entryEditElementBackground = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-entry-section');
                 entryEditElementBackground.style.backgroundColor = color;
                 break;
         
@@ -904,7 +904,7 @@ document.addEventListener('previewLoaded', ()=>{
                     const hexBoxText = document.getElementById('entryBorderColorForm');
                     hexBoxText.value = color;
                 }
-                const entryEditElementBorder = document.querySelector('.selected-section').querySelector('.entry-section');
+                const entryEditElementBorder = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-entry-section');
                 
                 const entryCurrentBorderStrokeTop = getComputedStyle(entryEditElementBorder).borderTopWidth;
                 const entryCurrentBorderStrokeLeft = getComputedStyle(entryEditElementBorder).borderLeftWidth;
@@ -923,7 +923,7 @@ document.addEventListener('previewLoaded', ()=>{
         const inputFontSizeElement = event.target;
         const fontSize = inputFontSizeElement.value.includes('px') ? inputFontSizeElement.value.replace('px', '') : inputFontSizeElement.value;
         const elementType = inputFontSizeElement.getAttribute('data-type');
-        const selectedSection = document.querySelector('.selected-section');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
 
         switch(elementType){
             case 'textFontSize':
@@ -940,7 +940,7 @@ document.addEventListener('previewLoaded', ()=>{
     function toggleBold(event){
         const inputBoldBtn = event.target;
         const elementType = inputBoldBtn.getAttribute('data-type');
-        const selectedSection = document.querySelector('.selected-section');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
 
         switch(elementType){
             case 'textfStyle':
@@ -960,7 +960,7 @@ document.addEventListener('previewLoaded', ()=>{
     function toggleItalicize(event){
         const inputItalicizeBtn = event.target;
         const elementType = inputItalicizeBtn.getAttribute('data-type');
-        const selectedSection = document.querySelector('.selected-section');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
 
         switch(elementType){
             case 'textfStyle':
@@ -977,7 +977,7 @@ document.addEventListener('previewLoaded', ()=>{
     function toggleUnderline(event){
         const inputUnderlineBtn = event.target;
         const elementType = inputUnderlineBtn.getAttribute('data-type');
-        const selectedSection = document.querySelector('.selected-section');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
 
         switch(elementType){
             case 'textfStyle':
@@ -1001,7 +1001,7 @@ document.addEventListener('previewLoaded', ()=>{
     function toggleStrike(event){
         const inputStrikeBtn = event.target;
         const elementType = inputStrikeBtn.getAttribute('data-type');
-        const selectedSection = document.querySelector('.selected-section');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
 
         switch(elementType){
             case 'textfStyle':
@@ -1025,7 +1025,7 @@ document.addEventListener('previewLoaded', ()=>{
     function toggleOverline(event){
         const inputOverlineBtn = event.target;
         const elementType = inputOverlineBtn.getAttribute('data-type');
-        const selectedSection = document.querySelector('.selected-section');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
 
         switch(elementType){
             case 'textfStyle':
@@ -1050,7 +1050,7 @@ document.addEventListener('previewLoaded', ()=>{
         const inputLetterSpacingElement = event.target;
         const letterSpacing = inputLetterSpacingElement.value.includes('px') ? inputLetterSpacingElement.value.replace('px', '') : inputLetterSpacingElement.value;
         const elementType = inputLetterSpacingElement.getAttribute('data-type');
-        const selectedSection = document.querySelector('.selected-section');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
 
         switch(elementType){
             case 'textLetterSpacing':
@@ -1067,11 +1067,11 @@ document.addEventListener('previewLoaded', ()=>{
         const borderStroke = inputBorderStrokeForm.value.includes('px') ? inputBorderStrokeForm.value.replace('px', '') : inputBorderStrokeForm.value;
         const strokeFormID = inputBorderStrokeForm.id;
         const elementType = inputBorderStrokeForm.getAttribute('data-type');
-        const selectedSection = document.querySelector('.selected-section');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
 
         switch(elementType){
             case 'textBorderStroke':
-                const textSection = selectedSection.querySelector('.text-section');
+                const textSection = selectedSection.querySelector('.raffleleader-text-section');
 
                 const currentBorderColorTop = getComputedStyle(textSection).borderTopColor;
                 const currentBorderColorLeft = getComputedStyle(textSection).borderLeftColor;
@@ -1085,7 +1085,7 @@ document.addEventListener('previewLoaded', ()=>{
                 break;
             
             case 'counterBorderStroke':
-                const counterSection = selectedSection.querySelector('.counter-section');
+                const counterSection = selectedSection.querySelector('.raffleleader-counter-section');
 
                 const counterCurrentBorderColorTop = getComputedStyle(counterSection).borderTopColor;
                 const counterCurrentBorderColorLeft = getComputedStyle(counterSection).borderLeftColor;
@@ -1099,7 +1099,7 @@ document.addEventListener('previewLoaded', ()=>{
                 break;
 
             case 'imageBorderStroke':
-                const imageSection = selectedSection.querySelector('.image-section');
+                const imageSection = selectedSection.querySelector('.raffleleader-image-section');
 
                 const imageCurrentBorderColorTop = getComputedStyle(imageSection).borderTopColor;
                 const imageCurrentBorderColorLeft = getComputedStyle(imageSection).borderLeftColor;
@@ -1113,7 +1113,7 @@ document.addEventListener('previewLoaded', ()=>{
                 break;
 
             case 'entryBorderStroke':
-                const entrySection = selectedSection.querySelector('.entry-section');
+                const entrySection = selectedSection.querySelector('.raffleleader-entry-section');
 
                 const entryCurrentBorderColorTop = getComputedStyle(entrySection).borderTopColor;
                 const entryCurrentBorderColorLeft = getComputedStyle(entrySection).borderLeftColor;
@@ -1133,11 +1133,11 @@ document.addEventListener('previewLoaded', ()=>{
         const borderRadius = inputBorderRadiusForm.value.includes('px') ? inputBorderRadiusForm.value.replace('px', '') : inputBorderRadiusForm.value;
         const radiusFormID = inputBorderRadiusForm.id;
         const elementType = inputBorderRadiusForm.getAttribute('data-type');
-        const selectedSection = document.querySelector('.selected-section');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
 
         switch(elementType){
             case 'textBorderRadius':
-                const textSection = selectedSection.querySelector('.text-section');
+                const textSection = selectedSection.querySelector('.raffleleader-text-section');
 
                 if(radiusFormID === 'borderTopLeftRadius') textSection.style.borderTopLeftRadius = `${borderRadius}px`;
                 if(radiusFormID === 'borderTopRightRadius') textSection.style.borderTopRightRadius = `${borderRadius}px`;
@@ -1146,7 +1146,7 @@ document.addEventListener('previewLoaded', ()=>{
                 break;
 
             case 'counterBorderRadius':
-                const counterSection = selectedSection.querySelector('.counter-section');
+                const counterSection = selectedSection.querySelector('.raffleleader-counter-section');
 
                 if(radiusFormID === 'counterBorderTopLeftRadius') counterSection.style.borderTopLeftRadius = `${borderRadius}px`;
                 if(radiusFormID === 'counterBorderTopRightRadius') counterSection.style.borderTopRightRadius = `${borderRadius}px`;
@@ -1155,7 +1155,7 @@ document.addEventListener('previewLoaded', ()=>{
                 break;
 
             case 'imageBorderRadius':
-                const imageSection = selectedSection.querySelector('.image-section');
+                const imageSection = selectedSection.querySelector('.raffleleader-image-section');
                 const imageElement = selectedSection.querySelector('img') ? selectedSection.querySelector('img') : undefined;
                 
                 if(imageElement){
@@ -1184,7 +1184,7 @@ document.addEventListener('previewLoaded', ()=>{
                 break;
 
             case 'entryBorderRadius':
-                const entrySection = selectedSection.querySelector('.entry-section');
+                const entrySection = selectedSection.querySelector('.raffleleader-entry-section');
 
                 if(radiusFormID === 'entryBorderTopLeftRadius') entrySection.style.borderTopLeftRadius = `${borderRadius}px`;
                 if(radiusFormID === 'entryBorderTopRightRadius') entrySection.style.borderTopRightRadius = `${borderRadius}px`;
@@ -1196,8 +1196,8 @@ document.addEventListener('previewLoaded', ()=>{
 
     function selectCounter(event){
         const selectedBtn = event.target;
-        const selectedSection = document.querySelector('.selected-section');
-        const counterSection = selectedSection.querySelector('.counter-section');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
+        const counterSection = selectedSection.querySelector('.raffleleader-counter-section');
         const currentBtn = document.querySelector('.active-counter') ? document.querySelector('.active-counter') : undefined;
 
         const counterType = selectedBtn.getAttribute('data-type');
@@ -1206,7 +1206,7 @@ document.addEventListener('previewLoaded', ()=>{
             if(currentBtn === selectedBtn){
                 currentBtn.classList.remove('active-counter');
                 Array.from(counterSection.classList).forEach((className)=>{
-                    if(className != 'counter-section'){
+                    if(className != 'raffleleader-counter-section'){
                         counterSection.classList.remove(className);
                     }
                 })
@@ -1215,7 +1215,7 @@ document.addEventListener('previewLoaded', ()=>{
                 currentBtn.classList.remove('active-counter');
                 selectedBtn.classList.add('active-counter');
                 Array.from(counterSection.classList).forEach((className)=>{
-                    if(className != 'counter-section'){
+                    if(className != 'raffleleader-counter-section'){
                         counterSection.classList.remove(className);
                     }
                 })
@@ -1334,7 +1334,6 @@ document.addEventListener('previewLoaded', ()=>{
         const counterText = element.querySelector('p');
 
         counterHeader.innerText = `00`;
-        counterHeader.style.paddingTop = '2vh';
         counterText.innerText = '';
 
         switch(counterType){
@@ -1355,8 +1354,8 @@ document.addEventListener('previewLoaded', ()=>{
 
     function insertImage(event){
         event.preventDefault();
-        const selectedSection = document.querySelector('.selected-section');
-        const imgContainer = selectedSection.querySelector('.image-section');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
+        const imgContainer = selectedSection.querySelector('.raffleleader-image-section');
         const imgElement = document.createElement('img');
         const imgFormURL = document.getElementById('imgURL');
 
@@ -1391,8 +1390,8 @@ document.addEventListener('previewLoaded', ()=>{
     function deleteImage(event){
         event.preventDefault();
 
-        const selectedSection = document.querySelector('.selected-section');
-        const imgContainer = selectedSection.querySelector('.image-section');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
+        const imgContainer = selectedSection.querySelector('.raffleleader-image-section');
         const imgFormURL = document.getElementById('imgURL');
 
         imgFormURL.innerText = '';
@@ -1452,7 +1451,7 @@ document.addEventListener('previewLoaded', ()=>{
         const elementType = confirmDelete.getAttribute('data-type');
         const customizeBox = document.getElementById('settingsWrapper');
 
-        const selectedSection = document.querySelector('.selected-section');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
 
         switch(elementType){
             case 'textDelete':

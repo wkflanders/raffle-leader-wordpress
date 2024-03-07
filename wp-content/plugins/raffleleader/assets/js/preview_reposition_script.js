@@ -1,11 +1,12 @@
+window.globalZIndex = 10;
+
 document.addEventListener('previewLoaded', ()=>{
 
-    let highestZIndex = 10; // Global z-index
     const dropzone = document.getElementById('dropzone');
     const preview = document.getElementById('preview');
     // Function to apply resizing and dragging logic to an element
     function applyLogicToElement(el) {
-        const resizeHandle = el.querySelector('.resize-handle');
+        const resizeHandle = el.querySelector('.raffleleader-resize-handle');
 
         // Variables for resizing
         let originalWidth, originalHeight, originalMouseX, originalMouseY;
@@ -15,8 +16,8 @@ document.addEventListener('previewLoaded', ()=>{
 
         // Function to update z-index
         function updateZIndex() {
-            highestZIndex++;
-            el.style.zIndex = highestZIndex;
+            globalZIndex++;
+            el.style.zIndex = globalZIndex;
         }
 
         // Resizing logic
@@ -42,7 +43,7 @@ document.addEventListener('previewLoaded', ()=>{
             const snapMargin = 5 / zoomLevel;  // Snap margin should also consider zoom level
             const elRect = el.getBoundingClientRect();
         
-            document.querySelectorAll('.section').forEach(otherEl => {
+            document.querySelectorAll('.raffleleader-section').forEach(otherEl => {
                 if (otherEl === el) return;
         
                 const rect = otherEl.getBoundingClientRect();
@@ -121,7 +122,7 @@ document.addEventListener('previewLoaded', ()=>{
             // Snapping Logic
             const snapMargin = 5 / zoomLevel;
         
-            document.querySelectorAll('.section').forEach(otherEl => {
+            document.querySelectorAll('.raffleleader-section').forEach(otherEl => {
                 if (otherEl === el) return;
         
                 const otherRect = otherEl.getBoundingClientRect();
@@ -175,7 +176,7 @@ document.addEventListener('previewLoaded', ()=>{
         mutationsList.forEach(mutation => {
             if (mutation.type === 'childList') {
                 mutation.addedNodes.forEach(node => {
-                    if (node.classList && node.classList.contains('section')) {
+                    if (node.classList && node.classList.contains('raffleleader-section')) {
                         applyLogicToElement(node);
                     }
                 });
@@ -188,8 +189,8 @@ document.addEventListener('previewLoaded', ()=>{
     const config = { childList: true, subtree: true };
     observer.observe(dropzone, config);
 
-    // Apply logic to existing .section elements
-    document.querySelectorAll('.section').forEach(el => {
+    // Apply logic to existing section elements
+    document.querySelectorAll('.raffleleader-section').forEach(el => {
         applyLogicToElement(el);
     });
 });

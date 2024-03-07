@@ -1,7 +1,12 @@
-document.addEventListener("DOMContentLoaded", ()=>{
+window.addEventListener("load", ()=>{
 
-//     const urlParams = new URLSearchParams(window.location.search);
-//     const raffleID = urlParams.get('raffle_id');
+    const urlParams = new URLSearchParams(window.location.search);
+    const raffleID = urlParams.get('raffle_id');
+
+    let previewLoaded = false;
+    document.addEventListener('previewLoaded', ()=>{
+        previewLoaded = true;
+    });
 
     const loadPreviewEvent = new CustomEvent('previewLoaded');
 
@@ -16,7 +21,25 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     selectBtns.forEach((selectBtn)=>{
         selectBtn.addEventListener('click', selectTemplate);
+    });
+
+    fetch('/wp-admin/admin-ajax.php?action=sendTemplate&raffle_id=' + raffleID + '&security=' + encodeURIComponent(raffleleader_template_select_object.security))
+    .then(response => response.json())
+    .then(data => {
+        if(data.template_id){
+            const btnTarget = document.getElementById(data.template_id);
+
+            const templateBox = btnTarget.parentNode.parentNode.parentNode;
+
+            templateBox.classList.add('chosen-template');
+
+            if(previewLoaded === false){
+                injectTemplateHTML(data.template_id);
+            }
+
+        }
     })
+    .catch(error => console.error('Error:', error));
 
     function hoverTemplate(event){
         event.stopPropagation();
@@ -52,6 +75,22 @@ document.addEventListener("DOMContentLoaded", ()=>{
         const templateBox = selectedBtn.parentNode.parentNode.parentNode;
         const currentTemplate = document.querySelector('.chosen-template');
 
+        fetch(raffleleader_template_select_object.ajax_url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                'action': 'saveTemplate',
+                'raffle_id': raffleID,
+                'template_id': templateType,
+                'security': raffleleader_template_select_object.security,
+            })
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
+
         injectTemplateHTML(templateType);
 
         if(currentTemplate){
@@ -78,6 +117,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
                                     </div>`;
                 document.dispatchEvent(loadPreviewEvent);
             break;
+
             case 'twitterTemplate':
                 preview.outerHTML = `<div id="preview" class="preview-box preview-reset" style="width: 500px; transform: scale(1.0);">
                                         <div id="dropzone" class="dropzone" style="height: 1000px;"><div class="section" style="position: absolute; left: 0px; top: 932.972px; z-index: 24; width: 166px; height: 67.0156px;"><div style="height: 100%; width: 100%;" data-type="counterDetails" class="counter-section">

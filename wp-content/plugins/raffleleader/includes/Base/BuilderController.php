@@ -14,7 +14,7 @@ class BuilderController extends BaseController{
 
     private $raffleAPI;
 
-    private $templateAPI;
+    // private $templateAPI;
 
     private $builderCallbacks;
 
@@ -28,7 +28,7 @@ class BuilderController extends BaseController{
 
         $this->raffleAPI = new RaffleAPI();
         
-        $this->templateAPI = new TemplateAPI();
+        // $this->templateAPI = new TemplateAPI();
 
         $this->builderCallbacks = new BuilderCallbacks();
 
@@ -70,7 +70,7 @@ class BuilderController extends BaseController{
 
         $this->settings->addSubPages( $this->subpages )->register();
 
-        add_action( 'wp_ajax_loadTemplates', array( $this, 'loadTemplates' ) );
+        // add_action( 'wp_ajax_loadTemplates', array( $this, 'loadTemplates' ) );
         add_action( 'wp_ajax_saveTemplate', array( $this, 'saveTemplate' ) );
         add_action( 'wp_ajax_sendTemplate', array( $this, 'sendTemplate' ) );
         add_action( 'wp_ajax_loadBuilderData', array( $this, 'loadBuilderData' ) );
@@ -99,19 +99,19 @@ class BuilderController extends BaseController{
         );
     }
 
-    public function loadTemplates(){
-        check_ajax_referer( 'nonce', 'security' );
+    // public function loadTemplates(){
+    //     check_ajax_referer( 'nonce', 'security' );
 
-        $templatesList = $this->templateAPI->getAllTemplates();
+    //     $templatesList = $this->templateAPI->getAllTemplates();
 
-        $data = array(
-            'templates' => $templatesList,
-        );
+    //     $data = array(
+    //         'templates' => $templatesList,
+    //     );
         
-        wp_send_json($data);
+    //     wp_send_json($data);
 
-        wp_die();
-    }
+    //     wp_die();
+    // }
 
     public function saveTemplate(){
         check_ajax_referer( 'nonce', 'security' );
@@ -137,24 +137,17 @@ class BuilderController extends BaseController{
         if( $raffle_id ){
             $raffleInstance = $this->raffleAPI->getRaffle( $raffle_id );
         
-            $template_id = !is_null( $raffleInstance['template_id'] ) ? $raffleInstance['content'] : '';
+            $template_id = !is_null( $raffleInstance['template_id'] ) ? $raffleInstance['template_id'] : '';
+            
+            $data = array(
+                'raffle_id' => $raffle_id,
+                'template_id' => $template_id,
+            );
 
-            if( $template_id ){
-                $templateInstance = $this->templateAPI->getTemplate( $template_id );
-                $template_content = !is_null( $templateInstance['content'] ) ? stripslashes( $templateInstance['content'] ) : '';
-                
-                $data = array(
-                    'template_id' => $template_id,
-                    'template_content' => $template_content,
-                );
-                wp_send_json( $data );
-            } else {
-                wp_send_json_error( 'Failed getting template: Template not selected or no ID provided' );
-            }
+            wp_send_json( $data );
         } else {
             wp_send_json_error( 'Raffle ID not provided' );
         }
-        
         wp_die();
     }
 

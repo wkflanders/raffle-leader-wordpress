@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const tabs = document.querySelectorAll("ul.rl-nav-tabs > li");
     tabs.forEach((tab)=>{
         tab.addEventListener("click", switchTab);
-        console.log('test');
     });
 
     function switchTab(event){

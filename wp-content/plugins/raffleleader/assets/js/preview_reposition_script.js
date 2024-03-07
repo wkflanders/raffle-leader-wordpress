@@ -65,7 +65,7 @@ document.addEventListener('previewLoaded', ()=>{
             // Adjust boundary checks for zoom
             const parentRectHeight = dropzone.getBoundingClientRect();
             const parentRectWidth = preview.getBoundingClientRect();
-            let maxWidth = (parentRectWidth.width + (0.1 / zoomLevel) / zoomLevel) - ((elRect.left - parentRectWidth.left) / zoomLevel);
+            let maxWidth = (parentRectWidth.width / zoomLevel) - ((elRect.left - parentRectWidth.left) / zoomLevel);
             let maxHeight = (parentRectHeight.height / zoomLevel) - ((elRect.top - parentRectHeight.top) / zoomLevel);
             
             if (newWidth > maxWidth) newWidth = maxWidth;

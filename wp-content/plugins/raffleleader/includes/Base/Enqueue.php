@@ -46,6 +46,12 @@ class Enqueue extends BaseController{
                 'ajax_url' => admin_url( 'admin-ajax.php' ),
                 'security' => wp_create_nonce( 'nonce' ),
              ) );
+
+            wp_enqueue_script( 'raffleleader_raffle_entry_script', $this->plugin_url . '/assets/js/raffle_entry_script.js', array(), rand(111, 9999) );
+            wp_localize_script( 'raffleleader_raffle_entry_script', 'raffleleader_raffle_entry_object', array( 
+                'ajax_url' => admin_url( 'admin-ajax.php' ),
+                'security' => wp_create_nonce( 'nonce' ),
+             ) );
             
             wp_enqueue_script( 'moment-js', 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js', array(), '2.29.1', true);
             wp_enqueue_script( 'moment-timezone-js', 'https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data-1970-2030.min.js', array('moment-js'), '0.5.33', true);

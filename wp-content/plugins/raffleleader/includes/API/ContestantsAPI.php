@@ -5,7 +5,7 @@
 
 namespace Includes\API;
 
-class ContestantsAPI{
+class ContestantsAPI {
 
     public function addContestant( array $contestantData ){
         global $wpdb;
@@ -39,16 +39,24 @@ class ContestantsAPI{
         $defaults = array(
             'per_page' => 10,
             'page_number' => 1,
-            'order' => 'DESC',
-            'orderby' => 'contestant_id'
+            'order' => 'ASC',
+            'orderby' => 'contestant_id',
+            'search_term' => null,
         );
 
         $args = wp_parse_args( $args, $defaults );
-        $query = "SELECT * FROM $tableName";
+        $query = "SELECT * FROM $tableName WHERE deleted_at IS NULL";
+
+        if( !empty( $args['search_term'] ) ){
+            $args['search_term'] = '%' . $wpdb->esc_like( $args['search_term'] ) . '%'; 
+            $query .= $wpdb->prepare( "AND (name LIKE %s OR email LIKE %s)", $args['search_term'], $args['search_term'] );
+        }
 
         $allowed_orderby = array( 'contestant_id', 'name', 'email', 'created_at' );
         if( in_array( $args['orderby'], $allowed_orderby ) ){
             $query .= " ORDER BY {$args['orderby']} {$args['order']}";
+        } else {
+            $query .= " ORDER BY contestand_id ASC";
         }
 
         if( $args['per_page'] != -1 ){ 

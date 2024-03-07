@@ -6,15 +6,18 @@
 namespace Includes\Base;
 
 use Includes\API\Callbacks\BuilderCallbacks;
+use Includes\API\ContestantsAPI;
+use Includes\API\EntriesAPI;
 use Includes\API\RaffleAPI;
 use Includes\API\SettingsAPI;
-use Includes\API\TemplateAPI;
 
 class BuilderController extends BaseController{
 
     private $raffleAPI;
 
-    // private $templateAPI;
+    private $entriesAPI;
+
+    private $contestantsAPI;
 
     private $builderCallbacks;
 
@@ -27,8 +30,10 @@ class BuilderController extends BaseController{
     public function register(){
 
         $this->raffleAPI = new RaffleAPI();
+
+        $this->contestantsAPI = new ContestantsAPI();
         
-        // $this->templateAPI = new TemplateAPI();
+        $this->entriesAPI = new EntriesAPI();
 
         $this->builderCallbacks = new BuilderCallbacks();
 
@@ -129,28 +134,6 @@ class BuilderController extends BaseController{
         wp_die();
     }
 
-    public function sendTemplate(){
-        check_ajax_referer( 'nonce', 'security' );
-
-        $raffle_id = isset( $_GET['raffle_id'] ) ? intval( $_GET['raffle_id'] ) : 0;
-        
-        if( $raffle_id ){
-            $raffleInstance = $this->raffleAPI->getRaffle( $raffle_id );
-        
-            $template_id = !is_null( $raffleInstance['template_id'] ) ? $raffleInstance['template_id'] : '';
-            
-            $data = array(
-                'raffle_id' => $raffle_id,
-                'template_id' => $template_id,
-            );
-
-            wp_send_json( $data );
-        } else {
-            wp_send_json_error( 'Raffle ID not provided' );
-        }
-        wp_die();
-    }
-
     public function savePreview(){
         check_ajax_referer( 'nonce', 'security' );
 
@@ -184,12 +167,14 @@ class BuilderController extends BaseController{
             $start_date = !is_null( $raffleInstance['start_date'] ) ? $raffleInstance['start_date'] : '';
             $end_date = !is_null( $raffleInstance['end_date'] ) ? $raffleInstance['end_date'] : '';
             $timezone = !is_null( $raffleInstance['timezone'] ) ? $raffleInstance['timezone'] : '';
+            $template_id = !is_null( $raffleInstance['template_id'] ) ? $raffleInstance['template_id'] : '';
             
             $data = array(
                 'content' => $preview_content,
                 'startDate' => $start_date,
                 'endDate' => $end_date,
                 'timezone' => $timezone,
+                'template_id' => $template_id,
             );
             wp_send_json( $data );
         } else {
@@ -197,5 +182,47 @@ class BuilderController extends BaseController{
         }
 
         wp_die();
+    }
+
+    function handleEmailLogin(){
+        check_ajax_referer('nonce', 'security');
+
+        if( isset( $_POST['contestant_email'], $_POST['raffle_id'] ) ){
+            $email = sanitize_email( $_POST['contestant_email'] );
+            $raffle_id = intval( $_POST['raffle_id'] );
+
+            $args = array( 
+                'search_term' => $email,
+            );
+
+            $contestant = $this->contestantsAPI->getMultipleContestants( $args );
+
+            if( $contestant ){
+                $contestant_id = $contestant['contestant_id'];
+            } else {
+                // $name = sanitize_text_field( $_POST['contestant_name'] );
+                $ip = $_SERVER['REMOTE_ADDR'];
+
+                $contestantData = array(
+                    'email' => $email,
+                    'ip' => $ip,
+                );
+
+                $contestant_id = $this->contestantsAPI->addContestant( $contestantData );
+            }
+
+            if( $contestant_id ){
+                $entryData = array(
+                    'raffle_id' => $raffle_id,
+                    'contestant_id' => $contestant_id,
+                );
+
+                $this->entriesAPI->addEntry( $entryData );
+            }
+            wp_send_json_success( 'Entry successfully counted' );
+        } else {
+            wp_send_json_error( 'Entry failed to be counted' );
+        }
+
     }
 }

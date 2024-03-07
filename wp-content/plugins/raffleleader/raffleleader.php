@@ -38,7 +38,7 @@ function create_raffleleader_tables(){
 
     $raffleContestantsTableSQL = "CREATE TABLE {$wpdb->prefix}raffleleader_contestants (
         contestant_id INT AUTO_INCREMENT,
-        name VARCHAR(255) NOT NULL,
+        name VARCHAR(255) NULL,
         email VARCHAR(255) NOT NULL,
         ip VARCHAR(255) NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

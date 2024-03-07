@@ -264,13 +264,13 @@
                         </div>
                     </div>
                 </div>
-                <div id="previewWrapper" class="preview-wrapper" style="display: none;">
-                    <div id="preview" class="preview-box preview-reset" style="width: 500px">
-                        <div id="dropzone" class="dropzone" style="height: 600px"></div>
-                        <div class="footer-wrapper">
-                            <div class="footer">
-                                <a class="footer-content">Raffle Rules and Terms</a>
-                                <a class="footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="footer-text-logo" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/footer_text_logo.svg"> For Yourself!</a>
+                <div id="previewWrapper" class="raffleleader-preview-wrapper" style="display: none;">
+                    <div id="preview" class="raffleleader-preview-box raffleleader-preview-reset" style="width: 500px">
+                        <div id="dropzone" class="raffleleader-dropzone" style="height: 600px"></div>
+                        <div class="raffleleader-footer-wrapper">
+                            <div class="raffleleader-footer">
+                                <a class="raffleleader-footer-content">Raffle Rules and Terms</a>
+                                <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/footer_text_logo.svg"> For Yourself!</a>
                             </div>
                         </div>
                     </div>

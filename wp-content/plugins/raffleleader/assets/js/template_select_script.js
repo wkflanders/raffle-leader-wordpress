@@ -99,10 +99,10 @@ document.addEventListener("generalSettingsLoaded", ()=>{
             case 'blankTemplate':
                 preview.outerHTML = `<div id="preview" class="raffleleader-preview-box raffleleader-preview-reset" style="width: 500px">
                                         <div id="dropzone" class="raffleleader-dropzone" style="height: 600px"></div>
-                                        <div class="footer-wrapper">
-                                            <div class="footer">
-                                                <a class="footer-content">Raffle Rules and Terms</a>
-                                                <a class="footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="footer-text-logo" src="http://raffleleader-demo.local/wp-content/plugins/raffleleader/ ../../assets/images/footer_text_logo.svg"> For Yourself!</a>
+                                        <div class="raffleleader-footer-wrapper">
+                                            <div class="raffleleader-footer">
+                                                <a class="raffleleader-footer-content">Raffle Rules and Terms</a>
+                                                <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="http://raffleleader-demo.local/wp-content/plugins/raffleleader/ ../../assets/images/footer_text_logo.svg"> For Yourself!</a>
                                             </div>
                                         </div>
                                     </div>`;
@@ -179,10 +179,10 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                             <h2 style="white-space: pre-wrap; font-size: 15px; letter-spacing: 0px; font-weight: normal;">Body Text</h2>
                                         </div>
                                         <div style="display: none;" class="raffleleader-resize-handle"></div></div></div>
-                                        <div class="footer-wrapper">
-                                            <div class="footer">
-                                                <a class="footer-content">Raffle Rules and Terms</a>
-                                                <a class="footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="footer-text-logo" src="http://raffleleader-demo.local/wp-content/plugins/raffleleader/ ../../assets/images/footer_text_logo.svg"> For Yourself!</a>
+                                        <div class="raffleleader-footer-wrapper">
+                                            <div class="raffleleader-footer">
+                                                <a class="raffleleader-footer-content">Raffle Rules and Terms</a>
+                                                <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="http://raffleleader-demo.local/wp-content/plugins/raffleleader/ ../../assets/images/footer_text_logo.svg"> For Yourself!</a>
                                             </div>
                                         </div>
                                     </div>`;

@@ -11,20 +11,21 @@ use Includes\Base\BaseController;
 
 class BuilderCallbacks extends BaseController{
 
-    public $raffleAPI;
+    private $raffleAPI;
 
-    public $raffleInstance = array();
+    private $raffleInstance;
 
     public function builderCreateNew(){
 
         $this->raffleAPI = new RaffleAPI();
 
-        $this->raffleInstance = array(
-            'name' => 'New Raffle',
-            'status' => 'Draft',
+        $raffleID = $this->raffleAPI->addRaffle( array( 'status' => 'Draft' ) );
+
+        $args = array(
+            'name' => 'New Raffle #' . $raffleID,
         );
 
-        $raffleID = $this->raffleAPI->addRaffle( $this->raffleInstance );
+        $this->raffleInstance = $this->raffleAPI->updateRaffle( $raffleID, $args );
 
         if( $raffleID > 0 ){
 

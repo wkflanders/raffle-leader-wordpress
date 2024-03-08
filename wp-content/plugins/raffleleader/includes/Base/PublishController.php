@@ -4,19 +4,31 @@
  */
 
 namespace Includes\Base;
+use Includes\API\ContestantsAPI;
+use Includes\API\EntriesAPI;
 use Includes\API\RaffleAPI;
 
 class PublishController extends BaseController{
 
     private $raffleAPI;
 
+    private $entriesAPI;
+
+    private $contestantsAPI;
+
     public function register(){
         $this->raffleAPI = new RaffleAPI();
 
+        $this->entriesAPI = new EntriesAPI();
+
+        $this->contestantsAPI = new ContestantsAPI();
+
         add_shortcode( 'raffleleader', array( $this, 'shortcodeHandler' ) );
         
-        add_action('wp_ajax_loadRaffleData', array($this, 'loadRaffleData'));
-        add_action('wp_ajax_nopriv_loadRaffleData', array($this, 'loadRaffleData'));
+        add_action( 'wp_ajax_loadRaffleData', array( $this, 'loadRaffleData' ) );
+        add_action( 'wp_ajax_nopriv_loadRaffleData', array( $this, 'loadRaffleData' ) );
+        add_action( 'wp_ajax_handleEmailLogin', array( $this, 'handleEmailLogin') );
+        add_action( 'wp_ajax_nopriv_handleEmailLogin', array( $this, 'handleEmailLogin') );
     }
 
     public function shortcodeHandler( $atts ){
@@ -64,5 +76,47 @@ class PublishController extends BaseController{
         }
 
         wp_die();
+    }
+
+    function handleEmailLogin(){
+        check_ajax_referer('nonce', 'security');
+
+        if( isset( $_POST['contestant_email'], $_POST['raffle_id'] ) ){
+            $email = sanitize_email( $_POST['contestant_email'] );
+            $raffle_id = intval( $_POST['raffle_id'] );
+
+            $args = array( 
+                'search_term' => $email,
+            );
+
+            $contestant = $this->contestantsAPI->getMultipleContestants( $args );
+
+            if ( $contestant ) {
+                $contestant_id = $contestant['contestant_id'];
+            } else {
+                // $name = sanitize_text_field( $_POST['contestant_name'] );
+                $ip = $_SERVER['REMOTE_ADDR'];
+
+                $contestantData = array(
+                    'email' => $email,
+                    'ip' => $ip,
+                );
+
+                $contestant_id = $this->contestantsAPI->addContestant( $contestantData );
+            }
+
+            if( $contestant_id ){
+                $entryData = array(
+                    'raffle_id' => $raffle_id,
+                    'contestant_id' => $contestant_id,
+                );
+
+                $this->entriesAPI->addEntry( $entryData );
+            }
+            wp_send_json_success( 'Entry successfully counted' );
+        } else {
+            wp_send_json_error( 'Entry failed to be counted' );
+        }
+
     }
 }

@@ -57,6 +57,7 @@ class Enqueue extends BaseController{
             wp_enqueue_script( 'moment-timezone-js', 'https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data-1970-2030.min.js', array('moment-js'), '0.5.33', true);
 
             wp_enqueue_style( 'raffleleader_preview_default_style', $this->plugin_url . '/assets/css/preview_default_style.css', array(), rand(111, 9999) );
+            wp_enqueue_style( 'raffleleader_raffle_frontend_style', $this->plugin_url . '/assets/css/raffle_frontend_style.css', array(), rand(111, 9999) );
         }
     }
 

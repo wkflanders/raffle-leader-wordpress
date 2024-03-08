@@ -3,6 +3,9 @@ document.addEventListener('previewLoaded', () => {
     const layoutBoxes = document.querySelectorAll('.layout-option-box');
     const entryAdditionalBoxes = document.querySelectorAll('.dropdown-additional-entry');
 
+    const urlParams = new URLSearchParams(window.location.search);
+    const raffleID = urlParams.get('raffle_id');
+
     let currentDragElement = null;
 
     layoutBoxes.forEach((layoutBox)=>{
@@ -50,7 +53,6 @@ document.addEventListener('previewLoaded', () => {
     function handleDrop(mouseX, mouseY, container, dragElement) {
         const htmlToAppend = generateHTML(dragElement.id);
         const newElement = document.createElement('div');
-        const entryFormID = `entry${Math.floor(Math.random() * 1000)}`;
 
         newElement.classList.add('raffleleader-section');
 
@@ -60,9 +62,13 @@ document.addEventListener('previewLoaded', () => {
             newElement.style.width = '400px';
             newElement.style.height = '300px';
         } else if(dragElement.id === 'entryBox'){
+            if(dropzone.querySelector('.raffleleader-entry-section')){
+                console.log('You can only have 1 entry element');
+                return;
+            }
             newElement.style.width = '500px';
-            newElement.style.height = '100px';
-            newElement.id = entryFormID;
+            newElement.style.height = '80px';
+            newElement.id = `${raffleID}raffleID`;
             newElement.querySelector('button').addEventListener('click', (event)=>{
                 event.preventDefault();
             });
@@ -94,9 +100,11 @@ document.addEventListener('previewLoaded', () => {
 
             case 'entryBox':
                 return `<div data-type="entryDetails" class="raffleleader-entry-section">
-                            <form action="/submit-email" method="post">
-                                <input type="email" name="email" placeholder="email...">
-                                <button class="raffleleader-entry-submit-btn" type="submit">&rarr;</button>
+                            <form class="raffleleader-email-submit" action="/submit-email" method="post">
+                                <input class="raffleleader-email-input" type="email" name="email" placeholder="email...">
+                                <button class="raffleleader-email-submit-btn ld-over-full" type="submit">
+                                    &rarr;
+                                </button>
                             </form>
                         </div>
                         <div style="display: none;" class="raffleleader-resize-handle"></div>`;

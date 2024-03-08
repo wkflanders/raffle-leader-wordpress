@@ -101,7 +101,7 @@ document.addEventListener('previewLoaded', () => {
             case 'entryBox':
                 return `<div data-type="entryDetails" class="raffleleader-entry-section">
                             <form class="raffleleader-email-submit" action="/submit-email" method="post">
-                                <input class="raffleleader-email-input" type="email" name="email" placeholder="email...">
+                                <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required>
                                 <button class="raffleleader-email-submit-btn ld-over-full" type="submit">
                                     &rarr;
                                 </button>

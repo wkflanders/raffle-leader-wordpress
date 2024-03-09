@@ -13,6 +13,8 @@
 
 defined( 'ABSPATH' ) or die( "Hey, you can't be here!" );
 
+define( 'RAFFLELEADER_VERSION', '1.0.0' );
+
 // Require once the Composer Autoload
 if( file_exists( dirname(__FILE__) . '/vendor/autoload.php' ) ){
     require_once dirname( __FILE__ ) . '/vendor/autoload.php';
@@ -70,17 +72,18 @@ function create_raffleleader_tables(){
     //     PRIMARY KEY (template_id)
     // ) $charset_collate;";
 
-    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+    require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 
     dbDelta( $raffleTableSQL );
     dbDelta( $raffleContestantsTableSQL );
     dbDelta( $raffleEntriesTableSQL );
     // dbDelta( $raffleTemplatesTableSQL );
-    dbDelta( $updateRaffleTableSQL );
 
     // $updateRaffleTableSQL = "ALTER TABLE {$wpdb->prefix}raffleleader_raffles
     // ADD CONSTRAINT fk_template_id
     // FOREIGN KEY (template_id) REFERENCES {$wpdb->prefix}raffleleader_templates(template_id);";
+
+    // dbDelta( $updateRaffleTableSQL );
 
     // $wpdb->query( $updateRaffleTableSQL );
 }
@@ -88,7 +91,6 @@ function create_raffleleader_tables(){
 // Activation
 function activate_raffleleader_plugin(){
     Includes\Base\Activate::activate();
-    define( 'RAFFLELEADER_VERSION', '1.0.0' );
     create_raffleleader_tables();
 }
 register_activation_hook( __FILE__, 'activate_raffleleader_plugin' );

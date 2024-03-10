@@ -53,6 +53,8 @@ function create_raffleleader_tables(){
         raffle_id INT NOT NULL,
         contestant_id INT NOT NULL,
         referrer_id INT NULL,
+        entry_type VARCHAR(255) NULL,
+        entry_details VARCHAR(255) NULL,
         winner VARCHAR(255) NULL,
         rules_consented VARCHAR(255) NULL,
         email_confirmation ENUM('unconfirmed', 'confirmed')DEFAULT 'unconfirmed',

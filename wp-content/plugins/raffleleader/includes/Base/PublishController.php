@@ -89,7 +89,7 @@ class PublishController extends BaseController{
                 'search_term' => $email,
             );
 
-            $contestant = $this->contestantsAPI->getMultipleContestants( $args );
+            $contestant = $this->contestantsAPI->getMultipleContestants( $raffle_id, $args );
 
             if ( $contestant ) {
                 $contestant_id = $contestant['contestant_id'];

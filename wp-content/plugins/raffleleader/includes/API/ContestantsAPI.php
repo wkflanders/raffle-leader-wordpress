@@ -42,6 +42,7 @@ class ContestantsAPI {
             'page_number' => 1,
             'order' => 'ASC',
             'orderby' => 'contestant_id',
+            'search_term' => '',
         );
     
         $args = wp_parse_args( $args, $defaults );

@@ -41,16 +41,7 @@ class BuilderCallbacks extends BaseController{
     public function builderContent(){
         $raffle_id = isset( $_GET['raffle_id'] ) ? intval( $_GET['raffle_id'] ) : 0;
 
-        if( $raffle_id ){
-
-            $post = get_post( $raffle_id );
-
-            if( !$post ){
-                echo 'Post not found';
-                return;
-            }
-
-        } else {
+        if( !$raffle_id ){
             echo 'No post ID provided';
         }
         

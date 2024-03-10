@@ -7,6 +7,11 @@ namespace Includes\API;
 
 class RaffleAPI {
 
+    public function register(){
+        // Need to cleanup the architecture on this and entries/contestants API
+        add_action( 'admin_init', array( $this, 'handleRaffleActions' ) );
+    }
+
     public function addRaffle( array $raffleData ){
         global $wpdb;
         $tableName = $wpdb->prefix . 'raffleleader_raffles';
@@ -34,22 +39,35 @@ class RaffleAPI {
 
     public function getMultipleRaffles( $args = array() ){
         global $wpdb;
-        $tableName = $wpdb->prefix . 'raffleleader_raffles';
+        $rafflesTable = $wpdb->prefix . 'raffleleader_raffles';
+        $contestantsTable = $wpdb->prefix . 'raffleleader_contestants';
+        $entriesTable = $wpdb->prefix . 'raffleleader_entries';
 
         $defaults = array(
             'active' => false,
             'per_page' => 10,
             'page_number' => 1,
             'order' => 'DESC',
-            'orderby' => 'raffle_id'
+            'orderby' => 'raffle_id',
+            'only_deleted' => false,
         );
 
         $args = wp_parse_args( $args, $defaults );
-        $query = "SELECT * FROM $tableName";
+        $query = "SELECT r.*, 
+                (SELECT COUNT(DISTINCT e.contestant_id) FROM $entriesTable e WHERE e.raffle_id = r.raffle_id) as participants,
+                (SELECT COUNT(*) FROM $entriesTable e WHERE e.raffle_id = r.raffle_id) as entries
+                FROM $rafflesTable r
+                WHERE 1=1";
+
+        if( $args['only_deleted'] ){
+            $query .= " AND deleted_at IS NOT NULL";
+        } else {
+            $query .= " AND deleted_at IS NULL";
+        }
 
         if( $args['active'] ){
-            $current_date = current_time('mysql');
-            $query .= $wpdb->prepare( " WHERE start_date <= %s AND end_date >= %s", $current_date, $current_date );
+            $current_date = current_time( 'mysql' );
+            $query .= $wpdb->prepare( " AND start_date <= %s AND end_date >= %s", $current_date, $current_date );
         }
 
         $allowed_orderby = array( 'raffle_id', 'start_date', 'end_date', 'created_at' );
@@ -63,7 +81,7 @@ class RaffleAPI {
         }
 
         $results = $wpdb->get_results( $query, ARRAY_A );
-
+        
         return $results;
     }
 
@@ -79,7 +97,25 @@ class RaffleAPI {
     public function deleteRaffle( $raffleID ){
         global $wpdb;
         $tableName = $wpdb->prefix . 'raffleleader_raffles';
+        $currentTime = current_time( 'mysql' );
 
-        return $wpdb->delete( $tableName, array( 'raffle_id' => $raffleID ) );
+        return $wpdb->update(
+            $tableName,
+            array( 
+                'deleted_at' => $currentTime,
+                'status' => 'Trashed',
+            ),
+            array( 'raffle_id' => $raffleID ),
+        );
+    }
+
+    public function handleRaffleActions() {
+        if( isset( $_GET['action'] ) ){
+            if( $_GET['action'] === 'raffle_delete' && isset( $_GET['raffle_id'] ) && check_admin_referer( 'delete_raffle_action', 'delete_raffle_nonce' ) ) {
+                $raffleID = intval( $_GET['raffle_id'] );
+                $this->deleteRaffle( $raffleID );
+                wp_redirect( admin_url( 'admin.php?page=raffleleader_plugin' ) );
+            }
+        }
     }
 }

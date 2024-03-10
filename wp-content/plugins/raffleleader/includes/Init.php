@@ -18,6 +18,7 @@ final class Init{
             Base\BuilderController::class,
             Base\PublishController::class,
             Base\Enqueue::class,
+            API\RaffleAPI::class,
         ];
     }
 

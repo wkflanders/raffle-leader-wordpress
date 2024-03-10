@@ -32,36 +32,34 @@ class ContestantsAPI {
         return $wpdb->get_row( $query, ARRAY_A );
     }
 
-    public function getMultipleContestants( $args = array() ) {
+    public function getMultipleContestants( $raffleID, $args = array() ) {
         global $wpdb;
-        $tableName = $wpdb->prefix . 'raffleleader_contestants';
-    
+        $contestantsTable = $wpdb->prefix . 'raffleleader_contestants';
+        $entriesTable = $wpdb->prefix . 'raffleleader_entries';
+
         $defaults = array(
             'per_page' => 10,
             'page_number' => 1,
             'order' => 'ASC',
             'orderby' => 'contestant_id',
-            'search_term' => null,
         );
     
         $args = wp_parse_args( $args, $defaults );
-        $query = "SELECT * FROM $tableName WHERE deleted_at IS NULL";
+        $offset = ($args['page_number'] - 1) * $args['per_page'];
+
+        $query = $wpdb->prepare(
+            "SELECT c.*, COUNT(e.entry_id) AS entries_count
+             FROM $contestantsTable c
+             LEFT JOIN $entriesTable e ON c.contestant_id = e.contestant_id
+             WHERE e.raffle_id = %d AND c.deleted_at IS NULL
+             GROUP BY c.contestant_id
+             ORDER BY c.{$args['orderby']} {$args['order']}
+             LIMIT %d, %d",
+            $raffleID, $offset, $args['per_page']);
     
         if ( !empty( $args['search_term'] ) ) {
             $searchTerm = '%' . $wpdb->esc_like( $args['search_term'] ) . '%';
             $query .= $wpdb->prepare( " AND (name LIKE %s OR email LIKE %s )", $searchTerm, $searchTerm );
-        }
-    
-        $allowed_orderby = array( 'contestant_id', 'name', 'email', 'created_at' );
-        if ( in_array( $args['orderby'], $allowed_orderby ) ) {
-            $query .= " ORDER BY {$args['orderby']} {$args['order']}";
-        } else {
-            $query .= " ORDER BY contestant_id ASC"; // Fixed typo here
-        }
-    
-        if ( $args['per_page'] != -1 ) {
-            $offset = ( $args['page_number'] - 1 ) * $args['per_page'];
-            $query = $wpdb->prepare( "$query LIMIT %d, %d", $offset, $args['per_page'] ); // Correctly place prepare for the whole query
         }
     
         $results = $wpdb->get_results( $query, ARRAY_A );

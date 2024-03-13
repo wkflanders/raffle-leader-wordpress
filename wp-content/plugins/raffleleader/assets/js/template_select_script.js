@@ -102,7 +102,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                         <div class="raffleleader-footer-wrapper">
                                             <div class="raffleleader-footer">
                                                 <a class="raffleleader-footer-content">Raffle Rules and Terms</a>
-                                                <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="http://raffleleader-demo.local/wp-content/plugins/raffleleader/ ../../assets/images/footer_text_logo.svg"> For Yourself!</a>
+                                                <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.com/wp-content/uploads/2024/03/footer_text_logo.png"> For Yourself!</a>
                                             </div>
                                         </div>
                                     </div>`;
@@ -182,7 +182,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                         <div class="raffleleader-footer-wrapper">
                                             <div class="raffleleader-footer">
                                                 <a class="raffleleader-footer-content">Raffle Rules and Terms</a>
-                                                <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="http://raffleleader-demo.local/wp-content/plugins/raffleleader/ ../../assets/images/footer_text_logo.svg"> For Yourself!</a>
+                                                <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.com/wp-content/uploads/2024/03/footer_text_logo.png"> For Yourself!</a>
                                             </div>
                                         </div>
                                     </div>`;

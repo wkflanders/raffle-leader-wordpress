@@ -270,7 +270,7 @@
                         <div class="raffleleader-footer-wrapper">
                             <div class="raffleleader-footer">
                                 <a class="raffleleader-footer-content">Raffle Rules and Terms</a>
-                                <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/footer_text_logo.svg"> For Yourself!</a>
+                                <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom-vert.png"> For Yourself!</a>
                             </div>
                         </div>
                     </div>

@@ -124,11 +124,11 @@ document.addEventListener('previewLoaded', () => {
 
             case 'XFollowEntry':
                 return `<div data-type="XFollowDetails" class="raffleleader-additional-entry-section">
-                            <div class="additional-entry-text-column">
+                            <div class="raffleleader-additional-entry-text-column">
                                 <h2>Follow us on X/Twitter</h2>
                                 <p>for an extra entry!</p>
                             </div>
-                            <div class="additional-entry-button-column">
+                            <div class="raffleleader-additional-entry-button-column">
                                 <button>+1</button>
                             </div>
                         </div>
@@ -136,11 +136,11 @@ document.addEventListener('previewLoaded', () => {
 
             case 'XRepostEntry':
                 return `<div data-type="XRepostDetails" class="raffleleader-additional-entry-section">
-                            <div class="additional-entry-text-column">
+                            <div class="raffleleader-additional-entry-text-column">
                                 <h2>Repost us on X/Twitter</h2>
                                 <p>for an extra entry!</p>
                             </div>
-                            <div class="additional-entry-button-column">
+                            <div class="raffleleader-additional-entry-button-column">
                                 <button>+1</button>
                             </div>
                         </div>
@@ -148,11 +148,11 @@ document.addEventListener('previewLoaded', () => {
 
             case 'XLikeEntry':
                 return `<div data-type="XLikeDetails" class="raffleleader-additional-entry-section">
-                            <div class="additional-entry-text-column">
+                            <div class="raffleleader-additional-entry-text-column">
                                 <h2>Like us on X/Twitter</h2>
                                 <p>for an extra entry!</p>
                             </div>
-                            <div class="additional-entry-button-column">
+                            <div class="raffleleader-additional-entry-button-column">
                                 <button>+1</button>
                             </div>
                         </div>

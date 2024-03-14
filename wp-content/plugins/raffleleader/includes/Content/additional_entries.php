@@ -10,7 +10,7 @@
             <p>X/Twitter Handle</p>
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-text">
-                    <input id="XFollowForm" class="letter-spacing-input" data-type="XFollow" name="XFollow" type="text" placeholder="Enter X/Twitter Handle">
+                    <input id="XFollowForm" class="additional-entry-input" data-type="XFollow" name="XFollow" type="text" placeholder="Enter X/Twitter Handle">
                 </div>
             </div>
         </div>
@@ -224,7 +224,7 @@
             <p>X/Twitter Post URL</p>
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-text">
-                    <input id="XRepostForm" class="letter-spacing-input" data-type="XRepost" name="XRepost" type="text" placeholder="Enter X/Twitter Post URL">
+                    <input id="XRepostForm" class="additional-entry-input" data-type="XRepost" name="XRepost" type="text" placeholder="Enter X/Twitter Post URL">
                 </div>
             </div>
         </div>
@@ -438,7 +438,7 @@
             <p>X/Twitter Post URL</p>
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-text">
-                    <input id="XLikeForm" class="letter-spacing-input" data-type="XLike" name="XLike" type="text" placeholder="Enter X/Twitter Post URL">
+                    <input id="XLikeForm" class="additional-entry-input" data-type="XLike" name="XLike" type="text" placeholder="Enter X/Twitter Post URL">
                 </div>
             </div>
         </div>
@@ -652,7 +652,7 @@
             <p>Instagram Username</p>
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-text">
-                    <input id="instaFollowForm" class="letter-spacing-input" data-type="instaFollow" name="instaFollow" type="text" placeholder="Enter Instagram Handle">
+                    <input id="instaFollowForm" class="additional-entry-input" data-type="instaFollow" name="instaFollow" type="text" placeholder="Enter Instagram Handle">
                 </div>
             </div>
         </div>
@@ -866,7 +866,7 @@
             <p>Instagram Username</p>
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-text">
-                    <input id="instaCommentForm" class="letter-spacing-input" data-type="instaComment" name="instaComment" type="text" placeholder="Enter Instagram Post">
+                    <input id="instaCommentForm" class="additional-entry-input" data-type="instaComment" name="instaComment" type="text" placeholder="Enter Instagram Post">
                 </div>
             </div>
         </div>
@@ -1080,7 +1080,7 @@
             <p>Instagram Username</p>
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-text">
-                    <input id="instaLikeForm" class="letter-spacing-input" data-type="instaLike" name="instaLike" type="text" placeholder="Enter Instagram Post">
+                    <input id="instaLikeForm" class="additional-entry-input" data-type="instaLike" name="instaLike" type="text" placeholder="Enter Instagram Post">
                 </div>
             </div>
         </div>

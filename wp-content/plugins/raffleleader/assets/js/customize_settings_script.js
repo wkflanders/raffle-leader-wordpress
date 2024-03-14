@@ -39,6 +39,8 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     const endTimeInput = document.getElementById('endTime');
     const startTimeInput = document.getElementById('startTime');
 
+    const additionalEntryInputs = document.querySelectorAll('.additional-entry-input');
+
     let pickrText = undefined;
     let pickrBackground = undefined;
     let pickrBorder = undefined;
@@ -71,11 +73,11 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     let pickrInstaFollowButton = undefined;
     let pickrInstaFollowBackground = undefined;
     let pickrInstaFollowBorder = undefined;
-    let pickrInstaRepostHeader = undefined;
-    let pickrInstaRepostSubheader = undefined;
-    let pickrInstaRepostButton = undefined;
-    let pickrInstaRepostBackground = undefined;
-    let pickrInstaRepostBorder = undefined;
+    let pickrInstaCommentHeader = undefined;
+    let pickrInstaCommentSubheader = undefined;
+    let pickrInstaCommentButton = undefined;
+    let pickrInstaCommentBackground = undefined;
+    let pickrInstaCommentBorder = undefined;
     let pickrInstaLikeHeader = undefined;
     let pickrInstaLikeSubheader = undefined;
     let pickrInstaLikeButton = undefined;
@@ -217,6 +219,10 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         startTimeCounters.forEach(startTimeCounter => {
             watchTimeStart(startTimeCounter);
         });
+    });
+
+    additionalEntryInputs.forEach((additionalEntryInput)=>{
+        additionalEntryInput.addEventListener('input', handleAdditionalEntry);
     });
 
     function openDropDown(event){
@@ -1259,7 +1265,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     pickColor(selectedColor, elementType, true);
                 });
                 break;
-                
+
             case 'instaCommentButtonColor':
                 const currentInstaCommentButtonColor = document.getElementById('instaCommentButtonColorForm').value;
 
@@ -3546,6 +3552,18 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 instaLikeConfirmBtn.style.display = "none";
                 cancelBtn.style.display = "none";
                 break;
+        }
+    }
+
+    function handleAdditionalEntry(event){
+        const additionalEntryInput = event.target;
+        const inputValue = additionalEntryInput.value;
+        const elementType = additionalEntryInput.getAttribute('data-type');
+        const selectedElement = document.querySelector('.selected-raffleleader-section');
+
+        switch(elementType){
+            case 'XFollow':
+                console.log('test');
         }
     }
 })

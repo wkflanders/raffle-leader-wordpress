@@ -59,7 +59,7 @@ document.addEventListener("previewLoaded", ()=>{
             case 'textDetails':
                 loadTextSettings(element);
                 break;
-                
+
             case 'entryDetails':
                 loadEntrySettings(element);
                 break;
@@ -82,6 +82,18 @@ document.addEventListener("previewLoaded", ()=>{
 
             case 'XLikeDetails':
                 loadXLikeDetails(element);
+                break;
+
+            case 'instaFollowDetails':
+                loadInstaFollowDetails(element);
+                break;
+
+            case 'instaCommentDetails':
+                loadInstaCommentDetails(element);
+                break;
+
+            case 'instaLikeDetails':
+                loadInstaLikeDetails(element);
                 break;
         }
     }
@@ -856,6 +868,363 @@ document.addEventListener("previewLoaded", ()=>{
         XLikeBorderFormTopRightRadius.value = XLikeBorderRadiusTopRight;
         XLikeBorderFormBottomLeftRadius.value = XLikeBorderRadiusBottomLeft;
         XLikeBorderFormBottomRightRadius.value = XLikeBorderRadiusBottomRight;
+    }
+
+    function loadInstaFollowDetails(element){
+        // Load Insta Like settings
+        const headerForm = document.getElementById('instaFollowHeaderForm');
+        const subheaderForm = document.getElementById('instaFollowSubheaderForm');
+        const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
+        const headerElement = textElement.querySelector('h2');
+        const subheaderElement = textElement.querySelector('p');
+
+        // Insta Like text
+        const headerText = headerElement.textContent;
+        const subheaderText = subheaderElement.textContent;
+        headerForm.value = headerText;
+        subheaderForm.value = subheaderText;
+
+        // Insta Like font 
+        const headerFontList = document.getElementById('instaFollowHeaderList');
+        const headerFontDisplay = document.getElementById('instaFollowHeaderDropDownTitle');
+        const subheaderFontList = document.getElementById('instaFollowSubheaderList');
+        const subheaderFontDisplay = document.getElementById('instaFollowSubheaderDropDownTitle');
+        const headerFont = window.getComputedStyle(headerElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        const subheaderFont = window.getComputedStyle(subheaderElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        headerFontDisplay.innerText = headerFont;
+        subheaderFontDisplay.innerText = subheaderFont;
+        
+        Array.from(headerFontList.children).forEach((child)=>{
+            const childFont = child.innerText;
+            if(child.classList.contains('selected-font')){
+                child.classList.remove('selected-font');
+            }
+            if(childFont === headerFont){
+                child.classList.add('selected-font');
+            }
+        });
+
+        Array.from(subheaderFontList.children).forEach((child)=>{
+            const childFont = child.innerText;
+            if(child.classList.contains('selected-font')){
+                child.classList.remove('selected-font');
+            }
+            if(childFont === subheaderFont){
+                child.classList.add('selected-font');
+            }
+        });
+
+        // header color
+        const instaFollowHeaderHexBox = document.getElementById('instaFollowHeaderFontColorClick');
+        const instaFollowHeaderForm = document.getElementById('instaFollowHeaderFontColorForm');
+        const instaFollowHeaderColorRGB = window.getComputedStyle(headerElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const instaFollowHeaderColorHex = rgbToHex(instaFollowHeaderColorRGB);
+        instaFollowHeaderForm.value = instaFollowHeaderColorHex;
+        instaFollowHeaderHexBox.style.backgroundColor = instaFollowHeaderColorHex;
+
+        // subheader color
+        const instaFollowSubheaderHexBox = document.getElementById('instaFollowSubheaderFontColorClick');
+        const instaFollowSubheaderForm = document.getElementById('instaFollowSubheaderFontColorForm');
+        const instaFollowSubheaderColorRGB = window.getComputedStyle(subheaderElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const instaFollowSubheaderColorHex = rgbToHex(instaFollowSubheaderColorRGB);
+        instaFollowSubheaderForm.value = instaFollowSubheaderColorHex;
+        instaFollowSubheaderHexBox.style.backgroundColor = instaFollowSubheaderColorHex;
+        
+        // Insta Like button color
+        const instaFollowButtonElement = element.querySelector('button');
+        const instaFollowButtonColorForm = document.getElementById('instaFollowButtonColorForm');
+
+        const instaFollowButtonHexBox = document.getElementById('instaFollowButtonColorClick');
+        const instaFollowButtonColorRGB = window.getComputedStyle(instaFollowButtonElement).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const instaFollowButtonColorHex = rgbToHex(instaFollowButtonColorRGB);
+        instaFollowButtonColorForm.value = instaFollowButtonColorHex;
+        instaFollowButtonHexBox.style.backgroundColor = instaFollowButtonColorHex;
+
+        // Insta Like background color
+        const instaFollowBackgroundColorForm = document.getElementById('instaFollowBackgroundColorForm');
+        const instaFollowBackgroundHexBox = document.getElementById('instaFollowBackgroundColorClick');
+        const instaFollowBackgroundColorRGB = window.getComputedStyle(element).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const instaFollowBackgroundColorHex = rgbToHex(instaFollowBackgroundColorRGB);
+        instaFollowBackgroundColorForm.value = instaFollowBackgroundColorHex;
+        instaFollowBackgroundHexBox.style.backgroundColor = instaFollowBackgroundColorHex;
+
+        // Insta Like border color
+        const instaFollowBorderColorForm = document.getElementById('instaFollowBorderColorForm');
+        const instaFollowBorderHexBox = document.getElementById('instaFollowBorderColorClick');
+        const instaFollowBorderColorRGB = window.getComputedStyle(element).getPropertyValue('border-color').replace(/^"|"$/g, '');
+        const instaFollowBorderColorHex = rgbToHex(instaFollowBorderColorRGB);
+        instaFollowBorderColorForm.value = instaFollowBorderColorHex;
+        instaFollowBorderHexBox.style.backgroundColor = instaFollowBorderColorRGB;
+
+        // Insta Like border stroke
+        const instaFollowBorderFormTopStroke = document.getElementById('instaFollowBorderTopStroke');
+        const instaFollowBorderFormLeftStroke = document.getElementById('instaFollowBorderLeftStroke');
+        const instaFollowBorderFormBottomStroke = document.getElementById('instaFollowBorderBottomStroke');
+        const instaFollowBorderFormRightStroke = document.getElementById('instaFollowBorderRightStroke');
+
+        const instaFollowBorderStrokeTop = window.getComputedStyle(element).getPropertyValue('border-top-width').replace(/^"|"$/g, '');
+        const instaFollowBorderStrokeLeft = window.getComputedStyle(element).getPropertyValue('border-left-width').replace(/^"|"$/g, '');
+        const instaFollowBorderStrokeBottom = window.getComputedStyle(element).getPropertyValue('border-bottom-width').replace(/^"|"$/g, '');
+        const instaFollowBorderStrokeRight = window.getComputedStyle(element).getPropertyValue('border-right-width').replace(/^"|"$/g, '');
+
+        instaFollowBorderFormTopStroke.value = instaFollowBorderStrokeTop;
+        instaFollowBorderFormLeftStroke.value = instaFollowBorderStrokeLeft;
+        instaFollowBorderFormBottomStroke.value = instaFollowBorderStrokeBottom;
+        instaFollowBorderFormRightStroke.value = instaFollowBorderStrokeRight;
+
+        // Insta Like border radius
+        const instaFollowBorderFormTopLeftRadius = document.getElementById('instaFollowBorderTopLeftRadius');
+        const instaFollowBorderFormTopRightRadius = document.getElementById('instaFollowBorderTopRightRadius');
+        const instaFollowBorderFormBottomLeftRadius = document.getElementById('instaFollowBorderBottomLeftRadius');
+        const instaFollowBorderFormBottomRightRadius = document.getElementById('instaFollowBorderBottomRightRadius');
+
+        const instaFollowBorderRadiusTopLeft = window.getComputedStyle(element).getPropertyValue('border-top-left-radius').replace(/^"|"$/g, '');
+        const instaFollowBorderRadiusTopRight = window.getComputedStyle(element).getPropertyValue('border-top-right-radius').replace(/^"|"$/g, '');
+        const instaFollowBorderRadiusBottomLeft = window.getComputedStyle(element).getPropertyValue('border-bottom-left-radius').replace(/^"|"$/g, '');
+        const instaFollowBorderRadiusBottomRight = window.getComputedStyle(element).getPropertyValue('border-bottom-right-radius').replace(/^"|"$/g, '');
+
+        instaFollowBorderFormTopLeftRadius.value = instaFollowBorderRadiusTopLeft;
+        instaFollowBorderFormTopRightRadius.value = instaFollowBorderRadiusTopRight;
+        instaFollowBorderFormBottomLeftRadius.value = instaFollowBorderRadiusBottomLeft;
+        instaFollowBorderFormBottomRightRadius.value = instaFollowBorderRadiusBottomRight;
+    }
+
+    function loadInstaCommentDetails(element){
+        // Load Insta Like settings
+        const headerForm = document.getElementById('instaCommentHeaderForm');
+        const subheaderForm = document.getElementById('instaCommentSubheaderForm');
+        const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
+        const headerElement = textElement.querySelector('h2');
+        const subheaderElement = textElement.querySelector('p');
+
+        // Insta Like text
+        const headerText = headerElement.textContent;
+        const subheaderText = subheaderElement.textContent;
+        headerForm.value = headerText;
+        subheaderForm.value = subheaderText;
+
+        // Insta Like font 
+        const headerFontList = document.getElementById('instaCommentHeaderList');
+        const headerFontDisplay = document.getElementById('instaCommentHeaderDropDownTitle');
+        const subheaderFontList = document.getElementById('instaCommentSubheaderList');
+        const subheaderFontDisplay = document.getElementById('instaCommentSubheaderDropDownTitle');
+        const headerFont = window.getComputedStyle(headerElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        const subheaderFont = window.getComputedStyle(subheaderElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        headerFontDisplay.innerText = headerFont;
+        subheaderFontDisplay.innerText = subheaderFont;
+        
+        Array.from(headerFontList.children).forEach((child)=>{
+            const childFont = child.innerText;
+            if(child.classList.contains('selected-font')){
+                child.classList.remove('selected-font');
+            }
+            if(childFont === headerFont){
+                child.classList.add('selected-font');
+            }
+        });
+
+        Array.from(subheaderFontList.children).forEach((child)=>{
+            const childFont = child.innerText;
+            if(child.classList.contains('selected-font')){
+                child.classList.remove('selected-font');
+            }
+            if(childFont === subheaderFont){
+                child.classList.add('selected-font');
+            }
+        });
+
+        // header color
+        const instaCommentHeaderHexBox = document.getElementById('instaCommentHeaderFontColorClick');
+        const instaCommentHeaderForm = document.getElementById('instaCommentHeaderFontColorForm');
+        const instaCommentHeaderColorRGB = window.getComputedStyle(headerElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const instaCommentHeaderColorHex = rgbToHex(instaCommentHeaderColorRGB);
+        instaCommentHeaderForm.value = instaCommentHeaderColorHex;
+        instaCommentHeaderHexBox.style.backgroundColor = instaCommentHeaderColorHex;
+
+        // subheader color
+        const instaCommentSubheaderHexBox = document.getElementById('instaCommentSubheaderFontColorClick');
+        const instaCommentSubheaderForm = document.getElementById('instaCommentSubheaderFontColorForm');
+        const instaCommentSubheaderColorRGB = window.getComputedStyle(subheaderElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const instaCommentSubheaderColorHex = rgbToHex(instaCommentSubheaderColorRGB);
+        instaCommentSubheaderForm.value = instaCommentSubheaderColorHex;
+        instaCommentSubheaderHexBox.style.backgroundColor = instaCommentSubheaderColorHex;
+        
+        // Insta Like button color
+        const instaCommentButtonElement = element.querySelector('button');
+        const instaCommentButtonColorForm = document.getElementById('instaCommentButtonColorForm');
+
+        const instaCommentButtonHexBox = document.getElementById('instaCommentButtonColorClick');
+        const instaCommentButtonColorRGB = window.getComputedStyle(instaCommentButtonElement).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const instaCommentButtonColorHex = rgbToHex(instaCommentButtonColorRGB);
+        instaCommentButtonColorForm.value = instaCommentButtonColorHex;
+        instaCommentButtonHexBox.style.backgroundColor = instaCommentButtonColorHex;
+
+        // Insta Like background color
+        const instaCommentBackgroundColorForm = document.getElementById('instaCommentBackgroundColorForm');
+        const instaCommentBackgroundHexBox = document.getElementById('instaCommentBackgroundColorClick');
+        const instaCommentBackgroundColorRGB = window.getComputedStyle(element).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const instaCommentBackgroundColorHex = rgbToHex(instaCommentBackgroundColorRGB);
+        instaCommentBackgroundColorForm.value = instaCommentBackgroundColorHex;
+        instaCommentBackgroundHexBox.style.backgroundColor = instaCommentBackgroundColorHex;
+
+        // Insta Like border color
+        const instaCommentBorderColorForm = document.getElementById('instaCommentBorderColorForm');
+        const instaCommentBorderHexBox = document.getElementById('instaCommentBorderColorClick');
+        const instaCommentBorderColorRGB = window.getComputedStyle(element).getPropertyValue('border-color').replace(/^"|"$/g, '');
+        const instaCommentBorderColorHex = rgbToHex(instaCommentBorderColorRGB);
+        instaCommentBorderColorForm.value = instaCommentBorderColorHex;
+        instaCommentBorderHexBox.style.backgroundColor = instaCommentBorderColorRGB;
+
+        // Insta Like border stroke
+        const instaCommentBorderFormTopStroke = document.getElementById('instaCommentBorderTopStroke');
+        const instaCommentBorderFormLeftStroke = document.getElementById('instaCommentBorderLeftStroke');
+        const instaCommentBorderFormBottomStroke = document.getElementById('instaCommentBorderBottomStroke');
+        const instaCommentBorderFormRightStroke = document.getElementById('instaCommentBorderRightStroke');
+
+        const instaCommentBorderStrokeTop = window.getComputedStyle(element).getPropertyValue('border-top-width').replace(/^"|"$/g, '');
+        const instaCommentBorderStrokeLeft = window.getComputedStyle(element).getPropertyValue('border-left-width').replace(/^"|"$/g, '');
+        const instaCommentBorderStrokeBottom = window.getComputedStyle(element).getPropertyValue('border-bottom-width').replace(/^"|"$/g, '');
+        const instaCommentBorderStrokeRight = window.getComputedStyle(element).getPropertyValue('border-right-width').replace(/^"|"$/g, '');
+
+        instaCommentBorderFormTopStroke.value = instaCommentBorderStrokeTop;
+        instaCommentBorderFormLeftStroke.value = instaCommentBorderStrokeLeft;
+        instaCommentBorderFormBottomStroke.value = instaCommentBorderStrokeBottom;
+        instaCommentBorderFormRightStroke.value = instaCommentBorderStrokeRight;
+
+        // Insta Like border radius
+        const instaCommentBorderFormTopLeftRadius = document.getElementById('instaCommentBorderTopLeftRadius');
+        const instaCommentBorderFormTopRightRadius = document.getElementById('instaCommentBorderTopRightRadius');
+        const instaCommentBorderFormBottomLeftRadius = document.getElementById('instaCommentBorderBottomLeftRadius');
+        const instaCommentBorderFormBottomRightRadius = document.getElementById('instaCommentBorderBottomRightRadius');
+
+        const instaCommentBorderRadiusTopLeft = window.getComputedStyle(element).getPropertyValue('border-top-left-radius').replace(/^"|"$/g, '');
+        const instaCommentBorderRadiusTopRight = window.getComputedStyle(element).getPropertyValue('border-top-right-radius').replace(/^"|"$/g, '');
+        const instaCommentBorderRadiusBottomLeft = window.getComputedStyle(element).getPropertyValue('border-bottom-left-radius').replace(/^"|"$/g, '');
+        const instaCommentBorderRadiusBottomRight = window.getComputedStyle(element).getPropertyValue('border-bottom-right-radius').replace(/^"|"$/g, '');
+
+        instaCommentBorderFormTopLeftRadius.value = instaCommentBorderRadiusTopLeft;
+        instaCommentBorderFormTopRightRadius.value = instaCommentBorderRadiusTopRight;
+        instaCommentBorderFormBottomLeftRadius.value = instaCommentBorderRadiusBottomLeft;
+        instaCommentBorderFormBottomRightRadius.value = instaCommentBorderRadiusBottomRight;
+    }
+
+    function loadInstaLikeDetails(element){
+        // Load Insta Like settings
+        const headerForm = document.getElementById('instaLikeHeaderForm');
+        const subheaderForm = document.getElementById('instaLikeSubheaderForm');
+        const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
+        const headerElement = textElement.querySelector('h2');
+        const subheaderElement = textElement.querySelector('p');
+
+        // Insta Like text
+        const headerText = headerElement.textContent;
+        const subheaderText = subheaderElement.textContent;
+        headerForm.value = headerText;
+        subheaderForm.value = subheaderText;
+
+        // Insta Like font 
+        const headerFontList = document.getElementById('instaLikeHeaderList');
+        const headerFontDisplay = document.getElementById('instaLikeHeaderDropDownTitle');
+        const subheaderFontList = document.getElementById('instaLikeSubheaderList');
+        const subheaderFontDisplay = document.getElementById('instaLikeSubheaderDropDownTitle');
+        const headerFont = window.getComputedStyle(headerElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        const subheaderFont = window.getComputedStyle(subheaderElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        headerFontDisplay.innerText = headerFont;
+        subheaderFontDisplay.innerText = subheaderFont;
+        
+        Array.from(headerFontList.children).forEach((child)=>{
+            const childFont = child.innerText;
+            if(child.classList.contains('selected-font')){
+                child.classList.remove('selected-font');
+            }
+            if(childFont === headerFont){
+                child.classList.add('selected-font');
+            }
+        });
+
+        Array.from(subheaderFontList.children).forEach((child)=>{
+            const childFont = child.innerText;
+            if(child.classList.contains('selected-font')){
+                child.classList.remove('selected-font');
+            }
+            if(childFont === subheaderFont){
+                child.classList.add('selected-font');
+            }
+        });
+
+        // header color
+        const instaLikeHeaderHexBox = document.getElementById('instaLikeHeaderFontColorClick');
+        const instaLikeHeaderForm = document.getElementById('instaLikeHeaderFontColorForm');
+        const instaLikeHeaderColorRGB = window.getComputedStyle(headerElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const instaLikeHeaderColorHex = rgbToHex(instaLikeHeaderColorRGB);
+        instaLikeHeaderForm.value = instaLikeHeaderColorHex;
+        instaLikeHeaderHexBox.style.backgroundColor = instaLikeHeaderColorHex;
+
+        // subheader color
+        const instaLikeSubheaderHexBox = document.getElementById('instaLikeSubheaderFontColorClick');
+        const instaLikeSubheaderForm = document.getElementById('instaLikeSubheaderFontColorForm');
+        const instaLikeSubheaderColorRGB = window.getComputedStyle(subheaderElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const instaLikeSubheaderColorHex = rgbToHex(instaLikeSubheaderColorRGB);
+        instaLikeSubheaderForm.value = instaLikeSubheaderColorHex;
+        instaLikeSubheaderHexBox.style.backgroundColor = instaLikeSubheaderColorHex;
+        
+        // Insta Like button color
+        const instaLikeButtonElement = element.querySelector('button');
+        const instaLikeButtonColorForm = document.getElementById('instaLikeButtonColorForm');
+
+        const instaLikeButtonHexBox = document.getElementById('instaLikeButtonColorClick');
+        const instaLikeButtonColorRGB = window.getComputedStyle(instaLikeButtonElement).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const instaLikeButtonColorHex = rgbToHex(instaLikeButtonColorRGB);
+        instaLikeButtonColorForm.value = instaLikeButtonColorHex;
+        instaLikeButtonHexBox.style.backgroundColor = instaLikeButtonColorHex;
+
+        // Insta Like background color
+        const instaLikeBackgroundColorForm = document.getElementById('instaLikeBackgroundColorForm');
+        const instaLikeBackgroundHexBox = document.getElementById('instaLikeBackgroundColorClick');
+        const instaLikeBackgroundColorRGB = window.getComputedStyle(element).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const instaLikeBackgroundColorHex = rgbToHex(instaLikeBackgroundColorRGB);
+        instaLikeBackgroundColorForm.value = instaLikeBackgroundColorHex;
+        instaLikeBackgroundHexBox.style.backgroundColor = instaLikeBackgroundColorHex;
+
+        // Insta Like border color
+        const instaLikeBorderColorForm = document.getElementById('instaLikeBorderColorForm');
+        const instaLikeBorderHexBox = document.getElementById('instaLikeBorderColorClick');
+        const instaLikeBorderColorRGB = window.getComputedStyle(element).getPropertyValue('border-color').replace(/^"|"$/g, '');
+        const instaLikeBorderColorHex = rgbToHex(instaLikeBorderColorRGB);
+        instaLikeBorderColorForm.value = instaLikeBorderColorHex;
+        instaLikeBorderHexBox.style.backgroundColor = instaLikeBorderColorRGB;
+
+        // Insta Like border stroke
+        const instaLikeBorderFormTopStroke = document.getElementById('instaLikeBorderTopStroke');
+        const instaLikeBorderFormLeftStroke = document.getElementById('instaLikeBorderLeftStroke');
+        const instaLikeBorderFormBottomStroke = document.getElementById('instaLikeBorderBottomStroke');
+        const instaLikeBorderFormRightStroke = document.getElementById('instaLikeBorderRightStroke');
+
+        const instaLikeBorderStrokeTop = window.getComputedStyle(element).getPropertyValue('border-top-width').replace(/^"|"$/g, '');
+        const instaLikeBorderStrokeLeft = window.getComputedStyle(element).getPropertyValue('border-left-width').replace(/^"|"$/g, '');
+        const instaLikeBorderStrokeBottom = window.getComputedStyle(element).getPropertyValue('border-bottom-width').replace(/^"|"$/g, '');
+        const instaLikeBorderStrokeRight = window.getComputedStyle(element).getPropertyValue('border-right-width').replace(/^"|"$/g, '');
+
+        instaLikeBorderFormTopStroke.value = instaLikeBorderStrokeTop;
+        instaLikeBorderFormLeftStroke.value = instaLikeBorderStrokeLeft;
+        instaLikeBorderFormBottomStroke.value = instaLikeBorderStrokeBottom;
+        instaLikeBorderFormRightStroke.value = instaLikeBorderStrokeRight;
+
+        // Insta Like border radius
+        const instaLikeBorderFormTopLeftRadius = document.getElementById('instaLikeBorderTopLeftRadius');
+        const instaLikeBorderFormTopRightRadius = document.getElementById('instaLikeBorderTopRightRadius');
+        const instaLikeBorderFormBottomLeftRadius = document.getElementById('instaLikeBorderBottomLeftRadius');
+        const instaLikeBorderFormBottomRightRadius = document.getElementById('instaLikeBorderBottomRightRadius');
+
+        const instaLikeBorderRadiusTopLeft = window.getComputedStyle(element).getPropertyValue('border-top-left-radius').replace(/^"|"$/g, '');
+        const instaLikeBorderRadiusTopRight = window.getComputedStyle(element).getPropertyValue('border-top-right-radius').replace(/^"|"$/g, '');
+        const instaLikeBorderRadiusBottomLeft = window.getComputedStyle(element).getPropertyValue('border-bottom-left-radius').replace(/^"|"$/g, '');
+        const instaLikeBorderRadiusBottomRight = window.getComputedStyle(element).getPropertyValue('border-bottom-right-radius').replace(/^"|"$/g, '');
+
+        instaLikeBorderFormTopLeftRadius.value = instaLikeBorderRadiusTopLeft;
+        instaLikeBorderFormTopRightRadius.value = instaLikeBorderRadiusTopRight;
+        instaLikeBorderFormBottomLeftRadius.value = instaLikeBorderRadiusBottomLeft;
+        instaLikeBorderFormBottomRightRadius.value = instaLikeBorderRadiusBottomRight;
     }
 
     document.addEventListener("keydown", ({key}) => {

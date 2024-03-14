@@ -66,6 +66,22 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     let pickrXLikeBackground = undefined;
     let pickrXLikeBorder = undefined;
 
+    let pickrInstaFollowHeader = undefined;
+    let pickrInstaFollowSubheader = undefined;
+    let pickrInstaFollowButton = undefined;
+    let pickrInstaFollowBackground = undefined;
+    let pickrInstaFollowBorder = undefined;
+    let pickrInstaRepostHeader = undefined;
+    let pickrInstaRepostSubheader = undefined;
+    let pickrInstaRepostButton = undefined;
+    let pickrInstaRepostBackground = undefined;
+    let pickrInstaRepostBorder = undefined;
+    let pickrInstaLikeHeader = undefined;
+    let pickrInstaLikeSubheader = undefined;
+    let pickrInstaLikeButton = undefined;
+    let pickrInstaLikeBackground = undefined;
+    let pickrInstaLikeBorder = undefined;
+
 
     dropDownBtns.forEach((dropDownBtn)=>{
         dropDownBtn.addEventListener('click', openDropDown);
@@ -421,6 +437,48 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 const subheaderXLikeDropDownDisplay =  document.getElementById('XLikeSubheaderDropDownTitle');
                 selectedXLikeSubheaderElement.style.fontFamily = `${fontName}`;
                 subheaderXLikeDropDownDisplay.innerText = fontName;
+                break;
+
+            case 'instaFollowHeaderFont':
+                const selectedInstaFollowHeaderElement = selectedSection.querySelector('h2');
+                const headerInstaFollowDropDownDisplay = document.getElementById('instaFollowHeaderDropDownTitle');
+                selectedInstaFollowHeaderElement.style.fontFamily = `${fontName}`;
+                headerInstaFollowDropDownDisplay.innerText = fontName;
+                break;
+
+            case 'instaFollowSubheaderFont':
+                const selectedInstaFollowSubheaderElement = selectedSection.querySelector('p');
+                const subheaderInstaFollowDropDownDisplay =  document.getElementById('instaFollowSubheaderDropDownTitle');
+                selectedInstaFollowSubheaderElement.style.fontFamily = `${fontName}`;
+                subheaderInstaFollowDropDownDisplay.innerText = fontName;
+                break;
+
+            case 'instaCommentHeaderFont':
+                const selectedInstaRepostHeaderElement = selectedSection.querySelector('h2');
+                const headerInstaRepostDropDownDisplay = document.getElementById('instaRepostHeaderDropDownTitle');
+                selectedInstaRepostHeaderElement.style.fontFamily = `${fontName}`;
+                headerInstaRepostDropDownDisplay.innerText = fontName;
+                break;
+
+            case 'instaCommentSubheaderFont':
+                const selectedInstaRepostSubheaderElement = selectedSection.querySelector('p');
+                const subheaderInstaRepostDropDownDisplay =  document.getElementById('instaRepostSubheaderDropDownTitle');
+                selectedInstaRepostSubheaderElement.style.fontFamily = `${fontName}`;
+                subheaderInstaRepostDropDownDisplay.innerText = fontName;
+                break;
+
+            case 'instaLikeHeaderFont':
+                const selectedInstaLikeHeaderElement = selectedSection.querySelector('h2');
+                const headerInstaLikeDropDownDisplay = document.getElementById('instaLikeHeaderDropDownTitle');
+                selectedInstaLikeHeaderElement.style.fontFamily = `${fontName}`;
+                headerInstaLikeDropDownDisplay.innerText = fontName;
+                break;
+
+            case 'instaLikeSubheaderFont':
+                const selectedInstaLikeSubheaderElement = selectedSection.querySelector('p');
+                const subheaderInstaLikeDropDownDisplay =  document.getElementById('instaLikeSubheaderDropDownTitle');
+                selectedInstaLikeSubheaderElement.style.fontFamily = `${fontName}`;
+                subheaderInstaLikeDropDownDisplay.innerText = fontName;
                 break;
         }
 
@@ -1028,6 +1086,364 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 pickrXLikeBorder.show();
 
                 pickrXLikeBorder.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'instaFollowHeaderColor':
+                const currentInstaFollowHeaderFontColor = document.getElementById('instaFollowHeaderFontColorForm').value;
+
+                pickrInstaFollowHeader = Pickr.create({
+                    el: instaFollowHeadeColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentInstaFollowHeaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrInstaFollowHeader.setColorRepresentation('HEX');
+                pickrInstaFollowHeader.show();
+
+                pickrInstaFollowHeader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'instaFollowSubheaderColor':
+                const currentInstaFollowSubheaderFontColor = document.getElementById('instaFollowSubheaderFontColorForm').value;
+
+                pickrInstaFollowSubheader = Pickr.create({
+                    el: instaFollowSubheaderColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentInstaFollowSubheaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrInstaFollowSubheader.setColorRepresentation('HEX');
+                pickrInstaFollowSubheader.show();
+
+                pickrInstaFollowSubheader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+            case 'instaFollowButtonColor':
+                const currentInstaFollowButtonColor = document.getElementById('instaFollowButtonColorForm').value;
+
+                pickrInstaFollowButton = Pickr.create({
+                    el: instaFollowColorGradientButton,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentInstaFollowButtonColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrInstaFollowButton.setColorRepresentation('HEX');
+                pickrInstaFollowButton.show();
+
+                pickrInstaFollowButton.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'instaFollowBackgroundColor':
+                const currentInstaFollowBackgroundColor = document.getElementById('instaFollowBackgroundColorForm').value;
+
+                pickrInstaFollowBackground = Pickr.create({
+                    el: instaFollowColorGradientBackground,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentInstaFollowBackgroundColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrInstaFollowBackground.setColorRepresentation('HEX');
+                pickrInstaFollowBackground.show();
+
+                pickrInstaFollowBackground.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'instaFollowBorderColor':
+                const currentInstaFollowBorderColor = document.getElementById('instaFollowBorderColorForm').value;
+
+                pickrInstaFollowBorder = Pickr.create({
+                    el: instaFollowColorGradientBorder,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentInstaFollowBorderColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrInstaFollowBorder.setColorRepresentation('HEX');
+                pickrInstaFollowBorder.show();
+
+                pickrInstaFollowBorder.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'instaCommentHeaderColor':
+                const currentInstaCommentHeaderFontColor = document.getElementById('instaCommentHeaderFontColorForm').value;
+
+                pickrInstaCommentHeader = Pickr.create({
+                    el: instaCommentHeadeColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentInstaCommentHeaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrInstaCommentHeader.setColorRepresentation('HEX');
+                pickrInstaCommentHeader.show();
+
+                pickrInstaCommentHeader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'instaCommentSubheaderColor':
+                const currentInstaCommentSubheaderFontColor = document.getElementById('instaCommentSubheaderFontColorForm').value;
+
+                pickrInstaCommentSubheader = Pickr.create({
+                    el: instaCommentSubheaderColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentInstaCommentSubheaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrInstaCommentSubheader.setColorRepresentation('HEX');
+                pickrInstaCommentSubheader.show();
+
+                pickrInstaCommentSubheader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+                
+            case 'instaCommentButtonColor':
+                const currentInstaCommentButtonColor = document.getElementById('instaCommentButtonColorForm').value;
+
+                pickrInstaCommentButton = Pickr.create({
+                    el: instaCommentColorGradientButton,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentInstaCommentButtonColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrInstaCommentButton.setColorRepresentation('HEX');
+                pickrInstaCommentButton.show();
+
+                pickrInstaCommentButton.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'instaCommentBackgroundColor':
+                const currentInstaCommentBackgroundColor = document.getElementById('instaCommentBackgroundColorForm').value;
+
+                pickrInstaCommentBackground = Pickr.create({
+                    el: instaCommentColorGradientBackground,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentInstaCommentBackgroundColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrInstaCommentBackground.setColorRepresentation('HEX');
+                pickrInstaCommentBackground.show();
+
+                pickrInstaCommentBackground.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'instaCommentBorderColor':
+                const currentInstaCommentBorderColor = document.getElementById('instaCommentBorderColorForm').value;
+
+                pickrInstaCommentBorder = Pickr.create({
+                    el: instaCommentColorGradientBorder,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentInstaCommentBorderColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrInstaCommentBorder.setColorRepresentation('HEX');
+                pickrInstaCommentBorder.show();
+
+                pickrInstaCommentBorder.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'instaLikeHeaderColor':
+                const currentInstaLikeHeaderFontColor = document.getElementById('instaLikeHeaderFontColorForm').value;
+
+                pickrInstaLikeHeader = Pickr.create({
+                    el: instaLikeHeadeColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentInstaLikeHeaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrInstaLikeHeader.setColorRepresentation('HEX');
+                pickrInstaLikeHeader.show();
+
+                pickrInstaLikeHeader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'instaLikeSubheaderColor':
+                const currentInstaLikeSubheaderFontColor = document.getElementById('instaLikeSubheaderFontColorForm').value;
+
+                pickrInstaLikeSubheader = Pickr.create({
+                    el: instaLikeSubheaderColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentInstaLikeSubheaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrInstaLikeSubheader.setColorRepresentation('HEX');
+                pickrInstaLikeSubheader.show();
+
+                pickrInstaLikeSubheader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+            case 'instaLikeButtonColor':
+                const currentInstaLikeButtonColor = document.getElementById('instaLikeButtonColorForm').value;
+
+                pickrInstaLikeButton = Pickr.create({
+                    el: instaLikeColorGradientButton,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentInstaLikeButtonColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrInstaLikeButton.setColorRepresentation('HEX');
+                pickrInstaLikeButton.show();
+
+                pickrInstaLikeButton.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'instaLikeBackgroundColor':
+                const currentInstaLikeBackgroundColor = document.getElementById('instaLikeBackgroundColorForm').value;
+
+                pickrInstaLikeBackground = Pickr.create({
+                    el: instaLikeColorGradientBackground,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentInstaLikeBackgroundColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrInstaLikeBackground.setColorRepresentation('HEX');
+                pickrInstaLikeBackground.show();
+
+                pickrInstaLikeBackground.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'instaLikeBorderColor':
+                const currentInstaLikeBorderColor = document.getElementById('instaLikeBorderColorForm').value;
+
+                pickrInstaLikeBorder = Pickr.create({
+                    el: instaLikeColorGradientBorder,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentInstaLikeBorderColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrInstaLikeBorder.setColorRepresentation('HEX');
+                pickrInstaLikeBorder.show();
+
+                pickrInstaLikeBorder.on('change', (color)=>{
                     const selectedColor = '#'.concat(...color.toHEXA());
                     this.style.backgroundColor = selectedColor;
                     
@@ -1764,6 +2180,423 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 XLikeEditElementBorder.style.borderBottom = `${XLikeCurrentBorderStrokeBottom} solid ${color}`;
                 XLikeEditElementBorder.style.borderRight = `${XLikeCurrentBorderStrokeRight} solid ${color}`;
                 break;
+
+            case 'instaFollowHeaderColor':
+                if(fromPickr === false){
+                    if(pickrInstaFollowHeader === undefined){
+                        pickrInstaFollowHeader = Pickr.create({
+                            el: instaFollowHeadeColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrInstaFollowHeader.setColor(color);
+                        const hexBoxClick = document.getElementById('instaFollowHeaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('instaFollowHeaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementInstaFollowHeader = document.querySelector('.selected-raffleleader-section').querySelector('h2');
+                editElementInstaFollowHeader.style.color = color;
+                break;
+
+            case 'instaFollowSubheaderColor':
+                if(fromPickr === false){
+                    if(pickrInstaFollowSubheader === undefined){
+                        pickrInstaFollowSubheader = Pickr.create({
+                            el: instaFollowSubheaderColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrInstaFollowSubheader.setColor(color);
+                        const hexBoxClick = document.getElementById('instaFollowSubheaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('instaFollowSubheaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementInstaFollowSubheader = document.querySelector('.selected-raffleleader-section').querySelector('p');
+                editElementInstaFollowSubheader.style.color = color;
+                break;
+
+            case 'instaFollowButtonColor':
+                if(fromPickr === false){
+                    if(pickrInstaFollowButton === undefined){
+                        pickrInstaFollowButton = Pickr.create({
+                            el: instaFollowColorGradientButton,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrInstaFollowButton.setColor(color);
+                        const hexBoxClick = document.getElementById('instaFollowButtonColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('instaFollowButtonColorForm');
+                    hexBoxText.value = color;
+                }
+                const instaFollowEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                instaFollowEditElementButton.style.backgroundColor = color;
+                break;
+
+            case 'instaFollowBackgroundColor':
+                if(fromPickr === false){
+                    if(pickrInstaFollowBackground === undefined){
+                        pickrInstaFollowBackground = Pickr.create({
+                            el: instaFollowColorGradientBackground,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrInstaFollowBackground.setColor(color);
+                        const hexBoxClick = document.getElementById('instaFollowBackgroundColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('instaFollowBackgroundColorForm');
+                    hexBoxText.value = color;
+                }
+                const instaFollowEditElementBackground = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                instaFollowEditElementBackground.style.backgroundColor = color;
+                break;
+        
+            case 'instaFollowBorderColor':
+                if(fromPickr === false){
+                    if(pickrInstaFollowBorder === undefined){
+                        pickrInstaFollowBorder = Pickr.create({
+                            el: instaFollowColorGradientBorder,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrInstaFollowBorder.setColor(color);
+                        const hexBoxClick = document.getElementById('instaFollowBorderColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('instaFollowBorderColorForm');
+                    hexBoxText.value = color;
+                }
+                const instaFollowEditElementBorder = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                
+                const instaFollowCurrentBorderStrokeTop = getComputedStyle(instaFollowEditElementBorder).borderTopWidth;
+                const instaFollowCurrentBorderStrokeLeft = getComputedStyle(instaFollowEditElementBorder).borderLeftWidth;
+                const instaFollowCurrentBorderStrokeBottom = getComputedStyle(instaFollowEditElementBorder).borderBottomWidth;
+                const instaFollowCurrentBorderStrokeRight = getComputedStyle(instaFollowEditElementBorder).borderRightWidth;
+
+                instaFollowEditElementBorder.style.borderTop = `${instaFollowCurrentBorderStrokeTop} solid ${color}`;
+                instaFollowEditElementBorder.style.borderLeft = `${instaFollowCurrentBorderStrokeLeft} solid ${color}`;
+                instaFollowEditElementBorder.style.borderBottom = `${instaFollowCurrentBorderStrokeBottom} solid ${color}`;
+                instaFollowEditElementBorder.style.borderRight = `${instaFollowCurrentBorderStrokeRight} solid ${color}`;
+                break;
+
+            case 'instaCommentHeaderColor':
+                if(fromPickr === false){
+                    if(pickrInstaCommentHeader === undefined){
+                        pickrInstaCommentHeader = Pickr.create({
+                            el: instaCommentHeaderColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrInstaCommentHeader.setColor(color);
+                        const hexBoxClick = document.getElementById('instaCommentHeaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('instaCommentHeaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementInstaCommentHeader = document.querySelector('.selected-raffleleader-section').querySelector('h2');
+                editElementInstaCommentHeader.style.color = color;
+                break;
+
+            case 'instaCommentSubheaderColor':
+                if(fromPickr === false){
+                    if(pickrInstaCommentSubheader === undefined){
+                        pickrInstaCommentSubheader = Pickr.create({
+                            el: instaCommentSubheaderColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrInstaCommentSubheader.setColor(color);
+                        const hexBoxClick = document.getElementById('instaCommentSubheaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('instaCommentSubheaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementInstaCommentSubheader = document.querySelector('.selected-raffleleader-section').querySelector('p');
+                editElementInstaCommentSubheader.style.color = color;
+                break;
+            
+            case 'instaCommentButtonColor':
+                if(fromPickr === false){
+                    if(pickrInstaCommentButton === undefined){
+                        pickrInstaCommentButton = Pickr.create({
+                            el: instaCommentColorGradientButton,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrInstaCommentButton.setColor(color);
+                        const hexBoxClick = document.getElementById('instaCommentButtonColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('instaCommentButtonColorForm');
+                    hexBoxText.value = color;
+                }
+                const instaCommentEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                instaCommentEditElementButton.style.backgroundColor = color;
+                break;
+
+            case 'instaCommentBackgroundColor':
+                if(fromPickr === false){
+                    if(pickrInstaCommentBackground === undefined){
+                        pickrInstaCommentBackground = Pickr.create({
+                            el: instaCommentColorGradientBackground,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrInstaCommentBackground.setColor(color);
+                        const hexBoxClick = document.getElementById('instaCommentBackgroundColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('instaCommentBackgroundColorForm');
+                    hexBoxText.value = color;
+                }
+                const instaCommentEditElementBackground = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                instaCommentEditElementBackground.style.backgroundColor = color;
+                break;
+        
+            case 'instaCommentBorderColor':
+                if(fromPickr === false){
+                    if(pickrInstaCommentBorder === undefined){
+                        pickrInstaCommentBorder = Pickr.create({
+                            el: instaCommentColorGradientBorder,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrInstaCommentBorder.setColor(color);
+                        const hexBoxClick = document.getElementById('instaCommentBorderColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('instaCommentBorderColorForm');
+                    hexBoxText.value = color;
+                }
+                const instaCommentEditElementBorder = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                
+                const instaCommentCurrentBorderStrokeTop = getComputedStyle(instaCommentEditElementBorder).borderTopWidth;
+                const instaCommentCurrentBorderStrokeLeft = getComputedStyle(instaCommentEditElementBorder).borderLeftWidth;
+                const instaCommentCurrentBorderStrokeBottom = getComputedStyle(instaCommentEditElementBorder).borderBottomWidth;
+                const instaCommentCurrentBorderStrokeRight = getComputedStyle(instaCommentEditElementBorder).borderRightWidth;
+
+                instaCommentEditElementBorder.style.borderTop = `${instaCommentCurrentBorderStrokeTop} solid ${color}`;
+                instaCommentEditElementBorder.style.borderLeft = `${instaCommentCurrentBorderStrokeLeft} solid ${color}`;
+                instaCommentEditElementBorder.style.borderBottom = `${instaCommentCurrentBorderStrokeBottom} solid ${color}`;
+                instaCommentEditElementBorder.style.borderRight = `${instaCommentCurrentBorderStrokeRight} solid ${color}`;
+                break;
+
+            case 'instaLikeHeaderColor':
+                if(fromPickr === false){
+                    if(pickrInstaLikeHeader === undefined){
+                        pickrInstaLikeHeader = Pickr.create({
+                            el: instaLikeHeaderColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrInstaLikeHeader.setColor(color);
+                        const hexBoxClick = document.getElementById('instaLikeHeaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('instaLikeHeaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementInstaLikeHeader = document.querySelector('.selected-raffleleader-section').querySelector('h2');
+                editElementInstaLikeHeader.style.color = color;
+                break;
+
+            case 'instaLikeSubheaderColor':
+                if(fromPickr === false){
+                    if(pickrInstaLikeSubheader === undefined){
+                        pickrInstaLikeSubheader = Pickr.create({
+                            el: instaLikeSubheaderColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrInstaLikeSubheader.setColor(color);
+                        const hexBoxClick = document.getElementById('instaLikeSubheaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('instaLikeSubheaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementInstaLikeSubheader = document.querySelector('.selected-raffleleader-section').querySelector('p');
+                editElementInstaLikeSubheader.style.color = color;
+                break;
+            
+            case 'instaLikeButtonColor':
+                if(fromPickr === false){
+                    if(pickrInstaLikeButton === undefined){
+                        pickrInstaLikeButton = Pickr.create({
+                            el: instaLikeColorGradientButton,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrInstaLikeButton.setColor(color);
+                        const hexBoxClick = document.getElementById('instaLikeButtonColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('instaLikeButtonColorForm');
+                    hexBoxText.value = color;
+                }
+                const instaLikeEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                instaLikeEditElementButton.style.backgroundColor = color;
+                break;
+
+            case 'instaLikeBackgroundColor':
+                if(fromPickr === false){
+                    if(pickrInstaLikeBackground === undefined){
+                        pickrInstaLikeBackground = Pickr.create({
+                            el: instaLikeColorGradientBackground,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrInstaLikeBackground.setColor(color);
+                        const hexBoxClick = document.getElementById('instaLikeBackgroundColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('instaLikeBackgroundColorForm');
+                    hexBoxText.value = color;
+                }
+                const instaLikeEditElementBackground = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                instaLikeEditElementBackground.style.backgroundColor = color;
+                break;
+        
+            case 'instaLikeBorderColor':
+                if(fromPickr === false){
+                    if(pickrInstaLikeBorder === undefined){
+                        pickrInstaLikeBorder = Pickr.create({
+                            el: instaLikeColorGradientBorder,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrInstaLikeBorder.setColor(color);
+                        const hexBoxClick = document.getElementById('instaLikeBorderColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('instaLikeBorderColorForm');
+                    hexBoxText.value = color;
+                }
+                const instaLikeEditElementBorder = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                
+                const instaLikeCurrentBorderStrokeTop = getComputedStyle(instaLikeEditElementBorder).borderTopWidth;
+                const instaLikeCurrentBorderStrokeLeft = getComputedStyle(instaLikeEditElementBorder).borderLeftWidth;
+                const instaLikeCurrentBorderStrokeBottom = getComputedStyle(instaLikeEditElementBorder).borderBottomWidth;
+                const instaLikeCurrentBorderStrokeRight = getComputedStyle(instaLikeEditElementBorder).borderRightWidth;
+
+                instaLikeEditElementBorder.style.borderTop = `${instaLikeCurrentBorderStrokeTop} solid ${color}`;
+                instaLikeEditElementBorder.style.borderLeft = `${instaLikeCurrentBorderStrokeLeft} solid ${color}`;
+                instaLikeEditElementBorder.style.borderBottom = `${instaLikeCurrentBorderStrokeBottom} solid ${color}`;
+                instaLikeEditElementBorder.style.borderRight = `${instaLikeCurrentBorderStrokeRight} solid ${color}`;
+                break;
         }
     }
 
@@ -2017,6 +2850,47 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 if(strokeFormID === 'XLikeBorderRightStroke') XLikeSection.style.borderRight = `${borderStroke}px solid ${XLikeCurrentBorderColorRight}`;
                 break;
             
+            case 'instaFollowBorderStroke':
+                const instaFollowSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+
+                const instaFollowCurrentBorderColorTop = getComputedStyle(instaFollowSection).borderTopColor;
+                const instaFollowCurrentBorderColorLeft = getComputedStyle(instaFollowSection).borderLeftColor;
+                const instaFollowCurrentBorderColorBottom = getComputedStyle(instaFollowSection).borderBottomColor;
+                const instaFollowCurrentBorderColorRight = getComputedStyle(instaFollowSection).borderRightColor;
+
+                if(strokeFormID === 'instaFollowBorderTopStroke') instaFollowSection.style.borderTop = `${borderStroke}px solid ${instaFollowCurrentBorderColorTop}`;
+                if(strokeFormID === 'instaFollowBorderLeftStroke') instaFollowSection.style.borderLeft = `${borderStroke}px solid ${instaFollowCurrentBorderColorLeft}`;
+                if(strokeFormID === 'instaFollowBorderBottomStroke') instaFollowSection.style.borderBottom = `${borderStroke}px solid ${instaFollowCurrentBorderColorBottom}`;
+                if(strokeFormID === 'instaFollowBorderRightStroke') instaFollowSection.style.borderRight = `${borderStroke}px solid ${instaFollowCurrentBorderColorRight}`;
+                break;
+            
+            case 'instaCommentBorderStroke':
+                const instaCommentSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+
+                const instaCommentCurrentBorderColorTop = getComputedStyle(instaCommentSection).borderTopColor;
+                const instaCommentCurrentBorderColorLeft = getComputedStyle(instaCommentSection).borderLeftColor;
+                const instaCommentCurrentBorderColorBottom = getComputedStyle(instaCommentSection).borderBottomColor;
+                const instaCommentCurrentBorderColorRight = getComputedStyle(instaCommentSection).borderRightColor;
+
+                if(strokeFormID === 'instaCommentBorderTopStroke') instaCommentSection.style.borderTop = `${borderStroke}px solid ${instaCommentCurrentBorderColorTop}`;
+                if(strokeFormID === 'instaCommentBorderLeftStroke') instaCommentSection.style.borderLeft = `${borderStroke}px solid ${instaCommentCurrentBorderColorLeft}`;
+                if(strokeFormID === 'instaCommentBorderBottomStroke') instaCommentSection.style.borderBottom = `${borderStroke}px solid ${instaCommentCurrentBorderColorBottom}`;
+                if(strokeFormID === 'instaCommentBorderRightStroke') instaCommentSection.style.borderRight = `${borderStroke}px solid ${instaCommentCurrentBorderColorRight}`;
+                break;
+
+            case 'instaLikeBorderStroke':
+                const instaLikeSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+
+                const instaLikeCurrentBorderColorTop = getComputedStyle(instaLikeSection).borderTopColor;
+                const instaLikeCurrentBorderColorLeft = getComputedStyle(instaLikeSection).borderLeftColor;
+                const instaLikeCurrentBorderColorBottom = getComputedStyle(instaLikeSection).borderBottomColor;
+                const instaLikeCurrentBorderColorRight = getComputedStyle(instaLikeSection).borderRightColor;
+
+                if(strokeFormID === 'instaLikeBorderTopStroke') instaLikeSection.style.borderTop = `${borderStroke}px solid ${instaLikeCurrentBorderColorTop}`;
+                if(strokeFormID === 'instaLikeBorderLeftStroke') instaLikeSection.style.borderLeft = `${borderStroke}px solid ${instaLikeCurrentBorderColorLeft}`;
+                if(strokeFormID === 'instaLikeBorderBottomStroke') instaLikeSection.style.borderBottom = `${borderStroke}px solid ${instaLikeCurrentBorderColorBottom}`;
+                if(strokeFormID === 'instaLikeBorderRightStroke') instaLikeSection.style.borderRight = `${borderStroke}px solid ${instaLikeCurrentBorderColorRight}`;
+                break;
             }
     }
 
@@ -2109,6 +2983,33 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 if(radiusFormID === 'XLikeBorderTopRightRadius') XLikeSection.style.borderTopRightRadius = `${borderRadius}px`;
                 if(radiusFormID === 'XLikeBorderBottomLeftRadius') XLikeSection.style.borderBottomLeftRadius = `${borderRadius}px`;
                 if(radiusFormID === 'XLikeBorderBottomRightRadius') XLikeSection.style.borderBottomRightRadius = `${borderRadius}px`;
+                break;
+
+            case 'instaFollowBorderRadius':
+                const instaFollowSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+
+                if(radiusFormID === 'instaFollowBorderTopLeftRadius') instaFollowSection.style.borderTopLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'instaFollowBorderTopRightRadius') XinstaollowSection.style.borderTopRightRadius = `${borderRadius}px`;
+                if(radiusFormID === 'instaFollowBorderBottomLeftRadius') instaFollowSection.style.borderBottomLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'instaFollowBorderBottomRightRadius') instaFollowSection.style.borderBottomRightRadius = `${borderRadius}px`;
+                break;
+
+            case 'instaCommentBorderRadius':
+                const instaCommentSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+
+                if(radiusFormID === 'instaCommentBorderTopLeftRadius') instaCommentSection.style.borderTopLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'instaCommentBorderTopRightRadius') instaCommentSection.style.borderTopRightRadius = `${borderRadius}px`;
+                if(radiusFormID === 'instaCommentBorderBottomLeftRadius') instaCommentSection.style.borderBottomLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'instaCommentBorderBottomRightRadius') instaCommentSection.style.borderBottomRightRadius = `${borderRadius}px`;
+                break;
+            
+            case 'instaLikeBorderRadius':
+                const instaLikeSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+
+                if(radiusFormID === 'instaLikeBorderTopLeftRadius') instaLikeSection.style.borderTopLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'instaLikeBorderTopRightRadius') instaLikeSection.style.borderTopRightRadius = `${borderRadius}px`;
+                if(radiusFormID === 'instaLikeBorderBottomLeftRadius') instaLikeSection.style.borderBottomLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'instaLikeBorderBottomRightRadius') instaLikeSection.style.borderBottomRightRadius = `${borderRadius}px`;
                 break;
         }
     }
@@ -2385,6 +3286,30 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 XLikeConfirmBtn.style.display = "flex";
                 XLikeCancelDelete.style.display = "block";
                 break;
+
+            case 'instaFollowDelete':
+                const instaFollowConfirmBtn = document.getElementById('instaFollowConfirmDelete');
+                const instaFollowCancelDelete = document.getElementById('instaFollowCancelDelete');
+                deleteBtn.style.display = "none";
+                instaFollowConfirmBtn.style.display = "flex";
+                instaFollowCancelDelete.style.display = "block";
+                break;
+
+            case 'instaCommentDelete':
+                const instaCommentConfirmBtn = document.getElementById('instaCommentConfirmDelete');
+                const instaCommentCancelDelete = document.getElementById('instaCommentCancelDelete');
+                deleteBtn.style.display = "none";
+                instaCommentConfirmBtn.style.display = "flex";
+                instaCommentCancelDelete.style.display = "block";
+                break;
+
+            case 'instaLikeDelete':
+                const instaLikeConfirmBtn = document.getElementById('instaLikeConfirmDelete');
+                const instaLikeCancelDelete = document.getElementById('instaLikeCancelDelete');
+                deleteBtn.style.display = "none";
+                instaLikeConfirmBtn.style.display = "flex";
+                instaLikeCancelDelete.style.display = "block";
+                break;
         }   
     }
 
@@ -2494,6 +3419,45 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 customizeBox.scrollTop = 0;
                 customizeBox.classList.toggle('slide-right-to-left');
                 break;
+
+            case 'instaFollowDelete':
+                selectedSection.remove();
+
+                const instaFollowDeleteBtn = document.getElementById('instaFollowDelete');
+                const instaFollowCancelDelete = document.getElementById('instaFollowCancelDelete');
+                instaFollowDeleteBtn.style.display = "flex";
+                confirmDelete.style.display = "none";
+                instaFollowCancelDelete.style.display = "none";
+
+                customizeBox.scrollTop = 0;
+                customizeBox.classList.toggle('slide-right-to-left');
+                break;
+
+            case 'instaCommentDelete':
+                selectedSection.remove();
+
+                const instaCommentDeleteBtn = document.getElementById('instaCommentDelete');
+                const instaCommentCancelDelete = document.getElementById('instaCommentCancelDelete');
+                instaCommentDeleteBtn.style.display = "flex";
+                confirmDelete.style.display = "none";
+                instaCommentCancelDelete.style.display = "none";
+
+                customizeBox.scrollTop = 0;
+                customizeBox.classList.toggle('slide-right-to-left');
+                break;
+
+            case 'instaLikeDelete':
+                selectedSection.remove();
+
+                const instaLikeDeleteBtn = document.getElementById('instaLikeDelete');
+                const instaLikeCancelDelete = document.getElementById('instaLikeCancelDelete');
+                instaLikeDeleteBtn.style.display = "flex";
+                confirmDelete.style.display = "none";
+                instaLikeCancelDelete.style.display = "none";
+
+                customizeBox.scrollTop = 0;
+                customizeBox.classList.toggle('slide-right-to-left');
+                break;
         }
     }
 
@@ -2559,6 +3523,29 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 cancelBtn.style.display = "none";
                 break;
 
+            case 'instaFollowDelete':
+                const instaFollowDeleteBtn = document.getElementById('instaFollowDelete');
+                const instaFollowConfirmBtn = document.getElementById('instaFollowConfirmDelete');
+                instaFollowDeleteBtn.style.display = "flex";
+                instaFollowConfirmBtn.style.display = "none";
+                cancelBtn.style.display = "none";
+                break;
+
+            case 'instaCommentDelete':
+                const instaCommentDeleteBtn = document.getElementById('instaCommentDelete');
+                const instaCommentConfirmBtn = document.getElementById('instaCommentConfirmDelete');
+                instaCommentDeleteBtn.style.display = "flex";
+                instaCommentConfirmBtn.style.display = "none";
+                cancelBtn.style.display = "none";
+                break;
+
+            case 'instaLikeDelete':
+                const instaLikeDeleteBtn = document.getElementById('instaLikeDelete');
+                const instaLikeConfirmBtn = document.getElementById('instaLikeConfirmDelete');
+                instaLikeDeleteBtn.style.display = "flex";
+                instaLikeConfirmBtn.style.display = "none";
+                cancelBtn.style.display = "none";
+                break;
         }
     }
 })

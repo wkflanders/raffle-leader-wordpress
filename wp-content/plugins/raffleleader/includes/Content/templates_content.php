@@ -182,14 +182,14 @@
                 </div>
                 <div class="template-additional">
                     <div class="template-additional-text">
-                        <h2>Like us on Instagram</h2>
+                        <h2>Leave a comment on Instagram</h2>
                         <p>for an extra entry!</p>
                     </div>
                     <button>+1</button>
                 </div>
                 <div class="template-additional">
                     <div class="template-additional-text">
-                        <h2>View us on Instagram</h2>
+                        <h2>Like us on Instagram</h2>
                         <p>for an extra entry!</p>
                     </div>
                     <button>+1</button>

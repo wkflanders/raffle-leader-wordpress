@@ -275,7 +275,7 @@
 }
 
 .template-entry input {
-    width: 95%;
+    width: 90%;
     border-radius: 5px;
     border: 0.5px solid gray;
 }
@@ -283,7 +283,7 @@
 .template-entry button {
     background-color: #1501FE;
     color: white;
-    margin-left: -10%;
+    margin-left: -5%;
     border: none;
     border-radius: 5px;
 }
@@ -311,11 +311,12 @@
 .template-additional-text h2 {
     font-size: 50%;
     margin: 0 0 0 0;
+    line-height: 2vh;
 }
 
 .template-additional-text p {
     font-size: 50%;
-    margin: -1vh 0 0 0;
+    margin: 0;
 }
 
 .template-additional button {

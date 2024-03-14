@@ -50,6 +50,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     let pickrEntryBackground = undefined;
     let pickrEntryBorder = undefined;
 
+    let pickrXFollowHeader = undefined;
+    let pickrXFollowSubheader = undefined;
+    let pickrXFollowButton = undefined;
+    let pickrXFollowBackground = undefined;
+    let pickrXFollowBorder = undefined;
+    let pickrXRepostHeader = undefined;
+    let pickrXRepostSubheader = undefined;
+    let pickrXRepostButton = undefined;
+    let pickrXRepostBackground = undefined;
+    let pickrXRepostBorder = undefined;
+    let pickrXLikeHeader = undefined;
+    let pickrXLikeSubheader = undefined;
+    let pickrXLikeButton = undefined;
+    let pickrXLikeBackground = undefined;
+    let pickrXLikeBorder = undefined;
+
+
     dropDownBtns.forEach((dropDownBtn)=>{
         dropDownBtn.addEventListener('click', openDropDown);
     });
@@ -202,8 +219,19 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
         switch(elementType){
             case 'editText':
-                const selectedElement = selectedSection.querySelector('h2');
-                selectedElement.textContent = this.value;
+                const selectedTextElement = selectedSection.querySelector('h2');
+                selectedTextElement.textContent = this.value;
+                break;
+            
+            case 'editHeader':
+                const selectedHeaderElement = selectedSection.querySelector('h2');
+                selectedHeaderElement.textContent = this.value;
+                break;
+
+            case 'editSubheader':
+                const selectedSubheaderElement = selectedSection.querySelector('p');
+                selectedSubheaderElement.textContent = this.value;
+                break;
         }
     }
 
@@ -331,6 +359,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
     function selectFont(event){
         const inputFontElement = event.target;
+        const fontContainer = inputFontElement.parentNode;
         const fontName = inputFontElement.innerText;
         const elementType = inputFontElement.getAttribute('data-type');
         const selectedSection = document.querySelector('.selected-raffleleader-section');
@@ -351,11 +380,56 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 counterSelectedElementp.style.fontFamily = `${fontName}`;
                 counterDropDownDisplay.innerText = fontName;
                 break;
+
+            case 'XFollowHeaderFont':
+                const selectedXFollowHeaderElement = selectedSection.querySelector('h2');
+                const headerXFollowDropDownDisplay = document.getElementById('XFollowHeaderDropDownTitle');
+                selectedXFollowHeaderElement.style.fontFamily = `${fontName}`;
+                headerXFollowDropDownDisplay.innerText = fontName;
+                break;
+
+            case 'XFollowSubheaderFont':
+                const selectedXFollowSubheaderElement = selectedSection.querySelector('p');
+                const subheaderXFollowDropDownDisplay =  document.getElementById('XFollowSubheaderDropDownTitle');
+                selectedXFollowSubheaderElement.style.fontFamily = `${fontName}`;
+                subheaderXFollowDropDownDisplay.innerText = fontName;
+                break;
+
+            case 'XRepostHeaderFont':
+                const selectedXRepostHeaderElement = selectedSection.querySelector('h2');
+                const headerXRepostDropDownDisplay = document.getElementById('XRepostHeaderDropDownTitle');
+                selectedXRepostHeaderElement.style.fontFamily = `${fontName}`;
+                headerXRepostDropDownDisplay.innerText = fontName;
+                break;
+
+            case 'XRepostSubheaderFont':
+                const selectedXRepostSubheaderElement = selectedSection.querySelector('p');
+                const subheaderXRepostDropDownDisplay =  document.getElementById('XRepostSubheaderDropDownTitle');
+                selectedXRepostSubheaderElement.style.fontFamily = `${fontName}`;
+                subheaderXRepostDropDownDisplay.innerText = fontName;
+                break;
+
+            case 'XLikeHeaderFont':
+                const selectedXLikeHeaderElement = selectedSection.querySelector('h2');
+                const headerXLikeDropDownDisplay = document.getElementById('XLikeHeaderDropDownTitle');
+                selectedXLikeHeaderElement.style.fontFamily = `${fontName}`;
+                headerXLikeDropDownDisplay.innerText = fontName;
+                break;
+
+            case 'XLikeSubheaderFont':
+                const selectedXLikeSubheaderElement = selectedSection.querySelector('p');
+                const subheaderXLikeDropDownDisplay =  document.getElementById('XLikeSubheaderDropDownTitle');
+                selectedXLikeSubheaderElement.style.fontFamily = `${fontName}`;
+                subheaderXLikeDropDownDisplay.innerText = fontName;
+                break;
         }
 
-        const currentFont = document.querySelector('.selected-font');
-        inputFontElement.classList.add('selected-font');
-        currentFont.classList.remove('selected-font');
+        const currentFont = fontContainer.querySelector('.selected-font');
+
+        if(event.target != currentFont){
+            inputFontElement.classList.add('selected-font');
+            currentFont.classList.remove('selected-font');
+        }
     }
 
 
@@ -597,6 +671,363 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 pickrEntryBorder.show();
 
                 pickrEntryBorder.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'XFollowHeaderColor':
+                const currentXFollowHeaderFontColor = document.getElementById('XFollowHeaderFontColorForm').value;
+
+                pickrXFollowHeader = Pickr.create({
+                    el: XFollowHeadeColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentXFollowHeaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrXFollowHeader.setColorRepresentation('HEX');
+                pickrXFollowHeader.show();
+
+                pickrXFollowHeader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'XFollowSubheaderColor':
+                const currentXFollowSubheaderFontColor = document.getElementById('XFollowSubheaderFontColorForm').value;
+
+                pickrXFollowSubheader = Pickr.create({
+                    el: XFollowSubheaderColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentXFollowSubheaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrXFollowSubheader.setColorRepresentation('HEX');
+                pickrXFollowSubheader.show();
+
+                pickrXFollowSubheader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+            case 'XFollowButtonColor':
+                const currentXFollowButtonColor = document.getElementById('XFollowButtonColorForm').value;
+
+                pickrXFollowButton = Pickr.create({
+                    el: XFollowColorGradientButton,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentXFollowButtonColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrXFollowButton.setColorRepresentation('HEX');
+                pickrXFollowButton.show();
+
+                pickrXFollowButton.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'XFollowBackgroundColor':
+                const currentXFollowBackgroundColor = document.getElementById('XFollowBackgroundColorForm').value;
+
+                pickrXFollowBackground = Pickr.create({
+                    el: XFollowColorGradientBackground,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentXFollowBackgroundColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrXFollowBackground.setColorRepresentation('HEX');
+                pickrXFollowBackground.show();
+
+                pickrXFollowBackground.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'XFollowBorderColor':
+                const currentXFollowBorderColor = document.getElementById('XFollowBorderColorForm').value;
+
+                pickrXFollowBorder = Pickr.create({
+                    el: XFollowColorGradientBorder,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentXFollowBorderColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrXFollowBorder.setColorRepresentation('HEX');
+                pickrXFollowBorder.show();
+
+                pickrXFollowBorder.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'XRepostHeaderColor':
+                const currentXRepostHeaderFontColor = document.getElementById('XRepostHeaderFontColorForm').value;
+
+                pickrXRepostHeader = Pickr.create({
+                    el: XRepostHeadeColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentXRepostHeaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrXRepostHeader.setColorRepresentation('HEX');
+                pickrXRepostHeader.show();
+
+                pickrXRepostHeader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'XRepostSubheaderColor':
+                const currentXRepostSubheaderFontColor = document.getElementById('XRepostSubheaderFontColorForm').value;
+
+                pickrXRepostSubheader = Pickr.create({
+                    el: XRepostSubheaderColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentXRepostSubheaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrXRepostSubheader.setColorRepresentation('HEX');
+                pickrXRepostSubheader.show();
+
+                pickrXRepostSubheader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+            case 'XRepostButtonColor':
+                const currentXRepostButtonColor = document.getElementById('XRepostButtonColorForm').value;
+
+                pickrXRepostButton = Pickr.create({
+                    el: XRepostColorGradientButton,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentXRepostButtonColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrXRepostButton.setColorRepresentation('HEX');
+                pickrXRepostButton.show();
+
+                pickrXRepostButton.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'XRepostBackgroundColor':
+                const currentXRepostBackgroundColor = document.getElementById('XRepostBackgroundColorForm').value;
+
+                pickrXRepostBackground = Pickr.create({
+                    el: XRepostColorGradientBackground,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentXRepostBackgroundColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrXRepostBackground.setColorRepresentation('HEX');
+                pickrXRepostBackground.show();
+
+                pickrXRepostBackground.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'XRepostBorderColor':
+                const currentXRepostBorderColor = document.getElementById('XRepostBorderColorForm').value;
+
+                pickrXRepostBorder = Pickr.create({
+                    el: XRepostColorGradientBorder,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentXRepostBorderColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrXRepostBorder.setColorRepresentation('HEX');
+                pickrXRepostBorder.show();
+
+                pickrXRepostBorder.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'XLikeHeaderColor':
+                const currentXLikeHeaderFontColor = document.getElementById('XLikeHeaderFontColorForm').value;
+
+                pickrXLikeHeader = Pickr.create({
+                    el: XLikeHeadeColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentXLikeHeaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrXLikeHeader.setColorRepresentation('HEX');
+                pickrXLikeHeader.show();
+
+                pickrXLikeHeader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'XLikeSubheaderColor':
+                const currentXLikeSubheaderFontColor = document.getElementById('XLikeSubheaderFontColorForm').value;
+
+                pickrXLikeSubheader = Pickr.create({
+                    el: XLikeSubheaderColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentXLikeSubheaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrXLikeSubheader.setColorRepresentation('HEX');
+                pickrXLikeSubheader.show();
+
+                pickrXLikeSubheader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+            case 'XLikeButtonColor':
+                const currentXLikeButtonColor = document.getElementById('XLikeButtonColorForm').value;
+
+                pickrXLikeButton = Pickr.create({
+                    el: XLikeColorGradientButton,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentXLikeButtonColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrXLikeButton.setColorRepresentation('HEX');
+                pickrXLikeButton.show();
+
+                pickrXLikeButton.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'XLikeBackgroundColor':
+                const currentXLikeBackgroundColor = document.getElementById('XLikeBackgroundColorForm').value;
+
+                pickrXLikeBackground = Pickr.create({
+                    el: XLikeColorGradientBackground,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentXLikeBackgroundColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrXLikeBackground.setColorRepresentation('HEX');
+                pickrXLikeBackground.show();
+
+                pickrXLikeBackground.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'XLikeBorderColor':
+                const currentXLikeBorderColor = document.getElementById('XLikeBorderColorForm').value;
+
+                pickrXLikeBorder = Pickr.create({
+                    el: XLikeColorGradientBorder,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentXLikeBorderColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrXLikeBorder.setColorRepresentation('HEX');
+                pickrXLikeBorder.show();
+
+                pickrXLikeBorder.on('change', (color)=>{
                     const selectedColor = '#'.concat(...color.toHEXA());
                     this.style.backgroundColor = selectedColor;
                     
@@ -916,6 +1347,423 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 entryEditElementBorder.style.borderBottom = `${entryCurrentBorderStrokeBottom} solid ${color}`;
                 entryEditElementBorder.style.borderRight = `${entryCurrentBorderStrokeRight} solid ${color}`;
                 break;
+
+            case 'XFollowHeaderColor':
+                if(fromPickr === false){
+                    if(pickrXFollowHeader === undefined){
+                        pickrXFollowHeader = Pickr.create({
+                            el: XFollowHeadeColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrXFollowHeader.setColor(color);
+                        const hexBoxClick = document.getElementById('XFollowHeaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('XFollowHeaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementXFollowHeader = document.querySelector('.selected-raffleleader-section').querySelector('h2');
+                editElementXFollowHeader.style.color = color;
+                break;
+
+            case 'XFollowSubheaderColor':
+                if(fromPickr === false){
+                    if(pickrXFollowSubheader === undefined){
+                        pickrXFollowSubheader = Pickr.create({
+                            el: XFollowSubheaderColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrXFollowSubheader.setColor(color);
+                        const hexBoxClick = document.getElementById('XFollowSubheaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('XFollowSubheaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementXFollowSubheader = document.querySelector('.selected-raffleleader-section').querySelector('p');
+                editElementXFollowSubheader.style.color = color;
+                break;
+            
+            case 'XFollowButtonColor':
+                if(fromPickr === false){
+                    if(pickrXFollowButton === undefined){
+                        pickrXFollowButton = Pickr.create({
+                            el: XFollowColorGradientButton,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrXFollowButton.setColor(color);
+                        const hexBoxClick = document.getElementById('XFollowButtonColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('XFollowButtonColorForm');
+                    hexBoxText.value = color;
+                }
+                const XFollowEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                XFollowEditElementButton.style.backgroundColor = color;
+                break;
+
+            case 'XFollowBackgroundColor':
+                if(fromPickr === false){
+                    if(pickrXFollowBackground === undefined){
+                        pickrXFollowBackground = Pickr.create({
+                            el: XFollowColorGradientBackground,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrXFollowBackground.setColor(color);
+                        const hexBoxClick = document.getElementById('XFollowBackgroundColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('XFollowBackgroundColorForm');
+                    hexBoxText.value = color;
+                }
+                const XFollowEditElementBackground = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                XFollowEditElementBackground.style.backgroundColor = color;
+                break;
+        
+            case 'XFollowBorderColor':
+                if(fromPickr === false){
+                    if(pickrXFollowBorder === undefined){
+                        pickrXFollowBorder = Pickr.create({
+                            el: XFollowColorGradientBorder,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrXFollowBorder.setColor(color);
+                        const hexBoxClick = document.getElementById('XFollowBorderColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('XFollowBorderColorForm');
+                    hexBoxText.value = color;
+                }
+                const XFollowEditElementBorder = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                
+                const XFollowCurrentBorderStrokeTop = getComputedStyle(XFollowEditElementBorder).borderTopWidth;
+                const XFollowCurrentBorderStrokeLeft = getComputedStyle(XFollowEditElementBorder).borderLeftWidth;
+                const XFollowCurrentBorderStrokeBottom = getComputedStyle(XFollowEditElementBorder).borderBottomWidth;
+                const XFollowCurrentBorderStrokeRight = getComputedStyle(XFollowEditElementBorder).borderRightWidth;
+
+                XFollowEditElementBorder.style.borderTop = `${XFollowCurrentBorderStrokeTop} solid ${color}`;
+                XFollowEditElementBorder.style.borderLeft = `${XFollowCurrentBorderStrokeLeft} solid ${color}`;
+                XFollowEditElementBorder.style.borderBottom = `${XFollowCurrentBorderStrokeBottom} solid ${color}`;
+                XFollowEditElementBorder.style.borderRight = `${XFollowCurrentBorderStrokeRight} solid ${color}`;
+                break;
+
+            case 'XRepostHeaderColor':
+                if(fromPickr === false){
+                    if(pickrXRepostHeader === undefined){
+                        pickrXRepostHeader = Pickr.create({
+                            el: XRepostHeadeColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrXRepostHeader.setColor(color);
+                        const hexBoxClick = document.getElementById('XRepostHeaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('XRepostHeaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementXRepostHeader = document.querySelector('.selected-raffleleader-section').querySelector('h2');
+                editElementXRepostHeader.style.color = color;
+                break;
+
+            case 'XRepostSubheaderColor':
+                if(fromPickr === false){
+                    if(pickrXRepostSubheader === undefined){
+                        pickrXRepostSubheader = Pickr.create({
+                            el: XRepostSubheaderColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrXRepostSubheader.setColor(color);
+                        const hexBoxClick = document.getElementById('XRepostSubheaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('XRepostSubheaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementXRepostSubheader = document.querySelector('.selected-raffleleader-section').querySelector('p');
+                editElementXRepostSubheader.style.color = color;
+                break;
+            
+            case 'XRepostButtonColor':
+                if(fromPickr === false){
+                    if(pickrXRepostButton === undefined){
+                        pickrXRepostButton = Pickr.create({
+                            el: XRepostColorGradientButton,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrXRepostButton.setColor(color);
+                        const hexBoxClick = document.getElementById('XRepostButtonColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('XRepostButtonColorForm');
+                    hexBoxText.value = color;
+                }
+                const XRepostEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                XRepostEditElementButton.style.backgroundColor = color;
+                break;
+
+            case 'XRepostBackgroundColor':
+                if(fromPickr === false){
+                    if(pickrXRepostBackground === undefined){
+                        pickrXRepostBackground = Pickr.create({
+                            el: XRepostColorGradientBackground,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrXRepostBackground.setColor(color);
+                        const hexBoxClick = document.getElementById('XRepostBackgroundColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('XRepostBackgroundColorForm');
+                    hexBoxText.value = color;
+                }
+                const XRepostEditElementBackground = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                XRepostEditElementBackground.style.backgroundColor = color;
+                break;
+        
+            case 'XRepostBorderColor':
+                if(fromPickr === false){
+                    if(pickrXRepostBorder === undefined){
+                        pickrXRepostBorder = Pickr.create({
+                            el: XRepostColorGradientBorder,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrXRepostBorder.setColor(color);
+                        const hexBoxClick = document.getElementById('XRepostBorderColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('XRepostBorderColorForm');
+                    hexBoxText.value = color;
+                }
+                const XRepostEditElementBorder = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                
+                const XRepostCurrentBorderStrokeTop = getComputedStyle(XRepostEditElementBorder).borderTopWidth;
+                const XRepostCurrentBorderStrokeLeft = getComputedStyle(XRepostEditElementBorder).borderLeftWidth;
+                const XRepostCurrentBorderStrokeBottom = getComputedStyle(XRepostEditElementBorder).borderBottomWidth;
+                const XRepostCurrentBorderStrokeRight = getComputedStyle(XRepostEditElementBorder).borderRightWidth;
+
+                XRepostEditElementBorder.style.borderTop = `${XRepostCurrentBorderStrokeTop} solid ${color}`;
+                XRepostEditElementBorder.style.borderLeft = `${XRepostCurrentBorderStrokeLeft} solid ${color}`;
+                XRepostEditElementBorder.style.borderBottom = `${XRepostCurrentBorderStrokeBottom} solid ${color}`;
+                XRepostEditElementBorder.style.borderRight = `${XRepostCurrentBorderStrokeRight} solid ${color}`;
+                break;
+
+            case 'XLikeHeaderColor':
+                if(fromPickr === false){
+                    if(pickrXLikeHeader === undefined){
+                        pickrXLikeHeader = Pickr.create({
+                            el: XLikeHeaderColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrXLikeHeader.setColor(color);
+                        const hexBoxClick = document.getElementById('XLikeHeaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('XLikeHeaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementXLikeHeader = document.querySelector('.selected-raffleleader-section').querySelector('h2');
+                editElementXLikeHeader.style.color = color;
+                break;
+
+            case 'XLikeSubheaderColor':
+                if(fromPickr === false){
+                    if(pickrXLikeSubheader === undefined){
+                        pickrXLikeSubheader = Pickr.create({
+                            el: XLikeSubheaderColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrXLikeSubheader.setColor(color);
+                        const hexBoxClick = document.getElementById('XLikeSubheaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('XLikeSubheaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementXLikeSubheader = document.querySelector('.selected-raffleleader-section').querySelector('p');
+                editElementXLikeSubheader.style.color = color;
+                break;
+            
+            case 'XLikeButtonColor':
+                if(fromPickr === false){
+                    if(pickrXLikeButton === undefined){
+                        pickrXLikeButton = Pickr.create({
+                            el: XLikeColorGradientButton,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrXLikeButton.setColor(color);
+                        const hexBoxClick = document.getElementById('XLikeButtonColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('XLikeButtonColorForm');
+                    hexBoxText.value = color;
+                }
+                const XLikeEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                XLikeEditElementButton.style.backgroundColor = color;
+                break;
+
+            case 'XLikeBackgroundColor':
+                if(fromPickr === false){
+                    if(pickrXLikeBackground === undefined){
+                        pickrXLikeBackground = Pickr.create({
+                            el: XLikeColorGradientBackground,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrXLikeBackground.setColor(color);
+                        const hexBoxClick = document.getElementById('XLikeBackgroundColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('XLikeBackgroundColorForm');
+                    hexBoxText.value = color;
+                }
+                const XLikeEditElementBackground = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                XLikeEditElementBackground.style.backgroundColor = color;
+                break;
+        
+            case 'XLikeBorderColor':
+                if(fromPickr === false){
+                    if(pickrXLikeBorder === undefined){
+                        pickrXLikeBorder = Pickr.create({
+                            el: XLikeColorGradientBorder,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrXLikeBorder.setColor(color);
+                        const hexBoxClick = document.getElementById('XLikeBorderColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('XLikeBorderColorForm');
+                    hexBoxText.value = color;
+                }
+                const XLikeEditElementBorder = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                
+                const XLikeCurrentBorderStrokeTop = getComputedStyle(XLikeEditElementBorder).borderTopWidth;
+                const XLikeCurrentBorderStrokeLeft = getComputedStyle(XLikeEditElementBorder).borderLeftWidth;
+                const XLikeCurrentBorderStrokeBottom = getComputedStyle(XLikeEditElementBorder).borderBottomWidth;
+                const XLikeCurrentBorderStrokeRight = getComputedStyle(XLikeEditElementBorder).borderRightWidth;
+
+                XLikeEditElementBorder.style.borderTop = `${XLikeCurrentBorderStrokeTop} solid ${color}`;
+                XLikeEditElementBorder.style.borderLeft = `${XLikeCurrentBorderStrokeLeft} solid ${color}`;
+                XLikeEditElementBorder.style.borderBottom = `${XLikeCurrentBorderStrokeBottom} solid ${color}`;
+                XLikeEditElementBorder.style.borderRight = `${XLikeCurrentBorderStrokeRight} solid ${color}`;
+                break;
         }
     }
 
@@ -934,6 +1782,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'counterFontSize':
                 const counterSelectedElement = selectedSection.querySelector('h2');
                 counterSelectedElement.style.fontSize = `${fontSize}px`;
+                break;
         }
     }
 
@@ -1125,6 +1974,49 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 if(strokeFormID === 'entryBorderBottomStroke') entrySection.style.borderBottom = `${borderStroke}px solid ${entryCurrentBorderColorBottom}`;
                 if(strokeFormID === 'entryBorderRightStroke') entrySection.style.borderRight = `${borderStroke}px solid ${entryCurrentBorderColorRight}`;
                 break;
+
+            case 'XFollowBorderStroke':
+                const XFollowSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+
+                const XFollowCurrentBorderColorTop = getComputedStyle(XFollowSection).borderTopColor;
+                const XFollowCurrentBorderColorLeft = getComputedStyle(XFollowSection).borderLeftColor;
+                const XFollowCurrentBorderColorBottom = getComputedStyle(XFollowSection).borderBottomColor;
+                const XFollowCurrentBorderColorRight = getComputedStyle(XFollowSection).borderRightColor;
+
+                if(strokeFormID === 'XFollowBorderTopStroke') XFollowSection.style.borderTop = `${borderStroke}px solid ${XFollowCurrentBorderColorTop}`;
+                if(strokeFormID === 'XFollowBorderLeftStroke') XFollowSection.style.borderLeft = `${borderStroke}px solid ${XFollowCurrentBorderColorLeft}`;
+                if(strokeFormID === 'XFollowBorderBottomStroke') XFollowSection.style.borderBottom = `${borderStroke}px solid ${XFollowCurrentBorderColorBottom}`;
+                if(strokeFormID === 'XFollowBorderRightStroke') XFollowSection.style.borderRight = `${borderStroke}px solid ${XFollowCurrentBorderColorRight}`;
+                break;
+            
+            case 'XRepostBorderStroke':
+                const XRepostSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+
+                const XRepostCurrentBorderColorTop = getComputedStyle(XRepostSection).borderTopColor;
+                const XRepostCurrentBorderColorLeft = getComputedStyle(XRepostSection).borderLeftColor;
+                const XRepostCurrentBorderColorBottom = getComputedStyle(XRepostSection).borderBottomColor;
+                const XRepostCurrentBorderColorRight = getComputedStyle(XRepostSection).borderRightColor;
+
+                if(strokeFormID === 'XRepostBorderTopStroke') XRepostSection.style.borderTop = `${borderStroke}px solid ${XRepostCurrentBorderColorTop}`;
+                if(strokeFormID === 'XRepostBorderLeftStroke') XRepostSection.style.borderLeft = `${borderStroke}px solid ${XRepostCurrentBorderColorLeft}`;
+                if(strokeFormID === 'XRepostBorderBottomStroke') XRepostSection.style.borderBottom = `${borderStroke}px solid ${XRepostCurrentBorderColorBottom}`;
+                if(strokeFormID === 'XRepostBorderRightStroke') XRepostSection.style.borderRight = `${borderStroke}px solid ${XRepostCurrentBorderColorRight}`;
+                break;
+
+            case 'XLikeBorderStroke':
+                const XLikeSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+
+                const XLikeCurrentBorderColorTop = getComputedStyle(XLikeSection).borderTopColor;
+                const XLikeCurrentBorderColorLeft = getComputedStyle(XLikeSection).borderLeftColor;
+                const XLikeCurrentBorderColorBottom = getComputedStyle(XLikeSection).borderBottomColor;
+                const XLikeCurrentBorderColorRight = getComputedStyle(XLikeSection).borderRightColor;
+
+                if(strokeFormID === 'XLikeBorderTopStroke') XLikeSection.style.borderTop = `${borderStroke}px solid ${XLikeCurrentBorderColorTop}`;
+                if(strokeFormID === 'XLikeBorderLeftStroke') XLikeSection.style.borderLeft = `${borderStroke}px solid ${XLikeCurrentBorderColorLeft}`;
+                if(strokeFormID === 'XLikeBorderBottomStroke') XLikeSection.style.borderBottom = `${borderStroke}px solid ${XLikeCurrentBorderColorBottom}`;
+                if(strokeFormID === 'XLikeBorderRightStroke') XLikeSection.style.borderRight = `${borderStroke}px solid ${XLikeCurrentBorderColorRight}`;
+                break;
+            
             }
     }
 
@@ -1190,6 +2082,33 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 if(radiusFormID === 'entryBorderTopRightRadius') entrySection.style.borderTopRightRadius = `${borderRadius}px`;
                 if(radiusFormID === 'entryBorderBottomLeftRadius') entrySection.style.borderBottomLeftRadius = `${borderRadius}px`;
                 if(radiusFormID === 'entryBorderBottomRightRadius') entrySection.style.borderBottomRightRadius = `${borderRadius}px`;
+                break;
+
+            case 'XFollowBorderRadius':
+                const XFollowSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+
+                if(radiusFormID === 'XFollowBorderTopLeftRadius') XFollowSection.style.borderTopLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'XFollowBorderTopRightRadius') XFollowSection.style.borderTopRightRadius = `${borderRadius}px`;
+                if(radiusFormID === 'XFollowBorderBottomLeftRadius') XFollowSection.style.borderBottomLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'XFollowBorderBottomRightRadius') XFollowSection.style.borderBottomRightRadius = `${borderRadius}px`;
+                break;
+
+            case 'XRepostBorderRadius':
+                const XRepostSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+
+                if(radiusFormID === 'XRepostBorderTopLeftRadius') XRepostSection.style.borderTopLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'XRepostBorderTopRightRadius') XRepostSection.style.borderTopRightRadius = `${borderRadius}px`;
+                if(radiusFormID === 'XRepostBorderBottomLeftRadius') XRepostSection.style.borderBottomLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'XRepostBorderBottomRightRadius') XRepostSection.style.borderBottomRightRadius = `${borderRadius}px`;
+                break;
+            
+            case 'XLikeBorderRadius':
+                const XLikeSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+
+                if(radiusFormID === 'XLikeBorderTopLeftRadius') XLikeSection.style.borderTopLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'XLikeBorderTopRightRadius') XLikeSection.style.borderTopRightRadius = `${borderRadius}px`;
+                if(radiusFormID === 'XLikeBorderBottomLeftRadius') XLikeSection.style.borderBottomLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'XLikeBorderBottomRightRadius') XLikeSection.style.borderBottomRightRadius = `${borderRadius}px`;
                 break;
         }
     }
@@ -1442,6 +2361,30 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 entryConfirmBtn.style.display = "flex";
                 entryCancelDelete.style.display = "block";
                 break;
+
+            case 'XFollowDelete':
+                const XFollowConfirmBtn = document.getElementById('XFollowConfirmDelete');
+                const XFollowCancelDelete = document.getElementById('XFollowCancelDelete');
+                deleteBtn.style.display = "none";
+                XFollowConfirmBtn.style.display = "flex";
+                XFollowCancelDelete.style.display = "block";
+                break;
+
+            case 'XRepostDelete':
+                const XRepostConfirmBtn = document.getElementById('XRepostConfirmDelete');
+                const XRepostCancelDelete = document.getElementById('XRepostCancelDelete');
+                deleteBtn.style.display = "none";
+                XRepostConfirmBtn.style.display = "flex";
+                XRepostCancelDelete.style.display = "block";
+                break;
+
+            case 'XLikeDelete':
+                const XLikeConfirmBtn = document.getElementById('XLikeConfirmDelete');
+                const XLikeCancelDelete = document.getElementById('XLikeCancelDelete');
+                deleteBtn.style.display = "none";
+                XLikeConfirmBtn.style.display = "flex";
+                XLikeCancelDelete.style.display = "block";
+                break;
         }   
     }
 
@@ -1512,6 +2455,45 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 customizeBox.scrollTop = 0;
                 customizeBox.classList.toggle('slide-right-to-left');
                 break;
+            
+            case 'XFollowDelete':
+                selectedSection.remove();
+
+                const XFollowDeleteBtn = document.getElementById('XFollowDelete');
+                const XFollowCancelDelete = document.getElementById('XFollowCancelDelete');
+                XFollowDeleteBtn.style.display = "flex";
+                confirmDelete.style.display = "none";
+                XFollowCancelDelete.style.display = "none";
+
+                customizeBox.scrollTop = 0;
+                customizeBox.classList.toggle('slide-right-to-left');
+                break;
+
+            case 'XRepostDelete':
+                selectedSection.remove();
+
+                const XRepostDeleteBtn = document.getElementById('XRepostDelete');
+                const XRepostCancelDelete = document.getElementById('XRepostCancelDelete');
+                XRepostDeleteBtn.style.display = "flex";
+                confirmDelete.style.display = "none";
+                XRepostCancelDelete.style.display = "none";
+
+                customizeBox.scrollTop = 0;
+                customizeBox.classList.toggle('slide-right-to-left');
+                break;
+
+            case 'XLikeDelete':
+                selectedSection.remove();
+
+                const XLikeDeleteBtn = document.getElementById('XLikeDelete');
+                const XLikeCancelDelete = document.getElementById('XLikeCancelDelete');
+                XLikeDeleteBtn.style.display = "flex";
+                confirmDelete.style.display = "none";
+                XLikeCancelDelete.style.display = "none";
+
+                customizeBox.scrollTop = 0;
+                customizeBox.classList.toggle('slide-right-to-left');
+                break;
         }
     }
 
@@ -1544,6 +2526,39 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 imageConfirmBtn.style.display = "none";
                 cancelBtn.style.display = "none";
                 break;
+            
+            case 'entryDelete':
+                const entryDeleteBtn = document.getElementById('entryDelete');
+                const entryConfirmBtn = document.getElementById('entryConfirmDelete');
+                entryDeleteBtn.style.display = "flex";
+                entryConfirmBtn.style.display = "none";
+                cancelBtn.style.display = "none";
+                break;
+
+            case 'XFollowDelete':
+                const XFollowDeleteBtn = document.getElementById('XFollowDelete');
+                const XFollowConfirmBtn = document.getElementById('XFollowConfirmDelete');
+                XFollowDeleteBtn.style.display = "flex";
+                XFollowConfirmBtn.style.display = "none";
+                cancelBtn.style.display = "none";
+                break;
+
+            case 'XRepostDelete':
+                const XRepostDeleteBtn = document.getElementById('XRepostDelete');
+                const XRepostConfirmBtn = document.getElementById('XRepostConfirmDelete');
+                XRepostDeleteBtn.style.display = "flex";
+                XRepostConfirmBtn.style.display = "none";
+                cancelBtn.style.display = "none";
+                break;
+
+            case 'XLikeDelete':
+                const XLikeDeleteBtn = document.getElementById('XLikeDelete');
+                const XLikeConfirmBtn = document.getElementById('XLikeConfirmDelete');
+                XLikeDeleteBtn.style.display = "flex";
+                XLikeConfirmBtn.style.display = "none";
+                cancelBtn.style.display = "none";
+                break;
+
         }
     }
 })

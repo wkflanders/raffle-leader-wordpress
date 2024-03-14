@@ -72,7 +72,8 @@ document.addEventListener('previewLoaded', () => {
             newElement.querySelector('button').addEventListener('click', (event)=>{
                 event.preventDefault();
             });
-        } else if(dragElement.id === 'XFollowEntry' || dragElement.id === 'XRepostEntry' || dragElement.id === 'XLikeEntry'){
+        } else if(dragElement.id === 'XFollowEntry' || dragElement.id === 'XRepostEntry' || dragElement.id === 'XLikeEntry' ||
+                  dragElement.id === 'instaFollowEntry' || dragElement.id === 'instaCommentEntry' || dragElement.id === 'instaLikeEntry'){
             newElement.style.width = '500px';
             newElement.style.height = '75px';
             newElement.setAttribute('data-entry', dropzone.querySelector('.selected-raffleleader-section').id);
@@ -150,6 +151,42 @@ document.addEventListener('previewLoaded', () => {
                 return `<div data-type="XLikeDetails" class="raffleleader-additional-entry-section">
                             <div class="raffleleader-additional-entry-text-column">
                                 <h2>Like us on X/Twitter</h2>
+                                <p>for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button>+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div>`
+
+            case 'instaFollowEntry':
+                return `<div data-type="instaFollowDetails" class="raffleleader-additional-entry-section">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2>Follow us on Instagram</h2>
+                                <p>for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button>+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div>`
+
+            case 'instaCommentEntry':
+                return `<div data-type="instaCommentDetails" class="raffleleader-additional-entry-section">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2>Leave a comment on Instagram</h2>
+                                <p>for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button>+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div>`
+
+            case 'instaLikeEntry':
+                return `<div data-type="instaLikeDetails" class="raffleleader-additional-entry-section">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2>Like us on Instagram</h2>
                                 <p>for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">

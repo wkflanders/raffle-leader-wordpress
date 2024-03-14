@@ -59,14 +59,29 @@ document.addEventListener("previewLoaded", ()=>{
             case 'textDetails':
                 loadTextSettings(element);
                 break;
+                
             case 'entryDetails':
                 loadEntrySettings(element);
                 break;
+
             case 'counterDetails':
                 loadCounterSettings(element);
                 break;
+
             case 'imageDetails':
                 loadImageSettings(element);
+                break;
+
+            case 'XFollowDetails':
+                loadXFollowDetails(element);
+                break;
+
+            case 'XRepostDetails':
+                loadXRepostDetails(element);
+                break;
+
+            case 'XLikeDetails':
+                loadXLikeDetails(element);
                 break;
         }
     }
@@ -308,7 +323,7 @@ document.addEventListener("previewLoaded", ()=>{
         entryBorderFormBottomLeftRadius.value = entryBorderRadiusBottomLeft;
         entryBorderFormBottomRightRadius.value = entryBorderRadiusBottomRight;
 
-        // counter border color
+        // entry border color
         const entryBorderColorForm = document.getElementById('entryBorderColorForm');
         const entryBorderHexBox = document.getElementById('entryBorderColorClick');
         const entryBorderColorRGB = window.getComputedStyle(element).getPropertyValue('border-color').replace(/^"|"$/g, '');
@@ -484,6 +499,363 @@ document.addEventListener("previewLoaded", ()=>{
         const imageBorderColorHex = rgbToHex(imageBorderColorRGB);
         imageBorderColorForm.value = imageBorderColorHex;
         imageBorderHexBox.style.backgroundColor = imageBorderColorHex
+    }
+
+    function loadXFollowDetails(element){
+        // Load XFollow settings
+        const headerForm = document.getElementById('XFollowHeaderForm');
+        const subheaderForm = document.getElementById('XFollowSubheaderForm');
+        const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
+        const headerElement = textElement.querySelector('h2');
+        const subheaderElement = textElement.querySelector('p');
+
+        // XFollow text
+        const headerText = headerElement.textContent;
+        const subheaderText = subheaderElement.textContent;
+        headerForm.value = headerText;
+        subheaderForm.value = subheaderText;
+
+        // XFollow font 
+        const headerFontList = document.getElementById('XFollowHeaderList');
+        const headerFontDisplay = document.getElementById('XFollowHeaderDropDownTitle');
+        const subheaderFontList = document.getElementById('XFollowSubheaderList');
+        const subheaderFontDisplay = document.getElementById('XFollowSubheaderDropDownTitle');
+        const headerFont = window.getComputedStyle(headerElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        const subheaderFont = window.getComputedStyle(subheaderElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        headerFontDisplay.innerText = headerFont;
+        subheaderFontDisplay.innerText = subheaderFont;
+        
+        Array.from(headerFontList.children).forEach((child)=>{
+            const childFont = child.innerText;
+            if(child.classList.contains('selected-font')){
+                child.classList.remove('selected-font');
+            }
+            if(childFont === headerFont){
+                child.classList.add('selected-font');
+            }
+        });
+
+        Array.from(subheaderFontList.children).forEach((child)=>{
+            const childFont = child.innerText;
+            if(child.classList.contains('selected-font')){
+                child.classList.remove('selected-font');
+            }
+            if(childFont === subheaderFont){
+                child.classList.add('selected-font');
+            }
+        });
+
+        // header color
+        const XFollowHeaderHexBox = document.getElementById('XFollowHeaderFontColorClick');
+        const XFollowHeaderForm = document.getElementById('XFollowHeaderFontColorForm');
+        const XFollowHeaderColorRGB = window.getComputedStyle(headerElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const XFollowHeaderColorHex = rgbToHex(XFollowHeaderColorRGB);
+        XFollowHeaderForm.value = XFollowHeaderColorHex;
+        XFollowHeaderHexBox.style.backgroundColor = XFollowHeaderColorHex;
+
+        // subheader color
+        const XFollowSubheaderHexBox = document.getElementById('XFollowSubheaderFontColorClick');
+        const XFollowSubheaderForm = document.getElementById('XFollowSubheaderFontColorForm');
+        const XFollowSubheaderColorRGB = window.getComputedStyle(subheaderElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const XFollowSubheaderColorHex = rgbToHex(XFollowSubheaderColorRGB);
+        XFollowSubheaderForm.value = XFollowSubheaderColorHex;
+        XFollowSubheaderHexBox.style.backgroundColor = XFollowSubheaderColorHex;
+        
+        // XFollow button color
+        const XFollowButtonElement = element.querySelector('button');
+        const XFollowButtonColorForm = document.getElementById('XFollowButtonColorForm');
+
+        const XFollowButtonHexBox = document.getElementById('XFollowButtonColorClick');
+        const XFollowButtonColorRGB = window.getComputedStyle(XFollowButtonElement).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const XFollowButtonColorHex = rgbToHex(XFollowButtonColorRGB);
+        XFollowButtonColorForm.value = XFollowButtonColorHex;
+        XFollowButtonHexBox.style.backgroundColor = XFollowButtonColorHex;
+
+        // XFollow background color
+        const XFollowBackgroundColorForm = document.getElementById('XFollowBackgroundColorForm');
+        const XFollowBackgroundHexBox = document.getElementById('XFollowBackgroundColorClick');
+        const XFollowBackgroundColorRGB = window.getComputedStyle(element).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const XFollowBackgroundColorHex = rgbToHex(XFollowBackgroundColorRGB);
+        XFollowBackgroundColorForm.value = XFollowBackgroundColorHex;
+        XFollowBackgroundHexBox.style.backgroundColor = XFollowBackgroundColorHex;
+
+        // XFollow border color
+        const XFollowBorderColorForm = document.getElementById('XFollowBorderColorForm');
+        const XFollowBorderHexBox = document.getElementById('XFollowBorderColorClick');
+        const XFollowBorderColorRGB = window.getComputedStyle(element).getPropertyValue('border-color').replace(/^"|"$/g, '');
+        const XFollowBorderColorHex = rgbToHex(XFollowBorderColorRGB);
+        XFollowBorderColorForm.value = XFollowBorderColorHex;
+        XFollowBorderHexBox.style.backgroundColor = XFollowBorderColorRGB;
+
+        // XFollow border stroke
+        const XFollowBorderFormTopStroke = document.getElementById('XFollowBorderTopStroke');
+        const XFollowBorderFormLeftStroke = document.getElementById('XFollowBorderLeftStroke');
+        const XFollowBorderFormBottomStroke = document.getElementById('XFollowBorderBottomStroke');
+        const XFollowBorderFormRightStroke = document.getElementById('XFollowBorderRightStroke');
+
+        const XFollowBorderStrokeTop = window.getComputedStyle(element).getPropertyValue('border-top-width').replace(/^"|"$/g, '');
+        const XFollowBorderStrokeLeft = window.getComputedStyle(element).getPropertyValue('border-left-width').replace(/^"|"$/g, '');
+        const XFollowBorderStrokeBottom = window.getComputedStyle(element).getPropertyValue('border-bottom-width').replace(/^"|"$/g, '');
+        const XFollowBorderStrokeRight = window.getComputedStyle(element).getPropertyValue('border-right-width').replace(/^"|"$/g, '');
+
+        XFollowBorderFormTopStroke.value = XFollowBorderStrokeTop;
+        XFollowBorderFormLeftStroke.value = XFollowBorderStrokeLeft;
+        XFollowBorderFormBottomStroke.value = XFollowBorderStrokeBottom;
+        XFollowBorderFormRightStroke.value = XFollowBorderStrokeRight;
+
+        // XFolllow border radius
+        const XFollowBorderFormTopLeftRadius = document.getElementById('XFollowBorderTopLeftRadius');
+        const XFollowBorderFormTopRightRadius = document.getElementById('XFollowBorderTopRightRadius');
+        const XFollowBorderFormBottomLeftRadius = document.getElementById('XFollowBorderBottomLeftRadius');
+        const XFollowBorderFormBottomRightRadius = document.getElementById('XFollowBorderBottomRightRadius');
+
+        const XFollowBorderRadiusTopLeft = window.getComputedStyle(element).getPropertyValue('border-top-left-radius').replace(/^"|"$/g, '');
+        const XFollowBorderRadiusTopRight = window.getComputedStyle(element).getPropertyValue('border-top-right-radius').replace(/^"|"$/g, '');
+        const XFollowBorderRadiusBottomLeft = window.getComputedStyle(element).getPropertyValue('border-bottom-left-radius').replace(/^"|"$/g, '');
+        const XFollowBorderRadiusBottomRight = window.getComputedStyle(element).getPropertyValue('border-bottom-right-radius').replace(/^"|"$/g, '');
+
+        XFollowBorderFormTopLeftRadius.value = XFollowBorderRadiusTopLeft;
+        XFollowBorderFormTopRightRadius.value = XFollowBorderRadiusTopRight;
+        XFollowBorderFormBottomLeftRadius.value = XFollowBorderRadiusBottomLeft;
+        XFollowBorderFormBottomRightRadius.value = XFollowBorderRadiusBottomRight;
+    }
+
+    function loadXRepostDetails(element){
+        // Load XRepost settings
+        const headerForm = document.getElementById('XRepostHeaderForm');
+        const subheaderForm = document.getElementById('XRepostSubheaderForm');
+        const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
+        const headerElement = textElement.querySelector('h2');
+        const subheaderElement = textElement.querySelector('p');
+
+        // XRepost text
+        const headerText = headerElement.textContent;
+        const subheaderText = subheaderElement.textContent;
+        headerForm.value = headerText;
+        subheaderForm.value = subheaderText;
+
+        // XRepost font 
+        const headerFontList = document.getElementById('XRepostHeaderList');
+        const headerFontDisplay = document.getElementById('XRepostHeaderDropDownTitle');
+        const subheaderFontList = document.getElementById('XRepostSubheaderList');
+        const subheaderFontDisplay = document.getElementById('XRepostSubheaderDropDownTitle');
+        const headerFont = window.getComputedStyle(headerElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        const subheaderFont = window.getComputedStyle(subheaderElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        headerFontDisplay.innerText = headerFont;
+        subheaderFontDisplay.innerText = subheaderFont;
+        
+        Array.from(headerFontList.children).forEach((child)=>{
+            const childFont = child.innerText;
+            if(child.classList.contains('selected-font')){
+                child.classList.remove('selected-font');
+            }
+            if(childFont === headerFont){
+                child.classList.add('selected-font');
+            }
+        });
+
+        Array.from(subheaderFontList.children).forEach((child)=>{
+            const childFont = child.innerText;
+            if(child.classList.contains('selected-font')){
+                child.classList.remove('selected-font');
+            }
+            if(childFont === subheaderFont){
+                child.classList.add('selected-font');
+            }
+        });
+
+        // header color
+        const XRepostHeaderHexBox = document.getElementById('XRepostHeaderFontColorClick');
+        const XRepostHeaderForm = document.getElementById('XRepostHeaderFontColorForm');
+        const XRepostHeaderColorRGB = window.getComputedStyle(headerElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const XRepostHeaderColorHex = rgbToHex(XRepostHeaderColorRGB);
+        XRepostHeaderForm.value = XRepostHeaderColorHex;
+        XRepostHeaderHexBox.style.backgroundColor = XRepostHeaderColorHex;
+
+        // subheader color
+        const XRepostSubheaderHexBox = document.getElementById('XRepostSubheaderFontColorClick');
+        const XRepostSubheaderForm = document.getElementById('XRepostSubheaderFontColorForm');
+        const XRepostSubheaderColorRGB = window.getComputedStyle(subheaderElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const XRepostSubheaderColorHex = rgbToHex(XRepostSubheaderColorRGB);
+        XRepostSubheaderForm.value = XRepostSubheaderColorHex;
+        XRepostSubheaderHexBox.style.backgroundColor = XRepostSubheaderColorHex;
+        
+        // XRepost button color
+        const XRepostButtonElement = element.querySelector('button');
+        const XRepostButtonColorForm = document.getElementById('XRepostButtonColorForm');
+
+        const XRepostButtonHexBox = document.getElementById('XRepostButtonColorClick');
+        const XRepostButtonColorRGB = window.getComputedStyle(XRepostButtonElement).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const XRepostButtonColorHex = rgbToHex(XRepostButtonColorRGB);
+        XRepostButtonColorForm.value = XRepostButtonColorHex;
+        XRepostButtonHexBox.style.backgroundColor = XRepostButtonColorHex;
+
+        // XRepost background color
+        const XRepostBackgroundColorForm = document.getElementById('XRepostBackgroundColorForm');
+        const XRepostBackgroundHexBox = document.getElementById('XRepostBackgroundColorClick');
+        const XRepostBackgroundColorRGB = window.getComputedStyle(element).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const XRepostBackgroundColorHex = rgbToHex(XRepostBackgroundColorRGB);
+        XRepostBackgroundColorForm.value = XRepostBackgroundColorHex;
+        XRepostBackgroundHexBox.style.backgroundColor = XRepostBackgroundColorHex;
+
+        // XRepost border color
+        const XRepostBorderColorForm = document.getElementById('XRepostBorderColorForm');
+        const XRepostBorderHexBox = document.getElementById('XRepostBorderColorClick');
+        const XRepostBorderColorRGB = window.getComputedStyle(element).getPropertyValue('border-color').replace(/^"|"$/g, '');
+        const XRepostBorderColorHex = rgbToHex(XRepostBorderColorRGB);
+        XRepostBorderColorForm.value = XRepostBorderColorHex;
+        XRepostBorderHexBox.style.backgroundColor = XRepostBorderColorRGB;
+
+        // XRepost border stroke
+        const XRepostBorderFormTopStroke = document.getElementById('XRepostBorderTopStroke');
+        const XRepostBorderFormLeftStroke = document.getElementById('XRepostBorderLeftStroke');
+        const XRepostBorderFormBottomStroke = document.getElementById('XRepostBorderBottomStroke');
+        const XRepostBorderFormRightStroke = document.getElementById('XRepostBorderRightStroke');
+
+        const XRepostBorderStrokeTop = window.getComputedStyle(element).getPropertyValue('border-top-width').replace(/^"|"$/g, '');
+        const XRepostBorderStrokeLeft = window.getComputedStyle(element).getPropertyValue('border-left-width').replace(/^"|"$/g, '');
+        const XRepostBorderStrokeBottom = window.getComputedStyle(element).getPropertyValue('border-bottom-width').replace(/^"|"$/g, '');
+        const XRepostBorderStrokeRight = window.getComputedStyle(element).getPropertyValue('border-right-width').replace(/^"|"$/g, '');
+
+        XRepostBorderFormTopStroke.value = XRepostBorderStrokeTop;
+        XRepostBorderFormLeftStroke.value = XRepostBorderStrokeLeft;
+        XRepostBorderFormBottomStroke.value = XRepostBorderStrokeBottom;
+        XRepostBorderFormRightStroke.value = XRepostBorderStrokeRight;
+
+        // XFolllow border radius
+        const XRepostBorderFormTopLeftRadius = document.getElementById('XRepostBorderTopLeftRadius');
+        const XRepostBorderFormTopRightRadius = document.getElementById('XRepostBorderTopRightRadius');
+        const XRepostBorderFormBottomLeftRadius = document.getElementById('XRepostBorderBottomLeftRadius');
+        const XRepostBorderFormBottomRightRadius = document.getElementById('XRepostBorderBottomRightRadius');
+
+        const XRepostBorderRadiusTopLeft = window.getComputedStyle(element).getPropertyValue('border-top-left-radius').replace(/^"|"$/g, '');
+        const XRepostBorderRadiusTopRight = window.getComputedStyle(element).getPropertyValue('border-top-right-radius').replace(/^"|"$/g, '');
+        const XRepostBorderRadiusBottomLeft = window.getComputedStyle(element).getPropertyValue('border-bottom-left-radius').replace(/^"|"$/g, '');
+        const XRepostBorderRadiusBottomRight = window.getComputedStyle(element).getPropertyValue('border-bottom-right-radius').replace(/^"|"$/g, '');
+
+        XRepostBorderFormTopLeftRadius.value = XRepostBorderRadiusTopLeft;
+        XRepostBorderFormTopRightRadius.value = XRepostBorderRadiusTopRight;
+        XRepostBorderFormBottomLeftRadius.value = XRepostBorderRadiusBottomLeft;
+        XRepostBorderFormBottomRightRadius.value = XRepostBorderRadiusBottomRight;
+    }
+
+    function loadXLikeDetails(element){
+        // Load XLike settings
+        const headerForm = document.getElementById('XLikeHeaderForm');
+        const subheaderForm = document.getElementById('XLikeSubheaderForm');
+        const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
+        const headerElement = textElement.querySelector('h2');
+        const subheaderElement = textElement.querySelector('p');
+
+        // XLike text
+        const headerText = headerElement.textContent;
+        const subheaderText = subheaderElement.textContent;
+        headerForm.value = headerText;
+        subheaderForm.value = subheaderText;
+
+        // XLike font 
+        const headerFontList = document.getElementById('XLikeHeaderList');
+        const headerFontDisplay = document.getElementById('XLikeHeaderDropDownTitle');
+        const subheaderFontList = document.getElementById('XLikeSubheaderList');
+        const subheaderFontDisplay = document.getElementById('XLikeSubheaderDropDownTitle');
+        const headerFont = window.getComputedStyle(headerElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        const subheaderFont = window.getComputedStyle(subheaderElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        headerFontDisplay.innerText = headerFont;
+        subheaderFontDisplay.innerText = subheaderFont;
+        
+        Array.from(headerFontList.children).forEach((child)=>{
+            const childFont = child.innerText;
+            if(child.classList.contains('selected-font')){
+                child.classList.remove('selected-font');
+            }
+            if(childFont === headerFont){
+                child.classList.add('selected-font');
+            }
+        });
+
+        Array.from(subheaderFontList.children).forEach((child)=>{
+            const childFont = child.innerText;
+            if(child.classList.contains('selected-font')){
+                child.classList.remove('selected-font');
+            }
+            if(childFont === subheaderFont){
+                child.classList.add('selected-font');
+            }
+        });
+
+        // header color
+        const XLikeHeaderHexBox = document.getElementById('XLikeHeaderFontColorClick');
+        const XLikeHeaderForm = document.getElementById('XLikeHeaderFontColorForm');
+        const XLikeHeaderColorRGB = window.getComputedStyle(headerElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const XLikeHeaderColorHex = rgbToHex(XLikeHeaderColorRGB);
+        XLikeHeaderForm.value = XLikeHeaderColorHex;
+        XLikeHeaderHexBox.style.backgroundColor = XLikeHeaderColorHex;
+
+        // subheader color
+        const XLikeSubheaderHexBox = document.getElementById('XLikeSubheaderFontColorClick');
+        const XLikeSubheaderForm = document.getElementById('XLikeSubheaderFontColorForm');
+        const XLikeSubheaderColorRGB = window.getComputedStyle(subheaderElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const XLikeSubheaderColorHex = rgbToHex(XLikeSubheaderColorRGB);
+        XLikeSubheaderForm.value = XLikeSubheaderColorHex;
+        XLikeSubheaderHexBox.style.backgroundColor = XLikeSubheaderColorHex;
+        
+        // XLike button color
+        const XLikeButtonElement = element.querySelector('button');
+        const XLikeButtonColorForm = document.getElementById('XLikeButtonColorForm');
+
+        const XLikeButtonHexBox = document.getElementById('XLikeButtonColorClick');
+        const XLikeButtonColorRGB = window.getComputedStyle(XLikeButtonElement).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const XLikeButtonColorHex = rgbToHex(XLikeButtonColorRGB);
+        XLikeButtonColorForm.value = XLikeButtonColorHex;
+        XLikeButtonHexBox.style.backgroundColor = XLikeButtonColorHex;
+
+        // XLike background color
+        const XLikeBackgroundColorForm = document.getElementById('XLikeBackgroundColorForm');
+        const XLikeBackgroundHexBox = document.getElementById('XLikeBackgroundColorClick');
+        const XLikeBackgroundColorRGB = window.getComputedStyle(element).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const XLikeBackgroundColorHex = rgbToHex(XLikeBackgroundColorRGB);
+        XLikeBackgroundColorForm.value = XLikeBackgroundColorHex;
+        XLikeBackgroundHexBox.style.backgroundColor = XLikeBackgroundColorHex;
+
+        // XLike border color
+        const XLikeBorderColorForm = document.getElementById('XLikeBorderColorForm');
+        const XLikeBorderHexBox = document.getElementById('XLikeBorderColorClick');
+        const XLikeBorderColorRGB = window.getComputedStyle(element).getPropertyValue('border-color').replace(/^"|"$/g, '');
+        const XLikeBorderColorHex = rgbToHex(XLikeBorderColorRGB);
+        XLikeBorderColorForm.value = XLikeBorderColorHex;
+        XLikeBorderHexBox.style.backgroundColor = XLikeBorderColorRGB;
+
+        // XLike border stroke
+        const XLikeBorderFormTopStroke = document.getElementById('XLikeBorderTopStroke');
+        const XLikeBorderFormLeftStroke = document.getElementById('XLikeBorderLeftStroke');
+        const XLikeBorderFormBottomStroke = document.getElementById('XLikeBorderBottomStroke');
+        const XLikeBorderFormRightStroke = document.getElementById('XLikeBorderRightStroke');
+
+        const XLikeBorderStrokeTop = window.getComputedStyle(element).getPropertyValue('border-top-width').replace(/^"|"$/g, '');
+        const XLikeBorderStrokeLeft = window.getComputedStyle(element).getPropertyValue('border-left-width').replace(/^"|"$/g, '');
+        const XLikeBorderStrokeBottom = window.getComputedStyle(element).getPropertyValue('border-bottom-width').replace(/^"|"$/g, '');
+        const XLikeBorderStrokeRight = window.getComputedStyle(element).getPropertyValue('border-right-width').replace(/^"|"$/g, '');
+
+        XLikeBorderFormTopStroke.value = XLikeBorderStrokeTop;
+        XLikeBorderFormLeftStroke.value = XLikeBorderStrokeLeft;
+        XLikeBorderFormBottomStroke.value = XLikeBorderStrokeBottom;
+        XLikeBorderFormRightStroke.value = XLikeBorderStrokeRight;
+
+        // XFolllow border radius
+        const XLikeBorderFormTopLeftRadius = document.getElementById('XLikeBorderTopLeftRadius');
+        const XLikeBorderFormTopRightRadius = document.getElementById('XLikeBorderTopRightRadius');
+        const XLikeBorderFormBottomLeftRadius = document.getElementById('XLikeBorderBottomLeftRadius');
+        const XLikeBorderFormBottomRightRadius = document.getElementById('XLikeBorderBottomRightRadius');
+
+        const XLikeBorderRadiusTopLeft = window.getComputedStyle(element).getPropertyValue('border-top-left-radius').replace(/^"|"$/g, '');
+        const XLikeBorderRadiusTopRight = window.getComputedStyle(element).getPropertyValue('border-top-right-radius').replace(/^"|"$/g, '');
+        const XLikeBorderRadiusBottomLeft = window.getComputedStyle(element).getPropertyValue('border-bottom-left-radius').replace(/^"|"$/g, '');
+        const XLikeBorderRadiusBottomRight = window.getComputedStyle(element).getPropertyValue('border-bottom-right-radius').replace(/^"|"$/g, '');
+
+        XLikeBorderFormTopLeftRadius.value = XLikeBorderRadiusTopLeft;
+        XLikeBorderFormTopRightRadius.value = XLikeBorderRadiusTopRight;
+        XLikeBorderFormBottomLeftRadius.value = XLikeBorderRadiusBottomLeft;
+        XLikeBorderFormBottomRightRadius.value = XLikeBorderRadiusBottomRight;
     }
 
     document.addEventListener("keydown", ({key}) => {

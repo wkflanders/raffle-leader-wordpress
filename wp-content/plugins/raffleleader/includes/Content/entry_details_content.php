@@ -28,6 +28,28 @@
                 </div>
             </div>
         </div>
+        <div class="customize-settings-box">
+            <p>Instagram Entries</p>
+            <div class="customize-settings-dropdown">
+                <div id="instaFollowEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
+                    <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/instagram_logo.svg"> Follow</p>                                        
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <div class="customize-settings-dropdown">
+                <div id="instaCommentEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
+                    <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/instagram_logo.svg"> Comment</p>                                        
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <div class="customize-settings-dropdown">
+                <div id="instaLikeEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
+                    <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/instagram_logo.svg"> Like</p>                                        
+                </div>
+            </div>
+        </div>
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">

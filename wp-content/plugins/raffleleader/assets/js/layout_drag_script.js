@@ -130,7 +130,7 @@ document.addEventListener('previewLoaded', () => {
                                 <p>for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
-                                <button>+1</button>
+                                <button data-link="https://twitter.com/">+1</button>
                             </div>
                         </div>
                         <div style="display: none;" class="raffleleader-resize-handle"></div>`
@@ -142,7 +142,7 @@ document.addEventListener('previewLoaded', () => {
                                 <p>for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
-                                <button>+1</button>
+                                <button data-link="https://twitter.com/">+1</button>
                             </div>
                         </div>
                         <div style="display: none;" class="raffleleader-resize-handle"></div>`
@@ -154,7 +154,7 @@ document.addEventListener('previewLoaded', () => {
                                 <p>for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
-                                <button>+1</button>
+                                <button data-link="https://twitter.com/">+1</button>
                             </div>
                         </div>
                         <div style="display: none;" class="raffleleader-resize-handle"></div>`
@@ -166,7 +166,7 @@ document.addEventListener('previewLoaded', () => {
                                 <p>for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
-                                <button>+1</button>
+                                <button data-link="https://instagram.com/">+1</button>
                             </div>
                         </div>
                         <div style="display: none;" class="raffleleader-resize-handle"></div>`
@@ -178,7 +178,7 @@ document.addEventListener('previewLoaded', () => {
                                 <p>for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
-                                <button>+1</button>
+                                <button data-link="https://instagram.com/">+1</button>
                             </div>
                         </div>
                         <div style="display: none;" class="raffleleader-resize-handle"></div>`
@@ -190,7 +190,7 @@ document.addEventListener('previewLoaded', () => {
                                 <p>for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
-                                <button>+1</button>
+                                <button data-link="https://instagram.com/">+1</button>
                             </div>
                         </div>
                         <div style="display: none;" class="raffleleader-resize-handle"></div>`

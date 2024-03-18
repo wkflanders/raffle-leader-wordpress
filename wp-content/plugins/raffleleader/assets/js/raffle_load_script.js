@@ -30,7 +30,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             raffleContainer.innerHTML = HTMLContent;
 
             const preview = raffleContainer.querySelector('.raffleleader-preview-box');
+            const dropzone = raffleContainer.querySelector('.raffleleader-dropzone');
             preview.style.position = "static";
+            dropzone.style.position = "relative";
 
             const sections = preview.querySelectorAll('.raffleleader-section');
             sections.forEach((section)=>{

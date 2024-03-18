@@ -3557,13 +3557,30 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
     function handleAdditionalEntry(event){
         const additionalEntryInput = event.target;
-        const inputValue = additionalEntryInput.value;
+        let inputValue = additionalEntryInput.value;
         const elementType = additionalEntryInput.getAttribute('data-type');
         const selectedElement = document.querySelector('.selected-raffleleader-section');
+        const additionalEntryBtn = selectedElement.querySelector('button');
+
+        if(inputValue.includes('@')){
+            inputValue = inputValue.replace('@', '');
+        }
 
         switch(elementType){
             case 'XFollow':
-                console.log('test');
+                inputValue = inputValue.includes('@') ? inputValue.replace('@', '') : inputValue;
+                additionalEntryBtn.setAttribute('data-link', `https://twitter.com/intent/user?screen_name=${inputValue}`);
+                break;
+
+            case 'XRepost':
+                const XRepostMatch = inputValue.match(/\d+/g);
+                const XRepostTweetID = XRepostMatch[XRepostMatch.length - 1];
+                additionalEntryBtn.setAttribute('data-link', `https://twitter.com/intent/retweet?tweet_id=${XRepostTweetID}`);
+
+            case 'XLike':
+                const XLikeMatch = inputValue.match(/\d+/g);
+                const XLikeTweetID = XLikeMatch[XLikeMatch.length - 1];
+                additionalEntryBtn.setAttribute('data-link', `https://twitter.com/intent/like?tweet_id=${XLikeTweetID}`);
         }
     }
 })

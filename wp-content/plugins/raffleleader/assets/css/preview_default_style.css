@@ -273,6 +273,9 @@
 }
 
 .raffleleader-additional-entry-section{
+    transition: filter 1s ease, opacity 1s ease;
+    opacity: 1;
+    filter: greyscale(0%);
     display: flex;
     align-items: center;
     justify-content: space-between;

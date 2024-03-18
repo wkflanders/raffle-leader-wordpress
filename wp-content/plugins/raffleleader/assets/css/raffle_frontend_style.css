@@ -27,6 +27,12 @@
     display: none !important;
 }
 
+.inactive-additional-entry{
+    opacity: 0.5;
+    filter: greyscale(100%);
+    pointer-events: none;
+}
+
 .lds-ring {
     display: inline-block;
     position: relative;
@@ -88,5 +94,14 @@
 
     100% {
         background-color: #1501FE;
+    }
+}
+
+@keyframes fadeFromGreyscale {
+    from {
+        filter: grayscale(100%);
+    }
+    to {
+        filter: grayscale(0%);
     }
 }

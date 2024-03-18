@@ -25,8 +25,6 @@ class BuilderController extends BaseController{
 
     private $subpages = array();
 
-    private $allowed_html = array();
-
     public function register(){
 
         $this->raffleAPI = new RaffleAPI();
@@ -40,38 +38,6 @@ class BuilderController extends BaseController{
         $this->settings = new SettingsAPI();
 
         $this->setSubpages();
-
-        $this->allowed_html = array(
-            'a' => array(
-                'href' => true,
-                'title' => true,
-                'class' => true,
-                'id' => true,
-                'style' => true,
-                'target' => true,
-            ),
-            'div' => array(
-                'class' => true,
-                'id' => true,
-                'style' => true,
-                'data-type' => true,
-            ),
-            'p' => array(
-                'class' => true,
-                'id' => true,
-                'style' => true
-            ),
-            'h4' => array(
-                'class' => true,
-                'id' => true,
-                'style' => true,
-            ),
-            'h2' => array(
-                'class' => true,
-                'id' => true,
-                'style' => true,
-            )
-        );
 
         $this->settings->addSubPages( $this->subpages )->register();
 

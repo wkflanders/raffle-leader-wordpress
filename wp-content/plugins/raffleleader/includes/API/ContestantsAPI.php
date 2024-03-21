@@ -32,11 +32,11 @@ class ContestantsAPI {
         return $wpdb->get_row( $query, ARRAY_A );
     }
 
-    public function getMultipleContestants( $raffleID, $args = array() ) {
+    public function getMultipleContestants($raffleID, $args = array()) {
         global $wpdb;
         $contestantsTable = $wpdb->prefix . 'raffleleader_contestants';
         $entriesTable = $wpdb->prefix . 'raffleleader_entries';
-
+    
         $defaults = array(
             'per_page' => 10,
             'page_number' => 1,
@@ -45,25 +45,37 @@ class ContestantsAPI {
             'search_term' => '',
         );
     
-        $args = wp_parse_args( $args, $defaults );
+        $args = wp_parse_args($args, $defaults);
         $offset = ($args['page_number'] - 1) * $args['per_page'];
-
-        $query = $wpdb->prepare(
-            "SELECT c.*, COUNT(e.entry_id) AS entries_count
-             FROM $contestantsTable c
-             LEFT JOIN $entriesTable e ON c.contestant_id = e.contestant_id
-             WHERE e.raffle_id = %d AND c.deleted_at IS NULL
-             GROUP BY c.contestant_id
-             ORDER BY c.{$args['orderby']} {$args['order']}
-             LIMIT %d, %d",
-            $raffleID, $offset, $args['per_page']);
     
-        if ( !empty( $args['search_term'] ) ) {
-            $searchTerm = '%' . $wpdb->esc_like( $args['search_term'] ) . '%';
-            $query .= $wpdb->prepare( " AND (name LIKE %s OR email LIKE %s )", $searchTerm, $searchTerm );
+        if (!empty($args['search_term'])) {
+            $searchTerm = '%' . $wpdb->esc_like($args['search_term']) . '%';
+            $query = $wpdb->prepare(
+                "SELECT c.*, COUNT(e.entry_id) AS entries_count
+                 FROM $contestantsTable c
+                 LEFT JOIN $entriesTable e ON c.contestant_id = e.contestant_id
+                 WHERE e.raffle_id = %d AND c.deleted_at IS NULL
+                 AND (c.name LIKE %s OR c.email LIKE %s)
+                 GROUP BY c.contestant_id
+                 ORDER BY c.{$args['orderby']} {$args['order']}
+                 LIMIT %d, %d",
+                $raffleID, $searchTerm, $searchTerm, $offset, $args['per_page']
+            );
+        } else {
+            // If no search term, prepare query without search conditions
+            $query = $wpdb->prepare(
+                "SELECT c.*, COUNT(e.entry_id) AS entries_count
+                 FROM $contestantsTable c
+                 LEFT JOIN $entriesTable e ON c.contestant_id = e.contestant_id
+                 WHERE e.raffle_id = %d AND c.deleted_at IS NULL
+                 GROUP BY c.contestant_id
+                 ORDER BY c.{$args['orderby']} {$args['order']}
+                 LIMIT %d, %d",
+                $raffleID, $offset, $args['per_page']
+            );
         }
     
-        $results = $wpdb->get_results( $query, ARRAY_A );
+        $results = $wpdb->get_results($query, ARRAY_A);
     
         return $results;
     }
@@ -75,7 +87,7 @@ class ContestantsAPI {
         $query = $wpdb->prepare( "SELECT * FROM $tableName WHERE email = %s AND deleted_at IS NULL LIMIT 1", $email );
         $result = $wpdb->get_row ($query, ARRAY_A );
     
-        return $result; // Will return null if no matching record is found
+        return $result;
     }
 
     public function updateContestant( $contestantID, $contestantData ){

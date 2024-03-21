@@ -33,6 +33,11 @@
     pointer-events: none;
 }
 
+.completed-additional-entry{
+    animation: fade-success 2s;
+    pointer-events: none;
+}
+
 .lds-ring {
     display: inline-block;
     position: relative;

@@ -58,6 +58,20 @@ class EntriesAPI {
         return $results;
     }
 
+    public function getEntriesByContestantId( $contestantID, $raffleID ) {
+        global $wpdb;
+        $entriesTable = $wpdb->prefix . 'raffleleader_entries';
+
+        $query = $wpdb->prepare(
+            "SELECT * FROM $entriesTable WHERE contestant_id = %d AND raffle_id = %d",
+            $contestantID, $raffleID
+        );
+
+        $results = $wpdb->get_results($query, ARRAY_A);
+
+        return $results;
+    }
+
     public function updateEntry( $entryID, $entryData ){
         global $wpdb;
         $tableName = $wpdb->prefix . 'raffleleader_entries';

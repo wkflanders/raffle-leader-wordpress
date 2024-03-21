@@ -29,6 +29,8 @@ class PublishController extends BaseController{
         add_action( 'wp_ajax_nopriv_loadRaffleData', array( $this, 'loadRaffleData' ) );
         add_action( 'wp_ajax_handleEmailLogin', array( $this, 'handleEmailLogin') );
         add_action( 'wp_ajax_nopriv_handleEmailLogin', array( $this, 'handleEmailLogin') );
+        add_action( 'wp_ajax_handleAdditionalEntry', array( $this, 'handleAdditionalEntry') );
+        add_action( 'wp_ajax_nopriv_handleAdditionalEntry', array( $this, 'handleAdditionalEntry') );
     }
 
     public function shortcodeHandler( $atts ){
@@ -79,44 +81,77 @@ class PublishController extends BaseController{
     }
 
     function handleEmailLogin(){
-        check_ajax_referer('nonce', 'security');
+        check_ajax_referer( 'nonce', 'security' );
 
-        if( isset( $_POST['contestant_email'], $_POST['raffle_id'] ) ){
+        if ( isset( $_POST['contestant_email'] ) ) {
             $email = sanitize_email( $_POST['contestant_email'] );
-            $raffle_id = intval( $_POST['raffle_id'] );
-
-            $args = array( 
-                'search_term' => $email,
-            );
-
-            $contestant = $this->contestantsAPI->getMultipleContestants( $raffle_id, $args );
-
+    
+            $contestant = $this->contestantsAPI->getContestantByEmail( $email );
+    
             if ( $contestant ) {
                 $contestant_id = $contestant['contestant_id'];
             } else {
-                // $name = sanitize_text_field( $_POST['contestant_name'] );
                 $ip = $_SERVER['REMOTE_ADDR'];
-
                 $contestantData = array(
                     'email' => $email,
                     'ip' => $ip,
                 );
-
+    
                 $contestant_id = $this->contestantsAPI->addContestant( $contestantData );
             }
-
-            if( $contestant_id ){
+    
+            if ( isset( $_POST['raffle_id'] ) && $contestant_id ) {
+                $raffle_id = intval($_POST['raffle_id']);
                 $entryData = array(
                     'raffle_id' => $raffle_id,
                     'contestant_id' => $contestant_id,
+                    'entry_type' => 'Email',
                 );
-
+    
                 $this->entriesAPI->addEntry( $entryData );
+
+                wp_send_json_success( 'Entry successfully counted' );
+            } else {
+                wp_send_json_error( 'Entry failed to be counted' );
             }
+        } else {
+            wp_send_json_error( 'Invalid request.' );
+        }
+    }
+
+    function handleAdditionalEntry(){
+        check_ajax_referer( 'nonce', 'security' );
+
+        if( isset( $_POST['contestant_email'], $_POST['raffle_id'], $_POST['entry_type'] ) ) {
+            $email = sanitize_email( $_POST['contestant_email'] );
+            $raffle_id = intval( $_POST['raffle_id'] );
+            $entry_type = sanitize_text_field( $_POST['entry_type'] );
+
+            $contestant = $this->contestantsAPI->getContestantByEmail( $email );
+    
+            if ($contestant) {
+                $contestant_id = $contestant['contestant_id'];
+            } else {
+                $ip = $_SERVER['REMOTE_ADDR'];
+                $contestantData = array(
+                    'email' => $email,
+                    'ip' => $ip,
+                );
+    
+                $contestant_id = $this->contestantsAPI->addContestant( $contestantData );
+            }
+
+            $entryData = array(
+                'raffle_id' => $raffle_id,
+                'contestant_id' => $contestant_id,
+                'entry_type' => $entry_type,
+            );
+
+            $this->entriesAPI->addEntry( $entryData );
+
             wp_send_json_success( 'Entry successfully counted' );
         } else {
-            wp_send_json_error( 'Entry failed to be counted' );
+            wp_send_json_error( 'Invalid request.' );
         }
-
     }
 }

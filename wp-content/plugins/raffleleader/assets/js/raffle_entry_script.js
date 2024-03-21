@@ -1,8 +1,5 @@
 document.addEventListener('raffleLoaded', ()=>{
 
-    const userSignedIn = new CustomEvent('userSignedIn');
-    document.addEventListener('userSignedIn', handleSignIn);
-
     let isLoading = false;
     let isSuccess = true;
     
@@ -50,40 +47,47 @@ document.addEventListener('raffleLoaded', ()=>{
             console.error("Fetch error", error);
         } finally {
             isLoading = false;
-            document.dispatchEvent(userSignedIn);
             updateEmailUI();
         }
     }
 
-    async function handleSignIn(event){
+    async function handleAdditionalEntry(event){
+        const entryBtn = event.target;
+
+        const contestantEmail = emailInput.value;
+        const URL = entryBtn.getAttribute('data-link');
+
+        window.open(URL, '_blank', 'width=1000,height=800');
+
+        const entryType = entryBtn.parentNode.parentNode.getAttribute('data-type');
+        const entryDetails = 'null';
+
         try{
             const response = await fetch(raffleleader_raffle_entry_object.ajax_url, {
-                method: 'GET',
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
                 body: new URLSearchParams({
-                    'action': 'handleSignIn',
+                    'action': 'handleAdditionalEntry',
                     'raffle_id': raffleID,
-                    'contestant_email': 
+                    'contestant_email': contestantEmail,
+                    'entry_type': entryType,
+                    'entry_details': entryDetails,
+                    'security': raffleleader_raffle_entry_object.security,
                 })
-            })
+            });
+            const data = await response.json();
+
+            if(!data.success){
+                throw new Error(`$HTTP error: ${response.status}`);
+            }
+
         } catch (error){
-
+            console.error("Fetch error", error);
         } finally {
-
+            updateEntryUI(entryBtn);
         }
-    }
-
-    async function handleAdditionalEntry(event){
-        const contestantEmail = emailInput.value;
-        const URL = event.target.getAttribute('data-link');
-
-        const timeWindowOpened = new Date();
-        const newWindow = window.open(URL, '_blank', 'width=1000,height=800');
-
-        let checkWindowClosed = setInterval(()=>{
-        }, 500);
     }
 
     function updateEmailUI(){
@@ -101,7 +105,8 @@ document.addEventListener('raffleLoaded', ()=>{
 
                     additionalEntrySections.forEach(additionalEntrySection =>{
                         additionalEntrySection.classList.remove('inactive-additional-entry');
-                    })
+                    });
+                    updateEntryUI();
                     setTimeout(()=>{
                         const welcomeElement = document.createElement('div');
                         welcomeElement.innerHTML = `
@@ -131,7 +136,10 @@ document.addEventListener('raffleLoaded', ()=>{
         }
     }
 
-    function updateEntryUI(){
-        
+    function updateEntryUI(element){
+        setTimeout(()=>{
+            element.classList.add('completed-additional-entry');
+            element.innerHTML = '✓';
+        }, 2000);
     }
 });

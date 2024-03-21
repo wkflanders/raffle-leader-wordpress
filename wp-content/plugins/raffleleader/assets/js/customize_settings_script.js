@@ -3561,7 +3561,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         const elementType = additionalEntryInput.getAttribute('data-type');
         const selectedElement = document.querySelector('.selected-raffleleader-section');
         const additionalEntryBtn = selectedElement.querySelector('button');
-
+        
         if(inputValue.includes('@')){
             inputValue = inputValue.replace('@', '');
         }
@@ -3576,11 +3576,30 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 const XRepostMatch = inputValue.match(/\d+/g);
                 const XRepostTweetID = XRepostMatch[XRepostMatch.length - 1];
                 additionalEntryBtn.setAttribute('data-link', `https://twitter.com/intent/retweet?tweet_id=${XRepostTweetID}`);
+                break;
 
             case 'XLike':
                 const XLikeMatch = inputValue.match(/\d+/g);
                 const XLikeTweetID = XLikeMatch[XLikeMatch.length - 1];
                 additionalEntryBtn.setAttribute('data-link', `https://twitter.com/intent/like?tweet_id=${XLikeTweetID}`);
+                break;
+
+            case 'instaFollow':
+                inputValue = inputValue.includes('@') ? inputValue.replace('@', '') : inputValue;
+                additionalEntryBtn.setAttribute('data-link', `https://instagram.com/${inputValue}/`);
+                break;
+
+            case 'instaComment':
+                const instaCommentMatch = inputValue.match(/\/p\/([^\/]+)\//);
+                const instaCommentID = instaCommentMatch ? instaCommentMatch[1] : null;
+                additionalEntryBtn.setAttribute('data-link', `https://instagram.com/p/${instaCommentID}`);
+                break;
+
+            case 'instaLike':
+                const instaLikeMatch = inputValue.match(/\/p\/([^\/]+)\//);
+                const instaLikeID = instaLikeMatch ? instaLikeMatch[1] : null;
+                additionalEntryBtn.setAttribute('data-link', `https://instagram.com/p/${instaLikeID}`);
+                break;
         }
     }
 })

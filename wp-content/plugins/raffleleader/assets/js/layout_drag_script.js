@@ -59,7 +59,7 @@ document.addEventListener('previewLoaded', () => {
         newElement.innerHTML = htmlToAppend;
 
         if(dragElement.id === 'imageBox'){
-            newElement.style.width = '400px';
+            newElement.style.width = '500px';
             newElement.style.height = '300px';
         } else if(dragElement.id === 'entryBox'){
             if(dropzone.querySelector('.raffleleader-entry-section')){

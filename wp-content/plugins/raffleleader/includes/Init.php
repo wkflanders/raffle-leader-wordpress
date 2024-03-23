@@ -14,10 +14,10 @@ final class Init{
     public static function get_services(){
         return [
             Pages\Admin::class,
+            Base\Enqueue::class,
             Base\SettingsLinks::class,
             Base\BuilderController::class,
             Base\PublishController::class,
-            Base\Enqueue::class,
             API\RaffleAPI::class,
         ];
     }

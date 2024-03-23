@@ -15,8 +15,6 @@ class Admin extends BaseController{
 
     public $settings;
 
-    public $icon_url;
-
     public $adminCallbacks;
 
     public $builderCallbacks;
@@ -27,8 +25,6 @@ class Admin extends BaseController{
 
     public function register(){
         $this->settings = new SettingsAPI();
-
-        $this->icon_url = $this->plugin_url . 'assets/images/admin_menu_logo.svg';
 
         $this->adminCallbacks = new AdminCallbacks();
         $this->builderCallbacks = new BuilderCallbacks();

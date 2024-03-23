@@ -20,7 +20,7 @@
         </ul>
         <ul class="rl-nav-extras">
             <li><a class="close" href="admin.php?page=raffleleader_plugin"></a></li>
-            <li><a class="help" href="">? Help</a></li>
+            <li><a class="help" href="">Help</a></li>
             <button class="save-btn">Save</button>
         </ul>
     </nav>

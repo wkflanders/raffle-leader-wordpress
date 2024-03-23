@@ -5,7 +5,7 @@
                 <h2>The Basics</h2>
                 <p>Your license key provides access to the plugin's features.</p>
             </div>
-            <div class="rl-box grid-item">
+            <div class="rl-box grid-item template-item">
                 <div class="rl-box-action" style="display: none;">
                     <h2>Blank Raffle</h2>
                     <p>Your license key provides access to the plugin's features.</p>
@@ -27,7 +27,7 @@
                 <h2>Campaigns</h2>
                 <p>Your license key provides access to the plugin's features.</p>
             </div>
-            <div class="rl-box grid-item">
+            <div class="rl-box grid-item template-item">
                 <div class="rl-box-action" style="display: none;">
                     <h2>Pre-Launch Raffle</h2>
                     <p>Your license key provides access to the plugin's features.</p>
@@ -49,7 +49,7 @@
                     <p class="template-footer-content template-rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="template-footer-text-logo" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/footer_text_logo.svg"> For Yourself!</p>
                 </div>
             </div>
-            <div class="rl-box grid-item">
+            <div class="rl-box grid-item template-item">
                 <div class="rl-box-action" style="display: none;">
                     <h2>Refer-A-Friend Raffle</h2>
                     <p>Your license key provides access to the plugin's features.</p>
@@ -78,7 +78,7 @@
                     <p class="template-footer-content template-rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="template-footer-text-logo" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/footer_text_logo.svg"> For Yourself!</p>
                 </div>
             </div>
-            <div class="rl-box grid-item">
+            <div class="rl-box grid-item template-item">
                 <div class="rl-box-action" style="display: none;">
                     <h2>Image Entry Raffle</h2>
                     <p>Your license key provides access to the plugin's features.</p>
@@ -113,7 +113,7 @@
                 <h2>Social Media</h2>
                 <p>Your license key provides access to the plugin's features.</p>
             </div>
-            <div class="rl-box grid-item">
+            <div class="rl-box grid-item template-item">
                 <div class="rl-box-action" style="display: none;">
                     <h2>X/Twitter Raffle</h2>
                     <p>Your license key provides access to the plugin's features.</p>
@@ -156,7 +156,7 @@
                     <p class="template-footer-content template-rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="template-footer-text-logo" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/footer_text_logo.svg"> For Yourself!</p>
                 </div>
             </div>
-            <div class="rl-box grid-item">
+            <div class="rl-box grid-item template-item">
                 <div class="rl-box-action" style="display: none;">
                     <h2>Instagram Raffle</h2>
                     <p>Your license key provides access to the plugin's features.</p>
@@ -199,7 +199,7 @@
                     <p class="template-footer-content template-rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="template-footer-text-logo" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/footer_text_logo.svg"> For Yourself!</p>
                 </div>
             </div>
-            <div class="rl-box grid-item">
+            <div class="rl-box grid-item template-item">
                 <div class="rl-box-action" style="display: none;">
                     <h2>TikTok Raffle</h2>
                     <p>Your license key provides access to the plugin's features.</p>

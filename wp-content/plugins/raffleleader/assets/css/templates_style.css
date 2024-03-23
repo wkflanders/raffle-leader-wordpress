@@ -57,10 +57,6 @@
     transform: rotate(135deg);
 }
 
-.rl-template-wrapper .rl-grid-row:hover {
-    align-items: center;
-}
-
 .rl-grid-row .rl-box {
     transition: margin 0.5s ease-in-out, transform 0.5s ease-in-out;
     box-sizing: border-box;
@@ -144,6 +140,11 @@
     height: 55vh;
     margin-right: 4vw;
     overflow: hidden;
+    z-index: 10;
+}
+
+.template-item:hover {
+    transform: scale(1.3);
     z-index: 50;
 }
 

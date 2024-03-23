@@ -10,11 +10,16 @@ use Includes\Base\BaseController;
 class Enqueue extends BaseController{
 
     public function register(){
-        $this->loadFrontEnd();
+        $this->loadRaffleFrontEnd();
+        $this->loadWPAdminBackEnd();
     }
 
-    public function loadFrontEnd(){
-        add_action( 'wp_enqueue_scripts', array( $this, 'enqueueFrontEnd' ) );
+    public function loadRaffleFrontEnd(){
+        add_action( 'wp_enqueue_scripts', array( $this, 'enqueueRaffleFrontEnd' ) );
+    }
+
+    public function loadWPAdminBackEnd(){
+        add_action( 'admin_enqueue_scripts', array( $this, 'enqueueWPAdminBackEnd' ) );
     }
 
     public function loadRaffleOverview(){
@@ -38,7 +43,7 @@ class Enqueue extends BaseController{
         add_action( 'admin_enqueue_scripts', array( $this, 'enqueueInfo' ) );
     }
 
-    public function enqueueFrontEnd(){
+    public function enqueueRaffleFrontEnd(){
         global $post;
         if( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, 'raffleleader' ) ){
             wp_enqueue_script( 'raffleleader_load_raffle_script', $this->plugin_url . '/assets/js/raffle_load_script.js', array(), rand(111, 9999) );
@@ -59,6 +64,10 @@ class Enqueue extends BaseController{
             wp_enqueue_style( 'raffleleader_preview_default_style', $this->plugin_url . '/assets/css/preview_default_style.css', array(), rand(111, 9999) );
             wp_enqueue_style( 'raffleleader_raffle_frontend_style', $this->plugin_url . '/assets/css/raffle_frontend_style.css', array(), rand(111, 9999) );
         }
+    }
+
+    public function enqueueWPAdminBackEnd(){
+        wp_enqueue_script( 'raffleleader_classic_editor_script', $this->plugin_url . '/assets/js/classic_editor_script.js', array(), rand(111, 9999) );
     }
 
     public function enqueueSettings(){

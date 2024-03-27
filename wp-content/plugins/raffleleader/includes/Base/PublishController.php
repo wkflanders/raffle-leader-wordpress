@@ -31,8 +31,10 @@ class PublishController extends BaseController{
         add_action( 'wp_ajax_nopriv_handleEmailLogin', array( $this, 'handleEmailLogin') );
         add_action( 'wp_ajax_handleAdditionalEntry', array( $this, 'handleAdditionalEntry') );
         add_action( 'wp_ajax_nopriv_handleAdditionalEntry', array( $this, 'handleAdditionalEntry') );
+        add_action( 'wp_ajax_handleClassicEditorModalRaffles', array( $this, 'handleClassicEditorModalRaffles') );
 
         add_action( 'media_buttons', array( $this, 'addClassicEditorButton' ), 15 );
+        add_action('admin_footer', array( $this, 'addClassicEditorModal' ));
     }
 
     public function shortcodeHandler( $atts ){
@@ -160,5 +162,35 @@ class PublishController extends BaseController{
     public function addClassicEditorButton( $buttons ){
         $svg_icon = '<svg style="height: 25px; width: 23px; vertical-align: bottom; margin-right: 5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14"><path fill="#2271b1" d="M14.5 11.4h4c1 0 1.4-.3 1.3-1.2V4.8c0-1-.5-1-1-1l-6.6-.2a3 3 0 0 1-1.8-.7l-.3-.2c-.6-.6-1.2-1-2-1H3.4c-.8 0-1.5 0-1.5 1.1V8c.1 1 .6 1.4 1.4 1.4l6.2.2c.8 0 1.2.1 2 .5l1.1.8c.7.4 1.4.5 2 .5Z"/><path fill="#2271b1" d="M22 3.3h-.2c-.7 0-1.2-.6-1.2-1.2V2h-7.9c-.7 0-1.5-.3-2-.9a4.3 4.3 0 0 0-3-1.1H1.3v.2A1.2 1.2 0 0 1 1 1c-.3.2-.6.4-1 .4v8.2h.2A1.2 1.2 0 0 1 1.4 11H9c1 0 1.9.4 2.7 1l.4.3c.5.5 1.2.7 2 .7h6.5v-.3c0-.6.6-1.2 1.2-1.1l.1-8.2Zm-3 8.4h-4.3c-.6 0-1.3-.1-2-.6l-1.2-.8c-.8-.4-1.3-.5-2-.5H3c-1 0-1.4-.4-1.5-1.5V2.5c0-1 .6-1.2 1.6-1.2h4.8c.9 0 1.6.6 2.2 1.2l.3.2c.4.4 1.3.7 1.9.7h7c.4 0 1 0 1 1v6.1c0 1-.4 1.3-1.4 1.2Z"/></svg>';
         echo '<a href="#" id="insert-raffleleader-shortcode" class="button">' . $svg_icon . ' Add Raffle</a>';
+    }
+
+    public function addClassicEditorModal(){
+        $screen = get_current_screen();
+
+        if( $screen->id != 'post' && $screen->id != 'page' ){
+            return;
+        }
+        ?>
+        <div id="raffleModal" class="raffle-modal" style="display:none;">
+            <div class="raffle-modal-content">
+                <span class="close">&times;</span>
+                <h2>Select a Raffle</h2>
+                <ul id="raffleList">
+                    <!-- Raffle items will be dynamically populated here -->
+                </ul>
+                <button id="insertRaffle">Insert Selected Raffle</button>
+            </div>
+        </div>
+        <?php
+    }
+
+    public function handleClassicEditorModalRaffles(){
+        check_ajax_referer( 'nonce', 'security' );
+
+        $raffles = $this->raffleAPI->getMultipleRaffles( array( 
+            'per_page' => -1,
+        ) );
+
+        wp_send_json_success( $raffles );
     }
 }

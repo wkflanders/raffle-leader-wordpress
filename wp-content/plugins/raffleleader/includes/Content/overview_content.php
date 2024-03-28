@@ -131,11 +131,49 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </thead>
                     <tbody id="the-list">
                         <?php foreach ($raffles as $raffle) :
-                            $start_date = isset($raffle['start_date']) ? new DateTime($raffle['start_date']) : 'N/A';
-                            $end_date = isset($raffle['end_date']) ? new DateTime($raffle['end_date']) : 'N/A';
+                            $current_date = new DateTime(); // Define the current date
+                            $start_date_str = 'N/A'; // Default value
+                            $end_date_str = 'N/A'; // Default value
+                    
+                            // Attempt to create DateTime objects if dates are set
+                            $start_date = isset($raffle['start_date']) ? new DateTime($raffle['start_date']) : null;
+                            $end_date = isset($raffle['end_date']) ? new DateTime($raffle['end_date']) : null;
+                    
+                            // Format DateTime objects as strings if they are not null
+                            if ($start_date) {
+                                $start_date_str = $start_date->format('F j, Y g:i a');
+                            }
+                            if ($end_date) {
+                                $end_date_str = $end_date->format('F j, Y g:i a');
+                            }
+                        
+                            $status = 'Draft'; // Default status
+                        
+                            if ($start_date && $end_date) { // Check if both dates are DateTime objects
+                                if ($current_date < $start_date) {
+                                    $interval = $current_date->diff($start_date);
+                                    if ($interval->days > 0) {
+                                        $status = "Starts in " . $interval->days . " day(s)";
+                                    } elseif ($interval->h > 0) {
+                                        $status = "Starts in " . $interval->h . " hour(s)";
+                                    } else {
+                                        $status = "Starts in " . $interval->i . " minute(s)";
+                                    }
+                                } elseif ($current_date > $start_date && $current_date < $end_date) {
+                                    $interval = $current_date->diff($end_date);
+                                    if ($interval->days > 0) {
+                                        $status = "Ends in " . $interval->days . " day(s)";
+                                    } elseif ($interval->h > 0) {
+                                        $status = "Ends in " . $interval->h . " hour(s)";
+                                    } else {
+                                        $status = "Ends in " . $interval->i . " minute(s)";
+                                    }
+                                } elseif ($current_date > $end_date) {
+                                    $status = "Finished";
+                                }
+                            }
 
-                            $start_date = !is_string($start_date) ? $start_date->format('F j, Y g:i a') : 'N/A';
-                            $end_date = !is_string($end_date) ? $end_date->format('F j, Y g:i a') : 'N/A';
+                            $raffleAPI->updateRaffle( $raffle['raffle_id'], array( 'status' => $status ) );
                         ?>
                             <tr>
                                 <th scope="row" class="check-column">
@@ -169,9 +207,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                         <?php echo intval($raffle['entries']); ?>
                                     </a>
                                 </td>
-                                <td><?php echo esc_html($start_date) ?></td>
-                                <td><?php echo esc_html($end_date) ?></td>
-                                <td><?php echo esc_html($raffle['status']) ?></td>
+                                <td><?php echo esc_html($start_date_str) ?></td>
+                                <td><?php echo esc_html($end_date_str) ?></td>
+                                <td><?php echo esc_html($status) ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

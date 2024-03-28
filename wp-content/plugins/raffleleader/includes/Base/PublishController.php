@@ -188,6 +188,7 @@ class PublishController extends BaseController{
         check_ajax_referer( 'nonce', 'security' );
 
         $raffles = $this->raffleAPI->getMultipleRaffles( array( 
+            'active' => 'true',
             'per_page' => -1,
         ) );
 

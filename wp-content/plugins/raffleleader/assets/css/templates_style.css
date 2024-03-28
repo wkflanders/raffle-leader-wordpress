@@ -145,7 +145,7 @@
 
 .template-item:hover {
     transform: scale(1.3);
-    z-index: 50;
+    z-index: 500;
 }
 
 .rl-template-wrapper .label {

@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const raffleList = document.getElementById('raffleList');
     const insertButton = document.getElementById('insertRaffle');
 
-    // Function to fetch raffles and populate the modal
     const handleClassicEditorModalRaffles = () => {
         fetch(raffleleader_classic_editor_script_object.ajax_url, {
             method: 'POST',
@@ -31,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Function to populate the modal with raffles
     const populateModal = (raffles) => {
         raffleList.innerHTML = ''; // Clear existing list items
         raffles.forEach(raffle => {
@@ -42,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Event listener to open the modal and fetch raffles
     button.addEventListener('click', (e) => {
         e.preventDefault();
         handleClassicEditorModalRaffles(); // Now fetching raffles when the modal is opened

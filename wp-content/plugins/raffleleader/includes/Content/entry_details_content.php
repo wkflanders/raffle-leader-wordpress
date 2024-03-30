@@ -50,6 +50,58 @@
                 </div>
             </div>
         </div>
+        <div class="customize-settings-box">
+            <p>Facebook Entries</p>
+            <div class="customize-settings-dropdown">
+                <div id="facebookFollowEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
+                    <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/facebook_logo.svg"> Follow</p>                                        
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <div class="customize-settings-dropdown">
+                <div id="facebookPostEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
+                    <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/facebook_logo.svg"> Post</p>                                        
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <div class="customize-settings-dropdown">
+                <div id="facebookLikeEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
+                    <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/facebook_logo.svg"> Like</p>                                        
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>TikTok Entries</p>
+            <div class="customize-settings-dropdown">
+                <div id="tiktokFollowEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
+                    <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/tiktok_logo.svg"> Follow</p>                                        
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <div class="customize-settings-dropdown">
+                <div id="tiktokCommentEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
+                    <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/tiktok_logo.svg"> Comment</p>                                        
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <div class="customize-settings-dropdown">
+                <div id="tiktokLikeEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
+                    <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/tiktok_logo.svg"> Like</p>                                        
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Refer-A-Friend Entry</p>
+            <div class="customize-settings-dropdown">
+                <div id="referEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
+                    <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/refer_logo.svg"> Refer-A-Friend</p>                                        
+                </div>
+            </div>
+        </div>
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">

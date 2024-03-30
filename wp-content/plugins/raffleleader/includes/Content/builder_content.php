@@ -76,11 +76,11 @@
                         <div class="general-settings-options">
                             <a href="#dateAndTime" class="settings-tab-open"><button class="general-settings-btn">Date and Time</button></a>
                             <a href="#rulesAndTerms" class="settings-tab-open"><button class="general-settings-btn">Rules and Terms</button></a>
-                            <a href="#emailSettings" class="settings-tab-open"><button class="general-settings-btn">Email Settings</button></a>
-                            <a href="#successSettings" class="settings-tab-open"><button class="general-settings-btn">Success Settings</button></a>
-                            <a href="#GPDR" class="settings-tab-open"><button class="general-settings-btn">GPDR Consent</button></a>
-                            <a href="#recaptcha" class="settings-tab-open"><button class="general-settings-btn">Recaptcha</button></a>
-                            <a href="#webhooks" class="settings-tab-open"><button class="general-settings-btn">Webhooks</button></a>
+                            <a href="#emailSettings" class="settings-tab-open general-settings-deactivated"><button class="general-settings-btn">Email Settings</button></a>
+                            <a href="#successSettings" class="settings-tab-open general-settings-deactivated"><button class="general-settings-btn">Success Settings</button></a>
+                            <a href="#GPDR" class="settings-tab-open general-settings-deactivated"><button class="general-settings-btn">GPDR Consent</button></a>
+                            <a href="#recaptcha" class="settings-tab-open general-settings-deactivated"><button class="general-settings-btn">Recaptcha</button></a>
+                            <a href="#webhooks" class="settings-tab-open general-settings-deactivated"><button class="general-settings-btn">Webhooks</button></a>
                         </div>
                     </div>
                 </div>

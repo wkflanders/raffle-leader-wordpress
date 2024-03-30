@@ -84,6 +84,12 @@
   height: 10vh;
 }
 
+.general-settings-deactivated {
+  opacity: 0.3;
+  filter: greyscale(100%);
+  pointer-events: none;
+}
+
 .general-settings-text > p {
   font-size: 1.8vh;
   color: gray;

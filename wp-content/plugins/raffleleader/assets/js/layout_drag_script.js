@@ -73,10 +73,15 @@ document.addEventListener('previewLoaded', () => {
                 event.preventDefault();
             });
         } else if(dragElement.id === 'XFollowEntry' || dragElement.id === 'XRepostEntry' || dragElement.id === 'XLikeEntry' ||
-                  dragElement.id === 'instaFollowEntry' || dragElement.id === 'instaCommentEntry' || dragElement.id === 'instaLikeEntry'){
+                  dragElement.id === 'instaFollowEntry' || dragElement.id === 'instaCommentEntry' || dragElement.id === 'instaLikeEntry' || 
+                  dragElement.id === 'facebookFollowEntry' || dragElement.id === 'facebookPostEntry' || dragElement.id === 'facebookLikeEntry' ||
+                  dragElement.id === 'tiktokFollowEntry' || dragElement.id === 'tiktokCommentEntry' || dragElement.id === 'tiktokLikeEntry'){
             newElement.style.width = '500px';
             newElement.style.height = '75px';
             newElement.setAttribute('data-entry', dropzone.querySelector('.selected-raffleleader-section').id);
+        } else if(dragElement.id === 'referEntry'){
+            newElement.style.width = '500px';
+            newElement.style.height = '75px';
         }
 
         container.appendChild(newElement);
@@ -187,6 +192,90 @@ document.addEventListener('previewLoaded', () => {
                 return `<div data-type="instaLikeDetails" class="raffleleader-additional-entry-section">
                             <div class="raffleleader-additional-entry-text-column">
                                 <h2>Like us on Instagram</h2>
+                                <p>for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button data-link="https://instagram.com/">+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div>`
+                
+            case 'facebookFollowEntry':
+                return `<div data-type="facebookFollowDetails" class="raffleleader-additional-entry-section">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2>Follow us on Facebook</h2>
+                                <p>for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button data-link="https://facebook.com/">+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div>`
+
+            case 'facebookPostEntry':
+                return `<div data-type="facebookPostDetails" class="raffleleader-additional-entry-section">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2>Post us on Facebook</h2>
+                                <p>for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button data-link="https://facebook.com/">+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div>`
+
+            case 'facebookLikeEntry':
+                return `<div data-type="facebookLikeDetails" class="raffleleader-additional-entry-section">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2>Like us on Facebook</h2>
+                                <p>for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button data-link="https://facebook.com/">+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div>`
+
+            case 'tiktokFollowEntry':
+                return `<div data-type="tiktokFollowDetails" class="raffleleader-additional-entry-section">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2>Follow us on TikTok</h2>
+                                <p>for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button data-link="https://tiktok.com/">+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div>`
+
+            case 'tiktokCommentEntry':
+                return `<div data-type="tiktokCommentDetails" class="raffleleader-additional-entry-section">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2>Leave a comment on TikTok</h2>
+                                <p>for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button data-link="https://tiktok.com/">+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div>`
+
+            case 'tiktokLikeEntry':
+                return `<div data-type="tiktokLikeDetails" class="raffleleader-additional-entry-section">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2>Like us on TikTok</h2>
+                                <p>for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button data-link="https://tiktok.com/">+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div>`
+
+            case 'referEntry':
+                return `<div data-type="referDetails" class="raffleleader-additional-entry-section">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2>Refer a friend</h2>
                                 <p>for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">

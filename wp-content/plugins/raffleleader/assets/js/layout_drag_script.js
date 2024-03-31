@@ -74,7 +74,7 @@ document.addEventListener('previewLoaded', () => {
             });
         } else if(dragElement.id === 'XFollowEntry' || dragElement.id === 'XRepostEntry' || dragElement.id === 'XLikeEntry' ||
                   dragElement.id === 'instaFollowEntry' || dragElement.id === 'instaCommentEntry' || dragElement.id === 'instaLikeEntry' || 
-                  dragElement.id === 'facebookFollowEntry' || dragElement.id === 'facebookPostEntry' || dragElement.id === 'facebookLikeEntry' ||
+                  dragElement.id === 'facebookFollowEntry' || dragElement.id === 'facebookCommentEntry' || dragElement.id === 'facebookLikeEntry' ||
                   dragElement.id === 'tiktokFollowEntry' || dragElement.id === 'tiktokCommentEntry' || dragElement.id === 'tiktokLikeEntry'){
             newElement.style.width = '500px';
             newElement.style.height = '75px';
@@ -212,10 +212,10 @@ document.addEventListener('previewLoaded', () => {
                         </div>
                         <div style="display: none;" class="raffleleader-resize-handle"></div>`
 
-            case 'facebookPostEntry':
-                return `<div data-type="facebookPostDetails" class="raffleleader-additional-entry-section">
+            case 'facebookCommentEntry':
+                return `<div data-type="facebookCommentDetails" class="raffleleader-additional-entry-section">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2>Post us on Facebook</h2>
+                                <h2>Leave a comment on Facebook</h2>
                                 <p>for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">

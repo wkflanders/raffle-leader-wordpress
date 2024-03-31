@@ -1,4 +1,3 @@
-
 <div id="XFollowDetails" class="customize-box-content">
     <div class="dropdown-wrapper">
         <div class="header-box">
@@ -109,7 +108,7 @@
             <p>Header Font Color</p>
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-color">
-                    <div id="XFollowHeadeColorGradient"></div>
+                    <div id="XFollowHeaderColorGradient"></div>
                     <div id="XFollowHeaderFontColorClick" class="dropdown-color-click" data-type="XFollowHeaderColor"></div>
                     <input id="XFollowHeaderFontColorForm" class="color-input" data-type="XFollowHeaderColor" type="text" name="XFollowHeaderFontColor" placeholder="Enter a hexidecimal">
                 </div>
@@ -323,7 +322,7 @@
             <p>Header Font Color</p>
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-color">
-                    <div id="XRepostHeadeColorGradient"></div>
+                    <div id="XRepostHeaderColorGradient"></div>
                     <div id="XRepostHeaderFontColorClick" class="dropdown-color-click" data-type="XRepostHeaderColor"></div>
                     <input id="XRepostHeaderFontColorForm" class="color-input" data-type="XRepostHeaderColor" type="text" name="XRepostHeaderFontColor" placeholder="Enter a hexidecimal">
                 </div>
@@ -537,7 +536,7 @@
             <p>Header Font Color</p>
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-color">
-                    <div id="XLikeHeadeColorGradient"></div>
+                    <div id="XLikeHeaderColorGradient"></div>
                     <div id="XLikeHeaderFontColorClick" class="dropdown-color-click" data-type="XLikeHeaderColor"></div>
                     <input id="XLikeHeaderFontColorForm" class="color-input" data-type="XLikeHeaderColor" type="text" name="XLikeHeaderFontColor" placeholder="Enter a hexidecimal">
                 </div>
@@ -751,7 +750,7 @@
             <p>Header Font Color</p>
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-color">
-                    <div id="instaFollowHeadeColorGradient"></div>
+                    <div id="instaFollowHeaderColorGradient"></div>
                     <div id="instaFollowHeaderFontColorClick" class="dropdown-color-click" data-type="instaFollowHeaderColor"></div>
                     <input id="instaFollowHeaderFontColorForm" class="color-input" data-type="instaFollowHeaderColor" type="text" name="instaFollowHeaderFontColor" placeholder="Enter a hexidecimal">
                 </div>
@@ -863,7 +862,7 @@
             <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="customize-settings-box">
-            <p>Instagram Username</p>
+            <p>Instagram Post</p>
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-text">
                     <input id="instaCommentForm" class="additional-entry-input" data-type="instaComment" name="instaComment" type="text" placeholder="Enter Instagram Post">
@@ -965,7 +964,7 @@
             <p>Header Font Color</p>
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-color">
-                    <div id="instaCommentHeadeColorGradient"></div>
+                    <div id="instaCommentHeaderColorGradient"></div>
                     <div id="instaCommentHeaderFontColorClick" class="dropdown-color-click" data-type="instaCommentHeaderColor"></div>
                     <input id="instaCommentHeaderFontColorForm" class="color-input" data-type="instaCommentHeaderColor" type="text" name="instaCommentHeaderFontColor" placeholder="Enter a hexidecimal">
                 </div>
@@ -1077,7 +1076,7 @@
             <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="customize-settings-box">
-            <p>Instagram Username</p>
+            <p>Instagram Post</p>
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-text">
                     <input id="instaLikeForm" class="additional-entry-input" data-type="instaLike" name="instaLike" type="text" placeholder="Enter Instagram Post">
@@ -1179,7 +1178,7 @@
             <p>Header Font Color</p>
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-color">
-                    <div id="instaLikeHeadeColorGradient"></div>
+                    <div id="instaLikeHeaderColorGradient"></div>
                     <div id="instaLikeHeaderFontColorClick" class="dropdown-color-click" data-type="instaLikeHeaderColor"></div>
                     <input id="instaLikeHeaderFontColorForm" class="color-input" data-type="instaLikeHeaderColor" type="text" name="instaLikeHeaderFontColor" placeholder="Enter a hexidecimal">
                 </div>
@@ -1279,6 +1278,1504 @@
                     <span>Confirm Delete</span>
                 </div>
                 <p id="instaLikeCancelDelete" class="cancel-delete" style="display: none;" data-type="instaLikeDelete">Cancel</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="facebookFollowDetails" class="customize-box-content">
+    <div class="dropdown-wrapper">
+        <div class="header-box">
+            <div class="spacer"></div>
+            <h2 class="header-box-title">Facebook Follow Details</h2>
+            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+        </div>
+        <div class="customize-settings-box">
+            <p>Facebook User URL</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="facebookFollowForm" class="additional-entry-input" data-type="facebookFollow" name="facebookFollow" type="text" placeholder="Enter Facebook User URL">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dropdown-wrapper text-design">
+        <div class="header-box">
+            <div class="spacer"></div>
+            <h2 class="header-box-title">Text Design</h2>
+            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+        </div>
+        <div class="customize-settings-box">
+            <p>Edit Header Text</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text dropdown-edit-text">
+                    <textarea id="facebookFollowHeaderForm" class="text-input" data-type="editHeader" type="text" placeholder="Enter Text"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Edit Subheader Text</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text dropdown-edit-text">
+                    <textarea id="facebookFollowSubheaderForm" class="text-input" data-type="editSubheader" type="text" placeholder="Enter Text"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Header Font</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display">
+                    <p id="facebookFollowHeaderDropDownTitle">Overview</p>
+                    <p class="dropdown-btn">▼</p>
+                </div>
+                <div class="dropdown-content">
+                    <ul id="facebookFollowHeaderList">
+                        <li class="font-title" data-type="facebookFollowHeaderFont">Overpass</li>
+                        <li class="font-title" data-type="facebookFollowHeaderFont">Inter</li>
+                        <li class="font-title" data-type="facebookFollowHeaderFont">Times New Roman</li>
+                        <li class="font-title" data-type="facebookFollowHeaderFont">Garamond</li>
+                        <li class="font-title" data-type="facebookFollowHeaderFont">Georgia</li>
+                        <li class="font-title" data-type="facebookFollowHeaderFont">Palatino</li>
+                        <li class="font-title" data-type="facebookFollowHeaderFont">Baskerville</li>
+                        <li class="font-title" data-type="facebookFollowHeaderFont">Arial</li>
+                        <li class="font-title" data-type="facebookFollowHeaderFont">Verdana</li>
+                        <li class="font-title" data-type="facebookFollowHeaderFont">Helvetica</li>
+                        <li class="font-title" data-type="facebookFollowHeaderFont">Tahoma</li>
+                        <li class="font-title" data-type="facebookFollowHeaderFont">Trebuchet MS</li>
+                        <li class="font-title" data-type="facebookFollowHeaderFont">Impact</li>
+                        <li class="font-title" data-type="facebookFollowHeaderFont">Gill Sans</li>
+                        <li class="font-title" data-type="facebookFollowHeaderFont">Lucida Console</li>
+                        <li class="font-title" data-type="facebookFollowHeaderFont">Courier New</li>
+                        <li class="font-title" data-type="facebookFollowHeaderFont">Monaco</li>
+                        <li class="font-title" data-type="facebookFollowHeaderFont">Brush Script MT</li>
+                        <li class="font-title" data-type="facebookFollowHeaderFont">Lucida Handwriting</li>
+                        <li class="font-title" data-type="facebookFollowHeaderFont">Copperplate</li>
+                        <li class="font-title" data-type="facebookFollowHeaderFont">Papyrus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display">
+                    <p id="facebookFollowSubheaderDropDownTitle">Overview</p>
+                    <p class="dropdown-btn">▼</p>
+                </div>
+                <div class="dropdown-content">
+                    <ul id="facebookFollowSubheaderList">
+                        <li class="font-title" data-type="facebookFollowSubheaderFont">Overpass</li>
+                        <li class="font-title" data-type="facebookFollowSubheaderFont">Inter</li>
+                        <li class="font-title" data-type="facebookFollowSubheaderFont">Times New Roman</li>
+                        <li class="font-title" data-type="facebookFollowSubheaderFont">Garamond</li>
+                        <li class="font-title" data-type="facebookFollowSubheaderFont">Georgia</li>
+                        <li class="font-title" data-type="facebookFollowSubheaderFont">Palatino</li>
+                        <li class="font-title" data-type="facebookFollowSubheaderFont">Baskerville</li>
+                        <li class="font-title" data-type="facebookFollowSubheaderFont">Arial</li>
+                        <li class="font-title" data-type="facebookFollowSubheaderFont">Verdana</li>
+                        <li class="font-title" data-type="facebookFollowSubheaderFont">Helvetica</li>
+                        <li class="font-title" data-type="facebookFollowSubheaderFont">Tahoma</li>
+                        <li class="font-title" data-type="facebookFollowSubheaderFont">Trebuchet MS</li>
+                        <li class="font-title" data-type="facebookFollowSubheaderFont">Impact</li>
+                        <li class="font-title" data-type="facebookFollowSubheaderFont">Gill Sans</li>
+                        <li class="font-title" data-type="facebookFollowSubheaderFont">Lucida Console</li>
+                        <li class="font-title" data-type="facebookFollowSubheaderFont">Courier New</li>
+                        <li class="font-title" data-type="facebookFollowSubheaderFont">Monaco</li>
+                        <li class="font-title" data-type="facebookFollowSubheaderFont">Brush Script MT</li>
+                        <li class="font-title" data-type="facebookFollowSubheaderFont">Lucida Handwriting</li>
+                        <li class="font-title" data-type="facebookFollowSubheaderFont">Copperplate</li>
+                        <li class="font-title" data-type="facebookFollowSubheaderFont">Papyrus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Header Font Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="facebookFollowHeaderColorGradient"></div>
+                    <div id="facebookFollowHeaderFontColorClick" class="dropdown-color-click" data-type="facebookFollowHeaderColor"></div>
+                    <input id="facebookFollowHeaderFontColorForm" class="color-input" data-type="facebookFollowHeaderColor" type="text" name="facebookFollowHeaderFontColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="facebookFollowSubheaderColorGradient"></div>
+                    <div id="facebookFollowSubheaderFontColorClick" class="dropdown-color-click" data-type="facebookFollowSubheaderColor"></div>
+                    <input id="facebookFollowSubheaderFontColorForm" class="color-input" data-type="facebookFollowSubheaderColor" type="text" name="facebookFollowSubheaderFontColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dropdown-wrapper section-design">
+        <div class="header-box">
+            <div class="spacer"></div>
+            <h2 class="header-box-title">Section Design</h2>
+            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+        </div>
+        <div class="customize-settings-box">
+            <p>Button Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="facebookFollowColorGradientButton"></div>
+                    <div id="facebookFollowButtonColorClick" class="dropdown-color-click" data-type="facebookFollowButtonColor"></div>
+                    <input id="facebookFollowButtonColorForm" class="color-input" data-type="facebookFollowButtonColor" type="text" name="facebookFollowButtonColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Background Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="facebookFollowColorGradientBackground"></div>
+                    <div id="facebookFollowBackgroundColorClick" class="dropdown-color-click" data-type="facebookFollowBackgroundColor"></div>
+                    <input id="facebookFollowBackgroundColorForm" class="color-input" data-type="facebookFollowBackgroundColor" type="text" name="facebookFollowBackgroundColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Border Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="facebookFollowColorGradientBorder"></div>
+                    <div id="facebookFollowBorderColorClick" class="dropdown-color-click" data-type="facebookFollowBorderColor"></div>
+                    <input id="facebookFollowBorderColorForm" class="color-input" data-type="facebookFollowBorderColor" type="text" name="facebookFollowBorderColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Border Stroke</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-multi-input">
+                    <div class="dropdown-row">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                        <input id="facebookFollowBorderTopStroke" class="border-stroke-input" data-type="facebookFollowBorderStroke" type="text" name="facebookFollowBorderTopStroke" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                        <input id="facebookFollowBorderBottomStroke" class="border-stroke-input" data-type="facebookFollowBorderStroke" type="text" name="facebookFollowBorderBottomStroke" placeholder="--">
+                    </div>
+                    <div class="dropdown-row">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                        <input id="facebookFollowBorderLeftStroke" class="border-stroke-input" data-type="facebookFollowBorderStroke" type="text" name="facebookFollowBorderLeftStroke" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                        <input id="facebookFollowBorderRightStroke" class="border-stroke-input" data-type="facebookFollowBorderStroke" type="text" name="facebookFollowBorderRightStroke" placeholder="--">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Border Radius</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-multi-input">
+                    <div class="dropdown-row row-radius">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                        <input id="facebookFollowBorderTopLeftRadius" class="border-radius-input" data-type="facebookFollowBorderRadius" type="text" name="facebookFollowBorderTopLeftRadius" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                        <input id="facebookFollowBorderTopRightRadius" class="border-radius-input" data-type="facebookFollowBorderRadius" type="text" name="facebookFollowBorderTopRightRadius" placeholder="--">
+                    </div>
+                    <div class="dropdown-row row-radius">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                        <input id="facebookFollowBorderBottomLeftRadius" class="border-radius-input" data-type="facebookFollowBorderRadius" type="text" name="facebookFollowBorderBottomLeftRadius" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                        <input id="facebookFollowBorderBottomRightRadius" class="border-radius-input" data-type="facebookFollowBorderRadius" type="text" name="facebookFollowBorderBottomRightRadius" placeholder="--">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <div class="customize-settings-dropdown">
+                <div id="facebookFollowDelete" class="dropdown-display delete-display" data-type="facebookFollowDelete">
+                    <span>Delete</span>
+                </div>
+                <div id="facebookFollowConfirmDelete" class="dropdown-display confirm-delete" style="display: none;" data-type="facebookFollowDelete">
+                    <span>Confirm Delete</span>
+                </div>
+                <p id="facebookFollowCancelDelete" class="cancel-delete" style="display: none;" data-type="facebookFollowDelete">Cancel</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="facebookCommentDetails" class="customize-box-content">
+    <div class="dropdown-wrapper">
+        <div class="header-box">
+            <div class="spacer"></div>
+            <h2 class="header-box-title">Facebook Comment Details</h2>
+            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+        </div>
+        <div class="customize-settings-box">
+            <p>Facebook Post URL</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="facebookCommentForm" class="additional-entry-input" data-type="facebookComment" name="facebookComment" type="text" placeholder="Enter Facebook Post URL">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dropdown-wrapper text-design">
+        <div class="header-box">
+            <div class="spacer"></div>
+            <h2 class="header-box-title">Text Design</h2>
+            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+        </div>
+        <div class="customize-settings-box">
+            <p>Edit Header Text</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text dropdown-edit-text">
+                    <textarea id="facebookCommentHeaderForm" class="text-input" data-type="editHeader" type="text" placeholder="Enter Text"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Edit Subheader Text</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text dropdown-edit-text">
+                    <textarea id="facebookCommentSubheaderForm" class="text-input" data-type="editSubheader" type="text" placeholder="Enter Text"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Header Font</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display">
+                    <p id="facebookCommentHeaderDropDownTitle">Overview</p>
+                    <p class="dropdown-btn">▼</p>
+                </div>
+                <div class="dropdown-content">
+                    <ul id="facebookCommentHeaderList">
+                        <li class="font-title" data-type="facebookCommentHeaderFont">Overpass</li>
+                        <li class="font-title" data-type="facebookCommentHeaderFont">Inter</li>
+                        <li class="font-title" data-type="facebookCommentHeaderFont">Times New Roman</li>
+                        <li class="font-title" data-type="facebookCommentHeaderFont">Garamond</li>
+                        <li class="font-title" data-type="facebookCommentHeaderFont">Georgia</li>
+                        <li class="font-title" data-type="facebookCommentHeaderFont">Palatino</li>
+                        <li class="font-title" data-type="facebookCommentHeaderFont">Baskerville</li>
+                        <li class="font-title" data-type="facebookCommentHeaderFont">Arial</li>
+                        <li class="font-title" data-type="facebookCommentHeaderFont">Verdana</li>
+                        <li class="font-title" data-type="facebookCommentHeaderFont">Helvetica</li>
+                        <li class="font-title" data-type="facebookCommentHeaderFont">Tahoma</li>
+                        <li class="font-title" data-type="facebookCommentHeaderFont">Trebuchet MS</li>
+                        <li class="font-title" data-type="facebookCommentHeaderFont">Impact</li>
+                        <li class="font-title" data-type="facebookCommentHeaderFont">Gill Sans</li>
+                        <li class="font-title" data-type="facebookCommentHeaderFont">Lucida Console</li>
+                        <li class="font-title" data-type="facebookCommentHeaderFont">Courier New</li>
+                        <li class="font-title" data-type="facebookCommentHeaderFont">Monaco</li>
+                        <li class="font-title" data-type="facebookCommentHeaderFont">Brush Script MT</li>
+                        <li class="font-title" data-type="facebookCommentHeaderFont">Lucida Handwriting</li>
+                        <li class="font-title" data-type="facebookCommentHeaderFont">Copperplate</li>
+                        <li class="font-title" data-type="facebookCommentHeaderFont">Papyrus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display">
+                    <p id="facebookCommentSubheaderDropDownTitle">Overview</p>
+                    <p class="dropdown-btn">▼</p>
+                </div>
+                <div class="dropdown-content">
+                    <ul id="facebookCommentSubheaderList">
+                        <li class="font-title" data-type="facebookCommentSubheaderFont">Overpass</li>
+                        <li class="font-title" data-type="facebookCommentSubheaderFont">Inter</li>
+                        <li class="font-title" data-type="facebookCommentSubheaderFont">Times New Roman</li>
+                        <li class="font-title" data-type="facebookCommentSubheaderFont">Garamond</li>
+                        <li class="font-title" data-type="facebookCommentSubheaderFont">Georgia</li>
+                        <li class="font-title" data-type="facebookCommentSubheaderFont">Palatino</li>
+                        <li class="font-title" data-type="facebookCommentSubheaderFont">Baskerville</li>
+                        <li class="font-title" data-type="facebookCommentSubheaderFont">Arial</li>
+                        <li class="font-title" data-type="facebookCommentSubheaderFont">Verdana</li>
+                        <li class="font-title" data-type="facebookCommentSubheaderFont">Helvetica</li>
+                        <li class="font-title" data-type="facebookCommentSubheaderFont">Tahoma</li>
+                        <li class="font-title" data-type="facebookCommentSubheaderFont">Trebuchet MS</li>
+                        <li class="font-title" data-type="facebookCommentSubheaderFont">Impact</li>
+                        <li class="font-title" data-type="facebookCommentSubheaderFont">Gill Sans</li>
+                        <li class="font-title" data-type="facebookCommentSubheaderFont">Lucida Console</li>
+                        <li class="font-title" data-type="facebookCommentSubheaderFont">Courier New</li>
+                        <li class="font-title" data-type="facebookCommentSubheaderFont">Monaco</li>
+                        <li class="font-title" data-type="facebookCommentSubheaderFont">Brush Script MT</li>
+                        <li class="font-title" data-type="facebookCommentSubheaderFont">Lucida Handwriting</li>
+                        <li class="font-title" data-type="facebookCommentSubheaderFont">Copperplate</li>
+                        <li class="font-title" data-type="facebookCommentSubheaderFont">Papyrus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Header Font Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="facebookCommentHeaderColorGradient"></div>
+                    <div id="facebookCommentHeaderFontColorClick" class="dropdown-color-click" data-type="facebookCommentHeaderColor"></div>
+                    <input id="facebookCommentHeaderFontColorForm" class="color-input" data-type="facebookCommentHeaderColor" type="text" name="facebookCommentHeaderFontColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="facebookCommentSubheaderColorGradient"></div>
+                    <div id="facebookCommentSubheaderFontColorClick" class="dropdown-color-click" data-type="facebookCommentSubheaderColor"></div>
+                    <input id="facebookCommentSubheaderFontColorForm" class="color-input" data-type="facebookCommentSubheaderColor" type="text" name="facebookCommentSubheaderFontColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dropdown-wrapper section-design">
+        <div class="header-box">
+            <div class="spacer"></div>
+            <h2 class="header-box-title">Section Design</h2>
+            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+        </div>
+        <div class="customize-settings-box">
+            <p>Button Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="facebookCommentColorGradientButton"></div>
+                    <div id="facebookCommentButtonColorClick" class="dropdown-color-click" data-type="facebookCommentButtonColor"></div>
+                    <input id="facebookCommentButtonColorForm" class="color-input" data-type="facebookCommentButtonColor" type="text" name="facebookCommentButtonColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Background Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="facebookCommentColorGradientBackground"></div>
+                    <div id="facebookCommentBackgroundColorClick" class="dropdown-color-click" data-type="facebookCommentBackgroundColor"></div>
+                    <input id="facebookCommentBackgroundColorForm" class="color-input" data-type="facebookCommentBackgroundColor" type="text" name="facebookCommentBackgroundColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Border Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="facebookCommentColorGradientBorder"></div>
+                    <div id="facebookCommentBorderColorClick" class="dropdown-color-click" data-type="facebookCommentBorderColor"></div>
+                    <input id="facebookCommentBorderColorForm" class="color-input" data-type="facebookCommentBorderColor" type="text" name="facebookCommentBorderColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Border Stroke</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-multi-input">
+                    <div class="dropdown-row">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                        <input id="facebookCommentBorderTopStroke" class="border-stroke-input" data-type="facebookCommentBorderStroke" type="text" name="facebookCommentBorderTopStroke" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                        <input id="facebookCommentBorderBottomStroke" class="border-stroke-input" data-type="facebookCommentBorderStroke" type="text" name="facebookCommentBorderBottomStroke" placeholder="--">
+                    </div>
+                    <div class="dropdown-row">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                        <input id="facebookCommentBorderLeftStroke" class="border-stroke-input" data-type="facebookCommentBorderStroke" type="text" name="facebookCommentBorderLeftStroke" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                        <input id="facebookCommentBorderRightStroke" class="border-stroke-input" data-type="facebookCommentBorderStroke" type="text" name="facebookCommentBorderRightStroke" placeholder="--">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Border Radius</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-multi-input">
+                    <div class="dropdown-row row-radius">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                        <input id="facebookCommentBorderTopLeftRadius" class="border-radius-input" data-type="facebookCommentBorderRadius" type="text" name="facebookCommentBorderTopLeftRadius" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                        <input id="facebookCommentBorderTopRightRadius" class="border-radius-input" data-type="facebookCommentBorderRadius" type="text" name="facebookCommentBorderTopRightRadius" placeholder="--">
+                    </div>
+                    <div class="dropdown-row row-radius">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                        <input id="facebookCommentBorderBottomLeftRadius" class="border-radius-input" data-type="facebookCommentBorderRadius" type="text" name="facebookCommentBorderBottomLeftRadius" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                        <input id="facebookCommentBorderBottomRightRadius" class="border-radius-input" data-type="facebookCommentBorderRadius" type="text" name="facebookCommentBorderBottomRightRadius" placeholder="--">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <div class="customize-settings-dropdown">
+                <div id="facebookCommentDelete" class="dropdown-display delete-display" data-type="facebookCommentDelete">
+                    <span>Delete</span>
+                </div>
+                <div id="facebookCommentConfirmDelete" class="dropdown-display confirm-delete" style="display: none;" data-type="facebookCommentDelete">
+                    <span>Confirm Delete</span>
+                </div>
+                <p id="facebookCommentCancelDelete" class="cancel-delete" style="display: none;" data-type="facebookCommentDelete">Cancel</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="facebookLikeDetails" class="customize-box-content">
+    <div class="dropdown-wrapper">
+        <div class="header-box">
+            <div class="spacer"></div>
+            <h2 class="header-box-title">Facebook Like Details</h2>
+            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+        </div>
+        <div class="customize-settings-box">
+            <p>Facebook Post URL</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="facebookLikeForm" class="additional-entry-input" data-type="facebookLike" name="facebookLike" type="text" placeholder="Enter Facebook Post URL">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dropdown-wrapper text-design">
+        <div class="header-box">
+            <div class="spacer"></div>
+            <h2 class="header-box-title">Text Design</h2>
+            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+        </div>
+        <div class="customize-settings-box">
+            <p>Edit Header Text</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text dropdown-edit-text">
+                    <textarea id="facebookLikeHeaderForm" class="text-input" data-type="editHeader" type="text" placeholder="Enter Text"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Edit Subheader Text</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text dropdown-edit-text">
+                    <textarea id="facebookLikeSubheaderForm" class="text-input" data-type="editSubheader" type="text" placeholder="Enter Text"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Header Font</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display">
+                    <p id="facebookLikeHeaderDropDownTitle">Overview</p>
+                    <p class="dropdown-btn">▼</p>
+                </div>
+                <div class="dropdown-content">
+                    <ul id="facebookLikeHeaderList">
+                        <li class="font-title" data-type="facebookLikeHeaderFont">Overpass</li>
+                        <li class="font-title" data-type="facebookLikeHeaderFont">Inter</li>
+                        <li class="font-title" data-type="facebookLikeHeaderFont">Times New Roman</li>
+                        <li class="font-title" data-type="facebookLikeHeaderFont">Garamond</li>
+                        <li class="font-title" data-type="facebookLikeHeaderFont">Georgia</li>
+                        <li class="font-title" data-type="facebookLikeHeaderFont">Palatino</li>
+                        <li class="font-title" data-type="facebookLikeHeaderFont">Baskerville</li>
+                        <li class="font-title" data-type="facebookLikeHeaderFont">Arial</li>
+                        <li class="font-title" data-type="facebookLikeHeaderFont">Verdana</li>
+                        <li class="font-title" data-type="facebookLikeHeaderFont">Helvetica</li>
+                        <li class="font-title" data-type="facebookLikeHeaderFont">Tahoma</li>
+                        <li class="font-title" data-type="facebookLikeHeaderFont">Trebuchet MS</li>
+                        <li class="font-title" data-type="facebookLikeHeaderFont">Impact</li>
+                        <li class="font-title" data-type="facebookLikeHeaderFont">Gill Sans</li>
+                        <li class="font-title" data-type="facebookLikeHeaderFont">Lucida Console</li>
+                        <li class="font-title" data-type="facebookLikeHeaderFont">Courier New</li>
+                        <li class="font-title" data-type="facebookLikeHeaderFont">Monaco</li>
+                        <li class="font-title" data-type="facebookLikeHeaderFont">Brush Script MT</li>
+                        <li class="font-title" data-type="facebookLikeHeaderFont">Lucida Handwriting</li>
+                        <li class="font-title" data-type="facebookLikeHeaderFont">Copperplate</li>
+                        <li class="font-title" data-type="facebookLikeHeaderFont">Papyrus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display">
+                    <p id="facebookLikeSubheaderDropDownTitle">Overview</p>
+                    <p class="dropdown-btn">▼</p>
+                </div>
+                <div class="dropdown-content">
+                    <ul id="facebookLikeSubheaderList">
+                        <li class="font-title" data-type="facebookLikeSubheaderFont">Overpass</li>
+                        <li class="font-title" data-type="facebookLikeSubheaderFont">Inter</li>
+                        <li class="font-title" data-type="facebookLikeSubheaderFont">Times New Roman</li>
+                        <li class="font-title" data-type="facebookLikeSubheaderFont">Garamond</li>
+                        <li class="font-title" data-type="facebookLikeSubheaderFont">Georgia</li>
+                        <li class="font-title" data-type="facebookLikeSubheaderFont">Palatino</li>
+                        <li class="font-title" data-type="facebookLikeSubheaderFont">Baskerville</li>
+                        <li class="font-title" data-type="facebookLikeSubheaderFont">Arial</li>
+                        <li class="font-title" data-type="facebookLikeSubheaderFont">Verdana</li>
+                        <li class="font-title" data-type="facebookLikeSubheaderFont">Helvetica</li>
+                        <li class="font-title" data-type="facebookLikeSubheaderFont">Tahoma</li>
+                        <li class="font-title" data-type="facebookLikeSubheaderFont">Trebuchet MS</li>
+                        <li class="font-title" data-type="facebookLikeSubheaderFont">Impact</li>
+                        <li class="font-title" data-type="facebookLikeSubheaderFont">Gill Sans</li>
+                        <li class="font-title" data-type="facebookLikeSubheaderFont">Lucida Console</li>
+                        <li class="font-title" data-type="facebookLikeSubheaderFont">Courier New</li>
+                        <li class="font-title" data-type="facebookLikeSubheaderFont">Monaco</li>
+                        <li class="font-title" data-type="facebookLikeSubheaderFont">Brush Script MT</li>
+                        <li class="font-title" data-type="facebookLikeSubheaderFont">Lucida Handwriting</li>
+                        <li class="font-title" data-type="facebookLikeSubheaderFont">Copperplate</li>
+                        <li class="font-title" data-type="facebookLikeSubheaderFont">Papyrus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Header Font Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="facebookLikeHeaderColorGradient"></div>
+                    <div id="facebookLikeHeaderFontColorClick" class="dropdown-color-click" data-type="facebookLikeHeaderColor"></div>
+                    <input id="facebookLikeHeaderFontColorForm" class="color-input" data-type="facebookLikeHeaderColor" type="text" name="facebookLikeHeaderFontColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="facebookLikeSubheaderColorGradient"></div>
+                    <div id="facebookLikeSubheaderFontColorClick" class="dropdown-color-click" data-type="facebookLikeSubheaderColor"></div>
+                    <input id="facebookLikeSubheaderFontColorForm" class="color-input" data-type="facebookLikeSubheaderColor" type="text" name="facebookLikeSubheaderFontColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dropdown-wrapper section-design">
+        <div class="header-box">
+            <div class="spacer"></div>
+            <h2 class="header-box-title">Section Design</h2>
+            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+        </div>
+        <div class="customize-settings-box">
+            <p>Button Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="facebookLikeColorGradientButton"></div>
+                    <div id="facebookLikeButtonColorClick" class="dropdown-color-click" data-type="facebookLikeButtonColor"></div>
+                    <input id="facebookLikeButtonColorForm" class="color-input" data-type="facebookLikeButtonColor" type="text" name="facebookLikeButtonColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Background Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="facebookLikeColorGradientBackground"></div>
+                    <div id="facebookLikeBackgroundColorClick" class="dropdown-color-click" data-type="facebookLikeBackgroundColor"></div>
+                    <input id="facebookLikeBackgroundColorForm" class="color-input" data-type="facebookLikeBackgroundColor" type="text" name="facebookLikeBackgroundColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Border Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="facebookLikeColorGradientBorder"></div>
+                    <div id="facebookLikeBorderColorClick" class="dropdown-color-click" data-type="facebookLikeBorderColor"></div>
+                    <input id="facebookLikeBorderColorForm" class="color-input" data-type="facebookLikeBorderColor" type="text" name="facebookLikeBorderColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Border Stroke</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-multi-input">
+                    <div class="dropdown-row">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                        <input id="facebookLikeBorderTopStroke" class="border-stroke-input" data-type="facebookLikeBorderStroke" type="text" name="facebookLikeBorderTopStroke" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                        <input id="facebookLikeBorderBottomStroke" class="border-stroke-input" data-type="facebookLikeBorderStroke" type="text" name="facebookLikeBorderBottomStroke" placeholder="--">
+                    </div>
+                    <div class="dropdown-row">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                        <input id="facebookLikeBorderLeftStroke" class="border-stroke-input" data-type="facebookLikeBorderStroke" type="text" name="facebookLikeBorderLeftStroke" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                        <input id="facebookLikeBorderRightStroke" class="border-stroke-input" data-type="facebookLikeBorderStroke" type="text" name="facebookLikeBorderRightStroke" placeholder="--">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Border Radius</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-multi-input">
+                    <div class="dropdown-row row-radius">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                        <input id="facebookLikeBorderTopLeftRadius" class="border-radius-input" data-type="facebookLikeBorderRadius" type="text" name="facebookLikeBorderTopLeftRadius" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                        <input id="facebookLikeBorderTopRightRadius" class="border-radius-input" data-type="facebookLikeBorderRadius" type="text" name="facebookLikeBorderTopRightRadius" placeholder="--">
+                    </div>
+                    <div class="dropdown-row row-radius">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                        <input id="facebookLikeBorderBottomLeftRadius" class="border-radius-input" data-type="facebookLikeBorderRadius" type="text" name="facebookLikeBorderBottomLeftRadius" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                        <input id="facebookLikeBorderBottomRightRadius" class="border-radius-input" data-type="facebookLikeBorderRadius" type="text" name="facebookLikeBorderBottomRightRadius" placeholder="--">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <div class="customize-settings-dropdown">
+                <div id="facebookLikeDelete" class="dropdown-display delete-display" data-type="facebookLikeDelete">
+                    <span>Delete</span>
+                </div>
+                <div id="facebookLikeConfirmDelete" class="dropdown-display confirm-delete" style="display: none;" data-type="facebookLikeDelete">
+                    <span>Confirm Delete</span>
+                </div>
+                <p id="facebookLikeCancelDelete" class="cancel-delete" style="display: none;" data-type="facebookLikeDelete">Cancel</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="tiktokFollowDetails" class="customize-box-content">
+    <div class="dropdown-wrapper">
+        <div class="header-box">
+            <div class="spacer"></div>
+            <h2 class="header-box-title">TikTok Follow Details</h2>
+            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+        </div>
+        <div class="customize-settings-box">
+            <p>TikTok Username</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="tiktokFollowForm" class="additional-entry-input" data-type="tiktokFollow" name="tiktokFollow" type="text" placeholder="Enter TikTok Username">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dropdown-wrapper text-design">
+        <div class="header-box">
+            <div class="spacer"></div>
+            <h2 class="header-box-title">Text Design</h2>
+            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+        </div>
+        <div class="customize-settings-box">
+            <p>Edit Header Text</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text dropdown-edit-text">
+                    <textarea id="tiktokFollowHeaderForm" class="text-input" data-type="editHeader" type="text" placeholder="Enter Text"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Edit Subheader Text</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text dropdown-edit-text">
+                    <textarea id="tiktokFollowSubheaderForm" class="text-input" data-type="editSubheader" type="text" placeholder="Enter Text"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Header Font</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display">
+                    <p id="tiktokFollowHeaderDropDownTitle">Overview</p>
+                    <p class="dropdown-btn">▼</p>
+                </div>
+                <div class="dropdown-content">
+                    <ul id="tiktokFollowHeaderList">
+                        <li class="font-title" data-type="tiktokFollowHeaderFont">Overpass</li>
+                        <li class="font-title" data-type="tiktokFollowHeaderFont">Inter</li>
+                        <li class="font-title" data-type="tiktokFollowHeaderFont">Times New Roman</li>
+                        <li class="font-title" data-type="tiktokFollowHeaderFont">Garamond</li>
+                        <li class="font-title" data-type="tiktokFollowHeaderFont">Georgia</li>
+                        <li class="font-title" data-type="tiktokFollowHeaderFont">Palatino</li>
+                        <li class="font-title" data-type="tiktokFollowHeaderFont">Baskerville</li>
+                        <li class="font-title" data-type="tiktokFollowHeaderFont">Arial</li>
+                        <li class="font-title" data-type="tiktokFollowHeaderFont">Verdana</li>
+                        <li class="font-title" data-type="tiktokFollowHeaderFont">Helvetica</li>
+                        <li class="font-title" data-type="tiktokFollowHeaderFont">Tahoma</li>
+                        <li class="font-title" data-type="tiktokFollowHeaderFont">Trebuchet MS</li>
+                        <li class="font-title" data-type="tiktokFollowHeaderFont">Impact</li>
+                        <li class="font-title" data-type="tiktokFollowHeaderFont">Gill Sans</li>
+                        <li class="font-title" data-type="tiktokFollowHeaderFont">Lucida Console</li>
+                        <li class="font-title" data-type="tiktokFollowHeaderFont">Courier New</li>
+                        <li class="font-title" data-type="tiktokFollowHeaderFont">Monaco</li>
+                        <li class="font-title" data-type="tiktokFollowHeaderFont">Brush Script MT</li>
+                        <li class="font-title" data-type="tiktokFollowHeaderFont">Lucida Handwriting</li>
+                        <li class="font-title" data-type="tiktokFollowHeaderFont">Copperplate</li>
+                        <li class="font-title" data-type="tiktokFollowHeaderFont">Papyrus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display">
+                    <p id="tiktokFollowSubheaderDropDownTitle">Overview</p>
+                    <p class="dropdown-btn">▼</p>
+                </div>
+                <div class="dropdown-content">
+                    <ul id="tiktokFollowSubheaderList">
+                        <li class="font-title" data-type="tiktokFollowSubheaderFont">Overpass</li>
+                        <li class="font-title" data-type="tiktokFollowSubheaderFont">Inter</li>
+                        <li class="font-title" data-type="tiktokFollowSubheaderFont">Times New Roman</li>
+                        <li class="font-title" data-type="tiktokFollowSubheaderFont">Garamond</li>
+                        <li class="font-title" data-type="tiktokFollowSubheaderFont">Georgia</li>
+                        <li class="font-title" data-type="tiktokFollowSubheaderFont">Palatino</li>
+                        <li class="font-title" data-type="tiktokFollowSubheaderFont">Baskerville</li>
+                        <li class="font-title" data-type="tiktokFollowSubheaderFont">Arial</li>
+                        <li class="font-title" data-type="tiktokFollowSubheaderFont">Verdana</li>
+                        <li class="font-title" data-type="tiktokFollowSubheaderFont">Helvetica</li>
+                        <li class="font-title" data-type="tiktokFollowSubheaderFont">Tahoma</li>
+                        <li class="font-title" data-type="tiktokFollowSubheaderFont">Trebuchet MS</li>
+                        <li class="font-title" data-type="tiktokFollowSubheaderFont">Impact</li>
+                        <li class="font-title" data-type="tiktokFollowSubheaderFont">Gill Sans</li>
+                        <li class="font-title" data-type="tiktokFollowSubheaderFont">Lucida Console</li>
+                        <li class="font-title" data-type="tiktokFollowSubheaderFont">Courier New</li>
+                        <li class="font-title" data-type="tiktokFollowSubheaderFont">Monaco</li>
+                        <li class="font-title" data-type="tiktokFollowSubheaderFont">Brush Script MT</li>
+                        <li class="font-title" data-type="tiktokFollowSubheaderFont">Lucida Handwriting</li>
+                        <li class="font-title" data-type="tiktokFollowSubheaderFont">Copperplate</li>
+                        <li class="font-title" data-type="tiktokFollowSubheaderFont">Papyrus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Header Font Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="tiktokFollowHeaderColorGradient"></div>
+                    <div id="tiktokFollowHeaderFontColorClick" class="dropdown-color-click" data-type="tiktokFollowHeaderColor"></div>
+                    <input id="tiktokFollowHeaderFontColorForm" class="color-input" data-type="tiktokFollowHeaderColor" type="text" name="tiktokFollowHeaderFontColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="tiktokFollowSubheaderColorGradient"></div>
+                    <div id="tiktokFollowSubheaderFontColorClick" class="dropdown-color-click" data-type="tiktokFollowSubheaderColor"></div>
+                    <input id="tiktokFollowSubheaderFontColorForm" class="color-input" data-type="tiktokFollowSubheaderColor" type="text" name="tiktokFollowSubheaderFontColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dropdown-wrapper section-design">
+        <div class="header-box">
+            <div class="spacer"></div>
+            <h2 class="header-box-title">Section Design</h2>
+            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+        </div>
+        <div class="customize-settings-box">
+            <p>Button Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="tiktokFollowColorGradientButton"></div>
+                    <div id="tiktokFollowButtonColorClick" class="dropdown-color-click" data-type="tiktokFollowButtonColor"></div>
+                    <input id="tiktokFollowButtonColorForm" class="color-input" data-type="tiktokFollowButtonColor" type="text" name="tiktokFollowButtonColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Background Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="tiktokFollowColorGradientBackground"></div>
+                    <div id="tiktokFollowBackgroundColorClick" class="dropdown-color-click" data-type="tiktokFollowBackgroundColor"></div>
+                    <input id="tiktokFollowBackgroundColorForm" class="color-input" data-type="tiktokFollowBackgroundColor" type="text" name="tiktokFollowBackgroundColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Border Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="tiktokFollowColorGradientBorder"></div>
+                    <div id="tiktokFollowBorderColorClick" class="dropdown-color-click" data-type="tiktokFollowBorderColor"></div>
+                    <input id="tiktokFollowBorderColorForm" class="color-input" data-type="tiktokFollowBorderColor" type="text" name="tiktokFollowBorderColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Border Stroke</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-multi-input">
+                    <div class="dropdown-row">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                        <input id="tiktokFollowBorderTopStroke" class="border-stroke-input" data-type="tiktokFollowBorderStroke" type="text" name="tiktokFollowBorderTopStroke" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                        <input id="tiktokFollowBorderBottomStroke" class="border-stroke-input" data-type="tiktokFollowBorderStroke" type="text" name="tiktokFollowBorderBottomStroke" placeholder="--">
+                    </div>
+                    <div class="dropdown-row">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                        <input id="tiktokFollowBorderLeftStroke" class="border-stroke-input" data-type="tiktokFollowBorderStroke" type="text" name="tiktokFollowBorderLeftStroke" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                        <input id="tiktokFollowBorderRightStroke" class="border-stroke-input" data-type="tiktokFollowBorderStroke" type="text" name="tiktokFollowBorderRightStroke" placeholder="--">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Border Radius</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-multi-input">
+                    <div class="dropdown-row row-radius">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                        <input id="tiktokFollowBorderTopLeftRadius" class="border-radius-input" data-type="tiktokFollowBorderRadius" type="text" name="tiktokFollowBorderTopLeftRadius" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                        <input id="tiktokFollowBorderTopRightRadius" class="border-radius-input" data-type="tiktokFollowBorderRadius" type="text" name="tiktokFollowBorderTopRightRadius" placeholder="--">
+                    </div>
+                    <div class="dropdown-row row-radius">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                        <input id="tiktokFollowBorderBottomLeftRadius" class="border-radius-input" data-type="tiktokFollowBorderRadius" type="text" name="tiktokFollowBorderBottomLeftRadius" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                        <input id="tiktokFollowBorderBottomRightRadius" class="border-radius-input" data-type="tiktokFollowBorderRadius" type="text" name="tiktokFollowBorderBottomRightRadius" placeholder="--">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <div class="customize-settings-dropdown">
+                <div id="tiktokFollowDelete" class="dropdown-display delete-display" data-type="tiktokFollowDelete">
+                    <span>Delete</span>
+                </div>
+                <div id="tiktokFollowConfirmDelete" class="dropdown-display confirm-delete" style="display: none;" data-type="tiktokFollowDelete">
+                    <span>Confirm Delete</span>
+                </div>
+                <p id="tiktokFollowCancelDelete" class="cancel-delete" style="display: none;" data-type="tiktokFollowDelete">Cancel</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="tiktokCommentDetails" class="customize-box-content">
+    <div class="dropdown-wrapper">
+        <div class="header-box">
+            <div class="spacer"></div>
+            <h2 class="header-box-title">TikTok Comment Details</h2>
+            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+        </div>
+        <div class="customize-settings-box">
+            <p>TikTok Post</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="tiktokCommentForm" class="additional-entry-input" data-type="tiktokComment" name="tiktokComment" type="text" placeholder="Enter TikTok Post">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dropdown-wrapper text-design">
+        <div class="header-box">
+            <div class="spacer"></div>
+            <h2 class="header-box-title">Text Design</h2>
+            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+        </div>
+        <div class="customize-settings-box">
+            <p>Edit Header Text</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text dropdown-edit-text">
+                    <textarea id="tiktokCommentHeaderForm" class="text-input" data-type="editHeader" type="text" placeholder="Enter Text"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Edit Subheader Text</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text dropdown-edit-text">
+                    <textarea id="tiktokCommentSubheaderForm" class="text-input" data-type="editSubheader" type="text" placeholder="Enter Text"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Header Font</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display">
+                    <p id="tiktokCommentHeaderDropDownTitle">Overview</p>
+                    <p class="dropdown-btn">▼</p>
+                </div>
+                <div class="dropdown-content">
+                    <ul id="tiktokCommentHeaderList">
+                        <li class="font-title" data-type="tiktokCommentHeaderFont">Overpass</li>
+                        <li class="font-title" data-type="tiktokCommentHeaderFont">Inter</li>
+                        <li class="font-title" data-type="tiktokCommentHeaderFont">Times New Roman</li>
+                        <li class="font-title" data-type="tiktokCommentHeaderFont">Garamond</li>
+                        <li class="font-title" data-type="tiktokCommentHeaderFont">Georgia</li>
+                        <li class="font-title" data-type="tiktokCommentHeaderFont">Palatino</li>
+                        <li class="font-title" data-type="tiktokCommentHeaderFont">Baskerville</li>
+                        <li class="font-title" data-type="tiktokCommentHeaderFont">Arial</li>
+                        <li class="font-title" data-type="tiktokCommentHeaderFont">Verdana</li>
+                        <li class="font-title" data-type="tiktokCommentHeaderFont">Helvetica</li>
+                        <li class="font-title" data-type="tiktokCommentHeaderFont">Tahoma</li>
+                        <li class="font-title" data-type="tiktokCommentHeaderFont">Trebuchet MS</li>
+                        <li class="font-title" data-type="tiktokCommentHeaderFont">Impact</li>
+                        <li class="font-title" data-type="tiktokCommentHeaderFont">Gill Sans</li>
+                        <li class="font-title" data-type="tiktokCommentHeaderFont">Lucida Console</li>
+                        <li class="font-title" data-type="tiktokCommentHeaderFont">Courier New</li>
+                        <li class="font-title" data-type="tiktokCommentHeaderFont">Monaco</li>
+                        <li class="font-title" data-type="tiktokCommentHeaderFont">Brush Script MT</li>
+                        <li class="font-title" data-type="tiktokCommentHeaderFont">Lucida Handwriting</li>
+                        <li class="font-title" data-type="tiktokCommentHeaderFont">Copperplate</li>
+                        <li class="font-title" data-type="tiktokCommentHeaderFont">Papyrus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display">
+                    <p id="tiktokCommentSubheaderDropDownTitle">Overview</p>
+                    <p class="dropdown-btn">▼</p>
+                </div>
+                <div class="dropdown-content">
+                    <ul id="tiktokCommentSubheaderList">
+                        <li class="font-title" data-type="tiktokCommentSubheaderFont">Overpass</li>
+                        <li class="font-title" data-type="tiktokCommentSubheaderFont">Inter</li>
+                        <li class="font-title" data-type="tiktokCommentSubheaderFont">Times New Roman</li>
+                        <li class="font-title" data-type="tiktokCommentSubheaderFont">Garamond</li>
+                        <li class="font-title" data-type="tiktokCommentSubheaderFont">Georgia</li>
+                        <li class="font-title" data-type="tiktokCommentSubheaderFont">Palatino</li>
+                        <li class="font-title" data-type="tiktokCommentSubheaderFont">Baskerville</li>
+                        <li class="font-title" data-type="tiktokCommentSubheaderFont">Arial</li>
+                        <li class="font-title" data-type="tiktokCommentSubheaderFont">Verdana</li>
+                        <li class="font-title" data-type="tiktokCommentSubheaderFont">Helvetica</li>
+                        <li class="font-title" data-type="tiktokCommentSubheaderFont">Tahoma</li>
+                        <li class="font-title" data-type="tiktokCommentSubheaderFont">Trebuchet MS</li>
+                        <li class="font-title" data-type="tiktokCommentSubheaderFont">Impact</li>
+                        <li class="font-title" data-type="tiktokCommentSubheaderFont">Gill Sans</li>
+                        <li class="font-title" data-type="tiktokCommentSubheaderFont">Lucida Console</li>
+                        <li class="font-title" data-type="tiktokCommentSubheaderFont">Courier New</li>
+                        <li class="font-title" data-type="tiktokCommentSubheaderFont">Monaco</li>
+                        <li class="font-title" data-type="tiktokCommentSubheaderFont">Brush Script MT</li>
+                        <li class="font-title" data-type="tiktokCommentSubheaderFont">Lucida Handwriting</li>
+                        <li class="font-title" data-type="tiktokCommentSubheaderFont">Copperplate</li>
+                        <li class="font-title" data-type="tiktokCommentSubheaderFont">Papyrus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Header Font Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="tiktokCommentHeaderColorGradient"></div>
+                    <div id="tiktokCommentHeaderFontColorClick" class="dropdown-color-click" data-type="tiktokCommentHeaderColor"></div>
+                    <input id="tiktokCommentHeaderFontColorForm" class="color-input" data-type="tiktokCommentHeaderColor" type="text" name="tiktokCommentHeaderFontColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="tiktokCommentSubheaderColorGradient"></div>
+                    <div id="tiktokCommentSubheaderFontColorClick" class="dropdown-color-click" data-type="tiktokCommentSubheaderColor"></div>
+                    <input id="tiktokCommentSubheaderFontColorForm" class="color-input" data-type="tiktokCommentSubheaderColor" type="text" name="tiktokCommentSubheaderFontColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dropdown-wrapper section-design">
+        <div class="header-box">
+            <div class="spacer"></div>
+            <h2 class="header-box-title">Section Design</h2>
+            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+        </div>
+        <div class="customize-settings-box">
+            <p>Button Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="tiktokCommentColorGradientButton"></div>
+                    <div id="tiktokCommentButtonColorClick" class="dropdown-color-click" data-type="tiktokCommentButtonColor"></div>
+                    <input id="tiktokCommentButtonColorForm" class="color-input" data-type="tiktokCommentButtonColor" type="text" name="tiktokCommentButtonColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Background Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="tiktokCommentColorGradientBackground"></div>
+                    <div id="tiktokCommentBackgroundColorClick" class="dropdown-color-click" data-type="tiktokCommentBackgroundColor"></div>
+                    <input id="tiktokCommentBackgroundColorForm" class="color-input" data-type="tiktokCommentBackgroundColor" type="text" name="tiktokCommentBackgroundColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Border Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="tiktokCommentColorGradientBorder"></div>
+                    <div id="tiktokCommentBorderColorClick" class="dropdown-color-click" data-type="tiktokCommentBorderColor"></div>
+                    <input id="tiktokCommentBorderColorForm" class="color-input" data-type="tiktokCommentBorderColor" type="text" name="tiktokCommentBorderColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Border Stroke</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-multi-input">
+                    <div class="dropdown-row">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                        <input id="tiktokCommentBorderTopStroke" class="border-stroke-input" data-type="tiktokCommentBorderStroke" type="text" name="tiktokCommentBorderTopStroke" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                        <input id="tiktokCommentBorderBottomStroke" class="border-stroke-input" data-type="tiktokCommentBorderStroke" type="text" name="tiktokCommentBorderBottomStroke" placeholder="--">
+                    </div>
+                    <div class="dropdown-row">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                        <input id="tiktokCommentBorderLeftStroke" class="border-stroke-input" data-type="tiktokCommentBorderStroke" type="text" name="tiktokCommentBorderLeftStroke" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                        <input id="tiktokCommentBorderRightStroke" class="border-stroke-input" data-type="tiktokCommentBorderStroke" type="text" name="tiktokCommentBorderRightStroke" placeholder="--">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Border Radius</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-multi-input">
+                    <div class="dropdown-row row-radius">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                        <input id="tiktokCommentBorderTopLeftRadius" class="border-radius-input" data-type="tiktokCommentBorderRadius" type="text" name="tiktokCommentBorderTopLeftRadius" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                        <input id="tiktokCommentBorderTopRightRadius" class="border-radius-input" data-type="tiktokCommentBorderRadius" type="text" name="tiktokCommentBorderTopRightRadius" placeholder="--">
+                    </div>
+                    <div class="dropdown-row row-radius">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                        <input id="tiktokCommentBorderBottomLeftRadius" class="border-radius-input" data-type="tiktokCommentBorderRadius" type="text" name="tiktokCommentBorderBottomLeftRadius" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                        <input id="tiktokCommentBorderBottomRightRadius" class="border-radius-input" data-type="tiktokCommentBorderRadius" type="text" name="tiktokCommentBorderBottomRightRadius" placeholder="--">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <div class="customize-settings-dropdown">
+                <div id="tiktokCommentDelete" class="dropdown-display delete-display" data-type="tiktokCommentDelete">
+                    <span>Delete</span>
+                </div>
+                <div id="tiktokCommentConfirmDelete" class="dropdown-display confirm-delete" style="display: none;" data-type="tiktokCommentDelete">
+                    <span>Confirm Delete</span>
+                </div>
+                <p id="tiktokCommentCancelDelete" class="cancel-delete" style="display: none;" data-type="tiktokCommentDelete">Cancel</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="tiktokLikeDetails" class="customize-box-content">
+    <div class="dropdown-wrapper">
+        <div class="header-box">
+            <div class="spacer"></div>
+            <h2 class="header-box-title">TikTok Like Details</h2>
+            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+        </div>
+        <div class="customize-settings-box">
+            <p>TikTok Post</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="tiktokLikeForm" class="additional-entry-input" data-type="tiktokLike" name="tiktokLike" type="text" placeholder="Enter TikTok Post">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dropdown-wrapper text-design">
+        <div class="header-box">
+            <div class="spacer"></div>
+            <h2 class="header-box-title">Text Design</h2>
+            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+        </div>
+        <div class="customize-settings-box">
+            <p>Edit Header Text</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text dropdown-edit-text">
+                    <textarea id="tiktokLikeHeaderForm" class="text-input" data-type="editHeader" type="text" placeholder="Enter Text"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Edit Subheader Text</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text dropdown-edit-text">
+                    <textarea id="tiktokLikeSubheaderForm" class="text-input" data-type="editSubheader" type="text" placeholder="Enter Text"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Header Font</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display">
+                    <p id="tiktokLikeHeaderDropDownTitle">Overview</p>
+                    <p class="dropdown-btn">▼</p>
+                </div>
+                <div class="dropdown-content">
+                    <ul id="tiktokLikeHeaderList">
+                        <li class="font-title" data-type="tiktokLikeHeaderFont">Overpass</li>
+                        <li class="font-title" data-type="tiktokLikeHeaderFont">Inter</li>
+                        <li class="font-title" data-type="tiktokLikeHeaderFont">Times New Roman</li>
+                        <li class="font-title" data-type="tiktokLikeHeaderFont">Garamond</li>
+                        <li class="font-title" data-type="tiktokLikeHeaderFont">Georgia</li>
+                        <li class="font-title" data-type="tiktokLikeHeaderFont">Palatino</li>
+                        <li class="font-title" data-type="tiktokLikeHeaderFont">Baskerville</li>
+                        <li class="font-title" data-type="tiktokLikeHeaderFont">Arial</li>
+                        <li class="font-title" data-type="tiktokLikeHeaderFont">Verdana</li>
+                        <li class="font-title" data-type="tiktokLikeHeaderFont">Helvetica</li>
+                        <li class="font-title" data-type="tiktokLikeHeaderFont">Tahoma</li>
+                        <li class="font-title" data-type="tiktokLikeHeaderFont">Trebuchet MS</li>
+                        <li class="font-title" data-type="tiktokLikeHeaderFont">Impact</li>
+                        <li class="font-title" data-type="tiktokLikeHeaderFont">Gill Sans</li>
+                        <li class="font-title" data-type="tiktokLikeHeaderFont">Lucida Console</li>
+                        <li class="font-title" data-type="tiktokLikeHeaderFont">Courier New</li>
+                        <li class="font-title" data-type="tiktokLikeHeaderFont">Monaco</li>
+                        <li class="font-title" data-type="tiktokLikeHeaderFont">Brush Script MT</li>
+                        <li class="font-title" data-type="tiktokLikeHeaderFont">Lucida Handwriting</li>
+                        <li class="font-title" data-type="tiktokLikeHeaderFont">Copperplate</li>
+                        <li class="font-title" data-type="tiktokLikeHeaderFont">Papyrus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display">
+                    <p id="tiktokLikeSubheaderDropDownTitle">Overview</p>
+                    <p class="dropdown-btn">▼</p>
+                </div>
+                <div class="dropdown-content">
+                    <ul id="tiktokLikeSubheaderList">
+                        <li class="font-title" data-type="tiktokLikeSubheaderFont">Overpass</li>
+                        <li class="font-title" data-type="tiktokLikeSubheaderFont">Inter</li>
+                        <li class="font-title" data-type="tiktokLikeSubheaderFont">Times New Roman</li>
+                        <li class="font-title" data-type="tiktokLikeSubheaderFont">Garamond</li>
+                        <li class="font-title" data-type="tiktokLikeSubheaderFont">Georgia</li>
+                        <li class="font-title" data-type="tiktokLikeSubheaderFont">Palatino</li>
+                        <li class="font-title" data-type="tiktokLikeSubheaderFont">Baskerville</li>
+                        <li class="font-title" data-type="tiktokLikeSubheaderFont">Arial</li>
+                        <li class="font-title" data-type="tiktokLikeSubheaderFont">Verdana</li>
+                        <li class="font-title" data-type="tiktokLikeSubheaderFont">Helvetica</li>
+                        <li class="font-title" data-type="tiktokLikeSubheaderFont">Tahoma</li>
+                        <li class="font-title" data-type="tiktokLikeSubheaderFont">Trebuchet MS</li>
+                        <li class="font-title" data-type="tiktokLikeSubheaderFont">Impact</li>
+                        <li class="font-title" data-type="tiktokLikeSubheaderFont">Gill Sans</li>
+                        <li class="font-title" data-type="tiktokLikeSubheaderFont">Lucida Console</li>
+                        <li class="font-title" data-type="tiktokLikeSubheaderFont">Courier New</li>
+                        <li class="font-title" data-type="tiktokLikeSubheaderFont">Monaco</li>
+                        <li class="font-title" data-type="tiktokLikeSubheaderFont">Brush Script MT</li>
+                        <li class="font-title" data-type="tiktokLikeSubheaderFont">Lucida Handwriting</li>
+                        <li class="font-title" data-type="tiktokLikeSubheaderFont">Copperplate</li>
+                        <li class="font-title" data-type="tiktokLikeSubheaderFont">Papyrus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Header Font Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="tiktokLikeHeaderColorGradient"></div>
+                    <div id="tiktokLikeHeaderFontColorClick" class="dropdown-color-click" data-type="tiktokLikeHeaderColor"></div>
+                    <input id="tiktokLikeHeaderFontColorForm" class="color-input" data-type="tiktokLikeHeaderColor" type="text" name="tiktokLikeHeaderFontColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="tiktokLikeSubheaderColorGradient"></div>
+                    <div id="tiktokLikeSubheaderFontColorClick" class="dropdown-color-click" data-type="tiktokLikeSubheaderColor"></div>
+                    <input id="tiktokLikeSubheaderFontColorForm" class="color-input" data-type="tiktokLikeSubheaderColor" type="text" name="tiktokLikeSubheaderFontColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dropdown-wrapper section-design">
+        <div class="header-box">
+            <div class="spacer"></div>
+            <h2 class="header-box-title">Section Design</h2>
+            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+        </div>
+        <div class="customize-settings-box">
+            <p>Button Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="tiktokLikeColorGradientButton"></div>
+                    <div id="tiktokLikeButtonColorClick" class="dropdown-color-click" data-type="tiktokLikeButtonColor"></div>
+                    <input id="tiktokLikeButtonColorForm" class="color-input" data-type="tiktokLikeButtonColor" type="text" name="tiktokLikeButtonColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Background Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="tiktokLikeColorGradientBackground"></div>
+                    <div id="tiktokLikeBackgroundColorClick" class="dropdown-color-click" data-type="tiktokLikeBackgroundColor"></div>
+                    <input id="tiktokLikeBackgroundColorForm" class="color-input" data-type="tiktokLikeBackgroundColor" type="text" name="tiktokLikeBackgroundColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Border Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="tiktokLikeColorGradientBorder"></div>
+                    <div id="tiktokLikeBorderColorClick" class="dropdown-color-click" data-type="tiktokLikeBorderColor"></div>
+                    <input id="tiktokLikeBorderColorForm" class="color-input" data-type="tiktokLikeBorderColor" type="text" name="tiktokLikeBorderColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Border Stroke</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-multi-input">
+                    <div class="dropdown-row">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                        <input id="tiktokLikeBorderTopStroke" class="border-stroke-input" data-type="tiktokLikeBorderStroke" type="text" name="tiktokLikeBorderTopStroke" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                        <input id="tiktokLikeBorderBottomStroke" class="border-stroke-input" data-type="tiktokLikeBorderStroke" type="text" name="tiktokLikeBorderBottomStroke" placeholder="--">
+                    </div>
+                    <div class="dropdown-row">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                        <input id="tiktokLikeBorderLeftStroke" class="border-stroke-input" data-type="tiktokLikeBorderStroke" type="text" name="tiktokLikeBorderLeftStroke" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                        <input id="tiktokLikeBorderRightStroke" class="border-stroke-input" data-type="tiktokLikeBorderStroke" type="text" name="tiktokLikeBorderRightStroke" placeholder="--">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Border Radius</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-multi-input">
+                    <div class="dropdown-row row-radius">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                        <input id="tiktokLikeBorderTopLeftRadius" class="border-radius-input" data-type="tiktokLikeBorderRadius" type="text" name="tiktokLikeBorderTopLeftRadius" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                        <input id="tiktokLikeBorderTopRightRadius" class="border-radius-input" data-type="tiktokLikeBorderRadius" type="text" name="tiktokLikeBorderTopRightRadius" placeholder="--">
+                    </div>
+                    <div class="dropdown-row row-radius">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                        <input id="tiktokLikeBorderBottomLeftRadius" class="border-radius-input" data-type="tiktokLikeBorderRadius" type="text" name="tiktokLikeBorderBottomLeftRadius" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                        <input id="tiktokLikeBorderBottomRightRadius" class="border-radius-input" data-type="tiktokLikeBorderRadius" type="text" name="tiktokLikeBorderBottomRightRadius" placeholder="--">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <div class="customize-settings-dropdown">
+                <div id="tiktokLikeDelete" class="dropdown-display delete-display" data-type="tiktokLikeDelete">
+                    <span>Delete</span>
+                </div>
+                <div id="tiktokLikeConfirmDelete" class="dropdown-display confirm-delete" style="display: none;" data-type="tiktokLikeDelete">
+                    <span>Confirm Delete</span>
+                </div>
+                <p id="tiktokLikeCancelDelete" class="cancel-delete" style="display: none;" data-type="tiktokLikeDelete">Cancel</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="referDetails" class="customize-box-content">
+    <div class="dropdown-wrapper">
+        <div class="header-box">
+            <div class="spacer"></div>
+            <h2 class="header-box-title">Refer-A-Friend Details</h2>
+            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+        </div>
+        <div class="customize-settings-box">
+            <p>TikTok Post</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="referForm" class="additional-entry-input" data-type="refer" name="refer" type="text" placeholder="Enter TikTok Post">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dropdown-wrapper text-design">
+        <div class="header-box">
+            <div class="spacer"></div>
+            <h2 class="header-box-title">Text Design</h2>
+            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+        </div>
+        <div class="customize-settings-box">
+            <p>Edit Header Text</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text dropdown-edit-text">
+                    <textarea id="referHeaderForm" class="text-input" data-type="editHeader" type="text" placeholder="Enter Text"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Edit Subheader Text</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text dropdown-edit-text">
+                    <textarea id="referSubheaderForm" class="text-input" data-type="editSubheader" type="text" placeholder="Enter Text"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Header Font</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display">
+                    <p id="referHeaderDropDownTitle">Overview</p>
+                    <p class="dropdown-btn">▼</p>
+                </div>
+                <div class="dropdown-content">
+                    <ul id="referHeaderList">
+                        <li class="font-title" data-type="referHeaderFont">Overpass</li>
+                        <li class="font-title" data-type="referHeaderFont">Inter</li>
+                        <li class="font-title" data-type="referHeaderFont">Times New Roman</li>
+                        <li class="font-title" data-type="referHeaderFont">Garamond</li>
+                        <li class="font-title" data-type="referHeaderFont">Georgia</li>
+                        <li class="font-title" data-type="referHeaderFont">Palatino</li>
+                        <li class="font-title" data-type="referHeaderFont">Baskerville</li>
+                        <li class="font-title" data-type="referHeaderFont">Arial</li>
+                        <li class="font-title" data-type="referHeaderFont">Verdana</li>
+                        <li class="font-title" data-type="referHeaderFont">Helvetica</li>
+                        <li class="font-title" data-type="referHeaderFont">Tahoma</li>
+                        <li class="font-title" data-type="referHeaderFont">Trebuchet MS</li>
+                        <li class="font-title" data-type="referHeaderFont">Impact</li>
+                        <li class="font-title" data-type="referHeaderFont">Gill Sans</li>
+                        <li class="font-title" data-type="referHeaderFont">Lucida Console</li>
+                        <li class="font-title" data-type="referHeaderFont">Courier New</li>
+                        <li class="font-title" data-type="referHeaderFont">Monaco</li>
+                        <li class="font-title" data-type="referHeaderFont">Brush Script MT</li>
+                        <li class="font-title" data-type="referHeaderFont">Lucida Handwriting</li>
+                        <li class="font-title" data-type="referHeaderFont">Copperplate</li>
+                        <li class="font-title" data-type="referHeaderFont">Papyrus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display">
+                    <p id="referSubheaderDropDownTitle">Overview</p>
+                    <p class="dropdown-btn">▼</p>
+                </div>
+                <div class="dropdown-content">
+                    <ul id="referSubheaderList">
+                        <li class="font-title" data-type="referSubheaderFont">Overpass</li>
+                        <li class="font-title" data-type="referSubheaderFont">Inter</li>
+                        <li class="font-title" data-type="referSubheaderFont">Times New Roman</li>
+                        <li class="font-title" data-type="referSubheaderFont">Garamond</li>
+                        <li class="font-title" data-type="referSubheaderFont">Georgia</li>
+                        <li class="font-title" data-type="referSubheaderFont">Palatino</li>
+                        <li class="font-title" data-type="referSubheaderFont">Baskerville</li>
+                        <li class="font-title" data-type="referSubheaderFont">Arial</li>
+                        <li class="font-title" data-type="referSubheaderFont">Verdana</li>
+                        <li class="font-title" data-type="referSubheaderFont">Helvetica</li>
+                        <li class="font-title" data-type="referSubheaderFont">Tahoma</li>
+                        <li class="font-title" data-type="referSubheaderFont">Trebuchet MS</li>
+                        <li class="font-title" data-type="referSubheaderFont">Impact</li>
+                        <li class="font-title" data-type="referSubheaderFont">Gill Sans</li>
+                        <li class="font-title" data-type="referSubheaderFont">Lucida Console</li>
+                        <li class="font-title" data-type="referSubheaderFont">Courier New</li>
+                        <li class="font-title" data-type="referSubheaderFont">Monaco</li>
+                        <li class="font-title" data-type="referSubheaderFont">Brush Script MT</li>
+                        <li class="font-title" data-type="referSubheaderFont">Lucida Handwriting</li>
+                        <li class="font-title" data-type="referSubheaderFont">Copperplate</li>
+                        <li class="font-title" data-type="referSubheaderFont">Papyrus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Header Font Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="referHeaderColorGradient"></div>
+                    <div id="referHeaderFontColorClick" class="dropdown-color-click" data-type="referHeaderColor"></div>
+                    <input id="referHeaderFontColorForm" class="color-input" data-type="referHeaderColor" type="text" name="referHeaderFontColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="referSubheaderColorGradient"></div>
+                    <div id="referSubheaderFontColorClick" class="dropdown-color-click" data-type="referSubheaderColor"></div>
+                    <input id="referSubheaderFontColorForm" class="color-input" data-type="referSubheaderColor" type="text" name="referSubheaderFontColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dropdown-wrapper section-design">
+        <div class="header-box">
+            <div class="spacer"></div>
+            <h2 class="header-box-title">Section Design</h2>
+            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+        </div>
+        <div class="customize-settings-box">
+            <p>Button Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="referColorGradientButton"></div>
+                    <div id="referButtonColorClick" class="dropdown-color-click" data-type="referButtonColor"></div>
+                    <input id="referButtonColorForm" class="color-input" data-type="referButtonColor" type="text" name="referButtonColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Background Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="referColorGradientBackground"></div>
+                    <div id="referBackgroundColorClick" class="dropdown-color-click" data-type="referBackgroundColor"></div>
+                    <input id="referBackgroundColorForm" class="color-input" data-type="referBackgroundColor" type="text" name="referBackgroundColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Border Color</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-color">
+                    <div id="referColorGradientBorder"></div>
+                    <div id="referBorderColorClick" class="dropdown-color-click" data-type="referBorderColor"></div>
+                    <input id="referBorderColorForm" class="color-input" data-type="referBorderColor" type="text" name="referBorderColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Border Stroke</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-multi-input">
+                    <div class="dropdown-row">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                        <input id="referBorderTopStroke" class="border-stroke-input" data-type="referBorderStroke" type="text" name="referBorderTopStroke" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                        <input id="referBorderBottomStroke" class="border-stroke-input" data-type="referBorderStroke" type="text" name="referBorderBottomStroke" placeholder="--">
+                    </div>
+                    <div class="dropdown-row">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                        <input id="referBorderLeftStroke" class="border-stroke-input" data-type="referBorderStroke" type="text" name="referBorderLeftStroke" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                        <input id="referBorderRightStroke" class="border-stroke-input" data-type="referBorderStroke" type="text" name="referBorderRightStroke" placeholder="--">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Border Radius</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-multi-input">
+                    <div class="dropdown-row row-radius">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                        <input id="referBorderTopLeftRadius" class="border-radius-input" data-type="referBorderRadius" type="text" name="referBorderTopLeftRadius" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                        <input id="referBorderTopRightRadius" class="border-radius-input" data-type="referBorderRadius" type="text" name="referBorderTopRightRadius" placeholder="--">
+                    </div>
+                    <div class="dropdown-row row-radius">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                        <input id="referBorderBottomLeftRadius" class="border-radius-input" data-type="referBorderRadius" type="text" name="referBorderBottomLeftRadius" placeholder="--">
+                        <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                        <input id="referBorderBottomRightRadius" class="border-radius-input" data-type="referBorderRadius" type="text" name="referBorderBottomRightRadius" placeholder="--">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <div class="customize-settings-dropdown">
+                <div id="referDelete" class="dropdown-display delete-display" data-type="referDelete">
+                    <span>Delete</span>
+                </div>
+                <div id="referConfirmDelete" class="dropdown-display confirm-delete" style="display: none;" data-type="referDelete">
+                    <span>Confirm Delete</span>
+                </div>
+                <p id="referCancelDelete" class="cancel-delete" style="display: none;" data-type="referDelete">Cancel</p>
             </div>
         </div>
     </div>

@@ -60,8 +60,8 @@
         </div>
         <div class="customize-settings-box">
             <div class="customize-settings-dropdown">
-                <div id="facebookPostEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
-                    <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/facebook_logo.svg"> Post</p>                                        
+                <div id="facebookCommentEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
+                    <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/facebook_logo.svg"> Comment</p>                                        
                 </div>
             </div>
         </div>

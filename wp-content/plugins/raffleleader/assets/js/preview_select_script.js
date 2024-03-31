@@ -95,6 +95,34 @@ document.addEventListener("previewLoaded", ()=>{
             case 'instaLikeDetails':
                 loadInstaLikeDetails(element);
                 break;
+                
+            case 'facebookFollowDetails':
+                loadFacebookFollowDetails(element);
+                break;
+
+            case 'facebookCommentDetails':
+                loadFacebookCommentDetails(element);
+                break;
+
+            case 'facebookLikeDetails':
+                loadFacebookLikeDetails(element);
+                break;
+
+            case 'tiktokFollowDetails':
+                loadTiktokFollowDetails(element);
+                break;
+
+            case 'tiktokCommentDetails':
+                loadTiktokCommentDetails(element);
+                break;
+
+            case 'tiktokLikeDetails':
+                loadTiktokLikeDetails(element);
+                break;
+
+            case 'referDetails':
+                loadReferDetails(element);
+                break;
         }
     }
 
@@ -1225,6 +1253,729 @@ document.addEventListener("previewLoaded", ()=>{
         instaLikeBorderFormTopRightRadius.value = instaLikeBorderRadiusTopRight;
         instaLikeBorderFormBottomLeftRadius.value = instaLikeBorderRadiusBottomLeft;
         instaLikeBorderFormBottomRightRadius.value = instaLikeBorderRadiusBottomRight;
+    }
+
+    function loadFacebookFollowDetails(element){
+        // Load Facebook Follow settings
+        const headerForm = document.getElementById('facebookFollowHeaderForm');
+        const subheaderForm = document.getElementById('facebookFollowSubheaderForm');
+        const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
+        const headerElement = textElement.querySelector('h2');
+        const subheaderElement = textElement.querySelector('p');
+
+        // Facebook Follow text
+        const headerText = headerElement.textContent;
+        const subheaderText = subheaderElement.textContent;
+        headerForm.value = headerText;
+        subheaderForm.value = subheaderText;
+
+        // Facebook Follow font 
+        const headerFontList = document.getElementById('facebookFollowHeaderList');
+        const headerFontDisplay = document.getElementById('facebookFollowHeaderDropDownTitle');
+        const subheaderFontList = document.getElementById('facebookFollowSubheaderList');
+        const subheaderFontDisplay = document.getElementById('facebookFollowSubheaderDropDownTitle');
+        const headerFont = window.getComputedStyle(headerElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        const subheaderFont = window.getComputedStyle(subheaderElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        headerFontDisplay.innerText = headerFont;
+        subheaderFontDisplay.innerText = subheaderFont;
+
+        Array.from(headerFontList.children).forEach((child)=>{
+            const childFont = child.innerText;
+            if(child.classList.contains('selected-font')){
+                child.classList.remove('selected-font');
+            }
+            if(childFont === headerFont){
+                child.classList.add('selected-font');
+            }
+        });
+
+        Array.from(subheaderFontList.children).forEach((child)=>{
+            const childFont = child.innerText;
+            if(child.classList.contains('selected-font')){
+                child.classList.remove('selected-font');
+            }
+            if(childFont === subheaderFont){
+                child.classList.add('selected-font');
+            }
+        });
+
+        // header color
+        const facebookFollowHeaderHexBox = document.getElementById('facebookFollowHeaderFontColorClick');
+        const facebookFollowHeaderForm = document.getElementById('facebookFollowHeaderFontColorForm');
+        const facebookFollowHeaderColorRGB = window.getComputedStyle(headerElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const facebookFollowHeaderColorHex = rgbToHex(facebookFollowHeaderColorRGB);
+        facebookFollowHeaderForm.value = facebookFollowHeaderColorHex;
+        facebookFollowHeaderHexBox.style.backgroundColor = facebookFollowHeaderColorHex;
+
+        // subheader color
+        const facebookFollowSubheaderHexBox = document.getElementById('facebookFollowSubheaderFontColorClick');
+        const facebookFollowSubheaderForm = document.getElementById('facebookFollowSubheaderFontColorForm');
+        const facebookFollowSubheaderColorRGB = window.getComputedStyle(subheaderElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const facebookFollowSubheaderColorHex = rgbToHex(facebookFollowSubheaderColorRGB);
+        facebookFollowSubheaderForm.value = facebookFollowSubheaderColorHex;
+        facebookFollowSubheaderHexBox.style.backgroundColor = facebookFollowSubheaderColorHex;
+
+        // Facebook Follow button color
+        const facebookFollowButtonElement = element.querySelector('button');
+        const facebookFollowButtonColorForm = document.getElementById('facebookFollowButtonColorForm');
+
+        const facebookFollowButtonHexBox = document.getElementById('facebookFollowButtonColorClick');
+        const facebookFollowButtonColorRGB = window.getComputedStyle(facebookFollowButtonElement).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const facebookFollowButtonColorHex = rgbToHex(facebookFollowButtonColorRGB);
+        facebookFollowButtonColorForm.value = facebookFollowButtonColorHex;
+        facebookFollowButtonHexBox.style.backgroundColor = facebookFollowButtonColorHex;
+
+        // Facebook Follow background color
+        const facebookFollowBackgroundColorForm = document.getElementById('facebookFollowBackgroundColorForm');
+        const facebookFollowBackgroundHexBox = document.getElementById('facebookFollowBackgroundColorClick');
+        const facebookFollowBackgroundColorRGB = window.getComputedStyle(element).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const facebookFollowBackgroundColorHex = rgbToHex(facebookFollowBackgroundColorRGB);
+        facebookFollowBackgroundColorForm.value = facebookFollowBackgroundColorHex;
+        facebookFollowBackgroundHexBox.style.backgroundColor = facebookFollowBackgroundColorHex;
+
+        // Facebook Follow border color
+        const facebookFollowBorderColorForm = document.getElementById('facebookFollowBorderColorForm');
+        const facebookFollowBorderHexBox = document.getElementById('facebookFollowBorderColorClick');
+        const facebookFollowBorderColorRGB = window.getComputedStyle(element).getPropertyValue('border-color').replace(/^"|"$/g, '');
+        const facebookFollowBorderColorHex = rgbToHex(facebookFollowBorderColorRGB);
+        facebookFollowBorderColorForm.value = facebookFollowBorderColorHex;
+        facebookFollowBorderHexBox.style.backgroundColor = facebookFollowBorderColorRGB;
+
+        // Facebook Follow border stroke
+        const facebookFollowBorderFormTopStroke = document.getElementById('facebookFollowBorderTopStroke');
+        const facebookFollowBorderFormLeftStroke = document.getElementById('facebookFollowBorderLeftStroke');
+        const facebookFollowBorderFormBottomStroke = document.getElementById('facebookFollowBorderBottomStroke');
+        const facebookFollowBorderFormRightStroke = document.getElementById('facebookFollowBorderRightStroke');
+
+        const facebookFollowBorderStrokeTop = window.getComputedStyle(element).getPropertyValue('border-top-width').replace(/^"|"$/g, '');
+        const facebookFollowBorderStrokeLeft = window.getComputedStyle(element).getPropertyValue('border-left-width').replace(/^"|"$/g, '');
+        const facebookFollowBorderStrokeBottom = window.getComputedStyle(element).getPropertyValue('border-bottom-width').replace(/^"|"$/g, '');
+        const facebookFollowBorderStrokeRight = window.getComputedStyle(element).getPropertyValue('border-right-width').replace(/^"|"$/g, '');
+
+        facebookFollowBorderFormTopStroke.value = facebookFollowBorderStrokeTop;
+        facebookFollowBorderFormLeftStroke.value = facebookFollowBorderStrokeLeft;
+        facebookFollowBorderFormBottomStroke.value = facebookFollowBorderStrokeBottom;
+        facebookFollowBorderFormRightStroke.value = facebookFollowBorderStrokeRight;
+
+        // Facebook Follow border radius
+        const facebookFollowBorderFormTopLeftRadius = document.getElementById('facebookFollowBorderTopLeftRadius');
+        const facebookFollowBorderFormTopRightRadius = document.getElementById('facebookFollowBorderTopRightRadius');
+        const facebookFollowBorderFormBottomLeftRadius = document.getElementById('facebookFollowBorderBottomLeftRadius');
+        const facebookFollowBorderFormBottomRightRadius = document.getElementById('facebookFollowBorderBottomRightRadius');
+
+        const facebookFollowBorderRadiusTopLeft = window.getComputedStyle(element).getPropertyValue('border-top-left-radius').replace(/^"|"$/g, '');
+        const facebookFollowBorderRadiusTopRight = window.getComputedStyle(element).getPropertyValue('border-top-right-radius').replace(/^"|"$/g, '');
+        const facebookFollowBorderRadiusBottomLeft = window.getComputedStyle(element).getPropertyValue('border-bottom-left-radius').replace(/^"|"$/g, '');
+        const facebookFollowBorderRadiusBottomRight = window.getComputedStyle(element).getPropertyValue('border-bottom-right-radius').replace(/^"|"$/g, '');
+
+        facebookFollowBorderFormTopLeftRadius.value = facebookFollowBorderRadiusTopLeft;
+        facebookFollowBorderFormTopRightRadius.value = facebookFollowBorderRadiusTopRight;
+        facebookFollowBorderFormBottomLeftRadius.value = facebookFollowBorderRadiusBottomLeft;
+        facebookFollowBorderFormBottomRightRadius.value = facebookFollowBorderRadiusBottomRight;
+
+    }
+
+    function loadFacebookCommentDetails(element){
+        // Load Facebook Comment settings
+        const headerForm = document.getElementById('facebookCommentHeaderForm');
+        const subheaderForm = document.getElementById('facebookCommentSubheaderForm');
+        const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
+        const headerElement = textElement.querySelector('h2');
+        const subheaderElement = textElement.querySelector('p');
+
+        // Facebook Comment text
+        const headerText = headerElement.textContent;
+        const subheaderText = subheaderElement.textContent;
+        headerForm.value = headerText;
+        subheaderForm.value = subheaderText;
+
+        // Facebook Comment font 
+        const headerFontList = document.getElementById('facebookCommentHeaderList');
+        const headerFontDisplay = document.getElementById('facebookCommentHeaderDropDownTitle');
+        const subheaderFontList = document.getElementById('facebookCommentSubheaderList');
+        const subheaderFontDisplay = document.getElementById('facebookCommentSubheaderDropDownTitle');
+        const headerFont = window.getComputedStyle(headerElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        const subheaderFont = window.getComputedStyle(subheaderElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        headerFontDisplay.innerText = headerFont;
+        subheaderFontDisplay.innerText = subheaderFont;
+
+        Array.from(headerFontList.children).forEach((child)=>{
+            const childFont = child.innerText;
+            if(child.classList.contains('selected-font')){
+                child.classList.remove('selected-font');
+            }
+            if(childFont === headerFont){
+                child.classList.add('selected-font');
+            }
+        });
+
+        Array.from(subheaderFontList.children).forEach((child)=>{
+            const childFont = child.innerText;
+            if(child.classList.contains('selected-font')){
+                child.classList.remove('selected-font');
+            }
+            if(childFont === subheaderFont){
+                child.classList.add('selected-font');
+            }
+        });
+
+        // header color
+        const facebookCommentHeaderHexBox = document.getElementById('facebookCommentHeaderFontColorClick');
+        const facebookCommentHeaderForm = document.getElementById('facebookCommentHeaderFontColorForm');
+        const facebookCommentHeaderColorRGB = window.getComputedStyle(headerElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const facebookCommentHeaderColorHex = rgbToHex(facebookCommentHeaderColorRGB);
+        facebookCommentHeaderForm.value = facebookCommentHeaderColorHex;
+        facebookCommentHeaderHexBox.style.backgroundColor = facebookCommentHeaderColorHex;
+
+        // subheader color
+        const facebookCommentSubheaderHexBox = document.getElementById('facebookCommentSubheaderFontColorClick');
+        const facebookCommentSubheaderForm = document.getElementById('facebookCommentSubheaderFontColorForm');
+        const facebookCommentSubheaderColorRGB = window.getComputedStyle(subheaderElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const facebookCommentSubheaderColorHex = rgbToHex(facebookCommentSubheaderColorRGB);
+        facebookCommentSubheaderForm.value = facebookCommentSubheaderColorHex;
+        facebookCommentSubheaderHexBox.style.backgroundColor = facebookCommentSubheaderColorHex;
+
+        // Facebook Comment button color
+        const facebookCommentButtonElement = element.querySelector('button');
+        const facebookCommentButtonColorForm = document.getElementById('facebookCommentButtonColorForm');
+
+        const facebookCommentButtonHexBox = document.getElementById('facebookCommentButtonColorClick');
+        const facebookCommentButtonColorRGB = window.getComputedStyle(facebookCommentButtonElement).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const facebookCommentButtonColorHex = rgbToHex(facebookCommentButtonColorRGB);
+        facebookCommentButtonColorForm.value = facebookCommentButtonColorHex;
+        facebookCommentButtonHexBox.style.backgroundColor = facebookCommentButtonColorHex;
+
+        // Facebook Comment background color
+        const facebookCommentBackgroundColorForm = document.getElementById('facebookCommentBackgroundColorForm');
+        const facebookCommentBackgroundHexBox = document.getElementById('facebookCommentBackgroundColorClick');
+        const facebookCommentBackgroundColorRGB = window.getComputedStyle(element).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const facebookCommentBackgroundColorHex = rgbToHex(facebookCommentBackgroundColorRGB);
+        facebookCommentBackgroundColorForm.value = facebookCommentBackgroundColorHex;
+        facebookCommentBackgroundHexBox.style.backgroundColor = facebookCommentBackgroundColorHex;
+
+        // Facebook Comment border color
+        const facebookCommentBorderColorForm = document.getElementById('facebookCommentBorderColorForm');
+        const facebookCommentBorderHexBox = document.getElementById('facebookCommentBorderColorClick');
+        const facebookCommentBorderColorRGB = window.getComputedStyle(element).getPropertyValue('border-color').replace(/^"|"$/g, '');
+        const facebookCommentBorderColorHex = rgbToHex(facebookCommentBorderColorRGB);
+        facebookCommentBorderColorForm.value = facebookCommentBorderColorHex;
+        facebookCommentBorderHexBox.style.backgroundColor = facebookCommentBorderColorRGB;
+
+        // Facebook Comment border stroke
+        const facebookCommentBorderFormTopStroke = document.getElementById('facebookCommentBorderTopStroke');
+        const facebookCommentBorderFormLeftStroke = document.getElementById('facebookCommentBorderLeftStroke');
+        const facebookCommentBorderFormBottomStroke = document.getElementById('facebookCommentBorderBottomStroke');
+        const facebookCommentBorderFormRightStroke = document.getElementById('facebookCommentBorderRightStroke');
+
+        const facebookCommentBorderStrokeTop = window.getComputedStyle(element).getPropertyValue('border-top-width').replace(/^"|"$/g, '');
+        const facebookCommentBorderStrokeLeft = window.getComputedStyle(element).getPropertyValue('border-left-width').replace(/^"|"$/g, '');
+        const facebookCommentBorderStrokeBottom = window.getComputedStyle(element).getPropertyValue('border-bottom-width').replace(/^"|"$/g, '');
+        const facebookCommentBorderStrokeRight = window.getComputedStyle(element).getPropertyValue('border-right-width').replace(/^"|"$/g, '');
+
+        facebookCommentBorderFormTopStroke.value = facebookCommentBorderStrokeTop;
+        facebookCommentBorderFormLeftStroke.value = facebookCommentBorderStrokeLeft;
+        facebookCommentBorderFormBottomStroke.value = facebookCommentBorderStrokeBottom;
+        facebookCommentBorderFormRightStroke.value = facebookCommentBorderStrokeRight;
+
+        // Facebook Comment border radius
+        const facebookCommentBorderFormTopLeftRadius = document.getElementById('facebookCommentBorderTopLeftRadius');
+        const facebookCommentBorderFormTopRightRadius = document.getElementById('facebookCommentBorderTopRightRadius');
+        const facebookCommentBorderFormBottomLeftRadius = document.getElementById('facebookCommentBorderBottomLeftRadius');
+        const facebookCommentBorderFormBottomRightRadius = document.getElementById('facebookCommentBorderBottomRightRadius');
+
+        const facebookCommentBorderRadiusTopLeft = window.getComputedStyle(element).getPropertyValue('border-top-left-radius').replace(/^"|"$/g, '');
+        const facebookCommentBorderRadiusTopRight = window.getComputedStyle(element).getPropertyValue('border-top-right-radius').replace(/^"|"$/g, '');
+        const facebookCommentBorderRadiusBottomLeft = window.getComputedStyle(element).getPropertyValue('border-bottom-left-radius').replace(/^"|"$/g, '');
+        const facebookCommentBorderRadiusBottomRight = window.getComputedStyle(element).getPropertyValue('border-bottom-right-radius').replace(/^"|"$/g, '');
+
+        facebookCommentBorderFormTopLeftRadius.value = facebookCommentBorderRadiusTopLeft;
+        facebookCommentBorderFormTopRightRadius.value = facebookCommentBorderRadiusTopRight;
+        facebookCommentBorderFormBottomLeftRadius.value = facebookCommentBorderRadiusBottomLeft;
+        facebookCommentBorderFormBottomRightRadius.value = facebookCommentBorderRadiusBottomRight;
+
+    }
+
+    function loadFacebookLikeDetails(element){
+        // Load Facebook Like settings
+        const headerForm = document.getElementById('facebookLikeHeaderForm');
+        const subheaderForm = document.getElementById('facebookLikeSubheaderForm');
+        const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
+        const headerElement = textElement.querySelector('h2');
+        const subheaderElement = textElement.querySelector('p');
+
+        // Facebook Like text
+        const headerText = headerElement.textContent;
+        const subheaderText = subheaderElement.textContent;
+        headerForm.value = headerText;
+        subheaderForm.value = subheaderText;
+
+        // Facebook Like font 
+        const headerFontList = document.getElementById('facebookLikeHeaderList');
+        const headerFontDisplay = document.getElementById('facebookLikeHeaderDropDownTitle');
+        const subheaderFontList = document.getElementById('facebookLikeSubheaderList');
+        const subheaderFontDisplay = document.getElementById('facebookLikeSubheaderDropDownTitle');
+        const headerFont = window.getComputedStyle(headerElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        const subheaderFont = window.getComputedStyle(subheaderElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        headerFontDisplay.innerText = headerFont;
+        subheaderFontDisplay.innerText = subheaderFont;
+
+        Array.from(headerFontList.children).forEach((child)=>{
+        const childFont = child.innerText;
+        if(child.classList.contains('selected-font')){
+            child.classList.remove('selected-font');
+        }
+        if(childFont === headerFont){
+            child.classList.add('selected-font');
+        }
+        });
+
+        Array.from(subheaderFontList.children).forEach((child)=>{
+        const childFont = child.innerText;
+        if(child.classList.contains('selected-font')){
+            child.classList.remove('selected-font');
+        }
+        if(childFont === subheaderFont){
+            child.classList.add('selected-font');
+        }
+        });
+
+        // header color
+        const facebookLikeHeaderHexBox = document.getElementById('facebookLikeHeaderFontColorClick');
+        const facebookLikeHeaderForm = document.getElementById('facebookLikeHeaderFontColorForm');
+        const facebookLikeHeaderColorRGB = window.getComputedStyle(headerElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const facebookLikeHeaderColorHex = rgbToHex(facebookLikeHeaderColorRGB);
+        facebookLikeHeaderForm.value = facebookLikeHeaderColorHex;
+        facebookLikeHeaderHexBox.style.backgroundColor = facebookLikeHeaderColorHex;
+
+        // subheader color
+        const facebookLikeSubheaderHexBox = document.getElementById('facebookLikeSubheaderFontColorClick');
+        const facebookLikeSubheaderForm = document.getElementById('facebookLikeSubheaderFontColorForm');
+        const facebookLikeSubheaderColorRGB = window.getComputedStyle(subheaderElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const facebookLikeSubheaderColorHex = rgbToHex(facebookLikeSubheaderColorRGB);
+        facebookLikeSubheaderForm.value = facebookLikeSubheaderColorHex;
+        facebookLikeSubheaderHexBox.style.backgroundColor = facebookLikeSubheaderColorHex;
+
+        // Facebook Like button color
+        const facebookLikeButtonElement = element.querySelector('button');
+        const facebookLikeButtonColorForm = document.getElementById('facebookLikeButtonColorForm');
+
+        const facebookLikeButtonHexBox = document.getElementById('facebookLikeButtonColorClick');
+        const facebookLikeButtonColorRGB = window.getComputedStyle(facebookLikeButtonElement).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const facebookLikeButtonColorHex = rgbToHex(facebookLikeButtonColorRGB);
+        facebookLikeButtonColorForm.value = facebookLikeButtonColorHex;
+        facebookLikeButtonHexBox.style.backgroundColor = facebookLikeButtonColorHex;
+
+        // Facebook Like background color
+        const facebookLikeBackgroundColorForm = document.getElementById('facebookLikeBackgroundColorForm');
+        const facebookLikeBackgroundHexBox = document.getElementById('facebookLikeBackgroundColorClick');
+        const facebookLikeBackgroundColorRGB = window.getComputedStyle(element).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const facebookLikeBackgroundColorHex = rgbToHex(facebookLikeBackgroundColorRGB);
+        facebookLikeBackgroundColorForm.value = facebookLikeBackgroundColorHex;
+        facebookLikeBackgroundHexBox.style.backgroundColor = facebookLikeBackgroundColorHex;
+
+        // Facebook Like border color
+        const facebookLikeBorderColorForm = document.getElementById('facebookLikeBorderColorForm');
+        const facebookLikeBorderHexBox = document.getElementById('facebookLikeBorderColorClick');
+        const facebookLikeBorderColorRGB = window.getComputedStyle(element).getPropertyValue('border-color').replace(/^"|"$/g, '');
+        const facebookLikeBorderColorHex = rgbToHex(facebookLikeBorderColorRGB);
+        facebookLikeBorderColorForm.value = facebookLikeBorderColorHex;
+        facebookLikeBorderHexBox.style.backgroundColor = facebookLikeBorderColorRGB;
+
+        // Facebook Like border stroke
+        const facebookLikeBorderFormTopStroke = document.getElementById('facebookLikeBorderTopStroke');
+        const facebookLikeBorderFormLeftStroke = document.getElementById('facebookLikeBorderLeftStroke');
+        const facebookLikeBorderFormBottomStroke = document.getElementById('facebookLikeBorderBottomStroke');
+        const facebookLikeBorderFormRightStroke = document.getElementById('facebookLikeBorderRightStroke');
+
+        const facebookLikeBorderStrokeTop = window.getComputedStyle(element).getPropertyValue('border-top-width').replace(/^"|"$/g, '');
+        const facebookLikeBorderStrokeLeft = window.getComputedStyle(element).getPropertyValue('border-left-width').replace(/^"|"$/g, '');
+        const facebookLikeBorderStrokeBottom = window.getComputedStyle(element).getPropertyValue('border-bottom-width').replace(/^"|"$/g, '');
+        const facebookLikeBorderStrokeRight = window.getComputedStyle(element).getPropertyValue('border-right-width').replace(/^"|"$/g, '');
+
+        facebookLikeBorderFormTopStroke.value = facebookLikeBorderStrokeTop;
+        facebookLikeBorderFormLeftStroke.value = facebookLikeBorderStrokeLeft;
+        facebookLikeBorderFormBottomStroke.value = facebookLikeBorderStrokeBottom;
+        facebookLikeBorderFormRightStroke.value = facebookLikeBorderStrokeRight;
+
+        // Facebook Like border radius
+        const facebookLikeBorderFormTopLeftRadius = document.getElementById('facebookLikeBorderTopLeftRadius');
+        const facebookLikeBorderFormTopRightRadius = document.getElementById('facebookLikeBorderTopRightRadius');
+        const facebookLikeBorderFormBottomLeftRadius = document.getElementById('facebookLikeBorderBottomLeftRadius');
+        const facebookLikeBorderFormBottomRightRadius = document.getElementById('facebookLikeBorderBottomRightRadius');
+
+        const facebookLikeBorderRadiusTopLeft = window.getComputedStyle(element).getPropertyValue('border-top-left-radius').replace(/^"|"$/g, '');
+        const facebookLikeBorderRadiusTopRight = window.getComputedStyle(element).getPropertyValue('border-top-right-radius').replace(/^"|"$/g, '');
+        const facebookLikeBorderRadiusBottomLeft = window.getComputedStyle(element).getPropertyValue('border-bottom-left-radius').replace(/^"|"$/g, '');
+        const facebookLikeBorderRadiusBottomRight = window.getComputedStyle(element).getPropertyValue('border-bottom-right-radius').replace(/^"|"$/g, '');
+
+        facebookLikeBorderFormTopLeftRadius.value = facebookLikeBorderRadiusTopLeft;
+        facebookLikeBorderFormTopRightRadius.value = facebookLikeBorderRadiusTopRight;
+        facebookLikeBorderFormBottomLeftRadius.value = facebookLikeBorderRadiusBottomLeft;
+        facebookLikeBorderFormBottomRightRadius.value = facebookLikeBorderRadiusBottomRight;
+
+    }
+
+    function loadTiktokFollowDetails(element){
+        // Load Tiktok Follow settings
+        const headerForm = document.getElementById('tiktokFollowHeaderForm');
+        const subheaderForm = document.getElementById('tiktokFollowSubheaderForm');
+        const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
+        const headerElement = textElement.querySelector('h2');
+        const subheaderElement = textElement.querySelector('p');
+
+        // Tiktok Follow text
+        const headerText = headerElement.textContent;
+        const subheaderText = subheaderElement.textContent;
+        headerForm.value = headerText;
+        subheaderForm.value = subheaderText;
+
+        // Tiktok Follow font 
+        const headerFontList = document.getElementById('tiktokFollowHeaderList');
+        const headerFontDisplay = document.getElementById('tiktokFollowHeaderDropDownTitle');
+        const subheaderFontList = document.getElementById('tiktokFollowSubheaderList');
+        const subheaderFontDisplay = document.getElementById('tiktokFollowSubheaderDropDownTitle');
+        const headerFont = window.getComputedStyle(headerElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        const subheaderFont = window.getComputedStyle(subheaderElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        headerFontDisplay.innerText = headerFont;
+        subheaderFontDisplay.innerText = subheaderFont;
+
+        Array.from(headerFontList.children).forEach((child)=>{
+            const childFont = child.innerText;
+            if(child.classList.contains('selected-font')){
+                child.classList.remove('selected-font');
+            }
+            if(childFont === headerFont){
+                child.classList.add('selected-font');
+            }
+        });
+
+        Array.from(subheaderFontList.children).forEach((child)=>{
+            const childFont = child.innerText;
+            if(child.classList.contains('selected-font')){
+                child.classList.remove('selected-font');
+            }
+            if(childFont === subheaderFont){
+                child.classList.add('selected-font');
+            }
+        });
+
+        // header color
+        const tiktokFollowHeaderHexBox = document.getElementById('tiktokFollowHeaderFontColorClick');
+        const tiktokFollowHeaderForm = document.getElementById('tiktokFollowHeaderFontColorForm');
+        const tiktokFollowHeaderColorRGB = window.getComputedStyle(headerElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const tiktokFollowHeaderColorHex = rgbToHex(tiktokFollowHeaderColorRGB);
+        tiktokFollowHeaderForm.value = tiktokFollowHeaderColorHex;
+        tiktokFollowHeaderHexBox.style.backgroundColor = tiktokFollowHeaderColorHex;
+
+        // subheader color
+        const tiktokFollowSubheaderHexBox = document.getElementById('tiktokFollowSubheaderFontColorClick');
+        const tiktokFollowSubheaderForm = document.getElementById('tiktokFollowSubheaderFontColorForm');
+        const tiktokFollowSubheaderColorRGB = window.getComputedStyle(subheaderElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const tiktokFollowSubheaderColorHex = rgbToHex(tiktokFollowSubheaderColorRGB);
+        tiktokFollowSubheaderForm.value = tiktokFollowSubheaderColorHex;
+        tiktokFollowSubheaderHexBox.style.backgroundColor = tiktokFollowSubheaderColorHex;
+
+        // Tiktok Follow button color
+        const tiktokFollowButtonElement = element.querySelector('button');
+        const tiktokFollowButtonColorForm = document.getElementById('tiktokFollowButtonColorForm');
+
+        const tiktokFollowButtonHexBox = document.getElementById('tiktokFollowButtonColorClick');
+        const tiktokFollowButtonColorRGB = window.getComputedStyle(tiktokFollowButtonElement).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const tiktokFollowButtonColorHex = rgbToHex(tiktokFollowButtonColorRGB);
+        tiktokFollowButtonColorForm.value = tiktokFollowButtonColorHex;
+        tiktokFollowButtonHexBox.style.backgroundColor = tiktokFollowButtonColorHex;
+
+        // Tiktok Follow background color
+        const tiktokFollowBackgroundColorForm = document.getElementById('tiktokFollowBackgroundColorForm');
+        const tiktokFollowBackgroundHexBox = document.getElementById('tiktokFollowBackgroundColorClick');
+        const tiktokFollowBackgroundColorRGB = window.getComputedStyle(element).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const tiktokFollowBackgroundColorHex = rgbToHex(tiktokFollowBackgroundColorRGB);
+        tiktokFollowBackgroundColorForm.value = tiktokFollowBackgroundColorHex;
+        tiktokFollowBackgroundHexBox.style.backgroundColor = tiktokFollowBackgroundColorHex;
+
+        // Tiktok Follow border color
+        const tiktokFollowBorderColorForm = document.getElementById('tiktokFollowBorderColorForm');
+        const tiktokFollowBorderHexBox = document.getElementById('tiktokFollowBorderColorClick');
+        const tiktokFollowBorderColorRGB = window.getComputedStyle(element).getPropertyValue('border-color').replace(/^"|"$/g, '');
+        const tiktokFollowBorderColorHex = rgbToHex(tiktokFollowBorderColorRGB);
+        tiktokFollowBorderColorForm.value = tiktokFollowBorderColorHex;
+        tiktokFollowBorderHexBox.style.backgroundColor = tiktokFollowBorderColorRGB;
+
+        // Tiktok Follow border stroke
+        const tiktokFollowBorderFormTopStroke = document.getElementById('tiktokFollowBorderTopStroke');
+        const tiktokFollowBorderFormLeftStroke = document.getElementById('tiktokFollowBorderLeftStroke');
+        const tiktokFollowBorderFormBottomStroke = document.getElementById('tiktokFollowBorderBottomStroke');
+        const tiktokFollowBorderFormRightStroke = document.getElementById('tiktokFollowBorderRightStroke');
+
+        const tiktokFollowBorderStrokeTop = window.getComputedStyle(element).getPropertyValue('border-top-width').replace(/^"|"$/g, '');
+        const tiktokFollowBorderStrokeLeft = window.getComputedStyle(element).getPropertyValue('border-left-width').replace(/^"|"$/g, '');
+        const tiktokFollowBorderStrokeBottom = window.getComputedStyle(element).getPropertyValue('border-bottom-width').replace(/^"|"$/g, '');
+        const tiktokFollowBorderStrokeRight = window.getComputedStyle(element).getPropertyValue('border-right-width').replace(/^"|"$/g, '');
+
+        tiktokFollowBorderFormTopStroke.value = tiktokFollowBorderStrokeTop;
+        tiktokFollowBorderFormLeftStroke.value = tiktokFollowBorderStrokeLeft;
+        tiktokFollowBorderFormBottomStroke.value = tiktokFollowBorderStrokeBottom;
+        tiktokFollowBorderFormRightStroke.value = tiktokFollowBorderStrokeRight;
+
+        // Tiktok Follow border radius
+        const tiktokFollowBorderFormTopLeftRadius = document.getElementById('tiktokFollowBorderTopLeftRadius');
+        const tiktokFollowBorderFormTopRightRadius = document.getElementById('tiktokFollowBorderTopRightRadius');
+        const tiktokFollowBorderFormBottomLeftRadius = document.getElementById('tiktokFollowBorderBottomLeftRadius');
+        const tiktokFollowBorderFormBottomRightRadius = document.getElementById('tiktokFollowBorderBottomRightRadius');
+
+        const tiktokFollowBorderRadiusTopLeft = window.getComputedStyle(element).getPropertyValue('border-top-left-radius').replace(/^"|"$/g, '');
+        const tiktokFollowBorderRadiusTopRight = window.getComputedStyle(element).getPropertyValue('border-top-right-radius').replace(/^"|"$/g, '');
+        const tiktokFollowBorderRadiusBottomLeft = window.getComputedStyle(element).getPropertyValue('border-bottom-left-radius').replace(/^"|"$/g, '');
+        const tiktokFollowBorderRadiusBottomRight = window.getComputedStyle(element).getPropertyValue('border-bottom-right-radius').replace(/^"|"$/g, '');
+
+        tiktokFollowBorderFormTopLeftRadius.value = tiktokFollowBorderRadiusTopLeft;
+        tiktokFollowBorderFormTopRightRadius.value = tiktokFollowBorderRadiusTopRight;
+        tiktokFollowBorderFormBottomLeftRadius.value = tiktokFollowBorderRadiusBottomLeft;
+        tiktokFollowBorderFormBottomRightRadius.value = tiktokFollowBorderRadiusBottomRight;
+
+    }
+
+    function loadTiktokCommentDetails(element){
+        // Load Tiktok Comment settings
+        const headerForm = document.getElementById('tiktokCommentHeaderForm');
+        const subheaderForm = document.getElementById('tiktokCommentSubheaderForm');
+        const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
+        const headerElement = textElement.querySelector('h2');
+        const subheaderElement = textElement.querySelector('p');
+
+        // Tiktok Comment text
+        const headerText = headerElement.textContent;
+        const subheaderText = subheaderElement.textContent;
+        headerForm.value = headerText;
+        subheaderForm.value = subheaderText;
+
+        // Tiktok Comment font 
+        const headerFontList = document.getElementById('tiktokCommentHeaderList');
+        const headerFontDisplay = document.getElementById('tiktokCommentHeaderDropDownTitle');
+        const subheaderFontList = document.getElementById('tiktokCommentSubheaderList');
+        const subheaderFontDisplay = document.getElementById('tiktokCommentSubheaderDropDownTitle');
+        const headerFont = window.getComputedStyle(headerElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        const subheaderFont = window.getComputedStyle(subheaderElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        headerFontDisplay.innerText = headerFont;
+        subheaderFontDisplay.innerText = subheaderFont;
+
+        Array.from(headerFontList.children).forEach((child)=>{
+            const childFont = child.innerText;
+            if(child.classList.contains('selected-font')){
+                child.classList.remove('selected-font');
+            }
+            if(childFont === headerFont){
+                child.classList.add('selected-font');
+            }
+        });
+
+        Array.from(subheaderFontList.children).forEach((child)=>{
+            const childFont = child.innerText;
+            if(child.classList.contains('selected-font')){
+                child.classList.remove('selected-font');
+            }
+            if(childFont === subheaderFont){
+                child.classList.add('selected-font');
+            }
+        });
+
+        // header color
+        const tiktokCommentHeaderHexBox = document.getElementById('tiktokCommentHeaderFontColorClick');
+        const tiktokCommentHeaderForm = document.getElementById('tiktokCommentHeaderFontColorForm');
+        const tiktokCommentHeaderColorRGB = window.getComputedStyle(headerElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const tiktokCommentHeaderColorHex = rgbToHex(tiktokCommentHeaderColorRGB);
+        tiktokCommentHeaderForm.value = tiktokCommentHeaderColorHex;
+        tiktokCommentHeaderHexBox.style.backgroundColor = tiktokCommentHeaderColorHex;
+
+        // subheader color
+        const tiktokCommentSubheaderHexBox = document.getElementById('tiktokCommentSubheaderFontColorClick');
+        const tiktokCommentSubheaderForm = document.getElementById('tiktokCommentSubheaderFontColorForm');
+        const tiktokCommentSubheaderColorRGB = window.getComputedStyle(subheaderElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const tiktokCommentSubheaderColorHex = rgbToHex(tiktokCommentSubheaderColorRGB);
+        tiktokCommentSubheaderForm.value = tiktokCommentSubheaderColorHex;
+        tiktokCommentSubheaderHexBox.style.backgroundColor = tiktokCommentSubheaderColorHex;
+
+        // Tiktok Comment button color
+        const tiktokCommentButtonElement = element.querySelector('button');
+        const tiktokCommentButtonColorForm = document.getElementById('tiktokCommentButtonColorForm');
+
+        const tiktokCommentButtonHexBox = document.getElementById('tiktokCommentButtonColorClick');
+        const tiktokCommentButtonColorRGB = window.getComputedStyle(tiktokCommentButtonElement).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const tiktokCommentButtonColorHex = rgbToHex(tiktokCommentButtonColorRGB);
+        tiktokCommentButtonColorForm.value = tiktokCommentButtonColorHex;
+        tiktokCommentButtonHexBox.style.backgroundColor = tiktokCommentButtonColorHex;
+
+        // Tiktok Comment background color
+        const tiktokCommentBackgroundColorForm = document.getElementById('tiktokCommentBackgroundColorForm');
+        const tiktokCommentBackgroundHexBox = document.getElementById('tiktokCommentBackgroundColorClick');
+        const tiktokCommentBackgroundColorRGB = window.getComputedStyle(element).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const tiktokCommentBackgroundColorHex = rgbToHex(tiktokCommentBackgroundColorRGB);
+        tiktokCommentBackgroundColorForm.value = tiktokCommentBackgroundColorHex;
+        tiktokCommentBackgroundHexBox.style.backgroundColor = tiktokCommentBackgroundColorHex;
+
+        // Tiktok Comment border color
+        const tiktokCommentBorderColorForm = document.getElementById('tiktokCommentBorderColorForm');
+        const tiktokCommentBorderHexBox = document.getElementById('tiktokCommentBorderColorClick');
+        const tiktokCommentBorderColorRGB = window.getComputedStyle(element).getPropertyValue('border-color').replace(/^"|"$/g, '');
+        const tiktokCommentBorderColorHex = rgbToHex(tiktokCommentBorderColorRGB);
+        tiktokCommentBorderColorForm.value = tiktokCommentBorderColorHex;
+        tiktokCommentBorderHexBox.style.backgroundColor = tiktokCommentBorderColorRGB;
+
+        // Tiktok Comment border stroke
+        const tiktokCommentBorderFormTopStroke = document.getElementById('tiktokCommentBorderTopStroke');
+        const tiktokCommentBorderFormLeftStroke = document.getElementById('tiktokCommentBorderLeftStroke');
+        const tiktokCommentBorderFormBottomStroke = document.getElementById('tiktokCommentBorderBottomStroke');
+        const tiktokCommentBorderFormRightStroke = document.getElementById('tiktokCommentBorderRightStroke');
+
+        const tiktokCommentBorderStrokeTop = window.getComputedStyle(element).getPropertyValue('border-top-width').replace(/^"|"$/g, '');
+        const tiktokCommentBorderStrokeLeft = window.getComputedStyle(element).getPropertyValue('border-left-width').replace(/^"|"$/g, '');
+        const tiktokCommentBorderStrokeBottom = window.getComputedStyle(element).getPropertyValue('border-bottom-width').replace(/^"|"$/g, '');
+        const tiktokCommentBorderStrokeRight = window.getComputedStyle(element).getPropertyValue('border-right-width').replace(/^"|"$/g, '');
+
+        tiktokCommentBorderFormTopStroke.value = tiktokCommentBorderStrokeTop;
+        tiktokCommentBorderFormLeftStroke.value = tiktokCommentBorderStrokeLeft;
+        tiktokCommentBorderFormBottomStroke.value = tiktokCommentBorderStrokeBottom;
+        tiktokCommentBorderFormRightStroke.value = tiktokCommentBorderStrokeRight;
+
+        // Tiktok Comment border radius
+        const tiktokCommentBorderFormTopLeftRadius = document.getElementById('tiktokCommentBorderTopLeftRadius');
+        const tiktokCommentBorderFormTopRightRadius = document.getElementById('tiktokCommentBorderTopRightRadius');
+        const tiktokCommentBorderFormBottomLeftRadius = document.getElementById('tiktokCommentBorderBottomLeftRadius');
+        const tiktokCommentBorderFormBottomRightRadius = document.getElementById('tiktokCommentBorderBottomRightRadius');
+
+        const tiktokCommentBorderRadiusTopLeft = window.getComputedStyle(element).getPropertyValue('border-top-left-radius').replace(/^"|"$/g, '');
+        const tiktokCommentBorderRadiusTopRight = window.getComputedStyle(element).getPropertyValue('border-top-right-radius').replace(/^"|"$/g, '');
+        const tiktokCommentBorderRadiusBottomLeft = window.getComputedStyle(element).getPropertyValue('border-bottom-left-radius').replace(/^"|"$/g, '');
+        const tiktokCommentBorderRadiusBottomRight = window.getComputedStyle(element).getPropertyValue('border-bottom-right-radius').replace(/^"|"$/g, '');
+
+        tiktokCommentBorderFormTopLeftRadius.value = tiktokCommentBorderRadiusTopLeft;
+        tiktokCommentBorderFormTopRightRadius.value = tiktokCommentBorderRadiusTopRight;
+        tiktokCommentBorderFormBottomLeftRadius.value = tiktokCommentBorderRadiusBottomLeft;
+        tiktokCommentBorderFormBottomRightRadius.value = tiktokCommentBorderRadiusBottomRight;
+
+    }
+
+    function loadTiktokLikeDetails(element){
+        // Load Tiktok Like settings
+        const headerForm = document.getElementById('tiktokLikeHeaderForm');
+        const subheaderForm = document.getElementById('tiktokLikeSubheaderForm');
+        const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
+        const headerElement = textElement.querySelector('h2');
+        const subheaderElement = textElement.querySelector('p');
+
+        // Tiktok Like text
+        const headerText = headerElement.textContent;
+        const subheaderText = subheaderElement.textContent;
+        headerForm.value = headerText;
+        subheaderForm.value = subheaderText;
+
+        // Tiktok Like font 
+        const headerFontList = document.getElementById('tiktokLikeHeaderList');
+        const headerFontDisplay = document.getElementById('tiktokLikeHeaderDropDownTitle');
+        const subheaderFontList = document.getElementById('tiktokLikeSubheaderList');
+        const subheaderFontDisplay = document.getElementById('tiktokLikeSubheaderDropDownTitle');
+        const headerFont = window.getComputedStyle(headerElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        const subheaderFont = window.getComputedStyle(subheaderElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        headerFontDisplay.innerText = headerFont;
+        subheaderFontDisplay.innerText = subheaderFont;
+
+        Array.from(headerFontList.children).forEach((child)=>{
+        const childFont = child.innerText;
+        if(child.classList.contains('selected-font')){
+        child.classList.remove('selected-font');
+        }
+        if(childFont === headerFont){
+        child.classList.add('selected-font');
+        }
+        });
+
+        Array.from(subheaderFontList.children).forEach((child)=>{
+        const childFont = child.innerText;
+        if(child.classList.contains('selected-font')){
+        child.classList.remove('selected-font');
+        }
+        if(childFont === subheaderFont){
+        child.classList.add('selected-font');
+        }
+        });
+
+        // header color
+        const tiktokLikeHeaderHexBox = document.getElementById('tiktokLikeHeaderFontColorClick');
+        const tiktokLikeHeaderForm = document.getElementById('tiktokLikeHeaderFontColorForm');
+        const tiktokLikeHeaderColorRGB = window.getComputedStyle(headerElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const tiktokLikeHeaderColorHex = rgbToHex(tiktokLikeHeaderColorRGB);
+        tiktokLikeHeaderForm.value = tiktokLikeHeaderColorHex;
+        tiktokLikeHeaderHexBox.style.backgroundColor = tiktokLikeHeaderColorHex;
+
+        // subheader color
+        const tiktokLikeSubheaderHexBox = document.getElementById('tiktokLikeSubheaderFontColorClick');
+        const tiktokLikeSubheaderForm = document.getElementById('tiktokLikeSubheaderFontColorForm');
+        const tiktokLikeSubheaderColorRGB = window.getComputedStyle(subheaderElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const tiktokLikeSubheaderColorHex = rgbToHex(tiktokLikeSubheaderColorRGB);
+        tiktokLikeSubheaderForm.value = tiktokLikeSubheaderColorHex;
+        tiktokLikeSubheaderHexBox.style.backgroundColor = tiktokLikeSubheaderColorHex;
+
+        // Tiktok Like button color
+        const tiktokLikeButtonElement = element.querySelector('button');
+        const tiktokLikeButtonColorForm = document.getElementById('tiktokLikeButtonColorForm');
+
+        const tiktokLikeButtonHexBox = document.getElementById('tiktokLikeButtonColorClick');
+        const tiktokLikeButtonColorRGB = window.getComputedStyle(tiktokLikeButtonElement).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const tiktokLikeButtonColorHex = rgbToHex(tiktokLikeButtonColorRGB);
+        tiktokLikeButtonColorForm.value = tiktokLikeButtonColorHex;
+        tiktokLikeButtonHexBox.style.backgroundColor = tiktokLikeButtonColorHex;
+
+        // Tiktok Like background color
+        const tiktokLikeBackgroundColorForm = document.getElementById('tiktokLikeBackgroundColorForm');
+        const tiktokLikeBackgroundHexBox = document.getElementById('tiktokLikeBackgroundColorClick');
+        const tiktokLikeBackgroundColorRGB = window.getComputedStyle(element).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const tiktokLikeBackgroundColorHex = rgbToHex(tiktokLikeBackgroundColorRGB);
+        tiktokLikeBackgroundColorForm.value = tiktokLikeBackgroundColorHex;
+        tiktokLikeBackgroundHexBox.style.backgroundColor = tiktokLikeBackgroundColorHex;
+
+        // Tiktok Like border color
+        const tiktokLikeBorderColorForm = document.getElementById('tiktokLikeBorderColorForm');
+        const tiktokLikeBorderHexBox = document.getElementById('tiktokLikeBorderColorClick');
+        const tiktokLikeBorderColorRGB = window.getComputedStyle(element).getPropertyValue('border-color').replace(/^"|"$/g, '');
+        const tiktokLikeBorderColorHex = rgbToHex(tiktokLikeBorderColorRGB);
+        tiktokLikeBorderColorForm.value = tiktokLikeBorderColorHex;
+        tiktokLikeBorderHexBox.style.backgroundColor = tiktokLikeBorderColorRGB;
+
+        // Tiktok Like border stroke
+        const tiktokLikeBorderFormTopStroke = document.getElementById('tiktokLikeBorderTopStroke');
+        const tiktokLikeBorderFormLeftStroke = document.getElementById('tiktokLikeBorderLeftStroke');
+        const tiktokLikeBorderFormBottomStroke = document.getElementById('tiktokLikeBorderBottomStroke');
+        const tiktokLikeBorderFormRightStroke = document.getElementById('tiktokLikeBorderRightStroke');
+
+        const tiktokLikeBorderStrokeTop = window.getComputedStyle(element).getPropertyValue('border-top-width').replace(/^"|"$/g, '');
+        const tiktokLikeBorderStrokeLeft = window.getComputedStyle(element).getPropertyValue('border-left-width').replace(/^"|"$/g, '');
+        const tiktokLikeBorderStrokeBottom = window.getComputedStyle(element).getPropertyValue('border-bottom-width').replace(/^"|"$/g, '');
+        const tiktokLikeBorderStrokeRight = window.getComputedStyle(element).getPropertyValue('border-right-width').replace(/^"|"$/g, '');
+
+        tiktokLikeBorderFormTopStroke.value = tiktokLikeBorderStrokeTop;
+        tiktokLikeBorderFormLeftStroke.value = tiktokLikeBorderStrokeLeft;
+        tiktokLikeBorderFormBottomStroke.value = tiktokLikeBorderStrokeBottom;
+        tiktokLikeBorderFormRightStroke.value = tiktokLikeBorderStrokeRight;
+
+        // Tiktok Like border radius
+        const tiktokLikeBorderFormTopLeftRadius = document.getElementById('tiktokLikeBorderTopLeftRadius');
+        const tiktokLikeBorderFormTopRightRadius = document.getElementById('tiktokLikeBorderTopRightRadius');
+        const tiktokLikeBorderFormBottomLeftRadius = document.getElementById('tiktokLikeBorderBottomLeftRadius');
+        const tiktokLikeBorderFormBottomRightRadius = document.getElementById('tiktokLikeBorderBottomRightRadius');
+
+        const tiktokLikeBorderRadiusTopLeft = window.getComputedStyle(element).getPropertyValue('border-top-left-radius').replace(/^"|"$/g, '');
+        const tiktokLikeBorderRadiusTopRight = window.getComputedStyle(element).getPropertyValue('border-top-right-radius').replace(/^"|"$/g, '');
+        const tiktokLikeBorderRadiusBottomLeft = window.getComputedStyle(element).getPropertyValue('border-bottom-left-radius').replace(/^"|"$/g, '');
+        const tiktokLikeBorderRadiusBottomRight = window.getComputedStyle(element).getPropertyValue('border-bottom-right-radius').replace(/^"|"$/g, '');
+
+        tiktokLikeBorderFormTopLeftRadius.value = tiktokLikeBorderRadiusTopLeft;
+        tiktokLikeBorderFormTopRightRadius.value = tiktokLikeBorderRadiusTopRight;
+        tiktokLikeBorderFormBottomLeftRadius.value = tiktokLikeBorderRadiusBottomLeft;
+        tiktokLikeBorderFormBottomRightRadius.value = tiktokLikeBorderRadiusBottomRight;
+    }
+
+    function loadReferDetails(element){
+
     }
 
     document.addEventListener("keydown", ({key}) => {

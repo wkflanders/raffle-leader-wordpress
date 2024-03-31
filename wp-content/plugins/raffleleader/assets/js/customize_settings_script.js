@@ -84,6 +84,38 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     let pickrInstaLikeBackground = undefined;
     let pickrInstaLikeBorder = undefined;
 
+    let pickrFacebookFollowHeader = undefined;
+    let pickrFacebookFollowSubheader = undefined;
+    let pickrFacebookFollowButton = undefined;
+    let pickrFacebookFollowBackground = undefined;
+    let pickrFacebookFollowBorder = undefined;
+    let pickrFacebookCommentHeader = undefined;
+    let pickrFacebookCommentSubheader = undefined;
+    let pickrFacebookCommentButton = undefined;
+    let pickrFacebookCommentBackground = undefined;
+    let pickrFacebookCommentBorder = undefined;
+    let pickrFacebookLikeHeader = undefined;
+    let pickrFacebookLikeSubheader = undefined;
+    let pickrFacebookLikeButton = undefined;
+    let pickrFacebookLikeBackground = undefined;
+    let pickrFacebookLikeBorder = undefined;
+
+    let pickrTiktokFollowHeader = undefined;
+    let pickrTiktokFollowSubheader = undefined;
+    let pickrTiktokFollowButton = undefined;
+    let pickrTiktokFollowBackground = undefined;
+    let pickrTiktokFollowBorder = undefined;
+    let pickrTiktokCommentHeader = undefined;
+    let pickrTiktokCommentSubheader = undefined;
+    let pickrTiktokCommentButton = undefined;
+    let pickrTiktokCommentBackground = undefined;
+    let pickrTiktokCommentBorder = undefined;
+    let pickrTiktokLikeHeader = undefined;
+    let pickrTiktokLikeSubheader = undefined;
+    let pickrTiktokLikeButton = undefined;
+    let pickrTiktokLikeBackground = undefined;
+    let pickrTiktokLikeBorder = undefined;
+
 
     dropDownBtns.forEach((dropDownBtn)=>{
         dropDownBtn.addEventListener('click', openDropDown);
@@ -486,6 +518,90 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 selectedInstaLikeSubheaderElement.style.fontFamily = `${fontName}`;
                 subheaderInstaLikeDropDownDisplay.innerText = fontName;
                 break;
+
+            case 'facebookFollowHeaderFont':
+                const selectedFacebookFollowHeaderElement = selectedSection.querySelector('h2');
+                const headerFacebookFollowDropDownDisplay = document.getElementById('facebookFollowHeaderDropDownTitle');
+                selectedFacebookFollowHeaderElement.style.fontFamily = `${fontName}`;
+                headerFacebookFollowDropDownDisplay.innerText = fontName;
+                break;
+        
+            case 'facebookFollowSubheaderFont':
+                const selectedFacebookFollowSubheaderElement = selectedSection.querySelector('p');
+                const subheaderFacebookFollowDropDownDisplay =  document.getElementById('facebookFollowSubheaderDropDownTitle');
+                selectedFacebookFollowSubheaderElement.style.fontFamily = `${fontName}`;
+                subheaderFacebookFollowDropDownDisplay.innerText = fontName;
+                break;
+        
+            case 'facebookCommentHeaderFont':
+                const selectedFacebookCommentHeaderElement = selectedSection.querySelector('h2');
+                const headerFacebookCommentDropDownDisplay = document.getElementById('facebookCommentHeaderDropDownTitle');
+                selectedFacebookCommentHeaderElement.style.fontFamily = `${fontName}`;
+                headerFacebookCommentDropDownDisplay.innerText = fontName;
+                break;
+        
+            case 'facebookCommentSubheaderFont':
+                const selectedFacebookCommentSubheaderElement = selectedSection.querySelector('p');
+                const subheaderFacebookCommentDropDownDisplay =  document.getElementById('facebookCommentSubheaderDropDownTitle');
+                selectedFacebookCommentSubheaderElement.style.fontFamily = `${fontName}`;
+                subheaderFacebookCommentDropDownDisplay.innerText = fontName;
+                break;
+        
+            case 'facebookLikeHeaderFont':
+                const selectedFacebookLikeHeaderElement = selectedSection.querySelector('h2');
+                const headerFacebookLikeDropDownDisplay = document.getElementById('facebookLikeHeaderDropDownTitle');
+                selectedFacebookLikeHeaderElement.style.fontFamily = `${fontName}`;
+                headerFacebookLikeDropDownDisplay.innerText = fontName;
+                break;
+        
+            case 'facebookLikeSubheaderFont':
+                const selectedFacebookLikeSubheaderElement = selectedSection.querySelector('p');
+                const subheaderFacebookLikeDropDownDisplay =  document.getElementById('facebookLikeSubheaderDropDownTitle');
+                selectedFacebookLikeSubheaderElement.style.fontFamily = `${fontName}`;
+                subheaderFacebookLikeDropDownDisplay.innerText = fontName;
+                break;
+
+            case 'tiktokFollowHeaderFont':
+                const selectedTiktokFollowHeaderElement = selectedSection.querySelector('h2');
+                const headerTiktokFollowDropDownDisplay = document.getElementById('tiktokFollowHeaderDropDownTitle');
+                selectedTiktokFollowHeaderElement.style.fontFamily = `${fontName}`;
+                headerTiktokFollowDropDownDisplay.innerText = fontName;
+                break;
+        
+            case 'tiktokFollowSubheaderFont':
+                const selectedTiktokFollowSubheaderElement = selectedSection.querySelector('p');
+                const subheaderTiktokFollowDropDownDisplay =  document.getElementById('tiktokFollowSubheaderDropDownTitle');
+                selectedTiktokFollowSubheaderElement.style.fontFamily = `${fontName}`;
+                subheaderTiktokFollowDropDownDisplay.innerText = fontName;
+                break;
+        
+            case 'tiktokCommentHeaderFont':
+                const selectedTiktokRepostHeaderElement = selectedSection.querySelector('h2');
+                const headerTiktokRepostDropDownDisplay = document.getElementById('tiktokRepostHeaderDropDownTitle');
+                selectedTiktokRepostHeaderElement.style.fontFamily = `${fontName}`;
+                headerTiktokRepostDropDownDisplay.innerText = fontName;
+                break;
+        
+            case 'tiktokCommentSubheaderFont':
+                const selectedTiktokRepostSubheaderElement = selectedSection.querySelector('p');
+                const subheaderTiktokRepostDropDownDisplay =  document.getElementById('tiktokRepostSubheaderDropDownTitle');
+                selectedTiktokRepostSubheaderElement.style.fontFamily = `${fontName}`;
+                subheaderTiktokRepostDropDownDisplay.innerText = fontName;
+                break;
+        
+            case 'tiktokLikeHeaderFont':
+                const selectedTiktokLikeHeaderElement = selectedSection.querySelector('h2');
+                const headerTiktokLikeDropDownDisplay = document.getElementById('tiktokLikeHeaderDropDownTitle');
+                selectedTiktokLikeHeaderElement.style.fontFamily = `${fontName}`;
+                headerTiktokLikeDropDownDisplay.innerText = fontName;
+                break;
+        
+            case 'tiktokLikeSubheaderFont':
+                const selectedTiktokLikeSubheaderElement = selectedSection.querySelector('p');
+                const subheaderTiktokLikeDropDownDisplay =  document.getElementById('tiktokLikeSubheaderDropDownTitle');
+                selectedTiktokLikeSubheaderElement.style.fontFamily = `${fontName}`;
+                subheaderTiktokLikeDropDownDisplay.innerText = fontName;
+                break;
         }
 
         const currentFont = fontContainer.querySelector('.selected-font');
@@ -746,7 +862,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 const currentXFollowHeaderFontColor = document.getElementById('XFollowHeaderFontColorForm').value;
 
                 pickrXFollowHeader = Pickr.create({
-                    el: XFollowHeadeColorGradient,
+                    el: XFollowHeaderColorGradient,
                     theme: 'classic', // or 'monolith', or 'nano'
                     default: currentXFollowHeaderFontColor,
                     useAsButton: true,
@@ -1103,7 +1219,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 const currentInstaFollowHeaderFontColor = document.getElementById('instaFollowHeaderFontColorForm').value;
 
                 pickrInstaFollowHeader = Pickr.create({
-                    el: instaFollowHeadeColorGradient,
+                    el: instaFollowHeaderColorGradient,
                     theme: 'classic', // or 'monolith', or 'nano'
                     default: currentInstaFollowHeaderFontColor,
                     useAsButton: true,
@@ -1222,7 +1338,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 const currentInstaCommentHeaderFontColor = document.getElementById('instaCommentHeaderFontColorForm').value;
 
                 pickrInstaCommentHeader = Pickr.create({
-                    el: instaCommentHeadeColorGradient,
+                    el: instaCommentHeaderColorGradient,
                     theme: 'classic', // or 'monolith', or 'nano'
                     default: currentInstaCommentHeaderFontColor,
                     useAsButton: true,
@@ -1342,7 +1458,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 const currentInstaLikeHeaderFontColor = document.getElementById('instaLikeHeaderFontColorForm').value;
 
                 pickrInstaLikeHeader = Pickr.create({
-                    el: instaLikeHeadeColorGradient,
+                    el: instaLikeHeaderColorGradient,
                     theme: 'classic', // or 'monolith', or 'nano'
                     default: currentInstaLikeHeaderFontColor,
                     useAsButton: true,
@@ -1456,8 +1572,727 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     pickColor(selectedColor, elementType, true);
                 });
                 break;
-        }
+
+            case 'facebookFollowHeaderColor':
+                const currentFacebookFollowHeaderFontColor = document.getElementById('facebookFollowHeaderFontColorForm').value;
+
+                pickrFacebookFollowHeader = Pickr.create({
+                    el: facebookFollowHeaderColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentFacebookFollowHeaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrFacebookFollowHeader.setColorRepresentation('HEX');
+                pickrFacebookFollowHeader.show();
+
+                pickrFacebookFollowHeader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'facebookFollowSubheaderColor':
+                const currentFacebookFollowSubheaderFontColor = document.getElementById('facebookFollowSubheaderFontColorForm').value;
+
+                pickrFacebookFollowSubheader = Pickr.create({
+                    el: facebookFollowSubheaderColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentFacebookFollowSubheaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrFacebookFollowSubheader.setColorRepresentation('HEX');
+                pickrFacebookFollowSubheader.show();
+
+                pickrFacebookFollowSubheader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'facebookFollowButtonColor':
+                const currentFacebookFollowButtonColor = document.getElementById('facebookFollowButtonColorForm').value;
+
+                pickrFacebookFollowButton = Pickr.create({
+                    el: facebookFollowColorGradientButton,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentFacebookFollowButtonColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrFacebookFollowButton.setColorRepresentation('HEX');
+                pickrFacebookFollowButton.show();
+
+                pickrFacebookFollowButton.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'facebookFollowBackgroundColor':
+                const currentFacebookFollowBackgroundColor = document.getElementById('facebookFollowBackgroundColorForm').value;
+
+                pickrFacebookFollowBackground = Pickr.create({
+                    el: facebookFollowColorGradientBackground,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentFacebookFollowBackgroundColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrFacebookFollowBackground.setColorRepresentation('HEX');
+                pickrFacebookFollowBackground.show();
+
+                pickrFacebookFollowBackground.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'facebookFollowBorderColor':
+                const currentFacebookFollowBorderColor = document.getElementById('facebookFollowBorderColorForm').value;
+
+                pickrFacebookFollowBorder = Pickr.create({
+                    el: facebookFollowColorGradientBorder,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentFacebookFollowBorderColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrFacebookFollowBorder.setColorRepresentation('HEX');
+                pickrFacebookFollowBorder.show();
+
+                pickrFacebookFollowBorder.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'facebookCommentHeaderColor':
+                const currentFacebookCommentHeaderFontColor = document.getElementById('facebookCommentHeaderFontColorForm').value;
         
+                pickrFacebookCommentHeader = Pickr.create({
+                    el: facebookCommentHeaderColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentFacebookCommentHeaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrFacebookCommentHeader.setColorRepresentation('HEX');
+                pickrFacebookCommentHeader.show();
+        
+                pickrFacebookCommentHeader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+        
+            case 'facebookCommentSubheaderColor':
+                const currentFacebookCommentSubheaderFontColor = document.getElementById('facebookCommentSubheaderFontColorForm').value;
+        
+                pickrFacebookCommentSubheader = Pickr.create({
+                    el: facebookCommentSubheaderColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentFacebookCommentSubheaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrFacebookCommentSubheader.setColorRepresentation('HEX');
+                pickrFacebookCommentSubheader.show();
+        
+                pickrFacebookCommentSubheader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'facebookCommentButtonColor':
+                const currentFacebookCommentButtonColor = document.getElementById('facebookCommentButtonColorForm').value;
+        
+                pickrFacebookCommentButton = Pickr.create({
+                    el: facebookCommentColorGradientButton,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentFacebookCommentButtonColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrFacebookCommentButton.setColorRepresentation('HEX');
+                pickrFacebookCommentButton.show();
+        
+                pickrFacebookCommentButton.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+        
+            case 'facebookCommentBackgroundColor':
+                const currentFacebookCommentBackgroundColor = document.getElementById('facebookCommentBackgroundColorForm').value;
+        
+                pickrFacebookCommentBackground = Pickr.create({
+                    el: facebookCommentColorGradientBackground,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentFacebookCommentBackgroundColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrFacebookCommentBackground.setColorRepresentation('HEX');
+                pickrFacebookCommentBackground.show();
+        
+                pickrFacebookCommentBackground.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+        
+            case 'facebookCommentBorderColor':
+                const currentFacebookCommentBorderColor = document.getElementById('facebookCommentBorderColorForm').value;
+        
+                pickrFacebookCommentBorder = Pickr.create({
+                    el: facebookCommentColorGradientBorder,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentFacebookCommentBorderColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrFacebookCommentBorder.setColorRepresentation('HEX');
+                pickrFacebookCommentBorder.show();
+        
+                pickrFacebookCommentBorder.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'facebookLikeHeaderColor':
+                const currentFacebookLikeHeaderFontColor = document.getElementById('facebookLikeHeaderFontColorForm').value;
+        
+                pickrFacebookLikeHeader = Pickr.create({
+                    el: facebookLikeHeaderColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentFacebookLikeHeaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrFacebookLikeHeader.setColorRepresentation('HEX');
+                pickrFacebookLikeHeader.show();
+        
+                pickrFacebookLikeHeader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+        
+            case 'facebookLikeSubheaderColor':
+                const currentFacebookLikeSubheaderFontColor = document.getElementById('facebookLikeSubheaderFontColorForm').value;
+        
+                pickrFacebookLikeSubheader = Pickr.create({
+                    el: facebookLikeSubheaderColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentFacebookLikeSubheaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrFacebookLikeSubheader.setColorRepresentation('HEX');
+                pickrFacebookLikeSubheader.show();
+        
+                pickrFacebookLikeSubheader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'facebookLikeButtonColor':
+                const currentFacebookLikeButtonColor = document.getElementById('facebookLikeButtonColorForm').value;
+        
+                pickrFacebookLikeButton = Pickr.create({
+                    el: facebookLikeColorGradientButton,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentFacebookLikeButtonColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrFacebookLikeButton.setColorRepresentation('HEX');
+                pickrFacebookLikeButton.show();
+        
+                pickrFacebookLikeButton.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+        
+            case 'facebookLikeBackgroundColor':
+                const currentFacebookLikeBackgroundColor = document.getElementById('facebookLikeBackgroundColorForm').value;
+        
+                pickrFacebookLikeBackground = Pickr.create({
+                    el: facebookLikeColorGradientBackground,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentFacebookLikeBackgroundColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrFacebookLikeBackground.setColorRepresentation('HEX');
+                pickrFacebookLikeBackground.show();
+        
+                pickrFacebookLikeBackground.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+        
+            case 'facebookLikeBorderColor':
+                const currentFacebookLikeBorderColor = document.getElementById('facebookLikeBorderColorForm').value;
+        
+                pickrFacebookLikeBorder = Pickr.create({
+                    el: facebookLikeColorGradientBorder,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentFacebookLikeBorderColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrFacebookLikeBorder.setColorRepresentation('HEX');
+                pickrFacebookLikeBorder.show();
+        
+                pickrFacebookLikeBorder.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'tiktokFollowHeaderColor':
+                const currentTiktokFollowHeaderFontColor = document.getElementById('tiktokFollowHeaderFontColorForm').value;
+            
+                pickrTiktokFollowHeader = Pickr.create({
+                    el: tiktokFollowHeaderColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentTiktokFollowHeaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrTiktokFollowHeader.setColorRepresentation('HEX');
+                pickrTiktokFollowHeader.show();
+            
+                pickrTiktokFollowHeader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+            
+            case 'tiktokFollowSubheaderColor':
+                const currentTiktokFollowSubheaderFontColor = document.getElementById('tiktokFollowSubheaderFontColorForm').value;
+            
+                pickrTiktokFollowSubheader = Pickr.create({
+                    el: tiktokFollowSubheaderColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentTiktokFollowSubheaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrTiktokFollowSubheader.setColorRepresentation('HEX');
+                pickrTiktokFollowSubheader.show();
+            
+                pickrTiktokFollowSubheader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+            
+            case 'tiktokFollowButtonColor':
+                const currentTiktokFollowButtonColor = document.getElementById('tiktokFollowButtonColorForm').value;
+            
+                pickrTiktokFollowButton = Pickr.create({
+                    el: tiktokFollowColorGradientButton,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentTiktokFollowButtonColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrTiktokFollowButton.setColorRepresentation('HEX');
+                pickrTiktokFollowButton.show();
+            
+                pickrTiktokFollowButton.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+            
+            case 'tiktokFollowBackgroundColor':
+                const currentTiktokFollowBackgroundColor = document.getElementById('tiktokFollowBackgroundColorForm').value;
+            
+                pickrTiktokFollowBackground = Pickr.create({
+                    el: tiktokFollowColorGradientBackground,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentTiktokFollowBackgroundColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrTiktokFollowBackground.setColorRepresentation('HEX');
+                pickrTiktokFollowBackground.show();
+            
+                pickrTiktokFollowBackground.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+            
+            case 'tiktokFollowBorderColor':
+                const currentTiktokFollowBorderColor = document.getElementById('tiktokFollowBorderColorForm').value;
+            
+                pickrTiktokFollowBorder = Pickr.create({
+                    el: tiktokFollowColorGradientBorder,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentTiktokFollowBorderColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrTiktokFollowBorder.setColorRepresentation('HEX');
+                pickrTiktokFollowBorder.show();
+            
+                pickrTiktokFollowBorder.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+            
+            case 'tiktokCommentHeaderColor':
+                const currentTiktokCommentHeaderFontColor = document.getElementById('tiktokCommentHeaderFontColorForm').value;
+            
+                pickrTiktokCommentHeader = Pickr.create({
+                    el: tiktokCommentHeaderColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentTiktokCommentHeaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrTiktokCommentHeader.setColorRepresentation('HEX');
+                pickrTiktokCommentHeader.show();
+            
+                pickrTiktokCommentHeader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+            
+            case 'tiktokCommentSubheaderColor':
+                const currentTiktokCommentSubheaderFontColor = document.getElementById('tiktokCommentSubheaderFontColorForm').value;
+            
+                pickrTiktokCommentSubheader = Pickr.create({
+                    el: tiktokCommentSubheaderColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentTiktokCommentSubheaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrTiktokCommentSubheader.setColorRepresentation('HEX');
+                pickrTiktokCommentSubheader.show();
+            
+                pickrTiktokCommentSubheader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+            
+            case 'tiktokCommentButtonColor':
+                const currentTiktokCommentButtonColor = document.getElementById('tiktokCommentButtonColorForm').value;
+            
+                pickrTiktokCommentButton = Pickr.create({
+                    el: tiktokCommentColorGradientButton,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentTiktokCommentButtonColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrTiktokCommentButton.setColorRepresentation('HEX');
+                pickrTiktokCommentButton.show();
+            
+                pickrTiktokCommentButton.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+            
+            case 'tiktokCommentBackgroundColor':
+                const currentTiktokCommentBackgroundColor = document.getElementById('tiktokCommentBackgroundColorForm').value;
+            
+                pickrTiktokCommentBackground = Pickr.create({
+                    el: tiktokCommentColorGradientBackground,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentTiktokCommentBackgroundColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrTiktokCommentBackground.setColorRepresentation('HEX');
+                pickrTiktokCommentBackground.show();
+            
+                pickrTiktokCommentBackground.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+            
+            case 'tiktokCommentBorderColor':
+                const currentTiktokCommentBorderColor = document.getElementById('tiktokCommentBorderColorForm').value;
+            
+                pickrTiktokCommentBorder = Pickr.create({
+                    el: tiktokCommentColorGradientBorder,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentTiktokCommentBorderColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrTiktokCommentBorder.setColorRepresentation('HEX');
+                pickrTiktokCommentBorder.show();
+            
+                pickrTiktokCommentBorder.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+            
+            case 'tiktokLikeHeaderColor':
+                const currentTiktokLikeHeaderFontColor = document.getElementById('tiktokLikeHeaderFontColorForm').value;
+            
+                pickrTiktokLikeHeader = Pickr.create({
+                    el: tiktokLikeHeaderColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentTiktokLikeHeaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrTiktokLikeHeader.setColorRepresentation('HEX');
+                pickrTiktokLikeHeader.show();
+            
+                pickrTiktokLikeHeader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+            
+            case 'tiktokLikeSubheaderColor':
+                const currentTiktokLikeSubheaderFontColor = document.getElementById('tiktokLikeSubheaderFontColorForm').value;
+            
+                pickrTiktokLikeSubheader = Pickr.create({
+                    el: tiktokLikeSubheaderColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentTiktokLikeSubheaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrTiktokLikeSubheader.setColorRepresentation('HEX');
+                pickrTiktokLikeSubheader.show();
+            
+                pickrTiktokLikeSubheader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+                
+            case 'tiktokLikeButtonColor':
+                const currentTiktokLikeButtonColor = document.getElementById('tiktokLikeButtonColorForm').value;
+            
+                pickrTiktokLikeButton = Pickr.create({
+                    el: tiktokLikeColorGradientButton,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentTiktokLikeButtonColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrTiktokLikeButton.setColorRepresentation('HEX');
+                pickrTiktokLikeButton.show();
+            
+                pickrTiktokLikeButton.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+            
+            case 'tiktokLikeBackgroundColor':
+                const currentTiktokLikeBackgroundColor = document.getElementById('tiktokLikeBackgroundColorForm').value;
+            
+                pickrTiktokLikeBackground = Pickr.create({
+                    el: tiktokLikeColorGradientBackground,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentTiktokLikeBackgroundColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrTiktokLikeBackground.setColorRepresentation('HEX');
+                pickrTiktokLikeBackground.show();
+            
+                pickrTiktokLikeBackground.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+            
+            case 'tiktokLikeBorderColor':
+                const currentTiktokLikeBorderColor = document.getElementById('tiktokLikeBorderColorForm').value;
+            
+                pickrTiktokLikeBorder = Pickr.create({
+                    el: tiktokLikeColorGradientBorder,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentTiktokLikeBorderColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrTiktokLikeBorder.setColorRepresentation('HEX');
+                pickrTiktokLikeBorder.show();
+            
+                pickrTiktokLikeBorder.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+        }
     }
 
     function enterHex(event){
@@ -1774,7 +2609,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 if(fromPickr === false){
                     if(pickrXFollowHeader === undefined){
                         pickrXFollowHeader = Pickr.create({
-                            el: XFollowHeadeColorGradient,
+                            el: XFollowHeaderColorGradient,
                             theme: 'classic', // or 'monolith', or 'nano'
                             default: color,
                             useAsButton: true,
@@ -1913,7 +2748,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 if(fromPickr === false){
                     if(pickrXRepostHeader === undefined){
                         pickrXRepostHeader = Pickr.create({
-                            el: XRepostHeadeColorGradient,
+                            el: XRepostHeaderColorGradient,
                             theme: 'classic', // or 'monolith', or 'nano'
                             default: color,
                             useAsButton: true,
@@ -2191,7 +3026,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 if(fromPickr === false){
                     if(pickrInstaFollowHeader === undefined){
                         pickrInstaFollowHeader = Pickr.create({
-                            el: instaFollowHeadeColorGradient,
+                            el: instaFollowHeaderColorGradient,
                             theme: 'classic', // or 'monolith', or 'nano'
                             default: color,
                             useAsButton: true,
@@ -2603,6 +3438,840 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 instaLikeEditElementBorder.style.borderBottom = `${instaLikeCurrentBorderStrokeBottom} solid ${color}`;
                 instaLikeEditElementBorder.style.borderRight = `${instaLikeCurrentBorderStrokeRight} solid ${color}`;
                 break;
+
+            case 'facebookFollowHeaderColor':
+                if(fromPickr === false){
+                    if(pickrFacebookFollowHeader === undefined){
+                        pickrFacebookFollowHeader = Pickr.create({
+                            el: facebookFollowHeadeColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrFacebookFollowHeader.setColor(color);
+                        const hexBoxClick = document.getElementById('facebookFollowHeaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('facebookFollowHeaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementFacebookFollowHeader = document.querySelector('.selected-raffleleader-section').querySelector('h2');
+                editElementFacebookFollowHeader.style.color = color;
+                break;
+            
+            case 'facebookFollowSubheaderColor':
+                if(fromPickr === false){
+                    if(pickrFacebookFollowSubheader === undefined){
+                        pickrFacebookFollowSubheader = Pickr.create({
+                            el: facebookFollowSubheaderColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrFacebookFollowSubheader.setColor(color);
+                        const hexBoxClick = document.getElementById('facebookFollowSubheaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('facebookFollowSubheaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementFacebookFollowSubheader = document.querySelector('.selected-raffleleader-section').querySelector('p');
+                editElementFacebookFollowSubheader.style.color = color;
+                break;
+            
+            case 'facebookFollowButtonColor':
+                if(fromPickr === false){
+                    if(pickrFacebookFollowButton === undefined){
+                        pickrFacebookFollowButton = Pickr.create({
+                            el: facebookFollowColorGradientButton,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrFacebookFollowButton.setColor(color);
+                        const hexBoxClick = document.getElementById('facebookFollowButtonColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('facebookFollowButtonColorForm');
+                    hexBoxText.value = color;
+                }
+                const facebookFollowEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                facebookFollowEditElementButton.style.backgroundColor = color;
+                break;
+            
+            case 'facebookFollowBackgroundColor':
+                if(fromPickr === false){
+                    if(pickrFacebookFollowBackground === undefined){
+                        pickrFacebookFollowBackground = Pickr.create({
+                            el: facebookFollowColorGradientBackground,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrFacebookFollowBackground.setColor(color);
+                        const hexBoxClick = document.getElementById('facebookFollowBackgroundColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('facebookFollowBackgroundColorForm');
+                    hexBoxText.value = color;
+                }
+                const facebookFollowEditElementBackground = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                facebookFollowEditElementBackground.style.backgroundColor = color;
+                break;
+            
+            case 'facebookFollowBorderColor':
+                if(fromPickr === false){
+                    if(pickrFacebookFollowBorder === undefined){
+                        pickrFacebookFollowBorder = Pickr.create({
+                            el: facebookFollowColorGradientBorder,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrFacebookFollowBorder.setColor(color);
+                        const hexBoxClick = document.getElementById('facebookFollowBorderColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('facebookFollowBorderColorForm');
+                    hexBoxText.value = color;
+                }
+                const facebookFollowEditElementBorder = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                
+                const facebookFollowCurrentBorderStrokeTop = getComputedStyle(facebookFollowEditElementBorder).borderTopWidth;
+                const facebookFollowCurrentBorderStrokeLeft = getComputedStyle(facebookFollowEditElementBorder).borderLeftWidth;
+                const facebookFollowCurrentBorderStrokeBottom = getComputedStyle(facebookFollowEditElementBorder).borderBottomWidth;
+                const facebookFollowCurrentBorderStrokeRight = getComputedStyle(facebookFollowEditElementBorder).borderRightWidth;
+            
+                facebookFollowEditElementBorder.style.borderTop = `${facebookFollowCurrentBorderStrokeTop} solid ${color}`;
+                facebookFollowEditElementBorder.style.borderLeft = `${facebookFollowCurrentBorderStrokeLeft} solid ${color}`;
+                facebookFollowEditElementBorder.style.borderBottom = `${facebookFollowCurrentBorderStrokeBottom} solid ${color}`;
+                facebookFollowEditElementBorder.style.borderRight = `${facebookFollowCurrentBorderStrokeRight} solid ${color}`;
+                break;
+            
+            case 'facebookCommentHeaderColor':
+                if(fromPickr === false){
+                    if(pickrFacebookCommentHeader === undefined){
+                        pickrFacebookCommentHeader = Pickr.create({
+                            el: facebookCommentHeaderColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrFacebookCommentHeader.setColor(color);
+                        const hexBoxClick = document.getElementById('facebookCommentHeaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('facebookCommentHeaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementFacebookCommentHeader = document.querySelector('.selected-raffleleader-section').querySelector('h2');
+                editElementFacebookCommentHeader.style.color = color;
+                break;
+            
+            case 'facebookCommentSubheaderColor':
+                if(fromPickr === false){
+                    if(pickrFacebookCommentSubheader === undefined){
+                        pickrFacebookCommentSubheader = Pickr.create({
+                            el: facebookCommentSubheaderColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrFacebookCommentSubheader.setColor(color);
+                        const hexBoxClick = document.getElementById('facebookCommentSubheaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('facebookCommentSubheaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementFacebookCommentSubheader = document.querySelector('.selected-raffleleader-section').querySelector('p');
+                editElementFacebookCommentSubheader.style.color = color;
+                break;
+            
+            case 'facebookCommentButtonColor':
+                if(fromPickr === false){
+                    if(pickrFacebookCommentButton === undefined){
+                        pickrFacebookCommentButton = Pickr.create({
+                            el: facebookCommentColorGradientButton,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrFacebookCommentButton.setColor(color);
+                        const hexBoxClick = document.getElementById('facebookCommentButtonColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('facebookCommentButtonColorForm');
+                    hexBoxText.value = color;
+                }
+                const facebookCommentEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                facebookCommentEditElementButton.style.backgroundColor = color;
+                break;
+            
+            case 'facebookCommentBackgroundColor':
+                if(fromPickr === false){
+                    if(pickrFacebookCommentBackground === undefined){
+                        pickrFacebookCommentBackground = Pickr.create({
+                            el: facebookCommentColorGradientBackground,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrFacebookCommentBackground.setColor(color);
+                        const hexBoxClick = document.getElementById('facebookCommentBackgroundColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('facebookCommentBackgroundColorForm');
+                    hexBoxText.value = color;
+                }
+                const facebookCommentEditElementBackground = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                facebookCommentEditElementBackground.style.backgroundColor = color;
+                break;
+            
+            case 'facebookCommentBorderColor':
+                if(fromPickr === false){
+                    if(pickrFacebookCommentBorder === undefined){
+                        pickrFacebookCommentBorder = Pickr.create({
+                            el: facebookCommentColorGradientBorder,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrFacebookCommentBorder.setColor(color);
+                        const hexBoxClick = document.getElementById('facebookCommentBorderColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('facebookCommentBorderColorForm');
+                    hexBoxText.value = color;
+                }
+                const facebookCommentEditElementBorder = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                
+                const facebookCommentCurrentBorderStrokeTop = getComputedStyle(facebookCommentEditElementBorder).borderTopWidth;
+                const facebookCommentCurrentBorderStrokeLeft = getComputedStyle(facebookCommentEditElementBorder).borderLeftWidth;
+                const facebookCommentCurrentBorderStrokeBottom = getComputedStyle(facebookCommentEditElementBorder).borderBottomWidth;
+                const facebookCommentCurrentBorderStrokeRight = getComputedStyle(facebookCommentEditElementBorder).borderRightWidth;
+            
+                facebookCommentEditElementBorder.style.borderTop = `${facebookCommentCurrentBorderStrokeTop} solid ${color}`;
+                facebookCommentEditElementBorder.style.borderLeft = `${facebookCommentCurrentBorderStrokeLeft} solid ${color}`;
+                facebookCommentEditElementBorder.style.borderBottom = `${facebookCommentCurrentBorderStrokeBottom} solid ${color}`;
+                facebookCommentEditElementBorder.style.borderRight = `${facebookCommentCurrentBorderStrokeRight} solid ${color}`;
+                break;
+            
+            case 'facebookLikeHeaderColor':
+                if(fromPickr === false){
+                    if(pickrFacebookLikeHeader === undefined){
+                        pickrFacebookLikeHeader = Pickr.create({
+                            el: facebookLikeHeaderColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrFacebookLikeHeader.setColor(color);
+                        const hexBoxClick = document.getElementById('facebookLikeHeaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('facebookLikeHeaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementFacebookLikeHeader = document.querySelector('.selected-raffleleader-section').querySelector('h2');
+                editElementFacebookLikeHeader.style.color = color;
+                break;
+            
+            case 'facebookLikeSubheaderColor':
+                if(fromPickr === false){
+                    if(pickrFacebookLikeSubheader === undefined){
+                        pickrFacebookLikeSubheader = Pickr.create({
+                            el: facebookLikeSubheaderColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrFacebookLikeSubheader.setColor(color);
+                        const hexBoxClick = document.getElementById('facebookLikeSubheaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('facebookLikeSubheaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementFacebookLikeSubheader = document.querySelector('.selected-raffleleader-section').querySelector('p');
+                editElementFacebookLikeSubheader.style.color = color;
+                break;
+            
+            case 'facebookLikeButtonColor':
+                if(fromPickr === false){
+                    if(pickrFacebookLikeButton === undefined){
+                        pickrFacebookLikeButton = Pickr.create({
+                            el: facebookLikeColorGradientButton,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrFacebookLikeButton.setColor(color);
+                        const hexBoxClick = document.getElementById('facebookLikeButtonColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('facebookLikeButtonColorForm');
+                    hexBoxText.value = color;
+                }
+                const facebookLikeEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                facebookLikeEditElementButton.style.backgroundColor = color;
+                break;
+            
+            case 'facebookLikeBackgroundColor':
+                if(fromPickr === false){
+                    if(pickrFacebookLikeBackground === undefined){
+                        pickrFacebookLikeBackground = Pickr.create({
+                            el: facebookLikeColorGradientBackground,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrFacebookLikeBackground.setColor(color);
+                        const hexBoxClick = document.getElementById('facebookLikeBackgroundColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('facebookLikeBackgroundColorForm');
+                    hexBoxText.value = color;
+                }
+                const facebookLikeEditElementBackground = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                facebookLikeEditElementBackground.style.backgroundColor = color;
+                break;
+            
+            case 'facebookLikeBorderColor':
+                if(fromPickr === false){
+                    if(pickrFacebookLikeBorder === undefined){
+                        pickrFacebookLikeBorder = Pickr.create({
+                            el: facebookLikeColorGradientBorder,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrFacebookLikeBorder.setColor(color);
+                        const hexBoxClick = document.getElementById('facebookLikeBorderColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('facebookLikeBorderColorForm');
+                    hexBoxText.value = color;
+                }
+                const facebookLikeEditElementBorder = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                
+                const facebookLikeCurrentBorderStrokeTop = getComputedStyle(facebookLikeEditElementBorder).borderTopWidth;
+                const facebookLikeCurrentBorderStrokeLeft = getComputedStyle(facebookLikeEditElementBorder).borderLeftWidth;
+                const facebookLikeCurrentBorderStrokeBottom = getComputedStyle(facebookLikeEditElementBorder).borderBottomWidth;
+                const facebookLikeCurrentBorderStrokeRight = getComputedStyle(facebookLikeEditElementBorder).borderRightWidth;
+            
+                facebookLikeEditElementBorder.style.borderTop = `${facebookLikeCurrentBorderStrokeTop} solid ${color}`;
+                facebookLikeEditElementBorder.style.borderLeft = `${facebookLikeCurrentBorderStrokeLeft} solid ${color}`;
+                facebookLikeEditElementBorder.style.borderBottom = `${facebookLikeCurrentBorderStrokeBottom} solid ${color}`;
+                facebookLikeEditElementBorder.style.borderRight = `${facebookLikeCurrentBorderStrokeRight} solid ${color}`;
+                break;
+
+            case 'tiktokFollowHeaderColor':
+                if(fromPickr === false){
+                    if(pickrTiktokFollowHeader === undefined){
+                        pickrTiktokFollowHeader = Pickr.create({
+                            el: tiktokFollowHeadeColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrTiktokFollowHeader.setColor(color);
+                        const hexBoxClick = document.getElementById('tiktokFollowHeaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('tiktokFollowHeaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementTiktokFollowHeader = document.querySelector('.selected-raffleleader-section').querySelector('h2');
+                editElementTiktokFollowHeader.style.color = color;
+                break;
+            
+            case 'tiktokFollowSubheaderColor':
+                if(fromPickr === false){
+                    if(pickrTiktokFollowSubheader === undefined){
+                        pickrTiktokFollowSubheader = Pickr.create({
+                            el: tiktokFollowSubheaderColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrTiktokFollowSubheader.setColor(color);
+                        const hexBoxClick = document.getElementById('tiktokFollowSubheaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('tiktokFollowSubheaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementTiktokFollowSubheader = document.querySelector('.selected-raffleleader-section').querySelector('p');
+                editElementTiktokFollowSubheader.style.color = color;
+                break;
+            
+            case 'tiktokFollowButtonColor':
+                if(fromPickr === false){
+                    if(pickrTiktokFollowButton === undefined){
+                        pickrTiktokFollowButton = Pickr.create({
+                            el: tiktokFollowColorGradientButton,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrTiktokFollowButton.setColor(color);
+                        const hexBoxClick = document.getElementById('tiktokFollowButtonColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('tiktokFollowButtonColorForm');
+                    hexBoxText.value = color;
+                }
+                const tiktokFollowEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                tiktokFollowEditElementButton.style.backgroundColor = color;
+                break;
+            
+            case 'tiktokFollowBackgroundColor':
+                if(fromPickr === false){
+                    if(pickrTiktokFollowBackground === undefined){
+                        pickrTiktokFollowBackground = Pickr.create({
+                            el: tiktokFollowColorGradientBackground,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrTiktokFollowBackground.setColor(color);
+                        const hexBoxClick = document.getElementById('tiktokFollowBackgroundColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('tiktokFollowBackgroundColorForm');
+                    hexBoxText.value = color;
+                }
+                const tiktokFollowEditElementBackground = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                tiktokFollowEditElementBackground.style.backgroundColor = color;
+                break;
+            
+            case 'tiktokFollowBorderColor':
+                if(fromPickr === false){
+                    if(pickrTiktokFollowBorder === undefined){
+                        pickrTiktokFollowBorder = Pickr.create({
+                            el: tiktokFollowColorGradientBorder,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrTiktokFollowBorder.setColor(color);
+                        const hexBoxClick = document.getElementById('tiktokFollowBorderColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('tiktokFollowBorderColorForm');
+                    hexBoxText.value = color;
+                }
+                const tiktokFollowEditElementBorder = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                
+                const tiktokFollowCurrentBorderStrokeTop = getComputedStyle(tiktokFollowEditElementBorder).borderTopWidth;
+                const tiktokFollowCurrentBorderStrokeLeft = getComputedStyle(tiktokFollowEditElementBorder).borderLeftWidth;
+                const tiktokFollowCurrentBorderStrokeBottom = getComputedStyle(tiktokFollowEditElementBorder).borderBottomWidth;
+                const tiktokFollowCurrentBorderStrokeRight = getComputedStyle(tiktokFollowEditElementBorder).borderRightWidth;
+            
+                tiktokFollowEditElementBorder.style.borderTop = `${tiktokFollowCurrentBorderStrokeTop} solid ${color}`;
+                tiktokFollowEditElementBorder.style.borderLeft = `${tiktokFollowCurrentBorderStrokeLeft} solid ${color}`;
+                tiktokFollowEditElementBorder.style.borderBottom = `${tiktokFollowCurrentBorderStrokeBottom} solid ${color}`;
+                tiktokFollowEditElementBorder.style.borderRight = `${tiktokFollowCurrentBorderStrokeRight} solid ${color}`;
+                break;
+            
+            case 'tiktokCommentHeaderColor':
+                if(fromPickr === false){
+                    if(pickrTiktokCommentHeader === undefined){
+                        pickrTiktokCommentHeader = Pickr.create({
+                            el: tiktokCommentHeaderColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrTiktokCommentHeader.setColor(color);
+                        const hexBoxClick = document.getElementById('tiktokCommentHeaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('tiktokCommentHeaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementTiktokCommentHeader = document.querySelector('.selected-raffleleader-section').querySelector('h2');
+                editElementTiktokCommentHeader.style.color = color;
+                break;
+            
+            case 'tiktokCommentSubheaderColor':
+                if(fromPickr === false){
+                    if(pickrTiktokCommentSubheader === undefined){
+                        pickrTiktokCommentSubheader = Pickr.create({
+                            el: tiktokCommentSubheaderColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrTiktokCommentSubheader.setColor(color);
+                        const hexBoxClick = document.getElementById('tiktokCommentSubheaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('tiktokCommentSubheaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementTiktokCommentSubheader = document.querySelector('.selected-raffleleader-section').querySelector('p');
+                editElementTiktokCommentSubheader.style.color = color;
+                break;
+            
+            case 'tiktokCommentButtonColor':
+                if(fromPickr === false){
+                    if(pickrTiktokCommentButton === undefined){
+                        pickrTiktokCommentButton = Pickr.create({
+                            el: tiktokCommentColorGradientButton,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrTiktokCommentButton.setColor(color);
+                        const hexBoxClick = document.getElementById('tiktokCommentButtonColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('tiktokCommentButtonColorForm');
+                    hexBoxText.value = color;
+                }
+                const tiktokCommentEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                tiktokCommentEditElementButton.style.backgroundColor = color;
+                break;
+            
+            case 'tiktokCommentBackgroundColor':
+                if(fromPickr === false){
+                    if(pickrTiktokCommentBackground === undefined){
+                        pickrTiktokCommentBackground = Pickr.create({
+                            el: tiktokCommentColorGradientBackground,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrTiktokCommentBackground.setColor(color);
+                        const hexBoxClick = document.getElementById('tiktokCommentBackgroundColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('tiktokCommentBackgroundColorForm');
+                    hexBoxText.value = color;
+                }
+                const tiktokCommentEditElementBackground = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                tiktokCommentEditElementBackground.style.backgroundColor = color;
+                break;
+            
+            case 'tiktokCommentBorderColor':
+                if(fromPickr === false){
+                    if(pickrTiktokCommentBorder === undefined){
+                        pickrTiktokCommentBorder = Pickr.create({
+                            el: tiktokCommentColorGradientBorder,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrTiktokCommentBorder.setColor(color);
+                        const hexBoxClick = document.getElementById('tiktokCommentBorderColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('tiktokCommentBorderColorForm');
+                    hexBoxText.value = color;
+                }
+                const tiktokCommentEditElementBorder = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                
+                const tiktokCommentCurrentBorderStrokeTop = getComputedStyle(tiktokCommentEditElementBorder).borderTopWidth;
+                const tiktokCommentCurrentBorderStrokeLeft = getComputedStyle(tiktokCommentEditElementBorder).borderLeftWidth;
+                const tiktokCommentCurrentBorderStrokeBottom = getComputedStyle(tiktokCommentEditElementBorder).borderBottomWidth;
+                const tiktokCommentCurrentBorderStrokeRight = getComputedStyle(tiktokCommentEditElementBorder).borderRightWidth;
+            
+                tiktokCommentEditElementBorder.style.borderTop = `${tiktokCommentCurrentBorderStrokeTop} solid ${color}`;
+                tiktokCommentEditElementBorder.style.borderLeft = `${tiktokCommentCurrentBorderStrokeLeft} solid ${color}`;
+                tiktokCommentEditElementBorder.style.borderBottom = `${tiktokCommentCurrentBorderStrokeBottom} solid ${color}`;
+                tiktokCommentEditElementBorder.style.borderRight = `${tiktokCommentCurrentBorderStrokeRight} solid ${color}`;
+                break;
+            
+            case 'tiktokLikeHeaderColor':
+                if(fromPickr === false){
+                    if(pickrTiktokLikeHeader === undefined){
+                        pickrTiktokLikeHeader = Pickr.create({
+                            el: tiktokLikeHeaderColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrTiktokLikeHeader.setColor(color);
+                        const hexBoxClick = document.getElementById('tiktokLikeHeaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('tiktokLikeHeaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementTiktokLikeHeader = document.querySelector('.selected-raffleleader-section').querySelector('h2');
+                editElementTiktokLikeHeader.style.color = color;
+                break;
+            
+            case 'tiktokLikeSubheaderColor':
+                if(fromPickr === false){
+                    if(pickrTiktokLikeSubheader === undefined){
+                        pickrTiktokLikeSubheader = Pickr.create({
+                            el: tiktokLikeSubheaderColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrTiktokLikeSubheader.setColor(color);
+                        const hexBoxClick = document.getElementById('tiktokLikeSubheaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('tiktokLikeSubheaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementTiktokLikeSubheader = document.querySelector('.selected-raffleleader-section').querySelector('p');
+                editElementTiktokLikeSubheader.style.color = color;
+                break;
+            
+            case 'tiktokLikeButtonColor':
+                if(fromPickr === false){
+                    if(pickrTiktokLikeButton === undefined){
+                        pickrTiktokLikeButton = Pickr.create({
+                            el: tiktokLikeColorGradientButton,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrTiktokLikeButton.setColor(color);
+                        const hexBoxClick = document.getElementById('tiktokLikeButtonColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('tiktokLikeButtonColorForm');
+                    hexBoxText.value = color;
+                }
+                const tiktokLikeEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                tiktokLikeEditElementButton.style.backgroundColor = color;
+                break;
+            
+            case 'tiktokLikeBackgroundColor':
+                if(fromPickr === false){
+                    if(pickrTiktokLikeBackground === undefined){
+                        pickrTiktokLikeBackground = Pickr.create({
+                            el: tiktokLikeColorGradientBackground,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrTiktokLikeBackground.setColor(color);
+                        const hexBoxClick = document.getElementById('tiktokLikeBackgroundColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('tiktokLikeBackgroundColorForm');
+                    hexBoxText.value = color;
+                }
+                const tiktokLikeEditElementBackground = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                tiktokLikeEditElementBackground.style.backgroundColor = color;
+                break;
+            
+            case 'tiktokLikeBorderColor':
+                if(fromPickr === false){
+                    if(pickrTiktokLikeBorder === undefined){
+                        pickrTiktokLikeBorder = Pickr.create({
+                            el: tiktokLikeColorGradientBorder,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrTiktokLikeBorder.setColor(color);
+                        const hexBoxClick = document.getElementById('tiktokLikeBorderColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('tiktokLikeBorderColorForm');
+                    hexBoxText.value = color;
+                }
+                const tiktokLikeEditElementBorder = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                
+                const tiktokLikeCurrentBorderStrokeTop = getComputedStyle(tiktokLikeEditElementBorder).borderTopWidth;
+                const tiktokLikeCurrentBorderStrokeLeft = getComputedStyle(tiktokLikeEditElementBorder).borderLeftWidth;
+                const tiktokLikeCurrentBorderStrokeBottom = getComputedStyle(tiktokLikeEditElementBorder).borderBottomWidth;
+                const tiktokLikeCurrentBorderStrokeRight = getComputedStyle(tiktokLikeEditElementBorder).borderRightWidth;
+            
+                tiktokLikeEditElementBorder.style.borderTop = `${tiktokLikeCurrentBorderStrokeTop} solid ${color}`;
+                tiktokLikeEditElementBorder.style.borderLeft = `${tiktokLikeCurrentBorderStrokeLeft} solid ${color}`;
+                tiktokLikeEditElementBorder.style.borderBottom = `${tiktokLikeCurrentBorderStrokeBottom} solid ${color}`;
+                tiktokLikeEditElementBorder.style.borderRight = `${tiktokLikeCurrentBorderStrokeRight} solid ${color}`;
+                break;
         }
     }
 
@@ -2897,6 +4566,90 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 if(strokeFormID === 'instaLikeBorderBottomStroke') instaLikeSection.style.borderBottom = `${borderStroke}px solid ${instaLikeCurrentBorderColorBottom}`;
                 if(strokeFormID === 'instaLikeBorderRightStroke') instaLikeSection.style.borderRight = `${borderStroke}px solid ${instaLikeCurrentBorderColorRight}`;
                 break;
+
+            case 'facebookFollowBorderStroke':
+                const facebookFollowSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+            
+                const facebookFollowCurrentBorderColorTop = getComputedStyle(facebookFollowSection).borderTopColor;
+                const facebookFollowCurrentBorderColorLeft = getComputedStyle(facebookFollowSection).borderLeftColor;
+                const facebookFollowCurrentBorderColorBottom = getComputedStyle(facebookFollowSection).borderBottomColor;
+                const facebookFollowCurrentBorderColorRight = getComputedStyle(facebookFollowSection).borderRightColor;
+            
+                if(strokeFormID === 'facebookFollowBorderTopStroke') facebookFollowSection.style.borderTop = `${borderStroke}px solid ${facebookFollowCurrentBorderColorTop}`;
+                if(strokeFormID === 'facebookFollowBorderLeftStroke') facebookFollowSection.style.borderLeft = `${borderStroke}px solid ${facebookFollowCurrentBorderColorLeft}`;
+                if(strokeFormID === 'facebookFollowBorderBottomStroke') facebookFollowSection.style.borderBottom = `${borderStroke}px solid ${facebookFollowCurrentBorderColorBottom}`;
+                if(strokeFormID === 'facebookFollowBorderRightStroke') facebookFollowSection.style.borderRight = `${borderStroke}px solid ${facebookFollowCurrentBorderColorRight}`;
+                break;
+            
+            case 'facebookCommentBorderStroke':
+                const facebookCommentSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+            
+                const facebookCommentCurrentBorderColorTop = getComputedStyle(facebookCommentSection).borderTopColor;
+                const facebookCommentCurrentBorderColorLeft = getComputedStyle(facebookCommentSection).borderLeftColor;
+                const facebookCommentCurrentBorderColorBottom = getComputedStyle(facebookCommentSection).borderBottomColor;
+                const facebookCommentCurrentBorderColorRight = getComputedStyle(facebookCommentSection).borderRightColor;
+            
+                if(strokeFormID === 'facebookCommentBorderTopStroke') facebookCommentSection.style.borderTop = `${borderStroke}px solid ${facebookCommentCurrentBorderColorTop}`;
+                if(strokeFormID === 'facebookCommentBorderLeftStroke') facebookCommentSection.style.borderLeft = `${borderStroke}px solid ${facebookCommentCurrentBorderColorLeft}`;
+                if(strokeFormID === 'facebookCommentBorderBottomStroke') facebookCommentSection.style.borderBottom = `${borderStroke}px solid ${facebookCommentCurrentBorderColorBottom}`;
+                if(strokeFormID === 'facebookCommentBorderRightStroke') facebookCommentSection.style.borderRight = `${borderStroke}px solid ${facebookCommentCurrentBorderColorRight}`;
+                break;
+            
+            case 'facebookLikeBorderStroke':
+                const facebookLikeSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+            
+                const facebookLikeCurrentBorderColorTop = getComputedStyle(facebookLikeSection).borderTopColor;
+                const facebookLikeCurrentBorderColorLeft = getComputedStyle(facebookLikeSection).borderLeftColor;
+                const facebookLikeCurrentBorderColorBottom = getComputedStyle(facebookLikeSection).borderBottomColor;
+                const facebookLikeCurrentBorderColorRight = getComputedStyle(facebookLikeSection).borderRightColor;
+            
+                if(strokeFormID === 'facebookLikeBorderTopStroke') facebookLikeSection.style.borderTop = `${borderStroke}px solid ${facebookLikeCurrentBorderColorTop}`;
+                if(strokeFormID === 'facebookLikeBorderLeftStroke') facebookLikeSection.style.borderLeft = `${borderStroke}px solid ${facebookLikeCurrentBorderColorLeft}`;
+                if(strokeFormID === 'facebookLikeBorderBottomStroke') facebookLikeSection.style.borderBottom = `${borderStroke}px solid ${facebookLikeCurrentBorderColorBottom}`;
+                if(strokeFormID === 'facebookLikeBorderRightStroke') facebookLikeSection.style.borderRight = `${borderStroke}px solid ${facebookLikeCurrentBorderColorRight}`;
+                break;
+
+            case 'tiktokFollowBorderStroke':
+                const tiktokFollowSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+            
+                const tiktokFollowCurrentBorderColorTop = getComputedStyle(tiktokFollowSection).borderTopColor;
+                const tiktokFollowCurrentBorderColorLeft = getComputedStyle(tiktokFollowSection).borderLeftColor;
+                const tiktokFollowCurrentBorderColorBottom = getComputedStyle(tiktokFollowSection).borderBottomColor;
+                const tiktokFollowCurrentBorderColorRight = getComputedStyle(tiktokFollowSection).borderRightColor;
+            
+                if(strokeFormID === 'tiktokFollowBorderTopStroke') tiktokFollowSection.style.borderTop = `${borderStroke}px solid ${tiktokFollowCurrentBorderColorTop}`;
+                if(strokeFormID === 'tiktokFollowBorderLeftStroke') tiktokFollowSection.style.borderLeft = `${borderStroke}px solid ${tiktokFollowCurrentBorderColorLeft}`;
+                if(strokeFormID === 'tiktokFollowBorderBottomStroke') tiktokFollowSection.style.borderBottom = `${borderStroke}px solid ${tiktokFollowCurrentBorderColorBottom}`;
+                if(strokeFormID === 'tiktokFollowBorderRightStroke') tiktokFollowSection.style.borderRight = `${borderStroke}px solid ${tiktokFollowCurrentBorderColorRight}`;
+                break;
+            
+            case 'tiktokCommentBorderStroke':
+                const tiktokCommentSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+            
+                const tiktokCommentCurrentBorderColorTop = getComputedStyle(tiktokCommentSection).borderTopColor;
+                const tiktokCommentCurrentBorderColorLeft = getComputedStyle(tiktokCommentSection).borderLeftColor;
+                const tiktokCommentCurrentBorderColorBottom = getComputedStyle(tiktokCommentSection).borderBottomColor;
+                const tiktokCommentCurrentBorderColorRight = getComputedStyle(tiktokCommentSection).borderRightColor;
+            
+                if(strokeFormID === 'tiktokCommentBorderTopStroke') tiktokCommentSection.style.borderTop = `${borderStroke}px solid ${tiktokCommentCurrentBorderColorTop}`;
+                if(strokeFormID === 'tiktokCommentBorderLeftStroke') tiktokCommentSection.style.borderLeft = `${borderStroke}px solid ${tiktokCommentCurrentBorderColorLeft}`;
+                if(strokeFormID === 'tiktokCommentBorderBottomStroke') tiktokCommentSection.style.borderBottom = `${borderStroke}px solid ${tiktokCommentCurrentBorderColorBottom}`;
+                if(strokeFormID === 'tiktokCommentBorderRightStroke') tiktokCommentSection.style.borderRight = `${borderStroke}px solid ${tiktokCommentCurrentBorderColorRight}`;
+                break;
+            
+            case 'tiktokLikeBorderStroke':
+                const tiktokLikeSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+            
+                const tiktokLikeCurrentBorderColorTop = getComputedStyle(tiktokLikeSection).borderTopColor;
+                const tiktokLikeCurrentBorderColorLeft = getComputedStyle(tiktokLikeSection).borderLeftColor;
+                const tiktokLikeCurrentBorderColorBottom = getComputedStyle(tiktokLikeSection).borderBottomColor;
+                const tiktokLikeCurrentBorderColorRight = getComputedStyle(tiktokLikeSection).borderRightColor;
+            
+                if(strokeFormID === 'tiktokLikeBorderTopStroke') tiktokLikeSection.style.borderTop = `${borderStroke}px solid ${tiktokLikeCurrentBorderColorTop}`;
+                if(strokeFormID === 'tiktokLikeBorderLeftStroke') tiktokLikeSection.style.borderLeft = `${borderStroke}px solid ${tiktokLikeCurrentBorderColorLeft}`;
+                if(strokeFormID === 'tiktokLikeBorderBottomStroke') tiktokLikeSection.style.borderBottom = `${borderStroke}px solid ${tiktokLikeCurrentBorderColorBottom}`;
+                if(strokeFormID === 'tiktokLikeBorderRightStroke') tiktokLikeSection.style.borderRight = `${borderStroke}px solid ${tiktokLikeCurrentBorderColorRight}`;
+                break;
             }
     }
 
@@ -3016,6 +4769,60 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 if(radiusFormID === 'instaLikeBorderTopRightRadius') instaLikeSection.style.borderTopRightRadius = `${borderRadius}px`;
                 if(radiusFormID === 'instaLikeBorderBottomLeftRadius') instaLikeSection.style.borderBottomLeftRadius = `${borderRadius}px`;
                 if(radiusFormID === 'instaLikeBorderBottomRightRadius') instaLikeSection.style.borderBottomRightRadius = `${borderRadius}px`;
+                break;
+
+            case 'facebookFollowBorderRadius':
+                const facebookFollowSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+            
+                if(radiusFormID === 'facebookFollowBorderTopLeftRadius') facebookFollowSection.style.borderTopLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'facebookFollowBorderTopRightRadius') XfacebookollowSection.style.borderTopRightRadius = `${borderRadius}px`;
+                if(radiusFormID === 'facebookFollowBorderBottomLeftRadius') facebookFollowSection.style.borderBottomLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'facebookFollowBorderBottomRightRadius') facebookFollowSection.style.borderBottomRightRadius = `${borderRadius}px`;
+                break;
+            
+            case 'facebookCommentBorderRadius':
+                const facebookCommentSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+            
+                if(radiusFormID === 'facebookCommentBorderTopLeftRadius') facebookCommentSection.style.borderTopLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'facebookCommentBorderTopRightRadius') facebookCommentSection.style.borderTopRightRadius = `${borderRadius}px`;
+                if(radiusFormID === 'facebookCommentBorderBottomLeftRadius') facebookCommentSection.style.borderBottomLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'facebookCommentBorderBottomRightRadius') facebookCommentSection.style.borderBottomRightRadius = `${borderRadius}px`;
+                break;
+            
+            case 'facebookLikeBorderRadius':
+                const facebookLikeSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+            
+                if(radiusFormID === 'facebookLikeBorderTopLeftRadius') facebookLikeSection.style.borderTopLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'facebookLikeBorderTopRightRadius') facebookLikeSection.style.borderTopRightRadius = `${borderRadius}px`;
+                if(radiusFormID === 'facebookLikeBorderBottomLeftRadius') facebookLikeSection.style.borderBottomLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'facebookLikeBorderBottomRightRadius') facebookLikeSection.style.borderBottomRightRadius = `${borderRadius}px`;
+                break;
+
+            case 'tiktokFollowBorderRadius':
+                const tiktokFollowSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+            
+                if(radiusFormID === 'tiktokFollowBorderTopLeftRadius') tiktokFollowSection.style.borderTopLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'tiktokFollowBorderTopRightRadius') XtiktokollowSection.style.borderTopRightRadius = `${borderRadius}px`;
+                if(radiusFormID === 'tiktokFollowBorderBottomLeftRadius') tiktokFollowSection.style.borderBottomLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'tiktokFollowBorderBottomRightRadius') tiktokFollowSection.style.borderBottomRightRadius = `${borderRadius}px`;
+                break;
+            
+            case 'tiktokCommentBorderRadius':
+                const tiktokCommentSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+            
+                if(radiusFormID === 'tiktokCommentBorderTopLeftRadius') tiktokCommentSection.style.borderTopLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'tiktokCommentBorderTopRightRadius') tiktokCommentSection.style.borderTopRightRadius = `${borderRadius}px`;
+                if(radiusFormID === 'tiktokCommentBorderBottomLeftRadius') tiktokCommentSection.style.borderBottomLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'tiktokCommentBorderBottomRightRadius') tiktokCommentSection.style.borderBottomRightRadius = `${borderRadius}px`;
+                break;
+            
+            case 'tiktokLikeBorderRadius':
+                const tiktokLikeSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+            
+                if(radiusFormID === 'tiktokLikeBorderTopLeftRadius') tiktokLikeSection.style.borderTopLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'tiktokLikeBorderTopRightRadius') tiktokLikeSection.style.borderTopRightRadius = `${borderRadius}px`;
+                if(radiusFormID === 'tiktokLikeBorderBottomLeftRadius') tiktokLikeSection.style.borderBottomLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'tiktokLikeBorderBottomRightRadius') tiktokLikeSection.style.borderBottomRightRadius = `${borderRadius}px`;
                 break;
         }
     }
@@ -3316,6 +5123,54 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 instaLikeConfirmBtn.style.display = "flex";
                 instaLikeCancelDelete.style.display = "block";
                 break;
+
+            case 'facebookFollowDelete':
+                const facebookFollowConfirmBtn = document.getElementById('facebookFollowConfirmDelete');
+                const facebookFollowCancelDelete = document.getElementById('facebookFollowCancelDelete');
+                deleteBtn.style.display = "none";
+                facebookFollowConfirmBtn.style.display = "flex";
+                facebookFollowCancelDelete.style.display = "block";
+                break;
+            
+            case 'facebookCommentDelete':
+                const facebookCommentConfirmBtn = document.getElementById('facebookCommentConfirmDelete');
+                const facebookCommentCancelDelete = document.getElementById('facebookCommentCancelDelete');
+                deleteBtn.style.display = "none";
+                facebookCommentConfirmBtn.style.display = "flex";
+                facebookCommentCancelDelete.style.display = "block";
+                break;
+            
+            case 'facebookLikeDelete':
+                const facebookLikeConfirmBtn = document.getElementById('facebookLikeConfirmDelete');
+                const facebookLikeCancelDelete = document.getElementById('facebookLikeCancelDelete');
+                deleteBtn.style.display = "none";
+                facebookLikeConfirmBtn.style.display = "flex";
+                facebookLikeCancelDelete.style.display = "block";
+                break;
+
+            case 'tiktokFollowDelete':
+                const tiktokFollowConfirmBtn = document.getElementById('tiktokFollowConfirmDelete');
+                const tiktokFollowCancelDelete = document.getElementById('tiktokFollowCancelDelete');
+                deleteBtn.style.display = "none";
+                tiktokFollowConfirmBtn.style.display = "flex";
+                tiktokFollowCancelDelete.style.display = "block";
+                break;
+            
+            case 'tiktokCommentDelete':
+                const tiktokCommentConfirmBtn = document.getElementById('tiktokCommentConfirmDelete');
+                const tiktokCommentCancelDelete = document.getElementById('tiktokCommentCancelDelete');
+                deleteBtn.style.display = "none";
+                tiktokCommentConfirmBtn.style.display = "flex";
+                tiktokCommentCancelDelete.style.display = "block";
+                break;
+            
+            case 'tiktokLikeDelete':
+                const tiktokLikeConfirmBtn = document.getElementById('tiktokLikeConfirmDelete');
+                const tiktokLikeCancelDelete = document.getElementById('tiktokLikeCancelDelete');
+                deleteBtn.style.display = "none";
+                tiktokLikeConfirmBtn.style.display = "flex";
+                tiktokLikeCancelDelete.style.display = "block";
+                break;
         }   
     }
 
@@ -3464,6 +5319,84 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 customizeBox.scrollTop = 0;
                 customizeBox.classList.toggle('slide-right-to-left');
                 break;
+
+            case 'facebookFollowDelete':
+                selectedSection.remove();
+            
+                const facebookFollowDeleteBtn = document.getElementById('facebookFollowDelete');
+                const facebookFollowCancelDelete = document.getElementById('facebookFollowCancelDelete');
+                facebookFollowDeleteBtn.style.display = "flex";
+                confirmDelete.style.display = "none";
+                facebookFollowCancelDelete.style.display = "none";
+            
+                customizeBox.scrollTop = 0;
+                customizeBox.classList.toggle('slide-right-to-left');
+                break;
+            
+            case 'facebookCommentDelete':
+                selectedSection.remove();
+            
+                const facebookCommentDeleteBtn = document.getElementById('facebookCommentDelete');
+                const facebookCommentCancelDelete = document.getElementById('facebookCommentCancelDelete');
+                facebookCommentDeleteBtn.style.display = "flex";
+                confirmDelete.style.display = "none";
+                facebookCommentCancelDelete.style.display = "none";
+            
+                customizeBox.scrollTop = 0;
+                customizeBox.classList.toggle('slide-right-to-left');
+                break;
+            
+            case 'facebookLikeDelete':
+                selectedSection.remove();
+            
+                const facebookLikeDeleteBtn = document.getElementById('facebookLikeDelete');
+                const facebookLikeCancelDelete = document.getElementById('facebookLikeCancelDelete');
+                facebookLikeDeleteBtn.style.display = "flex";
+                confirmDelete.style.display = "none";
+                facebookLikeCancelDelete.style.display = "none";
+            
+                customizeBox.scrollTop = 0;
+                customizeBox.classList.toggle('slide-right-to-left');
+                break;
+
+            case 'tiktokFollowDelete':
+                selectedSection.remove();
+            
+                const tiktokFollowDeleteBtn = document.getElementById('tiktokFollowDelete');
+                const tiktokFollowCancelDelete = document.getElementById('tiktokFollowCancelDelete');
+                tiktokFollowDeleteBtn.style.display = "flex";
+                confirmDelete.style.display = "none";
+                tiktokFollowCancelDelete.style.display = "none";
+            
+                customizeBox.scrollTop = 0;
+                customizeBox.classList.toggle('slide-right-to-left');
+                break;
+            
+            case 'tiktokCommentDelete':
+                selectedSection.remove();
+            
+                const tiktokCommentDeleteBtn = document.getElementById('tiktokCommentDelete');
+                const tiktokCommentCancelDelete = document.getElementById('tiktokCommentCancelDelete');
+                tiktokCommentDeleteBtn.style.display = "flex";
+                confirmDelete.style.display = "none";
+                tiktokCommentCancelDelete.style.display = "none";
+            
+                customizeBox.scrollTop = 0;
+                customizeBox.classList.toggle('slide-right-to-left');
+                break;
+            
+            case 'tiktokLikeDelete':
+                selectedSection.remove();
+            
+                const tiktokLikeDeleteBtn = document.getElementById('tiktokLikeDelete');
+                const tiktokLikeCancelDelete = document.getElementById('tiktokLikeCancelDelete');
+                tiktokLikeDeleteBtn.style.display = "flex";
+                confirmDelete.style.display = "none";
+                tiktokLikeCancelDelete.style.display = "none";
+            
+                customizeBox.scrollTop = 0;
+                customizeBox.classList.toggle('slide-right-to-left');
+                break;
         }
     }
 
@@ -3550,6 +5483,54 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 const instaLikeConfirmBtn = document.getElementById('instaLikeConfirmDelete');
                 instaLikeDeleteBtn.style.display = "flex";
                 instaLikeConfirmBtn.style.display = "none";
+                cancelBtn.style.display = "none";
+                break;
+
+            case 'facebookFollowDelete':
+                const facebookFollowDeleteBtn = document.getElementById('facebookFollowDelete');
+                const facebookFollowConfirmBtn = document.getElementById('facebookFollowConfirmDelete');
+                facebookFollowDeleteBtn.style.display = "flex";
+                facebookFollowConfirmBtn.style.display = "none";
+                cancelBtn.style.display = "none";
+                break;
+            
+            case 'facebookCommentDelete':
+                const facebookCommentDeleteBtn = document.getElementById('facebookCommentDelete');
+                const facebookCommentConfirmBtn = document.getElementById('facebookCommentConfirmDelete');
+                facebookCommentDeleteBtn.style.display = "flex";
+                facebookCommentConfirmBtn.style.display = "none";
+                cancelBtn.style.display = "none";
+                break;
+            
+            case 'facebookLikeDelete':
+                const facebookLikeDeleteBtn = document.getElementById('facebookLikeDelete');
+                const facebookLikeConfirmBtn = document.getElementById('facebookLikeConfirmDelete');
+                facebookLikeDeleteBtn.style.display = "flex";
+                facebookLikeConfirmBtn.style.display = "none";
+                cancelBtn.style.display = "none";
+                break;
+
+            case 'tiktokFollowDelete':
+                const tiktokFollowDeleteBtn = document.getElementById('tiktokFollowDelete');
+                const tiktokFollowConfirmBtn = document.getElementById('tiktokFollowConfirmDelete');
+                tiktokFollowDeleteBtn.style.display = "flex";
+                tiktokFollowConfirmBtn.style.display = "none";
+                cancelBtn.style.display = "none";
+                break;
+            
+            case 'tiktokCommentDelete':
+                const tiktokCommentDeleteBtn = document.getElementById('tiktokCommentDelete');
+                const tiktokCommentConfirmBtn = document.getElementById('tiktokCommentConfirmDelete');
+                tiktokCommentDeleteBtn.style.display = "flex";
+                tiktokCommentConfirmBtn.style.display = "none";
+                cancelBtn.style.display = "none";
+                break;
+            
+            case 'tiktokLikeDelete':
+                const tiktokLikeDeleteBtn = document.getElementById('tiktokLikeDelete');
+                const tiktokLikeConfirmBtn = document.getElementById('tiktokLikeConfirmDelete');
+                tiktokLikeDeleteBtn.style.display = "flex";
+                tiktokLikeConfirmBtn.style.display = "none";
                 cancelBtn.style.display = "none";
                 break;
         }

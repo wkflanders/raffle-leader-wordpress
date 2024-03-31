@@ -286,8 +286,6 @@
                 </div>
             </div>
         </div>
-        <div id="publish" class="rl-tab-pane">
-            <h3>Publish</h3>
-        </div>
+        <?php require plugin_dir_path( __FILE__ ) . 'publish_content.php'?>
     </div>
 </div>

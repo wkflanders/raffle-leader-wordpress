@@ -1,5 +1,7 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('previewLoaded', () => {
     const container = document.getElementById('previewWrapper');
+    container.style.display = 'flex';
+    
     let isDragging = false;
     let lastX, lastY;
     let offsetX = 0, offsetY = 0;
@@ -56,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const backgroundHeight = viewportHeight * 2;
 
         const offsetX = (backgroundWidth - viewportWidth) / 2;
-        const offsetY = (backgroundHeight - viewportHeight) / 2;
+        const offsetY = (backgroundHeight - viewportHeight) / 1.5;
 
         container.style.transform = `translate(${-offsetX}px, ${-offsetY}px)`;
         return { initialOffsetX: offsetX, initialOffsetY: offsetY };

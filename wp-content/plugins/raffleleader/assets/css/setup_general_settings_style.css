@@ -1,0 +1,303 @@
+.general-settings-wrapper {
+  display: block;
+  position: fixed;
+  z-index: 1000;
+  background-color: rgba(244, 244, 244, 0);
+  right: 100%;
+  transition: all 1s ease;
+}
+
+.active-settings-wrapper {
+  right: 0;
+}
+
+.general-settings-menu {
+  flex-direction: column;
+  position: relative;
+  display: none;
+  height: 90vh;
+  width: 81vw;
+  background-color: rgb(255, 255, 255);
+  top: 0;
+  left: 0;
+  border: 2px #1501fe solid;
+  border-left: 0;
+  border-top: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.close-settings-menu {
+  left: 78vw;
+  top: 1.5vh;
+  margin: 0;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.close-settings-menu:before,
+.close-settings-menu:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 22px;
+  width: 2px;
+  background-color: #333;
+}
+
+.general-settings-row {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  width: 100%;
+  justify-content: center;
+}
+
+.general-settings-row > .customize-settings-box {
+  margin: 0;
+  width: 25vw;
+  height: 15%;
+  align-items: center !important;
+}
+
+.general-settings-row > .customize-settings-box > p {
+  margin: 2vh 0 1vh 0;
+}
+
+.settings-menu-header {
+  width: 100%;
+  justify-content: center;
+}
+
+.active-settings-menu {
+  display: flex;
+}
+
+.general-settings-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+.general-settings-deactivated {
+  opacity: 0.3;
+  filter: greyscale(100%);
+  pointer-events: none;
+}
+
+.general-settings-text > p {
+  font-size: 1.8vh;
+  color: gray;
+}
+
+.date-and-time-display {
+  background-color: white;
+  padding: 0.2vh 0.5vh 0 2vh;
+}
+
+.dropdown-timezone {
+  margin-left: 0vw;
+}
+
+.dropdown-date {
+  border: 0;
+  margin: 0;
+}
+
+.date-and-time-content {
+  background-color: white;
+  margin-left: 0.5vw;
+  margin-right: 0;
+  width: 14vw;
+  padding-left: 0.5vw;
+  overflow-x: hidden;
+}
+
+.timezone{
+  word-wrap: break-word;
+  font-size: 1.8vh;
+  margin-bottom: 1vh;
+  color: black;
+}
+
+.timezone:hover{
+  cursor: pointer;
+  color: rgb(128, 128, 128);
+}
+
+.timezone:active{
+  color: black;
+}
+
+.selected-timezone{
+  font-weight: 900;
+  color: #1501FE;
+}
+
+.selected-timezone:hover{
+  cursor: default;
+  color: #1501FE;
+}
+
+.date-and-time-display > input[type="date"] {
+  border: 1px solid black;
+  font-size: 2vh;
+  color: black;
+  width: 100%;
+  height: 100%;
+  padding-left: 2vh;
+  border-radius: 10px;
+}
+
+.date-and-time-display > input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
+.date-and-time-display > input[type="time"] {
+  border: 1px solid black;
+  font-size: 2vh;
+  color: black;
+  width: 100%;
+  height: 100%;
+  padding-left: 2vh;
+  border-radius: 10px;
+}
+
+.date-and-time-display > input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
+.rules-and-terms-row {
+  height: 100%;
+}
+
+.rules-and-terms-input {
+  width: 70%;
+  height: 90%;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 2vh;
+  color: black;
+}
+
+.rules-and-terms-input::placeholder {
+    color: rgb(164, 164, 164);
+}
+
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #b6b6b6;
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2em;
+  width: 2em;
+  inset: 0;
+  background-color: white;
+  border-radius: 50px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.switch input:checked + .slider {
+  background: #1501fe;
+}
+
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px #1501fe;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(1.6em);
+}
+
+.email-verify-switch {
+  justify-content: flex-start;
+  padding: 0 0 0 5vh;
+}
+
+.email-verify-switch > p {
+  margin-right: 2vh;
+  font-size: 1.6vh;
+  color: gray;
+}
+
+.email-verify-info {
+  justify-content: flex-start;
+  padding: 0 0 0 5vh;
+}
+
+.email-verify-info > p {
+  font-size: 1.4vh;
+  margin-top: 0;
+  color: gray;
+}
+
+.inline-form-section {
+  border: 1px solid black;
+  font-size: 1.6vh;
+  color: black;
+  padding: 0.5vh 1vh 0.5vh 1vh;
+  border-radius: 10px;
+}
+
+.email-verify-input {
+  justify-content: flex-start;
+  padding: 0 0 0 5vh;
+}
+
+.email-verify-input > p{
+    margin-bottom: 0;
+}
+
+input[type="text"].email-verify-form {
+  padding: 0;
+  width: 80%;
+  height: 5vh;
+  margin-bottom: 1vh;
+}
+
+.email-verify-body{
+    height: 20vh;
+    width: 80%;
+    border: 1px solid black;
+    font-size: 2vh;
+    color: black;
+    border-radius: 10px;
+    margin-bottom: 3vh;
+}
+
+.email-verify-body::placeholder{
+    color: rgb(164, 164, 164);
+}

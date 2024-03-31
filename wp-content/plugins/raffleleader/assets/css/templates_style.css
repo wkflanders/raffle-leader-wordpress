@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
 
-body {
-    overflow-y: hidden;
-}
-
 #templates {
     margin: 0;
     padding: 0;
@@ -12,65 +8,174 @@ body {
     font-family: 'Overpass', sans-serif;
 }
 
-
-/* template styles */
-
-
 .rl-template-wrapper {
-    padding: 3vh 6vw;
+    height: 95vh;
+    overflow-y: scroll;
 }
 
-.rl-template-wrapper>.grid-row {
+.rl-grid-row {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    height: 60vh;
     border-bottom: 1px solid #1501FE;
-    padding-bottom: 2vh;
-    margin-bottom: 2vh;
-}
-
-.rl-template-wrapper>.first-row {
-    border-top: 1px solid #1501FE;
-    padding-top: 3vh
-}
-
-.rl-template-wrapper>.grid-row>.grid-item {
-    border: 1px solid #727272;
-    border-radius: 8px;
-    flex: 1;
-    padding: 3vh 2vh;
-    margin: 0 1vh;
-}
-
-.rl-template-wrapper>.grid-row>.grid-item>.grid-text {
-    padding: none;
-    text-align: left;
-    color: black;
-    font-weight: 900;
-}
-
-.rl-template-wrapper>.grid-row>.grid-item>.grid-text p {
-    font-weight: 500;
-}
-
-.rl-template-wrapper>.grid-row>.label {
-    border: none;
-    width: 20%;
     margin: 0;
-    text-align: left;
+    z-index: 50;
+    position: relative;
+}
+
+.rl-template-carousel{
+    display: flex;
+    align-items: center;
+    height: 60vh;
+    scrollbar-width: none;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    z-index: 1;
+    box-shadow: inset -10px 0 10px -20px rgba(0,0,0,0.5), inset 15px 0 10px -20px rgba(0,0,0,0.5);
+    overflow-y: hidden;
+}
+
+.rl-template-carousel::webkit-scrollbar{
+    display: none;
+}
+
+.scroll-grid-btn {
+    transition: margin 0.4s ease-in-out, transform 0.3s ease-in-out;
+    border: none;
+    background: white;
+    cursor: pointer;
+    position: sticky;
+    background-color: rgba(255, 255, 255, 0);
+    z-index: 505;
+}
+
+.scroll-grid-btn-right {
+    left: 96vw;
+}
+
+.scroll-grid-arrow {
+    border: solid rgba(128, 128, 128, 0.815);
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 6px;
+}
+
+.scroll-grid-right {
+    transform: rotate(-45deg);
+}
+
+.scroll-grid-left {
+    transform: rotate(135deg);
 }
 
 .rl-box {
-    text-align: center;
-    position: relative;
-    background: white;
-    display: flex;
-    align-items: center;
+    transition: margin 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.rl-box-action {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
     justify-content: center;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0);
+    top: 0;
+    left: 0;
+    z-index: 200;
+    border-radius: 10px;
+
+}
+
+.rl-box-action-blur {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(4px);
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.382);
+    border-radius: 10px;
+    transition: backdrop-filter 2s ease;
+    z-index: 150;
+}
+
+.rl-box-action h2 {
+    font-size: 2vh !important;
+    text-align: left !important;
+    padding: 0 1vh;
+}
+
+.rl-box-action p {
+    margin: 0 !important;
+    font-size: 2vh !important;
+    padding: 0 1vh !important;
+}
+
+.select-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 1vh;
+}
+
+.select-template {
+    background-color: #1501FE;
+    color: white;
+    width: 90%;
+    padding: 0.5vh 1vh;
+    border: 0;
+    border-radius: 10px;
+    font-size: 2.3vh;
+}
+
+.select-template:hover {
+    background-color: #1300df;
+    cursor: pointer;
+}
+
+.select-template:active {
+    background-color: #1501FE;
+}
+
+.rl-template-wrapper .first-row {
+    border-top: 1px solid #1501FE;
+    margin-top: 2vh;
+}
+
+.rl-template-wrapper .rl-sm {
+    margin-bottom: 2vh;
+}
+
+.rl-template-wrapper .grid-item {
+    display: flex;
+    border: 1px solid #727272;
+    position: relative;
+    border-radius: 10px;
+    height: 55vh;
+    margin-left: 3vw;
+    z-index: 500;
+}
+
+/* .template-item:hover {
+    transform: scale(1.3);
+    z-index: 500;
+} */
+
+.rl-template-wrapper .label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    margin: 0 4vw 0 2vw;
+    text-align: left;
+}
+
+.rl-template-wrapper .label > p {
+    margin: 0;
 }
 
 .rl-template-wrapper h2 {
     font-style: normal;
-    font-weight: 1 1000;
+    font-weight: 1000;
     font-size: 3vh;
     color: black;
 }
@@ -81,56 +186,22 @@ body {
     color: black;
 }
 
-.rl-template-wrapper>.grid-row>.rl-box>.rl-box-action {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.75);
-    border-radius: 5px;
-}
-
-.rl-box-action>.template-button-wrap {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.template-button-wrap>.select-template {
-    padding: 1.5vh 2.5vw;
-    color: white;
-    background-color: #1501FE;
-    font-family: 'Inter', sans-serif;
-    font-size: 2vh;
-    letter-spacing: 0.3vh;
-    border: none;
-    border-radius: 1vh;
-    font-weight: 600;
-}
-
-.template-button-wrap>.active-select-btn {
-    color: white;
-    background-color: #1000c1;
-}
-
 .chosen-template {
     position: relative;
-    border: 3px solid #1501FE !important; /* Adjust the border as needed */
-    padding: 10px;
-    margin-top: 20px; /* Enough space for the label */
+    border: 2px solid #1501FE !important;
+    z-index: 1000;
 }
 
 .chosen-template::before {
     content: "Selected";
     position: absolute;
     color: white;
-    top: 0; /* Half of the height of the label to center it on the border */
-    left: 2vh; /* Adjust as needed */
-    background: #1501FE; /* Match the background of the container or page */
+    top: 0;
+    left: 1vh;
+    background: #1501FE;
     padding: 0 1vh;
-    font-size: 2vh; /* Adjust the font styling as needed */
-    border-bottom-left-radius: 1.3vh;
-    border-bottom-right-radius: 1.3vh;
+    font-size: 1.5vh;
+    border-bottom-left-radius: 1vh;
+    border-bottom-right-radius: 1vh;
+    z-index: 1000;
 }

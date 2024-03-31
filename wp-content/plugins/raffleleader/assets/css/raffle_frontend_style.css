@@ -1,0 +1,112 @@
+.on-submit-loading-btn{
+    transition: width 0.7s ease-in-out !important;
+    width: 85% !important;
+    z-index: 10 !important;
+    margin: 0 !important;
+}
+
+.on-submit-success-btn{
+    width: 85% !important;
+    z-index: 10 !important;
+    animation: fade-success 2s;
+}
+
+.on-submit-failure-btn{
+    width: 85% !important;
+    z-index: 10 !important;
+    animation: fade-failure 2s;
+}
+
+.logged-in-btn{
+    width: 85% !important;
+    z-index: 10 !important;
+    height: 0% !important;
+}
+
+.logged-in-input{
+    display: none !important;
+}
+
+.inactive-additional-entry{
+    opacity: 0.5;
+    filter: greyscale(100%);
+    pointer-events: none;
+}
+
+.completed-additional-entry{
+    animation: fade-success 2s;
+    pointer-events: none;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 2.2vw;
+    height: 3.5vh;
+}
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 3.5vh;
+    height: 3.5vh;
+    margin: 8px;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+    0% {
+    transform: rotate(0deg);
+    }
+    100% {
+    transform: rotate(360deg);
+    }
+}
+
+@keyframes fade-success {
+    0% {
+        background-color: green;
+    }
+
+    50% {
+        background-color: green;
+    }
+
+    100% {
+        background-color: #1501FE;
+    }
+}
+
+@keyframes fade-failure {
+    0% {
+        background-color: red;
+    }
+
+    50% {
+        background-color: red;
+    }
+
+    100% {
+        background-color: #1501FE;
+    }
+}
+
+@keyframes fadeFromGreyscale {
+    from {
+        filter: grayscale(100%);
+    }
+    to {
+        filter: grayscale(0%);
+    }
+}

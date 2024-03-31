@@ -1,23 +1,181 @@
-.layout-wrapper{
+.raffle-options-wrapper{
     display: block;
-}
-
-.layout{
-    /* visibility: hidden; */
-    display: flex;
-    position: relative;
-    z-index: 80;
-    width: 15vw;
-    height: 100vh;
     background-color: rgb(255, 255, 255);
+    height: 95vh;
+    width: 19vw;
     border-right: 2px solid #1501FE;
-    border-bottom: 2px solid #1501FE;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow: overlay;
+    z-index: 2000;
+    padding: 0;
+    direction: rtl;
 }
 
-.layout-header{
+.raffle-options{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    direction: ltr;
+    z-index: 80;
+    width: 100%;
+    height: 80%;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 2px solid #1501FE;
+    
+}
+
+.raffle-options-header{
     display: block;
     text-align: center;
 }
 
+.layout-options{
+    display: flex;
+    flex-direction: column;
+}
+
+.layout-options > p{
+    color: gray;
+    text-align: center;
+    font-size: 1.8vh;
+}
+
+.layout-option-box{
+    border: 2px solid gray;
+    opacity: 0.999; /* Fix white square box around draggable */
+    width: auto;
+    border-radius: 15px;
+    margin-bottom: 1.5vw;
+    margin-left: 3vh;
+    margin-right: 3vh;
+}
+
+.layout-option-box > p{
+    color: black;
+    margin: 1vh 0 1vh 2vh;
+    font-weight: 900;
+    font-size: 2vh;
+}
+
+.layout-size{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1vh;
+}
+
+.layout-size > p{
+    color: gray;
+    text-align: center;
+    font-size: 1.8vh;
+}
+
+.layout-size-input{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 1vh 0 1vh;
+}
+
+.layout-size-input > p{
+    margin-top: 2vh;
+    font-weight: 900;
+    font-size: 1.8vh;
+    color: gray;
+}
+
+.layout-size-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 10vh 0 2vh;
+}
+
+.layout-size-text > p{
+    color: gray;
+    font-weight: 500;
+    font-size: 1.7vh;
+    margin-top: 0;
+    margin-bottom: 1vh;
+}
+
+input[type="text"].layout-size-form{
+    height: 6vh;
+    width: 7.5vw;
+    border: 2px solid gray;
+    font-size: 2vh;
+    font-weight: 900;
+    color: black;
+}
+
+.layout-size-error{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 6vh 0 1vh;
+}
+
+.layout-size-error > p{
+    width: 5vw;
+    color: red;
+}
+
+.general-settings-options{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.general-settings-btn{
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #1501FE;;
+    background-color: white;
+    color: #1501FE;
+    font-size: 2vh;
+    padding: 3.18vh 0 3.18vh 0;
+}
+
+.general-settings-btn:hover{
+    background-color: #1501FE;
+    color: white;
+    cursor: pointer;
+}
+
+.general-settings-btn:active{
+    background-color: #0e00aa;
+    color: rgb(208, 208, 208);
+    cursor: pointer;
+}
+
+.active-settings-btn{
+    background-color: #1501FE;
+    color: white;
+}
+
+.active-settings-btn:hover{
+    background-color: #1100cd;
+    color: rgb(255, 255, 255);
+}
+
+.active-settings-btn:active{
+    background-color: #0e00aa;
+    color: rgb(208, 208, 208);
+    cursor: pointer;
+}
 
 
+::-webkit-scrollbar {
+    width: 1.2vh; /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(196, 196, 196, 0.493); /* color of the scroll thumb */
+    border-radius: 6px; /* roundness of the scroll thumb */
+    border: 3px solid transparent; /* creates padding around scroll thumb */
+}

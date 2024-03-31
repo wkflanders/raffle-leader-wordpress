@@ -11,30 +11,25 @@ use Includes\Base\BaseController;
 
 class BuilderCallbacks extends BaseController{
 
-    public $raffleAPI;
+    private $raffleAPI;
 
-    public $raffle_instance = array();
-
-    public $builderRaffle = array();
-
+    private $raffleInstance;
 
     public function builderCreateNew(){
 
         $this->raffleAPI = new RaffleAPI();
 
-        $this->raffle_instance = array(
-            'post_title'    => 'New Raffle',
-            'post_status'   => 'draft',
-            'post_type'     => 'rl_raffle'
+        $raffleID = $this->raffleAPI->addRaffle( array( 'status' => 'Draft' ) );
+
+        $args = array(
+            'name' => 'New Raffle #' . $raffleID,
         );
 
-        $this->raffleAPI->addRaffle( $this->raffle_instance );
+        $this->raffleInstance = $this->raffleAPI->updateRaffle( $raffleID, $args );
 
-        $new_raffle_id = $this->raffleAPI->getRaffle()['id'];
+        if( $raffleID > 0 ){
 
-        if( $new_raffle_id && ! is_wp_error( $new_raffle_id ) ){
-
-            $redirectUrl = admin_url('admin.php?page=raffleleader_builder&post_id=' . $new_raffle_id);
+            $redirectUrl = admin_url('admin.php?page=raffleleader_builder&raffle_id=' . $raffleID);
 
             echo '<script>window.location.href="' . $redirectUrl . '";</script>';
             
@@ -44,18 +39,9 @@ class BuilderCallbacks extends BaseController{
     }
 
     public function builderContent(){
-        $post_id = isset( $_GET['post_id'] ) ? intval( $_GET['post_id'] ) : 0;
+        $raffle_id = isset( $_GET['raffle_id'] ) ? intval( $_GET['raffle_id'] ) : 0;
 
-        if( $post_id ){
-
-            $post = get_post( $post_id );
-
-            if( !$post ){
-                echo 'Post not found';
-                return;
-            }
-
-        } else {
+        if( !$raffle_id ){
             echo 'No post ID provided';
         }
         

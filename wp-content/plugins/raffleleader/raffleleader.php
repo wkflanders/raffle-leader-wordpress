@@ -34,7 +34,7 @@ function create_raffleleader_tables(){
         status VARCHAR(255) NOT NULL,
         template_id VARCHAR(255) NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        deleted_at TIMESTAMP DEFAULT NULL,
+        deleted_at TIMESTAMP NULL,
         PRIMARY KEY (raffle_id)
     ) $charset_collate;";
 
@@ -64,30 +64,11 @@ function create_raffleleader_tables(){
         PRIMARY KEY (entry_id)
     ) $charset_collate;";
 
-    // Will be future update for custom user templates
-
-    // $raffleTemplatesTableSQL = "CREATE TABLE {$wpdb->prefix}raffleleader_templates (
-    //     template_id INT AUTO_INCREMENT,
-    //     template_name VARCHAR(255) NOT NULL,
-    //     html_content LONGTEXT NOT NULL,
-    //     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    //     PRIMARY KEY (template_id)
-    // ) $charset_collate;";
-
     require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 
     dbDelta( $raffleTableSQL );
     dbDelta( $raffleContestantsTableSQL );
     dbDelta( $raffleEntriesTableSQL );
-    // dbDelta( $raffleTemplatesTableSQL );
-
-    // $updateRaffleTableSQL = "ALTER TABLE {$wpdb->prefix}raffleleader_raffles
-    // ADD CONSTRAINT fk_template_id
-    // FOREIGN KEY (template_id) REFERENCES {$wpdb->prefix}raffleleader_templates(template_id);";
-
-    // dbDelta( $updateRaffleTableSQL );
-
-    // $wpdb->query( $updateRaffleTableSQL );
 }
 
 // Activation

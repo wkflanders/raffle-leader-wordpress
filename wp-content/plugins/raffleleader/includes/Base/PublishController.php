@@ -65,12 +65,14 @@ class PublishController extends BaseController{
             $raffleInstance = $this->raffleAPI->getRaffle( $raffle_id );
 
             $preview_content = !is_null( $raffleInstance['content'] ) ? stripslashes( $raffleInstance['content'] ) : '';
+            $status = !is_null( $raffleInstance['status'] ) ? $raffleInstance['status'] : '';
             $start_date = !is_null( $raffleInstance['start_date'] ) ? $raffleInstance['start_date'] : '';
             $end_date = !is_null( $raffleInstance['end_date'] ) ? $raffleInstance['end_date'] : '';
             $timezone = !is_null( $raffleInstance['timezone'] ) ? $raffleInstance['timezone'] : '';
             
             $data = array(
                 'content' => $preview_content,
+                'status' => $status,
                 'startDate' => $start_date,
                 'endDate' => $end_date,
                 'timezone' => $timezone,

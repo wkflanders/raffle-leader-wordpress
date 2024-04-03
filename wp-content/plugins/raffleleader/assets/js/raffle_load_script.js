@@ -39,6 +39,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 section.style.position = null;
             });
 
+            if(raffleData.status === 'Finished'){
+                console.log('test');
+            }
+
             document.dispatchEvent(raffleLoaded);
         }
     }

@@ -27,6 +27,12 @@
     display: none !important;
 }
 
+.inactive-entry{
+    opacity: 0.7;
+    filter: greyscale(100%);
+    pointer-events: none;
+}
+
 .inactive-additional-entry{
     opacity: 0.5;
     filter: greyscale(100%);

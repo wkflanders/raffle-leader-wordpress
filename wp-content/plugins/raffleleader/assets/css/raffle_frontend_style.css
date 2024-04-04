@@ -28,7 +28,7 @@
 }
 
 .inactive-entry{
-    opacity: 0.7;
+    opacity: 0.85;
     filter: greyscale(100%);
     pointer-events: none;
 }

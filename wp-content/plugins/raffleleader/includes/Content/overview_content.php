@@ -131,15 +131,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </thead>
                     <tbody id="the-list">
                         <?php foreach ($raffles as $raffle) :
-                            $current_date = new DateTime(); // Define the current date
+                            $current_date = new DateTime('now', new DateTimeZone('America/New_York')); // Set a default timezone explicitly
                             $start_date_str = 'N/A'; // Default value
                             $end_date_str = 'N/A'; // Default value
-                    
+                            
+                            // Validate and set the timezone
+                            if (isset($raffle['timezone']) && in_array($raffle['timezone'], DateTimeZone::listIdentifiers())) {
+                                $timezone = new DateTimeZone($raffle['timezone']);
+                            } else {
+                                $timezone = new DateTimeZone('UTC'); // Default to a specific timezone if not specified or invalid
+                                echo "Invalid or unspecified timezone. Defaulting to America/New_York.<br>";
+                            }
+                            
                             // Attempt to create DateTime objects if dates are set
-                            $start_date = isset($raffle['start_date']) ? new DateTime($raffle['start_date']) : null;
-                            $end_date = isset($raffle['end_date']) ? new DateTime($raffle['end_date']) : null;
-                    
-                            // Format DateTime objects as strings if they are not null
+                            try {
+                                $start_date = isset($raffle['start_date']) ? new DateTime($raffle['start_date']) : null;
+                                $start_date->setTimezone($timezone);
+                                $end_date = isset($raffle['end_date']) ? new DateTime($raffle['end_date']) : null;
+                                $end_date->setTimezone($timezone);
+                                
+                            } catch (Exception $e) {
+                                echo "Error in date parsing: " . $e->getMessage() . "<br>";
+                                $start_date = null;
+                                $end_date = null;
+                            }
+                            
                             if ($start_date) {
                                 $start_date_str = $start_date->format('F j, Y g:i a');
                             }
@@ -147,7 +163,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 $end_date_str = $end_date->format('F j, Y g:i a');
                             }
                         
-                            $status = 'Draft'; // Default status
+                            $status = 'Draft';
                         
                             if ($start_date && $end_date) { // Check if both dates are DateTime objects
                                 if ($current_date < $start_date) {

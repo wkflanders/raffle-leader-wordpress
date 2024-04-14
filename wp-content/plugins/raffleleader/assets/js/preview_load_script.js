@@ -46,21 +46,6 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             layoutHeightForm.value = getComputedStyle(dropzone).getPropertyValue('height').replace(/^"|"$/g, '');
             layoutWidthForm.value = getComputedStyle(newPreview).getPropertyValue('width').replace(/^"|"$/g, '');
 
-        } else if(raffleData.template_id){
-            const btnTarget = document.getElementById(raffleData.template_id);
-            const templateBox = btnTarget.parentNode.parentNode.parentNode;
-            templateBox.classList.add('chosen-template');
-
-            injectTemplateHTML(raffleData.template_id);
-
-            document.dispatchEvent(loadPreviewEvent);
-
-            // Load preview height and width
-            const dropzone = document.getElementById('dropzone');
-            const newPreview = document.getElementById('preview');
-
-            layoutHeightForm.value = getComputedStyle(dropzone).getPropertyValue('height').replace(/^"|"$/g, '');
-            layoutWidthForm.value = getComputedStyle(newPreview).getPropertyValue('width').replace(/^"|"$/g, '');
         }
     }
 
@@ -194,105 +179,6 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         } else {
             counterHeader.innerText = `00`;
             counterText.innerText = 'STARTED';
-        }
-    }
-
-
-    function injectTemplateHTML(templateType){
-        const preview = document.getElementById('preview');
-
-        switch(templateType) {
-            case 'blankTemplate':
-                preview.outerHTML = `<div id="preview" class="raffleleader-preview-box raffleleader-preview-reset" style="width: 500px">
-                                        <div id="dropzone" class="raffleleader-dropzone" style="height: 600px"></div>
-                                        <div class="raffleleader-footer-wrapper">
-                                            <div class="raffleleader-footer">
-                                                <a class="raffleleader-footer-content">Raffle Rules and Terms</a>
-                                                <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.com/wp-content/uploads/2024/03/footer_text_logo.png"> For Yourself!</a>
-                                            </div>
-                                        </div>
-                                    </div>`;
-                window.zoomScale = 1;
-            break;
-
-            case 'twitterTemplate':
-                preview.outerHTML = `<div id="preview" class="raffleleader-preview-box raffleleader-preview-reset" style="width: 500px; transform: scale(1.0);">
-                                        <div id="dropzone" class="raffleleader-dropzone" style="height: 1000px;"><div class="raffleleader-section" style="position: absolute; left: 0px; top: 932.972px; z-index: 1; width: 166px; height: 67.0156px;"><div style="height: 100%; width: 100%;" data-type="counterDetails" class="raffleleader-counter-section">
-                                            <h2 style="font-size: 40px;">00</h2>
-                                            <p></p>
-                                        </div>
-                                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 882.542px; z-index: 1; width: 166.241px; height: 50.4219px;"><div style="height: 100%; width: 100%;" data-type="textDetails" class="raffleleader-text-section">
-                                            <h2 style="white-space: pre-wrap; font-size: 20px;">Start</h2>
-                                        </div>
-                                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 165.994px; top: 882.542px; z-index: 1; width: 167.703px; height: 50.4376px;"><div style="height: 100%; width: 100%;" data-type="textDetails" class="raffleleader-text-section">
-                                            <h2 style="white-space: pre-wrap; font-size: 20px;">Your Entries</h2>
-                                        </div>
-                                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 331px; top: 882.542px; z-index: 1; width: 169.063px; height: 50.4375px;"><div style="height: 100%; width: 100%;" data-type="textDetails" class="raffleleader-text-section">
-                                            <h2 style="white-space: pre-wrap; font-size: 20px;">End</h2>
-                                        </div>
-                                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="entry47" style="width: 500px; height: 100px; position: absolute; left: 0px; top: 557.571px; z-index: 1;"><div data-type="entryDetails" class="raffleleader-entry-section" style="border-top: 1px solid rgb(0, 0, 0);">
-                                            <form action="/submit-email" method="post">
-                                                <input type="email" name="email" placeholder="email...">
-                                                <button type="submit">→</button>
-                                            </form>
-                                        </div>
-                                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 165.994px; top: 932.972px; z-index: 1; width: 167.687px; height: 66.9999px;"><div style="height: 100%; width: 100%;" data-type="counterDetails" class="raffleleader-counter-section">
-                                            <h2 style="font-size: 40px;">00</h2>
-                                            <p></p>
-                                        </div>
-                                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 331px; top: 932.969px; z-index: 1; width: 169.162px; height: 67px;"><div style="height: 100%; width: 100%;" data-type="counterDetails" class="raffleleader-counter-section">
-                                            <h2 style="font-size: 40px;">00</h2>
-                                            <p></p>
-                                        </div>
-                                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 500px; height: 76.4151px;"><div style="height: 100%; width: 100%;" data-type="textDetails" class="raffleleader-text-section">
-                                            <h2 style="white-space: pre-wrap;">Header</h2>
-                                        </div>
-                                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 76.4063px; z-index: 1; width: 500px; height: 59.434px;"><div style="height: 100%; width: 100%;" data-type="textDetails" class="raffleleader-text-section">
-                                            <h2 style="white-space: pre-wrap; font-size: 25px;">Subheader</h2>
-                                        </div>
-                                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="width: 500px; height: 336.075px; position: absolute; left: 0px; top: 135.891px; z-index: 1;"><div data-type="imageDetails" class="raffleleader-image-section">
-                                            <p>Insert An Image Here</p>
-                                        </div>
-                                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" data-entry="entry47" style="width: 500px; height: 75px; position: absolute; left: 0px; top: 657.571px; z-index: 1;"><div data-type="XFollowDetails" class="raffleleader-additional-entry-section">
-                                            <div class="additional-entry-text-column">
-                                                <h2>Follow us on X/Twitter</h2>
-                                                <p>for an extra entry!</p>
-                                            </div>
-                                            <div class="additional-entry-button-column">
-                                                <button>+1</button>
-                                            </div>
-                                        </div>
-                                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" data-entry="entry47" style="width: 500px; height: 75px; position: absolute; left: 0px; top: 732.557px; z-index: 1;"><div data-type="XRepostDetails" class="raffleleader-additional-entry-section">
-                                            <div class="additional-entry-text-column">
-                                                <h2>Repost us on X/Twitter</h2>
-                                                <p>for an extra entry!</p>
-                                            </div>
-                                            <div class="additional-entry-button-column">
-                                                <button>+1</button>
-                                            </div>
-                                        </div>
-                                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="section" data-entry="entry47" style="width: 500px; height: 75px; position: absolute; left: 0px; top: 807.543px; z-index: 1;"><div data-type="XLikeDetails" class="raffleleader-additional-entry-section">
-                                            <div class="additional-entry-text-column">
-                                                <h2>Like us on X/Twitter</h2>
-                                                <p>for an extra entry!</p>
-                                            </div>
-                                            <div class="additional-entry-button-column">
-                                                <button>+1</button>
-                                            </div>
-                                        </div>
-                                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="section" style="position: absolute; left: 0px; top: 471.903px; z-index: 1; width: 500px; height: 85.6875px;"><div style="height: 100%; width: 100%; border-bottom: 1px solid rgb(0, 0, 0); justify-content: left; align-items: start;" data-type="textDetails" class="raffleleader-text-section">
-                                            <h2 style="white-space: pre-wrap; font-size: 15px; letter-spacing: 0px; font-weight: normal;">Body Text</h2>
-                                        </div>
-                                        <div style="display: none;" class="raffleleader-resize-handle"></div></div></div>
-                                        <div class="raffleleader-footer-wrapper">
-                                            <div class="raffleleader-ooter">
-                                                <a class="raffleleader-footer-content">Raffle Rules and Terms</a>
-                                                <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.com/wp-content/uploads/2024/03/footer_text_logo.png"> For Yourself!</a>
-                                            </div>
-                                        </div>
-                                    </div>`;
-                window.zoomScale = 1;
-            break;
         }
     }
 });

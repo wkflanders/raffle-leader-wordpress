@@ -146,9 +146,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             // Attempt to create DateTime objects if dates are set
                             try {
                                 $start_date = isset($raffle['start_date']) ? new DateTime($raffle['start_date']) : null;
-                                $start_date->setTimezone($timezone);
+                                if ($start_date !== null) {
+                                    $start_date->setTimezone($timezone);
+                                }
+
                                 $end_date = isset($raffle['end_date']) ? new DateTime($raffle['end_date']) : null;
-                                $end_date->setTimezone($timezone);
+                                if ($end_date !== null) {
+                                    $end_date->setTimezone($timezone);
+                                }
                                 
                             } catch (Exception $e) {
                                 echo "Error in date parsing: " . $e->getMessage() . "<br>";

@@ -12,6 +12,14 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     const endTimeInput = document.getElementById('endTime');
     const timezone = document.getElementById('timeZoneDropDownTitle');
 
+    const loadingMenu = document.querySelector('.loading-menu');
+    const navBar = document.getElementById('rlNavbar');
+    const templatesMenu = document.getElementById('templates');
+    const setupMenu = document.getElementById('setup');
+    
+    const templatesTab = navBar.querySelector('.rl-nav-tabs').querySelector('.templates-tab');
+    const setupTab = navBar.querySelector('.rl-nav-tabs').querySelector('.setup-tab');
+
     fetch('/wp-admin/admin-ajax.php?action=loadBuilderData&raffle_id=' + raffleID)
     .then(response => response.json())
     .then(data => {
@@ -39,13 +47,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
             document.dispatchEvent(loadPreviewEvent);
 
+            navBar.style.display = 'flex';
+            loadingMenu.style.display = 'none';
+
+            setupTab.classList.add('active-tab');
+            setupMenu.classList.add('active-tab');
+
             // Load preview height and width
             const dropzone = document.getElementById('dropzone');
             const newPreview = document.getElementById('preview');
 
             layoutHeightForm.value = getComputedStyle(dropzone).getPropertyValue('height').replace(/^"|"$/g, '');
             layoutWidthForm.value = getComputedStyle(newPreview).getPropertyValue('width').replace(/^"|"$/g, '');
+        } else {
+            navBar.style.display = 'flex';
+            loadingMenu.style.display = 'none';
 
+            templatesTab.classList.add('active-tab');
+            templatesMenu.classList.add('active-tab');
         }
     }
 

@@ -1,4 +1,4 @@
-<div id="templates" class="rl-tab-pane active-tab">
+<div id="templates" class="rl-tab-pane">
     <div class="rl-template-wrapper">
         <div class="rl-basics rl-grid-row first-row">
             <div class="label grid-item">

@@ -15,14 +15,17 @@
             <p>Choose a template before moving on</p>
         </div>
     </div>
-    <nav id="rlNavbar" class="rl-navbar">
+    <div class="loading-menu">
+        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+    <nav id="rlNavbar" class="rl-navbar" style="display: none;">
         <div class="rl-nav-logo">
             <img class="rl-text-logo" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/TEXT-LOGO.svg">
         </div>
         <ul class="rl-nav-tabs">
-            <li class="active-tab"><a class="noSelect" href="#templates">Templates</a></li>
-            <li><a class="noSelect" href="#setup">Set Up</a></li>
-            <li><a class="noSelect" href="#publish">Publish</a></li>
+            <li class="templates-tab"><a class="noSelect" href="#templates">Templates</a></li>
+            <li class="setup-tab"><a class="noSelect" href="#setup">Set Up</a></li>
+            <li class="publish-tab"><a class="noSelect" href="#publish">Publish</a></li>
         </ul>
         <ul class="rl-nav-extras">
             <li><a class="close" href="admin.php?page=raffleleader_plugin"></a></li>

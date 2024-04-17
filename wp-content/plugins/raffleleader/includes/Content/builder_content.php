@@ -1,5 +1,5 @@
 <div class="raffleleader-container">
-    <div id="saveModal" class="rl-save-modal">
+    <div id="saveModal" class="rl-modal">
         <div class="modal-content success-modal-content">
             <h2>Success!</h2>
             <p>Save was completed successfully</p>
@@ -7,6 +7,12 @@
         <div class="modal-content fail-modal-content">
             <h2>Failed!</h2>
             <p>Save was not completed successfully</p>
+        </div>
+    </div>
+    <div id="templateModal" class="rl-modal">
+        <div class="modal-content template-modal-content">
+            <h2>Hold on!</h2>
+            <p>Choose a template before moving on</p>
         </div>
     </div>
     <nav id="rlNavbar" class="rl-navbar">

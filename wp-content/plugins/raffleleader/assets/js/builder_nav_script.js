@@ -30,9 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 templateModalContent.style.display = "block";
                 templateModal.style.animation = "slideDown 1s forwards";
+                document.body.classList.add('shake-animation')
 
                 setTimeout(() => {
                     templateModal.style.animation = "slideUp 1.5s forwards";
+                    document.body.classList.remove('shake-animation');
+
                     setTimeout(() => {
                         templateModalContent.style.display = "none";
                     }, 500);

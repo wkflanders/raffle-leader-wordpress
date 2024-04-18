@@ -39,6 +39,20 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 section.style.position = null;
             });
 
+            const entrySection = preview.querySelector('.raffleleader-entry-section');
+            const emailInput = entrySection.querySelector('.raffleleader-email-input');
+            const emailBtn = entrySection.querySelector('.raffleleader-email-submit-btn');
+
+            if(raffleData.status.includes('Starts')){
+                entrySection.classList.add('inactive-entry');
+                emailInput.placeholder = 'This raffle is starting soon';
+                emailBtn.innerText = '⧗';
+            } else if(raffleData.status.includes('Finished')){
+                entrySection.classList.add('inactive-entry');
+                emailInput.placeholder = 'This raffle has finished';
+                emailBtn.innerText = '✓';
+            }
+
             document.dispatchEvent(raffleLoaded);
         }
     }

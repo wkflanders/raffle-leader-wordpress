@@ -67,7 +67,7 @@ class RaffleAPI {
 
         if( $args['active'] ){
             $current_date = current_time( 'mysql' );
-            $query .= $wpdb->prepare( " AND start_date <= %s AND end_date >= %s", $current_date, $current_date );
+            $query .= $wpdb->prepare( " AND end_date >= %s", $current_date, $current_date );
         }
 
         $allowed_orderby = array( 'raffle_id', 'start_date', 'end_date', 'created_at' );

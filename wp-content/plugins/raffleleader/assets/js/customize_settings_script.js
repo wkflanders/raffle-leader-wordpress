@@ -4987,8 +4987,13 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
     function insertImage(event){
         event.preventDefault();
+        const preview = document.getElementById('preview');
+        const dropzone = document.getElementById('dropzone');
+        const dropzoneHeight = parseInt(dropzone.style.height);
+        const previewWidth = parseInt(preview.style.width);
         const selectedSection = document.querySelector('.selected-raffleleader-section');
         const imgContainer = selectedSection.querySelector('.raffleleader-image-section');
+        const imgSection = imgContainer.parentNode;
         const imgElement = document.createElement('img');
         const imgFormURL = document.getElementById('imgURL');
 
@@ -5002,6 +5007,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
         file_frame.on('select', ()=>{
             const attachment = file_frame.state().get('selection').first().toJSON();
+            const aspectRatio = attachment.width / attachment.height;
 
             imgElement.src = attachment.url;
 
@@ -5010,6 +5016,17 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
             imgContainer.innerHTML = '';
             imgContainer.appendChild(imgElement);
+
+            if(attachment.height > dropzoneHeight){
+                imgSection.style.height = `${dropzoneHeight/2}px`;
+                imgSection.style.width = `${aspectRatio * parseInt(imgSection.style.height)}px`;
+            } else if(attachment.width > previewWidth){
+                imgSection.style.width = `${previewWidth}`;
+                imgSection.style.height = `${1/aspectRatio * parseInt(imgSection.style.width)}px`;
+            } else {
+                imgSection.style.height = `${attachment.height}`;
+                imgSection.style.width = `${aspectRatio * parseInt(imgSection.style.height)}`;
+            }
 
             const filename = new URL(attachment.url).pathname.split('/').pop();
 

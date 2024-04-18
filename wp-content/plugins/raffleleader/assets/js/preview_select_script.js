@@ -3,6 +3,11 @@ document.addEventListener("previewLoaded", ()=>{
     const preview = document.getElementById('preview');
     const customizeBox = document.getElementById('settingsWrapper');
 
+    let tutorialPageTwo = false;
+    document.addEventListener('tutorialPageTwo', ()=>{
+        tutorialPageTwo = true;
+    })
+
     preview.addEventListener('mousedown', (event)=>{
 
         if(event.button === 0){
@@ -51,6 +56,43 @@ document.addEventListener("previewLoaded", ()=>{
             editingElement.classList.add('visible-customize');
         } else {
             editingElement.classList.add('visible-customize');
+        }
+
+        if(tutorialPageTwo){
+            setTimeout(()=>{
+                const intro = introJs();
+                intro.setOptions({
+                    steps:[
+                        {
+                            element: customizeBox,
+                            intro: 'This menu lets you edit the design and functionality of your sections.',
+                            position: 'left',
+                        },
+                        {
+                            element: document.querySelector('.publish-tab'),
+                            intro: "Once you're happy with your raffle, go to the Publish tab to make it public!",
+                            position: 'bottom',
+                        },
+                        {
+                            element: document.querySelector('.save-btn'),
+                            intro: "Make sure to save your designs and edits.",
+                            position: 'bottom',
+                        },
+                        {
+                            element: document.querySelector('.help'),
+                            intro: "For additional help, visit our documentation page.",
+                            position: 'bottom',
+                        },
+                    ],
+                    showBullets: false,
+                    exitOnOverlayClick: false,
+                    disableInteraction: false,
+                    scrollToElement: false,
+                });
+
+                intro.start();
+                tutorialPageTwo = false;
+            }, 1000)
         }
     }
 

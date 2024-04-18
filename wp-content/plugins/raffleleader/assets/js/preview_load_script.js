@@ -2,6 +2,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     const urlParams = new URLSearchParams(window.location.search);
     const raffleID = urlParams.get('raffle_id');
     const loadPreviewEvent = new CustomEvent('previewLoaded');
+    const tutorialPageOne = new CustomEvent('tutorialPageOne');
+
+    let intro;
 
     const layoutHeightForm = document.getElementById('layoutHeightForm');
     const layoutWidthForm = document.getElementById('layoutWidthForm');
@@ -65,7 +68,43 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
             templatesTab.classList.add('active-tab');
             templatesMenu.classList.add('active-tab');
+
+            if(localStorage.getItem('tutorialDisabled') != 'true'){
+                intro = introJs();
+                intro.setOptions({
+                    steps:[
+                        {
+                            element: document.querySelector('.rl-container'),
+                            intro: "Welcome to the Raffle Leader tutorial! <br><br> <button class='skip-tutorial'>Disable Tutorial</button>",
+                            position: 'left',
+                        },
+                        {
+                            element: document.querySelector('.rl-basics'),
+                            intro: 'Choose a template to get started.',
+                            position: 'top',
+                        },
+                        {
+                            element: document.querySelector('.setup-tab'),
+                            intro: 'After selecting a template, go to Set Up to design and edit your raffle.',
+                        },
+                    ],
+                    showBullets: false,
+                    exitOnOverlayClick: false,
+                    disableInteraction: false,
+                    scrollToElement: false,
+                });
+
+                intro.start();
+                document.dispatchEvent(tutorialPageOne);
+                document.querySelector('.skip-tutorial').addEventListener('click', skipTutorial);
+            }
         }
+    }
+
+    function skipTutorial(){
+        localStorage.setItem('tutorialDisabled', 'true');
+
+        intro.exit();
     }
 
     function loadDateAndTime(raffleData){

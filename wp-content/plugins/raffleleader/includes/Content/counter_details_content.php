@@ -24,7 +24,7 @@
             <p>Track Entries</p>
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-counter">
-                    <button id="counterUserEntries" class="dropdown-counter-btn" data-type="counterUserEntries">Participant Entries</button>
+                    <button id="counterUserEntries" class="dropdown-counter-btn" data-type="counterUserEntries">User Entries</button>
                 </div>
             </div>
         </div>

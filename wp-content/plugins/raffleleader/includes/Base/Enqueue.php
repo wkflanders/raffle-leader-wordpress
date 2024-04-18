@@ -123,7 +123,7 @@ class Enqueue extends BaseController{
         wp_enqueue_script( 'raffleleader_preview_size_script', $this->plugin_url . '/assets/js/preview_size_script.js', array(), rand(111, 9999) );
 
         wp_enqueue_script( 'raffleleader_setup_general_settings_script', $this->plugin_url . '/assets/js/setup_general_settings_script.js', array(), rand(111, 9999) );
-
+        
         wp_enqueue_script( 'raffleleader_preview_save_script', $this->plugin_url . '/assets/js/preview_save_script.js', array(), rand(111, 9999) );
         wp_localize_script( 'raffleleader_preview_save_script', 'raffleleader_preview_save_object', array( 
             'ajax_url' => admin_url( 'admin-ajax.php' ),
@@ -135,6 +135,11 @@ class Enqueue extends BaseController{
             'ajax_url' => admin_url( 'admin-ajax.php' ),
             'security' => wp_create_nonce( 'nonce' ),
          ) );
+
+        wp_enqueue_script( 'raffleleader_publish_script', $this->plugin_url . '/assets/js/publish_script.js', array(), rand(111, 9999) );
+        wp_localize_script( 'raffleleader_publish_script', 'raffleleader_publish_object', array(
+            'newPostUrl' => admin_url( 'post-new.php' ),
+        ) );
             
         wp_enqueue_media();
     }

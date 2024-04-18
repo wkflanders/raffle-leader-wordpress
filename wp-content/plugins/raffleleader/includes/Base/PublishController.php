@@ -35,6 +35,8 @@ class PublishController extends BaseController{
 
         add_action( 'media_buttons', array( $this, 'addClassicEditorButton' ), 15 );
         add_action('admin_footer', array( $this, 'addClassicEditorModal' ));
+
+        add_action('admin_footer', array( $this, 'createNewRafflePost' ));
     }
 
     public function shortcodeHandler( $atts ){
@@ -195,5 +197,23 @@ class PublishController extends BaseController{
         ) );
 
         wp_send_json_success( $raffles );
+    }
+
+    public function createNewRafflePost(){
+        if( isset( $_GET['raffle_id'] ) && current_user_can( 'edit_posts' ) ){
+            $raffle_id = sanitize_text_field( $_GET['raffle_id'] );
+            $shortcode = '[raffleleader id=' . $raffle_id . ']';
+
+            echo "<script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const content = document.getElementById('content');
+                    if (content) {
+                        content.value = '" . esc_js($shortcode) . "';
+                    } else if (window.tinyMCE) {
+                        tinyMCE.activeEditor.setContent('" . esc_js($shortcode) . "');
+                    }
+                });
+            </script>";
+        }
     }
 }

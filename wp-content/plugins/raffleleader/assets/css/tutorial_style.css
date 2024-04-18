@@ -51,3 +51,14 @@
 .introjs-donebutton::before{
     display: none;
 }
+
+.skip-tutorial{
+    background-color: #1501FE !important;
+    color: white  !important;
+    border-radius: 4px  !important;
+    cursor: pointer  !important;
+    filter: none  !important;
+    border: none  !important;
+    font-family: 'Overpass';
+    padding: 0.8vh 1vw;
+}

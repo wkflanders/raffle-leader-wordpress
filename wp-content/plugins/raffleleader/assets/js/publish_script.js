@@ -11,4 +11,16 @@ document.addEventListener('previewLoaded', ()=>{
 
         window.location.href = newPostURL + '&raffle_id="' + raffleID + '"';
     });
+
+    newPageBtn.addEventListener('click', ()=>{
+        const newPageURL = raffleleader_publish_object.newPostUrl + "?post_type=page";
+
+        window.location.href = newPageURL + '&raffle_id="' + raffleID + '"';
+    });
+
+    insertPostBtn.addEventListener('click', ()=>{
+        const insertPostURL = raffleleader_publish_object.editPostUrl;
+
+        window.location.href = insertPostURL;
+    });
 });

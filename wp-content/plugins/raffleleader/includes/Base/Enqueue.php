@@ -139,6 +139,7 @@ class Enqueue extends BaseController{
         wp_enqueue_script( 'raffleleader_publish_script', $this->plugin_url . '/assets/js/publish_script.js', array(), rand(111, 9999) );
         wp_localize_script( 'raffleleader_publish_script', 'raffleleader_publish_object', array(
             'newPostUrl' => admin_url( 'post-new.php' ),
+            'editPostUrl' => admin_url( 'edit.php' ),
         ) );
             
         wp_enqueue_media();

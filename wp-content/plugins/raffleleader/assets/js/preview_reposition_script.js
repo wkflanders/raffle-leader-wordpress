@@ -95,6 +95,8 @@ document.addEventListener('previewLoaded', ()=>{
             dragStartX = (e.clientX - el.getBoundingClientRect().left) / zoomLevel;
             dragStartY = (e.clientY - el.getBoundingClientRect().top) / zoomLevel;
 
+            // const throttledDrag = throttle(drag, 10);
+
             document.addEventListener('mousemove', drag);
             document.addEventListener('mouseup', stopDrag);
         });
@@ -182,6 +184,19 @@ document.addEventListener('previewLoaded', ()=>{
                 });
             }
         });
+    }
+
+    function throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        };
     }
 
     // Creating a MutationObserver to observe for new elements

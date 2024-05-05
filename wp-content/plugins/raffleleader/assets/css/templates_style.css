@@ -17,7 +17,7 @@
     display: flex;
     align-items: center;
     height: 60vh;
-    border-bottom: 1px solid #1501FE;
+    border-bottom: 1px solid #000000;
     margin: 0;
     z-index: 50;
     position: relative;
@@ -31,8 +31,10 @@
     overflow-x: auto;
     scroll-behavior: smooth;
     z-index: 1;
-    box-shadow: inset -10px 0 10px -20px rgba(0,0,0,0.5), inset 15px 0 10px -20px rgba(0,0,0,0.5);
+    /* box-shadow: inset -10px 0 10px -20px rgba(0,0,0,0.5), inset 15px 0 10px -20px rgba(0,0,0,0.5); */
+    border-left: 1px solid black;
     overflow-y: hidden;
+    background-color: rgb(247, 247, 247);
 }
 
 .rl-template-carousel::webkit-scrollbar{
@@ -51,6 +53,10 @@
 
 .scroll-grid-btn-right {
     left: 96vw;
+}
+
+.scroll-grid-btn-left {
+    left: 28.5vw;
 }
 
 .scroll-grid-arrow {
@@ -136,10 +142,10 @@
     background-color: #1501FE;
 }
 
-.rl-template-wrapper .first-row {
+/* .rl-template-wrapper .first-row {
     border-top: 1px solid #1501FE;
     margin-top: 2vh;
-}
+} */
 
 .rl-template-wrapper .rl-sm {
     margin-bottom: 2vh;
@@ -165,7 +171,7 @@
     flex-direction: column;
     justify-content: center;
     border: none;
-    margin: 0 4vw 0 2vw;
+    margin: 0 3vw 0 4vw;
     text-align: left;
 }
 
@@ -176,7 +182,7 @@
 .rl-template-wrapper h2 {
     font-style: normal;
     font-weight: 1000;
-    font-size: 3vh;
+    font-size: 4vh;
     color: black;
 }
 

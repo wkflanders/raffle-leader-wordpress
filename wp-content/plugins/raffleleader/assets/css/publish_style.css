@@ -29,23 +29,30 @@
     margin-bottom: 5vh;
 }
 
+.publish-header h1{
+    font-size: 2.5vw
+}
+
 .publish-box{
     display: flex;
     width: 18vw;
     border: 1px solid black;
     border-radius: 10px;
     padding: 2.5vh;
+    padding-left: 4vh;
     flex-direction: column;
     margin: 0 2vh;
 }
 
 .publish-box h2{
-    text-align: center;
-    font-size: 2.2vh;
+    text-align: left;
+    font-size: 2.8vh;
     font-weight: 600;
+    margin-bottom: 1vh;
 }
 
 .publish-box p{
+    margin-top: 0;
     font-size: 1.5vh;
 }
 

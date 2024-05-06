@@ -5021,14 +5021,18 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 imgSection.style.height = `${dropzoneHeight/2}px`;
                 imgSection.style.width = `${aspectRatio * parseInt(imgSection.style.height)}px`;
             } else if(attachment.width > previewWidth){
-                imgSection.style.width = `${previewWidth}`;
+                imgSection.style.width = `${previewWidth}px`;
                 imgSection.style.height = `${1/aspectRatio * parseInt(imgSection.style.width)}px`;
             } else {
-                imgSection.style.height = `${attachment.height}`;
-                imgSection.style.width = `${aspectRatio * parseInt(imgSection.style.height)}`;
+                imgSection.style.width = `${attachment.width}px`;
+                imgSection.style.height = `${(1 / aspectRatio) * parseInt(imgSection.style.width)}px`;
             }
-
+            
             const filename = new URL(attachment.url).pathname.split('/').pop();
+
+            console.log(previewWidth);
+            console.log(attachment.width);
+            console.log(imgSection.style.width);
 
             imgFormURL.href = imgElement.src;
             imgFormURL.innerText = filename;

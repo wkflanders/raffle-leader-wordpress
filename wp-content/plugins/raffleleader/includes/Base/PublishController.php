@@ -99,6 +99,8 @@ class PublishController extends BaseController{
     
             if ( $contestant ) {
                 $contestant_id = $contestant['contestant_id'];
+
+                wp_send_json_success( 'Contestant logged in' );
             } else {
                 $ip = $_SERVER['REMOTE_ADDR'];
                 $contestantData = array(
@@ -107,21 +109,21 @@ class PublishController extends BaseController{
                 );
     
                 $contestant_id = $this->contestantsAPI->addContestant( $contestantData );
-            }
-    
-            if ( isset( $_POST['raffle_id'] ) && $contestant_id ) {
-                $raffle_id = intval($_POST['raffle_id']);
-                $entryData = array(
-                    'raffle_id' => $raffle_id,
-                    'contestant_id' => $contestant_id,
-                    'entry_type' => 'Email',
-                );
-    
-                $this->entriesAPI->addEntry( $entryData );
 
-                wp_send_json_success( 'Entry successfully counted' );
-            } else {
-                wp_send_json_error( 'Entry failed to be counted' );
+                if ( isset( $_POST['raffle_id'] ) && $contestant_id ) {
+                    $raffle_id = intval($_POST['raffle_id']);
+                    $entryData = array(
+                        'raffle_id' => $raffle_id,
+                        'contestant_id' => $contestant_id,
+                        'entry_type' => 'Email',
+                    );
+        
+                    $this->entriesAPI->addEntry( $entryData );
+    
+                    wp_send_json_success( 'Entry successfully counted' );
+                } else {
+                    wp_send_json_error( 'Entry failed to be counted' );
+                }
             }
         } else {
             wp_send_json_error( 'Invalid request.' );

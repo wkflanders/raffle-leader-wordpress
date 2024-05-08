@@ -92,7 +92,8 @@ class PublishController extends BaseController{
     public function handleEmailLogin(){
         check_ajax_referer( 'nonce', 'security' );
 
-        if ( isset( $_POST['contestant_email'] ) ) {
+        if ( isset( $_POST['contestant_email'] ) && isset( $_POST['raffle_id'] ) ) {
+            $raffle_id = intval($_POST['raffle_id']);
             $email = sanitize_email( $_POST['contestant_email'] );
     
             $contestant = $this->contestantsAPI->getContestantByEmail( $email );
@@ -100,7 +101,13 @@ class PublishController extends BaseController{
             if ( $contestant ) {
                 $contestant_id = $contestant['contestant_id'];
 
-                wp_send_json_success( 'Contestant logged in' );
+                $contestant_entries = $this->entriesAPI->getEntriesByContestantId( $contestant_id, $raffle_id );
+
+                wp_send_json_success( array(
+                    'contestant_id' => $contestant_id,
+                    'contestant_entries' => $contestant_entries,
+                ) );
+
             } else {
                 $ip = $_SERVER['REMOTE_ADDR'];
                 $contestantData = array(
@@ -110,22 +117,17 @@ class PublishController extends BaseController{
     
                 $contestant_id = $this->contestantsAPI->addContestant( $contestantData );
 
-                if ( isset( $_POST['raffle_id'] ) && $contestant_id ) {
-                    $raffle_id = intval($_POST['raffle_id']);
-                    $entryData = array(
-                        'raffle_id' => $raffle_id,
-                        'contestant_id' => $contestant_id,
-                        'entry_type' => 'Email',
-                    );
-        
-                    $this->entriesAPI->addEntry( $entryData );
+                $entryData = array(
+                    'raffle_id' => $raffle_id,
+                    'contestant_id' => $contestant_id,
+                    'entry_type' => 'Email',
+                );
     
-                    wp_send_json_success( 'Entry successfully counted' );
-                } else {
-                    wp_send_json_error( 'Entry failed to be counted' );
+                $this->entriesAPI->addEntry( $entryData );
+
+                wp_send_json_success( 'Entry successfully counted' );
                 }
-            }
-        } else {
+            } else {
             wp_send_json_error( 'Invalid request.' );
         }
     }

@@ -7,6 +7,8 @@ document.addEventListener('raffleLoaded', ()=>{
     const submitBtn = emailForm.querySelector('button');
     const emailInput = emailForm.querySelector('input');
     const raffleID = parseInt(emailForm.parentNode.parentNode.id, 10);
+    let contestantID;
+    let contestantEntries;
 
     const additionalEntrySections = document.querySelectorAll('.raffleleader-additional-entry-section');
     additionalEntrySections.forEach((additionalEntrySection)=>{
@@ -41,6 +43,16 @@ document.addEventListener('raffleLoaded', ()=>{
             if(!data.success){
                 throw new Error(`$HTTP error: ${response.status}`);
             }
+
+            contestantID = data.data.contestant_id;
+            contestantEntries = data.data.contestant_entries;
+
+            additionalEntrySections.forEach((additionalEntrySection)=>{
+                console.log(contestantEntries)
+                if(contestantEntries.some(entry => entry.entry_type === additionalEntrySection.getAttribute('data-type'))){
+                    updateEntryUI(additionalEntrySection.querySelector('button'))
+                }
+            })
 
         } catch (error){
             isSuccess = false;

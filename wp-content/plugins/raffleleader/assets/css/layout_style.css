@@ -2,13 +2,12 @@
     display: block;
     background-color: rgb(255, 255, 255);
     height: 95vh;
-    width: 19vw;
+    width: 20vw;
     border-right: 2px solid #1501FE;
     box-sizing: border-box;
     overflow-y: auto;
     overflow: overlay;
-    z-index: 2000;
-    padding: 0;
+    z-index: 2000;;
     direction: rtl;
 }
 
@@ -19,10 +18,9 @@
     direction: ltr;
     z-index: 80;
     width: 100%;
-    height: 80%;
+    height: 75%;
     background-color: rgb(255, 255, 255);
     border-bottom: 2px solid #1501FE;
-    
 }
 
 .raffle-options-header{
@@ -36,17 +34,19 @@
 }
 
 .layout-options > p{
-    color: gray;
+    color: hsl(0, 0%, 50%);
     text-align: center;
-    font-size: 1.8vh;
+    font-weight: 500;
+    padding-top: 1vh;
+    font-size: 1.65vh;
 }
 
 .layout-option-box{
-    border: 2px solid gray;
+    border: 1px solid black;
     opacity: 0.999; /* Fix white square box around draggable */
     width: auto;
     border-radius: 15px;
-    margin-bottom: 1.5vw;
+    margin-bottom: 1vw;
     margin-left: 3vh;
     margin-right: 3vh;
 }
@@ -54,27 +54,28 @@
 .layout-option-box > p{
     color: black;
     margin: 1vh 0 1vh 2vh;
-    font-weight: 900;
+    font-weight: bold;
     font-size: 2vh;
 }
 
 .layout-size{
     display: flex;
     flex-direction: column;
-    margin-top: 1vh;
 }
 
 .layout-size > p{
     color: gray;
     text-align: center;
-    font-size: 1.8vh;
+    font-weight: 500;
+    padding-top: 1vh;
+    font-size: 1.65vh;
 }
 
 .layout-size-input{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 1vh 0 1vh;
+    padding: 0 2.5vh 0 2.5vh;
 }
 
 .layout-size-input > p{
@@ -88,15 +89,19 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 10vh 0 2vh;
+    padding: 0 10vh 0 4vh;
+    margin-bottom: 0.5vh;
+
 }
 
 .layout-size-text > p{
+    vertical-align: center;
     color: gray;
     font-weight: 500;
-    font-size: 1.7vh;
     margin-top: 0;
-    margin-bottom: 1vh;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 1.8vh;
 }
 
 input[type="text"].layout-size-form{

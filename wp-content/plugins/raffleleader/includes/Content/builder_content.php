@@ -58,7 +58,7 @@
                             </div>
                         </div>
                         <div class="layout-size">
-                            <p>Adjust Your Raffle's Height and Width</p>
+                            <p>Adjust your raffle's height and width</p>
                             <div class="layout-size-row-wrapper">
                                 <div class="layout-size-row layout-size-text">
                                     <p>Width</p>

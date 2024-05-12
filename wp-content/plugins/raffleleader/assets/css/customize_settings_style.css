@@ -10,6 +10,7 @@
     color: gray;
     margin-bottom: 0.5vh;
     margin-left: 4vw;
+    font-size: 1.8vh;
 }
 
 .dropdown-display{
@@ -24,6 +25,7 @@
     border-radius: 10px;
     color: black;
     font-weight: bold;
+    margin-bottom: 1vh;
 }
 
 .dropdown-display > p{
@@ -109,6 +111,7 @@ input[type="text"]::placeholder{
     overflow: auto;
     border-radius: 10px;
     border: 1px solid black;
+    padding: 1vh
 }
 
 .dropdown-inline-btns{

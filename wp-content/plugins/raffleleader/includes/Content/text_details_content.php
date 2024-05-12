@@ -1,9 +1,7 @@
 <div id="textDetails" class="customize-box-content">
     <div class="dropdown-wrapper text-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="customize-settings-box">
             <p>Edit Text</p>
@@ -14,7 +12,7 @@
             </div>
         </div>
         <div class="customize-settings-box">
-            <p>Font Style </p>
+            <p>Font Style</p>
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-inline-btns">
                     <img id="textBoldBtn" class="inline-btn bold-btn" data-type="textfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">

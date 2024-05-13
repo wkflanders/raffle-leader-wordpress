@@ -1,6 +1,6 @@
 <div id="textDetails" class="customize-box-content">
     <div class="dropdown-wrapper text-design">
-        <div class="header-box">
+        <div class="header-box raffle-options-header">
             <h2 class="header-box-title">Text Design</h2>
         </div>
         <div class="customize-settings-box">

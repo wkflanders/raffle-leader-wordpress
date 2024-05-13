@@ -183,6 +183,8 @@
   border-radius: 10px;
   font-size: 2vh;
   color: black;
+  padding: 1.5vh;
+  white-space: pre-wrap;
 }
 
 .rules-and-terms-input::placeholder {

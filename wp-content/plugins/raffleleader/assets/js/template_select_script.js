@@ -118,10 +118,16 @@ document.addEventListener("generalSettingsLoaded", ()=>{
         switch(templateType) {
             case 'blankTemplate':
                 preview.outerHTML = `<div id="preview" class="raffleleader-preview-box raffleleader-preview-reset" style="width: 500px">
-                                        <div id="dropzone" class="raffleleader-dropzone" style="height: 600px"></div>
+                                        <div id="dropzone" class="raffleleader-dropzone" style="height: 600px">
+                                            <div style="display: none;" class="raffleleader-rules-and-terms-preview">
+                                                <button class="rules-and-terms-close-button">&times;</button>
+                                                <h2>Rules and Terms</h2>
+                                                <p class="raffleleader-rules-text"></p>
+                                            </div>
+                                        </div>
                                         <div class="raffleleader-footer-wrapper">
                                             <div class="raffleleader-footer">
-                                                <a class="raffleleader-footer-content raffleleader-rules-and-terms" data-rules="">Raffle Rules and Terms</a>
+                                                <a class="raffleleader-footer-content raffleleader-rules-and-terms">Raffle Rules and Terms</a>
                                                 <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.com/wp-content/uploads/2024/03/footer_text_logo.png"> For Yourself!</a>
                                             </div>
                                         </div>

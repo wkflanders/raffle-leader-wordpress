@@ -156,8 +156,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
     function inputRulesAndTerms(event){
         const inputForm = event.target;
         const inputText = inputForm.value;
-        const rulesContainer = document.querySelector('.raffleleader-rules-and-terms');
+        const formattedText = inputText.replace(/\n/g, '<br>')
+        const rulesElement = document.querySelector('.raffleleader-rules-text');
 
-        rulesContainer.setAttribute('data-rules', inputText);
+        rulesElement.innerHTML = formattedText;
     }
 })

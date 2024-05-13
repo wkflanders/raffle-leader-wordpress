@@ -109,11 +109,13 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     }
 
     function loadRulesAndTerms(){
-        const rulesContainer = document.querySelector('.raffleleader-rules-and-terms');
-        const rules = rulesContainer.getAttribute('data-rules');
-
+        const rulesElement = document.querySelector('.raffleleader-rules-text');
         const rulesAndTermsForm = document.getElementById('rulesAndTermsForm');
-        rulesAndTermsForm.value = rules;
+
+        const rulesText = rulesElement.innerHTML;
+        const inputFormText = rulesText.replace(/<br\s*[\/]?>/gi, '\n');
+
+        rulesAndTermsForm.value = inputFormText;
     }
 
     function loadDateAndTime(raffleData){

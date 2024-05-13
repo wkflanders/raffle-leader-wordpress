@@ -53,6 +53,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 emailBtn.innerText = '✓';
             }
 
+            const rulesAndTerms = document.querySelector('.raffleleader-rules-and-terms');
+            rulesAndTerms.addEventListener('click', displayRulesAndTerms);
+
+            const rulesAndTermsCloseBtn = document.querySelector('.rules-and-terms-close-button');
+            rulesAndTermsCloseBtn.addEventListener('click', closeRulesAndTerms);
+
             document.dispatchEvent(raffleLoaded);
         }
     }
@@ -130,6 +136,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
             counterHeader.innerText = `00`;
             counterText.innerText = 'STARTED';
         }
+    }
+
+    function displayRulesAndTerms(){
+        const rulesAndTermsPreview = preview.querySelector('.raffleleader-rules-and-terms-preview');
+        rulesAndTermsPreview.style.display = '';
+    }
+
+    function closeRulesAndTerms(){
+        const rulesAndTermsPreview = preview.querySelector('.raffleleader-rules-and-terms-preview');
+        rulesAndTermsPreview.style.display = 'none';
     }
 })
 

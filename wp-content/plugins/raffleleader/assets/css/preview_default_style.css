@@ -83,17 +83,18 @@
 }
 
 .raffleleader-footer-wrapper{
-    height: 7vh;
+    height: 50px;
     width: 100%;
     border-top: 1px solid black;
     overflow: none;
 }
 
 .raffleleader-footer{
-    margin-top: 3vh;
-    justify-content: center;
     display: flex;
     flex-direction: row;
+    margin-top: 15px;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 }
 

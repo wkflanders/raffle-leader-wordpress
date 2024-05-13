@@ -157,8 +157,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
         inputForm = event.target;
         const rulesContainer = document.querySelector('.raffleleader-rules-and-terms');
 
-        console.log(rulesContainer);
-
         rulesContainer.setAttribute('data-rules', this.value);
     }
 })

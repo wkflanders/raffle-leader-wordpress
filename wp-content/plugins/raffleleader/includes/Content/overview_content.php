@@ -252,7 +252,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <label for="bulk-action-selector-bottom" class="screen-reader-text">Select bulk action</label>
                 <select name="action2" id="bulk-action-selector-bottom">
                     <option value="-1">Bulk Actions</option>
-                    <option value="delete">Delete</option>
+                    <option value="delete">Trash</option>
                     <!-- Add more bulk actions as needed -->
                 </select>
                 <input type="submit" id="doaction2" class="button action" value="Apply">

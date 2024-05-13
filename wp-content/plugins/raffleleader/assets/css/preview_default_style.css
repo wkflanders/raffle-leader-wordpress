@@ -231,7 +231,6 @@
     height: 60%;
     border: 1px solid gray;
     border-radius: 10px;
-    font-size: 1.3vh;
 }
 
 .raffleleader-entry-section input[type="email"]:hover{
@@ -243,7 +242,6 @@
 }
 
 .raffleleader-entry-section input[type="email"]::placeholder{
-    font-size: 140%;
     color: rgb(176, 176, 176);
     font-weight: 500;
 }

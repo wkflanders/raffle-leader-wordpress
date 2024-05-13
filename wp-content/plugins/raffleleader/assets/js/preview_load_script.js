@@ -31,6 +31,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     })
     .then(data =>{
         loadDateAndTime(data);
+        loadRulesAndTerms();
         return data;
     })
     .catch(error => console.error('Error:', error));
@@ -105,6 +106,14 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         localStorage.setItem('tutorialDisabled', 'true');
 
         intro.exit();
+    }
+
+    function loadRulesAndTerms(){
+        const rulesContainer = document.querySelector('.raffleleader-rules-and-terms');
+        const rules = rulesContainer.getAttribute('data-rules');
+
+        const rulesAndTermsForm = document.getElementById('rulesAndTermsForm');
+        rulesAndTermsForm.value = rules;
     }
 
     function loadDateAndTime(raffleData){

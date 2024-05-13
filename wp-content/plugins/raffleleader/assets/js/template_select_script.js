@@ -138,7 +138,13 @@ document.addEventListener("generalSettingsLoaded", ()=>{
 
             case 'twitterTemplate':
                 preview.outerHTML = `<div id="preview" class="raffleleader-preview-box raffleleader-preview-reset" style="width: 500px; transform: scale(1.0);">
-                                                    <div id="dropzone" class="raffleleader-dropzone" style="height: 800px;"><div class="raffleleader-section" style="position: absolute; left: 0px; top: 0px; width: 500px; height: 86.7925px;"><div style="height: 100%; width: 100%;" data-type="textDetails" class="raffleleader-text-section">
+                                        <div id="dropzone" class="raffleleader-dropzone" style="height: 800px;">
+                                        <div style="display: none;" class="raffleleader-rules-and-terms-preview">
+                                                <button class="rules-and-terms-close-button">&times;</button>
+                                                <h2>Rules and Terms</h2>
+                                                <p class="raffleleader-rules-text"></p>
+                                            </div>
+                                        <div class="raffleleader-section" style="position: absolute; left: 0px; top: 0px; width: 500px; height: 86.7925px;"><div style="height: 100%; width: 100%;" data-type="textDetails" class="raffleleader-text-section">
                                         <h2 style="white-space: pre-wrap;">Header</h2>
                                     </div>
                                     <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 86.7812px; width: 500px; height: 65.9691px;"><div style="height: 100%; width: 100%; border-top: 1px solid rgb(60, 67, 74);" data-type="textDetails" class="raffleleader-text-section">
@@ -190,7 +196,13 @@ document.addEventListener("generalSettingsLoaded", ()=>{
 
             case 'instagramTemplate':
                 preview.outerHTML = `<div id="preview" class="raffleleader-preview-box raffleleader-preview-reset" style="width: 500px; transform: scale(1.0);">
-                                            <div id="dropzone" class="raffleleader-dropzone" style="height: 800px;"><div class="raffleleader-section" style="position: absolute; left: 0px; top: 0px; width: 500px; height: 86.7925px;"><div style="height: 100%; width: 100%;" data-type="textDetails" class="raffleleader-text-section">
+                                            <div id="dropzone" class="raffleleader-dropzone" style="height: 800px;">
+                                            <div style="display: none;" class="raffleleader-rules-and-terms-preview">
+                                                <button class="rules-and-terms-close-button">&times;</button>
+                                                <h2>Rules and Terms</h2>
+                                                <p class="raffleleader-rules-text"></p>
+                                            </div>
+                                            <div class="raffleleader-section" style="position: absolute; left: 0px; top: 0px; width: 500px; height: 86.7925px;"><div style="height: 100%; width: 100%;" data-type="textDetails" class="raffleleader-text-section">
                                 <h2 style="white-space: pre-wrap;">Header</h2>
                                 </div>
                                 <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 86.7812px; width: 500px; height: 65.9691px;"><div style="height: 100%; width: 100%; border-top: 1px solid rgb(60, 67, 74);" data-type="textDetails" class="raffleleader-text-section">
@@ -242,7 +254,13 @@ document.addEventListener("generalSettingsLoaded", ()=>{
 
         case 'tiktokTemplate':
             preview.outerHTML = `<div id="preview" class="raffleleader-preview-box raffleleader-preview-reset" style="width: 500px; transform: scale(1.0);">
-            <div id="dropzone" class="raffleleader-dropzone" style="height: 800px;"><div class="raffleleader-section" style="position: absolute; left: 0px; top: 0px; width: 500px; height: 86.7925px;"><div style="height: 100%; width: 100%;" data-type="textDetails" class="raffleleader-text-section">
+            <div id="dropzone" class="raffleleader-dropzone" style="height: 800px;">
+            <div style="display: none;" class="raffleleader-rules-and-terms-preview">
+                                                <button class="rules-and-terms-close-button">&times;</button>
+                                                <h2>Rules and Terms</h2>
+                                                <p class="raffleleader-rules-text"></p>
+                                            </div>
+            <div class="raffleleader-section" style="position: absolute; left: 0px; top: 0px; width: 500px; height: 86.7925px;"><div style="height: 100%; width: 100%;" data-type="textDetails" class="raffleleader-text-section">
                 <h2 style="white-space: pre-wrap;">Header</h2>
                 </div>
                 <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 86.7812px; width: 500px; height: 65.9691px;"><div style="height: 100%; width: 100%; border-top: 1px solid rgb(60, 67, 74);" data-type="textDetails" class="raffleleader-text-section">
@@ -294,7 +312,13 @@ document.addEventListener("generalSettingsLoaded", ()=>{
 
         case 'plaunchTemplate':
             preview.outerHTML = `<div id="preview" class="raffleleader-preview-box raffleleader-preview-reset" style="width: 500px; transform: scale(1.0);">
-            <div id="dropzone" class="raffleleader-dropzone" style="height: 800px;"><div class="raffleleader-section" style="position: absolute; left: 0px; top: 0px; width: 500px; height: 86.7925px;"><div style="height: 100%; width: 100%;" data-type="textDetails" class="raffleleader-text-section">
+            <div id="dropzone" class="raffleleader-dropzone" style="height: 800px;">
+            <div style="display: none;" class="raffleleader-rules-and-terms-preview">
+                                                <button class="rules-and-terms-close-button">&times;</button>
+                                                <h2>Rules and Terms</h2>
+                                                <p class="raffleleader-rules-text"></p>
+                                            </div>
+            <div class="raffleleader-section" style="position: absolute; left: 0px; top: 0px; width: 500px; height: 86.7925px;"><div style="height: 100%; width: 100%;" data-type="textDetails" class="raffleleader-text-section">
                 <h2 style="white-space: pre-wrap;">Header</h2>
                 </div>
                 <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 86.7812px; width: 500px; height: 65.9691px;"><div style="height: 100%; width: 100%; border-top: 1px solid rgb(60, 67, 74);" data-type="textDetails" class="raffleleader-text-section">
@@ -340,7 +364,13 @@ document.addEventListener("generalSettingsLoaded", ()=>{
 
         case 'referRaffle':
             preview.outerHTML = `<div id="preview" class="raffleleader-preview-box raffleleader-preview-reset" style="width: 500px; transform: scale(1.0);">
-            <div id="dropzone" class="raffleleader-dropzone" style="height: 700px;"><div class="raffleleader-section" style="position: absolute; left: 0px; top: 0px; width: 500px; height: 86.7925px;"><div style="height: 100%; width: 100%;" data-type="textDetails" class="raffleleader-text-section">
+            <div id="dropzone" class="raffleleader-dropzone" style="height: 700px;">
+            <div style="display: none;" class="raffleleader-rules-and-terms-preview">
+                                                <button class="rules-and-terms-close-button">&times;</button>
+                                                <h2>Rules and Terms</h2>
+                                                <p class="raffleleader-rules-text"></p>
+                                            </div>
+            <div class="raffleleader-section" style="position: absolute; left: 0px; top: 0px; width: 500px; height: 86.7925px;"><div style="height: 100%; width: 100%;" data-type="textDetails" class="raffleleader-text-section">
                 <h2 style="white-space: pre-wrap;">Header</h2>
                 </div>
                 <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 86.7812px; width: 500px; height: 65.9691px;"><div style="height: 100%; width: 100%; border-top: 1px solid rgb(60, 67, 74);" data-type="textDetails" class="raffleleader-text-section">

@@ -15,9 +15,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     (function(){
         const timezoneDropdown = document.getElementById('timezoneList');
-
         const timezones = moment.tz.names();
-
         const defaultTimezone = 'UTC' // momentjs uses outdated naming
 
         timezones.forEach((timezone)=>{
@@ -47,6 +45,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
                 adjustTimeCounters(currentTimezone.textContent, liElement.textContent);
             });
+
+            const rulesBox = document.getElementById('rulesAndTermsForm');
+
+            rulesBox.addEventListener('input', inputRulesAndTerms);
         });
 
         document.dispatchEvent(generalSettingsLoaded);
@@ -149,5 +151,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 counterText.innerText = 'ENDED';
             }
         });
+    }
+
+    function inputRulesAndTerms(event){
+        inputForm = event.target;
+        const rulesContainer = document.querySelector('.raffleleader-rules-and-terms');
+
+        console.log(rulesContainer);
+
+        rulesContainer.setAttribute('data-rules', this.value);
     }
 })

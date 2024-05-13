@@ -298,6 +298,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'textAlign':
                 selectedElement = selectedSection.querySelector('.raffleleader-text-section');
                 selectedElement.style.justifyContent = 'left';
+                selectedElement.style.textAlign = 'left';
 
                 document.querySelector('.inline-btn-halign-active').classList.remove('inline-btn-halign-active');;
                 inputLeftBtn.classList.add('inline-btn-halign-active');
@@ -313,6 +314,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'textAlign':
                 selectedElement = selectedSection.querySelector('.raffleleader-text-section');
                 selectedElement.style.justifyContent = 'right';
+                selectedElement.style.textAlign = 'right';
 
                 document.querySelector('.inline-btn-halign-active').classList.remove('inline-btn-halign-active');;
                 inputRightBtn.classList.add('inline-btn-halign-active');
@@ -328,6 +330,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'textAlign':
                 selectedElement = selectedSection.querySelector('.raffleleader-text-section');
                 selectedElement.style.justifyContent = 'center';
+                selectedElement.style.textAlign = 'center';
 
                 document.querySelector('.inline-btn-halign-active').classList.remove('inline-btn-halign-active');;
                 inputCenterBtn.classList.add('inline-btn-halign-active');

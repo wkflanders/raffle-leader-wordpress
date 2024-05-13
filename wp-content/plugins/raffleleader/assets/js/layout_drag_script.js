@@ -100,7 +100,7 @@ document.addEventListener('previewLoaded', () => {
         switch(ID){
             case 'textBox':
                 return `<div style="height: 100%; width: 100%;" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap;">Text</h2>
+                            <h2 style="white-space: pre-wrap; text-align: center;">Text</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-resize-handle"></div>`;
 

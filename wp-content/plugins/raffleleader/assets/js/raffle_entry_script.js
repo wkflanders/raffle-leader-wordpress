@@ -66,6 +66,7 @@ document.addEventListener('raffleLoaded', ()=>{
 
     async function handleAdditionalEntry(event){
         const entryBtn = event.target;
+        entryBtn.disabled = true;
 
         const contestantEmail = emailInput.value;
         const URL = entryBtn.getAttribute('data-link');

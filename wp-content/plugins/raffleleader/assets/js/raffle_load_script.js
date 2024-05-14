@@ -43,6 +43,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
             const emailInput = entrySection.querySelector('.raffleleader-email-input');
             const emailBtn = entrySection.querySelector('.raffleleader-email-submit-btn');
 
+            const additionalEntrySections = document.querySelectorAll('.raffleleader-additional-entry-section');
+
             if(raffleData.status.includes('Starts')){
                 entrySection.classList.add('inactive-entry');
                 emailInput.placeholder = 'This raffle is starting soon';
@@ -51,6 +53,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 entrySection.classList.add('inactive-entry');
                 emailInput.placeholder = 'This raffle has finished';
                 emailBtn.innerText = '✓';
+                
+                additionalEntrySections.forEach((additionalEntrySection)=>{
+                    additionalEntrySection.classList.add('inactive-additional-entry')
+                    additionalEntrySection.querySelector('button').innerHTML = '✓';
+                })
+
             }
 
             const rulesAndTerms = document.querySelector('.raffleleader-rules-and-terms');

@@ -146,6 +146,8 @@ class Enqueue extends BaseController{
     }
 
     public function enqueueRaffleOverview(){
+        wp_enqueue_script( 'raffleleader_overview_script', $this->plugin_url . '/assets/js/overview_script.js', array(), rand(111, 9999) );
+
         wp_enqueue_style( 'raffleleader_overview_table_style', $this->plugin_url . '/assets/css/overview_table_style.css', array(), rand(111, 9999) );
     }
 

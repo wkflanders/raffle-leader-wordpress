@@ -48,7 +48,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 ?>
-<h1 class="wp-heading-inline">Raffle Leader</h1>
+<nav class="raffleleader-overview-navbar">
+    <div class="raffleleader-overview-logo-container">
+        <img class="raffleleader-overview-logo" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/TEXT-LOGO.svg">
+    </div>
+    <div class="raffleleader-overview-btn-container">
+        <button class="raffleleader-overview-create-btn" onclick="createNewRaffle">Create New Raffle</button>
+    </div>
+</nav>
 <div class="wrap">
     <ul class="subsubsub">
         <li><a href="<?php echo esc_url(add_query_arg('view', 'all', admin_url('admin.php?page=raffleleader_plugin'))); ?>" <?php echo $currentView === 'all' ? 'class="current"' : ''; ?>>All</a> |</li>

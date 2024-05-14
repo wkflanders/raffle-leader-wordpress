@@ -156,7 +156,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                     <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 452.813px; width: 500px; height: 75.4255px;"><div style="height: 100%; width: 100%; justify-content: center; align-items: center; border-top: 1px solid rgb(60, 67, 74);" data-type="textDetails" class="raffleleader-text-section">
                                         <h2 style="white-space: pre-wrap; font-size: 15px; font-weight: normal; letter-spacing: 0px;">Enter your body text here!</h2>
                                     </div>
-                                    <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="5raffleID" style="width: 500px; height: 89.5938px; position: absolute; left: 0px; top: 528.234px;"><div data-type="entryDetails" class="raffleleader-entry-section">
+                                    <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="${raffleID}raffleID" style="width: 500px; height: 89.5938px; position: absolute; left: 0px; top: 528.234px;"><div data-type="entryDetails" class="raffleleader-entry-section">
                                         <form class="raffleleader-email-submit" action="/submit-email" method="post">
                                             <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required="">
                                             <button class="raffleleader-email-submit-btn ld-over-full" type="submit">
@@ -164,7 +164,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                             </button>
                                         </form>
                                     </div>
-                                    <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" data-entry="5raffleID" style="width: 500px; height: 90.9091px; position: absolute; left: 0px; top: 617.82px;"><div data-type="XFollowDetails" class="raffleleader-additional-entry-section" style="border-top: 1px solid rgb(60, 67, 74);">
+                                    <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" data-entry="${raffleID}raffleID" style="width: 500px; height: 90.9091px; position: absolute; left: 0px; top: 617.82px;"><div data-type="XFollowDetails" class="raffleleader-additional-entry-section" style="border-top: 1px solid rgb(60, 67, 74);">
                                         <div class="raffleleader-additional-entry-text-column">
                                             <h2>Follow us on X</h2>
                                             <p>for an extra entry!</p>
@@ -173,7 +173,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                             <button data-link="https://twitter.com/">+1</button>
                                         </div>
                                     </div>
-                                    <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" data-entry="5raffleID" style="width: 500px; height: 91.2813px; position: absolute; left: 0px; top: 708.719px;"><div data-type="XRepostDetails" class="raffleleader-additional-entry-section" style="border-top: 1px solid rgb(60, 67, 74);">
+                                    <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" data-entry="${raffleID}raffleID" style="width: 500px; height: 91.2813px; position: absolute; left: 0px; top: 708.719px;"><div data-type="XRepostDetails" class="raffleleader-additional-entry-section" style="border-top: 1px solid rgb(60, 67, 74);">
                                         <div class="raffleleader-additional-entry-text-column">
                                             <h2>Repost us on X</h2>
                                             <p>for an extra entry!</p>
@@ -214,7 +214,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                 <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 452.813px; width: 500px; height: 75.4255px;"><div style="height: 100%; width: 100%; justify-content: center; align-items: center; border-top: 1px solid rgb(60, 67, 74);" data-type="textDetails" class="raffleleader-text-section">
                                 <h2 style="white-space: pre-wrap; font-size: 15px; font-weight: normal; letter-spacing: 0px;">Enter your body text here!</h2>
                                 </div>
-                                <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="5raffleID" style="width: 500px; height: 89.5938px; position: absolute; left: 0px; top: 528.234px;"><div data-type="entryDetails" class="raffleleader-entry-section">
+                                <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="${raffleID}raffleID" style="width: 500px; height: 89.5938px; position: absolute; left: 0px; top: 528.234px;"><div data-type="entryDetails" class="raffleleader-entry-section">
                                 <form class="raffleleader-email-submit" action="/submit-email" method="post">
                                     <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required="">
                                     <button class="raffleleader-email-submit-btn ld-over-full" type="submit">
@@ -222,7 +222,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                     </button>
                                 </form>
                                 </div>
-                                <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" data-entry="5raffleID" style="width: 500px; height: 90.617px; position: absolute; left: 0px; top: 617.812px;"><div data-type="instaFollowDetails" class="raffleleader-additional-entry-section" style="border-top: 1px solid rgb(60, 67, 74);">
+                                <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" data-entry="${raffleID}raffleID" style="width: 500px; height: 90.617px; position: absolute; left: 0px; top: 617.812px;"><div data-type="instaFollowDetails" class="raffleleader-additional-entry-section" style="border-top: 1px solid rgb(60, 67, 74);">
                                 <div class="raffleleader-additional-entry-text-column">
                                     <h2>Follow us on Instagram</h2>
                                     <p>for an extra entry!</p>
@@ -231,7 +231,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                     <button data-link="https://instagram.com/">+1</button>
                                 </div>
                                 </div>
-                                <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" data-entry="5raffleID" style="width: 500px; height: 91.5781px; position: absolute; left: 0px; top: 708.422px;"><div data-type="instaLikeDetails" class="raffleleader-additional-entry-section" style="border-top: 1px solid rgb(60, 67, 74);">
+                                <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" data-entry="${raffleID}raffleID" style="width: 500px; height: 91.5781px; position: absolute; left: 0px; top: 708.422px;"><div data-type="instaLikeDetails" class="raffleleader-additional-entry-section" style="border-top: 1px solid rgb(60, 67, 74);">
                                 <div class="raffleleader-additional-entry-text-column">
                                     <h2>Like us on Instagram</h2>
                                     <p>for an extra entry!</p>
@@ -272,7 +272,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                 <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 452.813px; width: 500px; height: 75.4255px;"><div style="height: 100%; width: 100%; justify-content: center; align-items: center; border-top: 1px solid rgb(60, 67, 74);" data-type="textDetails" class="raffleleader-text-section">
                 <h2 style="white-space: pre-wrap; font-size: 15px; font-weight: normal; letter-spacing: 0px;">Enter your body text here!</h2>
                 </div>
-                <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="5raffleID" style="width: 500px; height: 89.5938px; position: absolute; left: 0px; top: 528.234px;"><div data-type="entryDetails" class="raffleleader-entry-section">
+                <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="${raffleID}raffleID" style="width: 500px; height: 89.5938px; position: absolute; left: 0px; top: 528.234px;"><div data-type="entryDetails" class="raffleleader-entry-section">
                 <form class="raffleleader-email-submit" action="/submit-email" method="post">
                     <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required="">
                     <button class="raffleleader-email-submit-btn ld-over-full" type="submit">
@@ -280,7 +280,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                     </button>
                 </form>
                 </div>
-                <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" data-entry="5raffleID" style="width: 500px; height: 91.5781px; position: absolute; left: 0px; top: 708.422px;"><div data-type="tiktokLikeDetails" class="raffleleader-additional-entry-section" style="border-top: 1px solid rgb(60, 67, 74);">
+                <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" data-entry="${raffleID}raffleID" style="width: 500px; height: 91.5781px; position: absolute; left: 0px; top: 708.422px;"><div data-type="tiktokLikeDetails" class="raffleleader-additional-entry-section" style="border-top: 1px solid rgb(60, 67, 74);">
                 <div class="raffleleader-additional-entry-text-column">
                 <h2>Like us on TikTok</h2>
                 <p>for an extra entry!</p>
@@ -289,7 +289,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                 <button data-link="https://tiktok.com/">+1</button>
                 </div>
                 </div>
-                <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" data-entry="5raffleID" style="width: 500px; height: 90.6094px; position: absolute; left: 0px; top: 617.812px;"><div data-type="tiktokFollowDetails" class="raffleleader-additional-entry-section" style="border-top: 1px solid rgb(60, 67, 74);">
+                <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" data-entry="${raffleID}raffleID" style="width: 500px; height: 90.6094px; position: absolute; left: 0px; top: 617.812px;"><div data-type="tiktokFollowDetails" class="raffleleader-additional-entry-section" style="border-top: 1px solid rgb(60, 67, 74);">
                 <div class="raffleleader-additional-entry-text-column">
                 <h2>Follow us on TikTok</h2>
                 <p>for an extra entry!</p>
@@ -330,7 +330,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                 <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 452.813px; width: 500px; height: 157.156px;"><div style="height: 100%; width: 100%; justify-content: center; align-items: center; border-top: 1px solid rgb(60, 67, 74);" data-type="textDetails" class="raffleleader-text-section">
                 <h2 style="white-space: pre-wrap; font-size: 20px; font-weight: normal; letter-spacing: 0px;">Enter your body text here!</h2>
                 </div>
-                <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="5raffleID" style="width: 500px; height: 89.5938px; position: absolute; left: 0px; top: 609.969px;"><div data-type="entryDetails" class="raffleleader-entry-section" style="border-bottom: 1px solid rgb(60, 67, 74);">
+                <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="${raffleID}raffleID" style="width: 500px; height: 89.5938px; position: absolute; left: 0px; top: 609.969px;"><div data-type="entryDetails" class="raffleleader-entry-section" style="border-bottom: 1px solid rgb(60, 67, 74);">
                 <form class="raffleleader-email-submit" action="/submit-email" method="post">
                     <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required="">
                     <button class="raffleleader-email-submit-btn ld-over-full" type="submit">
@@ -382,7 +382,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                 <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 452.813px; width: 500px; height: 75.4255px;"><div style="height: 100%; width: 100%; justify-content: center; align-items: center; border-top: 1px solid rgb(60, 67, 74);" data-type="textDetails" class="raffleleader-text-section">
                 <h2 style="white-space: pre-wrap; font-size: 15px; font-weight: normal; letter-spacing: 0px;">Enter your body text here!</h2>
                 </div>
-                <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="5raffleID" style="width: 500px; height: 89.5938px; position: absolute; left: 0px; top: 528.234px;"><div data-type="entryDetails" class="raffleleader-entry-section">
+                <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="${raffleID}raffleID" style="width: 500px; height: 89.5938px; position: absolute; left: 0px; top: 528.234px;"><div data-type="entryDetails" class="raffleleader-entry-section">
                 <form class="raffleleader-email-submit" action="/submit-email" method="post">
                     <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required="">
                     <button class="raffleleader-email-submit-btn ld-over-full" type="submit">

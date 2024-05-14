@@ -100,9 +100,18 @@ class PublishController extends BaseController{
     
             if ( $contestant ) {
                 $contestant_id = $contestant['contestant_id'];
-
                 $contestant_entries = $this->entriesAPI->getEntriesByContestantId( $contestant_id, $raffle_id );
 
+                if( empty( $contestant_entries ) ){
+                    $entryData = array(
+                        'raffle_id' => $raffle_id,
+                        'contestant_id' => $contestant_id,
+                        'entry_type' => 'Email',
+                    );
+        
+                    $this->entriesAPI->addEntry( $entryData );
+                }
+                
                 wp_send_json_success( array(
                     'contestant_id' => $contestant_id,
                     'contestant_entries' => $contestant_entries,
@@ -142,8 +151,16 @@ class PublishController extends BaseController{
 
             $contestant = $this->contestantsAPI->getContestantByEmail( $email );
     
-            if ($contestant) {
+            if( $contestant ) {
                 $contestant_id = $contestant['contestant_id'];
+                // $contestant_entries = $this->entriesAPI->getEntriesByContestantId( $contestant_id, $raffle_id );
+
+                // foreach( $contestant_entries as $entry ){
+                //     if( $entry['entry_type'] === $entry_type ){
+                //         wp_send_json_success( 'Entry already counted for this contestant' );
+                //         return;
+                //     }
+                // }
             } else {
                 $ip = $_SERVER['REMOTE_ADDR'];
                 $contestantData = array(

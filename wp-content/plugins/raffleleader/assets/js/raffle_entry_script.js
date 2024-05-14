@@ -47,8 +47,9 @@ document.addEventListener('raffleLoaded', ()=>{
             contestantID = data.data.contestant_id;
             contestantEntries = data.data.contestant_entries;
 
+            console.log(contestantEntries)
+
             additionalEntrySections.forEach((additionalEntrySection)=>{
-                console.log(contestantEntries)
                 if(contestantEntries.some(entry => entry.entry_type === additionalEntrySection.getAttribute('data-type'))){
                     updateEntryUI(additionalEntrySection.querySelector('button'))
                 }
@@ -149,6 +150,8 @@ document.addEventListener('raffleLoaded', ()=>{
     }
 
     function updateEntryUI(element){
+
+
         setTimeout(()=>{
             element.classList.add('completed-additional-entry');
             element.innerHTML = '✓';

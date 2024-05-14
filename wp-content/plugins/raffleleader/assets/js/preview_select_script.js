@@ -584,6 +584,12 @@ document.addEventListener("previewLoaded", ()=>{
     }
 
     function loadXFollowDetails(element){
+        const handle = element.querySelector('button').getAttribute('data-link');
+        const urlParams = new URLSearchParams(handle.split('?')[1]);
+        const cleanedHandle = urlParams.get('screen_name');
+        const XFollowForm = document.getElementById('XFollowForm');
+        XFollowForm.value = cleanedHandle;
+
         // Load XFollow settings
         const headerForm = document.getElementById('XFollowHeaderForm');
         const subheaderForm = document.getElementById('XFollowSubheaderForm');
@@ -703,6 +709,14 @@ document.addEventListener("previewLoaded", ()=>{
     }
 
     function loadXRepostDetails(element){
+        const URL = element.querySelector('button').getAttribute('data-link');
+        const XRepostForm = document.getElementById('XRepostForm');
+        if(URL === 'https://twitter.com/'){
+            XRepostForm.value = '';
+        } else {
+            XRepostForm.value = URL;
+        }
+
         // Load XRepost settings
         const headerForm = document.getElementById('XRepostHeaderForm');
         const subheaderForm = document.getElementById('XRepostSubheaderForm');
@@ -822,6 +836,14 @@ document.addEventListener("previewLoaded", ()=>{
     }
 
     function loadXLikeDetails(element){
+        const URL = element.querySelector('button').getAttribute('data-link');
+        const XLikeForm = document.getElementById('XLikeForm');
+        if(URL === 'https://twitter.com/'){
+            XLikeForm.value = '';
+        } else {
+            XLikeForm.value = URL;
+        }
+
         // Load XLike settings
         const headerForm = document.getElementById('XLikeHeaderForm');
         const subheaderForm = document.getElementById('XLikeSubheaderForm');
@@ -941,20 +963,26 @@ document.addEventListener("previewLoaded", ()=>{
     }
 
     function loadInstaFollowDetails(element){
-        // Load Insta Like settings
+        const handle = element.querySelector('button').getAttribute('data-link');
+        const urlParts = handle.split('/');
+        const cleanedHandle = urlParts[urlParts.length - 2] || urlParts[urlParts.length - 1];
+        const instaFollowForm = document.getElementById('instaFollowForm');
+        instaFollowForm.value = cleanedHandle;
+
+        // Load Insta Follow settings
         const headerForm = document.getElementById('instaFollowHeaderForm');
         const subheaderForm = document.getElementById('instaFollowSubheaderForm');
         const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
         const headerElement = textElement.querySelector('h2');
         const subheaderElement = textElement.querySelector('p');
 
-        // Insta Like text
+        // Insta Follow text
         const headerText = headerElement.textContent;
         const subheaderText = subheaderElement.textContent;
         headerForm.value = headerText;
         subheaderForm.value = subheaderText;
 
-        // Insta Like font 
+        // Insta Follow font 
         const headerFontList = document.getElementById('instaFollowHeaderList');
         const headerFontDisplay = document.getElementById('instaFollowHeaderDropDownTitle');
         const subheaderFontList = document.getElementById('instaFollowSubheaderList');
@@ -1000,7 +1028,7 @@ document.addEventListener("previewLoaded", ()=>{
         instaFollowSubheaderForm.value = instaFollowSubheaderColorHex;
         instaFollowSubheaderHexBox.style.backgroundColor = instaFollowSubheaderColorHex;
         
-        // Insta Like button color
+        // Insta Follow button color
         const instaFollowButtonElement = element.querySelector('button');
         const instaFollowButtonColorForm = document.getElementById('instaFollowButtonColorForm');
 
@@ -1010,7 +1038,7 @@ document.addEventListener("previewLoaded", ()=>{
         instaFollowButtonColorForm.value = instaFollowButtonColorHex;
         instaFollowButtonHexBox.style.backgroundColor = instaFollowButtonColorHex;
 
-        // Insta Like background color
+        // Insta Follow background color
         const instaFollowBackgroundColorForm = document.getElementById('instaFollowBackgroundColorForm');
         const instaFollowBackgroundHexBox = document.getElementById('instaFollowBackgroundColorClick');
         const instaFollowBackgroundColorRGB = window.getComputedStyle(element).getPropertyValue('background-color').replace(/^"|"$/g, '');
@@ -1018,7 +1046,7 @@ document.addEventListener("previewLoaded", ()=>{
         instaFollowBackgroundColorForm.value = instaFollowBackgroundColorHex;
         instaFollowBackgroundHexBox.style.backgroundColor = instaFollowBackgroundColorHex;
 
-        // Insta Like border color
+        // Insta Follow border color
         const instaFollowBorderColorForm = document.getElementById('instaFollowBorderColorForm');
         const instaFollowBorderHexBox = document.getElementById('instaFollowBorderColorClick');
         const instaFollowBorderColorRGB = window.getComputedStyle(element).getPropertyValue('border-color').replace(/^"|"$/g, '');
@@ -1026,7 +1054,7 @@ document.addEventListener("previewLoaded", ()=>{
         instaFollowBorderColorForm.value = instaFollowBorderColorHex;
         instaFollowBorderHexBox.style.backgroundColor = instaFollowBorderColorRGB;
 
-        // Insta Like border stroke
+        // Insta Follow border stroke
         const instaFollowBorderFormTopStroke = document.getElementById('instaFollowBorderTopStroke');
         const instaFollowBorderFormLeftStroke = document.getElementById('instaFollowBorderLeftStroke');
         const instaFollowBorderFormBottomStroke = document.getElementById('instaFollowBorderBottomStroke');
@@ -1042,7 +1070,7 @@ document.addEventListener("previewLoaded", ()=>{
         instaFollowBorderFormBottomStroke.value = instaFollowBorderStrokeBottom;
         instaFollowBorderFormRightStroke.value = instaFollowBorderStrokeRight;
 
-        // Insta Like border radius
+        // Insta Follow border radius
         const instaFollowBorderFormTopLeftRadius = document.getElementById('instaFollowBorderTopLeftRadius');
         const instaFollowBorderFormTopRightRadius = document.getElementById('instaFollowBorderTopRightRadius');
         const instaFollowBorderFormBottomLeftRadius = document.getElementById('instaFollowBorderBottomLeftRadius');
@@ -1060,20 +1088,28 @@ document.addEventListener("previewLoaded", ()=>{
     }
 
     function loadInstaCommentDetails(element){
-        // Load Insta Like settings
+        const URL = element.querySelector('button').getAttribute('data-link');
+        const instaCommentForm = document.getElementById('instaCommentForm');
+        if(URL === 'https://instagram.com/'){
+            instaCommentForm.value = '';
+        } else {
+            instaCommentForm.value = URL;
+        }
+
+        // Load Insta Comment settings
         const headerForm = document.getElementById('instaCommentHeaderForm');
         const subheaderForm = document.getElementById('instaCommentSubheaderForm');
         const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
         const headerElement = textElement.querySelector('h2');
         const subheaderElement = textElement.querySelector('p');
 
-        // Insta Like text
+        // Insta Comment text
         const headerText = headerElement.textContent;
         const subheaderText = subheaderElement.textContent;
         headerForm.value = headerText;
         subheaderForm.value = subheaderText;
 
-        // Insta Like font 
+        // Insta Comment font 
         const headerFontList = document.getElementById('instaCommentHeaderList');
         const headerFontDisplay = document.getElementById('instaCommentHeaderDropDownTitle');
         const subheaderFontList = document.getElementById('instaCommentSubheaderList');
@@ -1119,7 +1155,7 @@ document.addEventListener("previewLoaded", ()=>{
         instaCommentSubheaderForm.value = instaCommentSubheaderColorHex;
         instaCommentSubheaderHexBox.style.backgroundColor = instaCommentSubheaderColorHex;
         
-        // Insta Like button color
+        // Insta Comment button color
         const instaCommentButtonElement = element.querySelector('button');
         const instaCommentButtonColorForm = document.getElementById('instaCommentButtonColorForm');
 
@@ -1129,7 +1165,7 @@ document.addEventListener("previewLoaded", ()=>{
         instaCommentButtonColorForm.value = instaCommentButtonColorHex;
         instaCommentButtonHexBox.style.backgroundColor = instaCommentButtonColorHex;
 
-        // Insta Like background color
+        // Insta Comment background color
         const instaCommentBackgroundColorForm = document.getElementById('instaCommentBackgroundColorForm');
         const instaCommentBackgroundHexBox = document.getElementById('instaCommentBackgroundColorClick');
         const instaCommentBackgroundColorRGB = window.getComputedStyle(element).getPropertyValue('background-color').replace(/^"|"$/g, '');
@@ -1137,7 +1173,7 @@ document.addEventListener("previewLoaded", ()=>{
         instaCommentBackgroundColorForm.value = instaCommentBackgroundColorHex;
         instaCommentBackgroundHexBox.style.backgroundColor = instaCommentBackgroundColorHex;
 
-        // Insta Like border color
+        // Insta Comment border color
         const instaCommentBorderColorForm = document.getElementById('instaCommentBorderColorForm');
         const instaCommentBorderHexBox = document.getElementById('instaCommentBorderColorClick');
         const instaCommentBorderColorRGB = window.getComputedStyle(element).getPropertyValue('border-color').replace(/^"|"$/g, '');
@@ -1145,7 +1181,7 @@ document.addEventListener("previewLoaded", ()=>{
         instaCommentBorderColorForm.value = instaCommentBorderColorHex;
         instaCommentBorderHexBox.style.backgroundColor = instaCommentBorderColorRGB;
 
-        // Insta Like border stroke
+        // Insta Comment border stroke
         const instaCommentBorderFormTopStroke = document.getElementById('instaCommentBorderTopStroke');
         const instaCommentBorderFormLeftStroke = document.getElementById('instaCommentBorderLeftStroke');
         const instaCommentBorderFormBottomStroke = document.getElementById('instaCommentBorderBottomStroke');
@@ -1161,7 +1197,7 @@ document.addEventListener("previewLoaded", ()=>{
         instaCommentBorderFormBottomStroke.value = instaCommentBorderStrokeBottom;
         instaCommentBorderFormRightStroke.value = instaCommentBorderStrokeRight;
 
-        // Insta Like border radius
+        // Insta Comment border radius
         const instaCommentBorderFormTopLeftRadius = document.getElementById('instaCommentBorderTopLeftRadius');
         const instaCommentBorderFormTopRightRadius = document.getElementById('instaCommentBorderTopRightRadius');
         const instaCommentBorderFormBottomLeftRadius = document.getElementById('instaCommentBorderBottomLeftRadius');
@@ -1179,6 +1215,14 @@ document.addEventListener("previewLoaded", ()=>{
     }
 
     function loadInstaLikeDetails(element){
+        const URL = element.querySelector('button').getAttribute('data-link');
+        const instaLikeForm = document.getElementById('instaLikeForm');
+        if(URL === 'https://instagram.com/'){
+            instaLikeForm.value = '';
+        } else {
+            instaLikeForm.value = URL;
+        }
+
         // Load Insta Like settings
         const headerForm = document.getElementById('instaLikeHeaderForm');
         const subheaderForm = document.getElementById('instaLikeSubheaderForm');

@@ -5574,6 +5574,10 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         switch(elementType){
             case 'XFollow':
                 inputValue = inputValue.includes('@') ? inputValue.replace('@', '') : inputValue;
+                if (inputValue.includes('twitter.com')) {
+                    const urlParts = inputValue.split('/');
+                    inputValue = urlParts[urlParts.length - 1];
+                }
                 additionalEntryBtn.setAttribute('data-link', `https://twitter.com/intent/user?screen_name=${inputValue}`);
                 break;
 
@@ -5592,11 +5596,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'instaFollow':
                 inputValue = inputValue.includes('@') ? inputValue.replace('@', '') : inputValue;
                 if (inputValue.includes('instagram.com')) {
-                    // Extract the username from the URL
                     const urlParts = inputValue.split('/');
                     inputValue = urlParts[urlParts.length - 2] || urlParts[urlParts.length - 1];
                 }
-
                 additionalEntryBtn.setAttribute('data-link', `https://instagram.com/${inputValue}/`);
                 break;
 

@@ -111,7 +111,7 @@ class PublishController extends BaseController{
         
                     $this->entriesAPI->addEntry( $entryData );
                 }
-                
+
                 wp_send_json_success( array(
                     'contestant_id' => $contestant_id,
                     'contestant_entries' => $contestant_entries,
@@ -134,7 +134,12 @@ class PublishController extends BaseController{
     
                 $this->entriesAPI->addEntry( $entryData );
 
-                wp_send_json_success( 'Entry successfully counted' );
+                $contestant_entries = $this->entriesAPI->getEntriesByContestantId( $contestant_id, $raffle_id );
+                
+                wp_send_json_success( array(
+                    'contestant_id' => $contestant_id,
+                    'contestant_entries' => $contestant_entries,
+                ) );
                 }
             } else {
             wp_send_json_error( 'Invalid request.' );
@@ -153,14 +158,14 @@ class PublishController extends BaseController{
     
             if( $contestant ) {
                 $contestant_id = $contestant['contestant_id'];
-                // $contestant_entries = $this->entriesAPI->getEntriesByContestantId( $contestant_id, $raffle_id );
+                $contestant_entries = $this->entriesAPI->getEntriesByContestantId( $contestant_id, $raffle_id );
 
-                // foreach( $contestant_entries as $entry ){
-                //     if( $entry['entry_type'] === $entry_type ){
-                //         wp_send_json_success( 'Entry already counted for this contestant' );
-                //         return;
-                //     }
-                // }
+                foreach( $contestant_entries as $entry ){
+                    if( $entry['entry_type'] === $entry_type ){
+                        wp_send_json_success( 'Entry already counted for this contestant' );
+                        return;
+                    }
+                }
             } else {
                 $ip = $_SERVER['REMOTE_ADDR'];
                 $contestantData = array(

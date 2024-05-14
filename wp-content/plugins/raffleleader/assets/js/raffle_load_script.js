@@ -58,7 +58,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
                     additionalEntrySection.classList.add('inactive-additional-entry')
                     additionalEntrySection.querySelector('button').innerHTML = '✓';
                 })
-
             }
 
             const rulesAndTerms = document.querySelector('.raffleleader-rules-and-terms');

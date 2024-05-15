@@ -307,6 +307,9 @@
 
 
 .raffleleader-additional-entry-button-column{
+    transition: width 0.7s ease-in-out !important;
+    position: absolute;
+    right: 8%;
     display: flex;
     justify-content: center;
     width: 10%;
@@ -314,12 +317,15 @@
 }
 
 .raffleleader-additional-entry-button-column > button{
+    transition: width 0.7s ease-in-out !important;
     color: white;
     background-color: #1501FE;
     border: none;
     border-radius: 10px;
     padding: 1vh 1.7vh 1vh 1.7vh;
     font-size: 1.6vh;
+    width: 100%;
+    z-index: 100000;
 }
 
 .raffleleader-additional-entry-button-column > button:hover{

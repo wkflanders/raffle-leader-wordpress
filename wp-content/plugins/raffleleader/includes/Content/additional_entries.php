@@ -13,6 +13,14 @@
                 </div>
             </div>
         </div>
+        <div class="customize-settings-box">
+            <p>Number of Entries Counted</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="XFollowQuantity" class="additional-entry-quantity" data-type="XFollowQuantity" name="XFollowQuantity" type="number" value="1" placeholder="Enter Number of Entries">
+                </div>
+            </div>
+        </div>
     </div>
     <div class="dropdown-wrapper text-design">
         <div class="header-box">

@@ -79,6 +79,30 @@
     pointer-events: none;
 }
 
+.additional-entry-handle-form-load{
+    width: 86% !important;
+    margin: 0 !important;
+}
+
+.additional-entry-handle-form-load button .lds-ring div {
+    margin: -4px;
+    margin-left: 6px;
+}
+
+.additional-entry-handle-form-appear{
+    transition: height 0.7s ease-in-out;
+    height: 0% !important;
+}
+
+.raffleleader-entry-handle-input{
+    position: absolute;
+    top: 27%;
+    width: 78%;
+    height: 47%;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
 .lds-ring {
     display: inline-block;
     position: relative;

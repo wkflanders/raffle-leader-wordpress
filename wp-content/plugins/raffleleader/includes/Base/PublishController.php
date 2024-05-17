@@ -149,10 +149,11 @@ class PublishController extends BaseController{
     public function handleAdditionalEntry(){
         check_ajax_referer( 'nonce', 'security' );
 
-        if( isset( $_POST['contestant_email'], $_POST['raffle_id'], $_POST['entry_type'] ) ) {
+        if( isset( $_POST['contestant_email'], $_POST['raffle_id'], $_POST['entry_type'], $_POST['entry_details'] ) ) {
             $email = sanitize_email( $_POST['contestant_email'] );
             $raffle_id = intval( $_POST['raffle_id'] );
             $entry_type = sanitize_text_field( $_POST['entry_type'] );
+            $entry_details = sanitize_text_field( $_POST['entry_details'] );
 
             $contestant = $this->contestantsAPI->getContestantByEmail( $email );
     
@@ -162,29 +163,30 @@ class PublishController extends BaseController{
 
                 foreach( $contestant_entries as $entry ){
                     if( $entry['entry_type'] === $entry_type ){
-                        wp_send_json_success( 'Entry already counted for this contestant' );
+                        wp_send_json_success( array(
+                            'contestant_id' => $contestant_id,
+                            'contestant_entries' => $contestant_entries,
+                        ) );
                         return;
                     }
+
+                    $entryData = array(
+                        'raffle_id' => $raffle_id,
+                        'contestant_id' => $contestant_id,
+                        'entry_type' => $entry_type,
+                        'entry_details' => $entry_details,
+                    );
+        
+                    $this->entriesAPI->addEntry( $entryData );
+
+                    $contestant_entries = $this->entriesAPI->getEntriesByContestantId( $contestant_id, $raffle_id );
+        
+                    wp_send_json_success( array(
+                        'contestant_id' => $contestant_id,
+                        'contestant_entries' => $contestant_entries,
+                    ) );
                 }
-            } else {
-                $ip = $_SERVER['REMOTE_ADDR'];
-                $contestantData = array(
-                    'email' => $email,
-                    'ip' => $ip,
-                );
-    
-                $contestant_id = $this->contestantsAPI->addContestant( $contestantData );
             }
-
-            $entryData = array(
-                'raffle_id' => $raffle_id,
-                'contestant_id' => $contestant_id,
-                'entry_type' => $entry_type,
-            );
-
-            $this->entriesAPI->addEntry( $entryData );
-
-            wp_send_json_success( 'Entry successfully counted' );
         } else {
             wp_send_json_error( 'Invalid request.' );
         }

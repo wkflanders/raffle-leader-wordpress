@@ -96,6 +96,18 @@ input[type="text"]::placeholder{
     color: rgb(164, 164, 164);
 }
 
+input[type="number"]{
+    height: 5.5vh;
+    font-size: 2.5vh;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+input[type="number"]::placeholder{
+    font-size: 2vh;
+    color: rgb(164, 164, 164);
+}
+
 .dropdown-edit-text{
     display: block;
     height: 15vh;

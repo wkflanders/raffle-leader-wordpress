@@ -9,6 +9,7 @@ document.addEventListener('raffleLoaded', ()=>{
     const raffleID = parseInt(emailForm.parentNode.parentNode.id, 10);
     let contestantID;
     let contestantEntries;
+    let inputEntryDetails;
 
     const additionalEntrySections = document.querySelectorAll('.raffleleader-additional-entry-section');
     additionalEntrySections.forEach((additionalEntrySection)=>{
@@ -47,8 +48,6 @@ document.addEventListener('raffleLoaded', ()=>{
             contestantID = data.data.contestant_id;
             contestantEntries = data.data.contestant_entries;
 
-            console.log(contestantEntries)
-
             additionalEntrySections.forEach((additionalEntrySection)=>{
                 if(contestantEntries.some(entry => entry.entry_type === additionalEntrySection.getAttribute('data-type'))){
                     updateEntryUI(additionalEntrySection.querySelector('button'))
@@ -74,7 +73,42 @@ document.addEventListener('raffleLoaded', ()=>{
         window.open(URL, '_blank', 'width=1000,height=800');
 
         const entryType = entryBtn.parentNode.parentNode.getAttribute('data-type');
-        const entryDetails = 'null';
+        const match = entryType.match(/^[a-zA-Z]+(?=(Like|Follow|Comment|Repost)Details)/);
+        const entryTypePrefix = match ? match[0] : null;
+
+        if (entryTypePrefix) {
+            const entryExistsWithNullDetails = contestantEntries.some(entry => {
+                const contestantEntryTypeMatch = entry.entry_type.match(/^[a-zA-Z]+(?=(Like|Follow|Comment|Repost)Details)/);
+                const contestantEntryTypePrefix = contestantEntryTypeMatch ? contestantEntryTypeMatch[0] : null;
+
+                return contestantEntryTypePrefix === entryTypePrefix && entry.entry_details == null;
+            });
+
+            const entryExistsWithNonNullDetails = contestantEntries.some(entry => {
+                const contestantEntryTypeMatch = entry.entry_type.match(/^[a-zA-Z]+(?=(Like|Follow|Comment|Repost)Details)/);
+                const contestantEntryTypePrefix = contestantEntryTypeMatch ? contestantEntryTypeMatch[0] : null;
+
+                return contestantEntryTypePrefix === entryTypePrefix && entry.entry_details != null;
+            });
+
+            if (entryExistsWithNullDetails) {
+                console.log(`Another ${entryTypePrefix} exists but entry details are null`);
+                inputEntryDetails = await updateEntryUIForm(entryBtn, entryTypePrefix);
+
+            } else if (entryExistsWithNonNullDetails) {
+                console.log(`Another ${entryTypePrefix} exists and entry details are not null`);
+                updateEntryUI(entryBtn);
+                
+            } else {
+                console.log(`No other ${entryTypePrefix} entry exists yet`);
+                inputEntryDetails = await updateEntryUIForm(entryBtn, entryTypePrefix);
+
+            }
+        } else {
+            console.log('Error: entry type missing.');
+        }
+
+        console.log(inputEntryDetails);
 
         try{
             const response = await fetch(raffleleader_raffle_entry_object.ajax_url, {
@@ -87,20 +121,20 @@ document.addEventListener('raffleLoaded', ()=>{
                     'raffle_id': raffleID,
                     'contestant_email': contestantEmail,
                     'entry_type': entryType,
-                    'entry_details': entryDetails,
+                    'entry_details': inputEntryDetails,
                     'security': raffleleader_raffle_entry_object.security,
                 })
             });
             const data = await response.json();
 
+            contestantEntries = data.data.contestant_entries;
+
             if(!data.success){
                 throw new Error(`$HTTP error: ${response.status}`);
             }
 
-        } catch (error){
+        } catch(error){
             console.error("Fetch error", error);
-        } finally {
-            updateEntryUI(entryBtn);
         }
     }
 
@@ -151,11 +185,63 @@ document.addEventListener('raffleLoaded', ()=>{
     }
 
     function updateEntryUI(element){
-
-
         setTimeout(()=>{
-            element.classList.add('completed-additional-entry');
-            element.innerHTML = '✓';
+            try{
+                element.classList.add('completed-additional-entry');
+                element.innerHTML = '✓';
+            } catch(error){
+                console.error(error);
+            }
         }, 2000);
+    }
+
+    async function updateEntryUIForm(element, entryPrefix) {
+        const entryBtnCol = element.parentNode;
+        const additionalEntrySection = entryBtnCol.parentNode;
+        const entryTxtCol = additionalEntrySection.querySelector('.raffleleader-additional-entry-text-column');
+    
+        entryBtnCol.classList.add('additional-entry-handle-form-load');
+        element.innerHTML = '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>';
+        element.disabled = true;
+    
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                entryBtnCol.classList.remove('additional-entry-handle-form-load');
+                element.innerHTML = '&rarr;';
+                entryTxtCol.style.display = 'none';
+    
+                const handleForm = document.createElement('form');
+                handleForm.classList.add('raffleleader-entry-handle-form');
+                handleForm.innerHTML = `
+                    <input class="raffleleader-entry-handle-input" name="handle" type="username" placeholder="Enter your ${entryPrefix.charAt(0).toUpperCase() + entryPrefix.slice(1)} handle">
+                `;
+                additionalEntrySection.appendChild(handleForm);
+    
+                const handleInput = handleForm.querySelector('.raffleleader-entry-handle-input');
+                element.disabled = false;
+    
+                element.removeEventListener('click', handleAdditionalEntry);
+                element.addEventListener('click', async (event) => {
+                    event.preventDefault();
+    
+                    const entryDetails = handleInput.value;
+                    entryBtnCol.classList.add('additional-entry-handle-form-load');
+                    element.innerHTML = '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>';
+                    element.disabled = true;
+    
+                    setTimeout(() => {
+                        additionalEntrySection.removeChild(handleForm);
+                        element.classList.add('completed-additional-entry');
+                        element.innerHTML = '✓';
+    
+                        setTimeout(() => {
+                            entryBtnCol.classList.remove('additional-entry-handle-form-load');
+                            entryTxtCol.style.display = '';
+                            resolve(entryDetails);
+                        }, 2000);
+                    }, 2000);
+                });
+            }, 3000);
+        });
     }
 });

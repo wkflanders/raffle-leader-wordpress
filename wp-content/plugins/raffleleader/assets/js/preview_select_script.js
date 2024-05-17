@@ -590,12 +590,16 @@ document.addEventListener("previewLoaded", ()=>{
         const XFollowForm = document.getElementById('XFollowForm');
         XFollowForm.value = cleanedHandle;
 
-        // Load XFollow settings
+        // Load XFollow handle settings
         const headerForm = document.getElementById('XFollowHeaderForm');
         const subheaderForm = document.getElementById('XFollowSubheaderForm');
         const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
         const headerElement = textElement.querySelector('h2');
         const subheaderElement = textElement.querySelector('p');
+
+        // Load XFollow entry value settings
+        // Get the value of this entry by grabbing the value from the current section button's text 
+        // Edit the text inside the input form so that it equals the button
 
         // XFollow text
         const headerText = headerElement.textContent;

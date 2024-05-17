@@ -40,6 +40,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     const startTimeInput = document.getElementById('startTime');
 
     const additionalEntryInputs = document.querySelectorAll('.additional-entry-input');
+    const additionalEntryQuantity = document.querySelectorAll('.additional-entry-quantity');
 
     let pickrText = undefined;
     let pickrBackground = undefined;
@@ -255,6 +256,10 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
     additionalEntryInputs.forEach((additionalEntryInput)=>{
         additionalEntryInput.addEventListener('input', handleAdditionalEntry);
+    });
+
+    additionalEntryQuantity.forEach((additionalEntryQuantity)=>{
+        additionalEntryQuantity.addEventListener('input', handleEntryQuantity);
     });
 
     function openDropDown(event){
@@ -5614,6 +5619,12 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 additionalEntryBtn.setAttribute('data-link', `https://instagram.com/p/${instaLikeID}`);
                 break;
         }
+    }
+
+    function handleEntryQuantity(event){
+        // Get the currently selected section (will have a class called 'selected-raffleleader-section')
+        // Get the input button (will be the event.target)
+        // Edit the currently selected section button's text so that instead of +1, it reads whatever the user inputs
     }
 })
 

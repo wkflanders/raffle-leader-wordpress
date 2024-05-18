@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const raffleContainer = document.getElementById('raffleleader-raffle-container');
     const raffleID = raffleContainer.getAttribute('data-raffle-id');
 
+    const viewportWidth = window.innerWidth;
+
     const raffleLoaded = new CustomEvent('raffleLoaded');
 
     if(raffleID){
@@ -26,6 +28,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
     function loadPreview(raffleData){
         // Bulk preview data
         if(raffleData.content){
+            if(viewportWidth <= 400){
+                raffleContainer.style.trasnform = 'scale(0.4)';
+            } else if(viewportWidth <= 600){
+                raffleContainer.style.transform = 'scale(0.6)';
+            } else if(viewportWidth <= 800){
+                raffleContainer.style.transform = 'scale(0.8)';
+            } else {
+                raffleContainer.style.transform = 'scale(1)';
+            }
+
             const HTMLContent = raffleData.content;
             raffleContainer.innerHTML = HTMLContent;
 
@@ -65,7 +77,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
             const rulesAndTermsCloseBtn = document.querySelector('.rules-and-terms-close-button');
             rulesAndTermsCloseBtn.addEventListener('click', closeRulesAndTerms);
-
+            
             document.dispatchEvent(raffleLoaded);
         }
     }

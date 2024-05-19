@@ -11,7 +11,6 @@
                 <div class="dropdown-display dropdown-text">
                     <input id="XFollowForm" class="additional-entry-input" data-type="XFollow" name="XFollow" type="text" placeholder="Enter X/Twitter Handle">
                 </div> 
-                tt
             </div>
         </div>
         <div class="customize-settings-box">

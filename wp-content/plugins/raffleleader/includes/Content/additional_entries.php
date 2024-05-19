@@ -10,7 +10,8 @@
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-text">
                     <input id="XFollowForm" class="additional-entry-input" data-type="XFollow" name="XFollow" type="text" placeholder="Enter X/Twitter Handle">
-                </div>
+                </div> 
+                tt
             </div>
         </div>
         <div class="customize-settings-box">
@@ -129,6 +130,22 @@
                     <div id="XFollowSubheaderColorGradient"></div>
                     <div id="XFollowSubheaderFontColorClick" class="dropdown-color-click" data-type="XFollowSubheaderColor"></div>
                     <input id="XFollowSubheaderFontColorForm" class="color-input" data-type="XFollowSubheaderColor" type="text" name="XFollowSubheaderFontColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Header Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="XFollowHeaderFontSizeForm" class="font-size-input" data-type="XFollowHeaderFontSize" type="text" name="XFollowHeaderFontSize" placeholder="Enter a font size">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="XFollowSubheaderFontSizeForm" class="font-size-input" data-type="XFollowSubheaderFontSize" type="text" name="XFollowSubheaderFontSize" placeholder="Enter a font size">
                 </div>
             </div>
         </div>
@@ -346,6 +363,22 @@
                 </div>
             </div>
         </div>
+        <div class="customize-settings-box">
+            <p>Header Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="XRepostHeaderFontSizeForm" class="font-size-input" data-type="XRepostHeaderFontSize" type="text" name="XRepostHeaderFontSize" placeholder="Enter a font size">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="XRepostSubheaderFontSizeForm" class="font-size-input" data-type="XRepostSubheaderFontSize" type="text" name="XRepostSubheaderFontSize" placeholder="Enter a font size">
+                </div>
+            </div>
+        </div>
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">
@@ -557,6 +590,22 @@
                     <div id="XLikeSubheaderColorGradient"></div>
                     <div id="XLikeSubheaderFontColorClick" class="dropdown-color-click" data-type="XLikeSubheaderColor"></div>
                     <input id="XLikeSubheaderFontColorForm" class="color-input" data-type="XLikeSubheaderColor" type="text" name="XLikeSubheaderFontColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Header Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="XLikeHeaderFontSizeForm" class="font-size-input" data-type="XLikeHeaderFontSize" type="text" name="XLikeHeaderFontSize" placeholder="Enter a font size">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="XLikeSubheaderFontSizeForm" class="font-size-input" data-type="XLikeSubheaderFontSize" type="text" name="XLikeSubheaderFontSize" placeholder="Enter a font size">
                 </div>
             </div>
         </div>
@@ -774,6 +823,22 @@
                 </div>
             </div>
         </div>
+        <div class="customize-settings-box">
+            <p>Header Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="instaFollowHeaderFontSizeForm" class="font-size-input" data-type="instaFollowHeaderFontSize" type="text" name="instaFollowHeaderFontSize" placeholder="Enter a font size">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="instaFollowSubheaderFontSizeForm" class="font-size-input" data-type="instaFollowSubheaderFontSize" type="text" name="instaFollowSubheaderFontSize" placeholder="Enter a font size">
+                </div>
+            </div>
+        </div>
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">
@@ -985,6 +1050,22 @@
                     <div id="instaCommentSubheaderColorGradient"></div>
                     <div id="instaCommentSubheaderFontColorClick" class="dropdown-color-click" data-type="instaCommentSubheaderColor"></div>
                     <input id="instaCommentSubheaderFontColorForm" class="color-input" data-type="instaCommentSubheaderColor" type="text" name="instaCommentSubheaderFontColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Header Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="instaCommentHeaderFontSizeForm" class="font-size-input" data-type="instaCommentHeaderFontSize" type="text" name="instaCommentHeaderFontSize" placeholder="Enter a font size">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="instaCommentSubheaderFontSizeForm" class="font-size-input" data-type="instaCommentSubheaderFontSize" type="text" name="instaCommentSubheaderFontSize" placeholder="Enter a font size">
                 </div>
             </div>
         </div>
@@ -1202,6 +1283,22 @@
                 </div>
             </div>
         </div>
+        <div class="customize-settings-box">
+            <p>Header Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="instaLikeHeaderFontSizeForm" class="font-size-input" data-type="instaLikeHeaderFontSize" type="text" name="instaLikeHeaderFontSize" placeholder="Enter a font size">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="instaLikeSubheaderFontSizeForm" class="font-size-input" data-type="instaLikeSubheaderFontSize" type="text" name="instaLikeSubheaderFontSize" placeholder="Enter a font size">
+                </div>
+            </div>
+        </div>
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">
@@ -1413,6 +1510,22 @@
                     <div id="facebookFollowSubheaderColorGradient"></div>
                     <div id="facebookFollowSubheaderFontColorClick" class="dropdown-color-click" data-type="facebookFollowSubheaderColor"></div>
                     <input id="facebookFollowSubheaderFontColorForm" class="color-input" data-type="facebookFollowSubheaderColor" type="text" name="facebookFollowSubheaderFontColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Header Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="facebookFollowHeaderFontSizeForm" class="font-size-input" data-type="facebookFollowHeaderFontSize" type="text" name="facebookFollowHeaderFontSize" placeholder="Enter a font size">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="facebookFollowSubheaderFontSizeForm" class="font-size-input" data-type="facebookFollowSubheaderFontSize" type="text" name="facebookFollowSubheaderFontSize" placeholder="Enter a font size">
                 </div>
             </div>
         </div>
@@ -1630,6 +1743,22 @@
                 </div>
             </div>
         </div>
+        <div class="customize-settings-box">
+            <p>Header Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="facebookCommentHeaderFontSizeForm" class="font-size-input" data-type="facebookCommentHeaderFontSize" type="text" name="facebookCommentHeaderFontSize" placeholder="Enter a font size">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="facebookCommentSubheaderFontSizeForm" class="font-size-input" data-type="facebookCommentSubheaderFontSize" type="text" name="facebookCommentSubheaderFontSize" placeholder="Enter a font size">
+                </div>
+            </div>
+        </div>
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">
@@ -1841,6 +1970,22 @@
                     <div id="facebookLikeSubheaderColorGradient"></div>
                     <div id="facebookLikeSubheaderFontColorClick" class="dropdown-color-click" data-type="facebookLikeSubheaderColor"></div>
                     <input id="facebookLikeSubheaderFontColorForm" class="color-input" data-type="facebookLikeSubheaderColor" type="text" name="facebookLikeSubheaderFontColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Header Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="facebookLikeHeaderFontSizeForm" class="font-size-input" data-type="facebookLikeHeaderFontSize" type="text" name="facebookLikeHeaderFontSize" placeholder="Enter a font size">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="facebookLikeSubheaderFontSizeForm" class="font-size-input" data-type="facebookLikeSubheaderFontSize" type="text" name="facebookLikeSubheaderFontSize" placeholder="Enter a font size">
                 </div>
             </div>
         </div>
@@ -2058,6 +2203,22 @@
                 </div>
             </div>
         </div>
+        <div class="customize-settings-box">
+            <p>Header Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="tiktokFollowHeaderFontSizeForm" class="font-size-input" data-type="tiktokFollowHeaderFontSize" type="text" name="tiktokFollowHeaderFontSize" placeholder="Enter a font size">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="tiktokFollowSubheaderFontSizeForm" class="font-size-input" data-type="tiktokFollowSubheaderFontSize" type="text" name="tiktokFollowSubheaderFontSize" placeholder="Enter a font size">
+                </div>
+            </div>
+        </div>
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">
@@ -2269,6 +2430,22 @@
                     <div id="tiktokCommentSubheaderColorGradient"></div>
                     <div id="tiktokCommentSubheaderFontColorClick" class="dropdown-color-click" data-type="tiktokCommentSubheaderColor"></div>
                     <input id="tiktokCommentSubheaderFontColorForm" class="color-input" data-type="tiktokCommentSubheaderColor" type="text" name="tiktokCommentSubheaderFontColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Header Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="tiktokCommentHeaderFontSizeForm" class="font-size-input" data-type="tiktokCommentHeaderFontSize" type="text" name="tiktokCommentHeaderFontSize" placeholder="Enter a font size">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="tiktokCommentSubheaderFontSizeForm" class="font-size-input" data-type="tiktokCommentSubheaderFontSize" type="text" name="tiktokCommentSubheaderFontSize" placeholder="Enter a font size">
                 </div>
             </div>
         </div>
@@ -2486,6 +2663,22 @@
                 </div>
             </div>
         </div>
+        <div class="customize-settings-box">
+            <p>Header Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="tiktokLikeHeaderFontSizeForm" class="font-size-input" data-type="tiktokLikeHeaderFontSize" type="text" name="tiktokLikeHeaderFontSize" placeholder="Enter a font size">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="tiktokLikeSubheaderFontSizeForm" class="font-size-input" data-type="tiktokLikeSubheaderFontSize" type="text" name="tiktokLikeSubheaderFontSize" placeholder="Enter a font size">
+                </div>
+            </div>
+        </div>
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">
@@ -2697,6 +2890,22 @@
                     <div id="referSubheaderColorGradient"></div>
                     <div id="referSubheaderFontColorClick" class="dropdown-color-click" data-type="referSubheaderColor"></div>
                     <input id="referSubheaderFontColorForm" class="color-input" data-type="referSubheaderColor" type="text" name="referSubheaderFontColor" placeholder="Enter a hexidecimal">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Header Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="referHeaderFontSizeForm" class="font-size-input" data-type="referHeaderFontSize" type="text" name="referHeaderFontSize" placeholder="Enter a font size">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Subheader Font Size</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="referSubheaderFontSizeForm" class="font-size-input" data-type="referSubheaderFontSize" type="text" name="referSubheaderFontSize" placeholder="Enter a font size">
                 </div>
             </div>
         </div>

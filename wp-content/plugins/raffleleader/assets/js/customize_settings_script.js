@@ -4299,6 +4299,126 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 const counterSelectedElement = selectedSection.querySelector('h2');
                 counterSelectedElement.style.fontSize = `${fontSize}px`;
                 break;
+
+            case 'XFollowHeaderFontSize':
+                const XFollowHeaderSection = selectedSection.querySelector('h2');
+                XFollowHeaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'XFollowSubheaderFontSize':
+                const XFollowSubheaderSection = selectedSection.querySelector('p');
+                XFollowSubheaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'XRepostHeaderFontSize':
+                const XRepostHeaderSection = selectedSection.querySelector('h2');
+                XRepostHeaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'XRepostSubheaderFontSize':
+                const XRepostSubheaderSection = selectedSection.querySelector('p');
+                XRepostSubheaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'XLikeHeaderFontSize':
+                const XLikeHeaderSection = selectedSection.querySelector('h2');
+                XLikeHeaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'XLikeSubheaderFontSize':
+                const XLikeSubheaderSection = selectedSection.querySelector('p');
+                XLikeSubheaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'instaFollowHeaderFontSize':
+                const instaFollowHeaderSection = selectedSection.querySelector('h2');
+                instaFollowHeaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'instaFollowSubheaderFontSize':
+                const instaFollowSubheaderSection = selectedSection.querySelector('p');
+                instaFollowSubheaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'instaCommentHeaderFontSize':
+                const instaCommentHeaderSection = selectedSection.querySelector('h2');
+                instaCommentHeaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'instaCommentSubheaderFontSize':
+                const instaCommentSubheaderSection = selectedSection.querySelector('p');
+                instaCommentSubheaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'instaLikeHeaderFontSize':
+                const instaLikeHeaderSection = selectedSection.querySelector('h2');
+                instaLikeHeaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'instaLikeSubheaderFontSize':
+                const instaLikeSubheaderSection = selectedSection.querySelector('p');
+                instaLikeSubheaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'facebookFollowHeaderFontSize':
+                const facebookFollowHeaderSection = selectedSection.querySelector('h2');
+                facebookFollowHeaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'facebookFollowSubheaderFontSize':
+                const facebookFollowSubheaderSection = selectedSection.querySelector('p');
+                facebookFollowSubheaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'facebookCommentHeaderFontSize':
+                const facebookCommentHeaderSection = selectedSection.querySelector('h2');
+                facebookCommentHeaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'facebookCommentSubheaderFontSize':
+                const facebookCommentSubheaderSection = selectedSection.querySelector('p');
+                facebookCommentSubheaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'facebookLikeHeaderFontSize':
+                const facebookLikeHeaderSection = selectedSection.querySelector('h2');
+                facebookLikeHeaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'facebookLikeSubheaderFontSize':
+                const facebookLikeSubheaderSection = selectedSection.querySelector('p');
+                facebookLikeSubheaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'tiktokFollowHeaderFontSize':
+                const tiktokFollowHeaderSection = selectedSection.querySelector('h2');
+                tiktokFollowHeaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'tiktokFollowSubheaderFontSize':
+                const tiktokFollowSubheaderSection = selectedSection.querySelector('p');
+                tiktokFollowSubheaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'tiktokCommentHeaderFontSize':
+                const tiktokCommentHeaderSection = selectedSection.querySelector('h2');
+                tiktokCommentHeaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'tiktokCommentSubheaderFontSize':
+                const tiktokCommentSubheaderSection = selectedSection.querySelector('p');
+                tiktokCommentSubheaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'tiktokLikeHeaderFontSize':
+                const tiktokLikeHeaderSection = selectedSection.querySelector('h2');
+                tiktokLikeHeaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'tiktokLikeSubheaderFontSize':
+                const tiktokLikeSubheaderSection = selectedSection.querySelector('p');
+                tiktokLikeSubheaderSection.style.fontSize = `${fontSize}px`;
+                break;
         }
     }
 

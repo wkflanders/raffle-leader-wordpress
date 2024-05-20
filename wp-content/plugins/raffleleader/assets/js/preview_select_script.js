@@ -584,18 +584,20 @@ document.addEventListener("previewLoaded", ()=>{
     }
 
     function loadXFollowDetails(element){
-        const handle = element.querySelector('button').getAttribute('data-link');
-        const urlParams = new URLSearchParams(handle.split('?')[1]);
-        const cleanedHandle = urlParams.get('screen_name');
-        const XFollowForm = document.getElementById('XFollowForm');
-        XFollowForm.value = cleanedHandle;
-
-        // Load XFollow handle settings
         const headerForm = document.getElementById('XFollowHeaderForm');
         const subheaderForm = document.getElementById('XFollowSubheaderForm');
         const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
         const headerElement = textElement.querySelector('h2');
         const subheaderElement = textElement.querySelector('p');
+        const headerSizeForm = document.getElementById('XFollowHeaderFontSizeForm');
+        const subheaderSizeForm = document.getElementById('XFollowSubheaderFontSizeForm');
+        
+        // Load XFollow handle settings
+        const handle = element.querySelector('button').getAttribute('data-link');
+        const urlParams = new URLSearchParams(handle.split('?')[1]);
+        const cleanedHandle = urlParams.get('screen_name');
+        const XFollowForm = document.getElementById('XFollowForm');
+        XFollowForm.value = cleanedHandle;
 
         // Load XFollow entry value settings
         // Get the value of this entry by grabbing the value from the current section button's text 
@@ -636,6 +638,14 @@ document.addEventListener("previewLoaded", ()=>{
                 child.classList.add('selected-font');
             }
         });
+
+        // header font size
+        const headerFontSize = window.getComputedStyle(headerElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        headerSizeForm.value = headerFontSize;
+
+        // subheader font size
+        const textFontSize = window.getComputedStyle(subheaderElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        subheaderSizeForm.value = textFontSize;
 
         // header color
         const XFollowHeaderHexBox = document.getElementById('XFollowHeaderFontColorClick');
@@ -715,6 +725,8 @@ document.addEventListener("previewLoaded", ()=>{
     function loadXRepostDetails(element){
         const URL = element.querySelector('button').getAttribute('data-link');
         const XRepostForm = document.getElementById('XRepostForm');
+        const headerSizeForm = document.getElementById('XRepostHeaderFontSizeForm');
+        const subheaderSizeForm = document.getElementById('XRepostSubheaderFontSizeForm');
         if(URL === 'https://twitter.com/'){
             XRepostForm.value = '';
         } else {
@@ -779,6 +791,14 @@ document.addEventListener("previewLoaded", ()=>{
         const XRepostSubheaderColorHex = rgbToHex(XRepostSubheaderColorRGB);
         XRepostSubheaderForm.value = XRepostSubheaderColorHex;
         XRepostSubheaderHexBox.style.backgroundColor = XRepostSubheaderColorHex;
+
+        // header font size
+        const headerFontSize = window.getComputedStyle(headerElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        headerSizeForm.value = headerFontSize;
+
+        // subheader font size
+        const textFontSize = window.getComputedStyle(subheaderElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        subheaderSizeForm.value = textFontSize;
         
         // XRepost button color
         const XRepostButtonElement = element.querySelector('button');
@@ -868,6 +888,8 @@ document.addEventListener("previewLoaded", ()=>{
         const subheaderFontDisplay = document.getElementById('XLikeSubheaderDropDownTitle');
         const headerFont = window.getComputedStyle(headerElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
         const subheaderFont = window.getComputedStyle(subheaderElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        const headerSizeForm = document.getElementById('XLikeHeaderFontSizeForm');
+        const subheaderSizeForm = document.getElementById('XLikeSubheaderFontSizeForm');
         headerFontDisplay.innerText = headerFont;
         subheaderFontDisplay.innerText = subheaderFont;
         
@@ -907,6 +929,14 @@ document.addEventListener("previewLoaded", ()=>{
         XLikeSubheaderForm.value = XLikeSubheaderColorHex;
         XLikeSubheaderHexBox.style.backgroundColor = XLikeSubheaderColorHex;
         
+        // header font size
+        const headerFontSize = window.getComputedStyle(headerElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        headerSizeForm.value = headerFontSize;
+
+        // subheader font size
+        const textFontSize = window.getComputedStyle(subheaderElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        subheaderSizeForm.value = textFontSize;
+
         // XLike button color
         const XLikeButtonElement = element.querySelector('button');
         const XLikeButtonColorForm = document.getElementById('XLikeButtonColorForm');
@@ -967,18 +997,21 @@ document.addEventListener("previewLoaded", ()=>{
     }
 
     function loadInstaFollowDetails(element){
-        const handle = element.querySelector('button').getAttribute('data-link');
-        const urlParts = handle.split('/');
-        const cleanedHandle = urlParts[urlParts.length - 2] || urlParts[urlParts.length - 1];
-        const instaFollowForm = document.getElementById('instaFollowForm');
-        instaFollowForm.value = cleanedHandle;
-
         // Load Insta Follow settings
         const headerForm = document.getElementById('instaFollowHeaderForm');
         const subheaderForm = document.getElementById('instaFollowSubheaderForm');
         const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
         const headerElement = textElement.querySelector('h2');
         const subheaderElement = textElement.querySelector('p');
+        const headerSizeForm = document.getElementById('instaFollowHeaderFontSizeForm');
+        const subheaderSizeForm = document.getElementById('instaFollowSubheaderFontSizeForm');
+
+        // Insta handle
+        const handle = element.querySelector('button').getAttribute('data-link');
+        const urlParts = handle.split('/');
+        const cleanedHandle = urlParts[urlParts.length - 2] || urlParts[urlParts.length - 1];
+        const instaFollowForm = document.getElementById('instaFollowForm');
+        instaFollowForm.value = cleanedHandle;
 
         // Insta Follow text
         const headerText = headerElement.textContent;
@@ -1032,6 +1065,14 @@ document.addEventListener("previewLoaded", ()=>{
         instaFollowSubheaderForm.value = instaFollowSubheaderColorHex;
         instaFollowSubheaderHexBox.style.backgroundColor = instaFollowSubheaderColorHex;
         
+        // header font size
+        const headerFontSize = window.getComputedStyle(headerElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        headerSizeForm.value = headerFontSize;
+
+        // subheader font size
+        const textFontSize = window.getComputedStyle(subheaderElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        subheaderSizeForm.value = textFontSize;
+
         // Insta Follow button color
         const instaFollowButtonElement = element.querySelector('button');
         const instaFollowButtonColorForm = document.getElementById('instaFollowButtonColorForm');
@@ -1106,6 +1147,7 @@ document.addEventListener("previewLoaded", ()=>{
         const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
         const headerElement = textElement.querySelector('h2');
         const subheaderElement = textElement.querySelector('p');
+        
 
         // Insta Comment text
         const headerText = headerElement.textContent;
@@ -1122,6 +1164,8 @@ document.addEventListener("previewLoaded", ()=>{
         const subheaderFont = window.getComputedStyle(subheaderElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
         headerFontDisplay.innerText = headerFont;
         subheaderFontDisplay.innerText = subheaderFont;
+        const headerSizeForm = document.getElementById('instaCommentHeaderFontSizeForm');
+        const subheaderSizeForm = document.getElementById('instaCommentSubheaderFontSizeForm');
         
         Array.from(headerFontList.children).forEach((child)=>{
             const childFont = child.innerText;
@@ -1159,6 +1203,14 @@ document.addEventListener("previewLoaded", ()=>{
         instaCommentSubheaderForm.value = instaCommentSubheaderColorHex;
         instaCommentSubheaderHexBox.style.backgroundColor = instaCommentSubheaderColorHex;
         
+        // header font size
+        const headerFontSize = window.getComputedStyle(headerElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        headerSizeForm.value = headerFontSize;
+
+        // subheader font size
+        const textFontSize = window.getComputedStyle(subheaderElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        subheaderSizeForm.value = textFontSize;
+
         // Insta Comment button color
         const instaCommentButtonElement = element.querySelector('button');
         const instaCommentButtonColorForm = document.getElementById('instaCommentButtonColorForm');
@@ -1249,6 +1301,8 @@ document.addEventListener("previewLoaded", ()=>{
         const subheaderFont = window.getComputedStyle(subheaderElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
         headerFontDisplay.innerText = headerFont;
         subheaderFontDisplay.innerText = subheaderFont;
+        const headerSizeForm = document.getElementById('instaLikeHeaderFontSizeForm');
+        const subheaderSizeForm = document.getElementById('instaLikeSubheaderFontSizeForm');
         
         Array.from(headerFontList.children).forEach((child)=>{
             const childFont = child.innerText;
@@ -1285,6 +1339,14 @@ document.addEventListener("previewLoaded", ()=>{
         const instaLikeSubheaderColorHex = rgbToHex(instaLikeSubheaderColorRGB);
         instaLikeSubheaderForm.value = instaLikeSubheaderColorHex;
         instaLikeSubheaderHexBox.style.backgroundColor = instaLikeSubheaderColorHex;
+        
+        // header font size
+        const headerFontSize = window.getComputedStyle(headerElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        headerSizeForm.value = headerFontSize;
+
+        // subheader font size
+        const textFontSize = window.getComputedStyle(subheaderElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        subheaderSizeForm.value = textFontSize;
         
         // Insta Like button color
         const instaLikeButtonElement = element.querySelector('button');
@@ -1352,6 +1414,8 @@ document.addEventListener("previewLoaded", ()=>{
         const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
         const headerElement = textElement.querySelector('h2');
         const subheaderElement = textElement.querySelector('p');
+        const headerSizeForm = document.getElementById('facebookFollowHeaderFontSizeForm');
+        const subheaderSizeForm = document.getElementById('facebookFollowSubheaderFontSizeForm');
 
         // Facebook Follow text
         const headerText = headerElement.textContent;
@@ -1404,6 +1468,14 @@ document.addEventListener("previewLoaded", ()=>{
         const facebookFollowSubheaderColorHex = rgbToHex(facebookFollowSubheaderColorRGB);
         facebookFollowSubheaderForm.value = facebookFollowSubheaderColorHex;
         facebookFollowSubheaderHexBox.style.backgroundColor = facebookFollowSubheaderColorHex;
+
+        // header font size
+        const headerFontSize = window.getComputedStyle(headerElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        headerSizeForm.value = headerFontSize;
+
+        // subheader font size
+        const textFontSize = window.getComputedStyle(subheaderElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        subheaderSizeForm.value = textFontSize;
 
         // Facebook Follow button color
         const facebookFollowButtonElement = element.querySelector('button');
@@ -1472,6 +1544,8 @@ document.addEventListener("previewLoaded", ()=>{
         const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
         const headerElement = textElement.querySelector('h2');
         const subheaderElement = textElement.querySelector('p');
+        const headerSizeForm = document.getElementById('facebookCommentHeaderFontSizeForm');
+        const subheaderSizeForm = document.getElementById('facebookCommentSubheaderFontSizeForm');
 
         // Facebook Comment text
         const headerText = headerElement.textContent;
@@ -1524,6 +1598,14 @@ document.addEventListener("previewLoaded", ()=>{
         const facebookCommentSubheaderColorHex = rgbToHex(facebookCommentSubheaderColorRGB);
         facebookCommentSubheaderForm.value = facebookCommentSubheaderColorHex;
         facebookCommentSubheaderHexBox.style.backgroundColor = facebookCommentSubheaderColorHex;
+
+        // header font size
+        const headerFontSize = window.getComputedStyle(headerElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        headerSizeForm.value = headerFontSize;
+
+        // subheader font size
+        const textFontSize = window.getComputedStyle(subheaderElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        subheaderSizeForm.value = textFontSize;
 
         // Facebook Comment button color
         const facebookCommentButtonElement = element.querySelector('button');
@@ -1608,6 +1690,8 @@ document.addEventListener("previewLoaded", ()=>{
         const subheaderFont = window.getComputedStyle(subheaderElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
         headerFontDisplay.innerText = headerFont;
         subheaderFontDisplay.innerText = subheaderFont;
+        const headerSizeForm = document.getElementById('facebookLikeHeaderFontSizeForm');
+        const subheaderSizeForm = document.getElementById('facebookLikeSubheaderFontSizeForm');
 
         Array.from(headerFontList.children).forEach((child)=>{
         const childFont = child.innerText;
@@ -1644,6 +1728,14 @@ document.addEventListener("previewLoaded", ()=>{
         const facebookLikeSubheaderColorHex = rgbToHex(facebookLikeSubheaderColorRGB);
         facebookLikeSubheaderForm.value = facebookLikeSubheaderColorHex;
         facebookLikeSubheaderHexBox.style.backgroundColor = facebookLikeSubheaderColorHex;
+
+        // header font size
+        const headerFontSize = window.getComputedStyle(headerElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        headerSizeForm.value = headerFontSize;
+
+        // subheader font size
+        const textFontSize = window.getComputedStyle(subheaderElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        subheaderSizeForm.value = textFontSize;
 
         // Facebook Like button color
         const facebookLikeButtonElement = element.querySelector('button');
@@ -1712,6 +1804,8 @@ document.addEventListener("previewLoaded", ()=>{
         const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
         const headerElement = textElement.querySelector('h2');
         const subheaderElement = textElement.querySelector('p');
+        const headerSizeForm = document.getElementById('tiktokFollowHeaderFontSizeForm');
+        const subheaderSizeForm = document.getElementById('tiktokFollowSubheaderFontSizeForm');
 
         // Tiktok Follow text
         const headerText = headerElement.textContent;
@@ -1764,6 +1858,14 @@ document.addEventListener("previewLoaded", ()=>{
         const tiktokFollowSubheaderColorHex = rgbToHex(tiktokFollowSubheaderColorRGB);
         tiktokFollowSubheaderForm.value = tiktokFollowSubheaderColorHex;
         tiktokFollowSubheaderHexBox.style.backgroundColor = tiktokFollowSubheaderColorHex;
+
+        // header font size
+        const headerFontSize = window.getComputedStyle(headerElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        headerSizeForm.value = headerFontSize;
+
+        // subheader font size
+        const textFontSize = window.getComputedStyle(subheaderElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        subheaderSizeForm.value = textFontSize;
 
         // Tiktok Follow button color
         const tiktokFollowButtonElement = element.querySelector('button');
@@ -1832,6 +1934,8 @@ document.addEventListener("previewLoaded", ()=>{
         const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
         const headerElement = textElement.querySelector('h2');
         const subheaderElement = textElement.querySelector('p');
+        const headerSizeForm = document.getElementById('tiktokCommentHeaderFontSizeForm');
+        const subheaderSizeForm = document.getElementById('tiktokCommentSubheaderFontSizeForm');
 
         // Tiktok Comment text
         const headerText = headerElement.textContent;
@@ -1884,6 +1988,14 @@ document.addEventListener("previewLoaded", ()=>{
         const tiktokCommentSubheaderColorHex = rgbToHex(tiktokCommentSubheaderColorRGB);
         tiktokCommentSubheaderForm.value = tiktokCommentSubheaderColorHex;
         tiktokCommentSubheaderHexBox.style.backgroundColor = tiktokCommentSubheaderColorHex;
+
+        // header font size
+        const headerFontSize = window.getComputedStyle(headerElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        headerSizeForm.value = headerFontSize;
+
+        // subheader font size
+        const textFontSize = window.getComputedStyle(subheaderElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        subheaderSizeForm.value = textFontSize;
 
         // Tiktok Comment button color
         const tiktokCommentButtonElement = element.querySelector('button');
@@ -1952,6 +2064,8 @@ document.addEventListener("previewLoaded", ()=>{
         const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
         const headerElement = textElement.querySelector('h2');
         const subheaderElement = textElement.querySelector('p');
+        const headerSizeForm = document.getElementById('tiktokLikeHeaderFontSizeForm');
+        const subheaderSizeForm = document.getElementById('tiktokLikeSubheaderFontSizeForm');
 
         // Tiktok Like text
         const headerText = headerElement.textContent;
@@ -2004,6 +2118,14 @@ document.addEventListener("previewLoaded", ()=>{
         const tiktokLikeSubheaderColorHex = rgbToHex(tiktokLikeSubheaderColorRGB);
         tiktokLikeSubheaderForm.value = tiktokLikeSubheaderColorHex;
         tiktokLikeSubheaderHexBox.style.backgroundColor = tiktokLikeSubheaderColorHex;
+
+        // header font size
+        const headerFontSize = window.getComputedStyle(headerElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        headerSizeForm.value = headerFontSize;
+
+        // subheader font size
+        const textFontSize = window.getComputedStyle(subheaderElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        subheaderSizeForm.value = textFontSize;
 
         // Tiktok Like button color
         const tiktokLikeButtonElement = element.querySelector('button');

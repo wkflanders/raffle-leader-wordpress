@@ -80,7 +80,7 @@
 }
 
 .additional-entry-handle-form-load{
-    width: 86% !important;
+    width: 88% !important;
     margin: 0 !important;
 }
 
@@ -95,10 +95,11 @@
 }
 
 .raffleleader-entry-handle-input{
-    position: absolute;
-    top: 27%;
-    width: 78%;
-    height: 47%;
+    position: relative;
+    top: 30%;
+    width: 95%;
+    height: 100%;
+    padding: 0.9vh 0 0.9vh 0;
     border: 1px solid gray;
     border-radius: 10px;
 }

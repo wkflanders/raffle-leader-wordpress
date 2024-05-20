@@ -205,16 +205,18 @@ document.addEventListener('raffleLoaded', ()=>{
         element.disabled = true;
     
         return new Promise((resolve) => {
+            entryTxtCol.style.display = 'none';
             setTimeout(() => {
                 entryBtnCol.classList.remove('additional-entry-handle-form-load');
                 element.innerHTML = '&rarr;';
-                entryTxtCol.style.display = 'none';
     
-                const handleForm = document.createElement('form');
-                handleForm.classList.add('raffleleader-entry-handle-form');
+                const handleForm = document.createElement('div');
+                handleForm.classList.add('raffleleader-additional-entry-form-column');
                 handleForm.innerHTML = `
-                    <input class="raffleleader-entry-handle-input" name="handle" type="username" placeholder="Enter your ${entryPrefix.charAt(0).toUpperCase() + entryPrefix.slice(1)} handle">
-                `;
+                    <form class="raffleleader-entry-handle-form">
+                        <input class="raffleleader-entry-handle-input" name="handle" type="username" placeholder="Enter your ${entryPrefix.charAt(0).toUpperCase() + entryPrefix.slice(1)} handle">
+                    </form>
+                        `;
                 additionalEntrySection.appendChild(handleForm);
     
                 const handleInput = handleForm.querySelector('.raffleleader-entry-handle-input');

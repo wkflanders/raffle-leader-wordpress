@@ -290,10 +290,17 @@
 }
 
 .raffleleader-additional-entry-text-column{
+    transition: width 0.7s ease-in-out, height 0.8s ease-in-out;
     width: 50%;
 }
 
+.raffleleader-additional-entry-form-column{
+    transition: width 0.7s ease-in-out, height 0.8s ease-in-out;
+    width: 100%;
+}
+
 .raffleleader-additional-entry-text-column > h2{
+    transition: width 0.7s ease-in-out, height 0.8s ease-in-out;
     font-size: 20px;
     padding: 0;
     margin: 0.5vh 0 0 0;
@@ -301,6 +308,7 @@
 }
 
 .raffleleader-additional-entry-text-column > p{
+    transition: width 0.7s ease-in-out, height 0.8s ease-in-out;
     font-size: 12px;
     padding: 0;
     margin: 0.3vh 0 0 0;
@@ -320,6 +328,8 @@
 
 .raffleleader-additional-entry-button-column > button{
     transition: width 0.7s ease-in-out !important;
+    display: flex;
+    justify-content: center;
     color: white;
     background-color: #1501FE;
     border: none;

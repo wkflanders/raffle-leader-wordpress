@@ -5738,6 +5738,36 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 const instaLikeID = instaLikeMatch ? instaLikeMatch[1] : null;
                 additionalEntryBtn.setAttribute('data-link', `https://instagram.com/p/${instaLikeID}`);
                 break;
+
+            case 'facebookFollow':
+                additionalEntryBtn.setAttribute('data-link', inputValue);
+                break;
+
+            case 'facebookComment':
+                additionalEntryBtn.setAttribute('data-link', inputValue);
+                break;
+
+            case 'facebookLike':
+                additionalEntryBtn.setAttribute('data-link', inputValue);
+                break;
+
+            case 'tiktokFollow':
+                inputValue = inputValue.includes('@') ? inputValue.replace('@', '') : inputValue;
+                if (inputValue.includes('tiktok.com')) {
+                    const urlParts = inputValue.split('/');
+                    inputValue = urlParts[urlParts.length - 1] || urlParts[urlParts.length - 2];
+                    inputValue = inputValue.split('?')[0];
+                }
+                additionalEntryBtn.setAttribute('data-link', `https://www.tiktok.com/@${inputValue}/`);
+                break;
+
+            case 'tiktokComment':
+                additionalEntryBtn.setAttribute('data-link', inputValue);
+                break;
+
+            case 'tiktokLike':
+                additionalEntryBtn.setAttribute('data-link', inputValue);
+                break;
         }
     }
 

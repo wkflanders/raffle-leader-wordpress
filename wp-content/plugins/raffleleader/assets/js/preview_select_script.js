@@ -1408,6 +1408,14 @@ document.addEventListener("previewLoaded", ()=>{
     }
 
     function loadFacebookFollowDetails(element){
+        const URL = element.querySelector('button').getAttribute('data-link');
+        const facebookFollowForm = document.getElementById('facebookFollowForm');
+        if(URL === 'https://facebook.com/'){
+            facebookFollowForm.value = '';
+        } else {
+            facebookFollowForm.value = URL;
+        }
+
         // Load Facebook Follow settings
         const headerForm = document.getElementById('facebookFollowHeaderForm');
         const subheaderForm = document.getElementById('facebookFollowSubheaderForm');
@@ -1538,6 +1546,14 @@ document.addEventListener("previewLoaded", ()=>{
     }
 
     function loadFacebookCommentDetails(element){
+        const URL = element.querySelector('button').getAttribute('data-link');
+        const facebookCommentForm = document.getElementById('facebookCommentForm');
+        if(URL === 'https://facebook.com/'){
+            facebookCommentForm.value = '';
+        } else {
+            facebookCommentForm.value = URL;
+        }
+
         // Load Facebook Comment settings
         const headerForm = document.getElementById('facebookCommentHeaderForm');
         const subheaderForm = document.getElementById('facebookCommentSubheaderForm');
@@ -1668,6 +1684,14 @@ document.addEventListener("previewLoaded", ()=>{
     }
 
     function loadFacebookLikeDetails(element){
+        const URL = element.querySelector('button').getAttribute('data-link');
+        const facebookLikeForm = document.getElementById('facebookLikeForm');
+        if(URL === 'https://facebook.com/'){
+            facebookLikeForm.value = '';
+        } else {
+            facebookLikeForm.value = URL;
+        }
+        
         // Load Facebook Like settings
         const headerForm = document.getElementById('facebookLikeHeaderForm');
         const subheaderForm = document.getElementById('facebookLikeSubheaderForm');
@@ -1798,6 +1822,18 @@ document.addEventListener("previewLoaded", ()=>{
     }
 
     function loadTiktokFollowDetails(element){
+        const handle = element.querySelector('button').getAttribute('data-link');
+        const urlParts = handle.split('/');
+        let cleanedHandle = urlParts[urlParts.length - 1]; // Get the last part of the URL
+        if (cleanedHandle === '' && urlParts.length > 1) {
+            cleanedHandle = urlParts[urlParts.length - 2];
+        }
+        if (cleanedHandle.startsWith('@')) {
+            cleanedHandle = cleanedHandle.substring(1);
+        }
+        const tiktokFollowForm = document.getElementById('tiktokFollowForm');
+        tiktokFollowForm.value = cleanedHandle;
+        
         // Load Tiktok Follow settings
         const headerForm = document.getElementById('tiktokFollowHeaderForm');
         const subheaderForm = document.getElementById('tiktokFollowSubheaderForm');
@@ -1928,6 +1964,13 @@ document.addEventListener("previewLoaded", ()=>{
     }
 
     function loadTiktokCommentDetails(element){
+        const URL = element.querySelector('button').getAttribute('data-link');
+        const tiktokCommentForm = document.getElementById('tiktokCommentForm');
+        if(URL === 'https://tiktok.com/'){
+            tiktokCommentForm.value = '';
+        } else {
+            tiktokCommentForm.value = URL;
+        }
         // Load Tiktok Comment settings
         const headerForm = document.getElementById('tiktokCommentHeaderForm');
         const subheaderForm = document.getElementById('tiktokCommentSubheaderForm');
@@ -2058,6 +2101,13 @@ document.addEventListener("previewLoaded", ()=>{
     }
 
     function loadTiktokLikeDetails(element){
+        const URL = element.querySelector('button').getAttribute('data-link');
+        const tiktokLikeForm = document.getElementById('tiktokLikeForm');
+        if(URL === 'https://tiktok.com/'){
+            tiktokLikeForm.value = '';
+        } else {
+            tiktokLikeForm.value = URL;
+        }
         // Load Tiktok Like settings
         const headerForm = document.getElementById('tiktokLikeHeaderForm');
         const subheaderForm = document.getElementById('tiktokLikeSubheaderForm');

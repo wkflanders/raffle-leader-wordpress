@@ -937,7 +937,7 @@
             <p>Instagram Post</p>
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-text">
-                    <input id="instaCommentForm" class="additional-entry-input" data-type="instaComment" name="instaComment" type="text" placeholder="Enter Instagram Post">
+                    <input id="instaCommentForm" class="additional-entry-input" data-type="instaComment" name="instaComment" type="text" placeholder="Enter Instagram Post URL">
                 </div>
             </div>
         </div>
@@ -1167,7 +1167,7 @@
             <p>Instagram Post</p>
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-text">
-                    <input id="instaLikeForm" class="additional-entry-input" data-type="instaLike" name="instaLike" type="text" placeholder="Enter Instagram Post">
+                    <input id="instaLikeForm" class="additional-entry-input" data-type="instaLike" name="instaLike" type="text" placeholder="Enter Instagram Post URL">
                 </div>
             </div>
         </div>
@@ -2317,7 +2317,7 @@
             <p>TikTok Post</p>
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-text">
-                    <input id="tiktokCommentForm" class="additional-entry-input" data-type="tiktokComment" name="tiktokComment" type="text" placeholder="Enter TikTok Post">
+                    <input id="tiktokCommentForm" class="additional-entry-input" data-type="tiktokComment" name="tiktokComment" type="text" placeholder="Enter TikTok Post URL">
                 </div>
             </div>
         </div>
@@ -2547,7 +2547,7 @@
             <p>TikTok Post</p>
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-text">
-                    <input id="tiktokLikeForm" class="additional-entry-input" data-type="tiktokLike" name="tiktokLike" type="text" placeholder="Enter TikTok Post">
+                    <input id="tiktokLikeForm" class="additional-entry-input" data-type="tiktokLike" name="tiktokLike" type="text" placeholder="Enter TikTok Post URL">
                 </div>
             </div>
         </div>
@@ -2777,7 +2777,7 @@
             <p>TikTok Post</p>
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-text">
-                    <input id="referForm" class="additional-entry-input" data-type="refer" name="refer" type="text" placeholder="Enter TikTok Post">
+                    <input id="referForm" class="additional-entry-input" data-type="refer" name="refer" type="text" placeholder="">
                 </div>
             </div>
         </div>

@@ -201,6 +201,7 @@ document.addEventListener('raffleLoaded', ()=>{
         const entryTxtCol = additionalEntrySection.querySelector('.raffleleader-additional-entry-text-column');
     
         entryBtnCol.classList.add('additional-entry-handle-form-load');
+        element.style.width = '100%';
         element.innerHTML = '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>';
         element.disabled = true;
     
@@ -208,41 +209,48 @@ document.addEventListener('raffleLoaded', ()=>{
             entryTxtCol.style.display = 'none';
             setTimeout(() => {
                 entryBtnCol.classList.remove('additional-entry-handle-form-load');
-                element.innerHTML = '&rarr;';
-    
-                const handleForm = document.createElement('div');
-                handleForm.classList.add('raffleleader-additional-entry-form-column');
-                handleForm.innerHTML = `
-                    <form class="raffleleader-entry-handle-form">
-                        <input class="raffleleader-entry-handle-input" name="handle" type="username" placeholder="Enter your ${entryPrefix.charAt(0).toUpperCase() + entryPrefix.slice(1)} handle">
-                    </form>
-                        `;
-                additionalEntrySection.appendChild(handleForm);
-    
-                const handleInput = handleForm.querySelector('.raffleleader-entry-handle-input');
-                element.disabled = false;
-    
-                element.removeEventListener('click', handleAdditionalEntry);
-                element.addEventListener('click', async (event) => {
-                    event.preventDefault();
-    
-                    const entryDetails = handleInput.value;
-                    entryBtnCol.classList.add('additional-entry-handle-form-load');
-                    element.innerHTML = '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>';
-                    element.disabled = true;
-    
-                    setTimeout(() => {
-                        additionalEntrySection.removeChild(handleForm);
-                        element.classList.add('completed-additional-entry');
-                        element.innerHTML = '✓';
-    
+                setTimeout(()=>{
+                    element.style.width = '';
+                    element.innerHTML = '&rarr;';
+        
+                    const handleForm = document.createElement('div');
+                    handleForm.classList.add('raffleleader-additional-entry-form-column');
+                    handleForm.innerHTML = `
+                        <form class="raffleleader-entry-handle-form">
+                            <input class="raffleleader-entry-handle-input" name="handle" type="username" placeholder="Enter your ${entryPrefix.charAt(0).toUpperCase() + entryPrefix.slice(1)} handle">
+                        </form>
+                            `;
+                    additionalEntrySection.appendChild(handleForm);
+        
+                    const handleInput = handleForm.querySelector('.raffleleader-entry-handle-input');
+                    element.disabled = false;
+        
+                    element.removeEventListener('click', handleAdditionalEntry);
+                    element.addEventListener('click', async (event) => {
+                        event.preventDefault();
+        
+                        const entryDetails = handleInput.value;
+                        entryBtnCol.classList.add('additional-entry-handle-form-load');
+                        element.style.width = '100%';
+                        element.innerHTML = '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>';
+                        element.disabled = true;
+        
                         setTimeout(() => {
-                            entryBtnCol.classList.remove('additional-entry-handle-form-load');
-                            entryTxtCol.style.display = '';
-                            resolve(entryDetails);
+                            additionalEntrySection.removeChild(handleForm);
+                            element.classList.add('completed-additional-entry');
+                            element.innerHTML = '✓';
+        
+                            setTimeout(() => {
+                                entryBtnCol.classList.remove('additional-entry-handle-form-load');
+                                setTimeout(()=>{
+                                    element.style.width = '';
+                                    entryTxtCol.style.display = '';
+                                    resolve(entryDetails);
+                                }, 750);
+                            }, 2000);
                         }, 2000);
-                    }, 2000);
-                });
+                    });
+                }, 750);
             }, 3000);
         });
     }

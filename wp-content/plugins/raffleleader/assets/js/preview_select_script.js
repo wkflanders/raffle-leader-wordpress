@@ -416,6 +416,7 @@ document.addEventListener("previewLoaded", ()=>{
     
     function loadCounterSettings(element){
         const counterTextElement = element.querySelector('h2');
+        const counterDescElement = element.querySelector('p');
 
         // counter font
         const counterFontList = document.getElementById('counterFontList');
@@ -450,6 +451,20 @@ document.addEventListener("previewLoaded", ()=>{
         const counterLetterSpacingForm = document.getElementById('counterLetterSpacingForm');
         const counterLetterSpacing = window.getComputedStyle(counterTextElement).getPropertyValue('letter-spacing').replace(/^"|"$/g, '');
         counterLetterSpacingForm.value = counterLetterSpacing;
+
+        // counter orientation
+        const counterOrientationSection = document.querySelector('.counter-orientation')
+        const counterOrientation = window.getComputedStyle(element).getPropertyValue('flex-direction').replace(/^"|"$/g, '');
+
+        try{
+            counterOrientationSection.querySelector('.inline-btn-orient-active').classList.remove('inline-btn-orient-active');
+        } catch {}
+
+        if(counterOrientation === 'row'){
+            counterOrientationSection.querySelector('.horizontal-orient').classList.add('inline-btn-orient-active');
+        } else if(counterOrientation === 'column'){
+            counterOrientationSection.querySelector('.vertical-orient').classList.add('inline-btn-orient-active');
+        }
 
         // counter background color
         const counterBackgroundColorForm = document.getElementById('counterBackgroundColorForm');

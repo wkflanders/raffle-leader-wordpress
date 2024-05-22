@@ -102,6 +102,15 @@
                 </div>
             </div>
         </div>
+        <div class="customize-settings-box">
+            <p>Text Orientation</p>
+            <div class="customize-settings-dropdown text-orientation">
+                <div class="dropdown-display dropdown-inline-btns dropdown-two-btns">
+                    <img class="inline-btn horizontal-orient" data-type="counterOrient" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/horizontal-orient.png">
+                    <img class="inline-btn vertical-orient" data-type="counterOrient" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/vertical-orient.png">
+                </div>
+            </div>
+        </div>
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">

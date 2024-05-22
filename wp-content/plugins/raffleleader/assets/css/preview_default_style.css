@@ -233,6 +233,7 @@
     height: 60%;
     border: 1px solid gray;
     border-radius: 10px;
+    padding-left: 2vh;
 }
 
 .raffleleader-entry-section input[type="email"]:hover{

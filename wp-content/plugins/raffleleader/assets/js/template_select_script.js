@@ -128,6 +128,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                         <div class="raffleleader-footer-wrapper">
                                             <div class="raffleleader-footer">
                                                 <a class="raffleleader-footer-content raffleleader-rules-and-terms">Raffle Rules and Terms</a>
+                                                <p>|</p>
                                                 <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.com/wp-content/uploads/2024/03/footer_text_logo.png"> For Yourself!</a>
                                             </div>
                                         </div>
@@ -185,7 +186,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                     <div style="display: none;" class="raffleleader-resize-handle"></div></div></div>
                                                     <div class="raffleleader-footer-wrapper">
                                                         <div class="raffleleader-footer">
-                                                            <a class="raffleleader-footer-content raffleleader-rules-and-terms" data-rules="">Raffle Rules and Terms</a>
+                                                            <a class="raffleleader-footer-content raffleleader-rules-and-terms" data-rules="">Raffle Rules and Terms | </a>
                                                             <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.com/wp-content/uploads/2024/03/footer_text_logo.png"> For Yourself!</a>
                                                         </div>
                                                     </div>
@@ -243,7 +244,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                 <div style="display: none;" class="raffleleader-resize-handle"></div></div></div>
                                             <div class="raffleleader-footer-wrapper">
                                                 <div class="raffleleader-footer">
-                                                    <a class="raffleleader-footer-content raffleleader-rules-and-terms" data-rules="">Raffle Rules and Terms</a>
+                                                    <a class="raffleleader-footer-content raffleleader-rules-and-terms" data-rules="">Raffle Rules and Terms | </a>
                                                     <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.com/wp-content/uploads/2024/03/footer_text_logo.png"> For Yourself!</a>
                                                 </div>
                                             </div>
@@ -301,7 +302,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                 <div style="display: none;" class="raffleleader-resize-handle"></div></div></div>
                             <div class="raffleleader-footer-wrapper">
                                 <div class="raffleleader-footer">
-                                    <a class="raffleleader-footer-content raffleleader-rules-and-terms" data-rules="">Raffle Rules and Terms</a>
+                                    <a class="raffleleader-footer-content raffleleader-rules-and-terms" data-rules="">Raffle Rules and Terms | </a>
                                     <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.com/wp-content/uploads/2024/03/footer_text_logo.png"> For Yourself!</a>
                                 </div>
                             </div>
@@ -353,7 +354,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                 <div style="display: none;" class="raffleleader-resize-handle"></div></div></div>
                             <div class="raffleleader-footer-wrapper">
                                 <div class="raffleleader-footer">
-                                    <a class="raffleleader-footer-content raffleleader-rules-and-terms" data-rules="">Raffle Rules and Terms</a>
+                                    <a class="raffleleader-footer-content raffleleader-rules-and-terms" data-rules="">Raffle Rules and Terms | </a>
                                     <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.com/wp-content/uploads/2024/03/footer_text_logo.png"> For Yourself!</a>
                                 </div>
                             </div>

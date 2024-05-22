@@ -404,16 +404,17 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 break;
 
             case 'counterOrient':
-                counterSection = selectedSection.querySelector('.raffleleader-counter-section');
-                counterNumber = selectedSection.querySelector('h2');
-                counterText = selectedSection.querySelector('p');
+                const counterSection = selectedSection.querySelector('.raffleleader-counter-section');
+                const counterNumber = selectedSection.querySelector('h2');
+                const counterText = selectedSection.querySelector('p');
 
                 counterSection.style.flexDirection = 'row';
                 
-                counterNumber.style.right = '60%';
+                // counterNumber.style.right = '60%';
+                counterNumber.style.marginRight = `30px`;
                 
-                counterText.style.removeProperty('bottom');
-                counterText.style.right = '25%';
+                counterText.style.marginLeft = `30px`;
+                counterText.style.marginTop = '0';
 
                 document.querySelector('.inline-btn-orient-active').classList.remove('inline-btn-orient-active');;
                 inputHBtn.classList.add('inline-btn-orient-active');
@@ -443,10 +444,11 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
                 counterSection.style.flexDirection = 'column';
                 
-                counterNumber.style.removeProperty('right');
+                counterNumber.style.marginRight = '0';
                 
-                counterText.style.bottom = '0%';
-                counterText.style.removeProperty('right');
+                counterText.style.marginLeft = '0';
+                counterText.style.marginTop = '60px';
+                
 
                 document.querySelector('.inline-btn-orient-active').classList.remove('inline-btn-orient-active');;
                 inputVBtn.classList.add('inline-btn-orient-active');

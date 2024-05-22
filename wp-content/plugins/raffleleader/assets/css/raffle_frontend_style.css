@@ -3,7 +3,7 @@ p {
 }
 
 h2 {
-    letter-spacing: 1px;
+    letter-spacing: 1px !important;
 }
 
 .raffleleader-rules-and-terms-preview{

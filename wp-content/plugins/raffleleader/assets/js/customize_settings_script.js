@@ -415,6 +415,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 counterText.style.removeProperty('bottom');
                 counterText.style.right = '25%';
 
+                document.querySelector('.inline-btn-orient-active').classList.remove('inline-btn-orient-active');;
+                inputHBtn.classList.add('inline-btn-orient-active');
+
                 break;
         }
     }
@@ -444,6 +447,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 
                 counterText.style.bottom = '0%';
                 counterText.style.removeProperty('right');
+
+                document.querySelector('.inline-btn-orient-active').classList.remove('inline-btn-orient-active');;
+                inputVBtn.classList.add('inline-btn-orient-active');
 
                 break;
         }

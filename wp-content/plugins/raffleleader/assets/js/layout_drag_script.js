@@ -118,7 +118,7 @@ document.addEventListener('previewLoaded', () => {
             case 'counterBox':
                 return `<div style="height: 100%; width: 100%;" data-type="counterDetails" class="raffleleader-counter-section">
                             <h2>00</h2>
-                            <p></p>
+                            <p style="bottom: 0%;"></p>
                         </div>
                         <div style="display: none;" class="raffleleader-resize-handle"></div>`;
 

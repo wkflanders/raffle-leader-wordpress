@@ -175,13 +175,13 @@
     font-size: 60px;
     letter-spacing: 1px;
     line-height: 18px;
+    position: absolute;
 }
 
 .raffleleader-counter-section > p{
     font-size: 1.5vh;
     color: black;
     position: absolute;
-    bottom: 0vh;
 }
 
 .raffleleader-image-section{

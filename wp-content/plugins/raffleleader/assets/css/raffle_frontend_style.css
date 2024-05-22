@@ -2,6 +2,10 @@ p {
     margin-bottom: 0 !important;
 }
 
+h2 {
+    letter-spacing: 1px;
+}
+
 .raffleleader-rules-and-terms-preview{
     display: flex;
     flex-direction: column;

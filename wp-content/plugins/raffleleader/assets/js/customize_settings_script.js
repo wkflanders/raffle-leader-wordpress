@@ -400,6 +400,22 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
                 document.querySelector('.inline-btn-orient-active').classList.remove('inline-btn-orient-active');;
                 inputHBtn.classList.add('inline-btn-orient-active');
+                
+                break;
+
+            case 'counterOrient':
+                counterSection = selectedSection.querySelector('.raffleleader-counter-section');
+                counterNumber = selectedSection.querySelector('h2');
+                counterText = selectedSection.querySelector('p');
+
+                counterSection.style.flexDirection = 'row';
+                
+                counterNumber.style.right = '60%';
+                
+                counterText.style.removeProperty('bottom');
+                counterText.style.right = '25%';
+
+                break;
         }
     }
 
@@ -416,6 +432,20 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
                 document.querySelector('.inline-btn-orient-active').classList.remove('inline-btn-orient-active');;
                 inputVBtn.classList.add('inline-btn-orient-active');
+
+            case 'counterOrient':
+                counterSection = selectedSection.querySelector('.raffleleader-counter-section');
+                counterNumber = selectedSection.querySelector('h2');
+                counterText = selectedSection.querySelector('p');
+
+                counterSection.style.flexDirection = 'column';
+                
+                counterNumber.style.removeProperty('right');
+                
+                counterText.style.bottom = '0%';
+                counterText.style.removeProperty('right');
+
+                break;
         }
     }
 

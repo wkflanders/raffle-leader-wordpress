@@ -29,12 +29,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
         // Bulk preview data
         if(raffleData.content){
             if(viewportWidth <= 400){
-                raffleContainer.style.trasnform = 'scale(0.4)';
+                raffleContainer.style.transform = 'scale(0.4)';
             } else if(viewportWidth <= 600){
                 raffleContainer.style.transform = 'scale(0.6)';
-            } else if(viewportWidth <= 800){
+            } else if(viewportWidth <= 1000){
                 raffleContainer.style.transform = 'scale(0.8)';
-            } else {
+            } else { 
                 raffleContainer.style.transform = 'scale(1)';
             }
 

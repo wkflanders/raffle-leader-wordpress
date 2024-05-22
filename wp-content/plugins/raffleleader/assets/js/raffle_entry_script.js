@@ -221,6 +221,12 @@ document.addEventListener('raffleLoaded', ()=>{
                         </form>
                             `;
                     additionalEntrySection.appendChild(handleForm);
+
+                    const form = handleForm.querySelector('.raffleleader-entry-handle-form');
+                    console.log(form);
+                    form.addEventListener('submit', (event)=>{
+                        event.preventDefault();
+                    })
         
                     const handleInput = handleForm.querySelector('.raffleleader-entry-handle-input');
                     element.disabled = false;

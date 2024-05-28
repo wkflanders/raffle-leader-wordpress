@@ -76,6 +76,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
         const templateType = selectedBtn.id;
         const templateBox = selectedBtn.parentNode.parentNode.parentNode;
         const currentTemplate = document.querySelector('.chosen-template');
+        const setupTab = document.querySelector('.setup-tab');
 
         fetch(raffleleader_template_select_object.ajax_url, {
             method: 'POST',
@@ -110,6 +111,12 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                 customizeBox.classList.toggle('slide-right-to-left');
             }
         } catch {}
+
+        document.querySelector("ul.rl-nav-tabs li.active-tab").classList.remove("active-tab");
+        document.querySelector(".rl-tab-pane.active-tab").classList.remove("active-tab");
+
+        setupTab.classList.add("active-tab");
+        document.querySelector('#setup').classList.add("active-tab");
     }
 
     function injectTemplateHTML(templateType){

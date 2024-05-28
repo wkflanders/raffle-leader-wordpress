@@ -25,15 +25,10 @@ document.addEventListener('previewLoaded', ()=>{
             e.preventDefault();
             updateZIndex();
 
-            const isImageSection = el.querySelector('.raffleleader-image-section') !== null;
-
             originalWidth = el.offsetWidth;
             originalHeight = el.offsetHeight;
             originalMouseX = e.clientX;
             originalMouseY = e.clientY;
-
-            // Calculate aspect ratio
-            const aspectRatio = originalWidth / originalHeight;
 
             document.addEventListener('mousemove', resize);
             document.addEventListener('mouseup', stopResize);
@@ -43,15 +38,6 @@ document.addEventListener('previewLoaded', ()=>{
 
                 let newWidth = originalWidth + (e.clientX - originalMouseX) / zoomLevel;
                 let newHeight = originalHeight + (e.clientY - originalMouseY) / zoomLevel;
-
-                if (isImageSection) {
-                    // Lock aspect ratio
-                    if (newWidth / originalWidth > newHeight / originalHeight) {
-                        newHeight = newWidth / aspectRatio;
-                    } else {
-                        newWidth = newHeight * aspectRatio;
-                    }
-                }
 
                 const snapMargin = 5 / zoomLevel; // Snap margin should also consider zoom level
                 const elRect = el.getBoundingClientRect();
@@ -64,19 +50,15 @@ document.addEventListener('previewLoaded', ()=>{
                     // Adjust snapping calculations for zoom
                     if (Math.abs(rect.right - elRect.left - (newWidth * zoomLevel)) < snapMargin) {
                         newWidth = (rect.right - elRect.left) / zoomLevel;
-                        if (isImageSection) newHeight = newWidth / aspectRatio;
                     } else if (Math.abs(rect.left - elRect.left - (newWidth * zoomLevel)) < snapMargin) {
                         newWidth = (rect.left - elRect.left) / zoomLevel;
-                        if (isImageSection) newHeight = newWidth / aspectRatio;
                     }
 
                     // Snapping for height
                     if (Math.abs(rect.bottom - elRect.top - (newHeight * zoomLevel)) < snapMargin) {
                         newHeight = (rect.bottom - elRect.top) / zoomLevel;
-                        if (isImageSection) newWidth = newHeight * aspectRatio;
                     } else if (Math.abs(rect.top - elRect.top - (newHeight * zoomLevel)) < snapMargin) {
                         newHeight = (rect.top - elRect.top) / zoomLevel;
-                        if (isImageSection) newWidth = newHeight * aspectRatio;
                     }
                 });
 
@@ -89,11 +71,9 @@ document.addEventListener('previewLoaded', ()=>{
                 if (newWidth > maxWidth || newHeight > maxHeight) {
                     if (newWidth > maxWidth) {
                         newWidth = maxWidth;
-                        if (isImageSection) newHeight = newWidth / aspectRatio;
                     }
                     if (newHeight > maxHeight) {
                         newHeight = maxHeight;
-                        if (isImageSection) newWidth = newHeight * aspectRatio;
                     }
                 }
 

@@ -5623,8 +5623,12 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
     function handleEntryQuantity(event){
         // Get the currently selected section (will have a class called 'selected-raffleleader-section')
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
+        const additionalEntryBtn = selectedSection.querySelector('button');
         // Get the input button (will be the event.target)
+        const value = event.target.value;
         // Edit the currently selected section button's text so that instead of +1, it reads whatever the user inputs
+        additionalEntryBtn.innerText = `+${value}`;
     }
 })
 

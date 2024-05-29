@@ -599,7 +599,11 @@ document.addEventListener("previewLoaded", ()=>{
 
         // Load XFollow entry value settings
         // Get the value of this entry by grabbing the value from the current section button's text 
+        const button = element.querySelector('button');
+        const buttonValue = button.innerText.replace('+', '');
         // Edit the text inside the input form so that it equals the button
+        const valueForm = document.getElementById('XFollowQuantity');
+        valueForm.value = buttonValue;
 
         // XFollow text
         const headerText = headerElement.textContent;
@@ -720,6 +724,14 @@ document.addEventListener("previewLoaded", ()=>{
         } else {
             XRepostForm.value = URL;
         }
+
+        // Load XFollow entry value settings
+        // Get the value of this entry by grabbing the value from the current section button's text 
+        const button = element.querySelector('button');
+        const buttonValue = button.innerText.replace('+', '');
+        // Edit the text inside the input form so that it equals the button
+        const valueForm = document.getElementById('XRepostQuantity');
+        valueForm.value = buttonValue;
 
         // Load XRepost settings
         const headerForm = document.getElementById('XRepostHeaderForm');

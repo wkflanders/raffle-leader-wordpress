@@ -457,6 +457,14 @@
                 </div>
             </div>
         </div>
+        <div class="customize-settings-box">
+            <p>Number of Entries Counted</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="XLikeQuantity" class="additional-entry-quantity" data-type="XLikeQuantity" name="XLikeQuantity" type="number" value="1" placeholder="Enter Number of Entries">
+                </div>
+            </div>
+        </div>
     </div>
     <div class="dropdown-wrapper text-design">
         <div class="header-box">
@@ -668,6 +676,14 @@
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-text">
                     <input id="instaFollowForm" class="additional-entry-input" data-type="instaFollow" name="instaFollow" type="text" placeholder="Enter Instagram Handle">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Number of Entries Counted</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="instaFollowQuantity" class="additional-entry-quantity" data-type="instaFollowQuantity" name="instaFollowQuantity" type="number" value="1" placeholder="Enter Number of Entries">
                 </div>
             </div>
         </div>
@@ -885,6 +901,14 @@
                 </div>
             </div>
         </div>
+        <div class="customize-settings-box">
+            <p>Number of Entries Counted</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="instaCommentQuantity" class="additional-entry-quantity" data-type="instaCommentQuantity" name="instaCommentQuantity" type="number" value="1" placeholder="Enter Number of Entries">
+                </div>
+            </div>
+        </div>
     </div>
     <div class="dropdown-wrapper text-design">
         <div class="header-box">
@@ -1096,6 +1120,14 @@
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-text">
                     <input id="instaLikeForm" class="additional-entry-input" data-type="instaLike" name="instaLike" type="text" placeholder="Enter Instagram Post">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Number of Entries Counted</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="instaLikeQuantity" class="additional-entry-quantity" data-type="instaLikeQuantity" name="instaLikeQuantity" type="number" value="1" placeholder="Enter Number of Entries">
                 </div>
             </div>
         </div>
@@ -1313,6 +1345,14 @@
                 </div>
             </div>
         </div>
+        <div class="customize-settings-box">
+            <p>Number of Entries Counted</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="facebookFollowQuantity" class="additional-entry-quantity" data-type="facebookFollowQuantity" name="facebookFollowQuantity" type="number" value="1" placeholder="Enter Number of Entries">
+                </div>
+            </div>
+        </div>
     </div>
     <div class="dropdown-wrapper text-design">
         <div class="header-box">
@@ -1524,6 +1564,14 @@
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-text">
                     <input id="facebookCommentForm" class="additional-entry-input" data-type="facebookComment" name="facebookComment" type="text" placeholder="Enter Facebook Post URL">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Number of Entries Counted</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="facebookCommentQuantity" class="additional-entry-quantity" data-type="facebookCommentQuantity" name="facebookCommentQuantity" type="number" value="1" placeholder="Enter Number of Entries">
                 </div>
             </div>
         </div>
@@ -1741,6 +1789,14 @@
                 </div>
             </div>
         </div>
+        <div class="customize-settings-box">
+            <p>Number of Entries Counted</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="facebookLikeQuantity" class="additional-entry-quantity" data-type="facebookLikeQuantity" name="facebookLikeQuantity" type="number" value="1" placeholder="Enter Number of Entries">
+                </div>
+            </div>
+        </div>
     </div>
     <div class="dropdown-wrapper text-design">
         <div class="header-box">
@@ -1952,6 +2008,14 @@
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-text">
                     <input id="tiktokFollowForm" class="additional-entry-input" data-type="tiktokFollow" name="tiktokFollow" type="text" placeholder="Enter TikTok Username">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Number of Entries Counted</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="tiktokFollowQuantity" class="additional-entry-quantity" data-type="tiktokFollowQuantity" name="tiktokFollowQuantity" type="number" value="1" placeholder="Enter Number of Entries">
                 </div>
             </div>
         </div>
@@ -2169,6 +2233,14 @@
                 </div>
             </div>
         </div>
+        <div class="customize-settings-box">
+            <p>Number of Entries Counted</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="tiktokCommentQuantity" class="additional-entry-quantity" data-type="tiktokCommentQuantity" name="tiktokCommentQuantity" type="number" value="1" placeholder="Enter Number of Entries">
+                </div>
+            </div>
+        </div>
     </div>
     <div class="dropdown-wrapper text-design">
         <div class="header-box">
@@ -2380,6 +2452,14 @@
             <div class="customize-settings-dropdown">
                 <div class="dropdown-display dropdown-text">
                     <input id="tiktokLikeForm" class="additional-entry-input" data-type="tiktokLike" name="tiktokLike" type="text" placeholder="Enter TikTok Post">
+                </div>
+            </div>
+        </div>
+        <div class="customize-settings-box">
+            <p>Number of Entries Counted</p>
+            <div class="customize-settings-dropdown">
+                <div class="dropdown-display dropdown-text">
+                    <input id="tiktokLikeQuantity" class="additional-entry-quantity" data-type="tiktokLikeQuantity" name="tiktokLikeQuantity" type="number" value="1" placeholder="Enter Number of Entries">
                 </div>
             </div>
         </div>

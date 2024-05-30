@@ -867,6 +867,14 @@ document.addEventListener("previewLoaded", ()=>{
         const headerElement = textElement.querySelector('h2');
         const subheaderElement = textElement.querySelector('p');
 
+        // Load XLike entry value settings
+        // Get the value of this entry by grabbing the value from the current section button's text 
+        const button = element.querySelector('button');
+        const buttonValue = button.innerText.replace('+', '');
+        // Edit the text inside the input form so that it equals the button
+        const valueForm = document.getElementById('XLikeQuantity');
+        valueForm.value = buttonValue;
+
         // XLike text
         const headerText = headerElement.textContent;
         const subheaderText = subheaderElement.textContent;
@@ -991,6 +999,14 @@ document.addEventListener("previewLoaded", ()=>{
         const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
         const headerElement = textElement.querySelector('h2');
         const subheaderElement = textElement.querySelector('p');
+
+        // Load instaFollow entry value settings
+        // Get the value of this entry by grabbing the value from the current section button's text 
+        const button = element.querySelector('button');
+        const buttonValue = button.innerText.replace('+', '');
+        // Edit the text inside the input form so that it equals the button
+        const valueForm = document.getElementById('instaFollowQuantity');
+        valueForm.value = buttonValue;
 
         // Insta Follow text
         const headerText = headerElement.textContent;
@@ -1119,6 +1135,14 @@ document.addEventListener("previewLoaded", ()=>{
         const headerElement = textElement.querySelector('h2');
         const subheaderElement = textElement.querySelector('p');
 
+        // Load instaComment entry value settings
+        // Get the value of this entry by grabbing the value from the current section button's text 
+        const button = element.querySelector('button');
+        const buttonValue = button.innerText.replace('+', '');
+        // Edit the text inside the input form so that it equals the button
+        const valueForm = document.getElementById('instaCommentQuantity');
+        valueForm.value = buttonValue;
+
         // Insta Comment text
         const headerText = headerElement.textContent;
         const subheaderText = subheaderElement.textContent;
@@ -1246,6 +1270,14 @@ document.addEventListener("previewLoaded", ()=>{
         const headerElement = textElement.querySelector('h2');
         const subheaderElement = textElement.querySelector('p');
 
+        // Load instaLike entry value settings
+        // Get the value of this entry by grabbing the value from the current section button's text 
+        const button = element.querySelector('button');
+        const buttonValue = button.innerText.replace('+', '');
+        // Edit the text inside the input form so that it equals the button
+        const valueForm = document.getElementById('instaLikeQuantity');
+        valueForm.value = buttonValue;
+
         // Insta Like text
         const headerText = headerElement.textContent;
         const subheaderText = subheaderElement.textContent;
@@ -1364,6 +1396,14 @@ document.addEventListener("previewLoaded", ()=>{
         const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
         const headerElement = textElement.querySelector('h2');
         const subheaderElement = textElement.querySelector('p');
+
+        // Load facebook follow entry value settings
+        // Get the value of this entry by grabbing the value from the current section button's text 
+        const button = element.querySelector('button');
+        const buttonValue = button.innerText.replace('+', '');
+        // Edit the text inside the input form so that it equals the button
+        const valueForm = document.getElementById('facebookFollowQuantity');
+        valueForm.value = buttonValue;
 
         // Facebook Follow text
         const headerText = headerElement.textContent;
@@ -1485,6 +1525,14 @@ document.addEventListener("previewLoaded", ()=>{
         const headerElement = textElement.querySelector('h2');
         const subheaderElement = textElement.querySelector('p');
 
+        // Load facebook Comment entry value settings
+        // Get the value of this entry by grabbing the value from the current section button's text 
+        const button = element.querySelector('button');
+        const buttonValue = button.innerText.replace('+', '');
+        // Edit the text inside the input form so that it equals the button
+        const valueForm = document.getElementById('facebookCommentQuantity');
+        valueForm.value = buttonValue;
+
         // Facebook Comment text
         const headerText = headerElement.textContent;
         const subheaderText = subheaderElement.textContent;
@@ -1604,6 +1652,14 @@ document.addEventListener("previewLoaded", ()=>{
         const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
         const headerElement = textElement.querySelector('h2');
         const subheaderElement = textElement.querySelector('p');
+
+        // Load facebook Like entry value settings
+        // Get the value of this entry by grabbing the value from the current section button's text 
+        const button = element.querySelector('button');
+        const buttonValue = button.innerText.replace('+', '');
+        // Edit the text inside the input form so that it equals the button
+        const valueForm = document.getElementById('facebookLikeQuantity');
+        valueForm.value = buttonValue;
 
         // Facebook Like text
         const headerText = headerElement.textContent;
@@ -1725,6 +1781,14 @@ document.addEventListener("previewLoaded", ()=>{
         const headerElement = textElement.querySelector('h2');
         const subheaderElement = textElement.querySelector('p');
 
+        // Load tiktok follow entry value settings
+        // Get the value of this entry by grabbing the value from the current section button's text 
+        const button = element.querySelector('button');
+        const buttonValue = button.innerText.replace('+', '');
+        // Edit the text inside the input form so that it equals the button
+        const valueForm = document.getElementById('tiktokFollowQuantity');
+        valueForm.value = buttonValue;
+
         // Tiktok Follow text
         const headerText = headerElement.textContent;
         const subheaderText = subheaderElement.textContent;
@@ -1845,6 +1909,14 @@ document.addEventListener("previewLoaded", ()=>{
         const headerElement = textElement.querySelector('h2');
         const subheaderElement = textElement.querySelector('p');
 
+        // Load tiktok comment entry value settings
+        // Get the value of this entry by grabbing the value from the current section button's text 
+        const button = element.querySelector('button');
+        const buttonValue = button.innerText.replace('+', '');
+        // Edit the text inside the input form so that it equals the button
+        const valueForm = document.getElementById('tiktokCommentQuantity');
+        valueForm.value = buttonValue;
+
         // Tiktok Comment text
         const headerText = headerElement.textContent;
         const subheaderText = subheaderElement.textContent;
@@ -1964,6 +2036,14 @@ document.addEventListener("previewLoaded", ()=>{
         const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
         const headerElement = textElement.querySelector('h2');
         const subheaderElement = textElement.querySelector('p');
+
+        // Load tiktok like entry value settings
+        // Get the value of this entry by grabbing the value from the current section button's text 
+        const button = element.querySelector('button');
+        const buttonValue = button.innerText.replace('+', '');
+        // Edit the text inside the input form so that it equals the button
+        const valueForm = document.getElementById('tiktokLikeQuantity');
+        valueForm.value = buttonValue;
 
         // Tiktok Like text
         const headerText = headerElement.textContent;

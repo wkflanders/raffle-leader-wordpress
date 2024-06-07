@@ -117,6 +117,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     let pickrTiktokLikeBackground = undefined;
     let pickrTiktokLikeBorder = undefined;
 
+    let pickrRaffleBackground = undefined;
 
     dropDownBtns.forEach((dropDownBtn)=>{
         dropDownBtn.addEventListener('click', openDropDown);
@@ -675,6 +676,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrText.setColorRepresentation('HEX');
@@ -699,6 +701,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrBackground.setColorRepresentation('HEX');
@@ -723,6 +726,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrBorder.setColorRepresentation('HEX');
@@ -747,6 +751,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrCounter.setColorRepresentation('HEX');
@@ -771,6 +776,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickerCounterBackground.setColorRepresentation('HEX');
@@ -795,6 +801,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrCounterBorder.setColorRepresentation('HEX');
@@ -819,6 +826,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrImageBorder.setColorRepresentation('HEX');
@@ -843,6 +851,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrEntryBtn.setColorRepresentation('HEX');
@@ -867,6 +876,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrEntryBackground.setColorRepresentation('HEX');
@@ -891,6 +901,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrEntryBorder.setColorRepresentation('HEX');
@@ -915,6 +926,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrXFollowHeader.setColorRepresentation('HEX');
@@ -939,6 +951,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrXFollowSubheader.setColorRepresentation('HEX');
@@ -962,6 +975,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrXFollowButton.setColorRepresentation('HEX');
@@ -986,6 +1000,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrXFollowBackground.setColorRepresentation('HEX');
@@ -1010,6 +1025,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrXFollowBorder.setColorRepresentation('HEX');
@@ -1034,6 +1050,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrXRepostHeader.setColorRepresentation('HEX');
@@ -1058,6 +1075,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrXRepostSubheader.setColorRepresentation('HEX');
@@ -1081,6 +1099,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrXRepostButton.setColorRepresentation('HEX');
@@ -1105,6 +1124,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrXRepostBackground.setColorRepresentation('HEX');
@@ -1129,6 +1149,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrXRepostBorder.setColorRepresentation('HEX');
@@ -1153,6 +1174,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrXLikeHeader.setColorRepresentation('HEX');
@@ -1177,6 +1199,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrXLikeSubheader.setColorRepresentation('HEX');
@@ -1200,6 +1223,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrXLikeButton.setColorRepresentation('HEX');
@@ -1224,6 +1248,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrXLikeBackground.setColorRepresentation('HEX');
@@ -1248,6 +1273,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrXLikeBorder.setColorRepresentation('HEX');
@@ -1272,6 +1298,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrInstaFollowHeader.setColorRepresentation('HEX');
@@ -1296,6 +1323,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrInstaFollowSubheader.setColorRepresentation('HEX');
@@ -1319,6 +1347,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrInstaFollowButton.setColorRepresentation('HEX');
@@ -1343,6 +1372,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrInstaFollowBackground.setColorRepresentation('HEX');
@@ -1367,6 +1397,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrInstaFollowBorder.setColorRepresentation('HEX');
@@ -1391,6 +1422,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrInstaCommentHeader.setColorRepresentation('HEX');
@@ -1415,6 +1447,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrInstaCommentSubheader.setColorRepresentation('HEX');
@@ -1439,6 +1472,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrInstaCommentButton.setColorRepresentation('HEX');
@@ -1463,6 +1497,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrInstaCommentBackground.setColorRepresentation('HEX');
@@ -1487,6 +1522,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrInstaCommentBorder.setColorRepresentation('HEX');
@@ -1511,6 +1547,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrInstaLikeHeader.setColorRepresentation('HEX');
@@ -1535,6 +1572,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrInstaLikeSubheader.setColorRepresentation('HEX');
@@ -1558,6 +1596,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrInstaLikeButton.setColorRepresentation('HEX');
@@ -1582,6 +1621,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrInstaLikeBackground.setColorRepresentation('HEX');
@@ -1606,6 +1646,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrInstaLikeBorder.setColorRepresentation('HEX');
@@ -1630,6 +1671,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrFacebookFollowHeader.setColorRepresentation('HEX');
@@ -1654,6 +1696,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrFacebookFollowSubheader.setColorRepresentation('HEX');
@@ -1678,6 +1721,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrFacebookFollowButton.setColorRepresentation('HEX');
@@ -1702,6 +1746,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrFacebookFollowBackground.setColorRepresentation('HEX');
@@ -1726,6 +1771,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrFacebookFollowBorder.setColorRepresentation('HEX');
@@ -1750,6 +1796,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrFacebookCommentHeader.setColorRepresentation('HEX');
@@ -1774,6 +1821,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrFacebookCommentSubheader.setColorRepresentation('HEX');
@@ -1798,6 +1846,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrFacebookCommentButton.setColorRepresentation('HEX');
@@ -1822,6 +1871,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrFacebookCommentBackground.setColorRepresentation('HEX');
@@ -1846,6 +1896,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrFacebookCommentBorder.setColorRepresentation('HEX');
@@ -1870,6 +1921,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrFacebookLikeHeader.setColorRepresentation('HEX');
@@ -1894,6 +1946,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrFacebookLikeSubheader.setColorRepresentation('HEX');
@@ -1918,6 +1971,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrFacebookLikeButton.setColorRepresentation('HEX');
@@ -1942,6 +1996,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrFacebookLikeBackground.setColorRepresentation('HEX');
@@ -1966,6 +2021,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrFacebookLikeBorder.setColorRepresentation('HEX');
@@ -1990,6 +2046,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrTiktokFollowHeader.setColorRepresentation('HEX');
@@ -2014,6 +2071,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrTiktokFollowSubheader.setColorRepresentation('HEX');
@@ -2038,6 +2096,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrTiktokFollowButton.setColorRepresentation('HEX');
@@ -2062,6 +2121,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrTiktokFollowBackground.setColorRepresentation('HEX');
@@ -2086,6 +2146,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrTiktokFollowBorder.setColorRepresentation('HEX');
@@ -2110,6 +2171,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrTiktokCommentHeader.setColorRepresentation('HEX');
@@ -2134,6 +2196,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrTiktokCommentSubheader.setColorRepresentation('HEX');
@@ -2158,6 +2221,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrTiktokCommentButton.setColorRepresentation('HEX');
@@ -2182,6 +2246,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrTiktokCommentBackground.setColorRepresentation('HEX');
@@ -2206,6 +2271,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrTiktokCommentBorder.setColorRepresentation('HEX');
@@ -2230,6 +2296,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrTiktokLikeHeader.setColorRepresentation('HEX');
@@ -2254,6 +2321,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrTiktokLikeSubheader.setColorRepresentation('HEX');
@@ -2278,6 +2346,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrTiktokLikeButton.setColorRepresentation('HEX');
@@ -2302,6 +2371,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrTiktokLikeBackground.setColorRepresentation('HEX');
@@ -2326,12 +2396,38 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     padding: 15,
                     components: {
                         hue: true,
+                        opacity: true,
                     }
                 });
                 pickrTiktokLikeBorder.setColorRepresentation('HEX');
                 pickrTiktokLikeBorder.show();
             
                 pickrTiktokLikeBorder.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'raffleBackgroundColor':
+                const currentRaffleBackgroundColor = document.getElementById('raffleBackgroundColorForm').value;
+
+                pickrRaffleBackground = Pickr.create({
+                    el: raffleGradientBackground,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentRaffleBackgroundColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                        opacity: true,
+                    }
+                });
+                pickrRaffleBackground.setColorRepresentation('HEX');
+                pickrRaffleBackground.show();
+
+                pickrRaffleBackground.on('change', (color)=>{
                     const selectedColor = '#'.concat(...color.toHEXA());
                     this.style.backgroundColor = selectedColor;
                     
@@ -2364,6 +2460,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -2390,6 +2487,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -2416,6 +2514,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -2451,6 +2550,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -2479,6 +2579,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -2505,6 +2606,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -2540,6 +2642,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -2575,6 +2678,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -2601,6 +2705,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -2627,6 +2732,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -2662,6 +2768,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -2688,6 +2795,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -2714,6 +2822,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -2740,6 +2849,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -2766,6 +2876,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -2801,6 +2912,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -2827,6 +2939,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -2853,6 +2966,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -2879,6 +2993,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -2905,6 +3020,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -2940,6 +3056,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -2966,6 +3083,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -2992,6 +3110,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3018,6 +3137,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3044,6 +3164,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3079,6 +3200,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3105,6 +3227,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3131,6 +3254,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3157,6 +3281,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3183,6 +3308,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3218,6 +3344,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3244,6 +3371,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3270,6 +3398,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3296,6 +3425,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3322,6 +3452,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3357,6 +3488,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3383,6 +3515,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3409,6 +3542,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3435,6 +3569,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3461,6 +3596,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3496,6 +3632,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3522,6 +3659,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3548,6 +3686,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3574,6 +3713,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3600,6 +3740,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3635,6 +3776,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3661,6 +3803,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3687,6 +3830,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3713,6 +3857,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3739,6 +3884,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3774,6 +3920,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3800,6 +3947,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3826,6 +3974,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3852,6 +4001,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3878,6 +4028,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3913,6 +4064,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3939,6 +4091,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3965,6 +4118,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -3991,6 +4145,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -4017,6 +4172,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -4052,6 +4208,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -4078,6 +4235,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -4104,6 +4262,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -4130,6 +4289,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -4156,6 +4316,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -4191,6 +4352,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -4217,6 +4379,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -4243,6 +4406,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -4269,6 +4433,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -4295,6 +4460,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             padding: 15,
                             components: {
                                 hue: true,
+                                opacity: true,
                             }
                         });
                     } else {
@@ -4317,6 +4483,33 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 tiktokLikeEditElementBorder.style.borderLeft = `${tiktokLikeCurrentBorderStrokeLeft} solid ${color}`;
                 tiktokLikeEditElementBorder.style.borderBottom = `${tiktokLikeCurrentBorderStrokeBottom} solid ${color}`;
                 tiktokLikeEditElementBorder.style.borderRight = `${tiktokLikeCurrentBorderStrokeRight} solid ${color}`;
+                break;
+
+            case 'raffleBackgroundColor':
+                if(fromPickr === false){
+                    if(pickrRaffleBackground === undefined){
+                        pickrRaffleBackground = Pickr.create({
+                            el: raffleGradientBackground,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrRaffleBackground.setColor(color);
+                        const hexBoxClick = document.getElementById('raffleBackgroundColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('raffleBackgroundColorForm');
+                    hexBoxText.value = color;
+                }
+                const editRaffleBackground = document.querySelector('.raffleleader-dropzone');
+                editRaffleBackground.style.backgroundColor = color;
                 break;
         }
     }

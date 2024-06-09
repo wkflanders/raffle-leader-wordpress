@@ -57,7 +57,7 @@
                                 <p>+ Image Section</p>
                             </div>
                         </div>
-                        <div class="layout-size">
+                        <div class="layout-box layout-size">
                             <p>Adjust your raffle's height and width</p>
                             <div class="layout-size-row-wrapper">
                                 <div class="layout-size-row layout-size-text">
@@ -77,6 +77,19 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="layout-box layout-bg-color">
+                            <p>Adjust your raffle's background color</p>
+                            <div class="customize-settings-box">
+                                <p>Background Color</p>
+                                <div class="customize-settings-dropdown">
+                                    <div class="dropdown-display dropdown-color">
+                                        <div id="raffleGradientBackground"></div>
+                                        <div id="raffleBackgroundColorClick" class="dropdown-color-click" data-type="raffleBackgroundColor"></div>
+                                        <input id="raffleBackgroundColorForm" class="color-input" data-type="raffleBackgroundColor" type="text" name="raffleBackgroundColor" placeholder="Enter a hexidecimal">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="raffle-options raffle-settings">
                         <div class="header-box raffle-options-header">
@@ -85,11 +98,11 @@
                         <div class="general-settings-options">
                             <a href="#dateAndTime" class="settings-tab-open"><button class="general-settings-btn">Date and Time</button></a>
                             <a href="#rulesAndTerms" class="settings-tab-open"><button class="general-settings-btn">Rules and Terms</button></a>
-                            <a href="#emailSettings" class="settings-tab-open general-settings-deactivated"><button class="general-settings-btn">Email Settings</button></a>
+                            <!-- <a href="#emailSettings" class="settings-tab-open general-settings-deactivated"><button class="general-settings-btn">Email Settings</button></a>
                             <a href="#successSettings" class="settings-tab-open general-settings-deactivated"><button class="general-settings-btn">Success Settings</button></a>
                             <a href="#GPDR" class="settings-tab-open general-settings-deactivated"><button class="general-settings-btn">GPDR Consent</button></a>
                             <a href="#recaptcha" class="settings-tab-open general-settings-deactivated"><button class="general-settings-btn">Recaptcha</button></a>
-                            <a href="#webhooks" class="settings-tab-open general-settings-deactivated"><button class="general-settings-btn">Webhooks</button></a>
+                            <a href="#webhooks" class="settings-tab-open general-settings-deactivated"><button class="general-settings-btn">Webhooks</button></a> -->
                         </div>
                     </div>
                 </div>
@@ -166,7 +179,7 @@
                             <textarea id="rulesAndTermsForm" class="rules-and-terms-input" type="text" placeholder="Enter Rules and Terms"></textarea>
                         </div>
                     </div>
-                    <div class="general-settings-menu" id='emailSettings'>
+                    <!-- <div class="general-settings-menu" id='emailSettings'>
                         <div class="header-box settings-menu-header">
                             <h2 class="header-box-title">Email Settings</h2>
                             <button class="close close-settings-menu"></button>
@@ -271,7 +284,7 @@
                             <h2 class="header-box-title">Webhooks</h2>
                             <button class="close close-settings-menu"></button>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div id="previewWrapper" class="raffleleader-preview-wrapper" style="display: none;">
                     <div id="preview" class="raffleleader-preview-box raffleleader-preview-reset" style="width: 500px">

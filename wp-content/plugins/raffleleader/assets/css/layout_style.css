@@ -20,13 +20,15 @@
     width: 100%;
     background-color: rgb(255, 255, 255);
     border-bottom: 2px solid #1501FE;
-    padding-left: 0.2vw;
-    padding-right: 0.2vw;
 }
 
 .raffle-options-header{
     display: block;
     text-align: center;
+}
+
+.layout-box .dropdown-color{
+    padding: 0 2.5vh 0 2vh;
 }
 
 .layout-options{

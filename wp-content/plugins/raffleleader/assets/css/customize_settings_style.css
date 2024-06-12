@@ -1,3 +1,7 @@
+.dropdown-settings-wrapper{
+    padding: 0 2.5vw 0 2.5vw;
+}
+
 .customize-settings-box{
     display: flex;
     flex-direction: column;
@@ -9,14 +13,12 @@
     font-weight: bold;
     color: gray;
     margin-bottom: 0.5vh;
-    margin-left: 4vw;
     font-size: 1.8vh;
 }
 
 .dropdown-display{
     height: 5vh;
-    width: 15vw;
-    margin-left: 3vw;
+    width: 15.5vw;
     padding: 0.2vh 2vh 0 2vh;
     display: flex;
     justify-content: space-between;
@@ -80,8 +82,9 @@
 }
 
 .dropdown-text{
+    width: 15vw;
     border: none;
-    margin-left: 2vw;
+    padding: 0;
 }
 
 input[type="text"]{
@@ -89,6 +92,16 @@ input[type="text"]{
     font-size: 2.5vh;
     border-radius: 10px;
     border: 1px solid black;
+    padding-right: 2vh;
+    padding-left: 2vh;
+}
+
+input[type="text"].font-size-input{
+    width: 17.5vw;
+}
+
+input[type="text"].letter-spacing-input{
+    width: 17.5vw;
 }
 
 input[type="text"]::placeholder{
@@ -111,7 +124,7 @@ input[type="number"]::placeholder{
 .dropdown-edit-text{
     display: block;
     height: 15vh;
-    width: 17vw;
+    width: 17.5vw;
 }
 
 .text-input{
@@ -128,9 +141,8 @@ input[type="number"]::placeholder{
 
 .dropdown-inline-btns{
     border: none;
-    margin-left: 2vw;
-    padding-right: 0;
-    width: 17vw;
+    padding: 0;
+    width: 17.5vw;
 }
 
 .dropdown-two-btns{
@@ -180,8 +192,8 @@ input[type="number"]::placeholder{
 
 .dropdown-color{
     border: 0;
-    margin-left: 2.2vw;
-    width: 17vw;
+    width: 17.5vw;
+    padding: 0;
 }
 
 input[type="text"].color-input{
@@ -260,11 +272,11 @@ input[type="text"].color-input{
 
 .dropdown-multi-input{
     border: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     width: 5vw;
     height: 12vh;
-    margin-left: 2vw;
 }
 
 .dropdown-row{
@@ -279,13 +291,13 @@ input[type="text"].color-input{
 }
 
 .border-stroke-input{
-    width: 5vw !important;
+    width: 5.25vw !important;
     margin-bottom: 1.5vh;
     margin-right: 1vw;
 }
 
 .border-radius-input{
-    width: 5vw !important;
+    width: 5.25vw !important;
     margin-bottom: 1.5vh;
     margin-right: 1vw;
 }
@@ -330,7 +342,7 @@ input[type="text"].color-input{
     text-align: left;
     padding: 0 0 0 2vh;
     border-radius: 10px;
-    width: 16vw;
+    width: 15vw;
     height: 5vh;
     justify-content: flex-start;
 }
@@ -351,6 +363,7 @@ input[type="text"].color-input{
     border: 0;
     height: 8vh;
     margin-left: 3vw;
+    margin: 0;
 }
 
 .insert-img-btn{
@@ -361,6 +374,7 @@ input[type="text"].color-input{
     font-size: 1.7vh;
     padding: 0.7rem 1.5rem 0.8rem 1.5rem;
     margin-top: 2vh;
+    margin-bottom: 2vh;
     font-family: "Inter";
 }
 
@@ -387,20 +401,21 @@ input[type="text"].color-input{
 }
 
 .img-url{
-    height: 3vh;
+    height: 5vh;
     width: 14vw;
     font-size: 1.5vh;
     line-height: 2;
 }
 
 .img-delete{
+    vertical-align: center;
     background-color: white;
     border: 0;
     padding: 0;
     margin: 0 1vh 0 0;
     font-size: 1.5vh;
     color: red;
-    height: 3.25vh;
+    height: 5vh;
     width: 3vw;
     line-height: 2;
 }
@@ -416,6 +431,7 @@ input[type="text"].color-input{
 }
 
 .delete-display{
+    width: 15.5vw;
     margin-top: 3vh;
     margin-bottom: 3vh;
     border-color: red;
@@ -441,6 +457,7 @@ input[type="text"].color-input{
 }
 
 .confirm-delete{
+    width: 15.5vw;
     margin-top: 3vh;
     background-color: red;
     justify-content: center;

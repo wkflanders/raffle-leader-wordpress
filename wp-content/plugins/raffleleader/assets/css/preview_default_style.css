@@ -57,6 +57,7 @@
     max-height: 1200px;
     min-height: 100px;
     width: 100%;
+    background-color: white;
 }
 
 .raffleleader-section{
@@ -83,6 +84,7 @@
 }
 
 .raffleleader-footer-wrapper{
+    background-color: rgba(255, 255, 255, 0);
     height: 50px;
     width: 100%;
     border-top: 1px solid black;
@@ -230,6 +232,7 @@
 
 .raffleleader-entry-section input[type="email"]{
     position: absolute;
+    background-color: rgba(255, 255, 255, 0);
     width: 85%;
     height: 60%;
     border: 1px solid gray;
@@ -284,7 +287,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
     padding: 0 2vw 0 2vw;
     flex-wrap: wrap;
     box-sizing: border-box;

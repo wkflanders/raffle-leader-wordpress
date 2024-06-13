@@ -4508,8 +4508,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     const hexBoxText = document.getElementById('raffleBackgroundColorForm');
                     hexBoxText.value = color;
                 }
-                const editRaffleBackground = document.querySelector('.raffleleader-dropzone');
-                editRaffleBackground.style.backgroundColor = color;
+                const editDropzoneBackground = document.querySelector('.raffleleader-dropzone');
+                editPreviewBackground.style.backgroundColor = color;
+                editDropzoneBackground.style.backgroundColor = color;
                 break;
         }
     }

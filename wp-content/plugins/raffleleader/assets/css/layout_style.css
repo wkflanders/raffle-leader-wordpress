@@ -1,13 +1,13 @@
 .raffle-options-wrapper{
     display: block;
     background-color: rgb(255, 255, 255);
-    height: 95vh;
+    height: 90vh;
     width: 20vw;
     border-right: 2px solid #1501FE;
     box-sizing: border-box;
     overflow-y: auto;
     overflow: overlay;
-    z-index: 2000;;
+    z-index: 2000;
     direction: rtl;
 }
 
@@ -18,9 +18,10 @@
     direction: ltr;
     z-index: 80;
     width: 100%;
-    height: 75%;
     background-color: rgb(255, 255, 255);
     border-bottom: 2px solid #1501FE;
+    padding-left: 0.2vw;
+    padding-right: 0.2vw;
 }
 
 .raffle-options-header{
@@ -58,17 +59,26 @@
     font-size: 2vh;
 }
 
-.layout-size{
+.layout-box{
     display: flex;
     flex-direction: column;
 }
 
-.layout-size > p{
+.layout-box > p{
     color: gray;
     text-align: center;
     font-weight: 500;
     padding-top: 1vh;
     font-size: 1.65vh;
+}
+
+.layout-box > .customize-settings-box div{
+    margin-left: 0;
+}
+
+.layout-box > .customize-settings-box p{
+    margin-left: 1.7vw;
+    margin-top: 0.2vh;
 }
 
 .layout-size-input{

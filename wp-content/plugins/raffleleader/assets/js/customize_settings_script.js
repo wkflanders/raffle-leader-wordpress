@@ -118,6 +118,8 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     let pickrTiktokLikeBorder = undefined;
 
     let pickrRaffleBackground = undefined;
+    let pickrFooterFont = undefined;
+    let pickrFooterBackground = undefined;
 
     dropDownBtns.forEach((dropDownBtn)=>{
         dropDownBtn.addEventListener('click', openDropDown);
@@ -2434,6 +2436,55 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     pickColor(selectedColor, elementType, true);
                 });
                 break;
+
+            case 'footerFontColor':
+                const currentFooterColor = document.getElementById('footerFontColorForm').value;
+
+                pickrFooterFont = Pickr.create({
+                    el: footerFontGradientBackground,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentFooterColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                    }
+                });
+                pickrFooterFont.setColorRepresentation('HEX');
+                pickrFooterFont.show();
+
+                pickrFooterFont.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'footerBackgroundColor':
+                const currentFooterBackgroundColor = document.getElementById('footerBackgroundColorForm').value;
+
+                pickrFooterBackground = Pickr.create({
+                    el: footerGradientBackground,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentFooterBackgroundColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                        opacity: true,
+                    }
+                });
+                pickrFooterBackground.setColorRepresentation('HEX');
+                pickrFooterBackground.show();
+
+                pickrFooterBackground.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
         }
     }
 
@@ -4509,9 +4560,63 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     hexBoxText.value = color;
                 }
                 const editDropzoneBackground = document.querySelector('.raffleleader-dropzone');
-                editPreviewBackground.style.backgroundColor = color;
                 editDropzoneBackground.style.backgroundColor = color;
                 break;
+
+            case 'footerFontColor':
+                if(fromPickr === false){
+                    if(pickrFooterFont === undefined){
+                        pickrFooterFont = Pickr.create({
+                            el: footerFontGradientBackground,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                            }
+                        });
+                    } else {
+                        pickrFooterFont.setColor(color);
+                        const hexBoxClick = document.getElementById('footerFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('footerFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editFooterFonts = document.querySelectorAll('.raffleleader-footer-content');
+                editFooterFonts.forEach((editFooterFont)=>{
+                    editFooterFont.style.color = color;
+                });
+                break;
+
+            case 'footerBackgroundColor':
+                if(fromPickr === false){
+                    if(pickrFooterBackground === undefined){
+                        pickrFooterBackground = Pickr.create({
+                            el: footerGradientBackground,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrFooterBackground.setColor(color);
+                        const hexBoxClick = document.getElementById('footerBackgroundColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('footerBackgroundColorForm');
+                    hexBoxText.value = color;
+                }
+                const editFooterBackground = document.querySelector('.raffleleader-footer-wrapper');
+                editFooterBackground.style.backgroundColor = color;
+                break;     
         }
     }
 

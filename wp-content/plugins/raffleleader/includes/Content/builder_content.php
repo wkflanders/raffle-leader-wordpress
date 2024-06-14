@@ -95,9 +95,9 @@
                                 <p>Footer Color</p>
                                 <div class="customize-settings-dropdown">
                                     <div class="dropdown-display dropdown-color">
-                                        <div id="raffleGradientBackground"></div>
-                                        <div id="raffleBackgroundColorClick" class="dropdown-color-click" data-type="raffleBackgroundColor"></div>
-                                        <input id="raffleBackgroundColorForm" class="color-input" data-type="raffleBackgroundColor" type="text" name="raffleBackgroundColor" placeholder="Enter a hexidecimal">
+                                        <div id="footerFontGradientBackground"></div>
+                                        <div id="footerFontColorClick" class="dropdown-color-click" data-type="footerFontColor"></div>
+                                        <input id="footerFontColorForm" class="color-input" data-type="footerFontColor" type="text" name="footerFontColor" placeholder="Enter a hexidecimal">
                                     </div>
                                 </div>
                             </div>
@@ -107,9 +107,9 @@
                                 <p>Footer Background Color</p>
                                 <div class="customize-settings-dropdown">
                                     <div class="dropdown-display dropdown-color">
-                                        <div id="raffleGradientBackground"></div>
-                                        <div id="raffleBackgroundColorClick" class="dropdown-color-click" data-type="raffleBackgroundColor"></div>
-                                        <input id="raffleBackgroundColorForm" class="color-input" data-type="raffleBackgroundColor" type="text" name="raffleBackgroundColor" placeholder="Enter a hexidecimal">
+                                        <div id="footerGradientBackground"></div>
+                                        <div id="footerBackgroundColorClick" class="dropdown-color-click" data-type="footerBackgroundColor"></div>
+                                        <input id="footerBackgroundColorForm" class="color-input" data-type="footerBackgroundColor" type="text" name="footerBackgroundColor" placeholder="Enter a hexidecimal">
                                     </div>
                                 </div>
                             </div>

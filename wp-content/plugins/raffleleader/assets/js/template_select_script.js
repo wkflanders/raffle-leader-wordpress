@@ -6,6 +6,9 @@ document.addEventListener("generalSettingsLoaded", ()=>{
     const layoutHeightForm = document.getElementById('layoutHeightForm');
     const layoutWidthForm = document.getElementById('layoutWidthForm');
 
+    const raffleBackgroundHexBox = document.getElementById('raffleBackgroundColorClick');
+    const raffleBackgroundForm = document.getElementById('raffleBackgroundColorForm');
+
     const customizeBox = document.getElementById('settingsWrapper');
 
     const loadPreviewEvent = new CustomEvent('previewLoaded');
@@ -430,5 +433,10 @@ document.addEventListener("generalSettingsLoaded", ()=>{
 
         layoutHeightForm.value = getComputedStyle(dropzone).getPropertyValue('height').replace(/^"|"$/g, '');
         layoutWidthForm.value = getComputedStyle(newPreview).getPropertyValue('width').replace(/^"|"$/g, '');
+
+        const raffleBackgroundColorRGB = window.getComputedStyle(newPreview).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const raffleBackgroundColorHex = rgbToHex(raffleBackgroundColorRGB);
+        raffleBackgroundForm.value = raffleBackgroundColorHex;
+        raffleBackgroundHexBox.style.backgroundColor = raffleBackgroundColorHex;
     }
 });

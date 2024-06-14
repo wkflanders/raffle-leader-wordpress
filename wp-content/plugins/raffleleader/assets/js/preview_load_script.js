@@ -9,6 +9,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     const layoutHeightForm = document.getElementById('layoutHeightForm');
     const layoutWidthForm = document.getElementById('layoutWidthForm');
 
+    const raffleBackgroundHexBox = document.getElementById('raffleBackgroundColorClick');
+    const raffleBackgroundForm = document.getElementById('raffleBackgroundColorForm');
+
     const startDateInput = document.getElementById('startDate');
     const endDateInput = document.getElementById('endDate');
     const startTimeInput = document.getElementById('startTime');
@@ -63,6 +66,13 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
             layoutHeightForm.value = getComputedStyle(dropzone).getPropertyValue('height').replace(/^"|"$/g, '');
             layoutWidthForm.value = getComputedStyle(newPreview).getPropertyValue('width').replace(/^"|"$/g, '');
+
+            // Load preview background color
+            const raffleBackgroundColorRGB = window.getComputedStyle(newPreview).getPropertyValue('background-color').replace(/^"|"$/g, '');
+            const raffleBackgroundColorHex = rgbToHex(raffleBackgroundColorRGB);
+            raffleBackgroundForm.value = raffleBackgroundColorHex;
+            raffleBackgroundHexBox.style.backgroundColor = raffleBackgroundColorHex;
+            
         } else {
             navBar.style.display = 'flex';
             loadingMenu.style.display = 'none';

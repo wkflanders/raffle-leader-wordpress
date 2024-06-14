@@ -1,21 +1,23 @@
-window.zoomScale = 1;
+// DEPRECATED (maybe will revisit in the future)
 
-document.addEventListener('generalSettingsLoaded', ()=>{
-    const viewport = document.getElementById('previewWrapper');
+// window.zoomScale = 1;
 
-    // Flushing event listeners
-    viewport.removeEventListener('wheel', handleZoom);
-    viewport.addEventListener('wheel', handleZoom);
+// document.addEventListener('generalSettingsLoaded', ()=>{
+//     const viewport = document.getElementById('previewWrapper');
 
-    function handleZoom(event){
-        const zoomable = document.getElementById('preview');
+//     // Flushing event listeners
+//     viewport.removeEventListener('wheel', handleZoom);
+//     viewport.addEventListener('wheel', handleZoom);
 
-        event.preventDefault();
-        const ZOOM_SPEED = 0.03;
-        const { deltaX, deltaY } = event;
-        const direction = deltaY < 0 ? 1 : -1;
-        window.zoomScale += direction * ZOOM_SPEED;
-        window.zoomScale = Math.max(0.1, window.zoomScale); // Limit zoom out
-        zoomable.style.transform = `scale(${window.zoomScale})`;
-    }
-})
+//     function handleZoom(event){
+//         const zoomable = document.getElementById('preview');
+
+//         event.preventDefault();
+//         const ZOOM_SPEED = 0.03;
+//         const { deltaX, deltaY } = event;
+//         const direction = deltaY < 0 ? 1 : -1;
+//         window.zoomScale += direction * ZOOM_SPEED;
+//         window.zoomScale = Math.max(0.1, window.zoomScale); // Limit zoom out
+//         zoomable.style.transform = `scale(${window.zoomScale})`;
+//     }
+// })

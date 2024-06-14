@@ -84,7 +84,7 @@
 }
 
 .raffleleader-footer-wrapper{
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgb(255, 255, 255);
     height: 50px;
     width: 100%;
     border-top: 1px solid black;
@@ -148,7 +148,7 @@
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgb(255, 255, 255);
     /* border: 1px solid black; */
 }
 
@@ -170,7 +170,7 @@
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgb(255, 255, 255);
     /* border: 1px solid black; */
 }
 
@@ -196,7 +196,7 @@
     height: 100%;
     width: 100%;
     /* border: 1px solid black; */
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgb(255, 255, 255);
 }
 
 .raffleleader-image-section > p{
@@ -217,7 +217,7 @@
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgb(255, 255, 255);
     /* border: 1px solid black; */
 }
 
@@ -232,7 +232,7 @@
 
 .raffleleader-entry-section input[type="email"]{
     position: absolute;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgb(255, 255, 255);
     width: 85%;
     height: 60%;
     border: 1px solid gray;
@@ -287,7 +287,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgb(255, 255, 255);
     padding: 0 2vw 0 2vw;
     flex-wrap: wrap;
     box-sizing: border-box;

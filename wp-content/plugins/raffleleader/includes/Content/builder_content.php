@@ -90,6 +90,30 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="layout-box layout-bg-color">
+                            <div class="customize-settings-box">
+                                <p>Footer Color</p>
+                                <div class="customize-settings-dropdown">
+                                    <div class="dropdown-display dropdown-color">
+                                        <div id="raffleGradientBackground"></div>
+                                        <div id="raffleBackgroundColorClick" class="dropdown-color-click" data-type="raffleBackgroundColor"></div>
+                                        <input id="raffleBackgroundColorForm" class="color-input" data-type="raffleBackgroundColor" type="text" name="raffleBackgroundColor" placeholder="Enter a hexidecimal">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layout-box layout-bg-color">
+                            <div class="customize-settings-box">
+                                <p>Footer Background Color</p>
+                                <div class="customize-settings-dropdown">
+                                    <div class="dropdown-display dropdown-color">
+                                        <div id="raffleGradientBackground"></div>
+                                        <div id="raffleBackgroundColorClick" class="dropdown-color-click" data-type="raffleBackgroundColor"></div>
+                                        <input id="raffleBackgroundColorForm" class="color-input" data-type="raffleBackgroundColor" type="text" name="raffleBackgroundColor" placeholder="Enter a hexidecimal">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="raffle-options raffle-settings">
                         <div class="header-box raffle-options-header">

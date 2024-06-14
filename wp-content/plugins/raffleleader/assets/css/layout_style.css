@@ -27,10 +27,6 @@
     text-align: center;
 }
 
-.layout-box .dropdown-color{
-    padding: 0 2.5vh 0 2vh;
-}
-
 .layout-options{
     display: flex;
     flex-direction: column;
@@ -64,6 +60,11 @@
 .layout-box{
     display: flex;
     flex-direction: column;
+    margin-bottom: 1vw;
+}
+
+.layout-box .dropdown-color{
+    padding: 0 2.5vh 0 2vh;
 }
 
 .layout-box > p{
@@ -72,6 +73,8 @@
     font-weight: 500;
     padding-top: 1vh;
     font-size: 1.65vh;
+    margin-bottom: 0.5vh;
+    margin-top: 0;
 }
 
 .layout-box > .customize-settings-box div{

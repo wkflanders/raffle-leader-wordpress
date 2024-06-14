@@ -9,6 +9,12 @@ document.addEventListener("generalSettingsLoaded", ()=>{
     const raffleBackgroundHexBox = document.getElementById('raffleBackgroundColorClick');
     const raffleBackgroundForm = document.getElementById('raffleBackgroundColorForm');
 
+    const footerColorHexBox = document.getElementById('footerFontColorClick');
+    const footerColorForm = document.getElementById('footerFontColorForm');
+
+    const footerBackgroundHexBox = document.getElementById('footerBackgroundColorClick');
+    const footerBackgroundForm = document.getElementById('footerBackgroundColorForm');
+
     const customizeBox = document.getElementById('settingsWrapper');
 
     const loadPreviewEvent = new CustomEvent('previewLoaded');
@@ -431,6 +437,9 @@ document.addEventListener("generalSettingsLoaded", ()=>{
         const dropzone = document.getElementById('dropzone');
         const newPreview = document.getElementById('preview');
 
+        const footerWrapper = document.querySelector('.raffleleader-footer-wrapper');
+        const footerText = document.querySelector('.raffleleader-rules-and-terms')
+
         layoutHeightForm.value = getComputedStyle(dropzone).getPropertyValue('height').replace(/^"|"$/g, '');
         layoutWidthForm.value = getComputedStyle(newPreview).getPropertyValue('width').replace(/^"|"$/g, '');
 
@@ -438,5 +447,14 @@ document.addEventListener("generalSettingsLoaded", ()=>{
         const raffleBackgroundColorHex = rgbToHex(raffleBackgroundColorRGB);
         raffleBackgroundForm.value = raffleBackgroundColorHex;
         raffleBackgroundHexBox.style.backgroundColor = raffleBackgroundColorHex;
-    }
+
+        const footerColorRGB = window.getComputedStyle(footerText).getPropertyValue('color').replace(/^"|"$/g, '');
+        const footerColorHex = rgbToHex(footerColorRGB);
+        footerColorForm.value = footerColorHex;
+        footerColorHexBox.style.backgroundColor = footerColorHex;
+
+        const footerBackgroundColorRGB = window.getComputedStyle(footerWrapper).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const footerBackgroundColorHex = rgbToHex(footerBackgroundColorRGB);
+        footerBackgroundForm.value = footerBackgroundColorHex;
+        footerBackgroundHexBox.style.backgroundColor = footerBackgroundColorHex;    }
 });

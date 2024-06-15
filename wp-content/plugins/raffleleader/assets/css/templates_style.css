@@ -76,7 +76,7 @@
 }
 
 .rl-box {
-    border: 2px dashed transparent; /* Ensures the border is there but invisible initially */
+    --select-text: "Select";
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
@@ -89,7 +89,7 @@
 }
 
 .rl-box:hover::before{
-    content: "Select";
+    content: var(--select-text);
     position: absolute;
     color: white;
     top: 0;

@@ -54,8 +54,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             const HTMLContent = raffleData.content;
             preview.outerHTML = HTMLContent;
 
-            const btnTarget = document.getElementById(raffleData.template_id);
-            const templateBox = btnTarget.parentNode.parentNode.parentNode;
+            const templateBox = document.getElementById(raffleData.template_id);
             templateBox.classList.add('chosen-template');
 
             document.dispatchEvent(loadPreviewEvent);

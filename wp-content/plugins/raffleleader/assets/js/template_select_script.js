@@ -24,11 +24,6 @@ document.addEventListener("generalSettingsLoaded", ()=>{
     const selectBtns = document.querySelectorAll(".select-template");
 
     const slideBtn = document.querySelectorAll('.scroll-grid-btn');
-    
-    templates.forEach((template)=>{
-        template.addEventListener("mouseover", hoverTemplate);
-        template.addEventListener("mouseout", stopHoverTemplate);
-    });
 
     selectBtns.forEach((selectBtn)=>{
         selectBtn.addEventListener('click', selectTemplate);
@@ -36,7 +31,50 @@ document.addEventListener("generalSettingsLoaded", ()=>{
 
     slideBtn.forEach((slideBtn)=>{
         slideBtn.addEventListener('click', slideTemplateCarousel);
+    });
+
+    templates.forEach((template)=>{
+        template.addEventListener('mouseover', templateHover);
+        template.addEventListener('mouseout', stopTemplateHover);
     })
+
+    function templateHover(event){
+        const template = event.currentTarget;
+        let selectText = 'Select';
+
+        switch(template.id){
+            case 'blankTemplate':
+                selectText = 'Select Blank Template';
+                break;
+            
+            case 'twitterTemplate':
+                selectText = 'Select Twitter Template';
+                break;
+        
+            case 'instagramTemplate':
+                selectText = 'Select Instagram Template';
+                break;
+            
+            case 'tiktokTemplate':
+                selectText = 'Select TikTok Template';
+                break;
+        
+            case 'plaunchTemplate':
+                selectText = 'Select Pre-Launch Template';
+                break;
+
+            case 'referTemplate':
+                selectText = 'Select Refer-A-Friend Template';
+                break;
+        } 
+        template.style.setProperty('--select-text', `'${selectText}'`);
+    }
+
+    function stopTemplateHover(event){
+        const template = event.target;
+
+        template.style.setProperty('--select-text', 'Select');
+    }
 
     function slideTemplateCarousel(event){
         const scrollAmount = 380;
@@ -50,34 +88,6 @@ document.addEventListener("generalSettingsLoaded", ()=>{
             carousel.scrollLeft += scrollAmount;
 
         }
-    }
-
-    function hoverTemplate(event){
-        event.stopPropagation();
-
-        const templateTarget = event.currentTarget;
-        try {
-            const templateActionTarget = templateTarget.querySelector("div.rl-box-action");
-            const blurMask = templateTarget.querySelector('.rl-box-action-blur');
-            
-            templateActionTarget.style.display = "flex";
-            blurMask.style.display = "flex";
-        } catch (error) {}
-        
-    }
-
-    function stopHoverTemplate(event){
-        event.stopPropagation();
-
-        const templateTarget = event.currentTarget;
-        try{
-            const templateActionTarget = templateTarget.querySelector("div.rl-box-action");
-            const blurMask = templateTarget.querySelector('.rl-box-action-blur');
-
-            templateActionTarget.style.display = "none";
-            blurMask.style.display = "none";
-        } catch (error) {}
-        
     }
 
     function selectTemplate(event){
@@ -383,7 +393,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
             document.dispatchEvent(loadPreviewEvent);
             break;
 
-        case 'referRaffle':
+        case 'referTemplate':
             preview.outerHTML = `<div id="preview" class="raffleleader-preview-box raffleleader-preview-reset" style="width: 500px; transform: scale(1.0);">
             <div id="dropzone" class="raffleleader-dropzone" style="height: 700px;">
             <div style="display: none;" class="raffleleader-rules-and-terms-preview">

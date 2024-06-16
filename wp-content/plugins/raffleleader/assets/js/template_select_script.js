@@ -21,13 +21,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
 
     const templates = document.querySelectorAll(".rl-box");
 
-    const selectBtns = document.querySelectorAll(".select-template");
-
     const slideBtn = document.querySelectorAll('.scroll-grid-btn');
-
-    selectBtns.forEach((selectBtn)=>{
-        selectBtn.addEventListener('click', selectTemplate);
-    });
 
     slideBtn.forEach((slideBtn)=>{
         slideBtn.addEventListener('click', slideTemplateCarousel);
@@ -36,6 +30,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
     templates.forEach((template)=>{
         template.addEventListener('mouseover', templateHover);
         template.addEventListener('mouseout', stopTemplateHover);
+        template.addEventListener('click', selectTemplate);
     })
 
     function templateHover(event){
@@ -91,9 +86,8 @@ document.addEventListener("generalSettingsLoaded", ()=>{
     }
 
     function selectTemplate(event){
-        const selectedBtn = event.target;
-        const templateType = selectedBtn.id;
-        const templateBox = selectedBtn.parentNode.parentNode.parentNode;
+        const template = event.currentTarget;
+        const templateType = template.id;
         const currentTemplate = document.querySelector('.chosen-template');
         const setupTab = document.querySelector('.setup-tab');
 
@@ -116,9 +110,14 @@ document.addEventListener("generalSettingsLoaded", ()=>{
 
         if(currentTemplate){
             currentTemplate.classList.remove('chosen-template');
-            templateBox.classList.add('chosen-template');
+            template.classList.add('chosen-template');
         } else {
-            templateBox.classList.add('chosen-template');
+            template.classList.add('chosen-template');
+            document.querySelector("ul.rl-nav-tabs li.active-tab").classList.remove("active-tab");
+            document.querySelector(".rl-tab-pane.active-tab").classList.remove("active-tab");
+
+            setupTab.classList.add("active-tab");
+            document.querySelector('#setup').classList.add("active-tab");
         }
 
         try{
@@ -130,12 +129,6 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                 customizeBox.classList.toggle('slide-right-to-left');
             }
         } catch {}
-
-        document.querySelector("ul.rl-nav-tabs li.active-tab").classList.remove("active-tab");
-        document.querySelector(".rl-tab-pane.active-tab").classList.remove("active-tab");
-
-        setupTab.classList.add("active-tab");
-        document.querySelector('#setup').classList.add("active-tab");
     }
 
     function injectTemplateHTML(templateType){

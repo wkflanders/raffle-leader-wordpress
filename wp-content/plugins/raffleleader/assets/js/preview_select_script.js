@@ -9,7 +9,7 @@ document.addEventListener("previewLoaded", ()=>{
     })
 
     preview.addEventListener('mousedown', (event)=>{
-
+        event.stopPropagation();
         if(event.button === 0){
 
             let selectedSection = event.target;
@@ -2259,6 +2259,24 @@ document.addEventListener("previewLoaded", ()=>{
         const currentElement = document.querySelector('.selected-raffleleader-section');
 
         if(key === "Escape"){
+            try{
+                currentElement.classList.remove('selected-raffleleader-section');
+                currentElement.querySelector('.raffleleader-resize-handle').style.display = 'none';
+                if(customizeBox.classList.contains('slide-right-to-left')){
+                    customizeBox.classList.toggle('slide-right-to-left');
+                }
+            } catch {}
+        }
+    })
+
+    const previewWrapper = document.getElementById('previewWrapper');
+    const settingsWrapper = document.getElementById('settingsWrapper');
+    const newPreview = document.getElementById('preview')
+
+    previewWrapper.addEventListener("click", (event) => {
+        const currentElement = document.querySelector('.selected-raffleleader-section');
+
+        if(event.target === previewWrapper){
             try{
                 currentElement.classList.remove('selected-raffleleader-section');
                 currentElement.querySelector('.raffleleader-resize-handle').style.display = 'none';

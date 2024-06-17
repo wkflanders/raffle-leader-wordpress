@@ -91,6 +91,14 @@
                 </div>
             </div>
             <div class="customize-settings-box">
+                <p>Line Height</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-text">
+                        <input id="textLineHeightForm" class="dropdown-display line-height-input" data-type="textLineHeight" name="textLineHeight" type="text" placeholder="Enter line height">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
                 <p>Horizontal Text Alignment</p>
                 <div class="customize-settings-dropdown text">
                     <div class="dropdown-display dropdown-inline-btns text-horizontal-align">

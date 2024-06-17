@@ -103,6 +103,10 @@ input[type="text"].letter-spacing-input{
     width: 17.5vw;
 }
 
+input[type="text"].line-height-input{
+    width: 17.5vw;
+}
+
 input[type="text"]::placeholder{
     font-size: 2vh;
     color: rgb(164, 164, 164);

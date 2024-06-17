@@ -304,11 +304,15 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
         switch(elementType){
             case 'textAlign':
-                selectedElement = selectedSection.querySelector('.raffleleader-text-section');
+                const selectedElement = selectedSection.querySelector('.raffleleader-text-section');
+                const textElement = selectedElement.querySelector('h2');
                 selectedElement.style.justifyContent = 'left';
-                selectedElement.style.textAlign = 'left';
+                selectedElement.style.justifyContent = 'left';
 
-                document.querySelector('.inline-btn-halign-active').classList.remove('inline-btn-halign-active');;
+                textElement.style.justifyContent = 'left';
+                textElement.style.textAlign = 'left';
+
+                document.querySelector('.inline-btn-halign-active').classList.remove('inline-btn-halign-active');
                 inputLeftBtn.classList.add('inline-btn-halign-active');
         }
     }

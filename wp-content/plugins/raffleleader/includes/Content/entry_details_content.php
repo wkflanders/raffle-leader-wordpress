@@ -181,6 +181,44 @@
                 </div>
             </div>
             <div class="customize-settings-box">
+                <p>Form Border Stroke</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-multi-input">
+                        <div class="dropdown-row">
+                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                            <input id="entryFormBorderTopStroke" class="border-stroke-input" data-type="entryFormBorderStroke" type="text" name="entryFormBorderTopStroke" placeholder="--">
+                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                            <input id="entryFormBorderBottomStroke" class="border-stroke-input" data-type="entryFormBorderStroke" type="text" name="entryFormBorderBottomStroke" placeholder="--">
+                        </div>
+                        <div class="dropdown-row">
+                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                            <input id="entryFormBorderLeftStroke" class="border-stroke-input" data-type="entryFormBorderStroke" type="text" name="entryFormBorderLeftStroke" placeholder="--">
+                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                            <input id="entryFormBorderRightStroke" class="border-stroke-input" data-type="entryFormBorderStroke" type="text" name="entryFormBorderRightStroke" placeholder="--">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Form Border Radius</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-multi-input">
+                        <div class="dropdown-row row-radius">
+                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                            <input id="entryFormBorderTopLeftRadius" class="border-radius-input" data-type="entryFormBorderRadius" type="text" name="entryFormBorderTopLeftRadius" placeholder="--">
+                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                            <input id="entryFormBorderTopRightRadius" class="border-radius-input" data-type="entryFormBorderRadius" type="text" name="entryFormBorderTopRightRadius" placeholder="--">
+                        </div>
+                        <div class="dropdown-row row-radius">
+                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                            <input id="entryFormBorderBottomLeftRadius" class="border-radius-input" data-type="entryFormBorderRadius" type="text" name="entryFormBorderBottomLeftRadius" placeholder="--">
+                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                            <input id="entryFormBorderBottomRightRadius" class="border-radius-input" data-type="entryFormBorderRadius" type="text" name="entryFormBorderBottomRightRadius" placeholder="--">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
                 <p>Button Font Color</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-color">
@@ -201,7 +239,45 @@
                 </div>
             </div>
             <div class="customize-settings-box">
-                <p>Background Color</p>
+                <p>Button Border Stroke</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-multi-input">
+                        <div class="dropdown-row">
+                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                            <input id="entryButtonBorderTopStroke" class="border-stroke-input" data-type="entryButtonBorderStroke" type="text" name="entryButtonBorderTopStroke" placeholder="--">
+                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                            <input id="entryButtonBorderBottomStroke" class="border-stroke-input" data-type="entryButtonBorderStroke" type="text" name="entryButtonBorderBottomStroke" placeholder="--">
+                        </div>
+                        <div class="dropdown-row">
+                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                            <input id="entryButtonBorderLeftStroke" class="border-stroke-input" data-type="entryButtonBorderStroke" type="text" name="entryButtonBorderLeftStroke" placeholder="--">
+                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                            <input id="entryButtonBorderRightStroke" class="border-stroke-input" data-type="entryButtonBorderStroke" type="text" name="entryButtonBorderRightStroke" placeholder="--">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Button Border Radius</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-multi-input">
+                        <div class="dropdown-row row-radius">
+                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                            <input id="entryButtonBorderTopLeftRadius" class="border-radius-input" data-type="entryButtonBorderRadius" type="text" name="entryButtonBorderTopLeftRadius" placeholder="--">
+                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                            <input id="entryButtonBorderTopRightRadius" class="border-radius-input" data-type="entryButtonBorderRadius" type="text" name="entryButtonBorderTopRightRadius" placeholder="--">
+                        </div>
+                        <div class="dropdown-row row-radius">
+                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                            <input id="entryButtonBorderBottomLeftRadius" class="border-radius-input" data-type="entryButtonBorderRadius" type="text" name="entryButtonBorderBottomLeftRadius" placeholder="--">
+                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                            <input id="entryButtonBorderBottomRightRadius" class="border-radius-input" data-type="entryButtonBorderRadius" type="text" name="entryButtonBorderBottomRightRadius" placeholder="--">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Section Background Color</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-color">
                         <div id="entryColorGradientBackground"></div>
@@ -211,7 +287,7 @@
                 </div>
             </div>
             <div class="customize-settings-box">
-                <p>Border Color</p>
+                <p>Section Border Color</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-color">
                         <div id="entryColorGradientBorder"></div>
@@ -221,7 +297,7 @@
                 </div>
             </div>
             <div class="customize-settings-box">
-                <p>Border Stroke</p>
+                <p>Section Border Stroke</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row">
@@ -240,7 +316,7 @@
                 </div>
             </div>
             <div class="customize-settings-box">
-                <p>Border Radius</p>
+                <p>Section Border Radius</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row row-radius">

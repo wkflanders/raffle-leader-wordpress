@@ -368,6 +368,22 @@ document.addEventListener("previewLoaded", ()=>{
         const entryFontSize = window.getComputedStyle(entryInputElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
         entryFontSizeForm.value = entryFontSize;
 
+        // entry font
+        const entryFontList = document.getElementById('entryFontList');
+        const entryFontDisplay = document.getElementById('entryDropDownTitle');
+        const font = window.getComputedStyle(entryInputElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        entryFontDisplay.innerText = font;
+        
+        Array.from(entryFontList.children).forEach((child)=>{
+            const childFont = child.innerText;
+            if(child.classList.contains('selected-font')){
+                child.classList.remove('selected-font');
+            }
+            if(childFont === font){
+                child.classList.add('selected-font');
+            }
+        })
+
         // entry button color
         const entryButtonHexBox = document.getElementById('entryButtonColorClick');
         const entryButtonColorRGB = window.getComputedStyle(entryButtonElement).getPropertyValue('background-color').replace(/^"|"$/g, '');

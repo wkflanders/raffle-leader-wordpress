@@ -360,8 +360,12 @@ document.addEventListener("previewLoaded", ()=>{
 
     function loadEntrySettings(element){
         const entryButtonElement = element.querySelector('button');
+        const entryInputElement = element.querySelector('input');
+
+        const entryFontColorForm = document.getElementById('entryFontColorForm');
+        const entryFormBackgroundColorForm = document.getElementById('entryFormBackgroundColorForm');
+        const entryButtonFontColorForm = document.getElementById('entryButtonFontColorForm');
         const entryButtonColorForm = document.getElementById('entryButtonColorForm');
-        const entryInputElement = element.querySelector('input')
 
         // entry font size
         const entryFontSizeForm = document.getElementById('entryFontSizeForm');
@@ -382,7 +386,28 @@ document.addEventListener("previewLoaded", ()=>{
             if(childFont === font){
                 child.classList.add('selected-font');
             }
-        })
+        });
+
+        // entry form font color
+        const entryFormFontHexBox = document.getElementById('entryFontColorClick');
+        const entryFormFontColorRGB = window.getComputedStyle(entryInputElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const entryFormFontColorHex = rgbToHex(entryFormFontColorRGB);
+        entryFontColorForm.value = entryFormFontColorHex;
+        entryFormFontHexBox.style.backgroundColor = entryFormFontColorHex;
+
+        // entry form background color
+        const entryFormBackgroundHexBox = document.getElementById('entryFormBackgroundColorClick');
+        const entryFormBackgroundColorRGB = window.getComputedStyle(entryInputElement).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const entryFormBackgroundColorHex = rgbToHex(entryFormBackgroundColorRGB);
+        entryFormBackgroundColorForm.value = entryFormBackgroundColorHex;
+        entryFormBackgroundHexBox.style.backgroundColor = entryFormBackgroundColorHex;
+
+        // entry button font color
+        const entryButtonFontHexBox = document.getElementById('entryButtonFontColorClick');
+        const entryButtonFontColorRGB = window.getComputedStyle(entryButtonElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const entryButtonFontColorHex = rgbToHex(entryButtonFontColorRGB);
+        entryButtonFontColorForm.value = entryButtonFontColorHex;
+        entryButtonFontHexBox.style.backgroundColor = entryButtonFontColorHex;
 
         // entry button color
         const entryButtonHexBox = document.getElementById('entryButtonColorClick');

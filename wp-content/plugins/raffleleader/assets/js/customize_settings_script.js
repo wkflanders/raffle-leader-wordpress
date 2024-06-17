@@ -19,6 +19,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     const strikeBtns = document.querySelectorAll('.strike-btn');
     const overlineBtns = document.querySelectorAll('.overline-btn');
     const letterSpacingForms = document.querySelectorAll('.letter-spacing-input');
+    const lineHeightForms = document.querySelectorAll('.line-height-input');
     
     const borderStrokeForms = document.querySelectorAll('.border-stroke-input');
     const borderRadiusForms = document.querySelectorAll('.border-radius-input');
@@ -211,6 +212,10 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
     letterSpacingForms.forEach((letterSpacingForm)=>{
         letterSpacingForm.addEventListener('input', setLetterSpacing);
+    });
+
+    lineHeightForms.forEach((lineHeightForm)=>{
+        lineHeightForm.addEventListener('input', setLineHeight);
     });
 
     borderStrokeForms.forEach((borderStrokeForm)=>{
@@ -4885,6 +4890,19 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'counterLetterSpacing':
                 const counterSelectedElement = selectedSection.querySelector('h2');
                 counterSelectedElement.style.letterSpacing = `${letterSpacing}px`;
+        }
+    }
+    
+    function setLineHeight(event){
+        const inputLineHeightElement = event.target;
+        const lineHeight = inputLineHeightElement.value.includes('px') ? inputLineHeightElement.value.replace('px', '') : inputLineHeightElement.value;
+        const elementType = inputLineHeightElement.getAttribute('data-type');
+        const selectedSection = document.querySelector('.selected-raffleleader-section');
+
+        switch(elementType){
+            case 'textLineHeight':
+                const selectedElement = selectedSection.querySelector('h2');
+                selectedElement.style.lineHeight = `${lineHeight}px`;
         }
     } 
 

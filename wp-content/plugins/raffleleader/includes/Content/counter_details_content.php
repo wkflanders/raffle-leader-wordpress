@@ -75,6 +75,12 @@
                             <li class="font-title" data-type="counterFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="counterFont">Copperplate</li>
                             <li class="font-title" data-type="counterFont">Papyrus</li>
+                            <li class="font-title" data-type="counterFont">Jura</li>
+                            <li class="font-title" data-type="counterFont">Nunito</li>
+                            <li class="font-title" data-type="counterFont">Open Sans</li>
+                            <li class="font-title" data-type="counterFont">Orbitron</li>
+                            <li class="font-title" data-type="counterFont">Roboto</li>
+                            <li class="font-title" data-type="counterFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>

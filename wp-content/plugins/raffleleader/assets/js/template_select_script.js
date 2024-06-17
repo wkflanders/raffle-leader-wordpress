@@ -61,6 +61,26 @@ document.addEventListener("generalSettingsLoaded", ()=>{
             case 'referTemplate':
                 selectText = 'Select Refer-A-Friend Template';
                 break;
+
+            case 'pdTemplateOne':
+                selectText = 'Select Pre-Designed Template';
+                break;
+        
+            case 'pdTemplateTwo':
+                selectText = 'Select Pre-Designed Template';
+                break;
+            
+            case 'pdTemplateThree':
+                selectText = 'Select Pre-Designed Template';
+                break;
+        
+            case 'pdTemplateFour':
+                selectText = 'Select Pre-Designed Template';
+                break;
+
+            case 'pdTemplateFive':
+                selectText = 'Select Pre-Designed Template';
+                break;
         } 
         template.style.setProperty('--select-text', `'${selectText}'`);
     }

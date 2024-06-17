@@ -175,6 +175,7 @@ document.addEventListener("previewLoaded", ()=>{
         const textBackgroundColorForm = document.getElementById('textBackgroundColorForm');
         const textFontSizeForm = document.getElementById('textFontSizeForm');
         const textLetterSpacingForm = document.getElementById('textLetterSpacingForm');
+        const textLineHeightForm = document.getElementById('textLineHeightForm');
         const textBorderColorForm = document.getElementById('textBorderColorForm');
 
         const textBorderFormTopStroke = document.getElementById('borderTopStroke');
@@ -322,6 +323,10 @@ document.addEventListener("previewLoaded", ()=>{
         // text letter spacing
         const textLetterSpacing = window.getComputedStyle(textElement).getPropertyValue('letter-spacing').replace(/^"|"$/g, '');
         textLetterSpacingForm.value = textLetterSpacing;
+
+        // text line height
+        const textLineHeight = window.getComputedStyle(textElement).getPropertyValue('line-height').replace(/^"|"$/g, '');
+        textLineHeightForm.value = textLineHeight;
 
         //text border stroke
         const borderStrokeTop = window.getComputedStyle(element).getPropertyValue('border-top-width').replace(/^"|"$/g, '');

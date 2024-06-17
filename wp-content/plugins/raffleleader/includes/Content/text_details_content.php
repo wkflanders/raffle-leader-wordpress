@@ -54,6 +54,12 @@
                             <li class="font-title" data-type="textFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="textFont">Copperplate</li>
                             <li class="font-title" data-type="textFont">Papyrus</li>
+                            <li class="font-title" data-type="textFont">Jura</li>
+                            <li class="font-title" data-type="textFont">Nunito</li>
+                            <li class="font-title" data-type="textFont">Open Sans</li>
+                            <li class="font-title" data-type="textFont">Orbitron</li>
+                            <li class="font-title" data-type="textFont">Roboto</li>
+                            <li class="font-title" data-type="textFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>

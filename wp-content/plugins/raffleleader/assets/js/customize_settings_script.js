@@ -50,6 +50,10 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     let pickerCounterBackground = undefined;
     let pickrCounterBorder = undefined;
     let pickrImageBorder = undefined;
+    
+    let pickrEntryFont = undefined;
+    let pickrEntryFormBackground = undefined;
+    let pickrEntryButtonFont = undefined;
     let pickrEntryBtn = undefined;
     let pickrEntryBackground = undefined;
     let pickrEntryBorder = undefined;
@@ -851,6 +855,81 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 pickrImageBorder.show();
 
                 pickrImageBorder.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'entryFontColor':
+                const entryCurrentFontColor = document.getElementById('entryFontColorForm').value;
+
+                pickrEntryFont = Pickr.create({
+                    el: entryColorGradientFont,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: entryCurrentFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                        opacity: true,
+                    }
+                });
+                pickrEntryFont.setColorRepresentation('HEX');
+                pickrEntryFont.show();
+
+                pickrEntryFont.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'entryFormBackgroundColor':
+                const entryCurrentFormBackgroundColor = document.getElementById('entryFontColorForm').value;
+
+                pickrEntryFormBackground = Pickr.create({
+                    el: entryColorGradientFormBackground,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: entryCurrentFormBackgroundColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                        opacity: true,
+                    }
+                });
+                pickrEntryFormBackground.setColorRepresentation('HEX');
+                pickrEntryFormBackground.show();
+
+                pickrEntryFormBackground.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'entryButtonFontColor':
+                const entryCurrentButtonFontColor = document.getElementById('entryButtonFontColorForm').value;
+
+                pickrEntryButtonFont = Pickr.create({
+                    el: entryColorGradientButtonFont,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: entryCurrentButtonFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                        opacity: true,
+                    }
+                });
+                pickrEntryButtonFont.setColorRepresentation('HEX');
+                pickrEntryButtonFont.show();
+
+                pickrEntryButtonFont.on('change', (color)=>{
                     const selectedColor = '#'.concat(...color.toHEXA());
                     this.style.backgroundColor = selectedColor;
                     
@@ -2732,6 +2811,87 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 counterEditElementBorder.style.borderLeft = `${counterCurrentBorderStrokeLeft} solid ${color}`;
                 counterEditElementBorder.style.borderBottom = `${counterCurrentBorderStrokeBottom} solid ${color}`;
                 counterEditElementBorder.style.borderRight = `${counterCurrentBorderStrokeRight} solid ${color}`;
+                break;
+
+            case 'entryFontColor':
+                if(fromPickr === false){
+                    if(pickrEntryFont === undefined){
+                        pickrEntryFont = Pickr.create({
+                            el: entryColorGradientFont,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrEntryFont.setColor(color);
+                        const hexBoxClick = document.getElementById('entryFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('entryFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const entryEditElementFont = document.querySelector('.selected-raffleleader-section').querySelector('input');
+                entryEditElementFont.style.color = color;
+                break;
+
+            case 'entryFormBackgroundColor':
+                if(fromPickr === false){
+                    if(pickrEntryFormBackground === undefined){
+                        pickrEntryFormBackground = Pickr.create({
+                            el: entryColorGradientFormBackground,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrEntryFormBackground.setColor(color);
+                        const hexBoxClick = document.getElementById('entryFormBackgroundColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('entryFormBackgroundColorForm');
+                    hexBoxText.value = color;
+                }
+                const entryEditElementFormBackground = document.querySelector('.selected-raffleleader-section').querySelector('input');
+                entryEditElementFormBackground.style.backgroundColor = color;
+                break;
+
+            case 'entryButtonFontColor':
+                if(fromPickr === false){
+                    if(pickrEntryButtonFont === undefined){
+                        pickrEntryButtonFont = Pickr.create({
+                            el: entryColorGradientButtonFont,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrEntryButtonFont.setColor(color);
+                        const hexBoxClick = document.getElementById('entryButtonFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('entryButtonFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const entryEditElementButtonFont = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                entryEditElementButtonFont.style.color = color;
                 break;
 
             case 'entryButtonColor':

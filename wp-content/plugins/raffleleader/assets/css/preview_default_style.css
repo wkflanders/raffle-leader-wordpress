@@ -249,7 +249,7 @@
 }
 
 .raffleleader-entry-section input[type="email"]::placeholder{
-    color: rgb(176, 176, 176);
+    color: inherit;
     font-weight: 500;
 }
 

@@ -76,7 +76,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             layoutWidthForm.value = getComputedStyle(newPreview).getPropertyValue('width').replace(/^"|"$/g, '');
 
             // Load preview background color
-            const raffleBackgroundColorRGB = window.getComputedStyle(newPreview).getPropertyValue('background-color').replace(/^"|"$/g, '');
+            const raffleBackgroundColorRGB = window.getComputedStyle(dropzone).getPropertyValue('background-color').replace(/^"|"$/g, '');
             const raffleBackgroundColorHex = rgbToHex(raffleBackgroundColorRGB);
             raffleBackgroundForm.value = raffleBackgroundColorHex;
             raffleBackgroundHexBox.style.backgroundColor = raffleBackgroundColorHex;

@@ -76,7 +76,12 @@
                             <li class="font-title" data-type="XFollowHeaderFont">Brush Script MT</li>
                             <li class="font-title" data-type="XFollowHeaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="XFollowHeaderFont">Copperplate</li>
-                            <li class="font-title" data-type="XFollowHeaderFont">Papyrus</li>
+                            <li class="font-title" data-type="XFollowHeaderFont">Jura</li>
+                            <li class="font-title" data-type="XFollowHeaderFont">Nunito</li>
+                            <li class="font-title" data-type="XFollowHeaderFont">Open Sans</li>
+                            <li class="font-title" data-type="XFollowHeaderFont">Orbitron</li>
+                            <li class="font-title" data-type="XFollowHeaderFont">Roboto</li>
+                            <li class="font-title" data-type="XFollowHeaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -111,6 +116,12 @@
                             <li class="font-title" data-type="XFollowSubheaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="XFollowSubheaderFont">Copperplate</li>
                             <li class="font-title" data-type="XFollowSubheaderFont">Papyrus</li>
+                            <li class="font-title" data-type="XFollowSubheaderFont">Jura</li>
+                            <li class="font-title" data-type="XFollowSubheaderFont">Nunito</li>
+                            <li class="font-title" data-type="XFollowSubheaderFont">Open Sans</li>
+                            <li class="font-title" data-type="XFollowSubheaderFont">Orbitron</li>
+                            <li class="font-title" data-type="XFollowSubheaderFont">Roboto</li>
+                            <li class="font-title" data-type="XFollowSubheaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -313,6 +324,12 @@
                             <li class="font-title" data-type="XRepostHeaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="XRepostHeaderFont">Copperplate</li>
                             <li class="font-title" data-type="XRepostHeaderFont">Papyrus</li>
+                            <li class="font-title" data-type="XRepostHeaderFont">Jura</li>
+                            <li class="font-title" data-type="XRepostHeaderFont">Nunito</li>
+                            <li class="font-title" data-type="XRepostHeaderFont">Open Sans</li>
+                            <li class="font-title" data-type="XRepostHeaderFont">Orbitron</li>
+                            <li class="font-title" data-type="XRepostHeaderFont">Roboto</li>
+                            <li class="font-title" data-type="XRepostHeaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -347,6 +364,12 @@
                             <li class="font-title" data-type="XRepostSubheaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="XRepostSubheaderFont">Copperplate</li>
                             <li class="font-title" data-type="XRepostSubheaderFont">Papyrus</li>
+                            <li class="font-title" data-type="XRepostSubheaderFont">Jura</li>
+                            <li class="font-title" data-type="XRepostSubheaderFont">Nunito</li>
+                            <li class="font-title" data-type="XRepostSubheaderFont">Open Sans</li>
+                            <li class="font-title" data-type="XRepostSubheaderFont">Orbitron</li>
+                            <li class="font-title" data-type="XRepostSubheaderFont">Roboto</li>
+                            <li class="font-title" data-type="XRepostSubheaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -549,6 +572,12 @@
                             <li class="font-title" data-type="XLikeHeaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="XLikeHeaderFont">Copperplate</li>
                             <li class="font-title" data-type="XLikeHeaderFont">Papyrus</li>
+                            <li class="font-title" data-type="XLikeHeaderFont">Jura</li>
+                            <li class="font-title" data-type="XLikeHeaderFont">Nunito</li>
+                            <li class="font-title" data-type="XLikeHeaderFont">Open Sans</li>
+                            <li class="font-title" data-type="XLikeHeaderFont">Orbitron</li>
+                            <li class="font-title" data-type="XLikeHeaderFont">Roboto</li>
+                            <li class="font-title" data-type="XLikeHeaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -583,6 +612,12 @@
                             <li class="font-title" data-type="XLikeSubheaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="XLikeSubheaderFont">Copperplate</li>
                             <li class="font-title" data-type="XLikeSubheaderFont">Papyrus</li>
+                            <li class="font-title" data-type="XLikeSubheaderFont">Jura</li>
+                            <li class="font-title" data-type="XLikeSubheaderFont">Nunito</li>
+                            <li class="font-title" data-type="XLikeSubheaderFont">Open Sans</li>
+                            <li class="font-title" data-type="XLikeSubheaderFont">Orbitron</li>
+                            <li class="font-title" data-type="XLikeSubheaderFont">Roboto</li>
+                            <li class="font-title" data-type="XLikeSubheaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -785,6 +820,12 @@
                             <li class="font-title" data-type="instaFollowHeaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="instaFollowHeaderFont">Copperplate</li>
                             <li class="font-title" data-type="instaFollowHeaderFont">Papyrus</li>
+                            <li class="font-title" data-type="instaFollowHeaderFont">Jura</li>
+                            <li class="font-title" data-type="instaFollowHeaderFont">Nunito</li>
+                            <li class="font-title" data-type="instaFollowHeaderFont">Open Sans</li>
+                            <li class="font-title" data-type="instaFollowHeaderFont">Orbitron</li>
+                            <li class="font-title" data-type="instaFollowHeaderFont">Roboto</li>
+                            <li class="font-title" data-type="instaFollowHeaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -819,6 +860,12 @@
                             <li class="font-title" data-type="instaFollowSubheaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="instaFollowSubheaderFont">Copperplate</li>
                             <li class="font-title" data-type="instaFollowSubheaderFont">Papyrus</li>
+                            <li class="font-title" data-type="instaFollowSubheaderFont">Jura</li>
+                            <li class="font-title" data-type="instaFollowSubheaderFont">Nunito</li>
+                            <li class="font-title" data-type="instaFollowSubheaderFont">Open Sans</li>
+                            <li class="font-title" data-type="instaFollowSubheaderFont">Orbitron</li>
+                            <li class="font-title" data-type="instaFollowSubheaderFont">Roboto</li>
+                            <li class="font-title" data-type="instaFollowSubheaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -1021,6 +1068,12 @@
                             <li class="font-title" data-type="instaCommentHeaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="instaCommentHeaderFont">Copperplate</li>
                             <li class="font-title" data-type="instaCommentHeaderFont">Papyrus</li>
+                            <li class="font-title" data-type="instaCommentHeaderFont">Jura</li>
+                            <li class="font-title" data-type="instaCommentHeaderFont">Nunito</li>
+                            <li class="font-title" data-type="instaCommentHeaderFont">Open Sans</li>
+                            <li class="font-title" data-type="instaCommentHeaderFont">Orbitron</li>
+                            <li class="font-title" data-type="instaCommentHeaderFont">Roboto</li>
+                            <li class="font-title" data-type="instaCommentHeaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -1055,6 +1108,12 @@
                             <li class="font-title" data-type="instaCommentSubheaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="instaCommentSubheaderFont">Copperplate</li>
                             <li class="font-title" data-type="instaCommentSubheaderFont">Papyrus</li>
+                            <li class="font-title" data-type="instaCommentSubheaderFont">Jura</li>
+                            <li class="font-title" data-type="instaCommentSubheaderFont">Nunito</li>
+                            <li class="font-title" data-type="instaCommentSubheaderFont">Open Sans</li>
+                            <li class="font-title" data-type="instaCommentSubheaderFont">Orbitron</li>
+                            <li class="font-title" data-type="instaCommentSubheaderFont">Roboto</li>
+                            <li class="font-title" data-type="instaCommentSubheaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -1255,6 +1314,12 @@
                             <li class="font-title" data-type="instaLikeHeaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="instaLikeHeaderFont">Copperplate</li>
                             <li class="font-title" data-type="instaLikeHeaderFont">Papyrus</li>
+                            <li class="font-title" data-type="instaLikeHeaderFont">Jura</li>
+                            <li class="font-title" data-type="instaLikeHeaderFont">Nunito</li>
+                            <li class="font-title" data-type="instaLikeHeaderFont">Open Sans</li>
+                            <li class="font-title" data-type="instaLikeHeaderFont">Orbitron</li>
+                            <li class="font-title" data-type="instaLikeHeaderFont">Roboto</li>
+                            <li class="font-title" data-type="instaLikeHeaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -1289,6 +1354,12 @@
                             <li class="font-title" data-type="instaLikeSubheaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="instaLikeSubheaderFont">Copperplate</li>
                             <li class="font-title" data-type="instaLikeSubheaderFont">Papyrus</li>
+                            <li class="font-title" data-type="instaLikeSubheaderFont">Jura</li>
+                            <li class="font-title" data-type="instaLikeSubheaderFont">Nunito</li>
+                            <li class="font-title" data-type="instaLikeSubheaderFont">Open Sans</li>
+                            <li class="font-title" data-type="instaLikeSubheaderFont">Orbitron</li>
+                            <li class="font-title" data-type="instaLikeSubheaderFont">Roboto</li>
+                            <li class="font-title" data-type="instaLikeSubheaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -1491,6 +1562,12 @@
                             <li class="font-title" data-type="facebookFollowHeaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="facebookFollowHeaderFont">Copperplate</li>
                             <li class="font-title" data-type="facebookFollowHeaderFont">Papyrus</li>
+                            <li class="font-title" data-type="facebookFollowHeaderFont">Jura</li>
+                            <li class="font-title" data-type="facebookFollowHeaderFont">Nunito</li>
+                            <li class="font-title" data-type="facebookFollowHeaderFont">Open Sans</li>
+                            <li class="font-title" data-type="facebookFollowHeaderFont">Orbitron</li>
+                            <li class="font-title" data-type="facebookFollowHeaderFont">Roboto</li>
+                            <li class="font-title" data-type="facebookFollowHeaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -1525,6 +1602,12 @@
                             <li class="font-title" data-type="facebookFollowSubheaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="facebookFollowSubheaderFont">Copperplate</li>
                             <li class="font-title" data-type="facebookFollowSubheaderFont">Papyrus</li>
+                            <li class="font-title" data-type="facebookFollowSubheaderFont">Jura</li>
+                            <li class="font-title" data-type="facebookFollowSubheaderFont">Nunito</li>
+                            <li class="font-title" data-type="facebookFollowSubheaderFont">Open Sans</li>
+                            <li class="font-title" data-type="facebookFollowSubheaderFont">Orbitron</li>
+                            <li class="font-title" data-type="facebookFollowSubheaderFont">Roboto</li>
+                            <li class="font-title" data-type="facebookFollowSubheaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -1727,6 +1810,12 @@
                             <li class="font-title" data-type="facebookCommentHeaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="facebookCommentHeaderFont">Copperplate</li>
                             <li class="font-title" data-type="facebookCommentHeaderFont">Papyrus</li>
+                            <li class="font-title" data-type="facebookCommentHeaderFont">Jura</li>
+                            <li class="font-title" data-type="facebookCommentHeaderFont">Nunito</li>
+                            <li class="font-title" data-type="facebookCommentHeaderFont">Open Sans</li>
+                            <li class="font-title" data-type="facebookCommentHeaderFont">Orbitron</li>
+                            <li class="font-title" data-type="facebookCommentHeaderFont">Roboto</li>
+                            <li class="font-title" data-type="facebookCommentHeaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -1761,6 +1850,12 @@
                             <li class="font-title" data-type="facebookCommentSubheaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="facebookCommentSubheaderFont">Copperplate</li>
                             <li class="font-title" data-type="facebookCommentSubheaderFont">Papyrus</li>
+                            <li class="font-title" data-type="facebookCommentSubheaderFont">Jura</li>
+                            <li class="font-title" data-type="facebookCommentSubheaderFont">Nunito</li>
+                            <li class="font-title" data-type="facebookCommentSubheaderFont">Open Sans</li>
+                            <li class="font-title" data-type="facebookCommentSubheaderFont">Orbitron</li>
+                            <li class="font-title" data-type="facebookCommentSubheaderFont">Roboto</li>
+                            <li class="font-title" data-type="facebookCommentSubheaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -1963,6 +2058,12 @@
                             <li class="font-title" data-type="facebookLikeHeaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="facebookLikeHeaderFont">Copperplate</li>
                             <li class="font-title" data-type="facebookLikeHeaderFont">Papyrus</li>
+                            <li class="font-title" data-type="facebookLikeHeaderFont">Jura</li>
+                            <li class="font-title" data-type="facebookLikeHeaderFont">Nunito</li>
+                            <li class="font-title" data-type="facebookLikeHeaderFont">Open Sans</li>
+                            <li class="font-title" data-type="facebookLikeHeaderFont">Orbitron</li>
+                            <li class="font-title" data-type="facebookLikeHeaderFont">Roboto</li>
+                            <li class="font-title" data-type="facebookLikeHeaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -1997,6 +2098,12 @@
                             <li class="font-title" data-type="facebookLikeSubheaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="facebookLikeSubheaderFont">Copperplate</li>
                             <li class="font-title" data-type="facebookLikeSubheaderFont">Papyrus</li>
+                            <li class="font-title" data-type="facebookLikeSubheaderFont">Jura</li>
+                            <li class="font-title" data-type="facebookLikeSubheaderFont">Nunito</li>
+                            <li class="font-title" data-type="facebookLikeSubheaderFont">Open Sans</li>
+                            <li class="font-title" data-type="facebookLikeSubheaderFont">Orbitron</li>
+                            <li class="font-title" data-type="facebookLikeSubheaderFont">Roboto</li>
+                            <li class="font-title" data-type="facebookLikeSubheaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -2199,6 +2306,12 @@
                             <li class="font-title" data-type="tiktokFollowHeaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="tiktokFollowHeaderFont">Copperplate</li>
                             <li class="font-title" data-type="tiktokFollowHeaderFont">Papyrus</li>
+                            <li class="font-title" data-type="tiktokFollowHeaderFont">Jura</li>
+                            <li class="font-title" data-type="tiktokFollowHeaderFont">Nunito</li>
+                            <li class="font-title" data-type="tiktokFollowHeaderFont">Open Sans</li>
+                            <li class="font-title" data-type="tiktokFollowHeaderFont">Orbitron</li>
+                            <li class="font-title" data-type="tiktokFollowHeaderFont">Roboto</li>
+                            <li class="font-title" data-type="tiktokFollowHeaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -2233,6 +2346,12 @@
                             <li class="font-title" data-type="tiktokFollowSubheaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="tiktokFollowSubheaderFont">Copperplate</li>
                             <li class="font-title" data-type="tiktokFollowSubheaderFont">Papyrus</li>
+                            <li class="font-title" data-type="tiktokFollowSubheaderFont">Jura</li>
+                            <li class="font-title" data-type="tiktokFollowSubheaderFont">Nunito</li>
+                            <li class="font-title" data-type="tiktokFollowSubheaderFont">Open Sans</li>
+                            <li class="font-title" data-type="tiktokFollowSubheaderFont">Orbitron</li>
+                            <li class="font-title" data-type="tiktokFollowSubheaderFont">Roboto</li>
+                            <li class="font-title" data-type="tiktokFollowSubheaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -2435,6 +2554,12 @@
                             <li class="font-title" data-type="tiktokCommentHeaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="tiktokCommentHeaderFont">Copperplate</li>
                             <li class="font-title" data-type="tiktokCommentHeaderFont">Papyrus</li>
+                            <li class="font-title" data-type="tiktokCommentHeaderFont">Jura</li>
+                            <li class="font-title" data-type="tiktokCommentHeaderFont">Nunito</li>
+                            <li class="font-title" data-type="tiktokCommentHeaderFont">Open Sans</li>
+                            <li class="font-title" data-type="tiktokCommentHeaderFont">Orbitron</li>
+                            <li class="font-title" data-type="tiktokCommentHeaderFont">Roboto</li>
+                            <li class="font-title" data-type="tiktokCommentHeaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -2469,6 +2594,12 @@
                             <li class="font-title" data-type="tiktokCommentSubheaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="tiktokCommentSubheaderFont">Copperplate</li>
                             <li class="font-title" data-type="tiktokCommentSubheaderFont">Papyrus</li>
+                            <li class="font-title" data-type="tiktokCommentSubheaderFont">Jura</li>
+                            <li class="font-title" data-type="tiktokCommentSubheaderFont">Nunito</li>
+                            <li class="font-title" data-type="tiktokCommentSubheaderFont">Open Sans</li>
+                            <li class="font-title" data-type="tiktokCommentSubheaderFont">Orbitron</li>
+                            <li class="font-title" data-type="tiktokCommentSubheaderFont">Roboto</li>
+                            <li class="font-title" data-type="tiktokCommentSubheaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -2671,6 +2802,12 @@
                             <li class="font-title" data-type="tiktokLikeHeaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="tiktokLikeHeaderFont">Copperplate</li>
                             <li class="font-title" data-type="tiktokLikeHeaderFont">Papyrus</li>
+                            <li class="font-title" data-type="tiktokLikeHeaderFont">Jura</li>
+                            <li class="font-title" data-type="tiktokLikeHeaderFont">Nunito</li>
+                            <li class="font-title" data-type="tiktokLikeHeaderFont">Open Sans</li>
+                            <li class="font-title" data-type="tiktokLikeHeaderFont">Orbitron</li>
+                            <li class="font-title" data-type="tiktokLikeHeaderFont">Roboto</li>
+                            <li class="font-title" data-type="tiktokLikeHeaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -2705,6 +2842,12 @@
                             <li class="font-title" data-type="tiktokLikeSubheaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="tiktokLikeSubheaderFont">Copperplate</li>
                             <li class="font-title" data-type="tiktokLikeSubheaderFont">Papyrus</li>
+                            <li class="font-title" data-type="tiktokLikeSubheaderFont">Jura</li>
+                            <li class="font-title" data-type="tiktokLikeSubheaderFont">Nunito</li>
+                            <li class="font-title" data-type="tiktokLikeSubheaderFont">Open Sans</li>
+                            <li class="font-title" data-type="tiktokLikeSubheaderFont">Orbitron</li>
+                            <li class="font-title" data-type="tiktokLikeSubheaderFont">Roboto</li>
+                            <li class="font-title" data-type="tiktokLikeSubheaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -2907,6 +3050,12 @@
                             <li class="font-title" data-type="referHeaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="referHeaderFont">Copperplate</li>
                             <li class="font-title" data-type="referHeaderFont">Papyrus</li>
+                            <li class="font-title" data-type="referHeaderFont">Jura</li>
+                            <li class="font-title" data-type="referHeaderFont">Nunito</li>
+                            <li class="font-title" data-type="referHeaderFont">Open Sans</li>
+                            <li class="font-title" data-type="referHeaderFont">Orbitron</li>
+                            <li class="font-title" data-type="referHeaderFont">Roboto</li>
+                            <li class="font-title" data-type="referHeaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>
@@ -2941,6 +3090,12 @@
                             <li class="font-title" data-type="referSubheaderFont">Lucida Handwriting</li>
                             <li class="font-title" data-type="referSubheaderFont">Copperplate</li>
                             <li class="font-title" data-type="referSubheaderFont">Papyrus</li>
+                            <li class="font-title" data-type="referSubheaderFont">Jura</li>
+                            <li class="font-title" data-type="referSubheaderFont">Nunito</li>
+                            <li class="font-title" data-type="referSubheaderFont">Open Sans</li>
+                            <li class="font-title" data-type="referSubheaderFont">Orbitron</li>
+                            <li class="font-title" data-type="referSubheaderFont">Roboto</li>
+                            <li class="font-title" data-type="referSubheaderFont">Urbanist</li>
                         </ul>
                     </div>
                 </div>

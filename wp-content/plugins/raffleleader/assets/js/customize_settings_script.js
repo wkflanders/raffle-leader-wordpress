@@ -5127,19 +5127,33 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 if(strokeFormID === 'imageBorderBottomStroke') imageSection.style.borderBottom = `${borderStroke}px solid ${imageCurrentBorderColorBottom}`;
                 if(strokeFormID === 'imageBorderRightStroke') imageSection.style.borderRight = `${borderStroke}px solid ${imageCurrentBorderColorRight}`;
                 break;
-            
+
+            case 'entryFormBorderStroke':
+                const entryFormSection = selectedSection.querySelector('input');
+
+                const entryFormCurrentBorderColorTop = getComputedStyle(entryFormSection).borderTopColor;
+                const entryFormCurrentBorderColorLeft = getComputedStyle(entryFormSection).borderLeftColor;
+                const entryFormCurrentBorderColorBottom = getComputedStyle(entryFormSection).borderBottomColor;
+                const entryFormCurrentBorderColorRight = getComputedStyle(entryFormSection).borderRightColor;
+
+                if(strokeFormID === 'entryFormBorderTopStroke') entryFormSection.style.borderTop = `${borderStroke}px solid ${entryFormCurrentBorderColorTop}`;
+                if(strokeFormID === 'entryFormBorderLeftStroke') entryFormSection.style.borderLeft = `${borderStroke}px solid ${entryFormCurrentBorderColorLeft}`;
+                if(strokeFormID === 'entryFormBorderBottomStroke') entryFormSection.style.borderBottom = `${borderStroke}px solid ${entryFormCurrentBorderColorBottom}`;
+                if(strokeFormID === 'entryFormBorderRightStroke') entryFormSection.style.borderRight = `${borderStroke}px solid ${entryFormCurrentBorderColorRight}`;
+                break;
+
             case 'entryButtonBorderStroke':
-                const entryButtonSection = selectedSection.querySelector('.raffleleader-entry-section').querySelector('button');
+                const entryButtonSection = selectedSection.querySelector('button');
 
                 const entryButtonCurrentBorderColorTop = getComputedStyle(entryButtonSection).borderTopColor;
                 const entryButtonCurrentBorderColorLeft = getComputedStyle(entryButtonSection).borderLeftColor;
                 const entryButtonCurrentBorderColorBottom = getComputedStyle(entryButtonSection).borderBottomColor;
-                const entryButtonCurrentBorderColorRight = getComputedStyle(entrySection).borderRightColor;
+                const entryButtonCurrentBorderColorRight = getComputedStyle(entryButtonSection).borderRightColor;
 
-                if(strokeFormID === 'entryBorderTopStroke') entrySection.style.borderTop = `${borderStroke}px solid ${entryCurrentBorderColorTop}`;
-                if(strokeFormID === 'entryBorderLeftStroke') entrySection.style.borderLeft = `${borderStroke}px solid ${entryCurrentBorderColorLeft}`;
-                if(strokeFormID === 'entryBorderBottomStroke') entrySection.style.borderBottom = `${borderStroke}px solid ${entryCurrentBorderColorBottom}`;
-                if(strokeFormID === 'entryBorderRightStroke') entrySection.style.borderRight = `${borderStroke}px solid ${entryCurrentBorderColorRight}`;
+                if(strokeFormID === 'entryButtonBorderTopStroke') entryButtonSection.style.borderTop = `${borderStroke}px solid ${entryButtonCurrentBorderColorTop}`;
+                if(strokeFormID === 'entryButtonBorderLeftStroke') entryButtonSection.style.borderLeft = `${borderStroke}px solid ${entryButtonCurrentBorderColorLeft}`;
+                if(strokeFormID === 'entryButtonBorderBottomStroke') entryButtonSection.style.borderBottom = `${borderStroke}px solid ${entryButtonCurrentBorderColorBottom}`;
+                if(strokeFormID === 'entryButtonBorderRightStroke') entryButtonSection.style.borderRight = `${borderStroke}px solid ${entryButtonCurrentBorderColorRight}`;
                 break;
 
             case 'entryBorderStroke':
@@ -5400,7 +5414,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 break;
 
             case 'entryButtonBorderRadius':
-                const entryButtonSection = selectedSection.querySelector('.raffleleader-entry-section').querySelector('input');
+                const entryButtonSection = selectedSection.querySelector('.raffleleader-entry-section').querySelector('button');
 
                 if(radiusFormID === 'entryButtonBorderTopLeftRadius') entryButtonSection.style.borderTopLeftRadius = `${borderRadius}px`;
                 if(radiusFormID === 'entryButtonBorderTopRightRadius') entryButtonSection.style.borderTopRightRadius = `${borderRadius}px`;

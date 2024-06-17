@@ -424,7 +424,7 @@ document.addEventListener("previewLoaded", ()=>{
         entryBackgroundColorForm.value = entryBackgroundColorHex;
         entryBackgroundHexBox.style.backgroundColor = entryBackgroundColorHex;
         
-        // entry form border stroke
+        // entry border stroke
         const entryBorderFormTopStroke = document.getElementById('entryBorderTopStroke');
         const entryBorderFormLeftStroke = document.getElementById('entryBorderLeftStroke');
         const entryBorderFormBottomStroke = document.getElementById('entryBorderBottomStroke');
@@ -439,6 +439,38 @@ document.addEventListener("previewLoaded", ()=>{
         entryBorderFormLeftStroke.value = entryBorderStrokeLeft;
         entryBorderFormBottomStroke.value = entryBorderStrokeBottom;
         entryBorderFormRightStroke.value = entryBorderStrokeRight;
+
+        // entry form border stroke
+        const entryFormBorderFormTopStroke = document.getElementById('entryFormBorderTopStroke');
+        const entryFormBorderFormLeftStroke = document.getElementById('entryFormBorderLeftStroke');
+        const entryFormBorderFormBottomStroke = document.getElementById('entryFormBorderBottomStroke');
+        const entryFormBorderFormRightStroke = document.getElementById('entryFormBorderRightStroke');
+
+        const entryFormBorderStrokeTop = window.getComputedStyle(entryInputElement).getPropertyValue('border-top-width').replace(/^"|"$/g, '');
+        const entryFormBorderStrokeLeft = window.getComputedStyle(entryInputElement).getPropertyValue('border-left-width').replace(/^"|"$/g, '');
+        const entryFormBorderStrokeBottom = window.getComputedStyle(entryInputElement).getPropertyValue('border-bottom-width').replace(/^"|"$/g, '');
+        const entryFormBorderStrokeRight = window.getComputedStyle(entryInputElement).getPropertyValue('border-right-width').replace(/^"|"$/g, '');
+
+        entryFormBorderFormTopStroke.value = entryFormBorderStrokeTop;
+        entryFormBorderFormLeftStroke.value = entryFormBorderStrokeLeft;
+        entryFormBorderFormBottomStroke.value = entryFormBorderStrokeBottom;
+        entryFormBorderFormRightStroke.value = entryFormBorderStrokeRight;
+
+        // entry button border stroke
+        const entryButtonBorderFormTopStroke = document.getElementById('entryButtonBorderTopStroke');
+        const entryButtonBorderFormLeftStroke = document.getElementById('entryButtonBorderLeftStroke');
+        const entryButtonBorderFormBottomStroke = document.getElementById('entryButtonBorderBottomStroke');
+        const entryButtonBorderFormRightStroke = document.getElementById('entryButtonBorderRightStroke');
+
+        const entryButtonBorderStrokeTop = window.getComputedStyle(entryButtonElement).getPropertyValue('border-top-width').replace(/^"|"$/g, '');
+        const entryButtonBorderStrokeLeft = window.getComputedStyle(entryButtonElement).getPropertyValue('border-left-width').replace(/^"|"$/g, '');
+        const entryButtonBorderStrokeBottom = window.getComputedStyle(entryButtonElement).getPropertyValue('border-bottom-width').replace(/^"|"$/g, '');
+        const entryButtonBorderStrokeRight = window.getComputedStyle(entryButtonElement).getPropertyValue('border-right-width').replace(/^"|"$/g, '');
+
+        entryButtonBorderFormTopStroke.value = entryButtonBorderStrokeTop;
+        entryButtonBorderFormLeftStroke.value = entryButtonBorderStrokeLeft;
+        entryButtonBorderFormBottomStroke.value = entryButtonBorderStrokeBottom;
+        entryButtonBorderFormRightStroke.value = entryButtonBorderStrokeRight;
 
         // entry button border radius
         const entryButtonBorderFormTopLeftRadius = document.getElementById('entryButtonBorderTopLeftRadius');

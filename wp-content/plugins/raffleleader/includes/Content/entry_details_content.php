@@ -113,7 +113,85 @@
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
-                <p>Button Color</p>
+                <p>Form Font Size</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-text">
+                        <input id="entryFontSizeForm" class="dropdown-display font-size-input" data-type="entryFontSize" type="text" name="entryFontSize" placeholder="Enter a font size">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Form Font</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display">
+                        <p id="entryDropDownTitle">Overview</p>
+                        <p class="dropdown-btn">▼</p>
+                    </div>
+                    <div class="dropdown-content">
+                        <ul id="entryFontList">
+                            <li class="font-title" data-type="entryFont">Overpass</li>
+                            <li class="font-title" data-type="entryFont">Inter</li>
+                            <li class="font-title" data-type="entryFont">Times New Roman</li>
+                            <li class="font-title" data-type="entryFont">Garamond</li>
+                            <li class="font-title" data-type="entryFont">Georgia</li>
+                            <li class="font-title" data-type="entryFont">Palatino</li>
+                            <li class="font-title" data-type="entryFont">Baskerville</li>
+                            <li class="font-title" data-type="entryFont">Arial</li>
+                            <li class="font-title" data-type="entryFont">Verdana</li>
+                            <li class="font-title" data-type="entryFont">Helvetica</li>
+                            <li class="font-title" data-type="entryFont">Tahoma</li>
+                            <li class="font-title" data-type="entryFont">Trebuchet MS</li>
+                            <li class="font-title" data-type="entryFont">Impact</li>
+                            <li class="font-title" data-type="entryFont">Gill Sans</li>
+                            <li class="font-title" data-type="entryFont">Lucida Console</li>
+                            <li class="font-title" data-type="entryFont">Courier New</li>
+                            <li class="font-title" data-type="entryFont">Monaco</li>
+                            <li class="font-title" data-type="entryFont">Brush Script MT</li>
+                            <li class="font-title" data-type="entryFont">Lucida Handwriting</li>
+                            <li class="font-title" data-type="entryFont">Copperplate</li>
+                            <li class="font-title" data-type="entryFont">Papyrus</li>
+                            <li class="font-title" data-type="entryFont">Jura</li>
+                            <li class="font-title" data-type="entryFont">Nunito</li>
+                            <li class="font-title" data-type="entryFont">Open Sans</li>
+                            <li class="font-title" data-type="entryFont">Orbitron</li>
+                            <li class="font-title" data-type="entryFont">Roboto</li>
+                            <li class="font-title" data-type="entryFont">Urbanist</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Form Font Color</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-color">
+                        <div id="entryColorGradientFont"></div>
+                        <div id="entryFontColorClick" class="dropdown-color-click" data-type="entryFontColor"></div>
+                        <input id="entryFontColorForm" class="color-input" data-type="entryFontColor" type="text" name="entryFontColor" placeholder="Enter a hexidecimal">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Form Background Color</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-color">
+                        <div id="entryColorGradientFormBackground"></div>
+                        <div id="entryFormBackgroundColorClick" class="dropdown-color-click" data-type="entryFormBackgroundColor"></div>
+                        <input id="entryFormBackgroundColorForm" class="color-input" data-type="entryFormBackgroundColor" type="text" name="entryButtonColor" placeholder="Enter a hexidecimal">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Button Font Color</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-color">
+                        <div id="entryColorGradientButtonFont"></div>
+                        <div id="entryButtonFontColorClick" class="dropdown-color-click" data-type="entryButtonFontColor"></div>
+                        <input id="entryButtonFontColorForm" class="color-input" data-type="entryButtonFontColor" type="text" name="entryButtonFontColor" placeholder="Enter a hexidecimal">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Button Background Color</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-color">
                         <div id="entryColorGradientButton"></div>

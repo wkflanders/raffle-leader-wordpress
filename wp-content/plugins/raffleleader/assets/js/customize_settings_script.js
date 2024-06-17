@@ -4646,6 +4646,11 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 counterSelectedElement.style.fontSize = `${fontSize}px`;
                 break;
 
+            case 'entryFontSize':
+                const entrySelectedElement = selectedSection.querySelector('input');
+                entrySelectedElement.style.fontSize = `${fontSize}px`;
+                break;
+
             case 'XFollowHeaderFontSize':
                 const XFollowHeaderSection = selectedSection.querySelector('h2');
                 XFollowHeaderSection.style.fontSize = `${fontSize}px`;

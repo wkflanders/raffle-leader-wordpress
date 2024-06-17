@@ -493,6 +493,13 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 counterDropDownDisplay.innerText = fontName;
                 break;
 
+            case 'entryFont':
+                const entrySelectedElement = selectedSection.querySelector('input');
+                const entryDropDownDisplay = document.getElementById('entryDropDownTitle');
+                entrySelectedElement.style.fontFamily = `${fontName}`;
+                entryDropDownDisplay.innerText = fontName;
+                break;
+
             case 'XFollowHeaderFont':
                 const selectedXFollowHeaderElement = selectedSection.querySelector('h2');
                 const headerXFollowDropDownDisplay = document.getElementById('XFollowHeaderDropDownTitle');

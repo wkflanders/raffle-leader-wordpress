@@ -361,7 +361,13 @@ document.addEventListener("previewLoaded", ()=>{
     function loadEntrySettings(element){
         const entryButtonElement = element.querySelector('button');
         const entryButtonColorForm = document.getElementById('entryButtonColorForm');
-        
+        const entryInputElement = element.querySelector('input')
+
+        // entry font size
+        const entryFontSizeForm = document.getElementById('entryFontSizeForm');
+        const entryFontSize = window.getComputedStyle(entryInputElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        entryFontSizeForm.value = entryFontSize;
+
         // entry button color
         const entryButtonHexBox = document.getElementById('entryButtonColorClick');
         const entryButtonColorRGB = window.getComputedStyle(entryButtonElement).getPropertyValue('background-color').replace(/^"|"$/g, '');

@@ -423,8 +423,8 @@ document.addEventListener("previewLoaded", ()=>{
         const entryBackgroundColorHex = rgbToHex(entryBackgroundColorRGB);
         entryBackgroundColorForm.value = entryBackgroundColorHex;
         entryBackgroundHexBox.style.backgroundColor = entryBackgroundColorHex;
-
-        // entry border stroke
+        
+        // entry form border stroke
         const entryBorderFormTopStroke = document.getElementById('entryBorderTopStroke');
         const entryBorderFormLeftStroke = document.getElementById('entryBorderLeftStroke');
         const entryBorderFormBottomStroke = document.getElementById('entryBorderBottomStroke');
@@ -440,7 +440,39 @@ document.addEventListener("previewLoaded", ()=>{
         entryBorderFormBottomStroke.value = entryBorderStrokeBottom;
         entryBorderFormRightStroke.value = entryBorderStrokeRight;
 
-        // entry border radius
+        // entry button border radius
+        const entryButtonBorderFormTopLeftRadius = document.getElementById('entryButtonBorderTopLeftRadius');
+        const entryButtonBorderFormTopRightRadius = document.getElementById('entryButtonBorderTopRightRadius');
+        const entryButtonBorderFormBottomLeftRadius = document.getElementById('entryButtonBorderBottomLeftRadius');
+        const entryButtonBorderFormBottomRightRadius = document.getElementById('entryButtonBorderBottomRightRadius');
+
+        const entryButtonBorderRadiusTopLeft = window.getComputedStyle(entryButtonElement).getPropertyValue('border-top-left-radius').replace(/^"|"$/g, '');
+        const entryButtonBorderRadiusTopRight = window.getComputedStyle(entryButtonElement).getPropertyValue('border-top-right-radius').replace(/^"|"$/g, '');
+        const entryButtonBorderRadiusBottomLeft = window.getComputedStyle(entryButtonElement).getPropertyValue('border-bottom-left-radius').replace(/^"|"$/g, '');
+        const entryButtonBorderRadiusBottomRight = window.getComputedStyle(entryButtonElement).getPropertyValue('border-bottom-right-radius').replace(/^"|"$/g, '');
+
+        entryButtonBorderFormTopLeftRadius.value = entryButtonBorderRadiusTopLeft;
+        entryButtonBorderFormTopRightRadius.value = entryButtonBorderRadiusTopRight;
+        entryButtonBorderFormBottomLeftRadius.value = entryButtonBorderRadiusBottomLeft;
+        entryButtonBorderFormBottomRightRadius.value = entryButtonBorderRadiusBottomRight;
+
+        // entry form border radius
+        const entryFormBorderFormTopLeftRadius = document.getElementById('entryFormBorderTopLeftRadius');
+        const entryFormBorderFormTopRightRadius = document.getElementById('entryFormBorderTopRightRadius');
+        const entryFormBorderFormBottomLeftRadius = document.getElementById('entryFormBorderBottomLeftRadius');
+        const entryFormBorderFormBottomRightRadius = document.getElementById('entryFormBorderBottomRightRadius');
+
+        const entryFormBorderRadiusTopLeft = window.getComputedStyle(entryInputElement).getPropertyValue('border-top-left-radius').replace(/^"|"$/g, '');
+        const entryFormBorderRadiusTopRight = window.getComputedStyle(entryInputElement).getPropertyValue('border-top-right-radius').replace(/^"|"$/g, '');
+        const entryFormBorderRadiusBottomLeft = window.getComputedStyle(entryInputElement).getPropertyValue('border-bottom-left-radius').replace(/^"|"$/g, '');
+        const entryFormBorderRadiusBottomRight = window.getComputedStyle(entryInputElement).getPropertyValue('border-bottom-right-radius').replace(/^"|"$/g, '');
+
+        entryFormBorderFormTopLeftRadius.value = entryFormBorderRadiusTopLeft;
+        entryFormBorderFormTopRightRadius.value = entryFormBorderRadiusTopRight;
+        entryFormBorderFormBottomLeftRadius.value = entryFormBorderRadiusBottomLeft;
+        entryFormBorderFormBottomRightRadius.value = entryFormBorderRadiusBottomRight;
+
+        // entry section border radius
         const entryBorderFormTopLeftRadius = document.getElementById('entryBorderTopLeftRadius');
         const entryBorderFormTopRightRadius = document.getElementById('entryBorderTopRightRadius');
         const entryBorderFormBottomLeftRadius = document.getElementById('entryBorderBottomLeftRadius');

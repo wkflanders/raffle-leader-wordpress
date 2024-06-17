@@ -63,8 +63,16 @@
     margin-bottom: 1vw;
 }
 
+.layout-box .dropdown-display{
+    justify-content: center;
+}
+
 .layout-box .dropdown-color{
-    padding: 0 2.5vh 0 2vh;
+    padding: 0 1vh 0 2vh;
+}
+
+.layout-box .dropdown-color-click{
+    width: 3vw;
 }
 
 .layout-box > p{

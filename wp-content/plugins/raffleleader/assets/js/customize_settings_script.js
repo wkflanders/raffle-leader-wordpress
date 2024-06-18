@@ -53,6 +53,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     
     let pickrEntryFont = undefined;
     let pickrEntryFormBackground = undefined;
+    let pickrEntryFormBorder = undefined;
     let pickrEntryButtonFont = undefined;
     let pickrEntryBtn = undefined;
     let pickrEntryBackground = undefined;
@@ -905,6 +906,31 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 pickrEntryFormBackground.show();
 
                 pickrEntryFormBackground.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'entryFormBorderColor':
+                const entryFormCurrentBorderColor = document.getElementById('entryFormBorderColorForm').value;
+
+                pickrEntryFormBorder = Pickr.create({
+                    el: entryColorGradientFormBorder,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: entryFormCurrentBorderColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                        opacity: true,
+                    }
+                });
+                pickrEntryFormBorder.setColorRepresentation('HEX');
+                pickrEntryFormBorder.show();
+
+                pickrEntryFormBorder.on('change', (color)=>{
                     const selectedColor = '#'.concat(...color.toHEXA());
                     this.style.backgroundColor = selectedColor;
                     
@@ -2865,6 +2891,42 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 }
                 const entryEditElementFormBackground = document.querySelector('.selected-raffleleader-section').querySelector('input');
                 entryEditElementFormBackground.style.backgroundColor = color;
+                break;
+
+            case 'entryFormBorderColor':
+                if(fromPickr === false){
+                    if(pickrEntryFormBorder === undefined){
+                        pickrEntryFormBorder = Pickr.create({
+                            el: entryColorGradientFormBorder,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrEntryFormBorder.setColor(color);
+                        const hexBoxClick = document.getElementById('entryFormBorderColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('entryFormBorderColorForm');
+                    hexBoxText.value = color;
+                }
+                const entryEditElementFormBorder = document.querySelector('.selected-raffleleader-section').querySelector('input');
+                
+                const entryCurrentFormBorderStrokeTop = getComputedStyle(entryEditElementFormBorder).borderTopWidth;
+                const entryCurrentFormBorderStrokeLeft = getComputedStyle(entryEditElementFormBorder).borderLeftWidth;
+                const entryCurrentFormBorderStrokeBottom = getComputedStyle(entryEditElementFormBorder).borderBottomWidth;
+                const entryCurrentFormBorderStrokeRight = getComputedStyle(entryEditElementFormBorder).borderRightWidth;
+
+                entryEditElementFormBorder.style.borderTop = `${entryCurrentFormBorderStrokeTop} solid ${color}`;
+                entryEditElementFormBorder.style.borderLeft = `${entryCurrentFormBorderStrokeLeft} solid ${color}`;
+                entryEditElementFormBorder.style.borderBottom = `${entryCurrentFormBorderStrokeBottom} solid ${color}`;
+                entryEditElementFormBorder.style.borderRight = `${entryCurrentFormBorderStrokeRight} solid ${color}`;
                 break;
 
             case 'entryButtonFontColor':

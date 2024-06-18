@@ -402,6 +402,14 @@ document.addEventListener("previewLoaded", ()=>{
         entryFormBackgroundColorForm.value = entryFormBackgroundColorHex;
         entryFormBackgroundHexBox.style.backgroundColor = entryFormBackgroundColorHex;
 
+        // entry form border color
+        const entryFormBorderColorForm = document.getElementById('entryFormBorderColorForm');
+        const entryFormBorderHexBox = document.getElementById('entryFormBorderColorClick');
+        const entryFormBorderColorRGB = window.getComputedStyle(entryInputElement).getPropertyValue('border-color').replace(/^"|"$/g, '');
+        const entryFormBorderColorHex = rgbToHex(entryFormBorderColorRGB);
+        entryFormBorderColorForm.value = entryFormBorderColorHex;
+        entryFormBorderHexBox.style.backgroundColor = entryFormBorderColorRGB;
+
         // entry button font color
         const entryButtonFontHexBox = document.getElementById('entryButtonFontColorClick');
         const entryButtonFontColorRGB = window.getComputedStyle(entryButtonElement).getPropertyValue('color').replace(/^"|"$/g, '');

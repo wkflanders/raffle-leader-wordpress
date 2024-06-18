@@ -155,6 +155,48 @@ document.addEventListener("generalSettingsLoaded", ()=>{
         const preview = document.getElementById('preview');
 
         switch(templateType) {
+            case 'pdTemplateOne':
+                preview.outerHTML = `<div id="preview" class="raffleleader-preview-box raffleleader-preview-reset" style="width: 500px">
+                                        <div id="dropzone" class="raffleleader-dropzone" style="height: 800px; background-color: rgb(0, 0, 0);">
+                                            <div style="display: none;" class="raffleleader-rules-and-terms-preview">
+                                                <button class="rules-and-terms-close-button">×</button>
+                                                <h2>Rules and Terms</h2>
+                                                <p class="raffleleader-rules-text"></p>
+                                            </div>
+                                        <div class="raffleleader-section" style="width: 500px; height: 337px; position: absolute; left: 0px; top: 0px;"><div data-type="imageDetails" class="raffleleader-image-section"><img src="https://raffleleader.s3.us-east-2.amazonaws.com/alo.png" alt="Raffle Image" title="alo"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 46.2031px; top: 444px; width: 146px; height: 68px;"><div style="height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0);" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: center; color: rgb(255, 255, 255); font-size: 70px; font-family: Urbanist;">alo </h2>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 29.2031px; top: 378px; width: 272px; height: 66px;"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: center; color: rgb(255, 255, 255); font-weight: normal; font-size: 70px; font-family: Urbanist;">Win an</h2>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 160.203px; top: 434.391px; width: 298.797px; height: 92px;"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: center; font-weight: normal; font-family: Urbanist; color: rgb(255, 255, 255); font-size: 70px;">Giftcard</h2>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 29.1875px; top: 532.391px; width: 447px; height: 160px;"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0); justify-content: left; text-align: left; align-items: center; writing-mode: horizontal-tb; text-orientation: upright; border-width: 0px; border-style: solid; border-color: rgba(60, 67, 74, 0);" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: left; color: rgb(255, 255, 255); font-family: Nunito; font-size: 15px; font-weight: normal; justify-content: left; line-height: 20px;">Enter to win a $50 Giftcard for alo from Vera Co. which includes our new Rewards type giveaway. Rewards allow you to give away a coupon code, download, link or another instant reward to everyone who enters as opposed to giving away one big prize like in a traditional giveaway.</h2>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="25raffleID" style="width: 500px; height: 93px; position: absolute; left: 0px; top: 692.391px;"><div data-type="entryDetails" class="raffleleader-entry-section" style="background-color: rgba(255, 255, 255, 0); border-width: 0px; border-style: solid; border-color: rgba(255, 255, 255, 0);">
+                            <form class="raffleleader-email-submit" action="/submit-email" method="post">
+                                <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required="" style="font-family: Urbanist; font-size: 20px; color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); border-radius: 0px; border-width: 2px; border-style: solid; border-color: rgb(128, 128, 128);">
+                                <button class="raffleleader-email-submit-btn ld-over-full" type="submit" style="background-color: rgb(255, 0, 114); color: rgb(255, 255, 255); border-radius: 0px; border-top: 0px solid rgb(255, 255, 255); border-left: 0px solid rgb(255, 255, 255); border-right: 0px solid rgb(128, 128, 128);">
+                                    →
+                                </button>
+                            </form>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div></div>
+                                        <div class="raffleleader-footer-wrapper" style="background-color: rgb(0, 0, 0);">
+                                            <div class="raffleleader-footer">
+                                                <a class="raffleleader-footer-content raffleleader-rules-and-terms" style="color: rgb(255, 255, 255);">Raffle Rules and Terms</a>
+                                                <p>|</p>
+                                                <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com" style="color: rgb(255, 255, 255);">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.s3.us-east-2.amazonaws.com/footer_text_logo.png"> For Yourself!</a>
+                                            </div>
+                                        </div>
+                                    </div>`
+                window.zoomScale = 1;
+                document.dispatchEvent(loadPreviewEvent);
+                break;
+
             case 'blankTemplate':
                 preview.outerHTML = `<div id="preview" class="raffleleader-preview-box raffleleader-preview-reset" style="width: 500px">
                                         <div id="dropzone" class="raffleleader-dropzone" style="height: 600px">
@@ -168,7 +210,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                             <div class="raffleleader-footer">
                                                 <a class="raffleleader-footer-content raffleleader-rules-and-terms">Raffle Rules and Terms</a>
                                                 <p>|</p>
-                                                <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.com/wp-content/uploads/2024/03/footer_text_logo.png"> For Yourself!</a>
+                                                <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.s3.us-east-2.amazonaws.com/footer_text_logo.png"> For Yourself!</a>
                                             </div>
                                         </div>
                                     </div>`;
@@ -227,7 +269,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                                         <div class="raffleleader-footer">
                                                             <a class="raffleleader-footer-content raffleleader-rules-and-terms" data-rules="">Raffle Rules and Terms</a>
                                                             <p>|</p>
-                                                            <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.com/wp-content/uploads/2024/03/footer_text_logo.png"> For Yourself!</a>
+                                                            <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.s3.us-east-2.amazonaws.com/footer_text_logo.png"> For Yourself!</a>
                                                         </div>
                                                     </div>
                                                 </div>`;
@@ -286,7 +328,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                                 <div class="raffleleader-footer">
                                                     <a class="raffleleader-footer-content raffleleader-rules-and-terms" data-rules="">Raffle Rules and Terms</a>
                                                     <p>|</p>
-                                                    <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.com/wp-content/uploads/2024/03/footer_text_logo.png"> For Yourself!</a>
+                                                    <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.s3.us-east-2.amazonaws.com/footer_text_logo.png"> For Yourself!</a>
                                                 </div>
                                             </div>
                                         </div>`;
@@ -345,7 +387,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                 <div class="raffleleader-footer">
                                     <a class="raffleleader-footer-content raffleleader-rules-and-terms" data-rules="">Raffle Rules and Terms</a>
                                     <p>|</p>
-                                    <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.com/wp-content/uploads/2024/03/footer_text_logo.png"> For Yourself!</a>
+                                    <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.s3.us-east-2.amazonaws.com/footer_text_logo.png"> For Yourself!</a>
                                 </div>
                             </div>
                         </div>`;
@@ -398,7 +440,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                 <div class="raffleleader-footer">
                                     <a class="raffleleader-footer-content raffleleader-rules-and-terms" data-rules="">Raffle Rules and Terms</a>
                                     <p>|</p>
-                                    <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.com/wp-content/uploads/2024/03/footer_text_logo.png"> For Yourself!</a>
+                                    <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.s3.us-east-2.amazonaws.com/footer_text_logo.png"> For Yourself!</a>
                                 </div>
                             </div>
                         </div>`;
@@ -448,7 +490,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                 <div class="raffleleader-footer">
                                     <a class="raffleleader-footer-content raffleleader-rules-and-terms" data-rules="">Raffle Rules and Terms</a>
                                     <p>|</p>
-                                    <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.com/wp-content/uploads/2024/03/footer_text_logo.png"> For Yourself!</a>
+                                    <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.s3.us-east-2.amazonaws.com/footer_text_logo.png"> For Yourself!</a>
                                 </div>
                             </div>
                         </div>`;

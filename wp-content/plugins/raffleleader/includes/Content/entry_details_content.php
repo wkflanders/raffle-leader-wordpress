@@ -166,7 +166,7 @@
                     <div class="dropdown-display dropdown-color">
                         <div id="entryColorGradientFont"></div>
                         <div id="entryFontColorClick" class="dropdown-color-click" data-type="entryFontColor"></div>
-                        <input id="entryFontColorForm" class="color-input" data-type="entryFontColor" type="text" name="entryFontColor" placeholder="Enter a hexidecimal">
+                        <input id="entryFontColorForm" class="color-input" data-type="entryFontColor" type="text" name="entryFormFontColor" placeholder="Enter a hexidecimal">
                     </div>
                 </div>
             </div>
@@ -176,7 +176,17 @@
                     <div class="dropdown-display dropdown-color">
                         <div id="entryColorGradientFormBackground"></div>
                         <div id="entryFormBackgroundColorClick" class="dropdown-color-click" data-type="entryFormBackgroundColor"></div>
-                        <input id="entryFormBackgroundColorForm" class="color-input" data-type="entryFormBackgroundColor" type="text" name="entryButtonColor" placeholder="Enter a hexidecimal">
+                        <input id="entryFormBackgroundColorForm" class="color-input" data-type="entryFormBackgroundColor" type="text" name="entryFormBackgroundColor" placeholder="Enter a hexidecimal">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Form Border Color</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-color">
+                        <div id="entryColorGradientFormBorder"></div>
+                        <div id="entryFormBorderColorClick" class="dropdown-color-click" data-type="entryFormBorderColor"></div>
+                        <input id="entryFormBorderColorForm" class="color-input" data-type="entryFormBorderColor" type="text" name="entryFormBorderColor" placeholder="Enter a hexidecimal">
                     </div>
                 </div>
             </div>
@@ -234,7 +244,7 @@
                     <div class="dropdown-display dropdown-color">
                         <div id="entryColorGradientButton"></div>
                         <div id="entryButtonColorClick" class="dropdown-color-click" data-type="entryButtonColor"></div>
-                        <input id="entryButtonColorForm" class="color-input" data-type="entryButtonColor" type="text" name="entryButtonColor" placeholder="Enter a hexidecimal">
+                        <input id="entryButtonColorForm" class="color-input" data-type="entryButtonColor" type="text" name="entryButtonBackgroundColor" placeholder="Enter a hexidecimal">
                     </div>
                 </div>
             </div>

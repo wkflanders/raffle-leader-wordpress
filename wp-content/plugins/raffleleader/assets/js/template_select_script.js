@@ -197,6 +197,150 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                 document.dispatchEvent(loadPreviewEvent);
                 break;
 
+            case 'pdTemplateTwo':
+                preview.outerHTML = `<div id="preview" class="raffleleader-preview-box raffleleader-preview-reset" style="width: 500px">
+                                        <div id="dropzone" class="raffleleader-dropzone" style="height: 800px; background-color: rgb(104, 174, 37);">
+                                            <div style="display: none;" class="raffleleader-rules-and-terms-preview">
+                                                <button class="rules-and-terms-close-button">×</button>
+                                                <h2>Rules and Terms</h2>
+                                                <p class="raffleleader-rules-text"></p>
+                                            </div>
+                                        <div class="raffleleader-section" style="width: 499px; height: 433px; position: absolute; left: 1px; top: 12.3906px;"><div data-type="imageDetails" class="raffleleader-image-section" style="border-radius: 100px;"><img src="https://raffleleader.s3.us-east-2.amazonaws.com/bonaroo.png" alt="Raffle Image" title="bonaroo" style="border-radius: 100px;"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 1px; top: 484.391px; width: 499px; height: 132px;"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: center; font-family: Orbitron; color: rgb(255, 255, 255); font-size: 40px; line-height: 45px;">WIN A TICKET TO BONNAROOO!!!!</h2>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 39px; top: 622.391px; width: 407px; height: 60px;"><div style="height: 100%; width: 100%; justify-content: left; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: left; justify-content: left; font-size: 16px; line-height: 20px; font-family: &quot;Open Sans&quot;; font-weight: normal; letter-spacing: 0px;">It's time to party! Enter your email for a chance to win a free ticket to Bonaroo.</h2>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="25raffleID" style="width: 499px; height: 83px; position: absolute; left: 1px; top: 697.391px;"><div data-type="entryDetails" class="raffleleader-entry-section" style="background-color: rgba(255, 255, 255, 0); border-width: 0px; border-style: solid; border-color: rgb(0, 0, 0);">
+                            <form class="raffleleader-email-submit" action="/submit-email" method="post">
+                                <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required="" style="background-color: rgba(0, 0, 0, 0); color: rgb(0, 0, 0); font-size: 18px; font-family: Orbitron; border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);">
+                                <button class="raffleleader-email-submit-btn ld-over-full" type="submit" style="background-color: rgb(0, 0, 0); border-radius: 10px;">
+                                    →
+                                </button>
+                            </form>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div></div>
+                                        <div class="raffleleader-footer-wrapper" style="background-color: rgb(104, 174, 37);">
+                                            <div class="raffleleader-footer">
+                                                <a class="raffleleader-footer-content raffleleader-rules-and-terms" style="color: rgb(0, 0, 0);">Raffle Rules and Terms</a>
+                                                <p style="color: rgb(0, 0, 0);">|</p>
+                                                <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com" style="color: rgb(0, 0, 0);">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.s3.us-east-2.amazonaws.com/footer_text_logo.png"> For Yourself!</a>
+                                            </div>
+                                        </div>
+                                    </div>`
+                window.zoomScale = 1;
+                document.dispatchEvent(loadPreviewEvent);
+                break;
+
+            case 'pdTemplateThree':
+                preview.outerHTML = `<div id="preview" class="raffleleader-preview-box raffleleader-preview-reset" style="width: 500px">
+                                        <div id="dropzone" class="raffleleader-dropzone" style="height: 800px; background-color: rgb(0, 0, 0);">
+                                            <div style="display: none;" class="raffleleader-rules-and-terms-preview">
+                                                <button class="rules-and-terms-close-button">×</button>
+                                                <h2>Rules and Terms</h2>
+                                                <p class="raffleleader-rules-text"></p>
+                                            </div>
+                                        <div class="raffleleader-section" style="position: absolute; left: 48px; top: 0px; width: 392px; height: 151px;"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: center; font-size: 40px; font-weight: normal; line-height: 50px; color: rgb(255, 255, 255); font-family: Jura;">Win a piece from the new collection</h2>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="width: 485px; height: 420px; position: absolute; left: 8px; top: 151px;"><div data-type="imageDetails" class="raffleleader-image-section" style="border-radius: 100px;"><img src="https://raffleleader.s3.us-east-2.amazonaws.com/collection.png" alt="Raffle Image" title="collection" style="border-radius: 100px;"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 48px; top: 612.391px; width: 425px; height: 80px;"><div style="height: 100%; width: 100%; justify-content: left; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: left; font-weight: normal; font-size: 14px; justify-content: left; line-height: 18px; color: rgb(255, 255, 255);">Enter your email for the chance to win any piece from our new collection, including this beautiful ring!</h2>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="25raffleID" style="width: 500px; height: 91.6094px; position: absolute; left: 0px; top: 699.391px;"><div data-type="entryDetails" class="raffleleader-entry-section" style="background-color: rgba(255, 255, 255, 0);">
+                            <form class="raffleleader-email-submit" action="/submit-email" method="post">
+                                <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required="" style="color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; border-color: rgb(255, 255, 255); font-size: 18px;">
+                                <button class="raffleleader-email-submit-btn ld-over-full" type="submit" style="border-width: 2px; border-style: solid; border-color: rgb(255, 255, 255) rgb(128, 128, 128) rgb(255, 255, 255) rgb(255, 255, 255); background-color: rgb(0, 0, 0);">
+                                    →
+                                </button>
+                            </form>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div></div>
+                                        <div class="raffleleader-footer-wrapper" style="background-color: rgb(0, 0, 0);">
+                                            <div class="raffleleader-footer">
+                                                <a class="raffleleader-footer-content raffleleader-rules-and-terms" style="color: rgb(255, 255, 255);">Raffle Rules and Terms</a>
+                                                <p style="color: rgb(255, 255, 255);">|</p>
+                                                <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com" style="color: rgb(255, 255, 255);">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.s3.us-east-2.amazonaws.com/footer_text_logo.png"> For Yourself!</a>
+                                            </div>
+                                        </div>
+                                    </div>`
+                window.zoomScale = 1;
+                document.dispatchEvent(loadPreviewEvent);
+                break;
+
+            case 'pdTemplateFour':
+                preview.outerHTML = `<div id="preview" class="raffleleader-preview-box raffleleader-preview-reset" style="width: 500px">
+                                        <div id="dropzone" class="raffleleader-dropzone" style="height: 800px; background-color: rgb(7, 7, 45);">
+                                            <div style="display: none;" class="raffleleader-rules-and-terms-preview">
+                                                <button class="rules-and-terms-close-button">×</button>
+                                                <h2>Rules and Terms</h2>
+                                                <p class="raffleleader-rules-text"></p>
+                                            </div>
+                                        <div class="raffleleader-section" style="position: absolute; left: 19px; top: 49.3906px; width: 467px; height: 106px;"><div style="height: 100%; width: 100%; justify-content: left; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: left; justify-content: left; color: rgb(255, 255, 255); font-size: 40px; line-height: 40px;">Win a ticket to the NFL game of your choice!</h2>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 36.2031px; top: 178.391px; width: 427px; height: 69px;"><div style="height: 100%; width: 100%; justify-content: left; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: left; font-weight: normal; font-size: 14px; justify-content: left; line-height: 18px; color: rgb(255, 255, 255); letter-spacing: 0px;">One lucky winner will win a ticket to the NFL game of their choosing. All you need to do is enter your email.</h2>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="width: 500px; height: 427.609px; position: absolute; left: 0px; top: 372.391px;"><div data-type="imageDetails" class="raffleleader-image-section" style="border-top-left-radius: 800px; border-top-right-radius: 5px; border-bottom-right-radius: 0px; border-width: 0px; border-style: solid; border-color: rgba(60, 67, 74, 0);"><img src="https://raffleleader.s3.us-east-2.amazonaws.com/nfl.png" alt="Raffle Image" title="nfl" style="border-top-left-radius: 800px; border-top-right-radius: 5px; border-bottom-right-radius: 0px;"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="25raffleID" style="width: 500px; height: 108px; position: absolute; left: 0px; top: 264.391px;"><div data-type="entryDetails" class="raffleleader-entry-section" style="background-color: rgba(255, 255, 255, 0);">
+                            <form class="raffleleader-email-submit" action="/submit-email" method="post">
+                                <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required="" style="font-size: 20px; color: rgb(255, 255, 255); background-color: rgba(255, 255, 255, 0); border-width: 1px; border-style: solid; border-color: rgb(255, 255, 255);">
+                                <button class="raffleleader-email-submit-btn ld-over-full" type="submit" style="background-color: rgb(198, 42, 42); color: rgb(23, 23, 76);">
+                                    →
+                                </button>
+                            </form>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div></div>
+                                        <div class="raffleleader-footer-wrapper" style="background-color: rgb(7, 7, 45);">
+                                            <div class="raffleleader-footer">
+                                                <a class="raffleleader-footer-content raffleleader-rules-and-terms" style="color: rgb(255, 255, 255);">Raffle Rules and Terms</a>
+                                                <p style="color: rgb(255, 255, 255);">|</p>
+                                                <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com" style="color: rgb(255, 255, 255);">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.s3.us-east-2.amazonaws.com/footer_text_logo.png"> For Yourself!</a>
+                                            </div>
+                                        </div>
+                                    </div>`
+                window.zoomScale = 1;
+                document.dispatchEvent(loadPreviewEvent);
+                break;
+
+            case 'pdTemplateFive':
+                preview.outerHTML = `<div id="preview" class="raffleleader-preview-box raffleleader-preview-reset" style="width: 500px">
+                                        <div id="dropzone" class="raffleleader-dropzone" style="height: 800px;">
+                                            <div style="display: none;" class="raffleleader-rules-and-terms-preview">
+                                                <button class="rules-and-terms-close-button">×</button>
+                                                <h2>Rules and Terms</h2>
+                                                <p class="raffleleader-rules-text"></p>
+                                            </div>
+                                        <div class="raffleleader-section" style="position: absolute; left: 18px; top: 21.3906px; width: 463px; height: 90px;"><div style="height: 100%; width: 100%; border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0); border-radius: 100px;" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: center; font-family: Roboto; font-size: 40px;">WIN A GOPRO!</h2>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="width: 500px; height: 407px; position: absolute; left: 0px; top: 129.391px;"><div data-type="imageDetails" class="raffleleader-image-section"><img src="https://raffleleader.s3.us-east-2.amazonaws.com/gopro.png" alt="Raffle Image" title="gopro"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 536.391px; width: 500px; height: 151px;"><div style="height: 100%; width: 100%; border-width: 3px 0px 0px; border-style: solid; border-color: rgb(60, 67, 74); border-top-left-radius: 50px; border-top-right-radius: 50px;" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: center; font-size: 16px; font-weight: normal; letter-spacing: 0px;">Win this giveaway and never miss a moment again.</h2>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="25raffleID" style="width: 500px; height: 100px; position: absolute; left: 0px; top: 670.391px;"><div data-type="entryDetails" class="raffleleader-entry-section">
+                            <form class="raffleleader-email-submit" action="/submit-email" method="post">
+                                <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required="" style="font-size: 20px; color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0); border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0); border-radius: 50px;">
+                                <button class="raffleleader-email-submit-btn ld-over-full" type="submit" style="border-radius: 50px; background-color: rgb(9, 154, 217);">
+                                    →
+                                </button>
+                            </form>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div></div>
+                                        <div class="raffleleader-footer-wrapper">
+                                            <div class="raffleleader-footer">
+                                                <a class="raffleleader-footer-content raffleleader-rules-and-terms">Raffle Rules and Terms</a>
+                                                <p>|</p>
+                                                <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.s3.us-east-2.amazonaws.com/footer_text_logo.png"> For Yourself!</a>
+                                            </div>
+                                        </div>
+                                    </div>`
+                window.zoomScale = 1;
+                document.dispatchEvent(loadPreviewEvent);
+                break;
+
             case 'blankTemplate':
                 preview.outerHTML = `<div id="preview" class="raffleleader-preview-box raffleleader-preview-reset" style="width: 500px">
                                         <div id="dropzone" class="raffleleader-dropzone" style="height: 600px">

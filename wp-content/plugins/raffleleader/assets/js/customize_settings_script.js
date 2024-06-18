@@ -4824,9 +4824,11 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     hexBoxText.value = color;
                 }
                 const editFooterFonts = document.querySelectorAll('.raffleleader-footer-content');
+                const editFooterFontsSpacer = document.querySelector('.raffleleader-footer').querySelector('p');
                 editFooterFonts.forEach((editFooterFont)=>{
                     editFooterFont.style.color = color;
                 });
+                editFooterFontsSpacer.style.color = color;
                 break;
 
             case 'footerBackgroundColor':

@@ -108,13 +108,10 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             position: 'left',
                         },
                         {
-                            element: document.querySelector('.rl-basics'),
+                            element: document.querySelector('.rl-template-carousel'),
                             intro: 'Choose a template to get started.',
-                            position: 'top',
-                        },
-                        {
-                            element: document.querySelector('.setup-tab'),
-                            intro: 'After selecting a template, go to Set Up to design and edit your raffle.',
+                            position: 'left',
+                            disableInteraction: true,
                         },
                     ],
                     showBullets: false,

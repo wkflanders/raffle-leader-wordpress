@@ -6,18 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const helpBtn = document.querySelector('.help');
     helpBtn.addEventListener('click', handleHelpBtn);
 
-    const tutorialPageTwo = new CustomEvent('tutorialPageTwo');
-
     let previewLoaded = false;
     document.addEventListener('previewLoaded', ()=>{
         previewLoaded = true;
     });
-
-    let tutorialPageOne = false;
-    document.addEventListener('tutorialPageOne', ()=>{
-        tutorialPageOne = true;
-        console.log('page one fired');
-    })
 
     const tabs = document.querySelectorAll("ul.rl-nav-tabs > li");
     tabs.forEach((tab)=>{
@@ -38,32 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 clickedTab.classList.add("active-tab");
                 document.querySelector(activePaneID).classList.add("active-tab");
-
-                if((tutorialPageOne) && (activePaneID === '#setup') && (localStorage.getItem('tutorialDisabled') != 'true')){
-                    const intro = introJs();
-                    intro.setOptions({
-                        steps:[
-                            {
-                                element: document.querySelector('.raffle-layout'),
-                                intro: 'Drag and drop sections to add them to your raffle.',
-                                position: 'right',
-                            },
-                            {
-                                element: document.querySelector('.raffleleader-dropzone'),
-                                intro: 'Click on sections within the preview to reposition and edit them.',
-                                position: 'right',
-                            },
-                        ],
-                        showBullets: false,
-                        exitOnOverlayClick: false,
-                        disableInteraction: false,
-                        scrollToElement: false,
-                    });
-        
-                    intro.start();
-                    tutorialPageOne = false;
-                    document.dispatchEvent(tutorialPageTwo);
-                }
             } else {
                 templateModalContent.style.display = "block";
                 templateModal.style.animation = "slideDown 1s forwards";

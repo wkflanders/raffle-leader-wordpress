@@ -29,6 +29,7 @@
     filter: none  !important;
     border: none  !important;
     font-family: 'Overpass';
+    text-shadow: none;
 }
 
 .introjs-button:hover {

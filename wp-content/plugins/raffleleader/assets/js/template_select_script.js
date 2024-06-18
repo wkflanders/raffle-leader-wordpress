@@ -1,5 +1,7 @@
 document.addEventListener("generalSettingsLoaded", ()=>{
 
+    const tutorialPageTwo = new CustomEvent('tutorialPageTwo');
+
     const urlParams = new URLSearchParams(window.location.search);
     const raffleID = urlParams.get('raffle_id');
 
@@ -22,6 +24,12 @@ document.addEventListener("generalSettingsLoaded", ()=>{
     const templates = document.querySelectorAll(".rl-box");
 
     const slideBtn = document.querySelectorAll('.scroll-grid-btn');
+
+    let tutorialPageOne = false;
+    document.addEventListener('tutorialPageOne', ()=>{
+        tutorialPageOne = true;
+        console.log('page one fired');
+    });
 
     slideBtn.forEach((slideBtn)=>{
         slideBtn.addEventListener('click', slideTemplateCarousel);
@@ -138,6 +146,32 @@ document.addEventListener("generalSettingsLoaded", ()=>{
 
             setupTab.classList.add("active-tab");
             document.querySelector('#setup').classList.add("active-tab");
+
+            if((tutorialPageOne) && (localStorage.getItem('tutorialDisabled') != 'true')){
+                const intro = introJs();
+                intro.setOptions({
+                    steps:[
+                        {
+                            element: document.querySelector('.raffle-layout'),
+                            intro: 'Drag and drop sections to add them to your raffle.',
+                            position: 'right',
+                        },
+                        {
+                            element: document.querySelector('.raffleleader-dropzone'),
+                            intro: 'Click on sections within the preview to reposition and edit them.',
+                            position: 'right',
+                        },
+                    ],
+                    showBullets: false,
+                    exitOnOverlayClick: false,
+                    disableInteraction: false,
+                    scrollToElement: false,
+                });
+    
+                intro.start();
+                tutorialPageOne = false;
+                document.dispatchEvent(tutorialPageTwo);
+            }
         }
 
         try{

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
 .publish-wrapper{
     display: flex;
     justify-content: center;
@@ -23,6 +25,7 @@
 }
 
 .publish-header{
+    font-family: 'Overpass';
     display: flex;
     width: 100%;
     justify-content: center;
@@ -30,16 +33,16 @@
 }
 
 .publish-header h1{
-    font-size: 2.5vw
+    font-size: 2.5vw;
+    font-weight: 800;
 }
 
 .publish-box{
     display: flex;
-    width: 18vw;
+    width: 17vw;
     border: 1px solid black;
     border-radius: 10px;
-    padding: 2.5vh;
-    padding-left: 4vh;
+    padding: 5vh 4vh;
     flex-direction: column;
     margin: 0 2vh;
 }
@@ -49,6 +52,7 @@
     font-size: 2.8vh;
     font-weight: 600;
     margin-bottom: 1vh;
+    font-weight: 700;
 }
 
 .publish-box p{

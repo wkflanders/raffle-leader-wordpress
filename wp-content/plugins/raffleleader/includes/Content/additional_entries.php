@@ -3,7 +3,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">X Follow Details</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -28,7 +27,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -168,7 +166,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -258,7 +255,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">X Repost Details</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -275,7 +271,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -416,7 +411,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -506,7 +500,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">X Like Details</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -523,7 +516,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -664,7 +656,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -754,7 +745,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Instagram Follow Details</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -771,7 +761,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -912,7 +901,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -1002,7 +990,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Instagram Comment Details</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -1019,7 +1006,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -1159,7 +1145,6 @@
             <div class="header-box">
                 <div class="spacer"></div>
                 <h2 class="header-box-title">Section Design</h2>
-                <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
             </div>
             <div class="customize-settings-box">
                 <p>Button Color</p>
@@ -1248,7 +1233,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Instagram Like Details</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -1265,7 +1249,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -1406,7 +1389,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -1496,7 +1478,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Facebook Follow Details</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -1513,7 +1494,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -1654,7 +1634,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -1744,7 +1723,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Facebook Comment Details</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -1761,7 +1739,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -1902,7 +1879,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -1992,7 +1968,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Facebook Like Details</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -2009,7 +1984,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -2150,7 +2124,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -2240,7 +2213,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">TikTok Follow Details</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -2257,7 +2229,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -2398,7 +2369,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -2488,7 +2458,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">TikTok Comment Details</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -2505,7 +2474,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -2646,7 +2614,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -2736,7 +2703,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">TikTok Like Details</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -2753,7 +2719,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -2894,7 +2859,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -2984,7 +2948,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Refer-A-Friend Details</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -3001,7 +2964,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -3142,7 +3104,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">

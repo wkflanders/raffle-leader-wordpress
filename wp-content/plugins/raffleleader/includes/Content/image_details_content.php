@@ -3,7 +3,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Image Details</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
@@ -24,7 +23,6 @@
         <div class="header-box">
             <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">

@@ -352,7 +352,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         </div>
                         <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 599.391px; width: 500px; height: 86px; z-index: 67;"><div style="height: 100%; width: 100%; border-width: 2px 0px 0px; border-style: solid; border-color: rgb(60, 67, 74); border-top-left-radius: 50px; border-top-right-radius: 50px;" data-type="textDetails" class="raffleleader-text-section">
                             <h2 style="white-space: pre-wrap; text-align: center; font-size: 14px; font-weight: normal; letter-spacing: 0px;">Life is full of beautiful moments. Enter to win this giveaway 
-                            and never miss one again. Type in your email below to enter.</h2>
+and never miss one again. Type in your email below to enter.</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="25raffleID" style="width: 500px; height: 100px; position: absolute; left: 0px; top: 685.391px; z-index: 11;"><div data-type="entryDetails" class="raffleleader-entry-section">
                             <form class="raffleleader-email-submit" action="/submit-email" method="post">

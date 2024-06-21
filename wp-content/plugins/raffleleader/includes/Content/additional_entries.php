@@ -1,7 +1,6 @@
 <div id="XFollowDetails" class="customize-box-content">
     <div class="dropdown-wrapper">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">X Follow Details</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -25,7 +24,6 @@
     </div>
     <div class="dropdown-wrapper text-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -164,7 +162,6 @@
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -253,7 +250,6 @@
 <div id="XRepostDetails" class="customize-box-content">
     <div class="dropdown-wrapper">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">X Repost Details</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -269,7 +265,6 @@
     </div>
     <div class="dropdown-wrapper text-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -409,7 +404,6 @@
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -498,7 +492,6 @@
 <div id="XLikeDetails" class="customize-box-content">
     <div class="dropdown-wrapper">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">X Like Details</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -514,7 +507,6 @@
     </div>
     <div class="dropdown-wrapper text-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -654,7 +646,6 @@
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -743,7 +734,6 @@
 <div id="instaFollowDetails" class="customize-box-content">
     <div class="dropdown-wrapper">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Instagram Follow Details</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -759,7 +749,6 @@
     </div>
     <div class="dropdown-wrapper text-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -899,7 +888,6 @@
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -988,7 +976,6 @@
 <div id="instaCommentDetails" class="customize-box-content">
     <div class="dropdown-wrapper">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Instagram Comment Details</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -1004,7 +991,6 @@
     </div>
     <div class="dropdown-wrapper text-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -1143,7 +1129,6 @@
         </div>
         <div class="dropdown-wrapper section-design">
             <div class="header-box">
-                <div class="spacer"></div>
                 <h2 class="header-box-title">Section Design</h2>
             </div>
             <div class="customize-settings-box">
@@ -1231,7 +1216,6 @@
 <div id="instaLikeDetails" class="customize-box-content">
     <div class="dropdown-wrapper">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Instagram Like Details</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -1247,7 +1231,6 @@
     </div>
     <div class="dropdown-wrapper text-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -1387,7 +1370,6 @@
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -1476,7 +1458,6 @@
 <div id="facebookFollowDetails" class="customize-box-content">
     <div class="dropdown-wrapper">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Facebook Follow Details</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -1492,7 +1473,6 @@
     </div>
     <div class="dropdown-wrapper text-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -1632,7 +1612,6 @@
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -1721,7 +1700,6 @@
 <div id="facebookCommentDetails" class="customize-box-content">
     <div class="dropdown-wrapper">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Facebook Comment Details</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -1737,7 +1715,6 @@
     </div>
     <div class="dropdown-wrapper text-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -1877,7 +1854,6 @@
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -1966,7 +1942,6 @@
 <div id="facebookLikeDetails" class="customize-box-content">
     <div class="dropdown-wrapper">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Facebook Like Details</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -1982,7 +1957,6 @@
     </div>
     <div class="dropdown-wrapper text-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -2122,7 +2096,6 @@
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -2211,7 +2184,6 @@
 <div id="tiktokFollowDetails" class="customize-box-content">
     <div class="dropdown-wrapper">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">TikTok Follow Details</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -2227,7 +2199,6 @@
     </div>
     <div class="dropdown-wrapper text-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -2367,7 +2338,6 @@
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -2456,7 +2426,6 @@
 <div id="tiktokCommentDetails" class="customize-box-content">
     <div class="dropdown-wrapper">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">TikTok Comment Details</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -2472,7 +2441,6 @@
     </div>
     <div class="dropdown-wrapper text-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -2612,7 +2580,6 @@
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -2701,7 +2668,6 @@
 <div id="tiktokLikeDetails" class="customize-box-content">
     <div class="dropdown-wrapper">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">TikTok Like Details</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -2717,7 +2683,6 @@
     </div>
     <div class="dropdown-wrapper text-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -2857,7 +2822,6 @@
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -2946,7 +2910,6 @@
 <div id="referDetails" class="customize-box-content">
     <div class="dropdown-wrapper">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Refer-A-Friend Details</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -2962,7 +2925,6 @@
     </div>
     <div class="dropdown-wrapper text-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -3102,7 +3064,6 @@
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">

@@ -1,7 +1,6 @@
 <div id="entryDetails" class="customize-box-content">
     <div class="dropdown-wrapper">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Additional Entries</h2>
         </div>
         <p class="dropdown-wrapper-text">Drag & drop to add additional entries</p>
@@ -106,7 +105,6 @@
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">

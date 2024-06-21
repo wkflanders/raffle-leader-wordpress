@@ -1,7 +1,6 @@
 <div id="imageDetails" class="customize-box-content">
     <div class="dropdown-wrapper">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Image Details</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -21,7 +20,6 @@
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">

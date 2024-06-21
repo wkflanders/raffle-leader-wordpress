@@ -1,7 +1,6 @@
 <div id="counterDetails" class="customize-box-content">
     <div class="dropdown-wrapper">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Counter Details</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -39,7 +38,6 @@
     </div>
     <div class="dropdown-wrapper">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Text Design</h2>
         </div>
         <div class="dropdown-settings-wrapper">
@@ -122,7 +120,6 @@
     </div>
     <div class="dropdown-wrapper section-design">
         <div class="header-box">
-            <div class="spacer"></div>
             <h2 class="header-box-title">Section Design</h2>
             <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
         </div>

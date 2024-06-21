@@ -5,7 +5,7 @@ document.addEventListener('previewLoaded', ()=>{
     document.addEventListener('keydown', (event)=>{
         const dropzone = document.getElementById('dropzone');
 
-        if((event.ctrlKey || event.metaKey) && event.key === 'c'){
+        if((event.ctrlKey || event.metaKey) && (event.key === 'c') && (event.target === dropzone)){
             event.preventDefault();
 
             const selectedElement = dropzone.querySelector('.selected-raffleleader-section');
@@ -19,7 +19,7 @@ document.addEventListener('previewLoaded', ()=>{
             }
         }
 
-        if((event.ctrlKey || event.metaKey) && event.key === 'v'){
+        if((event.ctrlKey || event.metaKey) && (event.key === 'v') && (event.target === dropzone)){
             event.preventDefault();
             navigator.clipboard.readText().then((element)=>{
                 dropzone.insertAdjacentHTML('beforeend', element)

@@ -30,8 +30,8 @@
         </div>
         <div class="rl-basics rl-grid-row first-row">
             <div class="label grid-item">
-                <h2>Poduction Ready</h2>
-                <p>Templates that are ready to go.</p>
+                <h2>User Generated</h2>
+                <p>Inspiration from our users.</p>
             </div>
             <button class="scroll-grid-btn scroll-grid-btn-left"><i class="scroll-grid-arrow scroll-grid-left"></i></button>
             <button class="scroll-grid-btn scroll-grid-btn-right"><i class="scroll-grid-arrow scroll-grid-right"></i></button>

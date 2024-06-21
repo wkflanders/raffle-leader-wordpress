@@ -64,7 +64,7 @@ body {
 }
 
 .header-box {
-    display: flex;
+    display: block;
     border-bottom: 2px solid #1501FE;
     justify-content: flex-start;
     align-items: center;
@@ -82,11 +82,6 @@ body {
     transform: rotate(45deg);
 }
 
-.spacer{
-    flex: 0.6;
-    width: 10%;
-}
-
 .header-dropdown {
     border: none;
     background: white;
@@ -97,10 +92,8 @@ body {
 
 .header-box-title {
     text-align: center;
-    /* margin-top: 3.5vh; */
     font-size: 3vh;
     color: #1501FE;
-    /* letter-spacing: 0.3vh; */
     line-height: 3.5vh;
 }
 

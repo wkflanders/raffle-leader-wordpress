@@ -347,21 +347,22 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                                 <h2>Rules and Terms</h2>
                                                 <p class="raffleleader-rules-text"></p>
                                             </div>
-                                        <div class="raffleleader-section" style="position: absolute; left: 18px; top: 21.3906px; width: 463px; height: 90px;"><div style="height: 100%; width: 100%; border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0); border-radius: 100px;" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center; font-family: Roboto; font-size: 40px;">WIN A GOPRO!</h2>
+                                        <div class="raffleleader-section" style="position: absolute; left: 19px; top: 22px; width: 460px; height: 74px; z-index: 63;"><div style="height: 100%; width: 100%; border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0); border-radius: 100px; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: center; font-family: Roboto; font-size: 32px;">WIN A NEW GOPRO!</h2>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="width: 500px; height: 407px; position: absolute; left: 0px; top: 129.391px;"><div data-type="imageDetails" class="raffleleader-image-section"><img src="https://raffleleader.s3.us-east-2.amazonaws.com/gopro.png" alt="Raffle Image" title="gopro"></div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 536.391px; width: 500px; height: 151px;"><div style="height: 100%; width: 100%; border-width: 3px 0px 0px; border-style: solid; border-color: rgb(60, 67, 74); border-top-left-radius: 50px; border-top-right-radius: 50px;" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center; font-size: 16px; font-weight: normal; letter-spacing: 0px;">Win this giveaway and never miss a moment again.</h2>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 599.391px; width: 500px; height: 86px; z-index: 67;"><div style="height: 100%; width: 100%; border-width: 2px 0px 0px; border-style: solid; border-color: rgb(60, 67, 74); border-top-left-radius: 50px; border-top-right-radius: 50px;" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: center; font-size: 14px; font-weight: normal; letter-spacing: 0px;">Life is full of beautiful moments. Enter to win this giveaway 
+                            and never miss one again. Type in your email below to enter.</h2>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="25raffleID" style="width: 500px; height: 100px; position: absolute; left: 0px; top: 670.391px;"><div data-type="entryDetails" class="raffleleader-entry-section">
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="25raffleID" style="width: 500px; height: 100px; position: absolute; left: 0px; top: 685.391px; z-index: 11;"><div data-type="entryDetails" class="raffleleader-entry-section">
                             <form class="raffleleader-email-submit" action="/submit-email" method="post">
-                                <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required="" style="font-size: 20px; color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0); border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0); border-radius: 50px;">
+                                <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required="" style="font-size: 20px; color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0); border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0); border-radius: 50px; font-family: Urbanist;">
                                 <button class="raffleleader-email-submit-btn ld-over-full" type="submit" style="border-radius: 50px; background-color: rgb(9, 154, 217);">
                                     →
                                 </button>
                             </form>
                         </div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="width: 500px; height: 648px; position: absolute; left: 0px; top: 0px; z-index: 58;"><div data-type="imageDetails" class="raffleleader-image-section"><img src="http://raffleleader-demo.local/wp-content/uploads/2024/06/gopro-1.png" alt="Raffle Image" title="gopro"></div>
                         <div style="display: none;" class="raffleleader-resize-handle"></div></div></div>
                                         <div class="raffleleader-footer-wrapper">
                                             <div class="raffleleader-footer">

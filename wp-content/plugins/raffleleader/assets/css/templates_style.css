@@ -58,7 +58,7 @@
 }
 
 .scroll-grid-btn-left {
-    left: 28.5vw;
+    left: 16vw;
 }
 
 .scroll-grid-arrow {
@@ -129,10 +129,10 @@
     flex-direction: column;
     justify-content: center;
     border: none;
-    margin: 0 3vw 0 4vw;
+    margin: 0 0vw 0 2vw;
     font-weight: 900;
     text-align: left;
-    width: 350px;
+    width: 200px;
     line-height: 40px;
 }
 
@@ -142,6 +142,7 @@
 }
 
 .rl-template-wrapper h2 {
+    margin-bottom: 1vh;
     font-style: normal;
     font-weight: 1000;
     font-size: 4vh;
@@ -150,7 +151,7 @@
 
 .rl-template-wrapper p {
     font-style: normal;
-    font-size: 2vh;
+    font-size: 1.7vh;
     color: black;
 }
 

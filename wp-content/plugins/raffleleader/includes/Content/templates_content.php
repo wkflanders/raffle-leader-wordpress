@@ -40,7 +40,7 @@
                     <img class="pd-template-one-img" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/UGC_alo.svg">
                 </div>
                 <div id="pdTemplateTwo" class="rl-box grid-item template-item">
-                    <img class="pd-template-two-img" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/UGC_bonaroo.svg">
+                    <img class="pd-template-two-img" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/UGC_bonnaroo.svg">
                 </div>
                 <div id="pdTemplateThree" class="rl-box grid-item template-item">
                     <img class="pd-template-three-img" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/UGC_collection.svg">

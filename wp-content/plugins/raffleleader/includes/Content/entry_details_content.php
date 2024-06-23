@@ -245,6 +245,16 @@
                 </div>
             </div>
             <div class="customize-settings-box">
+                <p>Button Border Color</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-color">
+                        <div id="entryColorGradientButtonBorder"></div>
+                        <div id="entryButtonBorderColorClick" class="dropdown-color-click" data-type="entryButtonBorderColor"></div>
+                        <input id="entryButtonBorderColorForm" class="color-input" data-type="entryButtonBorderColor" type="text" name="entryButtonBorderColor" placeholder="Enter a hexidecimal">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
                 <p>Button Border Stroke</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">

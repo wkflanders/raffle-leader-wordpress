@@ -55,6 +55,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     let pickrEntryFormBackground = undefined;
     let pickrEntryFormBorder = undefined;
     let pickrEntryButtonFont = undefined;
+    let pickrEntryButtonBorder = undefined;
     let pickrEntryBtn = undefined;
     let pickrEntryBackground = undefined;
     let pickrEntryBorder = undefined;
@@ -956,6 +957,31 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 pickrEntryButtonFont.show();
 
                 pickrEntryButtonFont.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'entryButtonBorderColor':
+                const entryCurrentButtonBorderColor = document.getElementById('entryButtonBorderColorForm').value;
+
+                pickrEntryButtonBorder = Pickr.create({
+                    el: entryColorGradientButtonBorder,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: entryCurrentButtonBorderColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                        opacity: true,
+                    }
+                });
+                pickrEntryButtonBorder.setColorRepresentation('HEX');
+                pickrEntryButtonBorder.show();
+
+                pickrEntryButtonBorder.on('change', (color)=>{
                     const selectedColor = '#'.concat(...color.toHEXA());
                     this.style.backgroundColor = selectedColor;
                     
@@ -2956,6 +2982,42 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 entryEditElementButtonFont.style.color = color;
                 break;
 
+            case 'entryButtonBorderColor':
+                if(fromPickr === false){
+                    if(pickrEntryButtonBorder === undefined){
+                        pickrEntryButtonBorder = Pickr.create({
+                            el: entryColorGradientButtonBorder,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrEntryButtonBorder.setColor(color);
+                        const hexBoxClick = document.getElementById('entryButtonBorderColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('entryButtonBorderColorForm');
+                    hexBoxText.value = color;
+                }
+                const entryEditElementButtonBorder = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                
+                const entryCurrentButtonBorderStrokeTop = getComputedStyle(entryEditElementButtonBorder).borderTopWidth;
+                const entryCurrentButtonBorderStrokeLeft = getComputedStyle(entryEditElementButtonBorder).borderLeftWidth;
+                const entryCurrentButtonBorderStrokeBottom = getComputedStyle(entryEditElementButtonBorder).borderBottomWidth;
+                const entryCurrentButtonBorderStrokeRight = getComputedStyle(entryEditElementButtonBorder).borderRightWidth;
+
+                entryEditElementButtonBorder.style.borderTop = `${entryCurrentButtonBorderStrokeTop} solid ${color}`;
+                entryEditElementButtonBorder.style.borderLeft = `${entryCurrentButtonBorderStrokeLeft} solid ${color}`;
+                entryEditElementButtonBorder.style.borderBottom = `${entryCurrentButtonBorderStrokeBottom} solid ${color}`;
+                entryEditElementButtonBorder.style.borderRight = `${entryCurrentButtonBorderStrokeRight} solid ${color}`;
+                break;
+
             case 'entryButtonColor':
                 if(fromPickr === false){
                     if(pickrEntryBtn === undefined){
@@ -4824,11 +4886,13 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     hexBoxText.value = color;
                 }
                 const editFooterFonts = document.querySelectorAll('.raffleleader-footer-content');
+                const editFooterWrapper = document.querySelector('.raffleleader-footer-wrapper');
                 const editFooterFontsSpacer = document.querySelector('.raffleleader-footer').querySelector('p');
                 editFooterFonts.forEach((editFooterFont)=>{
                     editFooterFont.style.color = color;
                 });
                 editFooterFontsSpacer.style.color = color;
+                editFooterWrapper.style.borderTopColor = color;
                 break;
 
             case 'footerBackgroundColor':

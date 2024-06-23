@@ -362,7 +362,7 @@ and never miss one again. Type in your email below to enter.</h2>
                                 </button>
                             </form>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="width: 500px; height: 648px; position: absolute; left: 0px; top: 0px; z-index: 58;"><div data-type="imageDetails" class="raffleleader-image-section"><img src="http://raffleleader-demo.local/wp-content/uploads/2024/06/gopro-1.png" alt="Raffle Image" title="gopro"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="width: 500px; height: 648px; position: absolute; left: 0px; top: 0px; z-index: 58;"><div data-type="imageDetails" class="raffleleader-image-section"><img src="https://raffleleader.s3.us-east-2.amazonaws.com/gopro.png" alt="Raffle Image" title="gopro"></div>
                         <div style="display: none;" class="raffleleader-resize-handle"></div></div></div>
                                         <div class="raffleleader-footer-wrapper">
                                             <div class="raffleleader-footer">

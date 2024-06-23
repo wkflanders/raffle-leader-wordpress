@@ -417,6 +417,14 @@ document.addEventListener("previewLoaded", ()=>{
         entryButtonFontColorForm.value = entryButtonFontColorHex;
         entryButtonFontHexBox.style.backgroundColor = entryButtonFontColorHex;
 
+        // entry button border color
+        const entryButtonBorderColorForm = document.getElementById('entryButtonBorderColorForm');
+        const entryButtonBorderHexBox = document.getElementById('entryButtonBorderColorClick');
+        const entryButtonBorderColorRGB = window.getComputedStyle(entryButtonElement).getPropertyValue('border-color').replace(/^"|"$/g, '');
+        const entryButtonBorderColorHex = rgbToHex(entryButtonBorderColorRGB);
+        entryButtonBorderColorForm.value = entryButtonBorderColorHex;
+        entryButtonBorderHexBox.style.backgroundColor = entryButtonBorderColorRGB;
+
         // entry button color
         const entryButtonHexBox = document.getElementById('entryButtonColorClick');
         const entryButtonColorRGB = window.getComputedStyle(entryButtonElement).getPropertyValue('background-color').replace(/^"|"$/g, '');

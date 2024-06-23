@@ -5,23 +5,36 @@ document.addEventListener('previewLoaded', () => {
     const { initialOffsetX, initialOffsetY } = centerBackground();
     let offsetX = -initialOffsetX;
     let offsetY = -initialOffsetY;
+    let scale = 1;
 
     const scrollSensitivity = 0.3;
+    const zoomSpeed = 0.05;
+    window.zoomScale = 1;
 
-    container.addEventListener('wheel', (e) => {
-        e.preventDefault();
-        let dy = e.deltaY * scrollSensitivity;
+    container.addEventListener('wheel', (event) => {
+        event.preventDefault();
 
-        let minOffsetY = Math.min(window.innerHeight - container.offsetHeight, 0);
-        let maxOffsetY = 0;
+        if (event.ctrlKey || event.metaKey) {
+            event.preventDefault();
+            const zoomable = document.getElementById('preview');
 
-        let newOffsetY = Math.min(Math.max(offsetY - dy, minOffsetY), maxOffsetY);
+            const { deltaX, deltaY } = event;
+            const direction = deltaY < 0 ? 1 : -1;
+            window.zoomScale += direction * zoomSpeed;
+            window.zoomScale = Math.max(0.1, window.zoomScale);
+            zoomable.style.transform = `scale(${window.zoomScale})`;
+        } else {
+            let dy = event.deltaY * scrollSensitivity;
+            let minOffsetY = Math.min(window.innerHeight - container.offsetHeight * scale, 0);
+            let maxOffsetY = 0;
+            let newOffsetY = Math.min(Math.max(offsetY - dy, minOffsetY), maxOffsetY);
 
-        offsetY = newOffsetY;
+            offsetY = newOffsetY;
 
-        requestAnimationFrame(() => {
-            container.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-        });
+            requestAnimationFrame(() => {
+                container.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`;
+            });
+        }
     });
 
     function centerBackground() {

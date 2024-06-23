@@ -6,7 +6,7 @@ document.addEventListener('previewLoaded', () => {
     let offsetX = -initialOffsetX;
     let offsetY = -initialOffsetY;
 
-    const scrollSensitivity = 0.1; // Adjust the scroll sensitivity here
+    const scrollSensitivity = 0.3;
 
     container.addEventListener('wheel', (e) => {
         e.preventDefault();

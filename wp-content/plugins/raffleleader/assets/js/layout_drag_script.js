@@ -102,7 +102,11 @@ document.addEventListener('previewLoaded', () => {
                 return `<div style="height: 100%; width: 100%;" data-type="textDetails" class="raffleleader-text-section">
                             <h2 style="white-space: pre-wrap; text-align: center;">Text</h2>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div>`;
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`;
+                        
 
             case 'entryBox':
                 return `<div data-type="entryDetails" class="raffleleader-entry-section">

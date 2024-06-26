@@ -63,12 +63,65 @@
 .raffleleader-section{
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: relative;
     height: 100px;
     width: 150px;
     overflow: hidden;
     max-height: 100%;
     max-width: 100%;
+    overflow: visible;
+}
+
+.raffleleader-layer-handle-container {
+    position: absolute;
+    top: -18px; /* Adjust this value to move the buttons up */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 10; /* Ensure it's above the section content */
+}
+
+.raffleleader-to-top-handle,
+.raffleleader-to-back-handle {
+    width: 30px;
+    height: 20px;
+    background-color: #0109fe60; /* Light blue */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.raffleleader-to-top-handle {
+    border-radius: 10px 0 0 0;
+}
+
+.raffleleader-to-back-handle {
+    border-radius: 0 10px 0 0;
+}
+
+.raffleleader-to-top-handle:hover,
+.raffleleader-to-back-handle:hover {
+    background-color: #1500ff7f;
+}
+
+.raffleleader-to-top-handle::before,
+.raffleleader-to-back-handle::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.raffleleader-to-top-handle::before {
+    background-image: url('../images/to-front.svg');
+}
+
+.raffleleader-to-back-handle::before {
+    background-image: url('../images/to-back.svg');
 }
 
 .raffleleader-resize-handle{

@@ -22,10 +22,10 @@ document.addEventListener("previewLoaded", ()=>{
                 if(selectedSection.classList.contains('raffleleader-section')){
                     try{
                         currentSection.classList.remove('selected-raffleleader-section');
-                        currentSection.querySelector('.raffleleader-resize-handle').style.display = 'none';
+                        currentSection.querySelectorAll('.raffleleader-resize-handle').forEach(handle => handle.style.display = 'none');
                     } catch {}
                     selectedSection.classList.add('selected-raffleleader-section');
-                    selectedSection.querySelector('.raffleleader-resize-handle').style.display = 'block';
+                    selectedSection.querySelectorAll('.raffleleader-resize-handle').forEach(handle => handle.style.display = 'block');
                     break;
                 }
                 selectedSection = selectedSection.parentElement;
@@ -2392,7 +2392,9 @@ document.addEventListener("previewLoaded", ()=>{
         if(key === "Escape"){
             try{
                 currentElement.classList.remove('selected-raffleleader-section');
-                currentElement.querySelector('.raffleleader-resize-handle').style.display = 'none';
+                currentElement.querySelectorAll('.raffleleader-resize-handle').forEach(handle => {
+                    handle.style.display = 'none';
+                });
                 if(customizeBox.classList.contains('slide-right-to-left')){
                     customizeBox.classList.toggle('slide-right-to-left');
                 }
@@ -2408,7 +2410,9 @@ document.addEventListener("previewLoaded", ()=>{
         if(event.target === previewWrapper){
             try{
                 currentElement.classList.remove('selected-raffleleader-section');
-                currentElement.querySelector('.raffleleader-resize-handle').style.display = 'none';
+                currentElement.querySelectorAll('.raffleleader-resize-handle').forEach(handle => {
+                    handle.style.display = 'none';
+                });
                 if(customizeBox.classList.contains('slide-right-to-left')){
                     customizeBox.classList.toggle('slide-right-to-left');
                 }

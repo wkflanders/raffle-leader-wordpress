@@ -58,7 +58,7 @@
 }
 
 .scroll-grid-btn-left {
-    left: 16vw;
+    left: 17vw;
 }
 
 .scroll-grid-arrow {
@@ -129,7 +129,7 @@
     flex-direction: column;
     justify-content: center;
     border: none;
-    margin: 0 0vw 0 2vw;
+    margin: 0 2vw 0 2vw;
     font-weight: 900;
     text-align: left;
     width: 200px;

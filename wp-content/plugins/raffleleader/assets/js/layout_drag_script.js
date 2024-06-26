@@ -102,6 +102,10 @@ document.addEventListener('previewLoaded', () => {
                 return `<div style="height: 100%; width: 100%;" data-type="textDetails" class="raffleleader-text-section">
                             <h2 style="white-space: pre-wrap; text-align: center;">Text</h2>
                         </div>
+                        <div class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
@@ -117,20 +121,29 @@ document.addEventListener('previewLoaded', () => {
                                 </button>
                             </form>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div>`;
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`;
 
             case 'counterBox':
                 return `<div style="height: 100%; width: 100%;" data-type="counterDetails" class="raffleleader-counter-section">
                             <h2>00</h2>
                             <p style="margin-top: 60px"></p>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div>`;
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`;
 
             case 'imageBox':
                 return `<div data-type="imageDetails" class="raffleleader-image-section">
                             <p>Insert An Image Here</p>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div>`;
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`;
 
             case 'XFollowEntry':
                 return `<div data-type="XFollowDetails" class="raffleleader-additional-entry-section">
@@ -142,7 +155,10 @@ document.addEventListener('previewLoaded', () => {
                                 <button data-link="https://twitter.com/">+1</button>
                             </div>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div>`
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
 
             case 'XRepostEntry':
                 return `<div data-type="XRepostDetails" class="raffleleader-additional-entry-section">
@@ -166,7 +182,10 @@ document.addEventListener('previewLoaded', () => {
                                 <button data-link="https://twitter.com/">+1</button>
                             </div>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div>`
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
 
             case 'instaFollowEntry':
                 return `<div data-type="instaFollowDetails" class="raffleleader-additional-entry-section">
@@ -178,7 +197,10 @@ document.addEventListener('previewLoaded', () => {
                                 <button data-link="https://instagram.com/">+1</button>
                             </div>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div>`
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
 
             case 'instaCommentEntry':
                 return `<div data-type="instaCommentDetails" class="raffleleader-additional-entry-section">
@@ -190,7 +212,10 @@ document.addEventListener('previewLoaded', () => {
                                 <button data-link="https://instagram.com/">+1</button>
                             </div>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div>`
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
 
             case 'instaLikeEntry':
                 return `<div data-type="instaLikeDetails" class="raffleleader-additional-entry-section">
@@ -202,7 +227,10 @@ document.addEventListener('previewLoaded', () => {
                                 <button data-link="https://instagram.com/">+1</button>
                             </div>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div>`
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
                 
             case 'facebookFollowEntry':
                 return `<div data-type="facebookFollowDetails" class="raffleleader-additional-entry-section">
@@ -214,7 +242,10 @@ document.addEventListener('previewLoaded', () => {
                                 <button data-link="https://facebook.com/">+1</button>
                             </div>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div>`
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
 
             case 'facebookCommentEntry':
                 return `<div data-type="facebookCommentDetails" class="raffleleader-additional-entry-section">
@@ -226,7 +257,10 @@ document.addEventListener('previewLoaded', () => {
                                 <button data-link="https://facebook.com/">+1</button>
                             </div>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div>`
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
 
             case 'facebookLikeEntry':
                 return `<div data-type="facebookLikeDetails" class="raffleleader-additional-entry-section">
@@ -238,7 +272,10 @@ document.addEventListener('previewLoaded', () => {
                                 <button data-link="https://facebook.com/">+1</button>
                             </div>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div>`
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
 
             case 'tiktokFollowEntry':
                 return `<div data-type="tiktokFollowDetails" class="raffleleader-additional-entry-section">
@@ -250,7 +287,10 @@ document.addEventListener('previewLoaded', () => {
                                 <button data-link="https://tiktok.com/">+1</button>
                             </div>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div>`
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
 
             case 'tiktokCommentEntry':
                 return `<div data-type="tiktokCommentDetails" class="raffleleader-additional-entry-section">
@@ -262,7 +302,10 @@ document.addEventListener('previewLoaded', () => {
                                 <button data-link="https://tiktok.com/">+1</button>
                             </div>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div>`
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
 
             case 'tiktokLikeEntry':
                 return `<div data-type="tiktokLikeDetails" class="raffleleader-additional-entry-section">
@@ -274,7 +317,10 @@ document.addEventListener('previewLoaded', () => {
                                 <button data-link="https://tiktok.com/">+1</button>
                             </div>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div>`
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
 
             case 'referEntry':
                 return `<div data-type="referDetails" class="raffleleader-additional-entry-section">
@@ -286,7 +332,10 @@ document.addEventListener('previewLoaded', () => {
                                 <button data-link="https://instagram.com/">+1</button>
                             </div>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div>`
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
         }
     }
 });

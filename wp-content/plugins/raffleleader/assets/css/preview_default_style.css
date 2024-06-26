@@ -34,7 +34,7 @@
     background-color: white;
     outline: 1px solid black;
     border-radius: 10px;
-    overflow: hidden;
+    overflow: visible;
     font-family: 'Overpass';
 }
 
@@ -78,14 +78,13 @@
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    z-index: 10; /* Ensure it's above the section content */
 }
 
 .raffleleader-to-top-handle,
 .raffleleader-to-back-handle {
     width: 30px;
     height: 20px;
-    background-color: #0109fe60; /* Light blue */
+    background-color: #8d8bfe; /* Light blue */
     cursor: pointer;
     display: flex;
     justify-content: center;

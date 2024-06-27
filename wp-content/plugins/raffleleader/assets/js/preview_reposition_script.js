@@ -7,84 +7,101 @@ document.addEventListener('previewLoaded', ()=>{
     // Function to apply resizing and dragging logic to an element
     function applyLogicToElement(el) {
         const resizeHandles = el.querySelectorAll('.raffleleader-resize-handle');
+        const toTopHandles = el.querySelectorAll('.raffleleader-to-top-handle');
+        const toBackHandles = el.querySelectorAll('.raffleleader-to-back-handle');
         let originalWidth, originalHeight, originalMouseX, originalMouseY, originalLeft, originalTop;
         let isDragging = false, initialDrag = false, dragStartX, dragStartY;
     
-        function updateZIndex() {
+        function increaseZIndex() {
             globalZIndex++;
             el.style.zIndex = globalZIndex;
         }
+
+        function decreaseZIndex() {
+            el.style.zIndex = 1;
+        }
+
+        toTopHandles.forEach(handle => {
+            handle.addEventListener('mousedown', function(e) {
+                e.preventDefault();
+
+                increaseZIndex();
+            });
+        });
+
+        toBackHandles.forEach(handle => {
+            handle.addEventListener('mousedown', function(e) {
+                e.preventDefault();
+
+                decreaseZIndex();
+            });
+        });
     
         resizeHandles.forEach(handle => {
             handle.addEventListener('mousedown', function(e) {
                 e.preventDefault();
-                updateZIndex();
-    
-                originalWidth = el.offsetWidth;
-                originalHeight = el.offsetHeight;
-                originalMouseX = e.clientX;
-                originalMouseY = e.clientY;
-                originalLeft = el.offsetLeft;
-                originalTop = el.offsetTop;
-    
+        
+                const el = this.parentElement; // Element being resized
+                const dropzone = document.querySelector('#dropzone'); // Container that limits resizing
+                const originalWidth = el.offsetWidth;
+                const originalHeight = el.offsetHeight;
+                const originalMouseX = e.clientX;
+                const originalMouseY = e.clientY;
+                const originalLeft = el.offsetLeft;
+                const originalTop = el.offsetTop;
+        
                 const handleClass = handle.className;
-    
+        
                 document.addEventListener('mousemove', resize);
                 document.addEventListener('mouseup', stopResize);
-    
+        
                 function resize(e) {
-                    const zoomLevel = window.zoomScale || 1;
+                    const zoomLevel = window.zoomScale || 1; // Adjust scaling based on zoom level if applicable
                     let newWidth = originalWidth;
                     let newHeight = originalHeight;
                     let newLeft = originalLeft;
                     let newTop = originalTop;
-    
+        
                     if (handleClass.includes('right')) {
-                        newWidth = originalWidth + (e.clientX - originalMouseX) / zoomLevel;
+                        newWidth = Math.min(dropzone.offsetWidth - newLeft, originalWidth + (e.clientX - originalMouseX) / zoomLevel);
                     }
                     if (handleClass.includes('bottom')) {
-                        newHeight = originalHeight + (e.clientY - originalMouseY) / zoomLevel;
+                        newHeight = Math.min(dropzone.offsetHeight - newTop, originalHeight + (e.clientY - originalMouseY) / zoomLevel);
                     }
                     if (handleClass.includes('left')) {
                         const deltaX = (originalMouseX - e.clientX) / zoomLevel;
                         newWidth = originalWidth + deltaX;
-                        newLeft = originalLeft - deltaX;
+                        if (newWidth > 50) {
+                            newLeft = originalLeft - deltaX;
+                            if (newLeft < 0) {  // Prevent moving out of the left boundary
+                                newLeft = 0;
+                                newWidth = originalWidth + originalLeft; // Adjust width to the max possible within the boundary
+                            }
+                        } else {
+                            newWidth = 50; // Enforce minimum width
+                        }
                     }
                     if (handleClass.includes('top')) {
                         const deltaY = (originalMouseY - e.clientY) / zoomLevel;
                         newHeight = originalHeight + deltaY;
-                        newTop = originalTop - deltaY;
-                    }
-    
-                    // Snapping logic (simplified for brevity, you may want to adjust this)
-                    const snapMargin = 5 / zoomLevel;
-                    const elRect = el.getBoundingClientRect();
-    
-                    document.querySelectorAll('.raffleleader-section').forEach(otherEl => {
-                        if (otherEl === el) return;
-                        const rect = otherEl.getBoundingClientRect();
-    
-                        // Implement snapping logic here for each direction
-                        // This is a simplified version, you may need to expand it
-                        if (Math.abs(rect.right - elRect.left - (newWidth * zoomLevel)) < snapMargin) {
-                            newWidth = (rect.right - elRect.left) / zoomLevel;
+                        if (newHeight > 10) {
+                            newTop = originalTop - deltaY;
+                            if (newTop < 0) { // Prevent moving out of the top boundary
+                                newTop = 0;
+                                newHeight = originalHeight + originalTop; // Adjust height to the max possible within the boundary
+                            }
+                        } else {
+                            newHeight = 10; // Enforce minimum height
                         }
-                        // Add similar logic for other directions
-                    });
-    
-                    // Boundary checks
-                    const parentRectHeight = dropzone.getBoundingClientRect();
-                    const parentRectWidth = preview.getBoundingClientRect();
-                    let maxWidth = (parentRectWidth.width / zoomLevel) - ((elRect.left - parentRectWidth.left) / zoomLevel);
-                    let maxHeight = (parentRectHeight.height / zoomLevel) - ((elRect.top - parentRectHeight.top) / zoomLevel);
-    
+                    }
+        
                     // Apply the adjusted dimensions and position
-                    el.style.width = `${Math.max(50, Math.min(newWidth, maxWidth))}px`;
-                    el.style.height = `${Math.max(10, Math.min(newHeight, maxHeight))}px`;
+                    el.style.width = `${newWidth}px`;
+                    el.style.height = `${newHeight}px`;
                     el.style.left = `${newLeft}px`;
                     el.style.top = `${newTop}px`;
                 }
-    
+        
                 function stopResize() {
                     document.removeEventListener('mousemove', resize);
                     document.removeEventListener('mouseup', stopResize);
@@ -98,7 +115,6 @@ document.addEventListener('previewLoaded', ()=>{
 
             e.preventDefault();
             if (e.target.classList.contains('raffleleader-resize-handle')) return;
-            updateZIndex();
 
             isDragging = true;
             initialDrag = true;

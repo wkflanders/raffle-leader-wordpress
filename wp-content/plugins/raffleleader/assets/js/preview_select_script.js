@@ -23,9 +23,11 @@ document.addEventListener("previewLoaded", ()=>{
                     try{
                         currentSection.classList.remove('selected-raffleleader-section');
                         currentSection.querySelectorAll('.raffleleader-resize-handle').forEach(handle => handle.style.display = 'none');
+                        currentSection.querySelector('.raffleleader-layer-handle-container').style.display = 'none';
                     } catch {}
                     selectedSection.classList.add('selected-raffleleader-section');
                     selectedSection.querySelectorAll('.raffleleader-resize-handle').forEach(handle => handle.style.display = 'block');
+                    selectedSection.querySelector('.raffleleader-layer-handle-container').style.display = 'flex';
                     break;
                 }
                 selectedSection = selectedSection.parentElement;
@@ -2395,6 +2397,7 @@ document.addEventListener("previewLoaded", ()=>{
                 currentElement.querySelectorAll('.raffleleader-resize-handle').forEach(handle => {
                     handle.style.display = 'none';
                 });
+                currentElement.querySelector('.raffleleader-layer-handle-container').style.display = 'none';
                 if(customizeBox.classList.contains('slide-right-to-left')){
                     customizeBox.classList.toggle('slide-right-to-left');
                 }
@@ -2413,6 +2416,7 @@ document.addEventListener("previewLoaded", ()=>{
                 currentElement.querySelectorAll('.raffleleader-resize-handle').forEach(handle => {
                     handle.style.display = 'none';
                 });
+                currentElement.querySelector('.raffleleader-layer-handle-container').style.display = 'none';
                 if(customizeBox.classList.contains('slide-right-to-left')){
                     customizeBox.classList.toggle('slide-right-to-left');
                 }

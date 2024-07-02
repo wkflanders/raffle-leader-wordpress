@@ -2422,7 +2422,7 @@ document.addEventListener("previewLoaded", ()=>{
                 }
             } catch {}
         }
-    })
+    });
 });
 
 function rgbToHex(rgb) {

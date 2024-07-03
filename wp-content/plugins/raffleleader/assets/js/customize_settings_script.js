@@ -6501,6 +6501,14 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 tiktokLikeConfirmBtn.style.display = "flex";
                 tiktokLikeCancelDelete.style.display = "block";
                 break;
+
+            case 'referDelete':
+                const referConfirmBtn = document.getElementById('referConfirmDelete');
+                const referCancelDelete = document.getElementById('referCancelDelete');
+                deleteBtn.style.display = "none";
+                referConfirmBtn.style.display = "flex";
+                referCancelDelete.style.display = "block";
+                break;
         }   
     }
 
@@ -6727,6 +6735,19 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 customizeBox.scrollTop = 0;
                 customizeBox.classList.toggle('slide-right-to-left');
                 break;
+
+            case 'referDelete':
+                selectedSection.remove();
+            
+                const referDeleteBtn = document.getElementById('referDelete');
+                const referCancelDelete = document.getElementById('referCancelDelete');
+                referDeleteBtn.style.display = "flex";
+                confirmDelete.style.display = "none";
+                referCancelDelete.style.display = "none";
+            
+                customizeBox.scrollTop = 0;
+                customizeBox.classList.toggle('slide-right-to-left');
+                break;
         }
     }
 
@@ -6861,6 +6882,14 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 const tiktokLikeConfirmBtn = document.getElementById('tiktokLikeConfirmDelete');
                 tiktokLikeDeleteBtn.style.display = "flex";
                 tiktokLikeConfirmBtn.style.display = "none";
+                cancelBtn.style.display = "none";
+                break;
+
+            case 'tiktokLikeDelete':
+                const referDeleteBtn = document.getElementById('referDelete');
+                const referConfirmBtn = document.getElementById('referConfirmDelete');
+                referDeleteBtn.style.display = "flex";
+                referConfirmBtn.style.display = "none";
                 cancelBtn.style.display = "none";
                 break;
         }

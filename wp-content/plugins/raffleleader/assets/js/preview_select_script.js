@@ -2385,7 +2385,7 @@ document.addEventListener("previewLoaded", ()=>{
     }
 
     function loadReferDetails(element){
-        // Load Tiktok Like settings
+        // Load refer settings
         const headerForm = document.getElementById('referHeaderForm');
         const subheaderForm = document.getElementById('referSubheaderForm');
         const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
@@ -2394,13 +2394,13 @@ document.addEventListener("previewLoaded", ()=>{
         const headerSizeForm = document.getElementById('referHeaderFontSizeForm');
         const subheaderSizeForm = document.getElementById('referSubheaderFontSizeForm');
 
-        // Tiktok Like text
+        // refer text
         const headerText = headerElement.textContent;
         const subheaderText = subheaderElement.textContent;
         headerForm.value = headerText;
         subheaderForm.value = subheaderText;
 
-        // Tiktok Like font 
+        // refer font 
         const headerFontList = document.getElementById('referHeaderList');
         const headerFontDisplay = document.getElementById('referHeaderDropDownTitle');
         const subheaderFontList = document.getElementById('referSubheaderList');
@@ -2447,14 +2447,118 @@ document.addEventListener("previewLoaded", ()=>{
         referSubheaderHexBox.style.backgroundColor = referSubheaderColorHex;
 
         // header font size
-        const headerFontSize = window.getComputedStyle(headerElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
-        headerSizeForm.value = headerFontSize;
+        const referHeaderFontSize = window.getComputedStyle(headerElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        headerSizeForm.value = referHeaderFontSize;
 
         // subheader font size
-        const textFontSize = window.getComputedStyle(subheaderElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
-        subheaderSizeForm.value = textFontSize;
+        const referSubheaderFontSize = window.getComputedStyle(subheaderElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        subheaderSizeForm.value = referSubheaderFontSize;
 
-        // Tiktok Like button color
+        // header styles
+        const referHeaderFontWeight = window.getComputedStyle(headerElement).getPropertyValue('font-weight').replace(/^"|"$/g, '');
+        const referHeaderFontStyle = headerElement.style.fontStyle;
+        const referHeaderFontDecoration = headerElement.style.textDecoration;
+
+        const referHeaderBoldBtn = document.getElementById('referHeaderBoldBtn');
+        const referHeaderItalicizeBtn = document.getElementById('referHeaderItalicizeBtn');
+        const referHeaderUnderlineBtn = document.getElementById('referHeaderUnderlineBtn');
+        const referHeaderStrikeBtn = document.getElementById('referHeaderStrikeBtn');
+        const referHeaderOverlineBtn = document.getElementById('referHeaderOverlineBtn');
+
+        if(referHeaderFontWeight === 'bold' || referHeaderFontWeight >= 500){
+            referHeaderBoldBtn.classList.add('inline-btn-style-active');
+        } else {
+            try{
+                referHeaderBoldBtn.classList.remove('inline-btn-style-active')
+            } catch {}
+        }
+
+        if(referHeaderFontStyle.includes('italic')){
+            referHeaderItalicizeBtn.classList.add('inline-btn-style-active');
+        } else {
+            try{
+                referHeaderItalicizeBtn.classList.remove('inline-btn-style-active')
+            } catch {}
+        }
+
+        if(referHeaderFontDecoration.includes('underline')){
+            referHeaderUnderlineBtn.classList.add('inline-btn-style-active');
+        } else {
+            try{
+                referHeaderUnderlineBtn.classList.remove('inline-btn-style-active')
+            } catch {}
+        }
+
+        if(referHeaderFontDecoration.includes('line-through')){
+            referHeaderStrikeBtn.classList.add('inline-btn-style-active');
+        } else {
+            try{
+                referHeaderStrikeBtn.classList.remove('inline-btn-style-active')
+            } catch {}
+        }
+
+        if(referHeaderFontDecoration.includes('overline')){
+            referHeaderOverlineBtn.classList.add('inline-btn-style-active');
+        } else {
+            try{
+                referHeaderOverlineBtn.classList.remove('inline-btn-style-active')
+            } catch {}
+        }
+
+        // subheader styles
+        const referSubheaderFontWeight = window.getComputedStyle(subheaderElement).getPropertyValue('font-weight').replace(/^"|"$/g, '');
+        const referSubheaderFontStyle = subheaderElement.style.fontStyle;
+        const referSubheaderFontDecoration = subheaderElement.style.textDecoration;
+
+        const referSubheaderBoldBtn = document.getElementById('referSubheaderBoldBtn');
+        const referSubheaderItalicizeBtn = document.getElementById('referSubheaderItalicizeBtn');
+        const referSubheaderUnderlineBtn = document.getElementById('referSubheaderUnderlineBtn');
+        const referSubheaderStrikeBtn = document.getElementById('referSubheaderStrikeBtn');
+        const referSubheaderOverlineBtn = document.getElementById('referSubheaderOverlineBtn');
+
+        if(referSubheaderFontWeight === 'bold' || referSubheaderFontWeight >= 500){
+            referSubheaderBoldBtn.classList.add('inline-btn-style-active');
+        } else {
+            console.log('test2')
+            try{
+                referSubheaderBoldBtn.classList.remove('inline-btn-style-active')
+            } catch {}
+        }
+
+        if(referSubheaderFontStyle.includes('italic')){
+            referSubheaderItalicizeBtn.classList.add('inline-btn-style-active');
+        } else {
+            try{
+                referSubheaderItalicizeBtn.classList.remove('inline-btn-style-active')
+            } catch {}
+        }
+
+        if(referSubheaderFontDecoration.includes('underline')){
+            referSubheaderUnderlineBtn.classList.add('inline-btn-style-active');
+        } else {
+            try{
+                referSubheaderUnderlineBtn.classList.remove('inline-btn-style-active')
+            } catch {}
+        }
+
+        if(referSubheaderFontDecoration.includes('line-through')){
+            referSubheaderStrikeBtn.classList.add('inline-btn-style-active');
+        } else {
+            try{
+                referSubheaderStrikeBtn.classList.remove('inline-btn-style-active')
+            } catch {}
+        }
+
+        if(referSubheaderFontDecoration.includes('overline')){
+            referSubheaderOverlineBtn.classList.add('inline-btn-style-active');
+        } else {
+            try{
+                referSubheaderOverlineBtn.classList.remove('inline-btn-style-active')
+            } catch {}
+        }
+
+
+        // refer button color
         const referButtonElement = element.querySelector('button');
         const referButtonColorForm = document.getElementById('referButtonColorForm');
 
@@ -2464,7 +2568,7 @@ document.addEventListener("previewLoaded", ()=>{
         referButtonColorForm.value = referButtonColorHex;
         referButtonHexBox.style.backgroundColor = referButtonColorHex;
 
-        // Tiktok Like background color
+        // refer background color
         const referBackgroundColorForm = document.getElementById('referBackgroundColorForm');
         const referBackgroundHexBox = document.getElementById('referBackgroundColorClick');
         const referBackgroundColorRGB = window.getComputedStyle(element).getPropertyValue('background-color').replace(/^"|"$/g, '');
@@ -2472,7 +2576,7 @@ document.addEventListener("previewLoaded", ()=>{
         referBackgroundColorForm.value = referBackgroundColorHex;
         referBackgroundHexBox.style.backgroundColor = referBackgroundColorHex;
 
-        // Tiktok Like border color
+        // refer border color
         const referBorderColorForm = document.getElementById('referBorderColorForm');
         const referBorderHexBox = document.getElementById('referBorderColorClick');
         const referBorderColorRGB = window.getComputedStyle(element).getPropertyValue('border-color').replace(/^"|"$/g, '');
@@ -2480,7 +2584,7 @@ document.addEventListener("previewLoaded", ()=>{
         referBorderColorForm.value = referBorderColorHex;
         referBorderHexBox.style.backgroundColor = referBorderColorRGB;
 
-        // Tiktok Like border stroke
+        // refer border stroke
         const referBorderFormTopStroke = document.getElementById('referBorderTopStroke');
         const referBorderFormLeftStroke = document.getElementById('referBorderLeftStroke');
         const referBorderFormBottomStroke = document.getElementById('referBorderBottomStroke');
@@ -2496,7 +2600,7 @@ document.addEventListener("previewLoaded", ()=>{
         referBorderFormBottomStroke.value = referBorderStrokeBottom;
         referBorderFormRightStroke.value = referBorderStrokeRight;
 
-        // Tiktok Like border radius
+        // refer border radius
         const referBorderFormTopLeftRadius = document.getElementById('referBorderTopLeftRadius');
         const referBorderFormTopRightRadius = document.getElementById('referBorderTopRightRadius');
         const referBorderFormBottomLeftRadius = document.getElementById('referBorderBottomLeftRadius');

@@ -71,23 +71,23 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                 break;
 
             case 'pdTemplateOne':
-                selectText = 'Select Pre-Designed Template';
+                selectText = 'Select User Generated Template';
                 break;
         
             case 'pdTemplateTwo':
-                selectText = 'Select Pre-Designed Template';
+                selectText = 'Select User Generated Template';
                 break;
             
             case 'pdTemplateThree':
-                selectText = 'Select Pre-Designed Template';
+                selectText = 'Select User Generated Template';
                 break;
         
             case 'pdTemplateFour':
-                selectText = 'Select Pre-Designed Template';
+                selectText = 'Select User Generated Template';
                 break;
 
             case 'pdTemplateFive':
-                selectText = 'Select Pre-Designed Template';
+                selectText = 'Select User Generated Template';
                 break;
         } 
         template.style.setProperty('--select-text', `'${selectText}'`);
@@ -197,32 +197,90 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                                 <h2>Rules and Terms</h2>
                                                 <p class="raffleleader-rules-text"></p>
                                             </div>
-                                        <div class="raffleleader-section" style="width: 500px; height: 337px; position: absolute; left: 0px; top: 0px;"><div data-type="imageDetails" class="raffleleader-image-section"><img src="https://raffleleader.s3.us-east-2.amazonaws.com/alo.png" alt="Raffle Image" title="alo"></div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 46.2031px; top: 444px; width: 146px; height: 68px;"><div style="height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center; color: rgb(255, 255, 255); font-size: 70px; font-family: Urbanist;">alo </h2>
+                                        <div class="raffleleader-section" style="width: 500px; height: 309px; position: absolute; left: 0px; top: 0px; z-index: 10;"><div data-type="imageDetails" class="raffleleader-image-section"><img src="https://raffleleader.s3.us-east-2.amazonaws.com/alo.png" alt="Raffle Image" title="alo"></div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 29.2031px; top: 378px; width: 272px; height: 66px;"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center; color: rgb(255, 255, 255); font-weight: normal; font-size: 70px; font-family: Urbanist;">Win an</h2>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 29px; top: 328px; z-index: 11; width: 233px; height: 96px;"><div style="height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0);" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: center; font-weight: normal; font-family: Urbanist; color: rgb(255, 255, 255); font-size: 70px; line-height: 30px;">Win an</h2>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 160.203px; top: 434.391px; width: 298.797px; height: 92px;"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center; font-weight: normal; font-family: Urbanist; color: rgb(255, 255, 255); font-size: 70px;">Giftcard</h2>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 29.1875px; top: 532.391px; width: 447px; height: 160px;"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0); justify-content: left; text-align: left; align-items: center; writing-mode: horizontal-tb; text-orientation: upright; border-width: 0px; border-style: solid; border-color: rgba(60, 67, 74, 0);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: left; color: rgb(255, 255, 255); font-family: Nunito; font-size: 15px; font-weight: normal; justify-content: left; line-height: 20px;">Enter to win a $50 Giftcard for alo from Vera Co. which includes our new Rewards type giveaway. Rewards allow you to give away a coupon code, download, link or another instant reward to everyone who enters as opposed to giving away one big prize like in a traditional giveaway.</h2>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 29px; top: 417px; z-index: 10; width: 139px; height: 86px;"><div style="height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0);" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: center; font-weight: bold; font-family: Urbanist; color: rgb(255, 255, 255); font-size: 70px; line-height: 30px;">alo</h2>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="25raffleID" style="width: 500px; height: 93px; position: absolute; left: 0px; top: 692.391px;"><div data-type="entryDetails" class="raffleleader-entry-section" style="background-color: rgba(255, 255, 255, 0); border-width: 0px; border-style: solid; border-color: rgba(255, 255, 255, 0);">
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 163px; top: 417px; z-index: 10; width: 292px; height: 86px;"><div style="height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0);" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: center; font-weight: normal; font-family: Urbanist; color: rgb(255, 255, 255); font-size: 70px; line-height: 30px;">Giftcard!</h2>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 37px; top: 503px; z-index: 10; width: 426px; height: 105px;"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0); justify-content: left; align-items: center;" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: left; color: rgb(255, 255, 255); font-weight: normal; justify-content: left; font-size: 14px; line-height: 20px; letter-spacing: 0px;">If you’ve ever thought to yourself “dang, I wish I had $50 to shop at Alo with”, here’s your chance. All you need to do is enter your email and refer a friend. </h2>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div>If you’ve ever thought to yourself “dang, I wish I had $50 to shop at Alo with”, here’s your chance. All you need to do is enter your email and refer a friend. If you’ve ever thought to yourself “dang, I wish I had $50 to shop at Alo with”, here’s your chance. All you need to do is enter your email and refer a friend. <div class="raffleleader-section" id="${raffleID}raffleID" style="width: 500px; height: 100px; position: absolute; left: 0px; top: 594px; z-index: 10;"><div data-type="entryDetails" class="raffleleader-entry-section" style="background-color: rgba(255, 255, 255, 0); border-width: 0px; border-style: solid; border-color: rgb(255, 255, 255);">
                             <form class="raffleleader-email-submit" action="/submit-email" method="post">
-                                <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required="" style="font-family: Urbanist; font-size: 20px; color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); border-radius: 0px; border-width: 2px; border-style: solid; border-color: rgb(128, 128, 128);">
-                                <button class="raffleleader-email-submit-btn ld-over-full" type="submit" style="background-color: rgb(255, 0, 114); color: rgb(255, 255, 255); border-radius: 0px; border-top: 0px solid rgb(255, 255, 255); border-left: 0px solid rgb(255, 255, 255); border-right: 0px solid rgb(128, 128, 128);">
+                                <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required="" style="background-color: rgba(255, 255, 255, 0); color: rgb(255, 255, 255); border-width: 1px; border-style: solid; border-color: rgb(255, 255, 255); border-top-left-radius: 0px; border-bottom-left-radius: 0px; font-size: 20px; font-family: Urbanist;">
+                                <button class="raffleleader-email-submit-btn ld-over-full" type="submit" style="background-color: rgb(254, 1, 138); border-radius: 0px;">
                                     →
                                 </button>
                             </form>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div></div>
-                                        <div class="raffleleader-footer-wrapper" style="background-color: rgb(0, 0, 0);">
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="width: 500px; height: 90px; position: absolute; left: 0px; top: 710px; z-index: 10;"><div data-type="referDetails" class="raffleleader-additional-entry-section" style="background-color: rgba(255, 255, 255, 0); border-width: 1px 0px 0px; border-style: solid; border-color: rgb(255, 255, 255);">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2 style="color: rgb(255, 255, 255); font-family: Urbanist; font-size: 23px; font-weight: normal;">Refer-a-friend</h2>
+                                <p style="font-weight: bold;"></p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column raffleleader-additional-entry-button-column-refer">
+                                <button data-link="https://instagram.com/" style="background-color: rgb(254, 1, 138);">Copy Link</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div></div>
+                                        <div class="raffleleader-footer-wrapper" style="border-top-color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);">
                                             <div class="raffleleader-footer">
                                                 <a class="raffleleader-footer-content raffleleader-rules-and-terms" style="color: rgb(255, 255, 255);">Raffle Rules and Terms</a>
-                                                <p>|</p>
+                                                <p style="color: rgb(255, 255, 255);">|</p>
                                                 <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com" style="color: rgb(255, 255, 255);">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="https://raffleleader.s3.us-east-2.amazonaws.com/footer_text_logo.png"> For Yourself!</a>
                                             </div>
                                         </div>
@@ -232,30 +290,110 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                 break;
 
             case 'pdTemplateTwo':
-                preview.outerHTML = `<div id="preview" class="raffleleader-preview-box raffleleader-preview-reset" style="width: 500px">
-                                        <div id="dropzone" class="raffleleader-dropzone" style="height: 800px; background-color: rgb(104, 174, 37);">
+                preview.outerHTML = `<div id="preview" class="raffleleader-preview-box raffleleader-preview-reset" style="width: 500px; transform: scale(1.0);">
+                                        <div id="dropzone" class="raffleleader-dropzone" style="height: 850px; background-color: rgb(104, 174, 37);">
                                             <div style="display: none;" class="raffleleader-rules-and-terms-preview">
                                                 <button class="rules-and-terms-close-button">×</button>
                                                 <h2>Rules and Terms</h2>
                                                 <p class="raffleleader-rules-text"></p>
                                             </div>
-                                        <div class="raffleleader-section" style="width: 499px; height: 433px; position: absolute; left: 1px; top: 12.3906px;"><div data-type="imageDetails" class="raffleleader-image-section" style="border-radius: 100px;"><img src="https://raffleleader.s3.us-east-2.amazonaws.com/bonaroo.png" alt="Raffle Image" title="bonaroo" style="border-radius: 100px;"></div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 1px; top: 484.391px; width: 499px; height: 132px;"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center; font-family: Orbitron; color: rgb(255, 255, 255); font-size: 40px; line-height: 45px;">WIN A TICKET TO BONNAROOO!!!!</h2>
+                                        <div class="raffleleader-section" style="width: 500px; height: 347px; position: absolute; left: 0px; top: 0px; z-index: 10;"><div data-type="imageDetails" class="raffleleader-image-section"><img src="https://raffleleader.s3.us-east-2.amazonaws.com/bonaroo.png" alt="Raffle Image" title="bonaroo"></div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 39px; top: 622.391px; width: 407px; height: 60px;"><div style="height: 100%; width: 100%; justify-content: left; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: left; justify-content: left; font-size: 16px; line-height: 20px; font-family: &quot;Open Sans&quot;; font-weight: normal; letter-spacing: 0px;">It's time to party! Enter your email for a chance to win a free ticket to Bonaroo.</h2>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 334px; z-index: 10; width: 500px; height: 110px;"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: center; font-family: Orbitron; color: rgb(255, 255, 255); font-size: 52px;">WIN A TICKET</h2>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="25raffleID" style="width: 499px; height: 83px; position: absolute; left: 1px; top: 697.391px;"><div data-type="entryDetails" class="raffleleader-entry-section" style="background-color: rgba(255, 255, 255, 0); border-width: 0px; border-style: solid; border-color: rgb(0, 0, 0);">
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 419px; z-index: 1; width: 500px; height: 67px;"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: center; font-family: Orbitron; color: rgb(255, 255, 255); font-size: 52px;">TO</h2>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 455px; z-index: 1; width: 500px; height: 114px;"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: center; font-family: Orbitron; color: rgb(255, 255, 255); font-size: 52px;">BONNAROOO!!!</h2>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" id="${raffleID}raffleID" style="width: 500px; height: 93px; position: absolute; left: 0px; top: 599.333px; z-index: 10;"><div data-type="entryDetails" class="raffleleader-entry-section" style="background-color: rgba(255, 255, 255, 0); border-width: 0px; border-style: solid; border-color: rgb(0, 0, 0);">
                             <form class="raffleleader-email-submit" action="/submit-email" method="post">
-                                <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required="" style="background-color: rgba(0, 0, 0, 0); color: rgb(0, 0, 0); font-size: 18px; font-family: Orbitron; border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);">
-                                <button class="raffleleader-email-submit-btn ld-over-full" type="submit" style="background-color: rgb(0, 0, 0); border-radius: 10px;">
+                                <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required="" style="background-color: rgba(44, 51, 56, 0); color: rgb(0, 0, 0); border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0); font-size: 20px; font-family: Orbitron;">
+                                <button class="raffleleader-email-submit-btn ld-over-full" type="submit" style="color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); border-width: 0px; border-style: solid; border-color: rgb(0, 0, 0);">
                                     →
                                 </button>
                             </form>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div></div>
-                                        <div class="raffleleader-footer-wrapper" style="background-color: rgb(104, 174, 37);">
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 28px; top: 544px; z-index: 10; width: 447px; height: 73px;"><div style="height: 100%; width: 100%; justify-content: left; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: left; justify-content: left; font-size: 16px; letter-spacing: 0px; font-family: &quot;Open Sans&quot;; line-height: 14px; font-weight: normal;">It's time to hear your favorites LIVE! Enter your email for a chance to win a free ticket to Bonnaroo.</h2>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" data-entry="${raffleID}raffleID" style="width: 500px; height: 75px; position: absolute; left: 0px; top: 703px; z-index: 10;"><div data-type="instaFollowDetails" class="raffleleader-additional-entry-section" style="background-color: rgba(255, 255, 255, 0); border-width: 1px 0px 0px; border-style: solid; border-color: rgb(0, 0, 0);">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2 style="color: rgb(255, 255, 255); font-family: Orbitron; font-size: 16px;">Follow us on Instagram</h2>
+                                <p style="color: rgb(0, 0, 0); font-family: Orbitron;">for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button data-link="https://instagram.com/" style="background-color: rgb(0, 0, 0);">+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" data-entry="${raffleID}raffleID" style="width: 500px; height: 75px; position: absolute; left: 0px; top: 778px; z-index: 10;"><div data-type="tiktokFollowDetails" class="raffleleader-additional-entry-section" style="background-color: rgba(255, 255, 255, 0); border-width: 1px 0px 0px; border-style: solid; border-color: rgb(0, 0, 0);">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2 style="font-family: Orbitron; font-size: 16px; color: rgb(255, 255, 255);">Follow us on TikTok</h2>
+                                <p style="font-family: Orbitron; color: rgb(0, 0, 0);">for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button data-link="https://tiktok.com/" style="background-color: rgb(0, 0, 0);">+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div></div>
+                                        <div class="raffleleader-footer-wrapper" style="background-color: rgb(104, 174, 37); border-top-color: rgb(0, 0, 0);">
                                             <div class="raffleleader-footer">
                                                 <a class="raffleleader-footer-content raffleleader-rules-and-terms" style="color: rgb(0, 0, 0);">Raffle Rules and Terms</a>
                                                 <p style="color: rgb(0, 0, 0);">|</p>
@@ -275,23 +413,51 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                                 <h2>Rules and Terms</h2>
                                                 <p class="raffleleader-rules-text"></p>
                                             </div>
-                                        <div class="raffleleader-section" style="position: absolute; left: 48px; top: 0px; width: 392px; height: 151px;"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center; font-size: 40px; font-weight: normal; line-height: 50px; color: rgb(255, 255, 255); font-family: Jura;">Win a piece from the new collection</h2>
+                                        <div class="raffleleader-section" style="position: absolute; left: 36px; top: 28px; z-index: 10; width: 423px; height: 117px;"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: center; font-size: 40px; line-height: 40px; font-weight: normal; font-family: Jura; color: rgb(255, 255, 255);">Win a piece from the new collection</h2>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="width: 485px; height: 420px; position: absolute; left: 8px; top: 151px;"><div data-type="imageDetails" class="raffleleader-image-section" style="border-radius: 100px;"><img src="https://raffleleader.s3.us-east-2.amazonaws.com/collection.png" alt="Raffle Image" title="collection" style="border-radius: 100px;"></div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 48px; top: 612.391px; width: 425px; height: 80px;"><div style="height: 100%; width: 100%; justify-content: left; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: left; font-weight: normal; font-size: 14px; justify-content: left; line-height: 18px; color: rgb(255, 255, 255);">Enter your email for the chance to win any piece from our new collection, including this beautiful ring!</h2>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="25raffleID" style="width: 500px; height: 91.6094px; position: absolute; left: 0px; top: 699.391px;"><div data-type="entryDetails" class="raffleleader-entry-section" style="background-color: rgba(255, 255, 255, 0);">
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="width: 489px; height: 396px; position: absolute; left: 5px; top: 164px; z-index: 10;"><div data-type="imageDetails" class="raffleleader-image-section" style="border-top: 0px solid rgb(60, 67, 74); border-left: 0px solid rgb(60, 67, 74); border-radius: 80px;"><img src="https://raffleleader.s3.us-east-2.amazonaws.com/collection.png" alt="Raffle Image" title="collection" style="border-radius: 80px;"></div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 36px; top: 600px; z-index: 10; width: 428px; height: 78px;"><div style="height: 100%; width: 100%; justify-content: left; background-color: rgba(255, 255, 255, 0); border-width: 0px; border-style: solid; border-color: rgb(255, 255, 255);" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: left; font-weight: normal; font-size: 16px; line-height: 20px; justify-content: left; letter-spacing: 0px; color: rgb(255, 255, 255);">Enter your email for the chance to win any piece from our new collection, including this beautiful ring!</h2>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" id="${raffleID}raffleID" style="width: 500px; height: 89px; position: absolute; left: 0px; top: 685px; z-index: 10;"><div data-type="entryDetails" class="raffleleader-entry-section" style="background-color: rgba(255, 255, 255, 0);">
                             <form class="raffleleader-email-submit" action="/submit-email" method="post">
-                                <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required="" style="color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; border-color: rgb(255, 255, 255); font-size: 18px;">
-                                <button class="raffleleader-email-submit-btn ld-over-full" type="submit" style="border-width: 2px; border-style: solid; border-color: rgb(255, 255, 255) rgb(128, 128, 128) rgb(255, 255, 255) rgb(255, 255, 255); background-color: rgb(0, 0, 0);">
+                                <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required="" style="color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0); border-width: 1px; border-style: solid; border-color: rgb(255, 255, 255); font-size: 20px;">
+                                <button class="raffleleader-email-submit-btn ld-over-full" type="submit" style="background-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; border-color: rgb(255, 255, 255);">
                                     →
                                 </button>
                             </form>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div></div>
-                                        <div class="raffleleader-footer-wrapper" style="background-color: rgb(0, 0, 0);">
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div></div>
+                                        <div class="raffleleader-footer-wrapper" style="border-top-color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);">
                                             <div class="raffleleader-footer">
                                                 <a class="raffleleader-footer-content raffleleader-rules-and-terms" style="color: rgb(255, 255, 255);">Raffle Rules and Terms</a>
                                                 <p style="color: rgb(255, 255, 255);">|</p>
@@ -311,23 +477,51 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                                 <h2>Rules and Terms</h2>
                                                 <p class="raffleleader-rules-text"></p>
                                             </div>
-                                        <div class="raffleleader-section" style="position: absolute; left: 19px; top: 49.3906px; width: 467px; height: 106px;"><div style="height: 100%; width: 100%; justify-content: left; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: left; justify-content: left; color: rgb(255, 255, 255); font-size: 40px; line-height: 40px;">Win a ticket to the NFL game of your choice!</h2>
+                                        <div class="raffleleader-section" style="position: absolute; left: 44px; top: 1px; z-index: 10; width: 417px; height: 272px;"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0); justify-content: left;" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: left; font-size: 52px; line-height: 60px; color: rgb(255, 255, 255); justify-content: left;">Win a ticket to the NFL game of your choice!</h2>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 36.2031px; top: 178.391px; width: 427px; height: 69px;"><div style="height: 100%; width: 100%; justify-content: left; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: left; font-weight: normal; font-size: 14px; justify-content: left; line-height: 18px; color: rgb(255, 255, 255); letter-spacing: 0px;">One lucky winner will win a ticket to the NFL game of their choosing. All you need to do is enter your email.</h2>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="width: 500px; height: 427.609px; position: absolute; left: 0px; top: 372.391px;"><div data-type="imageDetails" class="raffleleader-image-section" style="border-top-left-radius: 800px; border-top-right-radius: 5px; border-bottom-right-radius: 0px; border-width: 0px; border-style: solid; border-color: rgba(60, 67, 74, 0);"><img src="https://raffleleader.s3.us-east-2.amazonaws.com/nfl.png" alt="Raffle Image" title="nfl" style="border-top-left-radius: 800px; border-top-right-radius: 5px; border-bottom-right-radius: 0px;"></div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="25raffleID" style="width: 500px; height: 108px; position: absolute; left: 0px; top: 264.391px;"><div data-type="entryDetails" class="raffleleader-entry-section" style="background-color: rgba(255, 255, 255, 0);">
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 44px; top: 240px; z-index: 10; width: 405px; height: 81px;"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0); justify-content: left;" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: left; font-weight: normal; font-size: 14px; line-height: 16px; letter-spacing: 0px; color: rgb(255, 255, 255); justify-content: left;">One lucky winner will win a ticket to the NFL game of their choosing. All you need to do is enter your email.</h2>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" id="${raffleID}raffleID" style="width: 500px; height: 98px; position: absolute; left: 0px; top: 316px; z-index: 10;"><div data-type="entryDetails" class="raffleleader-entry-section" style="background-color: rgba(255, 255, 255, 0);">
                             <form class="raffleleader-email-submit" action="/submit-email" method="post">
-                                <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required="" style="font-size: 20px; color: rgb(255, 255, 255); background-color: rgba(255, 255, 255, 0); border-width: 1px; border-style: solid; border-color: rgb(255, 255, 255);">
+                                <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required="" style="background-color: rgba(44, 51, 56, 0); color: rgb(255, 255, 255); border-width: 1px; border-style: solid; border-color: rgb(255, 255, 255); font-size: 20px;">
                                 <button class="raffleleader-email-submit-btn ld-over-full" type="submit" style="background-color: rgb(198, 42, 42); color: rgb(23, 23, 76);">
                                     →
                                 </button>
                             </form>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div></div>
-                                        <div class="raffleleader-footer-wrapper" style="background-color: rgb(7, 7, 45);">
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="width: 500px; height: 370px; position: absolute; left: 0px; top: 430px; z-index: 10;"><div data-type="imageDetails" class="raffleleader-image-section" style="border-top-left-radius: 800px;"><img src="https://raffleleader.s3.us-east-2.amazonaws.com/nfl.png" alt="Raffle Image" title="nfl" style="border-top-left-radius: 800px;"></div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div></div>
+                                        <div class="raffleleader-footer-wrapper" style="background-color: rgb(7, 7, 45); border-top-color: rgb(255, 255, 255);">
                                             <div class="raffleleader-footer">
                                                 <a class="raffleleader-footer-content raffleleader-rules-and-terms" style="color: rgb(255, 255, 255);">Raffle Rules and Terms</a>
                                                 <p style="color: rgb(255, 255, 255);">|</p>
@@ -347,23 +541,60 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                                 <h2>Rules and Terms</h2>
                                                 <p class="raffleleader-rules-text"></p>
                                             </div>
-                                        <div class="raffleleader-section" style="position: absolute; left: 19px; top: 22px; width: 460px; height: 74px; z-index: 63;"><div style="height: 100%; width: 100%; border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0); border-radius: 100px; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
+                                        <div class="raffleleader-section" style="width: 500px; height: 661px; position: absolute; left: 0px; top: 0px; z-index: 1;"><div data-type="imageDetails" class="raffleleader-image-section"><img src="https://raffleleader.s3.us-east-2.amazonaws.com/gopro.png" alt="Raffle Image" title="gopro"></div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 17px; top: 19px; z-index: 10; width: 462px; height: 80px;"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0); border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0); border-radius: 100px;" data-type="textDetails" class="raffleleader-text-section">
                             <h2 style="white-space: pre-wrap; text-align: center; font-family: Roboto; font-size: 32px;">WIN A NEW GOPRO!</h2>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 599.391px; width: 500px; height: 86px; z-index: 67;"><div style="height: 100%; width: 100%; border-width: 2px 0px 0px; border-style: solid; border-color: rgb(60, 67, 74); border-top-left-radius: 50px; border-top-right-radius: 50px;" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center; font-size: 14px; font-weight: normal; letter-spacing: 0px;">Life is full of beautiful moments. Enter to win this giveaway 
-and never miss one again. Type in your email below to enter.</h2>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" id="25raffleID" style="width: 500px; height: 100px; position: absolute; left: 0px; top: 685.391px; z-index: 11;"><div data-type="entryDetails" class="raffleleader-entry-section">
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 46px; top: 624px; z-index: 11; width: 409px; height: 67px;"><div style="height: 100%; width: 100%; justify-content: center; border-top: 0px solid rgb(60, 67, 74); border-top-left-radius: 0px; border-top-right-radius: 0px; text-align: center;" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: left; font-weight: normal; justify-content: left; font-size: 14px; letter-spacing: 0px; line-height: 18px;">Life is full of beautiful moments. Enter to win this giveaway and never miss one again. Type in your email below to enter.</h2>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 598px; z-index: 1; width: 500px; height: 202px;"><div style="height: 100%; width: 100%; border-top-left-radius: 50px; border-top-right-radius: 50px; border-top: 1px solid rgb(60, 67, 74);" data-type="textDetails" class="raffleleader-text-section">
+                            <h2 style="white-space: pre-wrap; text-align: center;"></h2>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" id="${raffleID}raffleID" style="width: 500px; height: 94px; position: absolute; left: 0px; top: 691px; z-index: 11;"><div data-type="entryDetails" class="raffleleader-entry-section" style="background-color: rgba(255, 255, 255, 0);">
                             <form class="raffleleader-email-submit" action="/submit-email" method="post">
-                                <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required="" style="font-size: 20px; color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0); border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0); border-radius: 50px; font-family: Urbanist;">
-                                <button class="raffleleader-email-submit-btn ld-over-full" type="submit" style="border-radius: 50px; background-color: rgb(9, 154, 217);">
+                                <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required="" style="border-radius: 100px; font-size: 20px; color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0); border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);">
+                                <button class="raffleleader-email-submit-btn ld-over-full" type="submit" style="background-color: rgb(9, 154, 217); border-radius: 100px;">
                                     →
                                 </button>
                             </form>
                         </div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div><div class="raffleleader-section" style="width: 500px; height: 648px; position: absolute; left: 0px; top: 0px; z-index: 58;"><div data-type="imageDetails" class="raffleleader-image-section"><img src="https://raffleleader.s3.us-east-2.amazonaws.com/gopro.png" alt="Raffle Image" title="gopro"></div>
-                        <div style="display: none;" class="raffleleader-resize-handle"></div></div></div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div></div>
                                         <div class="raffleleader-footer-wrapper">
                                             <div class="raffleleader-footer">
                                                 <a class="raffleleader-footer-content raffleleader-rules-and-terms">Raffle Rules and Terms</a>

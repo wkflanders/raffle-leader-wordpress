@@ -422,6 +422,15 @@
     width: 10%;
 }
 
+.raffleleader-additional-entry-button-column-refer{
+    transition: width 0.7s ease-in-out !important;
+    position: absolute;
+    right: 8%;
+    display: flex;
+    justify-content: center;
+    width: 25%;
+}
+
 .raffleleader-additional-entry-button-column > button{
     transition: width 0.7s ease-in-out !important;
     display: flex;

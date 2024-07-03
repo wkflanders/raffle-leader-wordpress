@@ -114,8 +114,6 @@ class Enqueue extends BaseController{
 
         wp_enqueue_script( 'raffleleader_preview_reposition_script', $this->plugin_url . '/assets/js/preview_reposition_script.js', array(), rand(111, 9999) );
         
-        wp_enqueue_script( 'raffleleader_preview_zoom_script', $this->plugin_url . '/assets/js/preview_zoom_script.js', array(), rand(111, 9999) );
-
         wp_enqueue_script( 'raffleleader_preview_load_script', $this->plugin_url . '/assets/js/preview_load_script.js', array(), rand(111, 9999) );
 
         wp_enqueue_script( 'raffleleader_customize_settings_script', $this->plugin_url . '/assets/js/customize_settings_script.js', array(), rand(111, 9999) );

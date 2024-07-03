@@ -73,16 +73,16 @@ document.addEventListener("generalSettingsLoaded", () => {
     
     if (selectedSectionList.length > 0) {
       selectedSection = document.querySelector(".selected-raffleleader-section");
-      const resizeHandles = selectedSection.querySelectorAll(".raffleleader-resize-handle");
-      const handleContainer = selectedSection.querySelector(".raffleleader-layer-handle-container");
     }
 
     if (isLoading) {
       saveBtn.innerHTML =
         '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>';
       if (selectedSection) {
+        const resizeHandles = selectedSection.querySelectorAll(".raffleleader-resize-handle");
+        const handleContainer = selectedSection.querySelector(".raffleleader-layer-handle-container");
         selectedSection.classList.remove("selected-raffleleader-section");
-        handleContainers.style.display = "none";
+        handleContainer.style.display = "none";
         resizeHandles.forEach(resizeHandle => resizeHandle.style.display = "none");
       }
     } else {
@@ -106,7 +106,10 @@ document.addEventListener("generalSettingsLoaded", () => {
 
       if (selectedSection) {
         selectedSection.classList.add("selected-raffleleader-section");
-        resizeHandle.style.display = "block";
+        const resizeHandles = selectedSection.querySelectorAll(".raffleleader-resize-handle");
+        const handleContainer = selectedSection.querySelector(".raffleleader-layer-handle-container");
+        handleContainer.style.display = "flex";
+        resizeHandles.forEach(resizeHandle => resizeHandle.style.display = "block");
       }
     }
   }

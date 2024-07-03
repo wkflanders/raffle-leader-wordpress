@@ -2385,7 +2385,132 @@ document.addEventListener("previewLoaded", ()=>{
     }
 
     function loadReferDetails(element){
+        // Load Tiktok Like settings
+        const headerForm = document.getElementById('referHeaderForm');
+        const subheaderForm = document.getElementById('referSubheaderForm');
+        const textElement = element.querySelector('.raffleleader-additional-entry-text-column');
+        const headerElement = textElement.querySelector('h2');
+        const subheaderElement = textElement.querySelector('p');
+        const headerSizeForm = document.getElementById('referHeaderFontSizeForm');
+        const subheaderSizeForm = document.getElementById('referSubheaderFontSizeForm');
 
+        // Tiktok Like text
+        const headerText = headerElement.textContent;
+        const subheaderText = subheaderElement.textContent;
+        headerForm.value = headerText;
+        subheaderForm.value = subheaderText;
+
+        // Tiktok Like font 
+        const headerFontList = document.getElementById('referHeaderList');
+        const headerFontDisplay = document.getElementById('referHeaderDropDownTitle');
+        const subheaderFontList = document.getElementById('referSubheaderList');
+        const subheaderFontDisplay = document.getElementById('referSubheaderDropDownTitle');
+        const headerFont = window.getComputedStyle(headerElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        const subheaderFont = window.getComputedStyle(subheaderElement).getPropertyValue('font-family').replace(/^"|"$/g, '');
+        headerFontDisplay.innerText = headerFont;
+        subheaderFontDisplay.innerText = subheaderFont;
+
+        Array.from(headerFontList.children).forEach((child)=>{
+        const childFont = child.innerText;
+        if(child.classList.contains('selected-font')){
+        child.classList.remove('selected-font');
+        }
+        if(childFont === headerFont){
+        child.classList.add('selected-font');
+        }
+        });
+
+        Array.from(subheaderFontList.children).forEach((child)=>{
+        const childFont = child.innerText;
+        if(child.classList.contains('selected-font')){
+        child.classList.remove('selected-font');
+        }
+        if(childFont === subheaderFont){
+        child.classList.add('selected-font');
+        }
+        });
+
+        // header color
+        const referHeaderHexBox = document.getElementById('referHeaderFontColorClick');
+        const referHeaderForm = document.getElementById('referHeaderFontColorForm');
+        const referHeaderColorRGB = window.getComputedStyle(headerElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const referHeaderColorHex = rgbToHex(referHeaderColorRGB);
+        referHeaderForm.value = referHeaderColorHex;
+        referHeaderHexBox.style.backgroundColor = referHeaderColorHex;
+
+        // subheader color
+        const referSubheaderHexBox = document.getElementById('referSubheaderFontColorClick');
+        const referSubheaderForm = document.getElementById('referSubheaderFontColorForm');
+        const referSubheaderColorRGB = window.getComputedStyle(subheaderElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const referSubheaderColorHex = rgbToHex(referSubheaderColorRGB);
+        referSubheaderForm.value = referSubheaderColorHex;
+        referSubheaderHexBox.style.backgroundColor = referSubheaderColorHex;
+
+        // header font size
+        const headerFontSize = window.getComputedStyle(headerElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        headerSizeForm.value = headerFontSize;
+
+        // subheader font size
+        const textFontSize = window.getComputedStyle(subheaderElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
+        subheaderSizeForm.value = textFontSize;
+
+        // Tiktok Like button color
+        const referButtonElement = element.querySelector('button');
+        const referButtonColorForm = document.getElementById('referButtonColorForm');
+
+        const referButtonHexBox = document.getElementById('referButtonColorClick');
+        const referButtonColorRGB = window.getComputedStyle(referButtonElement).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const referButtonColorHex = rgbToHex(referButtonColorRGB);
+        referButtonColorForm.value = referButtonColorHex;
+        referButtonHexBox.style.backgroundColor = referButtonColorHex;
+
+        // Tiktok Like background color
+        const referBackgroundColorForm = document.getElementById('referBackgroundColorForm');
+        const referBackgroundHexBox = document.getElementById('referBackgroundColorClick');
+        const referBackgroundColorRGB = window.getComputedStyle(element).getPropertyValue('background-color').replace(/^"|"$/g, '');
+        const referBackgroundColorHex = rgbToHex(referBackgroundColorRGB);
+        referBackgroundColorForm.value = referBackgroundColorHex;
+        referBackgroundHexBox.style.backgroundColor = referBackgroundColorHex;
+
+        // Tiktok Like border color
+        const referBorderColorForm = document.getElementById('referBorderColorForm');
+        const referBorderHexBox = document.getElementById('referBorderColorClick');
+        const referBorderColorRGB = window.getComputedStyle(element).getPropertyValue('border-color').replace(/^"|"$/g, '');
+        const referBorderColorHex = rgbToHex(referBorderColorRGB);
+        referBorderColorForm.value = referBorderColorHex;
+        referBorderHexBox.style.backgroundColor = referBorderColorRGB;
+
+        // Tiktok Like border stroke
+        const referBorderFormTopStroke = document.getElementById('referBorderTopStroke');
+        const referBorderFormLeftStroke = document.getElementById('referBorderLeftStroke');
+        const referBorderFormBottomStroke = document.getElementById('referBorderBottomStroke');
+        const referBorderFormRightStroke = document.getElementById('referBorderRightStroke');
+
+        const referBorderStrokeTop = window.getComputedStyle(element).getPropertyValue('border-top-width').replace(/^"|"$/g, '');
+        const referBorderStrokeLeft = window.getComputedStyle(element).getPropertyValue('border-left-width').replace(/^"|"$/g, '');
+        const referBorderStrokeBottom = window.getComputedStyle(element).getPropertyValue('border-bottom-width').replace(/^"|"$/g, '');
+        const referBorderStrokeRight = window.getComputedStyle(element).getPropertyValue('border-right-width').replace(/^"|"$/g, '');
+
+        referBorderFormTopStroke.value = referBorderStrokeTop;
+        referBorderFormLeftStroke.value = referBorderStrokeLeft;
+        referBorderFormBottomStroke.value = referBorderStrokeBottom;
+        referBorderFormRightStroke.value = referBorderStrokeRight;
+
+        // Tiktok Like border radius
+        const referBorderFormTopLeftRadius = document.getElementById('referBorderTopLeftRadius');
+        const referBorderFormTopRightRadius = document.getElementById('referBorderTopRightRadius');
+        const referBorderFormBottomLeftRadius = document.getElementById('referBorderBottomLeftRadius');
+        const referBorderFormBottomRightRadius = document.getElementById('referBorderBottomRightRadius');
+
+        const referBorderRadiusTopLeft = window.getComputedStyle(element).getPropertyValue('border-top-left-radius').replace(/^"|"$/g, '');
+        const referBorderRadiusTopRight = window.getComputedStyle(element).getPropertyValue('border-top-right-radius').replace(/^"|"$/g, '');
+        const referBorderRadiusBottomLeft = window.getComputedStyle(element).getPropertyValue('border-bottom-left-radius').replace(/^"|"$/g, '');
+        const referBorderRadiusBottomRight = window.getComputedStyle(element).getPropertyValue('border-bottom-right-radius').replace(/^"|"$/g, '');
+
+        referBorderFormTopLeftRadius.value = referBorderRadiusTopLeft;
+        referBorderFormTopRightRadius.value = referBorderRadiusTopRight;
+        referBorderFormBottomLeftRadius.value = referBorderRadiusBottomLeft;
+        referBorderFormBottomRightRadius.value = referBorderRadiusBottomRight;
     }
 
     document.addEventListener("keydown", ({key}) => {

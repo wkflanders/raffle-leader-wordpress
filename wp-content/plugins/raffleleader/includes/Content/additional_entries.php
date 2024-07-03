@@ -2908,7 +2908,7 @@
     </div>
 </div>
 <div id="referDetails" class="customize-box-content">
-    <div class="dropdown-wrapper">
+    <!-- <div class="dropdown-wrapper">
         <div class="header-box">
             <h2 class="header-box-title">Refer-A-Friend Details</h2>
         </div>
@@ -2922,7 +2922,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="dropdown-wrapper text-design">
         <div class="header-box">
             <h2 class="header-box-title">Text Design</h2>

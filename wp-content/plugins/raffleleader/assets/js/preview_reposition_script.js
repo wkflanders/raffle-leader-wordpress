@@ -57,6 +57,9 @@ document.addEventListener('previewLoaded', ()=>{
         
                 function resize(e) {
                     const zoomLevel = window.zoomScale || 1; // Adjust scaling based on zoom level if applicable
+                    const minWidth = 50; // Minimum width constraint
+                    const minHeight = 50; // Minimum height constraint
+                    
                     let newWidth = originalWidth + (e.clientX - originalMouseX) / zoomLevel;
                     let newHeight = originalHeight + (e.clientY - originalMouseY) / zoomLevel;
                     let newLeft = originalLeft;
@@ -71,8 +74,51 @@ document.addEventListener('previewLoaded', ()=>{
                         newTop = originalTop + (e.clientY - originalMouseY) / zoomLevel;
                     }
                 
-                    newWidth = Math.max(50, newWidth); // Minimum width constraint
-                    newHeight = Math.max(10, newHeight); // Minimum height constraint
+                    // Apply minimum size constraints
+                    newWidth = Math.max(minWidth, newWidth);
+                    newHeight = Math.max(minHeight, newHeight);
+                
+                    // Adjust left position if minimum width is reached
+                    if (handleClass.includes('left') && newWidth === minWidth) {
+                        newLeft = originalLeft + originalWidth - minWidth;
+                    }
+                
+                    // Adjust top position if minimum height is reached
+                    if (handleClass.includes('top') && newHeight === minHeight) {
+                        newTop = originalTop + originalHeight - minHeight;
+                    }
+                
+                    // Boundary checks for resizing within the dropzone
+                    let maxRight = dropzone.offsetWidth - newLeft;
+                    let maxBottom = dropzone.offsetHeight - newTop;
+                
+                    newWidth = Math.min(newWidth, maxRight); // Prevent resizing beyond the right boundary of the dropzone
+                    newHeight = Math.min(newHeight, maxBottom); // Prevent resizing beyond the bottom boundary of the dropzone
+                
+                    if (handleClass.includes('right')) {
+                        newWidth = Math.min(dropzone.offsetWidth - newLeft, originalWidth + (e.clientX - originalMouseX) / zoomLevel);
+                    }
+                    if (handleClass.includes('bottom')) {
+                        newHeight = Math.min(dropzone.offsetHeight - newTop, originalHeight + (e.clientY - originalMouseY) / zoomLevel);
+                    }
+                    if (handleClass.includes('left')) {
+                        const deltaX = (originalMouseX - e.clientX) / zoomLevel;
+                        newWidth = Math.max(minWidth, originalWidth + deltaX);
+                        newLeft = originalLeft + originalWidth - newWidth;
+                        if (newLeft < 0) {
+                            newLeft = 0;
+                            newWidth = originalLeft + originalWidth;
+                        }
+                    }
+                    if (handleClass.includes('top')) {
+                        const deltaY = (originalMouseY - e.clientY) / zoomLevel;
+                        newHeight = Math.max(minHeight, originalHeight + deltaY);
+                        newTop = originalTop + originalHeight - newHeight;
+                        if (newTop < 0) {
+                            newTop = 0;
+                            newHeight = originalTop + originalHeight;
+                        }
+                    }
                 
                     // Snapping Logic for resizing
                     const snapMargin = 5 / zoomLevel;
@@ -127,6 +173,10 @@ document.addEventListener('previewLoaded', ()=>{
                             }
                         }
                     });
+                
+                    // Final application of minimum size constraints
+                    newWidth = Math.max(minWidth, newWidth);
+                    newHeight = Math.max(minHeight, newHeight);
                 
                     // Apply the adjusted dimensions and position
                     el.style.width = `${newWidth}px`;

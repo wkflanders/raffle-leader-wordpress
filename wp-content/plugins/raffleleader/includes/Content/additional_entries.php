@@ -36,10 +36,34 @@
                 </div>
             </div>
             <div class="customize-settings-box">
+                <p>Header Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="XFollowHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="XFollowHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="XFollowHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="XFollowHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="XFollowHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
                 <p>Edit Subheader Text</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-text dropdown-edit-text">
                         <textarea id="XFollowSubheaderForm" class="text-input" data-type="editSubheader" type="text" placeholder="Enter Text"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Subheader Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="XFollowSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="XFollowSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="XFollowSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="XFollowSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="XFollowSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
                     </div>
                 </div>
             </div>
@@ -277,10 +301,34 @@
                 </div>
             </div>
             <div class="customize-settings-box">
+                <p>Header Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="XRepostHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="XRepostHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="XRepostHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="XRepostHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="XRepostHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
                 <p>Edit Subheader Text</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-text dropdown-edit-text">
                         <textarea id="XRepostSubheaderForm" class="text-input" data-type="editSubheader" type="text" placeholder="Enter Text"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Subheader Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="XRepostSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="XRepostSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="XRepostSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="XRepostSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="XRepostSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
                     </div>
                 </div>
             </div>
@@ -519,10 +567,34 @@
                 </div>
             </div>
             <div class="customize-settings-box">
+                <p>Header Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="XLikeHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="XLikeHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="XLikeHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="XLikeHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="XLikeHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
                 <p>Edit Subheader Text</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-text dropdown-edit-text">
                         <textarea id="XLikeSubheaderForm" class="text-input" data-type="editSubheader" type="text" placeholder="Enter Text"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Subheader Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="XLikeSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="XLikeSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="XLikeSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="XLikeSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="XLikeSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
                     </div>
                 </div>
             </div>
@@ -761,10 +833,34 @@
                 </div>
             </div>
             <div class="customize-settings-box">
+                <p>Header Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="instaFollowHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="instaFollowHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="instaFollowHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="instaFollowHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="instaFollowHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
                 <p>Edit Subheader Text</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-text dropdown-edit-text">
                         <textarea id="instaFollowSubheaderForm" class="text-input" data-type="editSubheader" type="text" placeholder="Enter Text"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Subheader Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="instaFollowSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="instaFollowSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="instaFollowSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="instaFollowSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="instaFollowSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
                     </div>
                 </div>
             </div>
@@ -1003,10 +1099,34 @@
                 </div>
             </div>
             <div class="customize-settings-box">
+                <p>Header Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="instaCommentHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="instaCommentHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="instaCommentHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="instaCommentHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="instaCommentHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
                 <p>Edit Subheader Text</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-text dropdown-edit-text">
                         <textarea id="instaCommentSubheaderForm" class="text-input" data-type="editSubheader" type="text" placeholder="Enter Text"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Subheader Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="instaCommentSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="instaCommentSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="instaCommentSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="instaCommentSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="instaCommentSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
                     </div>
                 </div>
             </div>
@@ -1243,10 +1363,34 @@
                 </div>
             </div>
             <div class="customize-settings-box">
+                <p>Header Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="instaLikeHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="instaLikeHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="instaLikeHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="instaLikeHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="instaLikeHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
                 <p>Edit Subheader Text</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-text dropdown-edit-text">
                         <textarea id="instaLikeSubheaderForm" class="text-input" data-type="editSubheader" type="text" placeholder="Enter Text"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Subheader Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="instaLikeSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="instaLikeSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="instaLikeSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="instaLikeSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="instaLikeSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
                     </div>
                 </div>
             </div>
@@ -1485,10 +1629,34 @@
                 </div>
             </div>
             <div class="customize-settings-box">
+                <p>Header Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="facebookFollowHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="facebookFollowHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="facebookFollowHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="facebookFollowHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="facebookFollowHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
                 <p>Edit Subheader Text</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-text dropdown-edit-text">
                         <textarea id="facebookFollowSubheaderForm" class="text-input" data-type="editSubheader" type="text" placeholder="Enter Text"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Subheader Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="facebookFollowSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="facebookFollowSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="facebookFollowSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="facebookFollowSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="facebookFollowSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
                     </div>
                 </div>
             </div>
@@ -1727,10 +1895,34 @@
                 </div>
             </div>
             <div class="customize-settings-box">
+                <p>Header Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="facebookCommenteaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="facebookCommenteaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="facebookCommenteaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="facebookCommenteaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="facebookCommenteaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
                 <p>Edit Subheader Text</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-text dropdown-edit-text">
                         <textarea id="facebookCommentSubheaderForm" class="text-input" data-type="editSubheader" type="text" placeholder="Enter Text"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Subheader Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="facebookCommentSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="facebookCommentSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="facebookCommentSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="facebookCommentSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="facebookCommentSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
                     </div>
                 </div>
             </div>
@@ -1969,10 +2161,34 @@
                 </div>
             </div>
             <div class="customize-settings-box">
+                <p>Header Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="facebookLikeHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="facebookLikeHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="facebookLikeHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="facebookLikeHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="facebookLikeHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
                 <p>Edit Subheader Text</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-text dropdown-edit-text">
                         <textarea id="facebookLikeSubheaderForm" class="text-input" data-type="editSubheader" type="text" placeholder="Enter Text"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Subheader Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="facebookLikeSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="facebookLikeSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="facebookLikeSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="facebookLikeSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="facebookLikeSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
                     </div>
                 </div>
             </div>
@@ -2211,10 +2427,34 @@
                 </div>
             </div>
             <div class="customize-settings-box">
+                <p>Header Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="tiktokFollowHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="tiktokFollowHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="tiktokFollowHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="tiktokFollowHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="tiktokFollowHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
                 <p>Edit Subheader Text</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-text dropdown-edit-text">
                         <textarea id="tiktokFollowSubheaderForm" class="text-input" data-type="editSubheader" type="text" placeholder="Enter Text"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Subheader Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="tiktokFollowSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="tiktokFollowSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="tiktokFollowSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="tiktokFollowSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="tiktokFollowSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
                     </div>
                 </div>
             </div>
@@ -2453,10 +2693,34 @@
                 </div>
             </div>
             <div class="customize-settings-box">
+                <p>Header Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="tiktokCommentHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="tiktokCommentHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="tiktokCommentHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="tiktokCommentHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="tiktokCommentHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
                 <p>Edit Subheader Text</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-text dropdown-edit-text">
                         <textarea id="tiktokCommentSubheaderForm" class="text-input" data-type="editSubheader" type="text" placeholder="Enter Text"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Subheader Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="tiktokCommentSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="tiktokCommentSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="tiktokCommentSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="tiktokCommentSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="tiktokCommentSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
                     </div>
                 </div>
             </div>
@@ -2695,10 +2959,34 @@
                 </div>
             </div>
             <div class="customize-settings-box">
+                <p>Header Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="tiktokLikeHeaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="tiktokLikeHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="tiktokLikeHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="tiktokLikeHeaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="tiktokLikeHeaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
                 <p>Edit Subheader Text</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-text dropdown-edit-text">
                         <textarea id="tiktokLikeSubheaderForm" class="text-input" data-type="editSubheader" type="text" placeholder="Enter Text"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Subheader Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="tiktoktLikeSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="tiktoktLikeSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="tiktoktLikeSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="tiktoktLikeSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="tiktoktLikeSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
                     </div>
                 </div>
             </div>
@@ -2937,10 +3225,34 @@
                 </div>
             </div>
             <div class="customize-settings-box">
+                <p>Header Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="referHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="referHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="referHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="referHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="referHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
                 <p>Edit Subheader Text</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-text dropdown-edit-text">
                         <textarea id="referSubheaderForm" class="text-input" data-type="editSubheader" type="text" placeholder="Enter Text"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Subheader Font Style</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-inline-btns">
+                        <img id="referSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
+                        <img id="referSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
+                        <img id="referSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
+                        <img id="referSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
+                        <img id="referSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
                     </div>
                 </div>
             </div>

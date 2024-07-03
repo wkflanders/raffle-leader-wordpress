@@ -124,6 +124,13 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     let pickrTiktokLikeBackground = undefined;
     let pickrTiktokLikeBorder = undefined;
 
+    let pickrReferHeader = undefined;
+    let pickrReferSubheader = undefined;
+    let pickrReferButton = undefined;
+    let pickrReferBackground = undefined;
+    let pickrReferBorder = undefined;
+
+
     let pickrRaffleBackground = undefined;
     let pickrFooterFont = undefined;
     let pickrFooterBackground = undefined;
@@ -672,6 +679,20 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 const subheaderTiktokLikeDropDownDisplay =  document.getElementById('tiktokLikeSubheaderDropDownTitle');
                 selectedTiktokLikeSubheaderElement.style.fontFamily = `${fontName}`;
                 subheaderTiktokLikeDropDownDisplay.innerText = fontName;
+                break;
+
+            case 'referHeaderFont':
+                const selectedReferHeaderElement = selectedSection.querySelector('h2');
+                const headerReferDropDownDisplay = document.getElementById('referHeaderDropDownTitle');
+                selectedReferHeaderElement.style.fontFamily = `${fontName}`;
+                headerReferDropDownDisplay.innerText = fontName;
+                break;
+
+            case 'referSubheaderFont':
+                const selectedReferSubheaderElement = selectedSection.querySelector('p');
+                const subheaderReferDropDownDisplay =  document.getElementById('referSubheaderDropDownTitle');
+                selectedReferSubheaderElement.style.fontFamily = `${fontName}`;
+                subheaderReferDropDownDisplay.innerText = fontName;
                 break;
         }
 
@@ -2552,6 +2573,131 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 pickrTiktokLikeBorder.show();
             
                 pickrTiktokLikeBorder.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'referHeaderColor':
+                const currentReferHeaderFontColor = document.getElementById('referHeaderFontColorForm').value;
+            
+                pickrReferHeader = Pickr.create({
+                    el: referHeaderColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentReferHeaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                        opacity: true,
+                    }
+                });
+                pickrReferHeader.setColorRepresentation('HEX');
+                pickrReferHeader.show();
+            
+                pickrReferHeader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+            
+            case 'referSubheaderColor':
+                const currentReferSubheaderFontColor = document.getElementById('referSubheaderFontColorForm').value;
+            
+                pickrReferSubheader = Pickr.create({
+                    el: tiktokLikeSubheaderColorGradient,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentReferSubheaderFontColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                        opacity: true,
+                    }
+                });
+                pickrReferSubheader.setColorRepresentation('HEX');
+                pickrReferSubheader.show();
+            
+                pickrReferSubheader.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+                
+            case 'referButtonColor':
+                const currentReferButtonColor = document.getElementById('referButtonColorForm').value;
+            
+                pickrReferButton = Pickr.create({
+                    el: referColorGradientButton,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentReferButtonColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                        opacity: true,
+                    }
+                });
+                pickrReferButton.setColorRepresentation('HEX');
+                pickrReferButton.show();
+            
+                pickrReferButton.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+            
+            case 'referBackgroundColor':
+                const currentReferBackgroundColor = document.getElementById('referBackgroundColorForm').value;
+            
+                pickrReferBackground = Pickr.create({
+                    el: referColorGradientBackground,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentReferBackgroundColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                        opacity: true,
+                    }
+                });
+                pickrReferBackground.setColorRepresentation('HEX');
+                pickrReferBackground.show();
+            
+                pickrReferBackground.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+            
+            case 'referBorderColor':
+                const currentReferBorderColor = document.getElementById('referBorderColorForm').value;
+            
+                pickrReferBorder = Pickr.create({
+                    el: referColorGradientBorder,
+                    theme: 'classic', // or 'monolith', or 'nano'
+                    default: currentReferBorderColor,
+                    useAsButton: true,
+                    padding: 15,
+                    components: {
+                        hue: true,
+                        opacity: true,
+                    }
+                });
+                pickrReferBorder.setColorRepresentation('HEX');
+                pickrReferBorder.show();
+            
+                pickrReferBorder.on('change', (color)=>{
                     const selectedColor = '#'.concat(...color.toHEXA());
                     this.style.backgroundColor = selectedColor;
                     
@@ -4836,6 +4982,150 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 tiktokLikeEditElementBorder.style.borderRight = `${tiktokLikeCurrentBorderStrokeRight} solid ${color}`;
                 break;
 
+            case 'referHeaderColor':
+                if(fromPickr === false){
+                    if(pickrReferHeader === undefined){
+                        pickrReferHeader = Pickr.create({
+                            el: referHeaderColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrReferHeader.setColor(color);
+                        const hexBoxClick = document.getElementById('referHeaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('referHeaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementReferHeader = document.querySelector('.selected-raffleleader-section').querySelector('h2');
+                editElementReferHeader.style.color = color;
+                break;
+            
+            case 'referSubheaderColor':
+                if(fromPickr === false){
+                    if(pickrReferSubheader === undefined){
+                        pickrReferSubheader = Pickr.create({
+                            el: referSubheaderColorGradient,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrReferSubheader.setColor(color);
+                        const hexBoxClick = document.getElementById('referSubheaderFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('referSubheaderFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const editElementReferSubheader = document.querySelector('.selected-raffleleader-section').querySelector('p');
+                editElementReferSubheader.style.color = color;
+                break;
+            
+            case 'referButtonColor':
+                if(fromPickr === false){
+                    if(pickrReferButton === undefined){
+                        pickrReferButton = Pickr.create({
+                            el: referColorGradientButton,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrReferButton.setColor(color);
+                        const hexBoxClick = document.getElementById('referButtonColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('referButtonColorForm');
+                    hexBoxText.value = color;
+                }
+                const referEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                referEditElementButton.style.backgroundColor = color;
+                break;
+            
+            case 'referBackgroundColor':
+                if(fromPickr === false){
+                    if(pickrReferBackground === undefined){
+                        pickrReferBackground = Pickr.create({
+                            el: referColorGradientBackground,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrReferBackground.setColor(color);
+                        const hexBoxClick = document.getElementById('referBackgroundColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('referBackgroundColorForm');
+                    hexBoxText.value = color;
+                }
+                const referEditElementBackground = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                referEditElementBackground.style.backgroundColor = color;
+                break;
+            
+            case 'referBorderColor':
+                if(fromPickr === false){
+                    if(pickrReferBorder === undefined){
+                        pickrReferBorder = Pickr.create({
+                            el: referColorGradientBorder,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrReferBorder.setColor(color);
+                        const hexBoxClick = document.getElementById('referBorderColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('referBorderColorForm');
+                    hexBoxText.value = color;
+                }
+                const referEditElementBorder = document.querySelector('.selected-raffleleader-section').querySelector('.raffleleader-additional-entry-section');
+                
+                const referCurrentBorderStrokeTop = getComputedStyle(referEditElementBorder).borderTopWidth;
+                const referCurrentBorderStrokeLeft = getComputedStyle(referEditElementBorder).borderLeftWidth;
+                const referCurrentBorderStrokeBottom = getComputedStyle(referEditElementBorder).borderBottomWidth;
+                const referCurrentBorderStrokeRight = getComputedStyle(referEditElementBorder).borderRightWidth;
+            
+                referEditElementBorder.style.borderTop = `${referCurrentBorderStrokeTop} solid ${color}`;
+                referEditElementBorder.style.borderLeft = `${referCurrentBorderStrokeLeft} solid ${color}`;
+                referEditElementBorder.style.borderBottom = `${referCurrentBorderStrokeBottom} solid ${color}`;
+                referEditElementBorder.style.borderRight = `${referCurrentBorderStrokeRight} solid ${color}`;
+                break;
+
             case 'raffleBackgroundColor':
                 if(fromPickr === false){
                     if(pickrRaffleBackground === undefined){
@@ -5064,6 +5354,16 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'tiktokLikeSubheaderFontSize':
                 const tiktokLikeSubheaderSection = selectedSection.querySelector('p');
                 tiktokLikeSubheaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'referHeaderFontSize':
+                const referHeaderSection = selectedSection.querySelector('h2');
+                referHeaderSection.style.fontSize = `${fontSize}px`;
+                break;
+
+            case 'referSubheaderFontSize':
+                const referSubheaderSection = selectedSection.querySelector('p');
+                referSubheaderSection.style.fontSize = `${fontSize}px`;
                 break;
         }
     }
@@ -5465,6 +5765,20 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 if(strokeFormID === 'tiktokLikeBorderBottomStroke') tiktokLikeSection.style.borderBottom = `${borderStroke}px solid ${tiktokLikeCurrentBorderColorBottom}`;
                 if(strokeFormID === 'tiktokLikeBorderRightStroke') tiktokLikeSection.style.borderRight = `${borderStroke}px solid ${tiktokLikeCurrentBorderColorRight}`;
                 break;
+
+            case 'referBorderStroke':
+                const referSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+            
+                const referCurrentBorderColorTop = getComputedStyle(referSection).borderTopColor;
+                const referCurrentBorderColorLeft = getComputedStyle(referSection).borderLeftColor;
+                const referCurrentBorderColorBottom = getComputedStyle(referSection).borderBottomColor;
+                const referCurrentBorderColorRight = getComputedStyle(referSection).borderRightColor;
+            
+                if(strokeFormID === 'referBorderTopStroke') referSection.style.borderTop = `${borderStroke}px solid ${referCurrentBorderColorTop}`;
+                if(strokeFormID === 'referBorderLeftStroke') referSection.style.borderLeft = `${borderStroke}px solid ${referCurrentBorderColorLeft}`;
+                if(strokeFormID === 'referBorderBottomStroke') tiktokLikeSection.style.borderBottom = `${borderStroke}px solid ${referCurrentBorderColorBottom}`;
+                if(strokeFormID === 'referBorderRightStroke') referSection.style.borderRight = `${borderStroke}px solid ${referCurrentBorderColorRight}`;
+                break;
             }
     }
 
@@ -5656,6 +5970,15 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 if(radiusFormID === 'tiktokLikeBorderTopRightRadius') tiktokLikeSection.style.borderTopRightRadius = `${borderRadius}px`;
                 if(radiusFormID === 'tiktokLikeBorderBottomLeftRadius') tiktokLikeSection.style.borderBottomLeftRadius = `${borderRadius}px`;
                 if(radiusFormID === 'tiktokLikeBorderBottomRightRadius') tiktokLikeSection.style.borderBottomRightRadius = `${borderRadius}px`;
+                break;
+
+            case 'tiktokLikeBorderRadius':
+                const referSection = selectedSection.querySelector('.raffleleader-additional-entry-section');
+            
+                if(radiusFormID === 'referBorderTopLeftRadius') referSection.style.borderTopLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'referBorderTopRightRadius') referSection.style.borderTopRightRadius = `${borderRadius}px`;
+                if(radiusFormID === 'referBorderBottomLeftRadius') referSection.style.borderBottomLeftRadius = `${borderRadius}px`;
+                if(radiusFormID === 'referBorderBottomRightRadius') referSection.style.borderBottomRightRadius = `${borderRadius}px`;
                 break;
         }
     }

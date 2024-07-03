@@ -5375,7 +5375,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
         switch(elementType){
             case 'textfStyle':
-                selectedElement = selectedSection.querySelector('h2');
+                const selectedElement = selectedSection.querySelector('h2');
                 const textFontWeight = window.getComputedStyle(selectedElement).getPropertyValue('font-weight').replace(/^"|"$/g, '');
                 selectedElement.style.fontWeight = textFontWeight === "bold" ? 'normal'
                                                  : textFontWeight >= "500" ? 'normal'
@@ -5385,6 +5385,33 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 } else {
                     inputBoldBtn.classList.remove('inline-btn-style-active');
                 }
+                break;
+
+            case 'headerfStyle':
+                const selectedHeader = selectedSection.querySelector('h2');
+                const headerFontWeight = window.getComputedStyle(selectedHeader).getPropertyValue('font-weight').replace(/^"|"$/g, '');
+                selectedHeader.style.fontWeight = headerFontWeight === "bold" ? 'normal'
+                                                    : headerFontWeight >= "500" ? 'normal'
+                                                    : 'bold'; 
+                if(!inputBoldBtn.classList.contains('inline-btn-style-active')){
+                    inputBoldBtn.classList.add('inline-btn-style-active');
+                } else {
+                    inputBoldBtn.classList.remove('inline-btn-style-active');
+                }
+                break;
+
+            case 'subheaderfStyle':
+                const selectedSubheader = selectedSection.querySelector('p');
+                const subheaderFontWeight = window.getComputedStyle(selectedSubheader).getPropertyValue('font-weight').replace(/^"|"$/g, '');
+                selectedSubheader.style.fontWeight = subheaderFontWeight === "bold" ? 'normal'
+                                                    : subheaderFontWeight >= "500" ? 'normal'
+                                                    : 'bold'; 
+                if(!inputBoldBtn.classList.contains('inline-btn-style-active')){
+                    inputBoldBtn.classList.add('inline-btn-style-active');
+                } else {
+                    inputBoldBtn.classList.remove('inline-btn-style-active');
+                }
+                break;
         }
     }
 
@@ -5395,13 +5422,34 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
         switch(elementType){
             case 'textfStyle':
-                selectedElement = selectedSection.querySelector('h2');
+                const selectedElement = selectedSection.querySelector('h2');
                 selectedElement.style.fontStyle = selectedElement.style.fontStyle === "italic" ? 'normal' : 'italic';
                 if(!inputItalicizeBtn.classList.contains('inline-btn-style-active')){
                     inputItalicizeBtn.classList.add('inline-btn-style-active');
                 } else {
                     inputItalicizeBtn.classList.remove('inline-btn-style-active');
                 }
+                break;
+
+            case 'headerfStyle':
+                const selectedHeader = selectedSection.querySelector('h2');
+                selectedHeader.style.fontStyle = selectedHeader.style.fontStyle === "italic" ? 'normal' : 'italic';
+                if(!inputItalicizeBtn.classList.contains('inline-btn-style-active')){
+                    inputItalicizeBtn.classList.add('inline-btn-style-active');
+                } else {
+                    inputItalicizeBtn.classList.remove('inline-btn-style-active');
+                }
+                break;
+
+            case 'subheaderfStyle':
+                const selectedSubheader = selectedSection.querySelector('p');
+                selectedSubheader.style.fontStyle = selectedSubheader.style.fontStyle === "italic" ? 'normal' : 'italic';
+                if(!inputItalicizeBtn.classList.contains('inline-btn-style-active')){
+                    inputItalicizeBtn.classList.add('inline-btn-style-active');
+                } else {
+                    inputItalicizeBtn.classList.remove('inline-btn-style-active');
+                }
+                break;
         }
     }
 
@@ -5412,7 +5460,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
         switch(elementType){
             case 'textfStyle':
-                selectedElement = selectedSection.querySelector('h2');
+                const selectedElement = selectedSection.querySelector('h2');
 
                 let currentStyle = selectedElement.style.textDecoration;
                 if(currentStyle.includes('underline')){
@@ -5426,6 +5474,41 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 } else {
                     inputUnderlineBtn.classList.remove('inline-btn-style-active');
                 }
+                break;
+
+            case 'headerfStyle':
+                const selectedHeader = selectedSection.querySelector('h2');
+
+                let currentHeaderStyle = selectedHeader.style.textDecoration;
+                if(currentHeaderStyle.includes('underline')){
+                    selectedHeader.style.textDecoration = currentHeaderStyle.replace('underline', '').trim();
+                } else {
+                    selectedHeader.style.textDecoration = currentHeaderStyle + ' underline';
+                }
+                
+                if(!inputUnderlineBtn.classList.contains('inline-btn-style-active')){
+                    inputUnderlineBtn.classList.add('inline-btn-style-active');
+                } else {
+                    inputUnderlineBtn.classList.remove('inline-btn-style-active');
+                }
+                break;
+
+            case 'subheaderfStyle':
+                const selectedSubheader = selectedSection.querySelector('p');
+
+                let currentSubheaderStyle = selectedSubheader.style.textDecoration;
+                if(currentSubheaderStyle.includes('underline')){
+                    selectedSubheader.style.textDecoration = currentSubheaderStyle.replace('underline', '').trim();
+                } else {
+                    selectedSubheader.style.textDecoration = currentSubheaderStyle + ' underline';
+                }
+                
+                if(!inputUnderlineBtn.classList.contains('inline-btn-style-active')){
+                    inputUnderlineBtn.classList.add('inline-btn-style-active');
+                } else {
+                    inputUnderlineBtn.classList.remove('inline-btn-style-active');
+                }
+                break;
         }
     }
 
@@ -5436,7 +5519,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
         switch(elementType){
             case 'textfStyle':
-                selectedElement = selectedSection.querySelector('h2');
+                const selectedElement = selectedSection.querySelector('h2');
                 
                 let currentStyle = selectedElement.style.textDecoration;
                 if(currentStyle.includes('line-through')){
@@ -5450,6 +5533,41 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 } else {
                     inputStrikeBtn.classList.remove('inline-btn-style-active');
                 }
+                break;
+
+            case 'headerfStyle':
+                const selectedHeader = selectedSection.querySelector('h2');
+                
+                let currentHeaderStyle = selectedHeader.style.textDecoration;
+                if(currentStyle.includes('line-through')){
+                    selectedHeader.style.textDecoration = currentHeaderStyle.replace('line-through', '').trim();
+                } else {
+                    selectedHeader.style.textDecoration = currentHeaderStyle + ' line-through';
+                }             
+
+                if(!inputStrikeBtn.classList.contains('inline-btn-style-active')){
+                    inputStrikeBtn.classList.add('inline-btn-style-active');
+                } else {
+                    inputStrikeBtn.classList.remove('inline-btn-style-active');
+                }
+                break;
+
+            case 'subheaderfStyle':
+                const selectedSubheader = selectedSection.querySelector('p');
+                
+                let currentSubheaderStyle = selectedSubheader.style.textDecoration;
+                if(currentSubheaderStyle.includes('line-through')){
+                    selectedSubheader.style.textDecoration = currentSubheaderStyle.replace('line-through', '').trim();
+                } else {
+                    selectedSubheader.style.textDecoration = currentSubheaderStyle + ' line-through';
+                }             
+
+                if(!inputStrikeBtn.classList.contains('inline-btn-style-active')){
+                    inputStrikeBtn.classList.add('inline-btn-style-active');
+                } else {
+                    inputStrikeBtn.classList.remove('inline-btn-style-active');
+                }
+                break;
         }
     }
 
@@ -5460,7 +5578,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
         switch(elementType){
             case 'textfStyle':
-                selectedElement = selectedSection.querySelector('h2');
+                const selectedElement = selectedSection.querySelector('h2');
                 
                 let currentStyle = selectedElement.style.textDecoration;
                 if(currentStyle.includes('overline')){
@@ -5474,6 +5592,41 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 } else {
                     inputOverlineBtn.classList.remove('inline-btn-style-active');
                 }
+                break;
+
+            case 'headerfStyle':
+                const selectedHeader = selectedSection.querySelector('h2');
+                
+                let currentHeaderStyle = selectedHeader.style.textDecoration;
+                if(currentHeaderStyle.includes('overline')){
+                    selectedHeader.style.textDecoration = currentHeaderStyle.replace('overline', '').trim();
+                } else {
+                    selectedHeader.style.textDecoration = currentHeaderStyle + ' overline';
+                }             
+
+                if(!inputOverlineBtn.classList.contains('inline-btn-style-active')){
+                    inputOverlineBtn.classList.add('inline-btn-style-active');
+                } else {
+                    inputOverlineBtn.classList.remove('inline-btn-style-active');
+                }
+                break;
+
+            case 'subheaderfStyle':
+                const selectedSubheader = selectedSection.querySelector('p');
+                
+                let currentSubheaderStyle = selectedSubheader.style.textDecoration;
+                if(currentSubheaderStyle.includes('overline')){
+                    selectedSubheader.style.textDecoration = currentSubheaderStyle.replace('overline', '').trim();
+                } else {
+                    selectedSubheader.style.textDecoration = currentSubheaderStyle + ' overline';
+                }             
+
+                if(!inputOverlineBtn.classList.contains('inline-btn-style-active')){
+                    inputOverlineBtn.classList.add('inline-btn-style-active');
+                } else {
+                    inputOverlineBtn.classList.remove('inline-btn-style-active');
+                }
+                break;
         }
     }
 

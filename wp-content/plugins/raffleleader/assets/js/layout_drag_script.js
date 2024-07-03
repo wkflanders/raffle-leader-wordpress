@@ -391,8 +391,8 @@ document.addEventListener('previewLoaded', () => {
                                 <h2>Refer a friend</h2>
                                 <p>for an extra entry!</p>
                             </div>
-                            <div class="raffleleader-additional-entry-button-column">
-                                <button data-link="https://instagram.com/">+1</button>
+                            <div class="raffleleader-additional-entry-button-column raffleleader-additional-entry-button-column-refer">
+                                <button data-link="https://instagram.com/">Copy Link</button>
                             </div>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">

@@ -15,6 +15,8 @@ class BuilderController extends BaseController{
 
     private $raffleAPI;
 
+    private $license;
+
     private $entriesAPI;
 
     private $contestantsAPI;
@@ -29,6 +31,8 @@ class BuilderController extends BaseController{
 
         $this->raffleAPI = new RaffleAPI();
 
+        $this->license = new License();
+
         $this->contestantsAPI = new ContestantsAPI();
         
         $this->entriesAPI = new EntriesAPI();
@@ -37,9 +41,10 @@ class BuilderController extends BaseController{
 
         $this->settings = new SettingsAPI();
 
-        $this->setSubpages();
-
-        $this->settings->addSubPages( $this->subpages )->register();
+        if( $this->license->isLicenseValid() ){
+            $this->setSubpages();
+            $this->settings->addSubPages( $this->subpages )->register();
+        }
 
         // add_action( 'wp_ajax_loadTemplates', array( $this, 'loadTemplates' ) );
         add_action( 'wp_ajax_saveTemplate', array( $this, 'saveTemplate' ) );
@@ -66,6 +71,14 @@ class BuilderController extends BaseController{
                 'capability' => 'manage_options',
                 'menu_slug' => 'raffleleader_builder',
                 'callback' => array( $this->builderCallbacks, 'builderContent' ),
+            ),
+            array(
+                'parent_slug' => $this->parent_slug,
+                'page_title' => 'License',
+                'menu_title' => 'License',
+                'capability' => 'manage_options',
+                'menu_slug' => 'raffleleader_license',
+                'callback' => array( $this->license, 'licensePageCallback' ),
             ),
         );
     }

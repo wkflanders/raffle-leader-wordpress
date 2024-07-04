@@ -61,6 +61,12 @@ class SettingsAPI{
         return $this;
     }
 
+    public function clearSubPages(){
+        $this->admin_subpages = array();
+
+        return $this;
+    }
+
     public function addSubPages( array $pages ){
         $this->admin_subpages = array_merge( $this->admin_subpages, $pages );
 

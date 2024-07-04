@@ -14,6 +14,11 @@ class Enqueue extends BaseController{
         $this->loadWPAdminBackEnd();
     }
 
+    public function loadLicense(){
+        // Dummy callback
+        return;
+    }
+
     public function loadRaffleFrontEnd(){
         add_action( 'wp_enqueue_scripts', array( $this, 'enqueueRaffleFrontEnd' ) );
     }

@@ -6,6 +6,7 @@
 namespace Includes\Base;
 
 use Includes\API\Callbacks\BuilderCallbacks;
+use Includes\API\Callbacks\LicenseCallbacks;
 use Includes\API\ContestantsAPI;
 use Includes\API\EntriesAPI;
 use Includes\API\RaffleAPI;
@@ -16,6 +17,8 @@ class BuilderController extends BaseController{
     private $raffleAPI;
 
     private $license;
+
+    private $licenseCallbacks;
 
     private $entriesAPI;
 
@@ -32,6 +35,8 @@ class BuilderController extends BaseController{
         $this->raffleAPI = new RaffleAPI();
 
         $this->license = new License();
+
+        $this->licenseCallbacks = new LicenseCallbacks();
 
         $this->contestantsAPI = new ContestantsAPI();
         
@@ -78,7 +83,7 @@ class BuilderController extends BaseController{
                 'menu_title' => 'License',
                 'capability' => 'manage_options',
                 'menu_slug' => 'raffleleader_license',
-                'callback' => array( $this->license, 'licensePageCallback' ),
+                'callback' => array( $this->licenseCallbacks, 'licensePageCallback' ),
             ),
         );
     }

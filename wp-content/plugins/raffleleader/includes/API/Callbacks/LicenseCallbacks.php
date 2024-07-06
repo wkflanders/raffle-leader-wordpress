@@ -10,12 +10,11 @@ class LicenseCallbacks extends BaseController{
     }
 
     public function licenseSectionCallback() {
-        echo '<p>Please enter your license key to activate all features.</p>';
+        return require_once( "$this->plugin_path/includes/Content/license_section_content.php" );
     }
 
     public function licenseKeyFieldCallback() {
-        $value = get_option('raffleleader_license_key');
-        echo '<input type="text" id="raffleleader_license_key" name="raffleleader_license_key" value="' . esc_attr($value) . '">';
+        return require_once( "$this->plugin_path/includes/Content/license_field_content.php" );
     }
 
 }

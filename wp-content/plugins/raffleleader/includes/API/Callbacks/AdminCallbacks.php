@@ -22,16 +22,6 @@ class AdminCallbacks extends BaseController{
         echo "If you've purchased a pro version of the plugin, please enter your key here.";
     }
 
-    public function raffleleaderLicenseKey(){
-        $value = esc_attr( get_option( 'license_key' ) );
-        echo '
-        <div class=license_input>
-            <input type="text" class="regular-text" name="license_key" value="' . $value . '" 
-            placeholder="Enter License Key Here">
-            <button class="license_button">Submit</button>
-        </div>    ';
-    }
-
     public function raffleleaderSettings(){
         echo "General Settings";
     }

@@ -1,0 +1,1 @@
+<p>Please enter your license key to activate all features.</p>

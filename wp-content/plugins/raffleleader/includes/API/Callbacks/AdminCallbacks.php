@@ -18,10 +18,6 @@ class AdminCallbacks extends BaseController{
         return $input;
     }
 
-    public function raffleleaderLicenseSection(){
-        echo "If you've purchased a pro version of the plugin, please enter your key here.";
-    }
-
     public function raffleleaderSettings(){
         echo "General Settings";
     }

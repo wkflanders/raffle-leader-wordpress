@@ -137,7 +137,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         const rulesElement = document.querySelector('.raffleleader-rules-text');
         const rulesAndTermsForm = document.getElementById('rulesAndTermsForm');
 
-        const rulesText = rulesElement.innerHTML;
+        const rulesText = rulesElement !== null ? rulesElement.innerHTML : '';
         const inputFormText = rulesText.replace(/<br\s*[\/]?>/gi, '\n');
 
         rulesAndTermsForm.value = inputFormText;

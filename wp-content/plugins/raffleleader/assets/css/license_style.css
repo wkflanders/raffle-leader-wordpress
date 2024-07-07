@@ -33,7 +33,7 @@
 
 .wrap{
     font-family: 'Overpass', sans-serif;
-    margin-top: 5vh;
+    margin-top: 3.5vh;
 }
 
 .wrap p{
@@ -41,8 +41,7 @@
 }
 
 .wrap .raffleleader-license-prompt{
-    margin-left: 5px;
-    margin-bottom: 5vh;
+    margin-bottom: 6vh;
 }
 
 .wrap form{
@@ -56,10 +55,6 @@
 
 .wrap-form{
     width: 100%;
-}
-
-.wrap table{
-    margin-left: 5px;
 }
 
 .wrap th{

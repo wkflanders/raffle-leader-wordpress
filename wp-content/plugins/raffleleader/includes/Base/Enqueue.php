@@ -15,8 +15,11 @@ class Enqueue extends BaseController{
     }
 
     public function loadLicense(){
-        // Dummy callback
-        return;
+        add_action( 'admin_enqueue_scripts', array( $this, 'enqueueLicense' ) );
+    }
+
+    public function loadLicenseInfo(){
+        add_action( 'admin_enqueue_scripts', array( $this, 'enqueueLicenseInfo' ) );
     }
 
     public function loadRaffleFrontEnd(){
@@ -73,7 +76,7 @@ class Enqueue extends BaseController{
 
     public function enqueueWPAdminBackEnd(){
         wp_enqueue_style( 'raffleleader_classic_editor_style', $this->plugin_url . '/assets/css/classic_editor_style.css', array(), rand(111, 9999) );
-
+        
         wp_enqueue_script( 'raffleleader_classic_editor_script', $this->plugin_url . '/assets/js/classic_editor_script.js', array(), rand(111, 9999) );
         wp_localize_script( 'raffleleader_classic_editor_script', 'raffleleader_classic_editor_script_object', array( 
             'ajax_url' => admin_url( 'admin-ajax.php' ),
@@ -156,6 +159,14 @@ class Enqueue extends BaseController{
         wp_enqueue_script( 'raffleleader_overview_script', $this->plugin_url . '/assets/js/overview_script.js', array(), rand(111, 9999) );
 
         wp_enqueue_style( 'raffleleader_overview_table_style', $this->plugin_url . '/assets/css/overview_table_style.css', array(), rand(111, 9999) );
+    }
+
+    public function enqueueLicenseInfo(){
+        wp_enqueue_style( 'raffleleader_license_info_style', $this->plugin_url . '/assets/css/license_info_style.css', array(), rand(111, 9999) );
+    }
+
+    public function enqueueLicense(){
+        wp_enqueue_style( 'raffleleader_license_style', $this->plugin_url . '/assets/css/license_style.css', array(), rand(111, 9999) );
     }
 
     public function enqueueInfo(){

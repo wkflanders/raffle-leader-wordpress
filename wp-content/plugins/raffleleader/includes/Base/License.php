@@ -25,7 +25,7 @@ class License extends BaseController{
 
         add_settings_section(
             'raffleleader_license_section',
-            'License Settings',
+            '',
             array( $this->licenseCallbacks, 'licenseSectionCallback' ),
             'raffleleader_license'
         );

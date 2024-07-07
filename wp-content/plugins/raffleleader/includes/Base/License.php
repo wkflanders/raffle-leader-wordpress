@@ -44,6 +44,6 @@ class License extends BaseController{
     }
 
     public function isLicenseValid(){
-        return !empty( get_option( 'raffleleader_license_key' ) );
+        return get_option( 'raffleleader_license_key' ) === 'beta-test';
     }
 }

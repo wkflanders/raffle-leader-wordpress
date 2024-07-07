@@ -5,8 +5,12 @@ use Includes\Base\BaseController;
 
 class LicenseCallbacks extends BaseController{
 
-    public function  licensePageCallback() {
+    public function licensePageCallback() {
         return require_once( "$this->plugin_path/includes/Content/license_content.php" );
+    }
+
+    public function licenseInfoPageCallback() {
+        return require_once( "$this->plugin_path/includes/Content/license_info_content.php" );
     }
 
     public function licenseSectionCallback() {

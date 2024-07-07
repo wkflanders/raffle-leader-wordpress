@@ -79,11 +79,11 @@ class BuilderController extends BaseController{
             ),
             array(
                 'parent_slug' => $this->parent_slug,
-                'page_title' => 'License',
+                'page_title' => 'LicenseInfo',
                 'menu_title' => 'License',
                 'capability' => 'manage_options',
                 'menu_slug' => 'raffleleader_license',
-                'callback' => array( $this->licenseCallbacks, 'licensePageCallback' ),
+                'callback' => array( $this->licenseCallbacks, 'licenseInfoPageCallback' ),
             ),
         );
     }

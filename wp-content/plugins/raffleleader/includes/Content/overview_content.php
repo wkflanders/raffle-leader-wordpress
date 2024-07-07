@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <img class="raffleleader-overview-logo" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/TEXT-LOGO.svg">
     </div>
     <div class="raffleleader-overview-btn-container">
-        <button class="raffleleader-overview-create-btn" onclick="createNewRaffle">Create New Raffle</button>
+        <button class="raffleleader-overview-create-btn">Create New Raffle</button>
     </div>
 </nav>
 <div class="wrap">

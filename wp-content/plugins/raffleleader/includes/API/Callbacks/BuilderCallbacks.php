@@ -38,6 +38,30 @@ class BuilderCallbacks extends BaseController{
         }
     }
 
+    public function overviewCreateNew(){
+        $this->raffleAPI = new RaffleAPI();
+
+        $raffleID = $this->raffleAPI->addRaffle( array( 'status' => 'Draft' ) );
+
+        $args = array(
+            'name' => 'New Raffle #' . $raffleID,
+        );
+
+        $this->raffleInstance = $this->raffleAPI->updateRaffle( $raffleID, $args );
+
+        if( $raffleID > 0 ){
+
+            $redirectUrl = admin_url('admin.php?page=raffleleader_builder&raffle_id=' . $raffleID);
+
+            echo json_encode(array('success' => true, 'redirect' => $redirectUrl));
+            
+        } else {
+            echo json_encode(array('success' => false, 'message' => 'Error creating new raffle'));
+        }
+
+        wp_die();
+    }
+
     public function builderContent(){
         $raffle_id = isset( $_GET['raffle_id'] ) ? intval( $_GET['raffle_id'] ) : 0;
 

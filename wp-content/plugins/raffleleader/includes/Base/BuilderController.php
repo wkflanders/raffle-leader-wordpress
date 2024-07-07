@@ -56,6 +56,7 @@ class BuilderController extends BaseController{
         add_action( 'wp_ajax_sendTemplate', array( $this, 'sendTemplate' ) );
         add_action( 'wp_ajax_loadBuilderData', array( $this, 'loadBuilderData' ) );
         add_action( 'wp_ajax_savePreview', array( $this, 'savePreview' ) );
+        add_action( 'wp_ajax_overviewCreateNew', array( $this->builderCallbacks, 'overviewCreateNew' ) );
     }
 
     public function setSubpages(){

@@ -225,7 +225,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
-                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 163px; top: 417px; z-index: 10; width: 292px; height: 86px;"><div style="height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0);" data-type="textDetails" class="raffleleader-text-section">
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 157px; top: 417px; z-index: 10; width: 292px; height: 86px;"><div style="height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0);" data-type="textDetails" class="raffleleader-text-section">
                             <h2 style="white-space: pre-wrap; text-align: center; font-weight: normal; font-family: Urbanist; color: rgb(255, 255, 255); font-size: 70px; line-height: 30px;">Giftcard!</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">

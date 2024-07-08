@@ -11,7 +11,8 @@ h2 {
 }
 
 .raffleleader-email-input:focus{
-    background-color: inherit !important;
+    border: 1px solid inherit !important;
+    outline: none;
 }
 
 .raffleleader-rules-and-terms-preview{

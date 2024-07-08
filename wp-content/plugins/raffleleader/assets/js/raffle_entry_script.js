@@ -4,6 +4,7 @@ document.addEventListener('raffleLoaded', ()=>{
     let isSuccess = true;
     
     const emailForm = document.querySelector('.raffleleader-email-submit');
+    const fontColor = emailForm.querySelector('.raffleleader-email-input').style.color;
     const submitBtn = emailForm.querySelector('button');
     const emailInput = emailForm.querySelector('input');
     const raffleID = parseInt(emailForm.parentNode.parentNode.id, 10);
@@ -108,8 +109,6 @@ document.addEventListener('raffleLoaded', ()=>{
             console.log('Error: entry type missing.');
         }
 
-        console.log(inputEntryDetails);
-
         try{
             const response = await fetch(raffleleader_raffle_entry_object.ajax_url, {
                 method: 'POST',
@@ -157,9 +156,8 @@ document.addEventListener('raffleLoaded', ()=>{
                     updateEntryUI();
                     setTimeout(()=>{
                         const welcomeElement = document.createElement('div');
-                        welcomeElement.innerHTML = `
-                        <div class="logged-in-user">Welcome, ${emailInput.value}</div>
-                        ` ;
+                        welcomeElement.style.color = fontColor;
+                        welcomeElement.innerHTML = `<div class="logged-in-user">Welcome, ${emailInput.value}</div>` ;
                         emailForm.appendChild(welcomeElement);
 
                         emailInput.classList.add('logged-in-input');

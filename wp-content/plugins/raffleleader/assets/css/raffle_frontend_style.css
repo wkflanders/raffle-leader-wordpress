@@ -6,6 +6,14 @@ h2 {
     letter-spacing: 1px !important;
 }
 
+.raffleleader-section{
+    position: absolute !important;
+}
+
+.raffleleader-email-input:focus{
+    background-color: inherit !important;
+}
+
 .raffleleader-rules-and-terms-preview{
     display: flex;
     flex-direction: column;

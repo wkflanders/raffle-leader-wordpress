@@ -45,16 +45,16 @@
                         <div class="layout-options">
                             <p>Drag & drop to add sections to your raffle</p>
                             <div id="textBox" draggable="true" class="layout-option-box">
-                                <p>+ Text Section</p>
+                                <p>+ Text</p>
                             </div>
                             <div id="entryBox" draggable="true" class="layout-option-box">
-                                <p>+ Entry Section</p>
+                                <p>+ Entry</p>
                             </div>
                             <div id="counterBox" draggable="true" class="layout-option-box">
-                                <p>+ Counter Section</p>
+                                <p>+ Counter</p>
                             </div>
                             <div id="imageBox" draggable="true" class="layout-option-box">
-                                <p>+ Image Section</p>
+                                <p>+ Image</p>
                             </div>
                         </div>
                         <div class="layout-box layout-size">

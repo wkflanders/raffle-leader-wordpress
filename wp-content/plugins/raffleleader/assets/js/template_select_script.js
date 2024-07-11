@@ -139,6 +139,17 @@ document.addEventListener("generalSettingsLoaded", ()=>{
         if(currentTemplate){
             currentTemplate.classList.remove('chosen-template');
             template.classList.add('chosen-template');
+
+            document.querySelector("ul.rl-nav-tabs li.active-tab").classList.remove("active-tab");
+            document.querySelector(".rl-tab-pane.active-tab").classList.remove("active-tab");
+
+            setupTab.classList.add("active-tab");
+            document.querySelector('#setup').classList.add("active-tab");
+
+            if(customizeBox.classList.contains('slide-right-to-left')){
+                customizeBox.classList.toggle('slide-right-to-left');
+            }
+            
         } else {
             template.classList.add('chosen-template');
             document.querySelector("ul.rl-nav-tabs li.active-tab").classList.remove("active-tab");
@@ -173,16 +184,6 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                 document.dispatchEvent(tutorialPageTwo);
             }
         }
-
-        try{
-            const currentElement = document.querySelector('.selected-raffleleader-section');
-
-            currentElement.classList.remove('selected-raffleleader-section');
-            currentElement.querySelector('.raffleleader-resize-handle').style.display = 'none';
-            if(customizeBox.classList.contains('slide-right-to-left')){
-                customizeBox.classList.toggle('slide-right-to-left');
-            }
-        } catch {}
     }
 
     function injectTemplateHTML(templateType){

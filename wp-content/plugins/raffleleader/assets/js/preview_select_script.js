@@ -10,38 +10,42 @@ document.addEventListener("previewLoaded", ()=>{
 
     preview.addEventListener('mousedown', (event)=>{
         if(event.button === 0){
-
-            let selectedSection = event.target;
-            const currentSection = document.querySelector('.selected-raffleleader-section');
-
-            if(selectedSection.classList.contains('raffleleader-footer') || selectedSection.classList.contains('raffleleader-footer-wrapper') || selectedSection.classList.contains('raffleleader-footer-content') || selectedSection.id === 'raffleleader-dropzone'){
-                return;
-            }
-
-            while(selectedSection != dropzone){
-                if(selectedSection.classList.contains('raffleleader-section')){
-                    try{
-                        currentSection.classList.remove('selected-raffleleader-section');
-                        currentSection.querySelectorAll('.raffleleader-resize-handle').forEach(handle => handle.style.display = 'none');
-                        currentSection.querySelector('.raffleleader-layer-handle-container').style.display = 'none';
-                    } catch {}
-                    selectedSection.classList.add('selected-raffleleader-section');
-                    selectedSection.querySelectorAll('.raffleleader-resize-handle').forEach(handle => handle.style.display = 'block');
-                    selectedSection.querySelector('.raffleleader-layer-handle-container').style.display = 'flex';
-                    break;
-                }
-                selectedSection = selectedSection.parentElement;
-            }
-            if(selectedSection != dropzone){
-                const selectedElement = selectedSection.firstChild;
-                const elementType = selectedElement.getAttribute('data-type');
-
-                loadCustomizeSettings(selectedElement, elementType);
-
-                openEditingBox(elementType);
-            }
+            selectSection(event.target);
         }
     })
+
+    function selectSection(selectedSection){
+        const currentSection = document.querySelector('.selected-raffleleader-section');
+
+        if(selectedSection.classList.contains('raffleleader-footer') || selectedSection.classList.contains('raffleleader-footer-wrapper') || selectedSection.classList.contains('raffleleader-footer-content') || selectedSection.id === 'raffleleader-dropzone'){
+            return;
+        }
+
+        while(selectedSection != dropzone){
+            if(selectedSection.classList.contains('raffleleader-section')){
+                try{
+                    currentSection.classList.remove('selected-raffleleader-section');
+                    currentSection.querySelectorAll('.raffleleader-resize-handle').forEach(handle => handle.style.display = 'none');
+                    currentSection.querySelector('.raffleleader-layer-handle-container').style.display = 'none';
+                } catch {}
+                selectedSection.classList.add('selected-raffleleader-section');
+                selectedSection.querySelectorAll('.raffleleader-resize-handle').forEach(handle => handle.style.display = 'block');
+                selectedSection.querySelector('.raffleleader-layer-handle-container').style.display = 'flex';
+                break;
+            }
+            selectedSection = selectedSection.parentElement;
+        }
+        if(selectedSection != dropzone){
+            const selectedElement = selectedSection.firstChild;
+            const elementType = selectedElement.getAttribute('data-type');
+
+            loadCustomizeSettings(selectedElement, elementType);
+
+            openEditingBox(elementType);
+        }
+    }
+
+    window.selectSection = selectSection;
 
     function openEditingBox(elementType){
         const editingElement = document.getElementById(elementType);

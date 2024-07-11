@@ -3,27 +3,35 @@
         <div class="header-box">
             <h2 class="header-box-title">Additional Entries</h2>
         </div>
-        <p class="dropdown-wrapper-text">Drag & drop to add additional entries</p>
+        <p class="dropdown-wrapper-text">Click to select an entry type</p>
         <div class="dropdown-settings-wrapper">
+            <div class="customize-settings-box">
+                <p>Email Entry</p>
+                <div class="customize-settings-dropdown">
+                    <div id="emailEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
+                        <p class="entry-text"><img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/email_logos.svg"> Email</p>                                        
+                    </div>
+                </div>
+            </div>
             <div class="customize-settings-box">
                 <p>X/Twitter Entries</p>
                 <div class="customize-settings-dropdown">
                     <div id="XFollowEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
-                        <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/X_logo.svg"> Follow</p>                                        
+                        <p class="entry-text"><img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/X_logo.svg"> Follow</p>                                        
                     </div>
                 </div>
             </div>
             <div class="customize-settings-box">
                 <div class="customize-settings-dropdown">
                     <div id="XRepostEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
-                        <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/X_logo.svg"> Repost</p>                                        
+                        <p class="entry-text"><img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/X_logo.svg"> Repost</p>                                        
                     </div>
                 </div>
             </div>
             <div class="customize-settings-box">
                 <div class="customize-settings-dropdown">
                     <div id="XLikeEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
-                        <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/X_logo.svg"> Like</p>                                        
+                        <p class="entry-text"><img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/X_logo.svg"> Like</p>                                        
                     </div>
                 </div>
             </div>
@@ -31,21 +39,21 @@
                 <p>Instagram Entries</p>
                 <div class="customize-settings-dropdown">
                     <div id="instaFollowEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
-                        <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/instagram_logo.svg"> Follow</p>                                        
+                        <p class="entry-text"><img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/instagram_logo.svg"> Follow</p>                                        
                     </div>
                 </div>
             </div>
             <div class="customize-settings-box">
                 <div class="customize-settings-dropdown">
                     <div id="instaCommentEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
-                        <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/instagram_logo.svg"> Comment</p>                                        
+                        <p class="entry-text"><img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/instagram_logo.svg"> Comment</p>                                        
                     </div>
                 </div>
             </div>
             <div class="customize-settings-box">
                 <div class="customize-settings-dropdown">
                     <div id="instaLikeEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
-                        <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/instagram_logo.svg"> Like</p>                                        
+                        <p class="entry-text"><img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/instagram_logo.svg"> Like</p>                                        
                     </div>
                 </div>
             </div>
@@ -53,21 +61,21 @@
                 <p>Facebook Entries</p>
                 <div class="customize-settings-dropdown">
                     <div id="facebookFollowEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
-                        <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/facebook_logo.svg"> Follow</p>                                        
+                        <p class="entry-text"><img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/facebook_logo.svg"> Follow</p>                                        
                     </div>
                 </div>
             </div>
             <div class="customize-settings-box">
                 <div class="customize-settings-dropdown">
                     <div id="facebookCommentEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
-                        <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/facebook_logo.svg"> Comment</p>                                        
+                        <p class="entry-text"><img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/facebook_logo.svg"> Comment</p>                                        
                     </div>
                 </div>
             </div>
             <div class="customize-settings-box">
                 <div class="customize-settings-dropdown">
                     <div id="facebookLikeEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
-                        <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/facebook_logo.svg"> Like</p>                                        
+                        <p class="entry-text"><img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/facebook_logo.svg"> Like</p>                                        
                     </div>
                 </div>
             </div>
@@ -75,21 +83,21 @@
                 <p>TikTok Entries</p>
                 <div class="customize-settings-dropdown">
                     <div id="tiktokFollowEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
-                        <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/tiktok_logo.svg"> Follow</p>                                        
+                        <p class="entry-text"><img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/tiktok_logo.svg"> Follow</p>                                        
                     </div>
                 </div>
             </div>
             <div class="customize-settings-box">
                 <div class="customize-settings-dropdown">
                     <div id="tiktokCommentEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
-                        <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/tiktok_logo.svg"> Comment</p>                                        
+                        <p class="entry-text"><img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/tiktok_logo.svg"> Comment</p>                                        
                     </div>
                 </div>
             </div>
             <div class="customize-settings-box">
                 <div class="customize-settings-dropdown">
                     <div id="tiktokLikeEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
-                        <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/tiktok_logo.svg"> Like</p>                                        
+                        <p class="entry-text"><img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/tiktok_logo.svg"> Like</p>                                        
                     </div>
                 </div>
             </div>
@@ -97,7 +105,7 @@
                 <p>Refer-A-Friend Entry</p>
                 <div class="customize-settings-dropdown">
                     <div id="referEntry" draggable="true" class="dropdown-display dropdown-additional-entry">
-                        <p class="entry-text">+ <img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/refer_logo.svg"> Refer-A-Friend</p>                                        
+                        <p class="entry-text"><img class="entry-img" draggable="false" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/refer_logo.svg"> Refer-A-Friend</p>                                        
                     </div>
                 </div>
             </div>

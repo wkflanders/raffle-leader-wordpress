@@ -62,10 +62,6 @@ document.addEventListener('previewLoaded', () => {
             newElement.style.width = '500px';
             newElement.style.height = '300px';
         } else if(dragElement.id === 'entryBox'){
-            if(dropzone.querySelector('.raffleleader-entry-section')){
-                console.log('You can only have 1 entry element');
-                return;
-            }
             newElement.style.width = '500px';
             newElement.style.height = '80px';
             newElement.id = `${raffleID}raffleID`;
@@ -94,6 +90,8 @@ document.addEventListener('previewLoaded', () => {
         newElement.style.left = `${centerX}px`;
         newElement.style.top = `${centerY}px`;
         newElement.style.zIndex = window.globalZIndex;
+
+        selectSection(newElement);
     }
 
     function generateHTML(ID){

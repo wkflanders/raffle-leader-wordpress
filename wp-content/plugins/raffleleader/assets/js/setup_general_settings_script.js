@@ -5,6 +5,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     const generalSettingsLoaded = new CustomEvent('generalSettingsLoaded');
 
+    document.addEventListener('previewLoaded', ()=>{ 
+        const rulesAndTermsBtn = document.querySelector('.raffleleader-rules-and-terms');
+
+        rulesAndTermsBtn.addEventListener('click', openRulesAndTermsWindow);
+    });
+
     generalSettingsBtns.forEach((generalSettingBtn)=>{
         generalSettingBtn.addEventListener('click', openSettingWindow);
     });
@@ -70,6 +76,23 @@ document.addEventListener('DOMContentLoaded', ()=>{
         generalSettings.classList.add('active-settings-wrapper');
         document.querySelector(menuID).classList.add('active-settings-menu');
     }
+
+    function openRulesAndTermsWindow(event){
+        event.preventDefault();
+        const settingsBtn = document.querySelector('a[href="#rulesAndTerms"]').querySelector('button');
+        const menuID = '#rulesAndTerms';
+
+        try{
+            const currentBtn = document.querySelector('.active-settings-btn')
+            const currentMenu = document.querySelector('.active-settings-menu');
+            currentBtn.classList.remove('active-settings-btn');
+            currentMenu.classList.remove('active-settings-menu');
+        } catch{}
+
+        settingsBtn.classList.add('active-settings-btn');
+        generalSettings.classList.add('active-settings-wrapper');
+        document.querySelector(menuID).classList.add('active-settings-menu');
+    }   
 
     function closeSettingWindow(event){
         event.preventDefault();

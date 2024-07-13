@@ -350,6 +350,18 @@ input[type="text"].color-input{
     justify-content: flex-start;
 }
 
+.dropdown-additional-entry:hover{
+    background-color: #1501FE;
+    color: white;
+    cursor: pointer;
+}
+
+.dropdown-additional-entry:hover img{
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'invert\'><feColorMatrix type=\'matrix\' values=\'-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0\'/></filter></svg>#invert");
+    -webkit-filter:invert(100%);
+    filter: invert(100%);
+}
+
 .entry-img {
     width: 7%;
     vertical-align: middle;

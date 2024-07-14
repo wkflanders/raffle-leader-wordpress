@@ -1,4 +1,6 @@
-<?php require plugin_dir_path( __FILE__ ) . 'entry_list_content.php' ?>
+<div id="sharedEntryDetails" class="shared-box-content">
+    <?php require plugin_dir_path( __FILE__ ) . 'entry_list_content.php' ?>
+</div>
 <div id="entryDetails" class="customize-box-content">
     <div class="dropdown-wrapper section-design">
         <div class="header-box">

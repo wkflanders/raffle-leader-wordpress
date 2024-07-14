@@ -327,7 +327,6 @@
                         <?php require plugin_dir_path( __FILE__ ) . 'entry_details_content.php'?>
                         <?php require plugin_dir_path( __FILE__ ) . 'counter_details_content.php'?>
                         <?php require plugin_dir_path( __FILE__ ) . 'image_details_content.php'?>
-                        <?php require plugin_dir_path( __FILE__ ) . 'additional_entries.php'; ?>
                     </div>
                 </div>
             </div>

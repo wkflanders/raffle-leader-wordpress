@@ -2523,7 +2523,6 @@ document.addEventListener("previewLoaded", ()=>{
         if(referSubheaderFontWeight === 'bold' || referSubheaderFontWeight >= 500){
             referSubheaderBoldBtn.classList.add('inline-btn-style-active');
         } else {
-            console.log('test2')
             try{
                 referSubheaderBoldBtn.classList.remove('inline-btn-style-active')
             } catch {}

@@ -340,7 +340,7 @@ document.addEventListener("previewLoaded", ()=>{
 
         // text letter spacing
         const textLetterSpacing = window.getComputedStyle(textElement).getPropertyValue('letter-spacing').replace(/^"|"$/g, '');
-        textLetterSpacingForm.value = textLetterSpacing;
+        textLetterSpacingForm.value = textLetterSpacing === 'normal' ? '0px' : textLetterSpacing;
 
         // text line height
         const textLineHeight = window.getComputedStyle(textElement).getPropertyValue('line-height').replace(/^"|"$/g, '');
@@ -607,7 +607,7 @@ document.addEventListener("previewLoaded", ()=>{
         // counter letter spacing
         const counterLetterSpacingForm = document.getElementById('counterLetterSpacingForm');
         const counterLetterSpacing = window.getComputedStyle(counterTextElement).getPropertyValue('letter-spacing').replace(/^"|"$/g, '');
-        counterLetterSpacingForm.value = counterLetterSpacing;
+        counterLetterSpacingForm.value = counterLetterSpacing === 'normal' ? '0px' : counterLetterSpacing;
 
         // counter orientation
         const counterOrientationSection = document.querySelector('.counter-orientation')

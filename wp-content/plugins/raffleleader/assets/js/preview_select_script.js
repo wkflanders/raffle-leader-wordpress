@@ -373,6 +373,14 @@ document.addEventListener("previewLoaded", ()=>{
         const entryButtonFontColorForm = document.getElementById('entryButtonFontColorForm');
         const entryButtonColorForm = document.getElementById('entryButtonColorForm');
 
+        //entry type button
+        try{
+            const currentTypeBtn = document.querySelector('.selected-entry-btn');
+            currentTypeBtn.classList.remove('selected-entry-btn');
+        } catch {}
+        const entryTypeBtn = document.getElementById('emailEntry');
+        entryTypeBtn.classList.add('selected-entry-btn');
+
         // entry font size
         const entryFontSizeForm = document.getElementById('entryFontSizeForm');
         const entryFontSize = window.getComputedStyle(entryInputElement).getPropertyValue('font-size').replace(/^"|"$/g, '');
@@ -744,6 +752,14 @@ document.addEventListener("previewLoaded", ()=>{
         const headerSizeForm = document.getElementById('XFollowHeaderFontSizeForm');
         const subheaderSizeForm = document.getElementById('XFollowSubheaderFontSizeForm');
         
+        //entry type button
+        try{
+            const currentTypeBtn = document.querySelector('.selected-entry-btn');
+            currentTypeBtn.classList.remove('selected-entry-btn');
+        } catch {}
+        const entryTypeBtn = document.getElementById('XFollowEntry');
+        entryTypeBtn.classList.add('selected-entry-btn');
+
         // Load XFollow handle settings
         const handle = element.querySelector('button').getAttribute('data-link');
         const urlParams = new URLSearchParams(handle.split('?')[1]);
@@ -885,6 +901,13 @@ document.addEventListener("previewLoaded", ()=>{
             XRepostForm.value = URL;
         }
 
+        try{
+            const currentTypeBtn = document.querySelector('.selected-entry-btn');
+            currentTypeBtn.classList.remove('selected-entry-btn');
+        } catch {}
+        const entryTypeBtn = document.getElementById('XRepostEntry');
+        entryTypeBtn.classList.add('selected-entry-btn');
+
         // Load XRepost settings
         const headerForm = document.getElementById('XRepostHeaderForm');
         const subheaderForm = document.getElementById('XRepostSubheaderForm');
@@ -1020,6 +1043,14 @@ document.addEventListener("previewLoaded", ()=>{
             XLikeForm.value = URL;
         }
 
+        //entry type button
+        try{
+            const currentTypeBtn = document.querySelector('.selected-entry-btn');
+            currentTypeBtn.classList.remove('selected-entry-btn');
+        } catch {}
+        const entryTypeBtn = document.getElementById('XLikeEntry');
+        entryTypeBtn.classList.add('selected-entry-btn');
+
         // Load XLike settings
         const headerForm = document.getElementById('XLikeHeaderForm');
         const subheaderForm = document.getElementById('XLikeSubheaderForm');
@@ -1149,6 +1180,15 @@ document.addEventListener("previewLoaded", ()=>{
     }
 
     function loadInstaFollowDetails(element){
+        
+        //entry type button
+        try{
+            const currentTypeBtn = document.querySelector('.selected-entry-btn');
+            currentTypeBtn.classList.remove('selected-entry-btn');
+        } catch {}
+        const entryTypeBtn = document.getElementById('instaFollowEntry');
+        entryTypeBtn.classList.add('selected-entry-btn');
+
         // Load Insta Follow settings
         const headerForm = document.getElementById('instaFollowHeaderForm');
         const subheaderForm = document.getElementById('instaFollowSubheaderForm');
@@ -1293,6 +1333,14 @@ document.addEventListener("previewLoaded", ()=>{
             instaCommentForm.value = URL;
         }
 
+        //entry type button
+        try{
+            const currentTypeBtn = document.querySelector('.selected-entry-btn');
+            currentTypeBtn.classList.remove('selected-entry-btn');
+        } catch {}
+        const entryTypeBtn = document.getElementById('instaCommentEntry');
+        entryTypeBtn.classList.add('selected-entry-btn');
+
         // Load Insta Comment settings
         const headerForm = document.getElementById('instaCommentHeaderForm');
         const subheaderForm = document.getElementById('instaCommentSubheaderForm');
@@ -1431,6 +1479,14 @@ document.addEventListener("previewLoaded", ()=>{
             instaLikeForm.value = URL;
         }
 
+        //entry type button
+        try{
+            const currentTypeBtn = document.querySelector('.selected-entry-btn');
+            currentTypeBtn.classList.remove('selected-entry-btn');
+        } catch {}
+        const entryTypeBtn = document.getElementById('instaLikeEntry');
+        entryTypeBtn.classList.add('selected-entry-btn');
+
         // Load Insta Like settings
         const headerForm = document.getElementById('instaLikeHeaderForm');
         const subheaderForm = document.getElementById('instaLikeSubheaderForm');
@@ -1567,6 +1623,14 @@ document.addEventListener("previewLoaded", ()=>{
         } else {
             facebookFollowForm.value = URL;
         }
+
+        //entry type button
+        try{
+            const currentTypeBtn = document.querySelector('.selected-entry-btn');
+            currentTypeBtn.classList.remove('selected-entry-btn');
+        } catch {}
+        const entryTypeBtn = document.getElementById('facebookFollowEntry');
+        entryTypeBtn.classList.add('selected-entry-btn');
 
         // Load Facebook Follow settings
         const headerForm = document.getElementById('facebookFollowHeaderForm');
@@ -1706,6 +1770,14 @@ document.addEventListener("previewLoaded", ()=>{
             facebookCommentForm.value = URL;
         }
 
+        //entry type button
+        try{
+            const currentTypeBtn = document.querySelector('.selected-entry-btn');
+            currentTypeBtn.classList.remove('selected-entry-btn');
+        } catch {} 
+        const entryTypeBtn = document.getElementById('facebookCommentEntry');
+        entryTypeBtn.classList.add('selected-entry-btn');
+
         // Load Facebook Comment settings
         const headerForm = document.getElementById('facebookCommentHeaderForm');
         const subheaderForm = document.getElementById('facebookCommentSubheaderForm');
@@ -1843,6 +1915,14 @@ document.addEventListener("previewLoaded", ()=>{
         } else {
             facebookLikeForm.value = URL;
         }
+
+        //entry type button
+        try{
+            const currentTypeBtn = document.querySelector('.selected-entry-btn');
+            currentTypeBtn.classList.remove('selected-entry-btn');
+        } catch {} 
+        const entryTypeBtn = document.getElementById('facebookLikeEntry');
+        entryTypeBtn.classList.add('selected-entry-btn');
         
         // Load Facebook Like settings
         const headerForm = document.getElementById('facebookLikeHeaderForm');
@@ -1985,6 +2065,14 @@ document.addEventListener("previewLoaded", ()=>{
         }
         const tiktokFollowForm = document.getElementById('tiktokFollowForm');
         tiktokFollowForm.value = cleanedHandle;
+
+        //entry type button
+        try{
+            const currentTypeBtn = document.querySelector('.selected-entry-btn');
+            currentTypeBtn.classList.remove('selected-entry-btn');
+        } catch {} 
+        const entryTypeBtn = document.getElementById('tiktokFollowEntry');
+        entryTypeBtn.classList.add('selected-entry-btn');
         
         // Load Tiktok Follow settings
         const headerForm = document.getElementById('tiktokFollowHeaderForm');
@@ -2123,6 +2211,15 @@ document.addEventListener("previewLoaded", ()=>{
         } else {
             tiktokCommentForm.value = URL;
         }
+
+        //entry type button
+        try{
+            const currentTypeBtn = document.querySelector('.selected-entry-btn');
+            currentTypeBtn.classList.remove('selected-entry-btn');
+        } catch {} 
+        const entryTypeBtn = document.getElementById('tiktokCommentEntry');
+        entryTypeBtn.classList.add('selected-entry-btn');
+
         // Load Tiktok Comment settings
         const headerForm = document.getElementById('tiktokCommentHeaderForm');
         const subheaderForm = document.getElementById('tiktokCommentSubheaderForm');
@@ -2260,6 +2357,15 @@ document.addEventListener("previewLoaded", ()=>{
         } else {
             tiktokLikeForm.value = URL;
         }
+
+        //entry type button
+        try{
+            const currentTypeBtn = document.querySelector('.selected-entry-btn');
+            currentTypeBtn.classList.remove('selected-entry-btn');
+        } catch {} 
+        const entryTypeBtn = document.getElementById('tiktokLikeEntry');
+        entryTypeBtn.classList.add('selected-entry-btn');
+
         // Load Tiktok Like settings
         const headerForm = document.getElementById('tiktokLikeHeaderForm');
         const subheaderForm = document.getElementById('tiktokLikeSubheaderForm');
@@ -2389,6 +2495,15 @@ document.addEventListener("previewLoaded", ()=>{
     }
 
     function loadReferDetails(element){
+
+        //entry type button
+        try{
+            const currentTypeBtn = document.querySelector('.selected-entry-btn');
+            currentTypeBtn.classList.remove('selected-entry-btn');
+        } catch {} 
+        const entryTypeBtn = document.getElementById('referEntry');
+        entryTypeBtn.classList.add('selected-entry-btn');
+
         // Load refer settings
         const headerForm = document.getElementById('referHeaderForm');
         const subheaderForm = document.getElementById('referSubheaderForm');

@@ -28,7 +28,6 @@ document.addEventListener("generalSettingsLoaded", ()=>{
     let tutorialPageOne = false;
     document.addEventListener('tutorialPageOne', ()=>{
         tutorialPageOne = true;
-        console.log('page one fired');
     });
 
     slideBtn.forEach((slideBtn)=>{

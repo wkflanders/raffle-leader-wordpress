@@ -6143,12 +6143,32 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
     function selectEntry(event){
         const selectedBtn = event.currentTarget;
+        const currentBtn = document.querySelector('.selected-entry-btn');
         const ID = selectedBtn.id; 
         const container = document.getElementById('dropzone');
         const currentElement = container.querySelector('.selected-raffleleader-section');
         let htmlToInject;
 
         switch(ID){
+            case 'emailEntry':
+                htmlToInject =`<div data-type="entryDetails" class="raffleleader-entry-section">
+                            <form class="raffleleader-email-submit" action="/submit-email" method="post">
+                                <input class="raffleleader-email-input" type="email" name="email" placeholder="email..." required>
+                                <button class="raffleleader-email-submit-btn ld-over-full" type="submit">
+                                    &rarr;
+                                </button>
+                            </form>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`;
+                break;
+
             case 'XFollowEntry':
                 htmlToInject = `<div data-type="XFollowDetails" class="raffleleader-additional-entry-section">
                             <div class="raffleleader-additional-entry-text-column">
@@ -6167,6 +6187,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+                break;
 
             case 'XRepostEntry':
                 htmlToInject = `<div data-type="XRepostDetails" class="raffleleader-additional-entry-section">
@@ -6186,6 +6207,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+                break;
 
             case 'XLikeEntry':
                 htmlToInject = `<div data-type="XLikeDetails" class="raffleleader-additional-entry-section">
@@ -6205,6 +6227,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+                break;
 
             case 'instaFollowEntry':
                 htmlToInject = `<div data-type="instaFollowDetails" class="raffleleader-additional-entry-section">
@@ -6224,6 +6247,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+                break;
 
             case 'instaCommentEntry':
                 htmlToInject = `<div data-type="instaCommentDetails" class="raffleleader-additional-entry-section">
@@ -6243,6 +6267,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+                break;
 
             case 'instaLikeEntry':
                 htmlToInject = `<div data-type="instaLikeDetails" class="raffleleader-additional-entry-section">
@@ -6262,7 +6287,8 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
-                
+                    break;
+
             case 'facebookFollowEntry':
                 htmlToInject = `<div data-type="facebookFollowDetails" class="raffleleader-additional-entry-section">
                             <div class="raffleleader-additional-entry-text-column">
@@ -6281,6 +6307,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+                    break;
 
             case 'facebookCommentEntry':
                 htmlToInject = `<div data-type="facebookCommentDetails" class="raffleleader-additional-entry-section">
@@ -6300,6 +6327,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+                    break;
 
             case 'facebookLikeEntry':
                 htmlToInject = `<div data-type="facebookLikeDetails" class="raffleleader-additional-entry-section">
@@ -6319,6 +6347,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+                    break;
 
             case 'tiktokFollowEntry':
                 htmlToInject = `<div data-type="tiktokFollowDetails" class="raffleleader-additional-entry-section">
@@ -6338,6 +6367,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+                    break;
 
             case 'tiktokCommentEntry':
                 htmlToInject = `<div data-type="tiktokCommentDetails" class="raffleleader-additional-entry-section">
@@ -6357,6 +6387,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+                    break;
 
             case 'tiktokLikeEntry':
                 htmlToInject = `<div data-type="tiktokLikeDetails" class="raffleleader-additional-entry-section">
@@ -6376,6 +6407,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+                    break;
 
             case 'referEntry':
                 htmlToInject = `<div data-type="referDetails" class="raffleleader-additional-entry-section">
@@ -6395,12 +6427,16 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+                    break;
         }
-        console.log(currentElement);
+        currentBtn.classList.remove('selected-entry-btn');
+        selectedBtn.classList.add('selected-entry-btn');
+
         currentElement.innerHTML = htmlToInject;
         currentElement.style.height = ID === 'emailEntry' ? '80px' : '75px';
 
         selectSection(currentElement);
+        applyLogicToElement(currentElement);
     }
 
     function selectCounter(event){
@@ -6606,9 +6642,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             
             const filename = new URL(attachment.url).pathname.split('/').pop();
 
-            console.log(previewWidth);
-            console.log(attachment.width);
-            console.log(imgSection.style.width);
+            // console.log(previewWidth);
+            // console.log(attachment.width);
+            // console.log(imgSection.style.width);
 
             imgFormURL.href = imgElement.src;
             imgFormURL.innerText = filename;

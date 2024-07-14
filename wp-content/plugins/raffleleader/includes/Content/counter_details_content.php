@@ -121,7 +121,7 @@
     <div class="dropdown-wrapper section-design">
         <div class="header-box">
             <h2 class="header-box-title">Section Design</h2>
-            <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button>
+            <!-- <button class="header-dropdown"><i class="header-box-down header-box-arrow"></i></button> -->
         </div>
         <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">

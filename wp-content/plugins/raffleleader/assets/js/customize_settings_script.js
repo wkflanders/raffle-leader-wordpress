@@ -329,6 +329,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'textAlign':
                 const selectedElement = selectedSection.querySelector('.raffleleader-text-section');
                 const textElement = selectedElement.querySelector('h2');
+                
                 selectedElement.style.justifyContent = 'left';
                 selectedElement.style.justifyContent = 'left';
 
@@ -347,9 +348,14 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
         switch(elementType){
             case 'textAlign':
-                selectedElement = selectedSection.querySelector('.raffleleader-text-section');
+                const selectedElement = selectedSection.querySelector('.raffleleader-text-section');
+                const textElement = selectedElement.querySelector('h2');
+
                 selectedElement.style.justifyContent = 'right';
                 selectedElement.style.textAlign = 'right';
+
+                textElement.style.justifyContent = 'right';
+                textElement.style.textAlign = 'right';
 
                 document.querySelector('.inline-btn-halign-active').classList.remove('inline-btn-halign-active');;
                 inputRightBtn.classList.add('inline-btn-halign-active');
@@ -363,9 +369,14 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
         switch(elementType){
             case 'textAlign':
-                selectedElement = selectedSection.querySelector('.raffleleader-text-section');
+                const selectedElement = selectedSection.querySelector('.raffleleader-text-section');
+                const textElement = selectedElement.querySelector('h2');
+
                 selectedElement.style.justifyContent = 'center';
                 selectedElement.style.textAlign = 'center';
+                
+                textElement.style.justifyContent = 'center';
+                textElement.style.textAlign = 'center';
 
                 document.querySelector('.inline-btn-halign-active').classList.remove('inline-btn-halign-active');;
                 inputCenterBtn.classList.add('inline-btn-halign-active');
@@ -424,7 +435,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
         switch(elementType){
             case 'textOrient':
-                selectedElement = selectedSection.querySelector('.raffleleader-text-section');
+                const selectedElement = selectedSection.querySelector('.raffleleader-text-section');
                 selectedElement.style.writingMode = 'horizontal-tb';
                 selectedElement.style.textOrientation = 'upright';
 

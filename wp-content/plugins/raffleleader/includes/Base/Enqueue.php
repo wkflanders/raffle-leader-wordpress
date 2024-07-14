@@ -120,11 +120,11 @@ class Enqueue extends BaseController{
 
         wp_enqueue_script( 'raffleleader_layout_drag_script', $this->plugin_url . '/assets/js/layout_drag_script.js', array( 'raffleleader_preview_select_script' ), rand(111, 9999), true );
 
-        wp_enqueue_script( 'raffleleader_preview_reposition_script', $this->plugin_url . '/assets/js/preview_reposition_script.js', array(), rand(111, 9999) );
+        wp_enqueue_script( 'raffleleader_preview_reposition_script', $this->plugin_url . '/assets/js/preview_reposition_script.js', array(), rand(111, 9999), true );
         
         wp_enqueue_script( 'raffleleader_preview_load_script', $this->plugin_url . '/assets/js/preview_load_script.js', array(), rand(111, 9999) );
 
-        wp_enqueue_script( 'raffleleader_customize_settings_script', $this->plugin_url . '/assets/js/customize_settings_script.js', array( 'raffleleader_preview_select_script' ), rand(111, 9999), true );
+        wp_enqueue_script( 'raffleleader_customize_settings_script', $this->plugin_url . '/assets/js/customize_settings_script.js', array( 'raffleleader_preview_reposition_script', 'raffleleader_preview_select_script' ), rand(111, 9999), true );
 
         wp_enqueue_script( 'raffleleader_preview_size_script', $this->plugin_url . '/assets/js/preview_size_script.js', array(), rand(111, 9999) );
 

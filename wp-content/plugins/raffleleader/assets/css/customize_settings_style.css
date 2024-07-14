@@ -35,9 +35,11 @@
 }
 
 .dropdown-wrapper-text{
-    color: gray;
+    color: hsl(0, 0%, 50%);
     text-align: center;
-    font-size: 1.8vh;
+    font-weight: 500;
+    padding-top: 1vh;
+    font-size: 1.65vh;
     margin-bottom: 0;
 }
 
@@ -369,6 +371,25 @@ input[type="text"].color-input{
 
 .entry-text{
     font-size: 2.2vh !important;
+}
+
+.selected-entry-btn{
+    background-color:#1501FE;
+    color: white;
+}
+
+.selected-entry-btn img{
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'invert\'><feColorMatrix type=\'matrix\' values=\'-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0\'/></filter></svg>#invert");
+    -webkit-filter:invert(100%);
+    filter: invert(100%);
+}
+
+.selected-entry-btn:hover{
+    background-color:#1200dc;
+}
+
+.selected-entry-btn:active{
+    background-color:#1501FE;
 }
 
 .dropdown-image{

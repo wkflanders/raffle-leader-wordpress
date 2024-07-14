@@ -27,6 +27,14 @@ body {
     height: 100%;
 }
 
+.shared-box-content{
+    display: none;
+}
+
+.visible-shared-customize{
+    display: block;
+}
+
 .visible-customize{
     display: block;
 }

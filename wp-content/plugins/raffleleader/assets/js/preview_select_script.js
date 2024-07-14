@@ -49,19 +49,31 @@ document.addEventListener("previewLoaded", ()=>{
 
     function openEditingBox(elementType){
         const editingElement = document.getElementById(elementType);
+        const sharedEntryElement = document.getElementById('sharedEntryDetails');
 
         if(!customizeBox.classList.contains('slide-right-to-left')){
             customizeBox.classList.toggle('slide-right-to-left');
         }
         
-        const currentEditingElement = document.querySelector('.visible-customize')
-        
+        const currentEditingElement = document.querySelector('.visible-customize');
+
         if(currentEditingElement && currentEditingElement != editingElement){
             currentEditingElement.classList.remove('visible-customize');
             editingElement.classList.add('visible-customize');
         } else {
             editingElement.classList.add('visible-customize');
         }
+
+        if(elementType === 'entryDetails' || elementType === 'XFollowDetails' || elementType === 'XRepostDetails' || elementType === 'XLikeDetails' ||
+            elementType === 'instaFollowDetails' || elementType === 'instaCommentDetails' || elementType === 'instaLikeDetails' ||
+            elementType === 'facebookFollowDetails' || elementType === 'facebookCommentDetails' || elementType === 'facebookLikeDetails' ||
+            elementType === 'tiktokFollowDetails' || elementType === 'tiktokCommentDetails' || elementType === 'tiktokLikeDetails') {
+                if(!sharedEntryElement.classList.contains('visible-shared-customize')){
+                    sharedEntryElement.classList.add('visible-shared-customize');
+                }
+            } else {
+                sharedEntryElement.classList.remove('visible-shared-customize');
+            }
 
         if(tutorialPageTwo){
             setTimeout(()=>{

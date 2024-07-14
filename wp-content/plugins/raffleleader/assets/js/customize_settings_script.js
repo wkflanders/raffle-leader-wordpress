@@ -40,6 +40,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     const endTimeInput = document.getElementById('endTime');
     const startTimeInput = document.getElementById('startTime');
 
+    const additionalEntryBtns = document.querySelectorAll('.dropdown-additional-entry');
     const additionalEntryInputs = document.querySelectorAll('.additional-entry-input');
     const additionalEntryQuantity = document.querySelectorAll('.additional-entry-quantity');
 
@@ -273,6 +274,10 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         startTimeCounters.forEach(startTimeCounter => {
             watchTimeStart(startTimeCounter);
         });
+    });
+
+    additionalEntryBtns.forEach((additionalEntryBtn)=>{
+        additionalEntryBtn.addEventListener('click', selectEntry);
     });
 
     additionalEntryInputs.forEach((additionalEntryInput)=>{
@@ -6134,6 +6139,268 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 if(radiusFormID === 'referBorderBottomRightRadius') referSection.style.borderBottomRightRadius = `${borderRadius}px`;
                 break;
         }
+    }
+
+    function selectEntry(event){
+        const selectedBtn = event.currentTarget;
+        const ID = selectedBtn.id; 
+        const container = document.getElementById('dropzone');
+        const currentElement = container.querySelector('.selected-raffleleader-section');
+        let htmlToInject;
+
+        switch(ID){
+            case 'XFollowEntry':
+                htmlToInject = `<div data-type="XFollowDetails" class="raffleleader-additional-entry-section">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2>Follow us on X/Twitter</h2>
+                                <p>for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button data-link="https://twitter.com/">+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+
+            case 'XRepostEntry':
+                htmlToInject = `<div data-type="XRepostDetails" class="raffleleader-additional-entry-section">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2>Repost us on X/Twitter</h2>
+                                <p>for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button data-link="https://twitter.com/">+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+
+            case 'XLikeEntry':
+                htmlToInject = `<div data-type="XLikeDetails" class="raffleleader-additional-entry-section">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2>Like us on X/Twitter</h2>
+                                <p>for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button data-link="https://twitter.com/">+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+
+            case 'instaFollowEntry':
+                htmlToInject = `<div data-type="instaFollowDetails" class="raffleleader-additional-entry-section">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2>Follow us on Instagram</h2>
+                                <p>for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button data-link="https://instagram.com/">+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+
+            case 'instaCommentEntry':
+                htmlToInject = `<div data-type="instaCommentDetails" class="raffleleader-additional-entry-section">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2>Leave a comment on Instagram</h2>
+                                <p>for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button data-link="https://instagram.com/">+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+
+            case 'instaLikeEntry':
+                htmlToInject = `<div data-type="instaLikeDetails" class="raffleleader-additional-entry-section">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2>Like us on Instagram</h2>
+                                <p>for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button data-link="https://instagram.com/">+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+                
+            case 'facebookFollowEntry':
+                htmlToInject = `<div data-type="facebookFollowDetails" class="raffleleader-additional-entry-section">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2>Follow us on Facebook</h2>
+                                <p>for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button data-link="https://facebook.com/">+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+
+            case 'facebookCommentEntry':
+                htmlToInject = `<div data-type="facebookCommentDetails" class="raffleleader-additional-entry-section">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2>Leave a comment on Facebook</h2>
+                                <p>for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button data-link="https://facebook.com/">+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+
+            case 'facebookLikeEntry':
+                htmlToInject = `<div data-type="facebookLikeDetails" class="raffleleader-additional-entry-section">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2>Like us on Facebook</h2>
+                                <p>for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button data-link="https://facebook.com/">+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+
+            case 'tiktokFollowEntry':
+                htmlToInject = `<div data-type="tiktokFollowDetails" class="raffleleader-additional-entry-section">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2>Follow us on TikTok</h2>
+                                <p>for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button data-link="https://tiktok.com/">+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+
+            case 'tiktokCommentEntry':
+                htmlToInject = `<div data-type="tiktokCommentDetails" class="raffleleader-additional-entry-section">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2>Leave a comment on TikTok</h2>
+                                <p>for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button data-link="https://tiktok.com/">+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+
+            case 'tiktokLikeEntry':
+                htmlToInject = `<div data-type="tiktokLikeDetails" class="raffleleader-additional-entry-section">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2>Like us on TikTok</h2>
+                                <p>for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column">
+                                <button data-link="https://tiktok.com/">+1</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+
+            case 'referEntry':
+                htmlToInject = `<div data-type="referDetails" class="raffleleader-additional-entry-section">
+                            <div class="raffleleader-additional-entry-text-column">
+                                <h2>Refer a friend</h2>
+                                <p>for an extra entry!</p>
+                            </div>
+                            <div class="raffleleader-additional-entry-button-column raffleleader-additional-entry-button-column-refer">
+                                <button data-link="https://instagram.com/">Copy Link</button>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-layer-handle-container">
+                            <div class="raffleleader-to-top-handle"></div>
+                            <div class="raffleleader-to-back-handle"></div>
+                        </div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
+                        <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`
+        }
+        console.log(currentElement);
+        currentElement.innerHTML = htmlToInject;
+        currentElement.style.height = ID === 'emailEntry' ? '80px' : '75px';
+
+        selectSection(currentElement);
     }
 
     function selectCounter(event){

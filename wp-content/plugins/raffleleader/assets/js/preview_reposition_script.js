@@ -282,6 +282,8 @@ document.addEventListener('previewLoaded', ()=>{
         }
     }
 
+    window.applyLogicToElement = applyLogicToElement;
+
     // Function to handle new elements added to the DOM
     function handleNewElements(mutationsList) {
         mutationsList.forEach(mutation => {

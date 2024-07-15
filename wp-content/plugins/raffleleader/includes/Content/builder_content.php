@@ -28,9 +28,9 @@
             <li class="publish-tab"><a class="noSelect" href="#publish">Publish</a></li>
         </ul>
         <ul class="rl-nav-extras">
-            <li><a class="close" href="admin.php?page=raffleleader_plugin"></a></li>
-            <li><a class="help" href="">Help</a></li>
-            <button class="save-btn">Save</button>
+            <button class="rl-builder-save-btn">Save</button>
+            <li><a class="rl-builder-help" href="">Help</a></li>
+            <li class="rl-builder-close"><a href="admin.php?page=raffleleader_plugin">&times;</a></li>
         </ul>
     </nav>
     <div class="rl-tab-content">

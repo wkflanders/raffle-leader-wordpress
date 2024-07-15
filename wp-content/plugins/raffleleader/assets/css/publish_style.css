@@ -45,6 +45,7 @@
     padding: 5vh 4vh;
     flex-direction: column;
     margin: 0 2vh;
+    line-height: 3vh;
 }
 
 .publish-box h2{

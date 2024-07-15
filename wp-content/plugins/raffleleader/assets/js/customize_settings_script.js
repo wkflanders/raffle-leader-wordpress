@@ -6875,13 +6875,6 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 break;
 
             case 'entryDelete':
-                const entriesID = selectedSection.id;
-                const additionalEntries = document.querySelectorAll(`[data-entry='${entriesID}']`);
-
-                additionalEntries.forEach((additionalEntry)=>{
-                    additionalEntry.remove();
-                });
-
                 selectedSection.remove();
 
                 const entryDeleteBtn = document.getElementById('entryDelete');

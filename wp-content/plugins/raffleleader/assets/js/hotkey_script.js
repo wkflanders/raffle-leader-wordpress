@@ -29,7 +29,7 @@ document.addEventListener('previewLoaded', () => {
                 }).catch((err) => {
                     console.error('Failed to read from clipboard', err);
                 });
-            } else if (event.key === 'Delete') {
+            } else if (event.key === 'Delete' || event.key === 'Backspace') {
                 event.preventDefault(); // Prevent default only if a selected element exists
                 selectedElement.remove();
                 console.log('Deleted');

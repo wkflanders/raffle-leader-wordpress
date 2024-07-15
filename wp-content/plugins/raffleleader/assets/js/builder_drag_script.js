@@ -7,8 +7,8 @@ document.addEventListener('previewLoaded', () => {
     let offsetY = -initialOffsetY;
     let scale = 1;
 
-    const scrollSensitivity = 0.3;
-    const zoomSpeed = 0.05;
+    const scrollSensitivity = 0.15;
+    const zoomSpeed = 0.015;
     window.zoomScale = 1;
 
     container.addEventListener('wheel', (event) => {

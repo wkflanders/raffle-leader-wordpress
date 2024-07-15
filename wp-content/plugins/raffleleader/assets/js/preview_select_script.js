@@ -67,7 +67,7 @@ document.addEventListener("previewLoaded", ()=>{
         if(elementType === 'entryDetails' || elementType === 'XFollowDetails' || elementType === 'XRepostDetails' || elementType === 'XLikeDetails' ||
             elementType === 'instaFollowDetails' || elementType === 'instaCommentDetails' || elementType === 'instaLikeDetails' ||
             elementType === 'facebookFollowDetails' || elementType === 'facebookCommentDetails' || elementType === 'facebookLikeDetails' ||
-            elementType === 'tiktokFollowDetails' || elementType === 'tiktokCommentDetails' || elementType === 'tiktokLikeDetails') {
+            elementType === 'tiktokFollowDetails' || elementType === 'tiktokCommentDetails' || elementType === 'tiktokLikeDetails' || elementType === 'referDetails') {
                 if(!sharedEntryElement.classList.contains('visible-shared-customize')){
                     sharedEntryElement.classList.add('visible-shared-customize');
                 }

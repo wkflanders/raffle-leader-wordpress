@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const templateModal = document.getElementById("templateModal");
     const templateModalContent = templateModal.querySelector(".template-modal-content");
 
-    const helpBtn = document.querySelector('.help');
+    const helpBtn = document.querySelector('.rl-builder-help');
     helpBtn.addEventListener('click', handleHelpBtn);
 
     let previewLoaded = false;

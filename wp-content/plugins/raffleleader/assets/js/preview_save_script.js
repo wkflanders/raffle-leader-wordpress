@@ -4,7 +4,7 @@ document.addEventListener("generalSettingsLoaded", () => {
   let selectedSection = null;
   let isSuccess = true;
 
-  const saveBtn = document.querySelector(".save-btn");
+  const saveBtn = document.querySelector(".rl-builder-save-btn");
   saveBtn.addEventListener("click", savePreview);
 
   const saveModal = document.getElementById("saveModal");

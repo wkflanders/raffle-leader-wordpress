@@ -31,38 +31,28 @@ document.addEventListener("DOMContentLoaded", () => {
         if((activePaneID === '#setup') || (activePaneID === '#publish')){
             if(previewLoaded){
                 if(activePaneID === '#publish'){
-                    if(hasEmailSection){
+                    const dropzone = document.getElementById('dropzone');
+                    const entrySection = dropzone.querySelector('.raffleleader-entry-section');
+
+                    if(entrySection){
                         document.querySelector("ul.rl-nav-tabs li.active-tab").classList.remove("active-tab");
                         document.querySelector(".rl-tab-pane.active-tab").classList.remove("active-tab");
 
                         clickedTab.classList.add("active-tab");
                         document.querySelector(activePaneID).classList.add("active-tab");
                     } else {
-                        const dropzone = document.getElementById('dropzone');
-                        const entrySection = dropzone.querySelector('div[data-type="entryDetails"');
-
-                        if(entrySection !== null){   
-                            hasEmailSection = true;
+                        emailModalContent.style.display = "block";
+                        emailModal.style.animation = "slideDown 1s forwards";
+                        document.body.classList.add('shake-animation');
         
-                            document.querySelector("ul.rl-nav-tabs li.active-tab").classList.remove("active-tab");
-                            document.querySelector(".rl-tab-pane.active-tab").classList.remove("active-tab");
+                        setTimeout(() => {
+                            emailModal.style.animation = "slideUp 1.5s forwards";
+                            document.body.classList.remove('shake-animation');
         
-                            clickedTab.classList.add("active-tab");
-                            document.querySelector(activePaneID).classList.add("active-tab");
-                        } else {
-                            emailModalContent.style.display = "block";
-                            emailModal.style.animation = "slideDown 1s forwards";
-                            document.body.classList.add('shake-animation');
-            
                             setTimeout(() => {
-                                emailModal.style.animation = "slideUp 1.5s forwards";
-                                document.body.classList.remove('shake-animation');
-            
-                                setTimeout(() => {
-                                    emailModalContent.style.display = "none";
-                                }, 500);
-                            }, 7000);
-                        }
+                                emailModalContent.style.display = "none";
+                            }, 500);
+                        }, 7000);
                     }
                 } else {
                     document.querySelector("ul.rl-nav-tabs li.active-tab").classList.remove("active-tab");

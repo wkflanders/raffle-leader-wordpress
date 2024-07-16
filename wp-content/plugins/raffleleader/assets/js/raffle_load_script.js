@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     function loadPreview(raffleData){
         // Bulk preview data
         if(raffleData.content){
+
             if(viewportWidth <= 400){
                 raffleContainer.style.transform = 'scale(0.6)';
             } else if(viewportWidth <= 600){
@@ -43,42 +44,48 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
             const preview = raffleContainer.querySelector('.raffleleader-preview-box');
             const dropzone = raffleContainer.querySelector('.raffleleader-dropzone');
-            preview.style.position = "static";
-            dropzone.style.position = "relative";
-
-            const sections = preview.querySelectorAll('.raffleleader-section');
-            sections.forEach((section)=>{
-                section.style.position = null;
-            });
 
             const entrySection = preview.querySelector('.raffleleader-entry-section');
-            const emailInput = entrySection.querySelector('.raffleleader-email-input');
-            const emailBtn = entrySection.querySelector('.raffleleader-email-submit-btn');
 
-            const additionalEntrySections = document.querySelectorAll('.raffleleader-additional-entry-section');
+            if(entrySection){
+                preview.style.position = "static";
+                dropzone.style.position = "relative";
 
-            if(raffleData.status.includes('Starts')){
-                entrySection.classList.add('inactive-entry');
-                emailInput.placeholder = 'This raffle is starting soon';
-                emailBtn.innerText = '⧗';
-            } else if(raffleData.status.includes('Finished')){
-                entrySection.classList.add('inactive-entry');
-                emailInput.placeholder = 'This raffle has finished';
-                emailBtn.innerText = '✓';
+                const sections = preview.querySelectorAll('.raffleleader-section');
+                sections.forEach((section)=>{
+                    section.style.position = null;
+                });
+
+                const emailInput = entrySection.querySelector('.raffleleader-email-input');
+                const emailBtn = entrySection.querySelector('.raffleleader-email-submit-btn');
+
+                const additionalEntrySections = document.querySelectorAll('.raffleleader-additional-entry-section');
+
+                if(raffleData.status.includes('Starts')){
+                    entrySection.classList.add('inactive-entry');
+                    emailInput.placeholder = 'This raffle is starting soon';
+                    emailBtn.innerText = '⧗';
+                } else if(raffleData.status.includes('Finished')){
+                    entrySection.classList.add('inactive-entry');
+                    emailInput.placeholder = 'This raffle has finished';
+                    emailBtn.innerText = '✓';
+                    
+                    additionalEntrySections.forEach((additionalEntrySection)=>{
+                        additionalEntrySection.classList.add('inactive-additional-entry')
+                        additionalEntrySection.querySelector('button').innerHTML = '✓';
+                    })
+                }
+
+                const rulesAndTerms = document.querySelector('.raffleleader-rules-and-terms');
+                rulesAndTerms.addEventListener('click', displayRulesAndTerms);
+
+                const rulesAndTermsCloseBtn = document.querySelector('.rules-and-terms-close-button');
+                rulesAndTermsCloseBtn.addEventListener('click', closeRulesAndTerms);
                 
-                additionalEntrySections.forEach((additionalEntrySection)=>{
-                    additionalEntrySection.classList.add('inactive-additional-entry')
-                    additionalEntrySection.querySelector('button').innerHTML = '✓';
-                })
+                document.dispatchEvent(raffleLoaded);
+            } else {
+                raffleContainer.innerHTML = "<p style='font-weight: bold;'>Raffles must have an email entry section to be published</p>"; 
             }
-
-            const rulesAndTerms = document.querySelector('.raffleleader-rules-and-terms');
-            rulesAndTerms.addEventListener('click', displayRulesAndTerms);
-
-            const rulesAndTermsCloseBtn = document.querySelector('.rules-and-terms-close-button');
-            rulesAndTermsCloseBtn.addEventListener('click', closeRulesAndTerms);
-            
-            document.dispatchEvent(raffleLoaded);
         }
     }
 

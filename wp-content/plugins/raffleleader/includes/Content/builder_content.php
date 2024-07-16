@@ -15,6 +15,12 @@
             <p>Choose a template before moving on</p>
         </div>
     </div>
+    <div id="emailModal" class="rl-modal">
+        <div class="modal-content email-modal-content">
+            <h2>Hold on!</h2>
+            <p>You must have at least one email entry section to publish</p>
+        </div>
+    </div>
     <div class="loading-menu">
         <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     </div>

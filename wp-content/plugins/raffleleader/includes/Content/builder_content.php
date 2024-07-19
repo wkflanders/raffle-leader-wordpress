@@ -140,7 +140,7 @@
                     <div class="general-settings-menu" id='dateAndTime'>
                         <div class="header-box settings-menu-header">
                             <h2 class="header-box-title">Date and Time</h2>
-                            <button class="close close-settings-menu"></button>
+                            <button class="close close-settings-menu">&times;</button>
                         </div>
                         <div class="general-settings-text">
                             <p>Your Raffle's Start Date & Time and End Date & Time</p>
@@ -200,7 +200,7 @@
                     <div class="general-settings-menu" id='rulesAndTerms'>
                         <div class="header-box settings-menu-header">
                             <h2 class="header-box-title">Rules and Terms</h2>
-                            <button class="close close-settings-menu"></button>
+                            <button class="close close-settings-menu">&times;</button>
                         </div>
                         <div class="general-settings-text">
                             <p>Your Raffle's Rules and Terms</p>

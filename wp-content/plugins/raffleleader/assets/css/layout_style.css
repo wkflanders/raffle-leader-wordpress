@@ -36,8 +36,8 @@
     color: hsl(0, 0%, 50%);
     text-align: center;
     font-weight: 500;
-    padding-top: 1vh;
     font-size: 1.65vh;
+    padding: 1vh 2vh 0 2vh;
 }
 
 .layout-option-box{
@@ -61,18 +61,17 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 1vw;
+    margin: 0 3vh 1vw 3vh;
+    justify-content: center;
 }
 
 .layout-box .dropdown-display{
     justify-content: center;
+    width: 16.5vw;
 }
 
-.layout-box .dropdown-color{
-    padding: 0 1vh 0 2vh;
-}
-
-.layout-box .dropdown-color-click{
-    width: 3vw;
+.layout-box .color-input{
+    width: 13vw !important;
 }
 
 .layout-box > p{
@@ -94,11 +93,16 @@
     margin-top: 0.2vh;
 }
 
+.layout-size-row-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
 .layout-size-input{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 2.5vh 0 2.5vh;
+    width: 100%;
 }
 
 .layout-size-input > p{
@@ -111,10 +115,11 @@
 .layout-size-text{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding: 0 10vh 0 4vh;
     margin-bottom: 0.5vh;
+}
 
+.layout-width-text{
+    margin-right: 45%;
 }
 
 .layout-size-text > p{
@@ -128,10 +133,9 @@
 }
 
 input[type="text"].layout-size-form{
-    height: 6vh;
-    width: 7.5vw;
+    width: 40%;
     border: 1px solid rgb(0, 0, 0);
-    font-size: 2vh;
+    font-size: 1.7vh;
     font-weight: 900;
     color: black;
 }
@@ -139,8 +143,10 @@ input[type="text"].layout-size-form{
 .layout-size-error{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding: 0 6vh 0 1vh;
+}
+
+.layout-size-error-width-text{
+    margin-right: 30%;
 }
 
 .layout-size-error > p{

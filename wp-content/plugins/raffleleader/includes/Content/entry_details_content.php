@@ -1,5 +1,5 @@
 <div id="sharedEntryDetails" class="shared-box-content">
-    <?php require plugin_dir_path( __FILE__ ) . 'entry_list_content.php' ?>
+    <?php require plugin_dir_path(__FILE__) . 'entry_list_content.php' ?>
 </div>
 <div id="entryDetails" class="customize-box-content">
     <div class="dropdown-wrapper section-design">
@@ -274,7 +274,7 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-text">
                         <input id="XFollowForm" class="additional-entry-input" data-type="XFollow" name="XFollow" type="text" placeholder="Enter X/Twitter Handle">
-                    </div> 
+                    </div>
                 </div>
             </div>
             <!-- <div class="customize-settings-box">
@@ -1512,10 +1512,12 @@
                 </div>
             </div>
         </div>
-        <div class="dropdown-wrapper section-design">
-            <div class="header-box">
-                <h2 class="header-box-title">Section Design</h2>
-            </div>
+    </div>
+    <div class="dropdown-wrapper section-design">
+        <div class="header-box">
+            <h2 class="header-box-title">Section Design</h2>
+        </div>
+        <div class="dropdown-settings-wrapper">
             <div class="customize-settings-box">
                 <p>Button Color</p>
                 <div class="customize-settings-dropdown">

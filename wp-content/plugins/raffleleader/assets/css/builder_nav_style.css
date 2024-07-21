@@ -180,7 +180,7 @@
 }
 
 .rl-nav-name{
-  margin-left: 11%;
+  margin-left: 17%;
 }
 
 .rl-nav-name input[type="text"]{
@@ -190,6 +190,10 @@
   font-size: 2.1vh;
   color: #1501fe;
   font-weight: 600;
+  height: 10%;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
 }
 
 .rl-nav-name input[type="text"]:focus{

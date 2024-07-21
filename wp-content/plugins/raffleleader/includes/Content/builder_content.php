@@ -33,6 +33,9 @@
             <li class="setup-tab"><a class="noSelect" href="#setup">Set Up</a></li>
             <li class="publish-tab"><a class="noSelect" href="#publish">Publish</a></li>
         </ul>
+        <ul class="rl-nav-name">
+            <input class="nav-name-input" type="text" id="raffleBuilderName">
+        </ul>
         <ul class="rl-nav-extras">
             <button class="rl-builder-save-btn">Save</button>
             <li><a class="rl-builder-help" href="">Help</a></li>

@@ -123,6 +123,7 @@ class BuilderController extends BaseController{
         check_ajax_referer( 'nonce', 'security' );
 
         $raffle_id = isset( $_POST['raffle_id'] ) ? intval( $_POST['raffle_id'] ) : 0;
+        $name = isset( $_POST['name'] ) ? $_POST['name'] : "New Raffle #$raffle_id";
         $content = isset( $_POST['content'] ) ? $_POST['content'] /*wp_kses( $_POST['content'], $this->allowed_html )*/ : '';
         $start_date = isset( $_POST['start_date'] ) ? $_POST['start_date'] : '';
         $end_date = isset( $_POST['end_date'] ) ? $_POST['end_date'] : '';
@@ -130,6 +131,7 @@ class BuilderController extends BaseController{
 
         if( $raffle_id && $content && $start_date && $end_date && $timezone ){
             $this->raffleAPI->updateRaffle( $raffle_id, array( 'content' => $content ) );
+            $this->raffleAPI->updateRaffle( $raffle_id, array( 'name' => $name ) );
             $this->raffleAPI->updateRaffle( $raffle_id, array( 'start_date' => $start_date ) );
             $this->raffleAPI->updateRaffle( $raffle_id, array( 'end_date' => $end_date ) );
             $this->raffleAPI->updateRaffle( $raffle_id, array( 'timezone' => $timezone ) );
@@ -149,6 +151,7 @@ class BuilderController extends BaseController{
             $raffleInstance = $this->raffleAPI->getRaffle( $raffle_id );
 
             $preview_content = !is_null( $raffleInstance['content'] ) ? stripslashes( $raffleInstance['content'] ) : '';
+            $name = !is_null( $raffleInstance['name'] ) ? $raffleInstance['name'] : "New Raffle #$raffle_id";
             $start_date = !is_null( $raffleInstance['start_date'] ) ? $raffleInstance['start_date'] : '';
             $end_date = !is_null( $raffleInstance['end_date'] ) ? $raffleInstance['end_date'] : '';
             $timezone = !is_null( $raffleInstance['timezone'] ) ? $raffleInstance['timezone'] : '';
@@ -156,6 +159,7 @@ class BuilderController extends BaseController{
             
             $data = array(
                 'content' => $preview_content,
+                'name' => $name,
                 'startDate' => $start_date,
                 'endDate' => $end_date,
                 'timezone' => $timezone,

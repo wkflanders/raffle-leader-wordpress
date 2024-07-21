@@ -34,7 +34,7 @@
             <li class="publish-tab"><a class="noSelect" href="#publish">Publish</a></li>
         </ul>
         <ul class="rl-nav-name">
-            <input class="nav-name-input" type="text" id="raffleBuilderName">
+            <input class="nav-name-input" type="text" id="raffleBuilderName" placeholder="Enter Raffle Name">
         </ul>
         <ul class="rl-nav-extras">
             <button class="rl-builder-save-btn">Save</button>

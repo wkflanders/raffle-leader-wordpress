@@ -180,7 +180,7 @@
 }
 
 .rl-nav-name{
-  margin-left: 17%;
+  margin-left: 16%;
 }
 
 .rl-nav-name input[type="text"]{
@@ -189,11 +189,15 @@
   border-bottom: 1px solid #1501fe;
   font-size: 2.1vh;
   color: #1501fe;
-  font-weight: 600;
+  font-weight: 700;
   height: 10%;
   padding-left: 0;
   padding-right: 0;
   text-align: center;
+}
+
+.rl-nav-name input[type="text"]::placeholder{
+  color: rgb(117, 117, 117);
 }
 
 .rl-nav-name input[type="text"]:focus{

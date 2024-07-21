@@ -35,6 +35,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     fetch('/wp-admin/admin-ajax.php?action=loadBuilderData&raffle_id=' + raffleID)
     .then(response => response.json())
     .then(data => {
+        loadName(data);
         loadPreview(data);
         return data;
     })
@@ -44,6 +45,13 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         return data;
     })
     .catch(error => console.error('Error:', error));
+
+    function loadName(raffleData){
+        if(raffleData.name){
+            const nameInput = document.getElementById('raffleBuilderName');
+            nameInput.value = raffleData.name;
+        }
+    }
 
     function loadPreview(raffleData){
 

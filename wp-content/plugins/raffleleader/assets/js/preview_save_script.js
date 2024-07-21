@@ -17,6 +17,8 @@ document.addEventListener("generalSettingsLoaded", () => {
   const startTimeInput = document.getElementById('startTime');
   const timezoneDisplay = document.getElementById('timeZoneDropDownTitle');
 
+  const raffleNameInput = document.getElementById("raffleBuilderName");
+
   const urlParams = new URLSearchParams(window.location.search);
   const raffleID = urlParams.get("raffle_id");
 
@@ -27,6 +29,7 @@ document.addEventListener("generalSettingsLoaded", () => {
     const HTMLContent = preview.outerHTML;
     const cleanedHTMLContent = cleanHTML(HTMLContent);
 
+    const nameValue = raffleNameInput.value === '' ? `New Raffle #${raffleID}` : raffleNameInput.value;
     const endDateValue = endDateInput.value;
     const startDateValue = startDateInput.value;
     const endTimeValue = endTimeInput.value;
@@ -45,6 +48,7 @@ document.addEventListener("generalSettingsLoaded", () => {
         body: new URLSearchParams({
           action: "savePreview",
           raffle_id: raffleID,
+          name: nameValue,
           content: cleanedHTMLContent,
           start_date: startDate,
           end_date: endDate,

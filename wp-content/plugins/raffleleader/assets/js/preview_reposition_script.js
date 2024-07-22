@@ -1,5 +1,8 @@
 window.globalZIndex = 10;
 
+const repositionDrop = new CustomEvent('repositionDrop');
+const resizeDrop = new CustomEvent('repositionDrop');
+
 document.addEventListener('previewLoaded', ()=>{
 
     const dropzone = document.getElementById('dropzone');
@@ -188,6 +191,7 @@ document.addEventListener('previewLoaded', ()=>{
                 function stopResize() {
                     document.removeEventListener('mousemove', resize);
                     document.removeEventListener('mouseup', stopResize);
+                    document.dispatchEvent(repositionDrop);
                 }
             });
         });
@@ -279,6 +283,7 @@ document.addEventListener('previewLoaded', ()=>{
             isDragging = false;
             document.removeEventListener('mousemove', drag);
             document.removeEventListener('mouseup', stopDrag);
+            document.dispatchEvent(repositionDrop);
         }
     }
 

@@ -1,4 +1,4 @@
-document.addEventListener('previewLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (event) => {
         const dropzone = document.getElementById('dropzone');
         const selectedElement = dropzone.querySelector('.selected-raffleleader-section');
@@ -6,12 +6,24 @@ document.addEventListener('previewLoaded', () => {
         // Check if the event target is an input, textarea, or contentEditable element
         const isInputActive = event.target.matches('input, textarea') || event.target.isContentEditable;
 
+        if ((event.ctrlKey || event.metaKey) && event.key === 'z') {
+            console.log('fired');
+            event.preventDefault();
+            window.undoAction();
+            return;
+        }
+
+        if ((event.ctrlKey || event.metaKey) && event.key === 'y') {
+            event.preventDefault();
+            window.redoAction();
+            return;
+        }
+
         if (selectedElement) {
             if (isInputActive) {
                 // Allow default behavior for input and textarea elements or contentEditable areas
                 return; // Normal browser functionality like copy, paste, and text input will occur
             }
-
             // Custom clipboard operations for selected elements outside of input fields
             if ((event.ctrlKey || event.metaKey) && event.key === 'c') {
                 event.preventDefault(); // Prevent default only if a selected element exists and hotkey is pressed
@@ -21,7 +33,9 @@ document.addEventListener('previewLoaded', () => {
                 }).catch((err) => {
                     console.error('Failed to copy to clipboard', err);
                 });
-            } else if ((event.ctrlKey || event.metaKey) && event.key === 'v') {
+            } 
+            
+            if ((event.ctrlKey || event.metaKey) && event.key === 'v') {
                 event.preventDefault(); // Prevent default only if a selected element exists and hotkey is pressed
                 navigator.clipboard.readText().then((element) => {
                     dropzone.insertAdjacentHTML('beforeend', element)

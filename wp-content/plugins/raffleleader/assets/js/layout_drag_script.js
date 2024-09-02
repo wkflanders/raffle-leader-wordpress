@@ -1,3 +1,5 @@
+const layoutDrop = new CustomEvent('layoutDrop');
+
 document.addEventListener('previewLoaded', layoutDrag);
 document.addEventListener('stateSaved', layoutDrag);
 
@@ -95,6 +97,8 @@ function layoutDrag(){
         newElement.style.zIndex = window.globalZIndex;
 
         selectSection(newElement);
+
+        document.dispatchEvent(layoutDrop);
     }
 
     function generateHTML(ID){

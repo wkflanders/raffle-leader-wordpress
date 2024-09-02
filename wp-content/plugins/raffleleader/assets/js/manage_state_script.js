@@ -30,6 +30,7 @@ const createStateManager = () => {
             }
             return null;
         },
+        showStates: () => states,
         getCurrentState: () => states[currentIndex]
     };
 };
@@ -55,6 +56,7 @@ function applyBuilderState(state){
 function saveCurrentState(){
     const currentState = captureBuilderState();
     stateManager.saveState(currentState);
+    console.log(currentState);
 }
 
 function undoAction(){
@@ -88,6 +90,10 @@ document.addEventListener('previewLoaded', ()=>{
     });
 
     document.addEventListener('customizationSettingChanged', ()=>{
+        saveCurrentState();
+    });
+
+    document.addEventListener('layoutDrop', ()=>{
         saveCurrentState();
     });
 

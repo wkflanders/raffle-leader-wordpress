@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const isInputActive = event.target.matches('input, textarea') || event.target.isContentEditable;
 
         if ((event.ctrlKey || event.metaKey) && event.key === 'z') {
-            console.log('fired');
             event.preventDefault();
             window.undoAction();
             return;

@@ -1,4 +1,4 @@
-const loadPreviewEvent = new CustomEvent('previewLoaded');
+const stateSaved = new CustomEvent('stateSaved');
 
 const createStateManager = () => {
     let states = [];
@@ -61,7 +61,7 @@ function undoAction(){
     const previousState = stateManager.undo();
     if(previousState){
         applyBuilderState(previousState);
-        document.dispatchEvent(loadPreviewEvent)
+        document.dispatchEvent(stateSaved)
     }
 }
 
@@ -69,7 +69,7 @@ function redoAction(){
     const nextState = stateManager.redo()
     if(nextState){
         applyBuilderState(nextState);
-        document.dispatchEvent(loadPreviewEvent)
+        document.dispatchEvent(stateSaved)
     }
 }
 
@@ -81,10 +81,13 @@ document.addEventListener('previewLoaded', ()=>{
 
     document.addEventListener('repositionDrop', ()=>{
         saveCurrentState();
-        console.log('test');
     });
 
     document.addEventListener('resizeDrop', ()=>{
+        saveCurrentState();
+    });
+
+    document.addEventListener('customizationSettingChanged', ()=>{
         saveCurrentState();
     });
 

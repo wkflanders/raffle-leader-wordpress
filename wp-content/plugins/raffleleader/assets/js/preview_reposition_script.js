@@ -294,7 +294,6 @@ function previewReposition(){
 
             if (initialLeft !== finalLeft || initialTop !== finalTop) {
                 document.dispatchEvent(repositionDrop);
-                console.log('test');
             }
         }
     }

@@ -1,7 +1,7 @@
 window.globalZIndex = 10;
 
 const repositionDrop = new CustomEvent('repositionDrop');
-const resizeDrop = new CustomEvent('repositionDrop');
+const resizeDrop = new CustomEvent('resizeDrop');
 
 document.addEventListener('previewLoaded', previewReposition);
 document.addEventListener('stateSaved', previewReposition);
@@ -9,6 +9,7 @@ document.addEventListener('stateSaved', previewReposition);
 function previewReposition(){
     const dropzone = document.getElementById('dropzone');
     const preview = document.getElementById('preview');
+    let initialLeft, initialTop;
     // Function to apply resizing and dragging logic to an element
     function applyLogicToElement(el) {
         const resizeHandles = el.querySelectorAll('.raffleleader-resize-handle');
@@ -193,7 +194,7 @@ function previewReposition(){
                 function stopResize() {
                     document.removeEventListener('mousemove', resize);
                     document.removeEventListener('mouseup', stopResize);
-                    document.dispatchEvent(repositionDrop);
+                    document.dispatchEvent(resizeDrop);
                 }
             });
         });
@@ -209,6 +210,9 @@ function previewReposition(){
             initialDrag = true;
             dragStartX = (e.clientX - el.getBoundingClientRect().left) / zoomLevel;
             dragStartY = (e.clientY - el.getBoundingClientRect().top) / zoomLevel;
+
+            initialLeft = el.style.left;
+            initialTop = el.style.top;
 
             // const throttledDrag = throttle(drag, 10);
 
@@ -285,7 +289,13 @@ function previewReposition(){
             isDragging = false;
             document.removeEventListener('mousemove', drag);
             document.removeEventListener('mouseup', stopDrag);
-            document.dispatchEvent(repositionDrop);
+            const finalLeft = el.style.left;
+            const finalTop = el.style.top;
+
+            if (initialLeft !== finalLeft || initialTop !== finalTop) {
+                document.dispatchEvent(repositionDrop);
+                console.log('test');
+            }
         }
     }
 

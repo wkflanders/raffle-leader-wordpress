@@ -1,4 +1,7 @@
-document.addEventListener('previewLoaded', () => {
+document.addEventListener('previewLoaded', layoutDrag);
+document.addEventListener('stateSaved', layoutDrag);
+
+function layoutDrag(){
     const dropzone = document.getElementById('dropzone');
     const layoutBoxes = document.querySelectorAll('.layout-option-box');
     const entryAdditionalBoxes = document.querySelectorAll('.dropdown-additional-entry');
@@ -156,4 +159,4 @@ document.addEventListener('previewLoaded', () => {
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div>`;
         }
     }
-});
+}

@@ -1,4 +1,7 @@
-document.addEventListener("previewLoaded", ()=>{
+document.addEventListener("previewLoaded", previewSelect);
+document.addEventListener("stateSaved", previewSelect);
+
+function previewSelect(){
     const dropzone = document.getElementById('dropzone');
     const preview = document.getElementById('preview');
     const customizeBox = document.getElementById('settingsWrapper');
@@ -2782,7 +2785,7 @@ document.addEventListener("previewLoaded", ()=>{
             } catch {}
         }
     });
-});
+}
 
 function rgbToHex(rgb) {
     // Find the numbers in the rgb string and split them into an array

@@ -3,8 +3,10 @@ window.globalZIndex = 10;
 const repositionDrop = new CustomEvent('repositionDrop');
 const resizeDrop = new CustomEvent('repositionDrop');
 
-document.addEventListener('previewLoaded', ()=>{
+document.addEventListener('previewLoaded', previewReposition);
+document.addEventListener('stateSaved', previewReposition);
 
+function previewReposition(){
     const dropzone = document.getElementById('dropzone');
     const preview = document.getElementById('preview');
     // Function to apply resizing and dragging logic to an element
@@ -324,4 +326,4 @@ document.addEventListener('previewLoaded', ()=>{
     document.querySelectorAll('.raffleleader-section').forEach(el => {
         applyLogicToElement(el);
     });
-});
+}

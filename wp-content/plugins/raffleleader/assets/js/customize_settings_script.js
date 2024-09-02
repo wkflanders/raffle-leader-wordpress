@@ -1,3 +1,5 @@
+const customizationSettingChanged = new CustomEvent('customizationSettingChanged');
+
 document.addEventListener('generalSettingsLoaded', ()=>{
     const dropDownBtns = document.querySelectorAll('.dropdown-btn');
     const textForms = document.querySelectorAll('.text-input');
@@ -44,11 +46,13 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     const additionalEntryInputs = document.querySelectorAll('.additional-entry-input');
     const additionalEntryQuantity = document.querySelectorAll('.additional-entry-quantity');
 
+    let pickrOpened = false;
+
     let pickrText = undefined;
     let pickrBackground = undefined;
     let pickrBorder = undefined;
     let pickrCounter = undefined;
-    let pickerCounterBackground = undefined;
+    let pickrCounterBackground = undefined;
     let pickrCounterBorder = undefined;
     let pickrImageBorder = undefined;
     
@@ -301,7 +305,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         const inputTextForm = event.target;
         const elementType = inputTextForm.getAttribute('data-type');
         const selectedSection = document.querySelector('.selected-raffleleader-section');
-
+        
         switch(elementType){
             case 'editText':
                 const selectedTextElement = selectedSection.querySelector('h2');
@@ -318,6 +322,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 selectedSubheaderElement.textContent = this.value;
                 break;
         }
+        document.dispatchEvent(customizationSettingChanged);
     }
 
     function alignTextLeft(event){
@@ -339,13 +344,16 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 document.querySelector('.inline-btn-halign-active').classList.remove('inline-btn-halign-active');
                 inputLeftBtn.classList.add('inline-btn-halign-active');
         }
+
+        document.dispatchEvent(customizationSettingChanged);
+
     }
 
     function alignTextRight(event){
         const inputRightBtn = event.target;
         const elementType = inputRightBtn.getAttribute('data-type');
         const selectedSection = document.querySelector('.selected-raffleleader-section');
-
+        
         switch(elementType){
             case 'textAlign':
                 const selectedElement = selectedSection.querySelector('.raffleleader-text-section');
@@ -360,6 +368,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 document.querySelector('.inline-btn-halign-active').classList.remove('inline-btn-halign-active');;
                 inputRightBtn.classList.add('inline-btn-halign-active');
         }
+
+        document.dispatchEvent(customizationSettingChanged);
+
     }
 
     function alignTextCenter(event){
@@ -381,6 +392,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 document.querySelector('.inline-btn-halign-active').classList.remove('inline-btn-halign-active');;
                 inputCenterBtn.classList.add('inline-btn-halign-active');
         }
+
+        document.dispatchEvent(customizationSettingChanged);
+
     }
 
     function alignTextTop(event){
@@ -396,6 +410,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 document.querySelector('.inline-btn-valign-active').classList.remove('inline-btn-valign-active');;
                 inputerTopBtn.classList.add('inline-btn-valign-active');
         }
+
+        document.dispatchEvent(customizationSettingChanged);
+
     }
 
     function alignTextMiddle(event){
@@ -411,6 +428,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 document.querySelector('.inline-btn-valign-active').classList.remove('inline-btn-valign-active');;
                 inputMiddleBtn.classList.add('inline-btn-valign-active');
         }
+
+        document.dispatchEvent(customizationSettingChanged);
+
     }
 
     function alignTextBottom(event){
@@ -426,6 +446,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 document.querySelector('.inline-btn-valign-active').classList.remove('inline-btn-valign-active');;
                 inputBottomBtn.classList.add('inline-btn-valign-active');
         }
+
+        document.dispatchEvent(customizationSettingChanged);
+
     }
 
     function orientTextHorizontal(event){
@@ -462,6 +485,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
                 break;
         }
+
+        document.dispatchEvent(customizationSettingChanged);
+
     }
 
     function orientTextVertical(event){
@@ -477,6 +503,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
                 document.querySelector('.inline-btn-orient-active').classList.remove('inline-btn-orient-active');;
                 inputVBtn.classList.add('inline-btn-orient-active');
+                break;
 
             case 'counterOrient':
                 counterSection = selectedSection.querySelector('.raffleleader-counter-section');
@@ -493,9 +520,11 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
                 document.querySelector('.inline-btn-orient-active').classList.remove('inline-btn-orient-active');;
                 inputVBtn.classList.add('inline-btn-orient-active');
-
                 break;
         }
+
+        document.dispatchEvent(customizationSettingChanged);
+
     }
 
     function selectFont(event){
@@ -718,28 +747,38 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             inputFontElement.classList.add('selected-font');
             currentFont.classList.remove('selected-font');
         }
+
+        document.dispatchEvent(customizationSettingChanged);
+
     }
 
 
     function showColorGradient(event){
         const inputColorElement = event.target;
         const elementType = inputColorElement.getAttribute('data-type');
-        
+
         switch(elementType){
             case 'textColor':
                 const currentTextFontColor = document.getElementById('textFontColorForm').value;
 
-                pickrText = Pickr.create({
-                    el: colorGradientPanel,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentTextFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrText === undefined){
+                    pickrText = Pickr.create({
+                        el: colorGradientPanel,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'text-color-pickr',
+                        default: currentTextFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.text-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
+
                 pickrText.setColorRepresentation('HEX');
                 pickrText.show();
 
@@ -754,17 +793,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'textBackgroundColor':
                 const currentTextBackgroundColor = document.getElementById('textBackgroundColorForm').value;
 
-                pickrBackground = Pickr.create({
-                    el: colorGradientPanelBackground,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentTextBackgroundColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrBackground === undefined){
+                    pickrBackground = Pickr.create({
+                        el: colorGradientPanelBackground,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'text-background-color-pickr',
+                        default: currentTextBackgroundColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.text-background-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrBackground.setColorRepresentation('HEX');
                 pickrBackground.show();
 
@@ -779,17 +824,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'textBorderColor':
                 const currentBorderColor = document.getElementById('textBorderColorForm').value;
 
-                pickrBorder = Pickr.create({
-                    el: colorGradientPanelBorder,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentBorderColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrBorder === undefined){
+                    pickrBorder = Pickr.create({
+                        el: colorGradientPanelBorder,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'text-border-color-pickr',
+                        default: currentBorderColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.text-border-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrBorder.setColorRepresentation('HEX');
                 pickrBorder.show();
 
@@ -804,17 +855,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'counterColor':
                 const currentCounterFontColor = document.getElementById('counterFontColorForm').value;
 
-                pickrCounter = Pickr.create({
-                    el: counterColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentCounterFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrCounter === undefined){
+                    pickrCounter = Pickr.create({
+                        el: counterColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'counter-color-pickr',
+                        default: currentCounterFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.counter-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrCounter.setColorRepresentation('HEX');
                 pickrCounter.show();
 
@@ -829,17 +886,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'counterBackgroundColor':
                 const currentCounterBackgroundColor = document.getElementById('counterBackgroundColorForm').value;
 
-                pickerCounterBackground = Pickr.create({
-                    el: counterColorGradientBackground,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentCounterBackgroundColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrCounterBackground === undefined){
+                    pickerCounterBackground = Pickr.create({
+                        el: counterColorGradientBackground,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'counter-background-color-pickr',
+                        default: currentCounterBackgroundColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.counter-background-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickerCounterBackground.setColorRepresentation('HEX');
                 pickerCounterBackground.show();
 
@@ -854,17 +917,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'counterBorderColor':
                 const counterCurrentBorderColor = document.getElementById('counterBorderColorForm').value;
 
-                pickrCounterBorder = Pickr.create({
-                    el: counterColorGradientBorder,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: counterCurrentBorderColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrCounterBorder === undefined){
+                    pickrCounterBorder = Pickr.create({
+                        el: counterColorGradientBorder,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'counter-border-color-pickr',
+                        default: counterCurrentBorderColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.counter-border-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrCounterBorder.setColorRepresentation('HEX');
                 pickrCounterBorder.show();
 
@@ -879,17 +948,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'imageBorderColor':
                 const imageCurrentBorderColor = document.getElementById('imageBorderColorForm').value;
 
-                pickrImageBorder = Pickr.create({
-                    el: imageColorGradientBorder,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: imageCurrentBorderColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrImageBorder === undefined){
+                    pickrImageBorder = Pickr.create({
+                        el: imageColorGradientBorder,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'image-border-color-pickr',
+                        default: imageCurrentBorderColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.image-border-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrImageBorder.setColorRepresentation('HEX');
                 pickrImageBorder.show();
 
@@ -903,18 +978,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
             case 'entryFontColor':
                 const entryCurrentFontColor = document.getElementById('entryFontColorForm').value;
-
-                pickrEntryFont = Pickr.create({
-                    el: entryColorGradientFont,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: entryCurrentFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrEntryFont === undefined){   
+                    pickrEntryFont = Pickr.create({
+                        el: entryColorGradientFont,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'entry-font-color-pickr',
+                        default: entryCurrentFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.entry-font-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrEntryFont.setColorRepresentation('HEX');
                 pickrEntryFont.show();
 
@@ -929,17 +1009,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'entryFormBackgroundColor':
                 const entryCurrentFormBackgroundColor = document.getElementById('entryFontColorForm').value;
 
-                pickrEntryFormBackground = Pickr.create({
-                    el: entryColorGradientFormBackground,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: entryCurrentFormBackgroundColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrEntryFormBackground === undefined){
+                    pickrEntryFormBackground = Pickr.create({
+                        el: entryColorGradientFormBackground,
+                        theme: 'classic', // or 'monolith', or 'nano'\
+                        appClass: 'entry-form-background-color-pickr',
+                        default: entryCurrentFormBackgroundColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.entry-form-background-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrEntryFormBackground.setColorRepresentation('HEX');
                 pickrEntryFormBackground.show();
 
@@ -954,17 +1040,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'entryFormBorderColor':
                 const entryFormCurrentBorderColor = document.getElementById('entryFormBorderColorForm').value;
 
-                pickrEntryFormBorder = Pickr.create({
-                    el: entryColorGradientFormBorder,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: entryFormCurrentBorderColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrEntryFormBorder === undefined){
+                    pickrEntryFormBorder = Pickr.create({
+                        el: entryColorGradientFormBorder,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'entry-form-border-color-pickr',
+                        default: entryFormCurrentBorderColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.entry-form-border-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrEntryFormBorder.setColorRepresentation('HEX');
                 pickrEntryFormBorder.show();
 
@@ -979,17 +1071,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'entryButtonFontColor':
                 const entryCurrentButtonFontColor = document.getElementById('entryButtonFontColorForm').value;
 
-                pickrEntryButtonFont = Pickr.create({
-                    el: entryColorGradientButtonFont,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: entryCurrentButtonFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrEntryButtonFont === undefined){
+                    pickrEntryButtonFont = Pickr.create({
+                        el: entryColorGradientButtonFont,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'entry-button-font-color-pickr',
+                        default: entryCurrentButtonFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.entry-button-font-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrEntryButtonFont.setColorRepresentation('HEX');
                 pickrEntryButtonFont.show();
 
@@ -1004,17 +1102,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'entryButtonBorderColor':
                 const entryCurrentButtonBorderColor = document.getElementById('entryButtonBorderColorForm').value;
 
-                pickrEntryButtonBorder = Pickr.create({
-                    el: entryColorGradientButtonBorder,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: entryCurrentButtonBorderColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrEntryButtonBorder === undefined){
+                    pickrEntryButtonBorder = Pickr.create({
+                        el: entryColorGradientButtonBorder,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'entry-button-border-color-pickr',
+                        default: entryCurrentButtonBorderColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.entry-button-border-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrEntryButtonBorder.setColorRepresentation('HEX');
                 pickrEntryButtonBorder.show();
 
@@ -1029,17 +1133,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'entryButtonColor':
                 const entryCurrentButtonColor = document.getElementById('entryButtonColorForm').value;
 
-                pickrEntryBtn = Pickr.create({
-                    el: entryColorGradientButton,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: entryCurrentButtonColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrEntryBtn === undefined){
+                    pickrEntryBtn = Pickr.create({
+                        el: entryColorGradientButton,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'entry-button-color-pickr',
+                        default: entryCurrentButtonColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.entry-button-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrEntryBtn.setColorRepresentation('HEX');
                 pickrEntryBtn.show();
 
@@ -1054,17 +1164,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'entryBackgroundColor':
                 const entryCurrentBackgroundColor = document.getElementById('entryBackgroundColorForm').value;
 
-                pickrEntryBackground = Pickr.create({
-                    el: entryColorGradientBackground,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: entryCurrentBackgroundColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrEntryBackground === undefined){
+                    pickrEntryBackground = Pickr.create({
+                        el: entryColorGradientBackground,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'entry-background-color-pickr',
+                        default: entryCurrentBackgroundColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.entry-background-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrEntryBackground.setColorRepresentation('HEX');
                 pickrEntryBackground.show();
 
@@ -1079,17 +1195,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'entryBorderColor':
                 const entryCurrentBorderColor = document.getElementById('entryBorderColorForm').value;
 
-                pickrEntryBorder = Pickr.create({
-                    el: entryColorGradientBorder,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: entryCurrentBorderColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrEntryBorder === undefined){
+                    pickrEntryBorder = Pickr.create({
+                        el: entryColorGradientBorder,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'entry-border-color-pickr',
+                        default: entryCurrentBorderColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.entry-border-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrEntryBorder.setColorRepresentation('HEX');
                 pickrEntryBorder.show();
 
@@ -1104,17 +1226,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'XFollowHeaderColor':
                 const currentXFollowHeaderFontColor = document.getElementById('XFollowHeaderFontColorForm').value;
 
-                pickrXFollowHeader = Pickr.create({
-                    el: XFollowHeaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentXFollowHeaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrXFollowHeader === undefined){
+                    pickrXFollowHeader = Pickr.create({
+                        el: XFollowHeaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'XFollowHeader-color-pickr',
+                        default: currentXFollowHeaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.XFollowHeader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrXFollowHeader.setColorRepresentation('HEX');
                 pickrXFollowHeader.show();
 
@@ -1129,17 +1257,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'XFollowSubheaderColor':
                 const currentXFollowSubheaderFontColor = document.getElementById('XFollowSubheaderFontColorForm').value;
 
-                pickrXFollowSubheader = Pickr.create({
-                    el: XFollowSubheaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentXFollowSubheaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrXFollowSubheader === undefined){
+                    pickrXFollowSubheader = Pickr.create({
+                        el: XFollowSubheaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'XFollowSubheader-color-pickr',
+                        default: currentXFollowSubheaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.XFollowSubheader-color-pickr').addEventListener('mouseup', ()=>{   
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrXFollowSubheader.setColorRepresentation('HEX');
                 pickrXFollowSubheader.show();
 
@@ -1153,17 +1287,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'XFollowButtonColor':
                 const currentXFollowButtonColor = document.getElementById('XFollowButtonColorForm').value;
 
-                pickrXFollowButton = Pickr.create({
-                    el: XFollowColorGradientButton,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentXFollowButtonColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrXFollowButton === undefined){
+                    pickrXFollowButton = Pickr.create({
+                        el: XFollowColorGradientButton,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'XFollowButton-color-pickr',
+                        default: currentXFollowButtonColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.XFollowButton-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrXFollowButton.setColorRepresentation('HEX');
                 pickrXFollowButton.show();
 
@@ -1178,17 +1318,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'XFollowBackgroundColor':
                 const currentXFollowBackgroundColor = document.getElementById('XFollowBackgroundColorForm').value;
 
-                pickrXFollowBackground = Pickr.create({
-                    el: XFollowColorGradientBackground,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentXFollowBackgroundColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrXFollowBackground === undefined){
+                    pickrXFollowBackground = Pickr.create({
+                        el: XFollowColorGradientBackground,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'XFollowBackground-color-pickr',
+                        default: currentXFollowBackgroundColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.XFollowBackground-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrXFollowBackground.setColorRepresentation('HEX');
                 pickrXFollowBackground.show();
 
@@ -1203,17 +1349,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'XFollowBorderColor':
                 const currentXFollowBorderColor = document.getElementById('XFollowBorderColorForm').value;
 
-                pickrXFollowBorder = Pickr.create({
-                    el: XFollowColorGradientBorder,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentXFollowBorderColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrXFollowBackground === undefined){
+                    pickrXFollowBorder = Pickr.create({
+                        el: XFollowColorGradientBorder,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'XFollowBorder-color-pickr',
+                        default: currentXFollowBorderColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.XFollowBorder-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrXFollowBorder.setColorRepresentation('HEX');
                 pickrXFollowBorder.show();
 
@@ -1228,17 +1380,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'XRepostHeaderColor':
                 const currentXRepostHeaderFontColor = document.getElementById('XRepostHeaderFontColorForm').value;
 
-                pickrXRepostHeader = Pickr.create({
-                    el: XRepostHeadeColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentXRepostHeaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrXRepostHeader === undefined){
+                    pickrXRepostHeader = Pickr.create({
+                        el: XRepostHeadeColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'XRepostHeader-color-pickr',
+                        default: currentXRepostHeaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.XRepostHeader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrXRepostHeader.setColorRepresentation('HEX');
                 pickrXRepostHeader.show();
 
@@ -1253,17 +1411,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'XRepostSubheaderColor':
                 const currentXRepostSubheaderFontColor = document.getElementById('XRepostSubheaderFontColorForm').value;
 
-                pickrXRepostSubheader = Pickr.create({
-                    el: XRepostSubheaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentXRepostSubheaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrXRepostSubheader === undefined){
+                    pickrXRepostSubheader = Pickr.create({
+                        el: XRepostSubheaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'XRepostSubheader-color-pickr',
+                        default: currentXRepostSubheaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.XRepostSubheader-color-pickr').addEventListener('mouseup', ()=>{   
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrXRepostSubheader.setColorRepresentation('HEX');
                 pickrXRepostSubheader.show();
 
@@ -1277,17 +1441,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'XRepostButtonColor':
                 const currentXRepostButtonColor = document.getElementById('XRepostButtonColorForm').value;
 
-                pickrXRepostButton = Pickr.create({
-                    el: XRepostColorGradientButton,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentXRepostButtonColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrXRepostButton === undefined){
+                    pickrXRepostButton = Pickr.create({
+                        el: XRepostColorGradientButton,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'XRepostButton-color-pickr',
+                        default: currentXRepostButtonColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.XRepostButton-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrXRepostButton.setColorRepresentation('HEX');
                 pickrXRepostButton.show();
 
@@ -1302,17 +1472,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'XRepostBackgroundColor':
                 const currentXRepostBackgroundColor = document.getElementById('XRepostBackgroundColorForm').value;
 
-                pickrXRepostBackground = Pickr.create({
-                    el: XRepostColorGradientBackground,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentXRepostBackgroundColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrXRepostBackground === undefined){
+                    pickrXRepostBackground = Pickr.create({
+                        el: XRepostColorGradientBackground, 
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'XRepostBackground-color-pickr',
+                        default: currentXRepostBackgroundColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.XRepostBackground-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrXRepostBackground.setColorRepresentation('HEX');
                 pickrXRepostBackground.show();
 
@@ -1327,17 +1503,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'XRepostBorderColor':
                 const currentXRepostBorderColor = document.getElementById('XRepostBorderColorForm').value;
 
-                pickrXRepostBorder = Pickr.create({
-                    el: XRepostColorGradientBorder,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentXRepostBorderColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrXRepostBorder === undefined){
+                    pickrXRepostBorder = Pickr.create({
+                        el: XRepostColorGradientBorder,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'XRepostBorder-color-pickr',
+                        default: currentXRepostBorderColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.XRepostBorder-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrXRepostBorder.setColorRepresentation('HEX');
                 pickrXRepostBorder.show();
 
@@ -1352,17 +1534,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'XLikeHeaderColor':
                 const currentXLikeHeaderFontColor = document.getElementById('XLikeHeaderFontColorForm').value;
 
-                pickrXLikeHeader = Pickr.create({
-                    el: XLikeHeadeColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentXLikeHeaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrXLikeHeader === undefined){
+                    pickrXLikeHeader = Pickr.create({
+                        el: XLikeHeadeColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'XLikeHeader-color-pickr',
+                        default: currentXLikeHeaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.XLikeHeader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrXLikeHeader.setColorRepresentation('HEX');
                 pickrXLikeHeader.show();
 
@@ -1377,17 +1565,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'XLikeSubheaderColor':
                 const currentXLikeSubheaderFontColor = document.getElementById('XLikeSubheaderFontColorForm').value;
 
-                pickrXLikeSubheader = Pickr.create({
-                    el: XLikeSubheaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentXLikeSubheaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrXLikeSubheader === undefined){
+                    pickrXLikeSubheader = Pickr.create({
+                        el: XLikeSubheaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'XLikeSubheader-color-pickr',
+                        default: currentXLikeSubheaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.XLikeSubheader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrXLikeSubheader.setColorRepresentation('HEX');
                 pickrXLikeSubheader.show();
 
@@ -1401,17 +1595,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'XLikeButtonColor':
                 const currentXLikeButtonColor = document.getElementById('XLikeButtonColorForm').value;
 
-                pickrXLikeButton = Pickr.create({
-                    el: XLikeColorGradientButton,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentXLikeButtonColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrXLikeButton === undefined){
+                    pickrXLikeButton = Pickr.create({
+                        el: XLikeColorGradientButton,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'XLikeButton-color-pickr',
+                        default: currentXLikeButtonColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.XLikeButton-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrXLikeButton.setColorRepresentation('HEX');
                 pickrXLikeButton.show();
 
@@ -1426,17 +1626,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'XLikeBackgroundColor':
                 const currentXLikeBackgroundColor = document.getElementById('XLikeBackgroundColorForm').value;
 
-                pickrXLikeBackground = Pickr.create({
-                    el: XLikeColorGradientBackground,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentXLikeBackgroundColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrXLikeBackground === undefined){
+                    pickrXLikeBackground = Pickr.create({
+                        el: XLikeColorGradientBackground,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'XLikeBackground-color-pickr',
+                        default: currentXLikeBackgroundColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.XLikeBackground-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrXLikeBackground.setColorRepresentation('HEX');
                 pickrXLikeBackground.show();
 
@@ -1451,17 +1657,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'XLikeBorderColor':
                 const currentXLikeBorderColor = document.getElementById('XLikeBorderColorForm').value;
 
-                pickrXLikeBorder = Pickr.create({
-                    el: XLikeColorGradientBorder,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentXLikeBorderColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrXLikeBorder === undefined){
+                    pickrXLikeBorder = Pickr.create({
+                        el: XLikeColorGradientBorder,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'XLikeBorder-color-pickr',
+                        default: currentXLikeBorderColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.XLikeBorder-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrXLikeBorder.setColorRepresentation('HEX');
                 pickrXLikeBorder.show();
 
@@ -1476,17 +1688,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'instaFollowHeaderColor':
                 const currentInstaFollowHeaderFontColor = document.getElementById('instaFollowHeaderFontColorForm').value;
 
-                pickrInstaFollowHeader = Pickr.create({
-                    el: instaFollowHeaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentInstaFollowHeaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrInstaFollowHeader === undefined){
+                    pickrInstaFollowHeader = Pickr.create({
+                        el: instaFollowHeaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'instaFollowHeader-color-pickr',
+                        default: currentInstaFollowHeaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.instaFollowHeader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrInstaFollowHeader.setColorRepresentation('HEX');
                 pickrInstaFollowHeader.show();
 
@@ -1501,17 +1719,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'instaFollowSubheaderColor':
                 const currentInstaFollowSubheaderFontColor = document.getElementById('instaFollowSubheaderFontColorForm').value;
 
-                pickrInstaFollowSubheader = Pickr.create({
-                    el: instaFollowSubheaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentInstaFollowSubheaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrInstaFollowSubheader === undefined){
+                    pickrInstaFollowSubheader = Pickr.create({
+                        el: instaFollowSubheaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'instaFollowSubheader-color-pickr',
+                        default: currentInstaFollowSubheaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.instaFollowSubheader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrInstaFollowSubheader.setColorRepresentation('HEX');
                 pickrInstaFollowSubheader.show();
 
@@ -1525,17 +1749,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'instaFollowButtonColor':
                 const currentInstaFollowButtonColor = document.getElementById('instaFollowButtonColorForm').value;
 
-                pickrInstaFollowButton = Pickr.create({
-                    el: instaFollowColorGradientButton,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentInstaFollowButtonColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrInstaFollowButton === undefined){
+                    pickrInstaFollowButton = Pickr.create({
+                        el: instaFollowColorGradientButton,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'instaFollowButton-color-pickr',
+                        default: currentInstaFollowButtonColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.instaFollowButton-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrInstaFollowButton.setColorRepresentation('HEX');
                 pickrInstaFollowButton.show();
 
@@ -1550,17 +1780,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'instaFollowBackgroundColor':
                 const currentInstaFollowBackgroundColor = document.getElementById('instaFollowBackgroundColorForm').value;
 
-                pickrInstaFollowBackground = Pickr.create({
-                    el: instaFollowColorGradientBackground,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentInstaFollowBackgroundColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrInstaFollowBackground === undefined){
+                    pickrInstaFollowBackground = Pickr.create({
+                        el: instaFollowColorGradientBackground,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'instaFollowBackground-color-pickr',
+                        default: currentInstaFollowBackgroundColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.instaFollowBackground-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrInstaFollowBackground.setColorRepresentation('HEX');
                 pickrInstaFollowBackground.show();
 
@@ -1575,17 +1811,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'instaFollowBorderColor':
                 const currentInstaFollowBorderColor = document.getElementById('instaFollowBorderColorForm').value;
 
-                pickrInstaFollowBorder = Pickr.create({
-                    el: instaFollowColorGradientBorder,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentInstaFollowBorderColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrInstaFollowBorder === undefined){
+                    pickrInstaFollowBorder = Pickr.create({
+                        el: instaFollowColorGradientBorder,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'instaFollowBorder-color-pickr',
+                        default: currentInstaFollowBorderColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.instaFollowBorder-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrInstaFollowBorder.setColorRepresentation('HEX');
                 pickrInstaFollowBorder.show();
 
@@ -1600,17 +1842,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'instaCommentHeaderColor':
                 const currentInstaCommentHeaderFontColor = document.getElementById('instaCommentHeaderFontColorForm').value;
 
-                pickrInstaCommentHeader = Pickr.create({
-                    el: instaCommentHeaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentInstaCommentHeaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrInstaCommentHeader === undefined){
+                    pickrInstaCommentHeader = Pickr.create({
+                        el: instaCommentHeaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'instaCommentHeader-color-pickr',
+                        default: currentInstaCommentHeaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.instaCommentHeader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrInstaCommentHeader.setColorRepresentation('HEX');
                 pickrInstaCommentHeader.show();
 
@@ -1625,17 +1873,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'instaCommentSubheaderColor':
                 const currentInstaCommentSubheaderFontColor = document.getElementById('instaCommentSubheaderFontColorForm').value;
 
-                pickrInstaCommentSubheader = Pickr.create({
-                    el: instaCommentSubheaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentInstaCommentSubheaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrInstaCommentSubheader === undefined){
+                    pickrInstaCommentSubheader = Pickr.create({
+                        el: instaCommentSubheaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'instaCommentSubheader-color-pickr',
+                        default: currentInstaCommentSubheaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.instaCommentSubheader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrInstaCommentSubheader.setColorRepresentation('HEX');
                 pickrInstaCommentSubheader.show();
 
@@ -1650,17 +1904,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'instaCommentButtonColor':
                 const currentInstaCommentButtonColor = document.getElementById('instaCommentButtonColorForm').value;
 
-                pickrInstaCommentButton = Pickr.create({
-                    el: instaCommentColorGradientButton,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentInstaCommentButtonColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrInstaCommentButton === undefined){
+                    pickrInstaCommentButton = Pickr.create({
+                        el: instaCommentColorGradientButton,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'instaCommentButton-color-pickr',
+                        default: currentInstaCommentButtonColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.instaCommentButton-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrInstaCommentButton.setColorRepresentation('HEX');
                 pickrInstaCommentButton.show();
 
@@ -1675,17 +1935,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'instaCommentBackgroundColor':
                 const currentInstaCommentBackgroundColor = document.getElementById('instaCommentBackgroundColorForm').value;
 
-                pickrInstaCommentBackground = Pickr.create({
-                    el: instaCommentColorGradientBackground,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentInstaCommentBackgroundColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrInstaCommentBackground === undefined){
+                    pickrInstaCommentBackground = Pickr.create({
+                        el: instaCommentColorGradientBackground,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'instaCommentBackground-color-pickr',
+                        default: currentInstaCommentBackgroundColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.instaCommentBackground-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrInstaCommentBackground.setColorRepresentation('HEX');
                 pickrInstaCommentBackground.show();
 
@@ -1700,17 +1966,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'instaCommentBorderColor':
                 const currentInstaCommentBorderColor = document.getElementById('instaCommentBorderColorForm').value;
 
-                pickrInstaCommentBorder = Pickr.create({
-                    el: instaCommentColorGradientBorder,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentInstaCommentBorderColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrInstaCommentBorder === undefined){
+                    pickrInstaCommentBorder = Pickr.create({
+                        el: instaCommentColorGradientBorder,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'instaCommentBorder-color-pickr',
+                        default: currentInstaCommentBorderColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.instaCommentBorder-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrInstaCommentBorder.setColorRepresentation('HEX');
                 pickrInstaCommentBorder.show();
 
@@ -1725,17 +1997,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'instaLikeHeaderColor':
                 const currentInstaLikeHeaderFontColor = document.getElementById('instaLikeHeaderFontColorForm').value;
 
-                pickrInstaLikeHeader = Pickr.create({
-                    el: instaLikeHeaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentInstaLikeHeaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrInstaLikeHeader === undefined){
+                    pickrInstaLikeHeader = Pickr.create({
+                        el: instaLikeHeaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'instaLikeHeader-color-pickr',
+                        default: currentInstaLikeHeaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.instaLikeHeader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrInstaLikeHeader.setColorRepresentation('HEX');
                 pickrInstaLikeHeader.show();
 
@@ -1750,17 +2028,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'instaLikeSubheaderColor':
                 const currentInstaLikeSubheaderFontColor = document.getElementById('instaLikeSubheaderFontColorForm').value;
 
-                pickrInstaLikeSubheader = Pickr.create({
-                    el: instaLikeSubheaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentInstaLikeSubheaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrInstaLikeSubheader === undefined){
+                    pickrInstaLikeSubheader = Pickr.create({
+                        el: instaLikeSubheaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'instaLikeSubheader-color-pickr',
+                        default: currentInstaLikeSubheaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.instaLikeSubheader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrInstaLikeSubheader.setColorRepresentation('HEX');
                 pickrInstaLikeSubheader.show();
 
@@ -1774,17 +2058,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'instaLikeButtonColor':
                 const currentInstaLikeButtonColor = document.getElementById('instaLikeButtonColorForm').value;
 
-                pickrInstaLikeButton = Pickr.create({
-                    el: instaLikeColorGradientButton,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentInstaLikeButtonColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrInstaLikeButton === undefined){
+                    pickrInstaLikeButton = Pickr.create({
+                        el: instaLikeColorGradientButton,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'instaLikeButton-color-pickr',
+                        default: currentInstaLikeButtonColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.instaLikeButton-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrInstaLikeButton.setColorRepresentation('HEX');
                 pickrInstaLikeButton.show();
 
@@ -1799,17 +2089,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'instaLikeBackgroundColor':
                 const currentInstaLikeBackgroundColor = document.getElementById('instaLikeBackgroundColorForm').value;
 
-                pickrInstaLikeBackground = Pickr.create({
-                    el: instaLikeColorGradientBackground,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentInstaLikeBackgroundColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrInstaLikeBackground === undefined){
+                    pickrInstaLikeBackground = Pickr.create({
+                        el: instaLikeColorGradientBackground,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'instaLikeBackground-color-pickr',
+                        default: currentInstaLikeBackgroundColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.instaLikeBackground-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrInstaLikeBackground.setColorRepresentation('HEX');
                 pickrInstaLikeBackground.show();
 
@@ -1824,17 +2120,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'instaLikeBorderColor':
                 const currentInstaLikeBorderColor = document.getElementById('instaLikeBorderColorForm').value;
 
-                pickrInstaLikeBorder = Pickr.create({
-                    el: instaLikeColorGradientBorder,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentInstaLikeBorderColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrInstaLikeBorder === undefined){
+                    pickrInstaLikeBorder = Pickr.create({
+                        el: instaLikeColorGradientBorder,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'instaLikeBorder-color-pickr',
+                        default: currentInstaLikeBorderColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.instaLikeBorder-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrInstaLikeBorder.setColorRepresentation('HEX');
                 pickrInstaLikeBorder.show();
 
@@ -1849,17 +2151,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'facebookFollowHeaderColor':
                 const currentFacebookFollowHeaderFontColor = document.getElementById('facebookFollowHeaderFontColorForm').value;
 
-                pickrFacebookFollowHeader = Pickr.create({
-                    el: facebookFollowHeaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentFacebookFollowHeaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrFacebookFollowHeader === undefined){
+                    pickrFacebookFollowHeader = Pickr.create({
+                        el: facebookFollowHeaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'facebookFollowHeader-color-pickr',
+                        default: currentFacebookFollowHeaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.facebookFollowHeader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrFacebookFollowHeader.setColorRepresentation('HEX');
                 pickrFacebookFollowHeader.show();
 
@@ -1874,17 +2182,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'facebookFollowSubheaderColor':
                 const currentFacebookFollowSubheaderFontColor = document.getElementById('facebookFollowSubheaderFontColorForm').value;
 
-                pickrFacebookFollowSubheader = Pickr.create({
-                    el: facebookFollowSubheaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentFacebookFollowSubheaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrFacebookFollowSubheader === undefined){
+                    pickrFacebookFollowSubheader = Pickr.create({
+                        el: facebookFollowSubheaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'facebookFollowSubheader-color-pickr',
+                        default: currentFacebookFollowSubheaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.facebookFollowSubheader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrFacebookFollowSubheader.setColorRepresentation('HEX');
                 pickrFacebookFollowSubheader.show();
 
@@ -1899,17 +2213,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'facebookFollowButtonColor':
                 const currentFacebookFollowButtonColor = document.getElementById('facebookFollowButtonColorForm').value;
 
-                pickrFacebookFollowButton = Pickr.create({
-                    el: facebookFollowColorGradientButton,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentFacebookFollowButtonColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrFacebookFollowButton === undefined){
+                    pickrFacebookFollowButton = Pickr.create({
+                        el: facebookFollowColorGradientButton,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'facebookFollowButton-color-pickr',
+                        default: currentFacebookFollowButtonColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.facebookFollowButton-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrFacebookFollowButton.setColorRepresentation('HEX');
                 pickrFacebookFollowButton.show();
 
@@ -1924,17 +2244,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'facebookFollowBackgroundColor':
                 const currentFacebookFollowBackgroundColor = document.getElementById('facebookFollowBackgroundColorForm').value;
 
-                pickrFacebookFollowBackground = Pickr.create({
-                    el: facebookFollowColorGradientBackground,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentFacebookFollowBackgroundColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrFacebookFollowBackground === undefined){
+                    pickrFacebookFollowBackground = Pickr.create({
+                        el: facebookFollowColorGradientBackground,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'facebookFollowBackground-color-pickr',
+                        default: currentFacebookFollowBackgroundColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.facebookFollowBackground-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrFacebookFollowBackground.setColorRepresentation('HEX');
                 pickrFacebookFollowBackground.show();
 
@@ -1949,17 +2275,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'facebookFollowBorderColor':
                 const currentFacebookFollowBorderColor = document.getElementById('facebookFollowBorderColorForm').value;
 
-                pickrFacebookFollowBorder = Pickr.create({
-                    el: facebookFollowColorGradientBorder,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentFacebookFollowBorderColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrFacebookFollowBorder === undefined){
+                    pickrFacebookFollowBorder = Pickr.create({
+                        el: facebookFollowColorGradientBorder,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'facebookFollowBorder-color-pickr',
+                        default: currentFacebookFollowBorderColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.facebookFollowBorder-color-pickr').addEventListener('mouseup', ()=>{        
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrFacebookFollowBorder.setColorRepresentation('HEX');
                 pickrFacebookFollowBorder.show();
 
@@ -1973,18 +2305,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
             case 'facebookCommentHeaderColor':
                 const currentFacebookCommentHeaderFontColor = document.getElementById('facebookCommentHeaderFontColorForm').value;
-        
-                pickrFacebookCommentHeader = Pickr.create({
-                    el: facebookCommentHeaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentFacebookCommentHeaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrFacebookCommentHeader === undefined){
+                    pickrFacebookCommentHeader = Pickr.create({
+                        el: facebookCommentHeaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'facebookCommentHeader-color-pickr',
+                        default: currentFacebookCommentHeaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.facebookCommentHeader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrFacebookCommentHeader.setColorRepresentation('HEX');
                 pickrFacebookCommentHeader.show();
         
@@ -1998,18 +2336,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         
             case 'facebookCommentSubheaderColor':
                 const currentFacebookCommentSubheaderFontColor = document.getElementById('facebookCommentSubheaderFontColorForm').value;
-        
-                pickrFacebookCommentSubheader = Pickr.create({
-                    el: facebookCommentSubheaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentFacebookCommentSubheaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrFacebookCommentSubheader === undefined){
+                    pickrFacebookCommentSubheader = Pickr.create({
+                        el: facebookCommentSubheaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'facebookCommentSubheader-color-pickr',
+                        default: currentFacebookCommentSubheaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.facebookCommentSubheader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrFacebookCommentSubheader.setColorRepresentation('HEX');
                 pickrFacebookCommentSubheader.show();
         
@@ -2023,18 +2367,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
             case 'facebookCommentButtonColor':
                 const currentFacebookCommentButtonColor = document.getElementById('facebookCommentButtonColorForm').value;
-        
-                pickrFacebookCommentButton = Pickr.create({
-                    el: facebookCommentColorGradientButton,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentFacebookCommentButtonColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrFacebookCommentButton === undefined){
+                    pickrFacebookCommentButton = Pickr.create({
+                        el: facebookCommentColorGradientButton,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'facebookCommentButton-color-pickr',
+                        default: currentFacebookCommentButtonColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.facebookCommentButton-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrFacebookCommentButton.setColorRepresentation('HEX');
                 pickrFacebookCommentButton.show();
         
@@ -2048,18 +2398,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         
             case 'facebookCommentBackgroundColor':
                 const currentFacebookCommentBackgroundColor = document.getElementById('facebookCommentBackgroundColorForm').value;
-        
-                pickrFacebookCommentBackground = Pickr.create({
-                    el: facebookCommentColorGradientBackground,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentFacebookCommentBackgroundColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrFacebookCommentBackground === undefined){
+                    pickrFacebookCommentBackground = Pickr.create({
+                        el: facebookCommentColorGradientBackground,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'facebookCommentBackground-color-pickr',
+                        default: currentFacebookCommentBackgroundColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.facebookCommentBackground-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrFacebookCommentBackground.setColorRepresentation('HEX');
                 pickrFacebookCommentBackground.show();
         
@@ -2073,18 +2429,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         
             case 'facebookCommentBorderColor':
                 const currentFacebookCommentBorderColor = document.getElementById('facebookCommentBorderColorForm').value;
-        
-                pickrFacebookCommentBorder = Pickr.create({
-                    el: facebookCommentColorGradientBorder,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentFacebookCommentBorderColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrFacebookCommentBorder === undefined){
+                    pickrFacebookCommentBorder = Pickr.create({
+                        el: facebookCommentColorGradientBorder,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'facebookCommentBorder-color-pickr',
+                        default: currentFacebookCommentBorderColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.facebookCommentBorder-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrFacebookCommentBorder.setColorRepresentation('HEX');
                 pickrFacebookCommentBorder.show();
         
@@ -2098,18 +2460,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
             case 'facebookLikeHeaderColor':
                 const currentFacebookLikeHeaderFontColor = document.getElementById('facebookLikeHeaderFontColorForm').value;
-        
-                pickrFacebookLikeHeader = Pickr.create({
-                    el: facebookLikeHeaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentFacebookLikeHeaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrFacebookLikeHeader === undefined){
+                    pickrFacebookLikeHeader = Pickr.create({
+                        el: facebookLikeHeaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'facebookLikeHeader-color-pickr',
+                        default: currentFacebookLikeHeaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.facebookLikeHeader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrFacebookLikeHeader.setColorRepresentation('HEX');
                 pickrFacebookLikeHeader.show();
         
@@ -2123,18 +2491,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         
             case 'facebookLikeSubheaderColor':
                 const currentFacebookLikeSubheaderFontColor = document.getElementById('facebookLikeSubheaderFontColorForm').value;
-        
-                pickrFacebookLikeSubheader = Pickr.create({
-                    el: facebookLikeSubheaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentFacebookLikeSubheaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrFacebookLikeSubheader === undefined){
+                    pickrFacebookLikeSubheader = Pickr.create({
+                        el: facebookLikeSubheaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'facebookLikeSubheader-color-pickr',
+                        default: currentFacebookLikeSubheaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.facebookLikeSubheader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrFacebookLikeSubheader.setColorRepresentation('HEX');
                 pickrFacebookLikeSubheader.show();
         
@@ -2148,18 +2522,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
             case 'facebookLikeButtonColor':
                 const currentFacebookLikeButtonColor = document.getElementById('facebookLikeButtonColorForm').value;
-        
-                pickrFacebookLikeButton = Pickr.create({
-                    el: facebookLikeColorGradientButton,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentFacebookLikeButtonColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrFacebookLikeButton === undefined){
+                    pickrFacebookLikeButton = Pickr.create({
+                        el: facebookLikeColorGradientButton,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'facebookLikeButton-color-pickr',
+                        default: currentFacebookLikeButtonColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.facebookLikeButton-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrFacebookLikeButton.setColorRepresentation('HEX');
                 pickrFacebookLikeButton.show();
         
@@ -2173,18 +2553,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         
             case 'facebookLikeBackgroundColor':
                 const currentFacebookLikeBackgroundColor = document.getElementById('facebookLikeBackgroundColorForm').value;
-        
-                pickrFacebookLikeBackground = Pickr.create({
-                    el: facebookLikeColorGradientBackground,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentFacebookLikeBackgroundColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrFacebookLikeBackground === undefined){
+                    pickrFacebookLikeBackground = Pickr.create({
+                        el: facebookLikeColorGradientBackground,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'facebookLikeBackground-color-pickr',
+                        default: currentFacebookLikeBackgroundColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.facebookLikeBackground-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrFacebookLikeBackground.setColorRepresentation('HEX');
                 pickrFacebookLikeBackground.show();
         
@@ -2198,18 +2584,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         
             case 'facebookLikeBorderColor':
                 const currentFacebookLikeBorderColor = document.getElementById('facebookLikeBorderColorForm').value;
-        
-                pickrFacebookLikeBorder = Pickr.create({
-                    el: facebookLikeColorGradientBorder,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentFacebookLikeBorderColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrFacebookLikeBorder === undefined){
+                    pickrFacebookLikeBorder = Pickr.create({
+                        el: facebookLikeColorGradientBorder,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'facebookLikeBorder-color-pickr',
+                        default: currentFacebookLikeBorderColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.facebookLikeBorder-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrFacebookLikeBorder.setColorRepresentation('HEX');
                 pickrFacebookLikeBorder.show();
         
@@ -2223,18 +2615,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
             case 'tiktokFollowHeaderColor':
                 const currentTiktokFollowHeaderFontColor = document.getElementById('tiktokFollowHeaderFontColorForm').value;
-            
-                pickrTiktokFollowHeader = Pickr.create({
-                    el: tiktokFollowHeaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentTiktokFollowHeaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrTiktokFollowHeader === undefined){
+                    pickrTiktokFollowHeader = Pickr.create({
+                        el: tiktokFollowHeaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'tiktokFollowHeader-color-pickr',
+                        default: currentTiktokFollowHeaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.tiktokFollowHeader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrTiktokFollowHeader.setColorRepresentation('HEX');
                 pickrTiktokFollowHeader.show();
             
@@ -2248,18 +2646,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             
             case 'tiktokFollowSubheaderColor':
                 const currentTiktokFollowSubheaderFontColor = document.getElementById('tiktokFollowSubheaderFontColorForm').value;
-            
-                pickrTiktokFollowSubheader = Pickr.create({
-                    el: tiktokFollowSubheaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentTiktokFollowSubheaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrTiktokFollowSubheader === undefined){
+                    pickrTiktokFollowSubheader = Pickr.create({
+                        el: tiktokFollowSubheaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'tiktokFollowSubheader-color-pickr',
+                        default: currentTiktokFollowSubheaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.tiktokFollowSubheader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrTiktokFollowSubheader.setColorRepresentation('HEX');
                 pickrTiktokFollowSubheader.show();
             
@@ -2273,18 +2677,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             
             case 'tiktokFollowButtonColor':
                 const currentTiktokFollowButtonColor = document.getElementById('tiktokFollowButtonColorForm').value;
-            
-                pickrTiktokFollowButton = Pickr.create({
-                    el: tiktokFollowColorGradientButton,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentTiktokFollowButtonColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrTiktokFollowButton === undefined){
+                    pickrTiktokFollowButton = Pickr.create({
+                        el: tiktokFollowColorGradientButton,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        default: currentTiktokFollowButtonColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.tiktokFollowButton-color-pickr').addEventListener('mouseup', ()=>{        
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrTiktokFollowButton.setColorRepresentation('HEX');
                 pickrTiktokFollowButton.show();
             
@@ -2298,18 +2707,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             
             case 'tiktokFollowBackgroundColor':
                 const currentTiktokFollowBackgroundColor = document.getElementById('tiktokFollowBackgroundColorForm').value;
-            
-                pickrTiktokFollowBackground = Pickr.create({
-                    el: tiktokFollowColorGradientBackground,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentTiktokFollowBackgroundColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrTiktokFollowBackground === undefined){
+                    pickrTiktokFollowBackground = Pickr.create({
+                        el: tiktokFollowColorGradientBackground,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'tiktokFollowBackground-color-pickr',
+                        default: currentTiktokFollowBackgroundColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.tiktokFollowBackground-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrTiktokFollowBackground.setColorRepresentation('HEX');
                 pickrTiktokFollowBackground.show();
             
@@ -2323,18 +2738,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             
             case 'tiktokFollowBorderColor':
                 const currentTiktokFollowBorderColor = document.getElementById('tiktokFollowBorderColorForm').value;
-            
-                pickrTiktokFollowBorder = Pickr.create({
-                    el: tiktokFollowColorGradientBorder,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentTiktokFollowBorderColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrTiktokFollowBorder === undefined){
+                    pickrTiktokFollowBorder = Pickr.create({
+                        el: tiktokFollowColorGradientBorder,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'tiktokFollowBorder-color-pickr',
+                        default: currentTiktokFollowBorderColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.tiktokFollowBorder-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrTiktokFollowBorder.setColorRepresentation('HEX');
                 pickrTiktokFollowBorder.show();
             
@@ -2348,18 +2769,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             
             case 'tiktokCommentHeaderColor':
                 const currentTiktokCommentHeaderFontColor = document.getElementById('tiktokCommentHeaderFontColorForm').value;
-            
-                pickrTiktokCommentHeader = Pickr.create({
-                    el: tiktokCommentHeaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentTiktokCommentHeaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrTiktokCommentHeader === undefined){
+                    pickrTiktokCommentHeader = Pickr.create({
+                        el: tiktokCommentHeaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'tiktokCommentHeader-color-pickr',
+                        default: currentTiktokCommentHeaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.tiktokCommentHeader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrTiktokCommentHeader.setColorRepresentation('HEX');
                 pickrTiktokCommentHeader.show();
             
@@ -2373,18 +2800,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             
             case 'tiktokCommentSubheaderColor':
                 const currentTiktokCommentSubheaderFontColor = document.getElementById('tiktokCommentSubheaderFontColorForm').value;
-            
-                pickrTiktokCommentSubheader = Pickr.create({
-                    el: tiktokCommentSubheaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentTiktokCommentSubheaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrTiktokCommentSubheader === undefined){
+                    pickrTiktokCommentSubheader = Pickr.create({
+                        el: tiktokCommentSubheaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'tiktokCommentSubheader-color-pickr',
+                        default: currentTiktokCommentSubheaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.tiktokCommentSubheader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrTiktokCommentSubheader.setColorRepresentation('HEX');
                 pickrTiktokCommentSubheader.show();
             
@@ -2398,18 +2831,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             
             case 'tiktokCommentButtonColor':
                 const currentTiktokCommentButtonColor = document.getElementById('tiktokCommentButtonColorForm').value;
-            
-                pickrTiktokCommentButton = Pickr.create({
-                    el: tiktokCommentColorGradientButton,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentTiktokCommentButtonColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrTiktokCommentButton === undefined){
+                    pickrTiktokCommentButton = Pickr.create({
+                        el: tiktokCommentColorGradientButton,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'tiktokCommentButton-color-pickr',
+                        default: currentTiktokCommentButtonColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.tiktokCommentButton-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrTiktokCommentButton.setColorRepresentation('HEX');
                 pickrTiktokCommentButton.show();
             
@@ -2423,18 +2862,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             
             case 'tiktokCommentBackgroundColor':
                 const currentTiktokCommentBackgroundColor = document.getElementById('tiktokCommentBackgroundColorForm').value;
-            
-                pickrTiktokCommentBackground = Pickr.create({
-                    el: tiktokCommentColorGradientBackground,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentTiktokCommentBackgroundColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrTiktokCommentBackground === undefined){
+                    pickrTiktokCommentBackground = Pickr.create({
+                        el: tiktokCommentColorGradientBackground,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'tiktokCommentBackground-color-pickr',
+                        default: currentTiktokCommentBackgroundColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.tiktokCommentBackground-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrTiktokCommentBackground.setColorRepresentation('HEX');
                 pickrTiktokCommentBackground.show();
             
@@ -2448,18 +2893,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             
             case 'tiktokCommentBorderColor':
                 const currentTiktokCommentBorderColor = document.getElementById('tiktokCommentBorderColorForm').value;
-            
-                pickrTiktokCommentBorder = Pickr.create({
-                    el: tiktokCommentColorGradientBorder,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentTiktokCommentBorderColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrTiktokCommentBorder === undefined){
+                    pickrTiktokCommentBorder = Pickr.create({
+                        el: tiktokCommentColorGradientBorder,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'tiktokCommentBorder-color-pickr',
+                        default: currentTiktokCommentBorderColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.tiktokCommentBorder-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrTiktokCommentBorder.setColorRepresentation('HEX');
                 pickrTiktokCommentBorder.show();
             
@@ -2473,18 +2924,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             
             case 'tiktokLikeHeaderColor':
                 const currentTiktokLikeHeaderFontColor = document.getElementById('tiktokLikeHeaderFontColorForm').value;
-            
-                pickrTiktokLikeHeader = Pickr.create({
-                    el: tiktokLikeHeaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentTiktokLikeHeaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrTiktokLikeHeader === undefined){
+                    pickrTiktokLikeHeader = Pickr.create({
+                        el: tiktokLikeHeaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'tiktokLikeHeader-color-pickr',
+                        default: currentTiktokLikeHeaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.tiktokLikeHeader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrTiktokLikeHeader.setColorRepresentation('HEX');
                 pickrTiktokLikeHeader.show();
             
@@ -2498,18 +2955,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             
             case 'tiktokLikeSubheaderColor':
                 const currentTiktokLikeSubheaderFontColor = document.getElementById('tiktokLikeSubheaderFontColorForm').value;
-            
-                pickrTiktokLikeSubheader = Pickr.create({
-                    el: tiktokLikeSubheaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentTiktokLikeSubheaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrTiktokLikeSubheader === undefined){
+                    pickrTiktokLikeSubheader = Pickr.create({
+                        el: tiktokLikeSubheaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'tiktokLikeSubheader-color-pickr',
+                        default: currentTiktokLikeSubheaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.tiktokLikeSubheader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrTiktokLikeSubheader.setColorRepresentation('HEX');
                 pickrTiktokLikeSubheader.show();
             
@@ -2523,18 +2986,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 
             case 'tiktokLikeButtonColor':
                 const currentTiktokLikeButtonColor = document.getElementById('tiktokLikeButtonColorForm').value;
-            
-                pickrTiktokLikeButton = Pickr.create({
-                    el: tiktokLikeColorGradientButton,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentTiktokLikeButtonColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrTiktokLikeButton === undefined){
+                    pickrTiktokLikeButton = Pickr.create({
+                        el: tiktokLikeColorGradientButton,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'tiktokLikeButton-color-pickr',
+                        default: currentTiktokLikeButtonColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.tiktokLikeButton-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrTiktokLikeButton.setColorRepresentation('HEX');
                 pickrTiktokLikeButton.show();
             
@@ -2548,18 +3017,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             
             case 'tiktokLikeBackgroundColor':
                 const currentTiktokLikeBackgroundColor = document.getElementById('tiktokLikeBackgroundColorForm').value;
-            
-                pickrTiktokLikeBackground = Pickr.create({
-                    el: tiktokLikeColorGradientBackground,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentTiktokLikeBackgroundColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrTiktokLikeBackground === undefined){
+                    pickrTiktokLikeBackground = Pickr.create({
+                        el: tiktokLikeColorGradientBackground,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'tiktokLikeBackground-color-pickr',
+                        default: currentTiktokLikeBackgroundColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.tiktokLikeBackground-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrTiktokLikeBackground.setColorRepresentation('HEX');
                 pickrTiktokLikeBackground.show();
             
@@ -2573,18 +3048,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             
             case 'tiktokLikeBorderColor':
                 const currentTiktokLikeBorderColor = document.getElementById('tiktokLikeBorderColorForm').value;
-            
-                pickrTiktokLikeBorder = Pickr.create({
-                    el: tiktokLikeColorGradientBorder,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentTiktokLikeBorderColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrTiktokLikeBorder === undefined){
+                    pickrTiktokLikeBorder = Pickr.create({
+                        el: tiktokLikeColorGradientBorder,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'tiktokLikeBorder-color-pickr',
+                        default: currentTiktokLikeBorderColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.tiktokLikeBorder-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrTiktokLikeBorder.setColorRepresentation('HEX');
                 pickrTiktokLikeBorder.show();
             
@@ -2598,18 +3079,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
             case 'referHeaderColor':
                 const currentReferHeaderFontColor = document.getElementById('referHeaderFontColorForm').value;
-            
-                pickrReferHeader = Pickr.create({
-                    el: referHeaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentReferHeaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrReferHeader === undefined){
+                    pickrReferHeader = Pickr.create({
+                        el: referHeaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'referHeader-color-pickr',
+                        default: currentReferHeaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.referHeader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrReferHeader.setColorRepresentation('HEX');
                 pickrReferHeader.show();
             
@@ -2623,18 +3110,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             
             case 'referSubheaderColor':
                 const currentReferSubheaderFontColor = document.getElementById('referSubheaderFontColorForm').value;
-            
-                pickrReferSubheader = Pickr.create({
-                    el: tiktokLikeSubheaderColorGradient,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentReferSubheaderFontColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrReferSubheader === undefined){
+                    pickrReferSubheader = Pickr.create({
+                        el: referSubheaderColorGradient,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'referSubheader-color-pickr',
+                        default: currentReferSubheaderFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.referSubheader-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrReferSubheader.setColorRepresentation('HEX');
                 pickrReferSubheader.show();
             
@@ -2648,18 +3141,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 
             case 'referButtonColor':
                 const currentReferButtonColor = document.getElementById('referButtonColorForm').value;
-            
-                pickrReferButton = Pickr.create({
-                    el: referColorGradientButton,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentReferButtonColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrReferButton === undefined){
+                    pickrReferButton = Pickr.create({
+                        el: referColorGradientButton,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'referButton-color-pickr',
+                        default: currentReferButtonColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.referButton-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrReferButton.setColorRepresentation('HEX');
                 pickrReferButton.show();
             
@@ -2673,18 +3172,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             
             case 'referBackgroundColor':
                 const currentReferBackgroundColor = document.getElementById('referBackgroundColorForm').value;
-            
-                pickrReferBackground = Pickr.create({
-                    el: referColorGradientBackground,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentReferBackgroundColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrReferBackground === undefined){
+                    pickrReferBackground = Pickr.create({
+                        el: referColorGradientBackground,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'referBackground-color-pickr',
+                        default: currentReferBackgroundColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.referBackground-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrReferBackground.setColorRepresentation('HEX');
                 pickrReferBackground.show();
             
@@ -2698,18 +3203,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             
             case 'referBorderColor':
                 const currentReferBorderColor = document.getElementById('referBorderColorForm').value;
-            
-                pickrReferBorder = Pickr.create({
-                    el: referColorGradientBorder,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentReferBorderColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                
+                if(pickrReferBorder === undefined){
+                    pickrReferBorder = Pickr.create({
+                        el: referColorGradientBorder,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'referBorder-color-pickr',
+                        default: currentReferBorderColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.referBorder-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrReferBorder.setColorRepresentation('HEX');
                 pickrReferBorder.show();
             
@@ -2724,17 +3235,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'raffleBackgroundColor':
                 const currentRaffleBackgroundColor = document.getElementById('raffleBackgroundColorForm').value;
 
-                pickrRaffleBackground = Pickr.create({
-                    el: raffleGradientBackground,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentRaffleBackgroundColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrRaffleBackground === undefined){
+                    pickrRaffleBackground = Pickr.create({
+                        el: raffleGradientBackground,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'raffleBackground-color-pickr',
+                        default: currentRaffleBackgroundColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.raffleBackground-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrRaffleBackground.setColorRepresentation('HEX');
                 pickrRaffleBackground.show();
 
@@ -2749,16 +3266,22 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'footerFontColor':
                 const currentFooterColor = document.getElementById('footerFontColorForm').value;
 
-                pickrFooterFont = Pickr.create({
-                    el: footerFontGradientBackground,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentFooterColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                    }
-                });
+                if(pickrFooterFont === undefined){
+                    pickrFooterFont = Pickr.create({
+                        el: footerFontGradientBackground,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'footerFont-color-pickr',
+                        default: currentFooterColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                        }
+                    });
+                    document.querySelector('.footerFont-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrFooterFont.setColorRepresentation('HEX');
                 pickrFooterFont.show();
 
@@ -2773,17 +3296,23 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'footerBackgroundColor':
                 const currentFooterBackgroundColor = document.getElementById('footerBackgroundColorForm').value;
 
-                pickrFooterBackground = Pickr.create({
-                    el: footerGradientBackground,
-                    theme: 'classic', // or 'monolith', or 'nano'
-                    default: currentFooterBackgroundColor,
-                    useAsButton: true,
-                    padding: 15,
-                    components: {
-                        hue: true,
-                        opacity: true,
-                    }
-                });
+                if(pickrFooterBackground === undefined){
+                    pickrFooterBackground = Pickr.create({
+                        el: footerGradientBackground,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'footerBackground-color-pickr',
+                        default: currentFooterBackgroundColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.footerBackground-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
                 pickrFooterBackground.setColorRepresentation('HEX');
                 pickrFooterBackground.show();
 
@@ -2808,6 +3337,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     }
 
     function pickColor(color, elementType, fromPickr){
+
         switch(elementType){
             case 'textColor':
                 if(fromPickr === false){
@@ -5228,6 +5758,8 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 editFooterBackground.style.backgroundColor = color;
                 break;     
         }
+        
+        
     }
 
     function setFontSize(event){
@@ -5429,6 +5961,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 }
                 break;
         }
+
+        document.dispatchEvent(customizationSettingChanged);
+
     }
 
     function toggleItalicize(event){
@@ -5467,6 +6002,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 }
                 break;
         }
+
+        document.dispatchEvent(customizationSettingChanged);
+
     }
 
     function toggleUnderline(event){
@@ -5474,7 +6012,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         const elementType = inputUnderlineBtn.getAttribute('data-type');
         const selectedSection = document.querySelector('.selected-raffleleader-section');
 
-        switch(elementType){
+        switch(elementType){    
             case 'textfStyle':
                 const selectedElement = selectedSection.querySelector('h2');
 
@@ -5526,6 +6064,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 }
                 break;
         }
+
+        document.dispatchEvent(customizationSettingChanged);
+
     }
 
     function toggleStrike(event){
@@ -5585,12 +6126,16 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 }
                 break;
         }
+        
+        document.dispatchEvent(customizationSettingChanged);
+
     }
 
     function toggleOverline(event){
         const inputOverlineBtn = event.target;
         const elementType = inputOverlineBtn.getAttribute('data-type');
         const selectedSection = document.querySelector('.selected-raffleleader-section');
+
 
         switch(elementType){
             case 'textfStyle':
@@ -5644,6 +6189,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 }
                 break;
         }
+
+        document.dispatchEvent(customizationSettingChanged);
+
     }
 
     function setLetterSpacing(event){
@@ -5660,6 +6208,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 const counterSelectedElement = selectedSection.querySelector('h2');
                 counterSelectedElement.style.letterSpacing = `${letterSpacing}px`;
         }
+
+        document.dispatchEvent(customizationSettingChanged);
+
     }
     
     function setLineHeight(event){
@@ -5673,6 +6224,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 const selectedElement = selectedSection.querySelector('h2');
                 selectedElement.style.lineHeight = `${lineHeight}px`;
         }
+
+        document.dispatchEvent(customizationSettingChanged);
+
     } 
 
     function setBorderStroke(event){
@@ -5949,6 +6503,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 if(strokeFormID === 'referBorderRightStroke') referSection.style.borderRight = `${borderStroke}px solid ${referCurrentBorderColorRight}`;
                 break;
             }
+
+        document.dispatchEvent(customizationSettingChanged);
+
     }
 
     function setBorderRadius(event){
@@ -6150,6 +6707,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 if(radiusFormID === 'referBorderBottomRightRadius') referSection.style.borderBottomRightRadius = `${borderRadius}px`;
                 break;
         }
+
+        document.dispatchEvent(customizationSettingChanged);
+
     }
 
     function selectEntry(event){
@@ -6448,6 +7008,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
         selectSection(currentElement);
         applyLogicToElement(currentElement);
+
+        document.dispatchEvent(customizationSettingChanged);
+
     }
 
     function selectCounter(event){
@@ -6515,6 +7078,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     break;
             }
         }
+
+        document.dispatchEvent(customizationSettingChanged);
+
     }
 
     function watchTimeLeft(element){
@@ -6659,6 +7225,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
             imgFormURL.href = imgElement.src;
             imgFormURL.innerText = filename;
+
+            document.dispatchEvent(customizationSettingChanged);
+
         });
 
         file_frame.open();
@@ -6679,6 +7248,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
         imgContainer.innerHTML = '';
         imgContainer.appendChild(defaultText);
+
+        document.dispatchEvent(customizationSettingChanged);
+
     }
 
 
@@ -6686,7 +7258,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         event.preventDefault();
         const deleteBtn = event.target.tagName === 'DIV' ? event.target : event.target.parentNode;
         const elementType = deleteBtn.getAttribute('data-type');
-
+        
         switch(elementType){
             case 'textDelete':
                 const confirmBtn = document.getElementById('textConfirmDelete');
@@ -7056,6 +7628,9 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 customizeBox.classList.toggle('slide-right-to-left');
                 break;
         }
+
+        document.dispatchEvent(customizationSettingChanged);
+
     }
 
     function cancelDelete(event){

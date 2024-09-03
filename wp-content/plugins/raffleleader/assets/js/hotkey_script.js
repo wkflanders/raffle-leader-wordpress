@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if ((event.ctrlKey || event.metaKey) && event.key === 'c') {
                 event.preventDefault();
                 const clonedElement = selectedElement.cloneNode(true);
-                const newUniqueId = `section-${Math.random().toString(36).substr(2, 4)}`;
+                const newUniqueId = `${Math.random().toString(36).substr(2, 4)}`;
                 clonedElement.setAttribute('data-section-id', newUniqueId);
                 const htmlContent = clonedElement.outerHTML;
                 navigator.clipboard.writeText(htmlContent).then(() => {

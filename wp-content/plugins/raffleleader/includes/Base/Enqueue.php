@@ -152,7 +152,7 @@ class Enqueue extends BaseController{
             'editPostUrl' => admin_url( 'edit.php' ),
         ) );
 
-        wp_enqueue_script( 'raffleleader_manage_state_script', $this->plugin_url . '/assets/js/manage_state_script.js', array(), rand(111, 9999) );
+        wp_enqueue_script( 'raffleleader_manage_state_script', $this->plugin_url . '/assets/js/manage_state_script.js', array( 'raffleleader_preview_select_script' ), rand(111, 9999) );
             
         wp_enqueue_media();
     }

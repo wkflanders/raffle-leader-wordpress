@@ -1,4 +1,7 @@
-document.addEventListener('previewLoaded', ()=>{
+document.addEventListener('previewLoaded', previewSize);
+document.addEventListener('stateSaved', previewSize);
+
+function previewSize(){
     const preview = document.getElementById('preview');
     const dropzone = document.getElementById('dropzone');
     const layoutSizeForms = document.querySelectorAll('.layout-size-form');
@@ -46,4 +49,4 @@ document.addEventListener('previewLoaded', ()=>{
             }
         } 
     }
-})
+}

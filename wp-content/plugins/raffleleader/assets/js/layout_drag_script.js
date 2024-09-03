@@ -56,6 +56,8 @@ function layoutDrag(){
     }
 
     function handleDrop(mouseX, mouseY, container, dragElement) {
+        const uniqueId = Math.random().toString(36).substr(2, 4); // Generates a unique 4-character string
+
         const htmlToAppend = generateHTML(dragElement.id);
         const newElement = document.createElement('div');
 
@@ -95,6 +97,8 @@ function layoutDrag(){
         newElement.style.left = `${centerX}px`;
         newElement.style.top = `${centerY}px`;
         newElement.style.zIndex = window.globalZIndex;
+
+        newElement.setAttribute('data-section-id', uniqueId);
 
         selectSection(newElement);
 

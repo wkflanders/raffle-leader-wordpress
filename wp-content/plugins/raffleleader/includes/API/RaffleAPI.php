@@ -72,7 +72,7 @@ class RaffleAPI {
 
         $args = wp_parse_args( $args, $defaults );
         $query = "SELECT r.*, 
-                (SELECT COUNT(DISTINCT e.contestant_id) FROM $entriesTable e WHERE e.raffle_id = r.raffle_id) as participants,
+                (SELECT COUNT(DISTINCT e.contestant_id) FROM $entriesTable e WHERE e.raffle_id = r.raffle_id) as contestants,
                 (SELECT COUNT(*) FROM $entriesTable e WHERE e.raffle_id = r.raffle_id) as entries
                 FROM $rafflesTable r
                 WHERE 1=1";
@@ -105,7 +105,7 @@ class RaffleAPI {
 
     public function duplicateRaffle($raffleId) {
         global $wpdb;
-            
+
         // Debug log
         error_log("Attempting to duplicate raffle with ID: " . $raffleId);
     
@@ -134,6 +134,48 @@ class RaffleAPI {
         error_log("Successfully duplicated raffle. New raffle ID: " . $new_raffle_id);
     
         return $new_raffle_id;
+    }
+
+    public function deletePermanently($raffleID) {
+        // Right now, contestants are never deleted to ensure no issues entering new raffles however might change this in the future
+        global $wpdb;
+        $rafflesTable = $wpdb->prefix . 'raffleleader_raffles';
+        $entriesTable = $wpdb->prefix . 'raffleleader_entries';
+    
+        // Start transaction
+        $wpdb->query('START TRANSACTION');
+    
+        try {
+            // Delete the raffle permanently
+            $result = $wpdb->delete($rafflesTable, array('raffle_id' => $raffleID));
+            if ($result === false) {
+                throw new \Exception("Failed to delete raffle");
+            }
+    
+            // Delete entries associated with this raffle
+            $wpdb->delete($entriesTable, array('raffle_id' => $raffleID));
+    
+            $wpdb->query('COMMIT');
+            return true;
+        } catch (\Exception $e) {
+            $wpdb->query('ROLLBACK');
+            error_log("Error in deletePermanently: " . $e->getMessage());
+            return false;
+        }
+    }
+
+    public function restoreRaffle($raffleID) {
+        global $wpdb;
+        $tableName = $wpdb->prefix . 'raffleleader_raffles';
+    
+        return $wpdb->update(
+            $tableName,
+            array(
+                'deleted_at' => null,
+                'status' => 'Draft',
+            ),
+            array('raffle_id' => $raffleID)
+        );
     }
 
     public function updateRaffle( $raffleID, $raffleData ){

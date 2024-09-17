@@ -29,17 +29,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $entriesAPI->updateEntry($winnerEntry['entry_id'], [ 'winner' => 'true' ]);
 
                 // Construct the redirect URL properly
-                $redirect_url = add_query_arg(
-                    array(
-                        'page' => 'raffleleader_plugin',
-                        'raffle_id' => $raffleID,
-                        'view' => 'entry_details',
-                        'winner_selected' => '1',
-                    ),
-                    admin_url('admin.php')
-                );
+                $redirect_url = add_query_arg(array(
+                    'page' => 'raffleleader_plugin',
+                    'raffle_id' => $raffleID,
+                    'view' => 'entry_details',
+                    'winner_selected' => '1',
+                ), admin_url('admin.php'));
 
-                echo ("<script>location.href = '" . $redirect_url . "'</script>");
+                echo "<script>location.href = '" . esc_js($redirect_url) . "';</script>";
                 exit;
             } else {
                 wp_die('No entries found for this raffle.');
@@ -53,41 +50,64 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (current_user_can('manage_options')) {
             $action = $_POST['action'] != '-1' ? $_POST['action'] : $_POST['action2'];
 
+            $raffles_affected = 0;
             switch ($action) {
                 case 'delete':
                     if (isset($_POST['raffle_id']) && is_array($_POST['raffle_id']) && !empty($_POST['raffle_id'])) {
                         foreach ($_POST['raffle_id'] as $raffle_id) {
                             $raffle_id = intval($raffle_id);
-                            $raffleAPI->deleteRaffle($raffle_id);
+                            if ($raffleAPI->deleteRaffle($raffle_id)) {
+                                $raffles_affected++;
+                            }
                         }
                     }
                     break;
-                    case 'duplicate':
-                        if (isset($_POST['raffle_id']) && is_array($_POST['raffle_id']) && !empty($_POST['raffle_id'])) {
-                            foreach ($_POST['raffle_id'] as $raffle_id) {
-                                $raffle_id = intval($raffle_id);
-                                $new_raffle_id = $raffleAPI->duplicateRaffle($raffle_id);
-                                if ($new_raffle_id) {
-                                    $raffles_duplicated++;
-                                } else {
-                                    // Log the error or handle it as needed
-                                    error_log("Failed to duplicate raffle with ID: " . $raffle_id);
-                                }
+                case 'duplicate':
+                    if (isset($_POST['raffle_id']) && is_array($_POST['raffle_id']) && !empty($_POST['raffle_id'])) {
+                        foreach ($_POST['raffle_id'] as $raffle_id) {
+                            $raffle_id = intval($raffle_id);
+                            $new_raffle_id = $raffleAPI->duplicateRaffle($raffle_id);
+                            if ($new_raffle_id) {
+                                $raffles_affected++;
+                            } else {
+                                error_log("Failed to duplicate raffle with ID: " . $raffle_id);
                             }
                         }
-                        break;
-                    // Handle other bulk actions...
-                }
-        
-                // Redirect with appropriate message
-                $redirect_url = add_query_arg(array(
-                    'page' => 'raffleleader_plugin',
-                    'bulk_action_performed' => $action,
-                    'raffles_affected' => $action === 'duplicate' ? $raffles_duplicated : count($_POST['raffle_id'])
-                ), admin_url('admin.php'));
-        
-                echo "<script>location.href = '" . esc_js($redirect_url) . "';</script>";
-                exit;
+                    }
+                    break;
+                case 'restore':
+                    if (isset($_POST['raffle_id']) && is_array($_POST['raffle_id']) && !empty($_POST['raffle_id'])) {
+                        foreach ($_POST['raffle_id'] as $raffle_id) {
+                            $raffle_id = intval($raffle_id);
+                            if ($raffleAPI->restoreRaffle($raffle_id)) {
+                                $raffles_affected++;
+                            }
+                        }
+                    }
+                    break;
+                case 'delete_permanent':
+                    if (isset($_POST['raffle_id']) && is_array($_POST['raffle_id']) && !empty($_POST['raffle_id'])) {
+                        foreach ($_POST['raffle_id'] as $raffle_id) {
+                            $raffle_id = intval($raffle_id);
+                            if ($raffleAPI->deletePermanently($raffle_id)) {
+                                $raffles_affected++;
+                            }
+                        }
+                    }
+                    break;
+                // Handle other bulk actions...
+            }
+
+            // Redirect with appropriate message
+            $redirect_url = add_query_arg(array(
+                'page' => 'raffleleader_plugin',
+                'view' => $onlyDeleted ? 'trash' : 'all',
+                'bulk_action_performed' => $action,
+                'raffles_affected' => $raffles_affected
+            ), admin_url('admin.php'));
+
+            echo "<script>location.href = '" . esc_js($redirect_url) . "';</script>";
+            exit;
         } else {
             wp_die('You do not have sufficient permissions to access this page.');
         }
@@ -109,10 +129,52 @@ if (isset($_GET['action']) && $_GET['action'] === 'raffle_duplicate' && isset($_
     }
 }
 
-// Add a success message if a raffle was duplicated (move this outside the POST block)
+// Add a success message if a raffle was duplicated
 if (isset($_GET['raffle_duplicated']) && $_GET['raffle_duplicated'] == '1') {
     add_action('admin_notices', function () {
         echo '<div class="notice notice-success is-dismissible"><p>Raffle duplicated successfully!</p></div>';
+    });
+}
+
+if (isset($_GET['action']) && $_GET['action'] === 'raffle_restore' && isset($_GET['raffle_id']) && isset($_GET['restore_raffle_nonce'])) {
+    $raffle_id = intval($_GET['raffle_id']);
+    if (wp_verify_nonce($_GET['restore_raffle_nonce'], 'restore_raffle_action')) {
+        if ($raffleAPI->restoreRaffle($raffle_id)) {
+            echo "<script>location.href = '" . esc_js(add_query_arg('raffle_restored', '1', admin_url('admin.php?page=raffleleader_plugin'))) . "';</script>";
+            exit;
+        } else {
+            wp_die('Failed to restore raffle.');
+        }
+    } else {
+        wp_die('Security check failed for raffle restoration. Please try again.');
+    }
+}
+
+// Add a success message if a raffle was restored
+if (isset($_GET['raffle_restored']) && $_GET['raffle_restored'] == '1') {
+    add_action('admin_notices', function () {
+        echo '<div class="notice notice-success is-dismissible"><p>Raffle restored successfully!</p></div>';
+    });
+}
+
+if (isset($_GET['action']) && $_GET['action'] === 'raffle_delete_permanent' && isset($_GET['raffle_id']) && isset($_GET['delete_raffle_permanent_nonce'])) {
+    $raffle_id = intval($_GET['raffle_id']);
+    if (wp_verify_nonce($_GET['delete_raffle_permanent_nonce'], 'delete_raffle_permanent_action')) {
+        if ($raffleAPI->deletePermanently($raffle_id)) {
+            echo "<script>location.href = '" . esc_js(add_query_arg('raffle_deleted_permanently', '1', admin_url('admin.php?page=raffleleader_plugin&view=trash'))) . "';</script>";
+            exit;
+        } else {
+            wp_die('Failed to permanently delete raffle.');
+        }
+    } else {
+        wp_die('Security check failed for permanent raffle deletion. Please try again.');
+    }
+}
+
+// Add a success message if a raffle was permanently deleted
+if (isset($_GET['raffle_deleted_permanently']) && $_GET['raffle_deleted_permanently'] == '1') {
+    add_action('admin_notices', function () {
+        echo '<div class="notice notice-success is-dismissible"><p>Raffle permanently deleted successfully!</p></div>';
     });
 }
 
@@ -191,6 +253,30 @@ $entryTypeMapping = [
     <?php endif; ?>
 
     <?php
+    if (isset($_GET['bulk_action_performed']) && isset($_GET['raffles_affected'])) {
+        $action = sanitize_text_field($_GET['bulk_action_performed']);
+        $count = intval($_GET['raffles_affected']);
+        $message = '';
+
+        switch ($action) {
+            case 'delete':
+                $message = sprintf(_n('%s raffle moved to trash.', '%s raffles moved to trash.', $count, 'raffleleader'), number_format_i18n($count));
+                break;
+            case 'duplicate':
+                $message = sprintf(_n('%s raffle duplicated.', '%s raffles duplicated.', $count, 'raffleleader'), number_format_i18n($count));
+                break;
+            case 'restore':
+                $message = sprintf(_n('%s raffle restored.', '%s raffles restored.', $count, 'raffleleader'), number_format_i18n($count));
+                break;
+            case 'delete_permanent':
+                $message = sprintf(_n('%s raffle permanently deleted.', '%s raffles permanently deleted.', $count, 'raffleleader'), number_format_i18n($count));
+                break;
+        }
+
+        if (!empty($message)) {
+            echo '<div class="notice notice-success is-dismissible"><p>' . $message . '</p></div>';
+        }
+    }
     switch ($currentView) {
         case 'raffle_details':
             ?>
@@ -335,8 +421,13 @@ $entryTypeMapping = [
                         <label for="bulk-action-selector-top" class="screen-reader-text">Select bulk action</label>
                         <select name="action" id="bulk-action-selector-top">
                             <option value="-1">Bulk Actions</option>
-                            <option value="delete">Trash</option>
-                            <option value="duplicate">Duplicate</option>
+                            <?php if ($onlyDeleted): ?>
+                                <option value="restore">Restore</option>
+                                <option value="delete_permanent">Delete Permanently</option>
+                            <?php else: ?>
+                                <option value="delete">Trash</option>
+                                <option value="duplicate">Duplicate</option>
+                            <?php endif; ?>
                         </select>
                         <input type="submit" id="doaction" class="button action" value="Apply">
                     </div>
@@ -349,7 +440,7 @@ $entryTypeMapping = [
                                 <input id="cb-select-all-1" type="checkbox">
                             </th>
                             <th scope="col" id="title" class="manage-column column-title column-primary">Title</th>
-                            <th scope="col" id="start-date" class="manage-column">Participants</th>
+                            <th scope="col" id="start-date" class="manage-column">Contestants</th>
                             <th scope="col" id="start-date" class="manage-column">Entries</th>
                             <th scope="col" id="start-date" class="manage-column">Start Date</th>
                             <th scope="col" id="end-date" class="manage-column">End Date</th>
@@ -416,7 +507,11 @@ $entryTypeMapping = [
                                 }
                             }
 
-                            $raffleAPI->updateRaffle($raffle['raffle_id'], array('status' => $status));
+                            if ($onlyDeleted) {
+                                $status = "Trashed";
+                            } else {
+                                $raffleAPI->updateRaffle($raffle['raffle_id'], array('status' => $status));
+                            }
                             ?>
                             <tr>
                                 <th scope="row" class="check-column">
@@ -424,40 +519,57 @@ $entryTypeMapping = [
                                 </th>
                                 <td class="title column-title has-row-actions column-primary">
                                     <strong>
-                                        <a
-                                            href="<?php echo esc_url(admin_url('admin.php?page=raffleleader_builder&raffle_id=' . $raffle['raffle_id'])); ?>"><?php echo esc_html($raffle['name']); ?></a>
+                                        <?php if ($onlyDeleted): ?>
+                                            <?php echo esc_html($raffle['name']); ?>
+                                        <?php else: ?>
+                                            <a
+                                                href="<?php echo esc_url(admin_url('admin.php?page=raffleleader_builder&raffle_id=' . $raffle['raffle_id'])); ?>"><?php echo esc_html($raffle['name']); ?></a>
+                                        <?php endif; ?>
                                     </strong>
                                     <div class="row-actions">
-                                        <span class="edit">
-                                            <a
-                                                href="<?php echo esc_url(admin_url('admin.php?page=raffleleader_builder&raffle_id=' . $raffle['raffle_id'])) ?>">Edit
-                                                |</a>
-                                        </span>
-                                        <span class="participants">
-                                            <a
-                                                href="<?php echo esc_url(admin_url('admin.php?page=raffleleader_plugin&raffle_id=' . $raffle['raffle_id'] . '&view=raffle_details')) ?>">Participants
-                                                |</a>
-                                        </span>
-                                        <span class="entries">
-                                            <a
-                                                href="<?php echo esc_url(admin_url('admin.php?page=raffleleader_plugin&raffle_id=' . $raffle['raffle_id'] . '&view=entry_details')) ?>">Entries
-                                                |</a>
-                                        </span>
-                                        <span class="duplicate">
-                                            <a
-                                                href="<?php echo wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=raffle_duplicate&raffle_id=' . $raffle['raffle_id']), 'duplicate_raffle_action', 'duplicate_raffle_nonce'); ?>">Duplicate
-                                                |</a>
-                                        </span>
-                                        <span class="delete">
-                                            <a
-                                                href="<?php echo wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=raffle_delete&raffle_id=' . $raffle['raffle_id']), 'delete_raffle_action', 'delete_raffle_nonce'); ?>">Trash</a>
-                                        </span>
+                                        <?php if ($onlyDeleted): ?>
+                                            <span class="restore">
+                                                <a
+                                                    href="<?php echo wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=raffle_restore&raffle_id=' . $raffle['raffle_id']), 'restore_raffle_action', 'restore_raffle_nonce'); ?>">Restore</a>
+                                                |
+                                            </span>
+                                            <span class="delete">
+                                                <a
+                                                    href="<?php echo wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=raffle_delete_permanent&raffle_id=' . $raffle['raffle_id']), 'delete_raffle_permanent_action', 'delete_raffle_permanent_nonce'); ?>">Delete
+                                                    Permanently</a>
+                                            </span>
+                                        <?php else: ?>
+                                            <span class="edit">
+                                                <a
+                                                    href="<?php echo esc_url(admin_url('admin.php?page=raffleleader_builder&raffle_id=' . $raffle['raffle_id'])) ?>">Edit
+                                                    |</a>
+                                            </span>
+                                            <span class="contestants">
+                                                <a
+                                                    href="<?php echo esc_url(admin_url('admin.php?page=raffleleader_plugin&raffle_id=' . $raffle['raffle_id'] . '&view=raffle_details')) ?>">Contestants
+                                                    |</a>
+                                            </span>
+                                            <span class="entries">
+                                                <a
+                                                    href="<?php echo esc_url(admin_url('admin.php?page=raffleleader_plugin&raffle_id=' . $raffle['raffle_id'] . '&view=entry_details')) ?>">Entries
+                                                    |</a>
+                                            </span>
+                                            <span class="duplicate">
+                                                <a
+                                                    href="<?php echo wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=raffle_duplicate&raffle_id=' . $raffle['raffle_id']), 'duplicate_raffle_action', 'duplicate_raffle_nonce'); ?>">Duplicate
+                                                    |</a>
+                                            </span>
+                                            <span class="delete">
+                                                <a
+                                                    href="<?php echo wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=raffle_delete&raffle_id=' . $raffle['raffle_id']), 'delete_raffle_action', 'delete_raffle_nonce'); ?>">Trash</a>
+                                            </span>
+                                        <?php endif; ?>
                                     </div>
                                 </td>
                                 <td>
                                     <a
                                         href="<?php echo esc_url(admin_url('admin.php?page=raffleleader_plugin&raffle_id=' . $raffle['raffle_id'] . '&view=raffle_details')); ?>">
-                                        <?php echo intval($raffle['participants']); ?>
+                                        <?php echo intval($raffle['contestants']); ?>
                                     </a>
                                 </td>
                                 <td>
@@ -479,7 +591,7 @@ $entryTypeMapping = [
                                 <input id="cb-select-all-1" type="checkbox">
                             </th>
                             <th scope="col" class="manage-column column-title column-primary">Title</th>
-                            <th scope="col" class="manage-column">Participants</th>
+                            <th scope="col" class="manage-column">Contestants</th>
                             <th scope="col" class="manage-column">Entries</th>
                             <th scope="col" class="manage-column">Start Date</th>
                             <th scope="col" class="manage-column">End Date</th>
@@ -489,14 +601,18 @@ $entryTypeMapping = [
                 </table>
                 <div class="tablenav bottom">
                     <div class="alignleft actions bulkactions">
-                        <label for="bulk-action-selector-bottom" class="screen-reader-text">Select bulk action</label>
+                        <label for="bulk-action-selector-top" class="screen-reader-text">Select bulk action</label>
                         <select name="action2" id="bulk-action-selector-bottom">
                             <option value="-1">Bulk Actions</option>
-                            <option value="delete">Trash</option>
-                            <option value="duplicate">Duplicate</option>
-                            <!-- Add more bulk actions as needed -->
+                            <?php if ($onlyDeleted): ?>
+                                <option value="restore">Restore</option>
+                                <option value="delete_permanent">Delete Permanently</option>
+                            <?php else: ?>
+                                <option value="delete">Trash</option>
+                                <option value="duplicate">Duplicate</option>
+                            <?php endif; ?>
                         </select>
-                        <input type="submit" id="doaction2" class="button action" value="Apply">
+                        <input type="submit" id="doaction" class="button action" value="Apply">
                     </div>
                 </div>
             </form>

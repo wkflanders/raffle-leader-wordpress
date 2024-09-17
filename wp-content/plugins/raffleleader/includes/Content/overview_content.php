@@ -62,14 +62,58 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         }
                     }
                     break;
-                // Handle other bulk actions...
-            }
-            echo ("location.href = '" . $_SERVER['REQUEST_URI'] . "';");
-            exit;
+                    case 'duplicate':
+                        if (isset($_POST['raffle_id']) && is_array($_POST['raffle_id']) && !empty($_POST['raffle_id'])) {
+                            foreach ($_POST['raffle_id'] as $raffle_id) {
+                                $raffle_id = intval($raffle_id);
+                                $new_raffle_id = $raffleAPI->duplicateRaffle($raffle_id);
+                                if ($new_raffle_id) {
+                                    $raffles_duplicated++;
+                                } else {
+                                    // Log the error or handle it as needed
+                                    error_log("Failed to duplicate raffle with ID: " . $raffle_id);
+                                }
+                            }
+                        }
+                        break;
+                    // Handle other bulk actions...
+                }
+        
+                // Redirect with appropriate message
+                $redirect_url = add_query_arg(array(
+                    'page' => 'raffleleader_plugin',
+                    'bulk_action_performed' => $action,
+                    'raffles_affected' => $action === 'duplicate' ? $raffles_duplicated : count($_POST['raffle_id'])
+                ), admin_url('admin.php'));
+        
+                echo "<script>location.href = '" . esc_js($redirect_url) . "';</script>";
+                exit;
         } else {
             wp_die('You do not have sufficient permissions to access this page.');
         }
     }
+}
+
+if (isset($_GET['action']) && $_GET['action'] === 'raffle_duplicate' && isset($_GET['raffle_id']) && isset($_GET['duplicate_raffle_nonce'])) {
+    $raffle_id = intval($_GET['raffle_id']);
+    if (wp_verify_nonce($_GET['duplicate_raffle_nonce'], 'duplicate_raffle_action')) {
+        $new_raffle_id = $raffleAPI->duplicateRaffle($raffle_id);
+        if ($new_raffle_id) {
+            echo "<script>location.href = '" . esc_js(add_query_arg('raffle_duplicated', '1', $_SERVER['REQUEST_URI'])) . "';</script>";
+            exit;
+        } else {
+            wp_die('Failed to duplicate raffle.');
+        }
+    } else {
+        wp_die('Security check failed for raffle duplication. Please try again.');
+    }
+}
+
+// Add a success message if a raffle was duplicated (move this outside the POST block)
+if (isset($_GET['raffle_duplicated']) && $_GET['raffle_duplicated'] == '1') {
+    add_action('admin_notices', function () {
+        echo '<div class="notice notice-success is-dismissible"><p>Raffle duplicated successfully!</p></div>';
+    });
 }
 
 $currentView = isset($_GET['view']) ? sanitize_text_field($_GET['view']) : 'all';
@@ -292,6 +336,7 @@ $entryTypeMapping = [
                         <select name="action" id="bulk-action-selector-top">
                             <option value="-1">Bulk Actions</option>
                             <option value="delete">Trash</option>
+                            <option value="duplicate">Duplicate</option>
                         </select>
                         <input type="submit" id="doaction" class="button action" value="Apply">
                     </div>
@@ -400,7 +445,7 @@ $entryTypeMapping = [
                                         </span>
                                         <span class="duplicate">
                                             <a
-                                                href="<?php echo wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=raffle_delete&raffle_id=' . $raffle['raffle_id']), 'delete_raffle_action', 'delete_raffle_nonce'); ?>">Duplicate
+                                                href="<?php echo wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=raffle_duplicate&raffle_id=' . $raffle['raffle_id']), 'duplicate_raffle_action', 'duplicate_raffle_nonce'); ?>">Duplicate
                                                 |</a>
                                         </span>
                                         <span class="delete">
@@ -448,6 +493,7 @@ $entryTypeMapping = [
                         <select name="action2" id="bulk-action-selector-bottom">
                             <option value="-1">Bulk Actions</option>
                             <option value="delete">Trash</option>
+                            <option value="duplicate">Duplicate</option>
                             <!-- Add more bulk actions as needed -->
                         </select>
                         <input type="submit" id="doaction2" class="button action" value="Apply">

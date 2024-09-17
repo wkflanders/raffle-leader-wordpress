@@ -49,7 +49,7 @@ class PublishController extends BaseController{
         $raffle_id = intval( $atts['id'] );
 
         if( $raffle_id ){
-            $output = '<div id="raffleleader-raffle-container" data-raffle-id="' . esc_attr($raffle_id) . '" style="display: flex; justify-content: center;"></div>';
+            $output = '<div id="raffleleader-raffle-container" data-raffle-id="' . esc_attr($raffle_id) . '" style="display: flex; justify-content: center; max-width: none;"></div>';
             return $output;
         } else {
             $output = '<div id="raffleleader-raffle-container">Raffle could not be fetched</div>';

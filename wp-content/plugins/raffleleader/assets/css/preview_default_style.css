@@ -308,7 +308,10 @@
     width: 100%;
     height: 100%;
     background-color: rgb(255, 255, 255);
-    /* border: 1px solid black; */
+}
+
+.raffleleader-entry-handle-form{
+    width: 100%;
 }
 
 .raffleleader-entry-section > form{
@@ -387,12 +390,16 @@
 
 .raffleleader-additional-entry-text-column{
     transition: width 0.7s ease-in-out, height 0.8s ease-in-out;
-    padding-left: 0.5vw;
+    position: absolute;
+    left: 8%;
 }
 
 .raffleleader-additional-entry-form-column{
     transition: width 0.7s ease-in-out, height 0.8s ease-in-out;
-    width: 100%;
+    display: flex;
+    width: 84%;
+    position: absolute;
+    left: 8%;
 }
 
 .raffleleader-additional-entry-text-column > h2{
@@ -420,6 +427,7 @@
     display: flex;
     justify-content: center;
     width: 10%;
+    height: 44px;
 }
 
 .raffleleader-additional-entry-button-column-refer{

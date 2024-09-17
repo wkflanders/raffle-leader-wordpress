@@ -103,7 +103,6 @@ document.addEventListener('raffleLoaded', ()=>{
             } else {
                 console.log(`No other ${entryTypePrefix} entry exists yet`);
                 inputEntryDetails = await updateEntryUIForm(entryBtn, entryTypePrefix);
-
             }
         } else {
             console.log('Error: entry type missing.');
@@ -207,10 +206,8 @@ document.addEventListener('raffleLoaded', ()=>{
             entryTxtCol.style.display = 'none';
             setTimeout(() => {
                 entryBtnCol.classList.remove('additional-entry-handle-form-load');
-                setTimeout(()=>{
-                    // element.style.width = '';
-                    element.innerHTML = '&rarr;';
-        
+                element.innerHTML = '&rarr;';
+                setTimeout(()=>{        
                     const handleForm = document.createElement('div');
                     handleForm.classList.add('raffleleader-additional-entry-form-column');
                     handleForm.innerHTML = `
@@ -235,7 +232,6 @@ document.addEventListener('raffleLoaded', ()=>{
         
                         const entryDetails = handleInput.value;
                         entryBtnCol.classList.add('additional-entry-handle-form-load');
-                        // element.style.width = '100%';
                         element.innerHTML = '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>';
                         element.disabled = true;
         
@@ -247,7 +243,6 @@ document.addEventListener('raffleLoaded', ()=>{
                             setTimeout(() => {
                                 entryBtnCol.classList.remove('additional-entry-handle-form-load');
                                 setTimeout(()=>{
-                                    // element.style.width = '';
                                     entryTxtCol.style.display = '';
                                     resolve(entryDetails);
                                 }, 750);

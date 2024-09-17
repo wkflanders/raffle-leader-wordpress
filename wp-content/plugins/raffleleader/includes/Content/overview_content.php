@@ -1,54 +1,126 @@
 <?php
+// Prevent direct access to this file
+if (!defined('ABSPATH')) {
+    exit;
+}
 
 use Includes\API\ContestantsAPI;
 use Includes\API\RaffleAPI;
 use Includes\API\EntriesAPI;
 
-$currentView = isset($_GET['view']) ? sanitize_text_field($_GET['view']) : 'all';
-
-$onlyDeleted = $currentView === 'trash';
-
 $raffleAPI = new RaffleAPI();
 $contestantsAPI = new ContestantsAPI();
+$entriesAPI = new EntriesAPI();
 
-$raffles = $raffleAPI->getMultipleRaffles(array(
-    'per_page' => -1,
-    'only_deleted' => $onlyDeleted,
-));
-
+// Handle bulk actions
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['bulk-raffles-nonce']) && wp_verify_nonce($_POST['bulk-raffles-nonce'], 'bulk-raffles-action')) {
+    if (isset($_POST['select_winner']) && isset($_POST['select_winner_nonce']) && isset($_GET['raffle_id'])) {
+        $raffleID = intval($_GET['raffle_id']);
+        if (wp_verify_nonce($_POST['select_winner_nonce'], 'select_winner_action_' . $raffleID)) {
+            $entries = $entriesAPI->getRaffleEntries($raffleID);
+            if (!empty($entries)) {
+                $currentWinner = $entriesAPI->getEntryByWinner($raffleID);
+                if ($currentWinner) {
+                    $entriesAPI->updateEntry($currentWinner['entry_id'], [ 'winner' => 'false' ]);
+                }
+
+                $randomEntryKey = array_rand($entries);
+                $winnerEntry = $entries[ $randomEntryKey ];
+                $entriesAPI->updateEntry($winnerEntry['entry_id'], [ 'winner' => 'true' ]);
+
+                // Construct the redirect URL properly
+                $redirect_url = add_query_arg(
+                    array(
+                        'page' => 'raffleleader_plugin',
+                        'raffle_id' => $raffleID,
+                        'view' => 'entry_details',
+                        'winner_selected' => '1',
+                    ),
+                    admin_url('admin.php')
+                );
+
+                echo ("<script>location.href = '" . $redirect_url . "'</script>");
+                exit;
+            } else {
+                wp_die('No entries found for this raffle.');
+            }
+        } else {
+            wp_die('Security check failed for winner selection. Please try again.');
+        }
+    }
+    // Handle bulk actions
+    elseif (isset($_POST['bulk-raffles-nonce']) && wp_verify_nonce($_POST['bulk-raffles-nonce'], 'bulk-raffles-action')) {
         if (current_user_can('manage_options')) {
             $action = $_POST['action'] != '-1' ? $_POST['action'] : $_POST['action2'];
 
             switch ($action) {
                 case 'delete':
-                    // Ensure raffle_id is an array and is not empty
                     if (isset($_POST['raffle_id']) && is_array($_POST['raffle_id']) && !empty($_POST['raffle_id'])) {
                         foreach ($_POST['raffle_id'] as $raffle_id) {
-                            // Perform the delete action for each checked raffle
-                            $raffle_id = intval($raffle_id); // Always sanitize user input
+                            $raffle_id = intval($raffle_id);
                             $raffleAPI->deleteRaffle($raffle_id);
                         }
                     }
                     break;
                 // Handle other bulk actions...
             }
+            echo ("location.href = '" . $_SERVER['REQUEST_URI'] . "';");
+            exit;
         } else {
             wp_die('You do not have sufficient permissions to access this page.');
         }
-    } else {
-        wp_die('Security check failed.');
     }
-
-    ?>
-    <script>
-        <?php echo ("location.href = '" . $_SERVER['REQUEST_URI'] . "';"); ?>
-    </script>
-    <?php
-    exit;
 }
+
+$currentView = isset($_GET['view']) ? sanitize_text_field($_GET['view']) : 'all';
+$onlyDeleted = $currentView === 'trash';
+$raffleID = isset($_GET['raffle_id']) ? intval($_GET['raffle_id']) : 0;
+
+// Fetch raffles or entries based on the current view
+if ($currentView === 'raffle_details' || $currentView === 'entry_details') {
+    if ($raffleID) {
+        $entries = $entriesAPI->getRaffleEntries($raffleID);
+        usort($entries, function ($a, $b) {
+            return strcmp($b['winner'], $a['winner']);
+        });
+
+        $contestantIDs = array_column($entries, 'contestant_id');
+        $contestants = $contestantsAPI->getMultipleContestants($raffleID, array(
+            'per_page' => -1,
+            'orderby' => 'contestant_id',
+            'order' => 'ASC',
+        ));
+        $contestantsById = array_column($contestants, null, 'contestant_id');
+    } else {
+        $entries = [];
+        $contestantsById = [];
+    }
+} else {
+    $raffles = $raffleAPI->getMultipleRaffles(array(
+        'per_page' => -1,
+        'only_deleted' => $onlyDeleted,
+    ));
+}
+
+$entryTypeMapping = [ 
+    'Email' => 'Email',
+    'XFollowDetails' => 'X Follow',
+    'XRepostDetails' => 'X Repost',
+    'XLikeDetails' => 'X Like',
+    'instaFollowDetails' => 'Instagram Follow',
+    'instaCommentDetails' => 'Instagram Comment',
+    'instaLikeDetails' => 'Instagram Like',
+    'facebookFollowDetails' => 'Facebook Follow',
+    'facebookCommentDetails' => 'Facebook Comment',
+    'facebookLikeDetails' => 'Facebook Like',
+    'tiktokFollowDetails' => 'TikTok Follow',
+    'tiktokCommentDetails' => 'TikTok Comment',
+    'tiktokLikeDetails' => 'TikTok Like',
+    'referDetails' => 'Refer-A-Friend',
+];
+
 ?>
+
 <nav class="raffleleader-overview-navbar">
     <div class="raffleleader-overview-logo-container">
         <img class="raffleleader-overview-logo"
@@ -58,6 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button class="raffleleader-overview-create-btn">Create New Raffle</button>
     </div>
 </nav>
+
 <div class="wrap">
     <ul class="subsubsub">
         <li><a href="<?php echo esc_url(add_query_arg('view', 'all', admin_url('admin.php?page=raffleleader_plugin'))); ?>"
@@ -65,183 +138,164 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <li><a href="<?php echo esc_url(add_query_arg('view', 'trash', admin_url('admin.php?page=raffleleader_plugin'))); ?>"
                 <?php echo $currentView === 'trash' ? 'class="current"' : ''; ?>>Trash</a></li>
     </ul>
-    <form id="raffles-filter" method="post">
-        <?php wp_nonce_field('bulk-raffles-action', 'bulk-raffles-nonce'); ?>
-        <div class="tablenav top">
-            <div class="alignleft actions bulkactions">
-                <label for="bulk-action-selector-top" class="screen-reader-text">Select bulk action</label>
-                <select name="action" id="bulk-action-selector-top">
-                    <option value="-1">Bulk Actions</option>
-                    <option value="delete">Trash</option>
-                </select>
-                <input type="submit" id="doaction" class="button action" value="Apply">
-            </div>
+
+    <?php if (isset($_GET['winner_selected']) && $_GET['winner_selected'] == '1'): ?>
+        <div style="clear: both;"></div>
+        <div class="notice notice-success">
+            <p>A winner has been randomly selected!</p>
         </div>
-        <?php
-        switch ($currentView) {
-            case 'raffle_details':
-                $raffleID = isset($_GET['raffle_id']) ? intval($_GET['raffle_id']) : 0;
-                if ($raffleID) {
-                    $contestants = $contestantsAPI->getMultipleContestants($raffleID);
-                } else {
-                    $contestants = [];
-                }
-                ?>
-                <table class="wp-list-table widefat fixed striped posts">
-                    <thead>
-                        <tr>
-                            <th scope="col" id="email" class="manage-column column-title column-primary">Email</th>
-                            <th scope="col" id="entries" class="manage-column">Entries Count</th>
-                            <th scope="col" id="entry-date" class="manage-column">Latest Entry Date</th>
-                            <th scope="col" id="creation-date" class="manage-column">Created At</th>
-                        </tr>
-                    </thead>
-                    <tbody id="the-list">
-                        <?php foreach ($contestants as $contestant): ?>
-                            <tr>
-                                <td class="email column-email"><?php echo esc_html($contestant['email']); ?></td>
-                                <td class="entries column-entries"><?php echo intval($contestant['entries_count']); ?></td>
-                                <td class="entry-date column-entry-date"><?php echo esc_html($contestant['latest_entry_date']); // You'll need to adjust based on your actual data 
-                                            ?></td>
-                                <td class="creation-date column-creation-date"><?php echo esc_html($contestant['created_at']); ?>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                        <?php if (empty($contestants)): ?>
-                            <tr>
-                                <td colspan="4">No contestants found for this raffle.</td>
-                            </tr>
-                        <?php endif; ?>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th scope="col" id="email" class="manage-column column-title column-primary">Email</th>
-                            <th scope="col" id="entries" class="manage-column">Entries Count</th>
-                            <th scope="col" id="entry-date" class="manage-column">Latest Entry Date</th>
-                            <th scope="col" id="creation-date" class="manage-column">Created At</th>
-                        </tr>
-                    </tfoot>
-                </table>
-                <?php
-                break;
+    <?php endif; ?>
 
-            case 'entry_details':
-                $raffleID = isset($_GET['raffle_id']) ? intval($_GET['raffle_id']) : 0;
-                if ($raffleID) {
-                    // Fetch all entries for the raffle
-                    $entriesAPI = new EntriesAPI();
-                    $entries = $entriesAPI->getRaffleEntries($raffleID);
-            
-                    // Sort the entries so that the winner appears at the top
-                    usort($entries, function($a, $b) {
-                        return strcmp($b['winner'], $a['winner']);
-                    });
-            
-                    $entryTypeMapping = [ 
-                        'Email' => 'Email',
-                        'XFollowDetails' => 'X Follow',
-                        'XRepostDetails' => 'X Repost',
-                        'XLikeDetails' => 'X Like',
-                        'instaFollowDetails' => 'Instagram Follow',
-                        'instaCommentDetails' => 'Instagram Comment',
-                        'instaLikeDetails' => 'Instagram Like',
-                        'facebookFollowDetails' => 'Facebook Follow',
-                        'facebookCommentDetails' => 'Facebook Comment',
-                        'facebookLikeDetails' => 'Facebook Like',
-                        'tiktokFollowDetails' => 'TikTok Follow',
-                        'tiktokCommentDetails' => 'TikTok Comment',
-                        'tiktokLikeDetails' => 'TikTok Like',
-                        'referDetails' => 'Refer-A-Friend',
-                    ];
-            
-                    if (!empty($entries)) {
-                        // Get all contestant IDs from the entries to fetch contestant details
-                        $contestantIDs = array_column($entries, 'contestant_id');
-                        if (!empty($contestantIDs)) {
-                            // Fetch multiple contestants by their IDs
-                            $contestants = $contestantsAPI->getMultipleContestants($raffleID, array(
-                                'per_page' => -1, // No limit
-                                'orderby' => 'contestant_id',
-                                'order' => 'ASC',
-                            ));
-                            // Reindex contestants by their ID for quick lookup
-                            $contestantsById = array_column($contestants, null, 'contestant_id');
-                        } else {
-                            $contestantsById = [];
-                        }
-                    } else {
-                        $entries = [];
-                        $contestantsById = [];
-                    }
-                } else {
-                    $entries = [];
-                    $contestantsById = [];
-                }
-            
-                ?>
-                <form method="post" action="">
-                    <button type="submit" name="select_winner" class="button">Select Random Winner</button>
-                </form>
-                <?php
-                    var_dump($_POST);
-                    if (isset($_POST['select_winner'])) {
-                        echo "Form Submitted!"; // Debugging step
-                        $randomEntryKey = array_rand($entries);
-                        $winnerEntry = $entries[$randomEntryKey];
-                        $winnerEntry['winner'] = 'test'; // Mark as winner
-                        $entriesAPI->updateEntry($winnerEntry['entry_id'], ['winner' => 'test']);
-                    }
-                ?>
-                <table class="wp-list-table widefat fixed striped posts">
-                    <thead>
+    <?php
+    switch ($currentView) {
+        case 'raffle_details':
+            ?>
+            <table class="wp-list-table widefat fixed striped posts">
+                <thead>
+                    <tr>
+                        <th scope="col" id="email" class="manage-column column-title column-primary">Email</th>
+                        <th scope="col" id="entries" class="manage-column">Entries Count</th>
+                        <th scope="col" id="creation-date" class="manage-column">Entered At</th>
+                    </tr>
+                </thead>
+                <tbody id="the-list">
+                    <?php foreach ($contestants as $contestant): ?>
                         <tr>
-                            <th scope="col" id="email" class="manage-column column-title column-primary">Email</th>
-                            <th scope="col" id="entry-type" class="manage-column">Entry Type</th>
-                            <th scope="col" id="entries" class="manage-column">Entries Count</th>
-                            <th scope="col" id="entry-date" class="manage-column">Entry Date</th>
-                            <th scope="col" id="winner" class="manage-column">Winner</th>
+                            <td class="email column-email"><?php echo esc_html($contestant['email']); ?></td>
+                            <td class="entries column-entries">
+                                <a
+                                    href="<?php echo esc_url(admin_url('admin.php?page=raffleleader_plugin&raffle_id=' . $raffleID . '&view=entry_details')) ?>">
+                                    <?php echo intval($contestant['entries_count']); ?>
+                                </a>
+                            </td>
+                            <!-- <td class="entry-date column-entry-date"><?php echo esc_html($contestant['latest_entry_date']); ?></td> -->
+                            <td class="creation-date column-creation-date"><?php echo esc_html($contestant['created_at']); ?></td>
                         </tr>
-                    </thead>
-                    <tbody id="the-list">
-                        <?php foreach ($entries as $entry): ?>
-                            <tr>
-                                <td class="email column-email">
-                                    <?php
-                                    $contestantEmail = isset($contestantsById[$entry['contestant_id']]) ? esc_html($contestantsById[$entry['contestant_id']]['email']) : 'Unknown';
-                                    echo $contestantEmail;
-                                    ?>
-                                </td>
-                                <td class="entry-type column-entry-type"><?php
+                    <?php endforeach; ?>
+                    <?php if (empty($contestants)): ?>
+                        <tr>
+                            <td colspan="4">No contestants found for this raffle.</td>
+                        </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+            <?php
+            break;
+
+        case 'entry_details':
+            ?>
+            <style>
+                .wp-list-table .column-email {
+                    width: 25%;
+                }
+
+                .wp-list-table .column-entry-type {
+                    width: 15%;
+                }
+
+                .wp-list-table .column-social-media {
+                    width: 20%;
+                }
+
+                .wp-list-table .column-entries {
+                    width: 10%;
+                }
+
+                .wp-list-table .column-entry-date {
+                    width: 20%;
+                }
+
+                .wp-list-table .column-winner {
+                    width: 10%;
+                }
+
+                .wp-list-table .winner-row {
+                    background-color: #e6ffe6 !important;
+                    /* Light green background */
+                    font-weight: bold;
+                }
+
+                .wp-list-table .winner-row td {
+                    border-top: 2px solid #4CAF50;
+                    /* Green top border */
+                    border-bottom: 2px solid #4CAF50;
+                    /* Green bottom border */
+                }
+            </style>
+            <div style="clear: both; margin-bottom: 6px;"></div>
+            <form method="post" style="margin-bottom: 6px" action="">
+                <?php wp_nonce_field('select_winner_action_' . $raffleID, 'select_winner_nonce'); ?>
+                <button type="submit" name="select_winner" class="button">Select Random Winner</button>
+            </form>
+            <table class="wp-list-table widefat fixed striped posts">
+                <thead>
+                    <tr>
+                        <th scope="col" id="email" class="manage-column column-email column-primary">Email</th>
+                        <th scope="col" id="entry-type" class="manage-column column-entry-type">Entry Type</th>
+                        <th scope="col" id="social-media" class="manage-column column-social-media">Social Media Username</th>
+                        <th scope="col" id="entries" class="manage-column column-entries">Entries Count</th>
+                        <th scope="col" id="entry-date" class="manage-column column-entry-date">Entry Date</th>
+                        <th scope="col" id="winner" class="manage-column column-winner">Winner</th>
+                    </tr>
+                </thead>
+                <tbody id="the-list">
+                    <?php foreach ($entries as $entry):
+                        $isWinner = $entry['winner'] === 'true';
+                        $rowClass = $isWinner ? 'winner-row' : '';
+                        ?>
+                        <tr class="<?php echo $rowClass; ?>">
+                            <td class="email column-email">
+                                <?php
+                                $contestantEmail = isset($contestantsById[ $entry['contestant_id'] ]) ? esc_html($contestantsById[ $entry['contestant_id'] ]['email']) : 'Unknown';
+                                ?>
+                                <a
+                                    href="<?php echo esc_url(admin_url('admin.php?page=raffleleader_plugin&raffle_id=' . $raffleID . '&view=raffle_details')) ?>"><?php echo $contestantEmail; ?>
+                                </a>
+                            </td>
+                            <td class="entry-type column-entry-type">
+                                <?php
                                 $entryType = $entry['entry_type'];
-                                $displayEntryType = isset($entryTypeMapping[$entryType]) ? $entryTypeMapping[$entryType] : $entryType;
+                                $displayEntryType = isset($entryTypeMapping[ $entryType ]) ? $entryTypeMapping[ $entryType ] : $entryType;
                                 echo esc_html($displayEntryType);
-                                ?></td>
-                                <td class="entries column-entries">1</td>
-                                <td class="entry-date column-entry-date"><?php echo esc_html($entry['entry_date']); ?></td>
-                                <td class="winner column-winner"><?php echo esc_html($entry['winner']); ?></td>
-                            </tr>
-                        <?php endforeach; ?>
-                        <?php if (empty($entries)): ?>
-                            <tr>
-                                <td colspan="5">No entries found for this raffle.</td>
-                            </tr>
-                        <?php endif; ?>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th scope="col" id="email" class="manage-column column-title column-primary">Email</th>
-                            <th scope="col" id="entry-type" class="manage-column">Entry Type</th>
-                            <th scope="col" id="entries" class="manage-column">Entries Count</th>
-                            <th scope="col" id="entry-date" class="manage-column">Entry Date</th>
-                            <th scope="col" id="winner" class="manage-column">Winner</th>
+                                ?>
+                            </td>
+                            <td class="social-media column-social-media">
+                                <?php
+                                $entryDetails = $entry['entry_details'];
+                                $displayEntryDetails = isset($entryType) ? $entryDetails : '';
+                                echo esc_html($displayEntryDetails);
+                                ?>
+                            </td>
+                            <td class="entries column-entries">1</td>
+                            <td class="entry-date column-entry-date"><?php echo esc_html($entry['entry_date']); ?></td>
+                            <td class="winner column-winner"><?php echo $isWinner ? '✓' : ''; ?></td>
                         </tr>
-                    </tfoot>
-                </table>
-                <?php
-                break;
+                    <?php endforeach; ?>
+                    <?php if (empty($entries)): ?>
+                        <tr>
+                            <td colspan="6">No entries found for this raffle.</td>
+                        </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+            <?php
+            break;
 
-            default:
-                ?>
+
+        default:
+            ?>
+            <form id="raffles-filter" method="post">
+                <?php wp_nonce_field('bulk-raffles-action', 'bulk-raffles-nonce'); ?>
+                <div class="tablenav top">
+                    <div class="alignleft actions bulkactions">
+                        <label for="bulk-action-selector-top" class="screen-reader-text">Select bulk action</label>
+                        <select name="action" id="bulk-action-selector-top">
+                            <option value="-1">Bulk Actions</option>
+                            <option value="delete">Trash</option>
+                        </select>
+                        <input type="submit" id="doaction" class="button action" value="Apply">
+                    </div>
+                </div>
                 <table class="wp-list-table widefat fixed striped posts">
                     <thead>
                         <tr>
@@ -260,9 +314,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <tbody id="the-list">
                         <?php foreach ($raffles as $raffle):
                             $current_date = new DateTime('now');
-                            $start_date_str = 'N/A'; // Default value
-                            $end_date_str = 'N/A'; // Default value
-                
+                            $start_date_str = 'N/A';
+                            $end_date_str = 'N/A';
+
                             if (isset($raffle['timezone']) && in_array($raffle['timezone'], DateTimeZone::listIdentifiers())) {
                                 $timezone = new DateTimeZone($raffle['timezone']);
                             } else {
@@ -279,7 +333,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 if ($end_date !== null) {
                                     $end_date->setTimezone($timezone);
                                 }
-
                             } catch (Exception $e) {
                                 $start_date = null;
                                 $end_date = null;
@@ -294,7 +347,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                             $status = 'Draft';
 
-                            if ($start_date && $end_date) { // Check if both dates are DateTime objects
+                            if ($start_date && $end_date) {
                                 if ($current_date < $start_date) {
                                     $interval = $current_date->diff($start_date);
                                     if ($interval->days > 0) {
@@ -348,7 +401,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                         <span class="duplicate">
                                             <a
                                                 href="<?php echo wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=raffle_delete&raffle_id=' . $raffle['raffle_id']), 'delete_raffle_action', 'delete_raffle_nonce'); ?>">Duplicate
-                                                |</a> </span>
+                                                |</a>
+                                        </span>
                                         <span class="delete">
                                             <a
                                                 href="<?php echo wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=raffle_delete&raffle_id=' . $raffle['raffle_id']), 'delete_raffle_action', 'delete_raffle_nonce'); ?>">Trash</a>
@@ -375,32 +429,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th style="vertical-align: middle; padding-bottom: 6px;"
+                            <th style="vertical-align: middle; padding-bottom: 8px;"
                                 class="manage-column column-cb check-column">
                                 <input id="cb-select-all-1" type="checkbox">
                             </th>
-                            <th scope="col" id="title" class="manage-column column-title column-primary">Title</th>
-                            <th scope="col" id="start-date" class="manage-column">Participants</th>
-                            <th scope="col" id="start-date" class="manage-column">Entries</th>
-                            <th scope="col" id="start-date" class="manage-column">Start Date</th>
-                            <th scope="col" id="end-date" class="manage-column">End Date</th>
-                            <th scope="col" id="status" class="manage-column">Status</th>
+                            <th scope="col" class="manage-column column-title column-primary">Title</th>
+                            <th scope="col" class="manage-column">Participants</th>
+                            <th scope="col" class="manage-column">Entries</th>
+                            <th scope="col" class="manage-column">Start Date</th>
+                            <th scope="col" class="manage-column">End Date</th>
+                            <th scope="col" class="manage-column">Status</th>
                         </tr>
                     </tfoot>
                 </table>
+                <div class="tablenav bottom">
+                    <div class="alignleft actions bulkactions">
+                        <label for="bulk-action-selector-bottom" class="screen-reader-text">Select bulk action</label>
+                        <select name="action2" id="bulk-action-selector-bottom">
+                            <option value="-1">Bulk Actions</option>
+                            <option value="delete">Trash</option>
+                            <!-- Add more bulk actions as needed -->
+                        </select>
+                        <input type="submit" id="doaction2" class="button action" value="Apply">
+                    </div>
+                </div>
+            </form>
             <?php
-        }
-        ?>
-        <div class="tablenav bottom">
-            <div class="alignleft actions bulkactions">
-                <label for="bulk-action-selector-bottom" class="screen-reader-text">Select bulk action</label>
-                <select name="action2" id="bulk-action-selector-bottom">
-                    <option value="-1">Bulk Actions</option>
-                    <option value="delete">Trash</option>
-                    <!-- Add more bulk actions as needed -->
-                </select>
-                <input type="submit" id="doaction2" class="button action" value="Apply">
-            </div>
-        </div>
-    </form>
+            break;
+    }
+    ?>
 </div>

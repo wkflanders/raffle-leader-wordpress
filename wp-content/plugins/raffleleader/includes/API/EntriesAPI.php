@@ -96,6 +96,18 @@ class EntriesAPI {
         return $selectedEntry;
     }
 
+    public function getEntryByWinner($raffleId){
+        global $wpdb;
+        $entriesTable = $wpdb->prefix . 'raffleleader_entries';
+
+        $query = $wpdb->prepare(
+            "SELECT * FROM $entriesTable WHERE raffle_id = %d AND winner = 'true' LIMIT 1",
+            $raffleId
+        );
+
+        return $wpdb->get_row( $query, ARRAY_A );
+    }
+
     public function getEntriesByContestantId( $contestantID, $raffleID ) {
         global $wpdb;
         $entriesTable = $wpdb->prefix . 'raffleleader_entries';

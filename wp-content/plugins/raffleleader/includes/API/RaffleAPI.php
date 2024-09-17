@@ -12,20 +12,38 @@ class RaffleAPI {
         add_action( 'admin_init', array( $this, 'handleRaffleActions' ) );
     }
 
-    public function addRaffle( array $raffleData ){
+    public function addRaffle(array $raffleData) {
         global $wpdb;
         $tableName = $wpdb->prefix . 'raffleleader_raffles';
-
-        if( !is_array( $raffleData ) || empty( $raffleData ) ){
+    
+        if (!is_array($raffleData) || empty($raffleData)) {
+            error_log("addRaffle: Invalid raffle data");
             return -1;
         }
-
-        $keys = array_keys( $raffleData );
-        if ( empty( $keys ) || !is_string( $keys[0] ) ){
+    
+        $keys = array_keys($raffleData);
+        if (empty($keys) || !is_string($keys[0])) {
+            error_log("addRaffle: Invalid raffle data structure");
             return -2;
         }
-
-        $wpdb->insert( $tableName, $raffleData );
+    
+        // Ensure created_at is set
+        if (!isset($raffleData['created_at'])) {
+            $raffleData['created_at'] = current_time('mysql');
+        }
+    
+        // Ensure status is set
+        if (!isset($raffleData['status'])) {
+            $raffleData['status'] = 'Draft';
+        }
+    
+        $result = $wpdb->insert($tableName, $raffleData);
+        
+        if ($result === false) {
+            error_log("addRaffle: Failed to insert raffle. MySQL error: " . $wpdb->last_error);
+            return -3;
+        }
+    
         return $wpdb->insert_id;
     }
 
@@ -83,6 +101,39 @@ class RaffleAPI {
         $results = $wpdb->get_results( $query, ARRAY_A );
         
         return $results;
+    }
+
+    public function duplicateRaffle($raffleId) {
+        global $wpdb;
+            
+        // Debug log
+        error_log("Attempting to duplicate raffle with ID: " . $raffleId);
+    
+        // Fetch the raffle to be duplicated
+        $raffle = $this->getRaffle($raffleId);
+    
+        if (!$raffle) {
+            error_log("Failed to fetch raffle with ID: " . $raffleId);
+            return false;
+        }
+    
+        // Remove the raffle_id to create a new entry
+        unset($raffle['raffle_id']);
+    
+        // Modify the name to indicate it's a copy
+        $raffle['name'] = $raffle['name'] . ' (Copy)';
+    
+        // Use addRaffle to create the new raffle
+        $new_raffle_id = $this->addRaffle($raffle);
+    
+        if ($new_raffle_id <= 0) {
+            error_log("Failed to insert duplicated raffle. Error code: " . $new_raffle_id);
+            return false;
+        }
+    
+        error_log("Successfully duplicated raffle. New raffle ID: " . $new_raffle_id);
+    
+        return $new_raffle_id;
     }
 
     public function updateRaffle( $raffleID, $raffleData ){

@@ -55,7 +55,7 @@ function create_raffleleader_tables(){
         referrer_id INT NULL,
         entry_type VARCHAR(255) NULL,
         entry_details VARCHAR(255) NULL,
-        winner VARCHAR(255) NULL,
+        winner ENUM('true', 'false') DEFAULT 'false',
         rules_consented VARCHAR(255) NULL,
         email_confirmation ENUM('unconfirmed', 'confirmed')DEFAULT 'unconfirmed',
         entry_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

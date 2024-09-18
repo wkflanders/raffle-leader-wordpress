@@ -33,10 +33,18 @@ const RaffleSelector = ({ onSelect }) => {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                setRaffles(data.data.map(raffle => ({
-                    value: raffle.raffle_id,
-                    label: raffle.name
-                })));
+                const mappedRaffles = data.data.map(raffle => ({
+                    value: String(raffle.raffle_id).trim(), // Ensure value is a trimmed string
+                    label: raffle.name.trim()
+                }));
+
+                if (mappedRaffles.length > 0) {
+                    setSelectedRaffle(mappedRaffles[0].value); // Automatically select the first raffle
+                } else {
+                    setError('No raffles available.');
+                }
+
+                setRaffles(mappedRaffles);
             } else {
                 console.error('Failed to fetch raffles:', data);
                 setError(data.data || 'Failed to fetch raffles.');
@@ -59,6 +67,10 @@ const RaffleSelector = ({ onSelect }) => {
         }
     };
 
+    const handleRaffleChange = (value) => {
+        setSelectedRaffle(value);
+    };
+
     return el(Fragment, null,
         el(Button, {
             onClick: () => setIsOpen(true),
@@ -70,17 +82,19 @@ const RaffleSelector = ({ onSelect }) => {
         },
             isLoading ? el('p', null, 'Loading raffles...') :
             error ? el('p', { style: { color: 'red' } }, error) :
-            el(SelectControl, {
-                label: "Choose a raffle",
-                value: selectedRaffle,
-                options: raffles,
-                onChange: setSelectedRaffle
-            }),
-            el(Button, {
-                isPrimary: true,
-                onClick: handleSelect,
-                disabled: !selectedRaffle || isLoading || error
-            }, "Insert Raffle")
+            el(Fragment, null,
+                el(SelectControl, {
+                    label: "Choose a raffle",
+                    value: selectedRaffle,
+                    options: raffles,
+                    onChange: handleRaffleChange
+                }),
+                el(Button, {
+                    isPrimary: true,
+                    onClick: handleSelect,
+                    disabled: !selectedRaffle || isLoading || error
+                }, "Insert Raffle")
+            )
         ) : null
     );
 };

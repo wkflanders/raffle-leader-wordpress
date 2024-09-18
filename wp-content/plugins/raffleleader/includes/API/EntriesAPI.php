@@ -33,36 +33,45 @@ class EntriesAPI {
         return $wpdb->get_row( $query, ARRAY_A );
     }
 
-    public function getRaffleEntries( $raffleID, $args = array() ){
+    public function getRaffleEntries($raffleID, $args = array()) {
         global $wpdb;
         $tableName = $wpdb->prefix . 'raffleleader_entries';
     
         $defaults = array(
             'per_page' => 10,
             'page_number' => 1,
-            'order' => 'ASC',
-            'orderby' => 'entry_date',  // Specify a default column to order by
+            'order' => 'DESC',
+            'orderby' => 'entry_date',
         );
     
-        $args = wp_parse_args( $args, $defaults );
-        $offset = ( $args['page_number'] - 1 ) * $args['per_page'];
+        $args = wp_parse_args($args, $defaults);
+        $offset = ($args['page_number'] - 1) * $args['per_page'];
     
-        // Validate the orderby and order values
-        $valid_orderby_columns = ['entry_date', 'entry_id']; // Add valid columns as needed
+        $valid_orderby_columns = ['entry_date', 'entry_id'];
         $orderby = in_array($args['orderby'], $valid_orderby_columns) ? $args['orderby'] : 'entry_date';
         $order = strtoupper($args['order']) === 'DESC' ? 'DESC' : 'ASC';
     
-        // Ensure limit is non-negative
         $offset = max(0, $offset);
         $per_page = max(1, intval($args['per_page']));
     
-        // Updated query without the 'deleted_at' condition
         $query = $wpdb->prepare(
-            "SELECT * FROM $tableName WHERE raffle_id = %d ORDER BY $orderby $order LIMIT %d, %d",
+            "SELECT * FROM $tableName WHERE raffle_id = %d AND winner != 'true' ORDER BY $orderby $order LIMIT %d, %d",
             $raffleID, $offset, $per_page
         );
     
-        return $wpdb->get_results( $query, ARRAY_A );
+        return $wpdb->get_results($query, ARRAY_A);
+    }
+
+    public function getTotalEntriesCount($raffleID) {
+        global $wpdb;
+        $tableName = $wpdb->prefix . 'raffleleader_entries';
+    
+        $query = $wpdb->prepare(
+            "SELECT COUNT(*) FROM $tableName WHERE raffle_id = %d",
+            $raffleID
+        );
+    
+        return $wpdb->get_var($query);
     }
     
 

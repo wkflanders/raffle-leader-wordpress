@@ -75,13 +75,31 @@ class Enqueue extends BaseController{
     }
 
     public function enqueueWPAdminBackEnd(){
-        wp_enqueue_style( 'raffleleader_classic_editor_style', $this->plugin_url . '/assets/css/classic_editor_style.css', array(), rand(111, 9999) );
-        
-        wp_enqueue_script( 'raffleleader_classic_editor_script', $this->plugin_url . '/assets/js/classic_editor_script.js', array(), rand(111, 9999) );
-        wp_localize_script( 'raffleleader_classic_editor_script', 'raffleleader_classic_editor_script_object', array( 
-            'ajax_url' => admin_url( 'admin-ajax.php' ),
-            'security' => wp_create_nonce( 'nonce' ),
-         ) );
+        if(defined('CLASSIC_EDITOR_VERSION')){
+            wp_enqueue_style( 'raffleleader_classic_editor_style', $this->plugin_url . '/assets/css/classic_editor_style.css', array(), rand(111, 9999) );
+            wp_enqueue_script( 'raffleleader_classic_editor_script', $this->plugin_url . '/assets/js/classic_editor_script.js', array(), rand(111, 9999) );
+            wp_localize_script( 'raffleleader_classic_editor_script', 'raffleleader_classic_editor_script_object', array( 
+                'ajax_url' => admin_url( 'admin-ajax.php' ),
+                'security' => wp_create_nonce( 'nonce' ),
+            ) );
+        } else {
+            wp_enqueue_script(
+                'raffleleader_gutenberg_block_script',
+                $this->plugin_url . '/assets/js/gutenberg_block_script.js',
+                array('wp-blocks', 'wp-element', 'wp-editor', 'wp-components', 'wp-server-side-render'),
+                rand(111, 9999),
+                true
+            );
+    
+            wp_localize_script(
+                'raffleleader_gutenberg_block_script',
+                'raffleleader_gutenberg_script_object',
+                array(
+                    'ajax_url' => admin_url('admin-ajax.php'),
+                    'security' => wp_create_nonce('nonce'),
+                )
+            );
+        }
     }
 
     public function enqueueSettings(){

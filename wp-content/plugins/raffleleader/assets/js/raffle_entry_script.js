@@ -212,25 +212,23 @@ document.addEventListener('raffleLoaded', ()=>{
                     handleForm.classList.add('raffleleader-additional-entry-form-column');
                     handleForm.innerHTML = `
                         <form class="raffleleader-entry-handle-form">
-                            <input class="raffleleader-entry-handle-input" name="handle" type="username" placeholder="Enter your ${entryPrefix.charAt(0).toUpperCase() + entryPrefix.slice(1)} handle">
+                            <input class="raffleleader-entry-handle-input" name="handle" type="username" placeholder="Enter your ${entryPrefix.charAt(0).toUpperCase() + entryPrefix.slice(1)} handle" required>
                         </form>
                             `;
                     additionalEntrySection.appendChild(handleForm);
 
-                    const form = handleForm.querySelector('.raffleleader-entry-handle-form');
-                    console.log(form);
-                    form.addEventListener('submit', (event)=>{
-                        event.preventDefault();
-                    })
-        
                     const handleInput = handleForm.querySelector('.raffleleader-entry-handle-input');
                     element.disabled = false;
         
                     element.removeEventListener('click', handleAdditionalEntry);
                     element.addEventListener('click', async (event) => {
                         event.preventDefault();
-        
+
                         const entryDetails = handleInput.value;
+                        if (!entryDetails.trim()) {
+                            alert('Please enter a valid username.');
+                            return;
+                        }
                         entryBtnCol.classList.add('additional-entry-handle-form-load');
                         element.innerHTML = '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>';
                         element.disabled = true;

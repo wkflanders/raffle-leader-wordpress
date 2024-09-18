@@ -16,15 +16,15 @@ class PublishController extends BaseController{
 
     private $contestantsAPI;
 
-    public function register(){
+    public function register() {
         $this->raffleAPI = new RaffleAPI();
-
         $this->entriesAPI = new EntriesAPI();
-
         $this->contestantsAPI = new ContestantsAPI();
-
+    
+        // Register the shortcode
         add_shortcode( 'raffleleader', array( $this, 'shortcodeHandler' ) );
         
+        // Register AJAX actions
         add_action( 'wp_ajax_loadRaffleData', array( $this, 'loadRaffleData' ) );
         add_action( 'wp_ajax_nopriv_loadRaffleData', array( $this, 'loadRaffleData' ) );
         add_action( 'wp_ajax_handleEmailLogin', array( $this, 'handleEmailLogin') );
@@ -32,10 +32,15 @@ class PublishController extends BaseController{
         add_action( 'wp_ajax_handleAdditionalEntry', array( $this, 'handleAdditionalEntry') );
         add_action( 'wp_ajax_nopriv_handleAdditionalEntry', array( $this, 'handleAdditionalEntry') );
         add_action( 'wp_ajax_handleClassicEditorModalRaffles', array( $this, 'handleClassicEditorModalRaffles') );
-
+    
+        // Add button and modal for the classic editor
         add_action( 'media_buttons', array( $this, 'addClassicEditorButton' ), 15 );
         add_action('admin_footer', array( $this, 'addClassicEditorModal' ));
-
+    
+        // Register Gutenberg block for RaffleLeader
+        add_action('init', array($this, 'registerRaffleGutenbergBlock'));
+    
+        // Add for creating posts/pages
         add_action('admin_footer', array( $this, 'createNewRafflePost' ));
         add_action('admin_footer', array( $this, 'createNewRafflePage' ));
     }
@@ -60,6 +65,7 @@ class PublishController extends BaseController{
     public function loadRaffleData(){
         if ( !isset( $_GET['security'] ) || !wp_verify_nonce( $_GET['security'], 'nonce' ) ) {
             wp_send_json_error( 'Nonce verification failed', 403 );
+            wp_die();
         }
 
         $raffle_id = isset( $_GET['raffle_id'] ) ? intval( $_GET['raffle_id'] ) : 0;
@@ -217,15 +223,15 @@ class PublishController extends BaseController{
         <?php
     }
 
-    public function handleClassicEditorModalRaffles(){
-        check_ajax_referer( 'nonce', 'security' );
-
-        $raffles = $this->raffleAPI->getMultipleRaffles( array( 
+    public function handleClassicEditorModalRaffles() {
+        check_ajax_referer('nonce', 'security');
+    
+        $raffles = $this->raffleAPI->getMultipleRaffles(array(
             'active' => 'true',
             'per_page' => -1,
-        ) );
-
-        wp_send_json_success( $raffles );
+        ));
+    
+        wp_send_json_success($raffles);
     }
 
     public function createNewRafflePost(){
@@ -261,6 +267,33 @@ class PublishController extends BaseController{
                 }
             });
         </script>";
+        }
+    }
+
+    public function registerRaffleGutenbergBlock() {
+        if (function_exists('register_block_type')) {
+            register_block_type('raffleleader/raffle-block', array(
+                'render_callback' => array($this, 'renderRaffleBlock'),
+                'attributes' => array(
+                    'raffleId' => array(
+                        'type' => 'string',
+                    ),
+                    'shortcode' => array(
+                        'type' => 'string',
+                    ),
+                ),
+            ));
+        }
+    }
+    
+    public function renderRaffleBlock($attributes) {
+        if (isset($attributes['shortcode'])) {
+            return do_shortcode($attributes['shortcode']);
+        } elseif (isset($attributes['raffleId'])) {
+            $raffle_id = intval($attributes['raffleId']);
+            return $this->shortcodeHandler(array('id' => $raffle_id));
+        } else {
+            return '<div>No raffle selected.</div>';
         }
     }
 }

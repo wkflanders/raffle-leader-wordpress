@@ -11,11 +11,16 @@ document.addEventListener('raffleLoaded', ()=>{
     let contestantID;
     let contestantEntries;
     let inputEntryDetails;
+    let referralLink;
 
     const additionalEntrySections = document.querySelectorAll('.raffleleader-additional-entry-section');
     additionalEntrySections.forEach((additionalEntrySection)=>{
         additionalEntrySection.classList.add('inactive-additional-entry');
-        additionalEntrySection.querySelector('button').addEventListener('click', handleAdditionalEntry);
+        if(additionalEntrySection.getAttribute('data-type') === 'referDetails'){
+            additionalEntrySection.querySelector('button').addEventListener('click', handleReferEntry);
+        } else {;
+            additionalEntrySection.querySelector('button').addEventListener('click', handleAdditionalEntry);
+        }
     });
 
     emailForm.addEventListener('submit', handleEmailLogin);
@@ -27,6 +32,10 @@ document.addEventListener('raffleLoaded', ()=>{
         updateEmailUI();
 
         const emailValue = emailInput.value;
+        const urlParams = new URLSearchParams(window.location.search);
+        const referralCode = urlParams.get('ref');  
+        const currentUrl = window.location.href.split('?')[0];
+
         try{
             const response = await fetch(raffleleader_raffle_entry_object.ajax_url, {
                 method: 'POST',
@@ -37,23 +46,30 @@ document.addEventListener('raffleLoaded', ()=>{
                     'action': 'handleEmailLogin',
                     'raffle_id': raffleID,
                     'contestant_email': emailValue,
+                    'referral_code': referralCode || '',
+                    'current_url': currentUrl,
                     'security': raffleleader_raffle_entry_object.security,
                 })
             });
             const data = await response.json();
 
             if(!data.success){
-                throw new Error(`$HTTP error: ${response.status}`);
+                throw new Error(`HTTP error: ${response.status}`);
             }
 
             contestantID = data.data.contestant_id;
             contestantEntries = data.data.contestant_entries;
+            referralLink = data.data.referral_link;
 
             additionalEntrySections.forEach((additionalEntrySection)=>{
-                if(contestantEntries.some(entry => entry.entry_type === additionalEntrySection.getAttribute('data-type'))){
-                    updateEntryUI(additionalEntrySection.querySelector('button'))
+                if(additionalEntrySection.getAttribute('data-type') !== 'referDetails'){       
+                    if(contestantEntries.some(entry => entry.entry_type === additionalEntrySection.getAttribute('data-type'))){
+                        updateEntryUI(additionalEntrySection.querySelector('button'))
+                    }
                 }
-            })
+            });
+
+            updateReferralLinkButton();
 
         } catch (error){
             isSuccess = false;
@@ -61,6 +77,39 @@ document.addEventListener('raffleLoaded', ()=>{
         } finally {
             isLoading = false;
             updateEmailUI();
+        }
+    }
+
+    function updateReferralLinkButton(){
+        const referButton = document.querySelector('.raffleleader-additional-entry-section[data-type="referDetails"] button');
+        if(referButton){
+            referButton.setAttribute('data-link', referralLink);
+            referButton.disabled = false;
+        }
+    }
+
+    async function handleReferEntry(event){
+        event.preventDefault();
+
+        const button = event.target;
+        const link = button.getAttribute('data-link');
+
+        if(!link){
+            console.error('No link provided');
+            return;
+        }
+        
+        try{
+            await navigator.clipboard.writeText(link);
+            const originalText = button.textContent;
+            button.textContent = 'Copied';
+            button.disabled = true;
+            setTimeout(()=>{
+                button.textContent = originalText;
+                button.disabled = false;
+            }, 2000);
+        } catch (err) {
+            console.error('Failed to copy to clipboard', err);
         }
     }
 

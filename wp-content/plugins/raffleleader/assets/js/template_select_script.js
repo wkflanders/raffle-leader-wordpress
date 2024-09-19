@@ -266,7 +266,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                 <p style="font-weight: bold;"></p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column raffleleader-additional-entry-button-column-refer">
-                                <button data-link="https://instagram.com/" style="background-color: rgb(254, 1, 138);">Copy Link</button>
+                                <button style="background-color: rgb(254, 1, 138);">Copy Link</button>
                             </div>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
@@ -1097,7 +1097,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                 <p>for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column raffleleader-additional-entry-button-column-refer">
-                                <button data-link="https://instagram.com/" style="background-color: rgb(21, 1, 254);">Copy Link</button>
+                                <button style="background-color: rgb(21, 1, 254);">Copy Link</button>
                             </div>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">

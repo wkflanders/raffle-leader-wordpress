@@ -28,7 +28,7 @@ class ContestantsAPI {
         global $wpdb;
         $tableName = $wpdb->prefix . 'raffleleader_contestants';
 
-        $query = $wpdb->prepare( "SELECT * FROM $tableName WHERE raffle_id = %d", $contestantID );
+        $query = $wpdb->prepare( "SELECT * FROM $tableName WHERE contestant_id = %d", $contestantID );
         return $wpdb->get_row( $query, ARRAY_A );
     }
 

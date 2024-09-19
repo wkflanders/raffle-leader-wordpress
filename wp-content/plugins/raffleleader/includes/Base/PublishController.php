@@ -8,7 +8,8 @@ use Includes\API\ContestantsAPI;
 use Includes\API\EntriesAPI;
 use Includes\API\RaffleAPI;
 
-class PublishController extends BaseController{
+class PublishController extends BaseController
+{
 
     private $raffleAPI;
 
@@ -16,44 +17,48 @@ class PublishController extends BaseController{
 
     private $contestantsAPI;
 
-    public function register() {
+    public function register()
+    {
         $this->raffleAPI = new RaffleAPI();
         $this->entriesAPI = new EntriesAPI();
         $this->contestantsAPI = new ContestantsAPI();
-    
+
         // Register the shortcode
-        add_shortcode( 'raffleleader', array( $this, 'shortcodeHandler' ) );
-        
+        add_shortcode('raffleleader', array($this, 'shortcodeHandler'));
+
         // Register AJAX actions
-        add_action( 'wp_ajax_loadRaffleData', array( $this, 'loadRaffleData' ) );
-        add_action( 'wp_ajax_nopriv_loadRaffleData', array( $this, 'loadRaffleData' ) );
-        add_action( 'wp_ajax_handleEmailLogin', array( $this, 'handleEmailLogin') );
-        add_action( 'wp_ajax_nopriv_handleEmailLogin', array( $this, 'handleEmailLogin') );
-        add_action( 'wp_ajax_handleAdditionalEntry', array( $this, 'handleAdditionalEntry') );
-        add_action( 'wp_ajax_nopriv_handleAdditionalEntry', array( $this, 'handleAdditionalEntry') );
-        add_action( 'wp_ajax_handleClassicEditorModalRaffles', array( $this, 'handleClassicEditorModalRaffles') );
-    
+        add_action('wp_ajax_loadRaffleData', array($this, 'loadRaffleData'));
+        add_action('wp_ajax_nopriv_loadRaffleData', array($this, 'loadRaffleData'));
+        add_action('wp_ajax_handleEmailLogin', array($this, 'handleEmailLogin'));
+        add_action('wp_ajax_nopriv_handleEmailLogin', array($this, 'handleEmailLogin'));
+        add_action('wp_ajax_handleAdditionalEntry', array($this, 'handleAdditionalEntry'));
+        add_action('wp_ajax_nopriv_handleAdditionalEntry', array($this, 'handleAdditionalEntry'));
+        add_action('wp_ajax_handleClassicEditorModalRaffles', array($this, 'handleClassicEditorModalRaffles'));
+        add_action('wp_ajax_handleReferral', array($this, 'handleReferral'));
+        add_action('wp_ajax_nopriv_handleReferral', array($this, 'handleReferral'));
+
         // Add button and modal for the classic editor
-        add_action( 'media_buttons', array( $this, 'addClassicEditorButton' ), 15 );
-        add_action('admin_footer', array( $this, 'addClassicEditorModal' ));
-    
+        add_action('media_buttons', array($this, 'addClassicEditorButton'), 15);
+        add_action('admin_footer', array($this, 'addClassicEditorModal'));
+
         // Register Gutenberg block for RaffleLeader
         add_action('init', array($this, 'registerRaffleGutenbergBlock'));
-    
+
         // Add for creating posts/pages
-        add_action('admin_footer', array( $this, 'createNewRafflePost' ));
-        add_action('admin_footer', array( $this, 'createNewRafflePage' ));
+        add_action('admin_footer', array($this, 'createNewRafflePost'));
+        add_action('admin_footer', array($this, 'createNewRafflePage'));
     }
 
-    public function shortcodeHandler( $atts ){
-        
-        $atts = shortcode_atts( array(
+    public function shortcodeHandler($atts)
+    {
+
+        $atts = shortcode_atts(array(
             'id' => '',
-        ), $atts, 'raffleleader' );
+        ), $atts, 'raffleleader');
 
-        $raffle_id = intval( $atts['id'] );
+        $raffle_id = intval($atts['id']);
 
-        if( $raffle_id ){
+        if ($raffle_id) {
             $output = '<div id="raffleleader-raffle-container" data-raffle-id="' . esc_attr($raffle_id) . '" style="display: flex; justify-content: center; max-width: none;"></div>';
             return $output;
         } else {
@@ -62,23 +67,24 @@ class PublishController extends BaseController{
         }
     }
 
-    public function loadRaffleData(){
-        if ( !isset( $_GET['security'] ) || !wp_verify_nonce( $_GET['security'], 'nonce' ) ) {
-            wp_send_json_error( 'Nonce verification failed', 403 );
+    public function loadRaffleData()
+    {
+        if (!isset($_GET['security']) || !wp_verify_nonce($_GET['security'], 'nonce')) {
+            wp_send_json_error('Nonce verification failed', 403);
             wp_die();
         }
 
-        $raffle_id = isset( $_GET['raffle_id'] ) ? intval( $_GET['raffle_id'] ) : 0;
+        $raffle_id = isset($_GET['raffle_id']) ? intval($_GET['raffle_id']) : 0;
 
-        if( $raffle_id ){
-            $raffleInstance = $this->raffleAPI->getRaffle( $raffle_id );
+        if ($raffle_id) {
+            $raffleInstance = $this->raffleAPI->getRaffle($raffle_id);
 
-            $preview_content = !is_null( $raffleInstance['content'] ) ? stripslashes( $raffleInstance['content'] ) : '';
-            $status = !is_null( $raffleInstance['status'] ) ? $raffleInstance['status'] : '';
-            $start_date = !is_null( $raffleInstance['start_date'] ) ? $raffleInstance['start_date'] : '';
-            $end_date = !is_null( $raffleInstance['end_date'] ) ? $raffleInstance['end_date'] : '';
-            $timezone = !is_null( $raffleInstance['timezone'] ) ? $raffleInstance['timezone'] : '';
-            
+            $preview_content = !is_null($raffleInstance['content']) ? stripslashes($raffleInstance['content']) : '';
+            $status = !is_null($raffleInstance['status']) ? $raffleInstance['status'] : '';
+            $start_date = !is_null($raffleInstance['start_date']) ? $raffleInstance['start_date'] : '';
+            $end_date = !is_null($raffleInstance['end_date']) ? $raffleInstance['end_date'] : '';
+            $timezone = !is_null($raffleInstance['timezone']) ? $raffleInstance['timezone'] : '';
+
             $data = array(
                 'content' => $preview_content,
                 'status' => $status,
@@ -87,92 +93,135 @@ class PublishController extends BaseController{
                 'timezone' => $timezone,
             );
 
-            wp_send_json( $data );
+            wp_send_json($data);
         } else {
-            wp_send_json_error( 'Raffle ID not provided.' );
+            wp_send_json_error('Raffle ID not provided.');
         }
 
         wp_die();
     }
 
-    public function handleEmailLogin(){
-        check_ajax_referer( 'nonce', 'security' );
+    public function handleEmailLogin()
+    {
+        check_ajax_referer('nonce', 'security');
 
-        if ( isset( $_POST['contestant_email'] ) && isset( $_POST['raffle_id'] ) ) {
+        if (isset($_POST['contestant_email']) && isset($_POST['raffle_id']) && isset($_POST['current_url'])) {
             $raffle_id = intval($_POST['raffle_id']);
-            $email = sanitize_email( $_POST['contestant_email'] );
-    
-            $contestant = $this->contestantsAPI->getContestantByEmail( $email );
-    
-            if ( $contestant ) {
+            $email = sanitize_email($_POST['contestant_email']);
+            $referral_code = isset($_POST['referral_code']) ? sanitize_text_field($_POST['referral_code']) : '';
+            $current_url = esc_url_raw($_POST['current_url']);
+
+            $contestant = $this->contestantsAPI->getContestantByEmail($email);
+
+            if ($contestant) {
                 $contestant_id = $contestant['contestant_id'];
-                $contestant_entries = $this->entriesAPI->getEntriesByContestantId( $contestant_id, $raffle_id );
-
-                if( empty( $contestant_entries ) ){
-                    $entryData = array(
-                        'raffle_id' => $raffle_id,
-                        'contestant_id' => $contestant_id,
-                        'entry_type' => 'Email',
-                    );
-        
-                    $this->entriesAPI->addEntry( $entryData );
-                }
-
-                wp_send_json_success( array(
-                    'contestant_id' => $contestant_id,
-                    'contestant_entries' => $contestant_entries,
-                ) );
-
             } else {
                 $ip = $_SERVER['REMOTE_ADDR'];
                 $contestantData = array(
                     'email' => $email,
                     'ip' => $ip,
                 );
-    
-                $contestant_id = $this->contestantsAPI->addContestant( $contestantData );
 
+                $contestant_id = $this->contestantsAPI->addContestant($contestantData);
+            }
+
+            if ($referral_code) {
+                $this->processReferral($referral_code, $raffle_id, $contestant_id);
+            }
+
+            // Check if the contestant already has an 'Email' entry for this raffle
+            $existing_entries = $this->entriesAPI->getEntriesByContestantId($contestant_id, $raffle_id);
+            $has_email_entry = false;
+            foreach ($existing_entries as $entry) {
+                if ($entry['entry_type'] === 'Email') {
+                    $has_email_entry = true;
+                    break;
+                }
+            }
+
+            // Only add the 'Email' entry if it doesn't already exist
+            if (!$has_email_entry) {
                 $entryData = array(
                     'raffle_id' => $raffle_id,
                     'contestant_id' => $contestant_id,
                     'entry_type' => 'Email',
                 );
-    
-                $this->entriesAPI->addEntry( $entryData );
+                $this->entriesAPI->addEntry($entryData);
+            }
 
-                $contestant_entries = $this->entriesAPI->getEntriesByContestantId( $contestant_id, $raffle_id );
-                
-                wp_send_json_success( array(
-                    'contestant_id' => $contestant_id,
-                    'contestant_entries' => $contestant_entries,
-                ) );
-                }
-            } else {
-            wp_send_json_error( 'Invalid request.' );
+            $contestant_entries = $this->entriesAPI->getEntriesByContestantId($contestant_id, $raffle_id);
+            $referral_link = $this->generateReferralLink($contestant_id, $raffle_id, $current_url);
+
+            wp_send_json_success(array(
+                'contestant_id' => $contestant_id,
+                'contestant_entries' => $contestant_entries,
+                'referral_link' => $referral_link,
+            ));
+        } else {
+            wp_send_json_error('Invalid request.');
         }
     }
 
-    public function handleAdditionalEntry(){
-        check_ajax_referer( 'nonce', 'security' );
+    private function processReferral($referral_code, $raffle_id, $new_contestant_id)
+{
+    $referring_contestant_id = $this->verifyReferralCode($referral_code, $raffle_id);
+    if ($referring_contestant_id && $referring_contestant_id != $new_contestant_id) {
+        // Fetch the new contestant's email
+        $new_contestant = $this->contestantsAPI->getContestant($new_contestant_id);
+        if ($new_contestant && isset($new_contestant['email'])) {
+            $referred_email = $new_contestant['email'];
+            
+            $entryData = array(
+                'raffle_id' => $raffle_id,
+                'contestant_id' => $referring_contestant_id,
+                'entry_type' => 'referDetails',
+                'entry_details' => "Referred contestant: $referred_email",
+            );
+            $this->entriesAPI->addEntry($entryData);
+        }
+    }
+}
 
-        if( isset( $_POST['contestant_email'], $_POST['raffle_id'], $_POST['entry_type'], $_POST['entry_details'] ) ) {
-            $email = sanitize_email( $_POST['contestant_email'] );
-            $raffle_id = intval( $_POST['raffle_id'] );
-            $entry_type = sanitize_text_field( $_POST['entry_type'] );
-            $entry_details = sanitize_text_field( $_POST['entry_details'] );
+    private function verifyReferralCode($referral_code, $raffle_id)
+    {
+        $decoded = base64_decode($referral_code);
+        list($contestant_id, $encoded_raffle_id) = explode('-', $decoded);
 
-            $contestant = $this->contestantsAPI->getContestantByEmail( $email );
-    
-            if( $contestant ) {
+        if ($encoded_raffle_id != $raffle_id) {
+            return false;
+        }
+
+        return intval($contestant_id);
+    }
+
+    private function generateReferralLink($contestant_id, $raffle_id, $current_url) 
+    {
+        $referral_code = base64_encode($contestant_id . '-' . $raffle_id);
+        return add_query_arg('ref', $referral_code, $current_url);
+    }
+
+    public function handleAdditionalEntry()
+    {
+        check_ajax_referer('nonce', 'security');
+
+        if (isset($_POST['contestant_email'], $_POST['raffle_id'], $_POST['entry_type'], $_POST['entry_details'])) {
+            $email = sanitize_email($_POST['contestant_email']);
+            $raffle_id = intval($_POST['raffle_id']);
+            $entry_type = sanitize_text_field($_POST['entry_type']);
+            $entry_details = sanitize_text_field($_POST['entry_details']);
+
+            $contestant = $this->contestantsAPI->getContestantByEmail($email);
+
+            if ($contestant) {
                 $contestant_id = $contestant['contestant_id'];
-                $contestant_entries = $this->entriesAPI->getEntriesByContestantId( $contestant_id, $raffle_id );
+                $contestant_entries = $this->entriesAPI->getEntriesByContestantId($contestant_id, $raffle_id);
 
-                foreach( $contestant_entries as $entry ){
-                    if( $entry['entry_type'] === $entry_type ){
-                        wp_send_json_success( array(
+                foreach ($contestant_entries as $entry) {
+                    if ($entry['entry_type'] === $entry_type) {
+                        wp_send_json_success(array(
                             'contestant_id' => $contestant_id,
                             'contestant_entries' => $contestant_entries,
-                        ) );
+                        ));
                         return;
                     }
 
@@ -182,31 +231,33 @@ class PublishController extends BaseController{
                         'entry_type' => $entry_type,
                         'entry_details' => $entry_details,
                     );
-        
-                    $this->entriesAPI->addEntry( $entryData );
 
-                    $contestant_entries = $this->entriesAPI->getEntriesByContestantId( $contestant_id, $raffle_id );
-        
-                    wp_send_json_success( array(
+                    $this->entriesAPI->addEntry($entryData);
+
+                    $contestant_entries = $this->entriesAPI->getEntriesByContestantId($contestant_id, $raffle_id);
+
+                    wp_send_json_success(array(
                         'contestant_id' => $contestant_id,
                         'contestant_entries' => $contestant_entries,
-                    ) );
+                    ));
                 }
             }
         } else {
-            wp_send_json_error( 'Invalid request.' );
+            wp_send_json_error('Invalid request.');
         }
     }
 
-    public function addClassicEditorButton( $buttons ){
+    public function addClassicEditorButton($buttons)
+    {
         $svg_icon = '<svg style="height: 25px; width: 23px; vertical-align: bottom; margin-right: 5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14"><path fill="#2271b1" d="M14.5 11.4h4c1 0 1.4-.3 1.3-1.2V4.8c0-1-.5-1-1-1l-6.6-.2a3 3 0 0 1-1.8-.7l-.3-.2c-.6-.6-1.2-1-2-1H3.4c-.8 0-1.5 0-1.5 1.1V8c.1 1 .6 1.4 1.4 1.4l6.2.2c.8 0 1.2.1 2 .5l1.1.8c.7.4 1.4.5 2 .5Z"/><path fill="#2271b1" d="M22 3.3h-.2c-.7 0-1.2-.6-1.2-1.2V2h-7.9c-.7 0-1.5-.3-2-.9a4.3 4.3 0 0 0-3-1.1H1.3v.2A1.2 1.2 0 0 1 1 1c-.3.2-.6.4-1 .4v8.2h.2A1.2 1.2 0 0 1 1.4 11H9c1 0 1.9.4 2.7 1l.4.3c.5.5 1.2.7 2 .7h6.5v-.3c0-.6.6-1.2 1.2-1.1l.1-8.2Zm-3 8.4h-4.3c-.6 0-1.3-.1-2-.6l-1.2-.8c-.8-.4-1.3-.5-2-.5H3c-1 0-1.4-.4-1.5-1.5V2.5c0-1 .6-1.2 1.6-1.2h4.8c.9 0 1.6.6 2.2 1.2l.3.2c.4.4 1.3.7 1.9.7h7c.4 0 1 0 1 1v6.1c0 1-.4 1.3-1.4 1.2Z"/></svg>';
         echo '<a href="#" id="insert-raffleleader-shortcode" class="button">' . $svg_icon . ' Add Raffle</a>';
     }
 
-    public function addClassicEditorModal(){
+    public function addClassicEditorModal()
+    {
         $screen = get_current_screen();
 
-        if( $screen->id != 'post' && $screen->id != 'page' ){
+        if ($screen->id != 'post' && $screen->id != 'page') {
             return;
         }
         ?>
@@ -223,20 +274,22 @@ class PublishController extends BaseController{
         <?php
     }
 
-    public function handleClassicEditorModalRaffles() {
+    public function handleClassicEditorModalRaffles()
+    {
         check_ajax_referer('nonce', 'security');
-    
+
         $raffles = $this->raffleAPI->getMultipleRaffles(array(
             'active' => 'true',
             'per_page' => -1,
         ));
-    
+
         wp_send_json_success($raffles);
     }
 
-    public function createNewRafflePost(){
-        if( isset( $_GET['raffle_id'] ) && current_user_can( 'edit_posts' ) ){
-            $raffle_id = sanitize_text_field( $_GET['raffle_id'] );
+    public function createNewRafflePost()
+    {
+        if (isset($_GET['raffle_id']) && current_user_can('edit_posts')) {
+            $raffle_id = sanitize_text_field($_GET['raffle_id']);
             $shortcode = '[raffleleader id=' . $raffle_id . ']';
 
             echo "<script>
@@ -252,9 +305,10 @@ class PublishController extends BaseController{
         }
     }
 
-    public function createNewRafflePage(){
-        if( isset( $_GET['raffle_id'] ) && current_user_can( 'edit_posts' ) ){
-            $raffle_id = sanitize_text_field( $_GET['raffle_id'] );
+    public function createNewRafflePage()
+    {
+        if (isset($_GET['raffle_id']) && current_user_can('edit_posts')) {
+            $raffle_id = sanitize_text_field($_GET['raffle_id']);
             $shortcode = '[raffleleader id=' . $raffle_id . ']';
 
             echo "<script>
@@ -270,7 +324,8 @@ class PublishController extends BaseController{
         }
     }
 
-    public function registerRaffleGutenbergBlock() {
+    public function registerRaffleGutenbergBlock()
+    {
         if (function_exists('register_block_type')) {
             register_block_type('raffleleader/raffle-block', array(
                 'render_callback' => array($this, 'renderRaffleBlock'),
@@ -285,8 +340,9 @@ class PublishController extends BaseController{
             ));
         }
     }
-    
-    public function renderRaffleBlock($attributes) {
+
+    public function renderRaffleBlock($attributes)
+    {
         if (isset($attributes['shortcode'])) {
             return do_shortcode($attributes['shortcode']);
         } elseif (isset($attributes['raffleId'])) {

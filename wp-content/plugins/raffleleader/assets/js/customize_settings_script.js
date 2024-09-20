@@ -7049,11 +7049,11 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                         break;
                     case 'counterUserEntries':
                         counterSection.classList.add('show-user-entries');
-                        // watchUserEntries(counterSection);
+                        watchUserEntries(counterSection);
                         break;
                     case 'counterTotalEntries':
                         counterSection.classList.add('show-total-entries');
-                        // watchTotalEntries(counterSection);
+                        watchTotalEntries(counterSection);
                         break;
                 }
             }
@@ -7070,11 +7070,11 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     break;
                 case 'counterUserEntries':
                     counterSection.classList.add('show-user-entries');
-                    // watchUserEntries(counterSection);
+                    watchUserEntries(counterSection);
                     break;
                 case 'counterTotalEntries':
                     counterSection.classList.add('show-total-entries');
-                    // watchTotalEntries(counterSection);
+                    watchTotalEntries(counterSection);
                     break;
             }
         }
@@ -7151,6 +7151,22 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         }
     }
 
+    function watchUserEntries(element){
+        const counterHeader = element.querySelector('h2');
+        const counterText = element.querySelector('p');
+
+        counterHeader.innerText = `00`;
+        counterText.innerText = 'YOUR ENTRIES';
+    }
+
+    function watchTotalEntries(element){
+        const counterHeader = element.querySelector('h2');
+        const counterText = element.querySelector('p');
+
+        counterHeader.innerText = `00`;
+        counterText.innerText = 'TOTAL ENTRIES';
+    }
+
     function stopWatch(element, counterType){
         const counterHeader = element.querySelector('h2');
         const counterText = element.querySelector('p');
@@ -7165,7 +7181,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'counterTimeStart':
                 element.classList.remove('show-time-start');
                 break;
-            case 'counterTUserEntries':
+            case 'counterUserEntries':
                 element.classList.remove('show-user-entries');
                 break;
             case 'counterTotalEntries':

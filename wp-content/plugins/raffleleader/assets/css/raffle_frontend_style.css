@@ -57,6 +57,9 @@ h2 {
     width: 85% !important;
     z-index: 10 !important;
     margin: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .on-submit-success-btn{

@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             return data;
         })
         .then(data =>{
-            loadDateAndTime(data);
+            loadDateAndTimeAndCounters(data);
             return data;
         })
         .catch(error => console.error('Error:', error));
@@ -89,18 +89,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
         }
     }
 
-    function loadDateAndTime(raffleData){
+    function loadDateAndTimeAndCounters(raffleData){
         // Load time data
         if(raffleData.startDate && raffleData.endDate){
             const localStart = moment.tz(raffleData.startDate, 'UTC').tz(raffleData.timezone);
 
             const localEnd = moment.tz(raffleData.endDate, 'UTC').tz(raffleData.timezone);
 
-            initializeCounters(localStart, localEnd, raffleData.timezone);
+            initializeCounters(localStart, localEnd, raffleData.timezone, raffleData.total_entries);
         } 
     }
 
-    function initializeCounters(startTime, endTime, timezone){
+    function initializeCounters(startTime, endTime, timezone, totalEntries){
         const now = moment();
 
         const timeLeftCounters = document.querySelectorAll('.show-time-left');
@@ -111,6 +111,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const timeStartCounters = document.querySelectorAll('.show-time-start');
         timeStartCounters.forEach((timeStartCounter)=>{
             watchTimeStart(timeStartCounter, startTime, now);
+        });
+
+        // Since user entries can't be tracked until login, we'll update front end logic for it in the handleEmail hook
+
+        const totalEntriesCounters = document.querySelectorAll('.show-total-entries');
+        totalEntriesCounters.forEach((totalEntriesCounter)=>{
+            watchTotalEntries(totalEntriesCounter, totalEntries);
         });
     }
 
@@ -162,6 +169,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
             counterHeader.innerText = `00`;
             counterText.innerText = 'STARTED';
         }
+    }
+
+    function watchTotalEntries(element, totalEntries){
+        const counterHeader = element.querySelector('h2');
+        const counterText = element.querySelector('p');
+
+        counterHeader.innerText = `${totalEntries}`;
+        counterText.innerText = 'TOTAL ENTRIES';
     }
 
     function displayRulesAndTerms(){

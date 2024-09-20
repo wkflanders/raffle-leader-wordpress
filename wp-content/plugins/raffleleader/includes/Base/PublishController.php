@@ -84,6 +84,7 @@ class PublishController extends BaseController
             $start_date = !is_null($raffleInstance['start_date']) ? $raffleInstance['start_date'] : '';
             $end_date = !is_null($raffleInstance['end_date']) ? $raffleInstance['end_date'] : '';
             $timezone = !is_null($raffleInstance['timezone']) ? $raffleInstance['timezone'] : '';
+            $total_entries = !is_null($this->entriesAPI->getTotalEntriesCount($raffle_id)) ? $this->entriesAPI->getTotalEntriesCount($raffle_id) : 0;
 
             $data = array(
                 'content' => $preview_content,
@@ -91,6 +92,7 @@ class PublishController extends BaseController
                 'startDate' => $start_date,
                 'endDate' => $end_date,
                 'timezone' => $timezone,
+                'total_entries' => $total_entries,
             );
 
             wp_send_json($data);
@@ -150,11 +152,13 @@ class PublishController extends BaseController
             }
 
             $contestant_entries = $this->entriesAPI->getEntriesByContestantId($contestant_id, $raffle_id);
+            $total_entries = $this->entriesAPI->getTotalEntriesCount($raffle_id);
             $referral_link = $this->generateReferralLink($contestant_id, $raffle_id, $current_url);
 
             wp_send_json_success(array(
                 'contestant_id' => $contestant_id,
                 'contestant_entries' => $contestant_entries,
+                'total_entries' => $total_entries,
                 'referral_link' => $referral_link,
             ));
         } else {
@@ -235,10 +239,12 @@ class PublishController extends BaseController
                     $this->entriesAPI->addEntry($entryData);
 
                     $contestant_entries = $this->entriesAPI->getEntriesByContestantId($contestant_id, $raffle_id);
+                    $total_entries = $this->entriesAPI->getTotalEntriesCount($raffle_id);
 
                     wp_send_json_success(array(
                         'contestant_id' => $contestant_id,
                         'contestant_entries' => $contestant_entries,
+                        'total_entries' => $total_entries,
                     ));
                 }
             }

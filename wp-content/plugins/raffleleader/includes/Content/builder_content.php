@@ -22,11 +22,22 @@
         </div>
     </div>
     <div class="loading-menu">
-        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        <div class="lds-roller">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </div>
     <nav id="rlNavbar" class="rl-navbar" style="display: none;">
         <div class="rl-nav-logo">
-            <img class="rl-text-logo" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/TEXT-LOGO.svg">
+            <a href="admin.php?page=raffleleader_plugin"><img class="rl-text-logo"
+                    src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/TEXT-LOGO.svg">
+            </a>
         </div>
         <ul class="rl-nav-tabs">
             <li class="templates-tab"><a class="noSelect" href="#templates">Templates</a></li>
@@ -43,7 +54,7 @@
         </ul>
     </nav>
     <div class="rl-tab-content">
-        <?php require plugin_dir_path( __FILE__ ) . 'templates_content.php'  ?>
+        <?php require plugin_dir_path(__FILE__) . 'templates_content.php' ?>
         <div id="setup" class="rl-tab-pane">
             <div id="setupWrapper" class="rl-setup-wrapper">
                 <div class="raffle-options-wrapper">
@@ -69,22 +80,26 @@
                         <div class="layout-box layout-size">
                             <p>Adjust your raffle's height and width</p>
                             <div class="layout-size-row layout-size-text">
-                                    <p class="layout-width-text">Width</p>
-                                    <p>Height</p>
-                                </div>
+                                <p class="layout-width-text">Width</p>
+                                <p>Height</p>
+                            </div>
                             <div class="layout-size-row-wrapper">
                                 <div class="layout-size-row layout-size-input">
-                                    <input id="layoutWidthForm" class="layout-size-form" type="text" name="layoutWidth" placeholder="Width">
+                                    <input id="layoutWidthForm" class="layout-size-form" type="text" name="layoutWidth"
+                                        placeholder="Width">
                                     <p>X</p>
-                                    <input id="layoutHeightForm" class="layout-size-form" type="text" name="layoutHeight" placeholder="Height">
+                                    <input id="layoutHeightForm" class="layout-size-form" type="text"
+                                        name="layoutHeight" placeholder="Height">
                                 </div>
                             </div>
                             <div class="layout-size-row layout-size-error">
-                                    <p class="layout-min-width-error layout-size-error-width-text" style="display: none;">Width must be ≥ 500px!</p>
-                                    <p class="layout-max-width-error layout-size-error-width-text" style="display: none;">Width must be ≤ 2000px!</p>
-                                    <p class="layout-min-height-error" style="display: none;">Height must be ≥ 100px!</p>
-                                    <p class="layout-max-height-error" style="display: none;">Height must be ≤ 2000px!</p>
-                                </div>
+                                <p class="layout-min-width-error layout-size-error-width-text" style="display: none;">
+                                    Width must be ≥ 500px!</p>
+                                <p class="layout-max-width-error layout-size-error-width-text" style="display: none;">
+                                    Width must be ≤ 2000px!</p>
+                                <p class="layout-min-height-error" style="display: none;">Height must be ≥ 100px!</p>
+                                <p class="layout-max-height-error" style="display: none;">Height must be ≤ 2000px!</p>
+                            </div>
                         </div>
                         <div class="layout-box layout-bg-color">
                             <p>Adjust your raffle's background color</p>
@@ -93,8 +108,11 @@
                                 <div class="customize-settings-dropdown">
                                     <div class="dropdown-display dropdown-color">
                                         <div id="raffleGradientBackground"></div>
-                                        <div id="raffleBackgroundColorClick" class="dropdown-color-click" data-type="raffleBackgroundColor"></div>
-                                        <input id="raffleBackgroundColorForm" class="color-input" data-type="raffleBackgroundColor" type="text" name="raffleBackgroundColor" placeholder="Enter a hexidecimal">
+                                        <div id="raffleBackgroundColorClick" class="dropdown-color-click"
+                                            data-type="raffleBackgroundColor"></div>
+                                        <input id="raffleBackgroundColorForm" class="color-input"
+                                            data-type="raffleBackgroundColor" type="text" name="raffleBackgroundColor"
+                                            placeholder="Enter a hexidecimal">
                                     </div>
                                 </div>
                             </div>
@@ -105,8 +123,10 @@
                                 <div class="customize-settings-dropdown">
                                     <div class="dropdown-display dropdown-color">
                                         <div id="footerFontGradientBackground"></div>
-                                        <div id="footerFontColorClick" class="dropdown-color-click" data-type="footerFontColor"></div>
-                                        <input id="footerFontColorForm" class="color-input" data-type="footerFontColor" type="text" name="footerFontColor" placeholder="Enter a hexidecimal">
+                                        <div id="footerFontColorClick" class="dropdown-color-click"
+                                            data-type="footerFontColor"></div>
+                                        <input id="footerFontColorForm" class="color-input" data-type="footerFontColor"
+                                            type="text" name="footerFontColor" placeholder="Enter a hexidecimal">
                                     </div>
                                 </div>
                             </div>
@@ -117,8 +137,11 @@
                                 <div class="customize-settings-dropdown">
                                     <div class="dropdown-display dropdown-color">
                                         <div id="footerGradientBackground"></div>
-                                        <div id="footerBackgroundColorClick" class="dropdown-color-click" data-type="footerBackgroundColor"></div>
-                                        <input id="footerBackgroundColorForm" class="color-input" data-type="footerBackgroundColor" type="text" name="footerBackgroundColor" placeholder="Enter a hexidecimal">
+                                        <div id="footerBackgroundColorClick" class="dropdown-color-click"
+                                            data-type="footerBackgroundColor"></div>
+                                        <input id="footerBackgroundColorForm" class="color-input"
+                                            data-type="footerBackgroundColor" type="text" name="footerBackgroundColor"
+                                            placeholder="Enter a hexidecimal">
                                     </div>
                                 </div>
                             </div>
@@ -129,8 +152,10 @@
                             <h2 class="header-box-title">Settings</h2>
                         </div>
                         <div class="general-settings-options">
-                            <a href="#dateAndTime" class="settings-tab-open"><button class="general-settings-btn">Date and Time</button></a>
-                            <a href="#rulesAndTerms" class="settings-tab-open"><button class="general-settings-btn">Rules and Terms</button></a>
+                            <a href="#dateAndTime" class="settings-tab-open"><button class="general-settings-btn">Date
+                                    and Time</button></a>
+                            <a href="#rulesAndTerms" class="settings-tab-open"><button
+                                    class="general-settings-btn">Rules and Terms</button></a>
                             <!-- <a href="#emailSettings" class="settings-tab-open general-settings-deactivated"><button class="general-settings-btn">Email Settings</button></a>
                             <a href="#successSettings" class="settings-tab-open general-settings-deactivated"><button class="general-settings-btn">Success Settings</button></a>
                             <a href="#GPDR" class="settings-tab-open general-settings-deactivated"><button class="general-settings-btn">GPDR Consent</button></a>
@@ -209,7 +234,8 @@
                             <p>Your Raffle's Rules and Terms</p>
                         </div>
                         <div class="general-settings-row rules-and-terms-row">
-                            <textarea id="rulesAndTermsForm" class="rules-and-terms-input" type="text" placeholder="Enter Rules and Terms"></textarea>
+                            <textarea id="rulesAndTermsForm" class="rules-and-terms-input" type="text"
+                                placeholder="Enter Rules and Terms"></textarea>
                         </div>
                     </div>
                     <!-- <div class="general-settings-menu" id='emailSettings'>
@@ -324,22 +350,27 @@
                         <div id="dropzone" class="raffleleader-dropzone" style="height: 600px"></div>
                         <div class="raffleleader-footer-wrapper">
                             <div class="raffleleader-footer">
-                                <a class="raffleleader-footer-content raffleleader-rules-and-terms">Raffle Rules and Terms</a>
-                                <a class="raffleleader-footer-content rl_link" target="_blank" href="https://raffleleader.com">Try <img id="footer-logo" class="raffleleader-footer-text-logo" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom-vert.png"> For Yourself!</a>
+                                <a class="raffleleader-footer-content raffleleader-rules-and-terms">Raffle Rules and
+                                    Terms</a>
+                                <a class="raffleleader-footer-content rl_link" target="_blank"
+                                    href="https://raffleleader.com">Try <img id="footer-logo"
+                                        class="raffleleader-footer-text-logo"
+                                        src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom-vert.png">
+                                    For Yourself!</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id="settingsWrapper" class="settings-wrapper">
                     <div class="settings-content">
-                        <?php require plugin_dir_path( __FILE__ ) . 'text_details_content.php'?>
-                        <?php require plugin_dir_path( __FILE__ ) . 'entry_details_content.php'?>
-                        <?php require plugin_dir_path( __FILE__ ) . 'counter_details_content.php'?>
-                        <?php require plugin_dir_path( __FILE__ ) . 'image_details_content.php'?>
+                        <?php require plugin_dir_path(__FILE__) . 'text_details_content.php' ?>
+                        <?php require plugin_dir_path(__FILE__) . 'entry_details_content.php' ?>
+                        <?php require plugin_dir_path(__FILE__) . 'counter_details_content.php' ?>
+                        <?php require plugin_dir_path(__FILE__) . 'image_details_content.php' ?>
                     </div>
                 </div>
             </div>
         </div>
-        <?php require plugin_dir_path( __FILE__ ) . 'publish_content.php'?>
+        <?php require plugin_dir_path(__FILE__) . 'publish_content.php' ?>
     </div>
 </div>

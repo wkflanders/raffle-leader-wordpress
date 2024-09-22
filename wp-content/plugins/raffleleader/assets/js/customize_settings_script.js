@@ -68,70 +68,83 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     let pickrXFollowHeader = undefined;
     let pickrXFollowSubheader = undefined;
     let pickrXFollowButton = undefined;
+    let pickrXFollowButtonFont = undefined;
     let pickrXFollowBackground = undefined;
     let pickrXFollowBorder = undefined;
     let pickrXRepostHeader = undefined;
     let pickrXRepostSubheader = undefined;
     let pickrXRepostButton = undefined;
+    let pickrXRepostButtonFont = undefined;
     let pickrXRepostBackground = undefined;
     let pickrXRepostBorder = undefined;
     let pickrXLikeHeader = undefined;
     let pickrXLikeSubheader = undefined;
     let pickrXLikeButton = undefined;
+    let pickrXLikeButtonFont = undefined;
     let pickrXLikeBackground = undefined;
     let pickrXLikeBorder = undefined;
 
     let pickrInstaFollowHeader = undefined;
     let pickrInstaFollowSubheader = undefined;
     let pickrInstaFollowButton = undefined;
+    let pickrInstaFollowButtonFont = undefined;
     let pickrInstaFollowBackground = undefined;
     let pickrInstaFollowBorder = undefined;
     let pickrInstaCommentHeader = undefined;
     let pickrInstaCommentSubheader = undefined;
     let pickrInstaCommentButton = undefined;
+    let pickrInstaCommentButtonFont = undefined;
     let pickrInstaCommentBackground = undefined;
     let pickrInstaCommentBorder = undefined;
     let pickrInstaLikeHeader = undefined;
     let pickrInstaLikeSubheader = undefined;
     let pickrInstaLikeButton = undefined;
+    let pickrInstaLikeButtonFont = undefined;
     let pickrInstaLikeBackground = undefined;
     let pickrInstaLikeBorder = undefined;
 
     let pickrFacebookFollowHeader = undefined;
     let pickrFacebookFollowSubheader = undefined;
     let pickrFacebookFollowButton = undefined;
+    let pickrFacebookFollowButtonFont = undefined;
     let pickrFacebookFollowBackground = undefined;
     let pickrFacebookFollowBorder = undefined;
     let pickrFacebookCommentHeader = undefined;
     let pickrFacebookCommentSubheader = undefined;
     let pickrFacebookCommentButton = undefined;
+    let pickrFacebookCommentButtonFont = undefined;
     let pickrFacebookCommentBackground = undefined;
     let pickrFacebookCommentBorder = undefined;
     let pickrFacebookLikeHeader = undefined;
     let pickrFacebookLikeSubheader = undefined;
     let pickrFacebookLikeButton = undefined;
+    let pickrFacebookLikeButtonFont = undefined;
     let pickrFacebookLikeBackground = undefined;
     let pickrFacebookLikeBorder = undefined;
 
     let pickrTiktokFollowHeader = undefined;
     let pickrTiktokFollowSubheader = undefined;
     let pickrTiktokFollowButton = undefined;
+    let pickrTiktokFollowButtonFont = undefined;
     let pickrTiktokFollowBackground = undefined;
     let pickrTiktokFollowBorder = undefined;
     let pickrTiktokCommentHeader = undefined;
     let pickrTiktokCommentSubheader = undefined;
     let pickrTiktokCommentButton = undefined;
+    let pickrTiktokCommentButtonFont = undefined;
     let pickrTiktokCommentBackground = undefined;
     let pickrTiktokCommentBorder = undefined;
     let pickrTiktokLikeHeader = undefined;
     let pickrTiktokLikeSubheader = undefined;
     let pickrTiktokLikeButton = undefined;
+    let pickrTiktokLikeButtonFont = undefined;
     let pickrTiktokLikeBackground = undefined;
     let pickrTiktokLikeBorder = undefined;
 
     let pickrReferHeader = undefined;
     let pickrReferSubheader = undefined;
     let pickrReferButton = undefined;
+    let pickrReferButtonFont = undefined;
     let pickrReferBackground = undefined;
     let pickrReferBorder = undefined;
 
@@ -1315,6 +1328,37 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 });
                 break;
 
+            case 'XFollowButtonFontColor':
+                const currentXFollowButtonFontColor = document.getElementById('XFollowButtonFontColorForm').value;
+
+                if(pickrXFollowButtonFont === undefined){
+                    pickrXFollowButtonFont = Pickr.create({
+                        el: XFollowColorGradientButtonFont,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'XFollowButtonFont-color-pickr',
+                        default: currentXFollowButtonFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.XFollowButtonFont-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
+                pickrXFollowButtonFont.setColorRepresentation('HEX');
+                pickrXFollowButtonFont.show();
+
+                pickrXFollowButtonFont.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
             case 'XFollowBackgroundColor':
                 const currentXFollowBackgroundColor = document.getElementById('XFollowBackgroundColorForm').value;
 
@@ -1462,6 +1506,37 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 pickrXRepostButton.show();
 
                 pickrXRepostButton.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'XRepostButtonFontColor':
+                const currentXRepostButtonFontColor = document.getElementById('XRepostButtonFontColorForm').value;
+
+                if(pickrXRepostButtonFont === undefined){
+                    pickrXRepostButtonFont = Pickr.create({
+                        el: XRepostColorGradientButton,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'XRepostButtonFont-color-pickr',
+                        default: currentXRepostButtonFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.XRepostButtonFont-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
+                pickrXRepostButtonFont.setColorRepresentation('HEX');
+                pickrXRepostButtonFont.show();
+
+                pickrXRepostButtonFont.on('change', (color)=>{
                     const selectedColor = '#'.concat(...color.toHEXA());
                     this.style.backgroundColor = selectedColor;
                     
@@ -1623,6 +1698,37 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 });
                 break;
 
+            case 'XLikeButtonFontColor':
+                const currentXLikeButtonFontColor = document.getElementById('XLikeButtonFontColorForm').value;
+
+                if(pickrXLikeButtonFont === undefined){
+                    pickrXLikeButtonFont = Pickr.create({
+                        el: XLikeColorGradientButtonFont,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'XLikeButtonFont-color-pickr',
+                        default: currentXLikeButtonFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.XLikeButtonFont-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
+                pickrXLikeButtonFont.setColorRepresentation('HEX');
+                pickrXLikeButtonFont.show();
+
+                pickrXLikeButtonFont.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
             case 'XLikeBackgroundColor':
                 const currentXLikeBackgroundColor = document.getElementById('XLikeBackgroundColorForm').value;
 
@@ -1770,6 +1876,37 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 pickrInstaFollowButton.show();
 
                 pickrInstaFollowButton.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'instaFollowButtonFontColor':
+                const currentInstaFollowButtonFontColor = document.getElementById('instaFollowButtonFontColorForm').value;
+
+                if(pickrInstaFollowButtonFont === undefined){
+                    pickrInstaFollowButtonFont = Pickr.create({
+                        el: instaFollowColorGradientButtonFont,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'instaFollowButtonFont-color-pickr',
+                        default: currentInstaFollowButtonFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.instaFollowButton-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
+                pickrInstaFollowButtonFont.setColorRepresentation('HEX');
+                pickrInstaFollowButtonFont.show();
+
+                pickrInstaFollowButtonFont.on('change', (color)=>{
                     const selectedColor = '#'.concat(...color.toHEXA());
                     this.style.backgroundColor = selectedColor;
                     
@@ -1932,6 +2069,37 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 });
                 break;
 
+            case 'instaCommentButtonFontColor':
+                const currentInstaCommentButtonFontColor = document.getElementById('instaCommentButtonFontColorForm').value;
+
+                if(pickrInstaCommentButtonFont === undefined){
+                    pickrInstaCommentButtonFont = Pickr.create({
+                        el: instaCommentColorGradientButtonFont,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'instaCommentButtonFont-color-pickr',
+                        default: currentInstaCommentButtonFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.instaCommentButtonFont-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
+                pickrInstaCommentButtonFont.setColorRepresentation('HEX');
+                pickrInstaCommentButtonFont.show();
+
+                pickrInstaCommentButtonFont.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
             case 'instaCommentBackgroundColor':
                 const currentInstaCommentBackgroundColor = document.getElementById('instaCommentBackgroundColorForm').value;
 
@@ -2079,6 +2247,37 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 pickrInstaLikeButton.show();
 
                 pickrInstaLikeButton.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'instaLikeButtonFontColor':
+                const currentInstaLikeButtonFontColor = document.getElementById('instaLikeButtonFontColorForm').value;
+
+                if(pickrInstaLikeButtonFont === undefined){
+                    pickrInstaLikeButtonFont = Pickr.create({
+                        el: instaLikeColorGradientButtonFont,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'instaLikeButtonFont-color-pickr',
+                        default: currentInstaLikeButtonFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.instaLikeButtonFont-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
+                pickrInstaLikeButtonFont.setColorRepresentation('HEX');
+                pickrInstaLikeButtonFont.show();
+
+                pickrInstaLikeButtonFont.on('change', (color)=>{
                     const selectedColor = '#'.concat(...color.toHEXA());
                     this.style.backgroundColor = selectedColor;
                     
@@ -2241,6 +2440,37 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 });
                 break;
 
+            case 'facebookFollowButtonFontColor':
+                const currentFacebookFollowButtonFontColor = document.getElementById('facebookFollowButtonFontColorForm').value;
+
+                if(pickrFacebookFollowButtonFont === undefined){
+                    pickrFacebookFollowButtonFont = Pickr.create({
+                        el: facebookFollowColorGradientButtonFont,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'facebookFollowButtonFont-color-pickr',
+                        default: currentFacebookFollowButtonFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.facebookFollowButtonFont-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
+                pickrFacebookFollowButtonFont.setColorRepresentation('HEX');
+                pickrFacebookFollowButtonFont.show();
+
+                pickrFacebookFollowButtonFont.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
             case 'facebookFollowBackgroundColor':
                 const currentFacebookFollowBackgroundColor = document.getElementById('facebookFollowBackgroundColorForm').value;
 
@@ -2389,6 +2619,37 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 pickrFacebookCommentButton.show();
         
                 pickrFacebookCommentButton.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'facebookCommentButtonFontColor':
+                const currentFacebookCommentButtonFontColor = document.getElementById('facebookCommentButtonFontColorForm').value;
+                
+                if(pickrFacebookCommentButtonFont === undefined){
+                    pickrFacebookCommentButtonFont = Pickr.create({
+                        el: facebookCommentColorGradientButtonFont,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'facebookCommentButtonFont-color-pickr',
+                        default: currentFacebookCommentButtonFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.facebookCommentButtonFont-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
+                pickrFacebookCommentButtonFont.setColorRepresentation('HEX');
+                pickrFacebookCommentButtonFont.show();
+        
+                pickrFacebookCommentButtonFont.on('change', (color)=>{
                     const selectedColor = '#'.concat(...color.toHEXA());
                     this.style.backgroundColor = selectedColor;
                     
@@ -2550,6 +2811,37 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     pickColor(selectedColor, elementType, true);
                 });
                 break;
+
+            case 'facebookLikeButtonFontColor':
+                const currentFacebookLikeButtonFontColor = document.getElementById('facebookLikeButtonFontColorForm').value;
+                
+                if(pickrFacebookLikeButtonFont === undefined){
+                    pickrFacebookLikeButtonFont = Pickr.create({
+                        el: facebookLikeColorGradientButtonFont,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'facebookLikeButtonFont-color-pickr',
+                        default: currentFacebookLikeButtonFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.facebookLikeButtonFont-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
+                pickrFacebookLikeButtonFont.setColorRepresentation('HEX');
+                pickrFacebookLikeButtonFont.show();
+        
+                pickrFacebookLikeButtonFont.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
         
             case 'facebookLikeBackgroundColor':
                 const currentFacebookLikeBackgroundColor = document.getElementById('facebookLikeBackgroundColorForm').value;
@@ -2683,6 +2975,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                         el: tiktokFollowColorGradientButton,
                         theme: 'classic', // or 'monolith', or 'nano'
                         default: currentTiktokFollowButtonColor,
+                        appClass: 'tiktokFollowButtonColor-color-pickr',
                         useAsButton: true,
                         padding: 15,
                         components: {
@@ -2698,6 +2991,37 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 pickrTiktokFollowButton.show();
             
                 pickrTiktokFollowButton.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+            
+            case 'tiktokFollowButtonFontColor':
+                const currentTiktokFollowButtonFontColor = document.getElementById('tiktokFollowButtonFontColorForm').value;
+                
+                if(pickrTiktokFollowButtonFont === undefined){
+                    pickrTiktokFollowButtonFont = Pickr.create({
+                        el: tiktokFollowColorGradientButtonFont,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        default: currentTiktokFollowButtonFontColor,
+                        appClass: 'tiktokFollowButtonFontColor-color-pickr',
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.tiktokFollowButtonFont-color-pickr').addEventListener('mouseup', ()=>{        
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
+                pickrTiktokFollowButtonFont.setColorRepresentation('HEX');
+                pickrTiktokFollowButtonFont.show();
+            
+                pickrTiktokFollowButtonFont.on('change', (color)=>{
                     const selectedColor = '#'.concat(...color.toHEXA());
                     this.style.backgroundColor = selectedColor;
                     
@@ -2829,6 +3153,37 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 });
                 break;
             
+            case 'tiktokCommentButtonFontColor':
+                const currentTiktokCommentButtonFontColor = document.getElementById('tiktokCommentButtonFontColorForm').value;
+                
+                if(pickrTiktokCommentButtonFont === undefined){
+                    pickrTiktokCommentButtonFont = Pickr.create({
+                        el: tiktokCommentColorGradientButtonFont,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'tiktokCommentButtonFont-color-pickr',
+                        default: currentTiktokCommentButtonFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.tiktokCommentButtonFont-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
+                pickrTiktokCommentButtonFont.setColorRepresentation('HEX');
+                pickrTiktokCommentButtonFont.show();
+            
+                pickrTiktokCommentButtonFont.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
             case 'tiktokCommentButtonColor':
                 const currentTiktokCommentButtonColor = document.getElementById('tiktokCommentButtonColorForm').value;
                 
@@ -3014,6 +3369,37 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     pickColor(selectedColor, elementType, true);
                 });
                 break;
+
+            case 'tiktokLikeButtonFontColor':
+                const currentTiktokLikeButtonFontColor = document.getElementById('tiktokLikeButtonFontColorForm').value;
+                
+                if(pickrTiktokLikeButtonFont === undefined){
+                    pickrTiktokLikeButtonFont = Pickr.create({
+                        el: tiktokLikeColorGradientButtonFont,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'tiktokLikeButtonFont-color-pickr',
+                        default: currentTiktokLikeButtonFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.tiktokLikeButtonFont-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
+                pickrTiktokLikeButtonFont.setColorRepresentation('HEX');
+                pickrTiktokLikeButtonFont.show();
+            
+                pickrTiktokLikeButtonFont.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
             
             case 'tiktokLikeBackgroundColor':
                 const currentTiktokLikeBackgroundColor = document.getElementById('tiktokLikeBackgroundColorForm').value;
@@ -3163,6 +3549,37 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 pickrReferButton.show();
             
                 pickrReferButton.on('change', (color)=>{
+                    const selectedColor = '#'.concat(...color.toHEXA());
+                    this.style.backgroundColor = selectedColor;
+                    
+                    pickColor(selectedColor, elementType, true);
+                });
+                break;
+
+            case 'referButtonFontColor':
+                const currentReferButtonFontColor = document.getElementById('referButtonFontColorForm').value;
+                
+                if(pickrReferButtonFont === undefined){
+                    pickrReferButtonFont = Pickr.create({
+                        el: referColorGradientButtonFont,
+                        theme: 'classic', // or 'monolith', or 'nano'
+                        appClass: 'referButtonFont-color-pickr',
+                        default: currentReferButtonFontColor,
+                        useAsButton: true,
+                        padding: 15,
+                        components: {
+                            hue: true,
+                            opacity: true,
+                        }
+                    });
+                    document.querySelector('.referButtonFont-color-pickr').addEventListener('mouseup', ()=>{
+                        document.dispatchEvent(customizationSettingChanged);
+                    });
+                }
+                pickrReferButtonFont.setColorRepresentation('HEX');
+                pickrReferButtonFont.show();
+            
+                pickrReferButtonFont.on('change', (color)=>{
                     const selectedColor = '#'.concat(...color.toHEXA());
                     this.style.backgroundColor = selectedColor;
                     
@@ -3881,6 +4298,33 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 XFollowEditElementButton.style.backgroundColor = color;
                 break;
 
+            case 'XFollowButtonFontColor':
+                if(fromPickr === false){
+                    if(pickrXFollowButtonFont === undefined){
+                        pickrXFollowButtonFont = Pickr.create({
+                            el: XFollowColorGradientButtonFont,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrXFollowButtonFont.setColor(color);
+                        const hexBoxClick = document.getElementById('XFollowButtonFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('XFollowButtonFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const XFollowEditElementButtonFont = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                XFollowEditElementButtonFont.style.color = color;
+                break;
+
             case 'XFollowBackgroundColor':
                 if(fromPickr === false){
                     if(pickrXFollowBackground === undefined){
@@ -4023,6 +4467,33 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 }
                 const XRepostEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
                 XRepostEditElementButton.style.backgroundColor = color;
+                break;
+
+            case 'XRepostButtonFontColor':
+                if(fromPickr === false){
+                    if(pickrXRepostButtonFont === undefined){
+                        pickrXRepostButtonFont = Pickr.create({
+                            el: XRepostColorGradientButtonFont,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrXRepostButtonFont.setColor(color);
+                        const hexBoxClick = document.getElementById('XRepostButtonFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('XRepostButtonFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const XRepostEditElementButtonFont = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                XRepostEditElementButtonFont.style.color = color;
                 break;
 
             case 'XRepostBackgroundColor':
@@ -4169,6 +4640,33 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 XLikeEditElementButton.style.backgroundColor = color;
                 break;
 
+            case 'XLikeButtonFontColor':
+                if(fromPickr === false){
+                    if(pickrXLikeButtonFont === undefined){
+                        pickrXLikeButtonFont = Pickr.create({
+                            el: XLikeColorGradientButtonFont,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrXLikeButtonFont.setColor(color);
+                        const hexBoxClick = document.getElementById('XLikeButtonFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('XLikeButtonFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const XLikeEditElementButtonFont = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                XLikeEditElementButtonFont.style.color = color;
+                break;
+
             case 'XLikeBackgroundColor':
                 if(fromPickr === false){
                     if(pickrXLikeBackground === undefined){
@@ -4311,6 +4809,33 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 }
                 const instaFollowEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
                 instaFollowEditElementButton.style.backgroundColor = color;
+                break;
+
+            case 'instaFollowButtonFontColor':
+                if(fromPickr === false){
+                    if(pickrInstaFollowButtonFont === undefined){
+                        pickrInstaFollowButtonFont = Pickr.create({
+                            el: instaFollowColorGradientButtonFont,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrInstaFollowButtonFont.setColor(color);
+                        const hexBoxClick = document.getElementById('instaFollowButtonFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('instaFollowButtonFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const instaFollowEditElementButtonFont = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                instaFollowEditElementButtonFont.style.color = color;
                 break;
 
             case 'instaFollowBackgroundColor':
@@ -4457,6 +4982,33 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 instaCommentEditElementButton.style.backgroundColor = color;
                 break;
 
+            case 'instaCommentButtonFontColor':
+                if(fromPickr === false){
+                    if(pickrInstaCommentButtonFont === undefined){
+                        pickrInstaCommentButtonFont = Pickr.create({
+                            el: instaCommentColorGradientButtonFont,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrInstaCommentButtonFont.setColor(color);
+                        const hexBoxClick = document.getElementById('instaCommentButtonFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('instaCommentButtonFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const instaCommentEditElementButtonFont = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                instaCommentEditElementButtonFont.style.color = color;
+                break;
+
             case 'instaCommentBackgroundColor':
                 if(fromPickr === false){
                     if(pickrInstaCommentBackground === undefined){
@@ -4599,6 +5151,33 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 }
                 const instaLikeEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
                 instaLikeEditElementButton.style.backgroundColor = color;
+                break;
+
+            case 'instaLikeButtonFontColor':
+                if(fromPickr === false){
+                    if(pickrInstaLikeButtonFont === undefined){
+                        pickrInstaLikeButtonFont = Pickr.create({
+                            el: instaLikeColorGradientButtonFont,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrInstaLikeButtonFont.setColor(color);
+                        const hexBoxClick = document.getElementById('instaLikeButtonFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('instaLikeButtonFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const instaLikeEditElementButtonFont = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                instaLikeEditElementButtonFont.style.color = color;
                 break;
 
             case 'instaLikeBackgroundColor':
@@ -4744,6 +5323,33 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 const facebookFollowEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
                 facebookFollowEditElementButton.style.backgroundColor = color;
                 break;
+
+            case 'facebookFollowButtonFontColor':
+                if(fromPickr === false){
+                    if(pickrFacebookFollowButtonFont === undefined){
+                        pickrFacebookFollowButtonFont = Pickr.create({
+                            el: facebookFollowColorGradientButtonFont,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrFacebookFollowButtonFont.setColor(color);
+                        const hexBoxClick = document.getElementById('facebookFollowButtonFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('facebookFollowButtonFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const facebookFollowEditElementButtonFont = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                facebookFollowEditElementButtonFont.style.color = color;
+                break;
             
             case 'facebookFollowBackgroundColor':
                 if(fromPickr === false){
@@ -4887,6 +5493,33 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 }
                 const facebookCommentEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
                 facebookCommentEditElementButton.style.backgroundColor = color;
+                break;
+
+            case 'facebookCommentButtonFontColor':
+                if(fromPickr === false){
+                    if(pickrFacebookCommentButtonFont === undefined){
+                        pickrFacebookCommentButtonFont = Pickr.create({
+                            el: facebookCommentColorGradientButtonFont,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrFacebookCommentButtonFont.setColor(color);
+                        const hexBoxClick = document.getElementById('facebookCommentButtonFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('facebookCommentButtonFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const facebookCommentEditElementButtonFont = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                facebookCommentEditElementButtonFont.style.color = color;
                 break;
             
             case 'facebookCommentBackgroundColor':
@@ -5032,6 +5665,33 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 const facebookLikeEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
                 facebookLikeEditElementButton.style.backgroundColor = color;
                 break;
+
+            case 'facebookLikeButtonFontColor':
+                if(fromPickr === false){
+                    if(pickrFacebookLikeButtonFont === undefined){
+                        pickrFacebookLikeButtonFont = Pickr.create({
+                            el: facebookLikeColorGradientButtonFont,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrFacebookLikeButtonFont.setColor(color);
+                        const hexBoxClick = document.getElementById('facebookLikeButtonFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('facebookLikeButtonFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const facebookLikeEditElementButtonFont = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                facebookLikeEditElementButtonFont.style.color = color;
+                break;
             
             case 'facebookLikeBackgroundColor':
                 if(fromPickr === false){
@@ -5175,6 +5835,33 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 }
                 const tiktokFollowEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
                 tiktokFollowEditElementButton.style.backgroundColor = color;
+                break;
+
+            case 'tiktokFollowButtonFontColor':
+                if(fromPickr === false){
+                    if(pickrTiktokFollowButtonFont === undefined){
+                        pickrTiktokFollowButtonFont = Pickr.create({
+                            el: tiktokFollowColorGradientButtonFont,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrTiktokFollowButtonFont.setColor(color);
+                        const hexBoxClick = document.getElementById('tiktokFollowButtonFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('tiktokFollowButtonFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const tiktokFollowEditElementButtonFont = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                tiktokFollowEditElementButtonFont.style.color = color;
                 break;
             
             case 'tiktokFollowBackgroundColor':
@@ -5320,6 +6007,33 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 const tiktokCommentEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
                 tiktokCommentEditElementButton.style.backgroundColor = color;
                 break;
+
+            case 'tiktokCommentButtonFontColor':
+                if(fromPickr === false){
+                    if(pickrTiktokCommentButtonFont === undefined){
+                        pickrTiktokCommentButtonFont = Pickr.create({
+                            el: tiktokCommentColorGradientButtonFont,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrTiktokCommentButtonFont.setColor(color);
+                        const hexBoxClick = document.getElementById('tiktokCommentButtonFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('tiktokCommentButtonFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const tiktokCommentEditElementButtonFont = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                tiktokCommentEditElementButtonFont.style.color = color;
+                break;
             
             case 'tiktokCommentBackgroundColor':
                 if(fromPickr === false){
@@ -5464,6 +6178,33 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 const tiktokLikeEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
                 tiktokLikeEditElementButton.style.backgroundColor = color;
                 break;
+
+            case 'tiktokLikeButtonFontColor':
+                if(fromPickr === false){
+                    if(pickrTiktokLikeButtonFont === undefined){
+                        pickrTiktokLikeButtonFont = Pickr.create({
+                            el: tiktokLikeColorGradientButtonFont,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrTiktokLikeButtonFont.setColor(color);
+                        const hexBoxClick = document.getElementById('tiktokLikeButtonFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('tiktokLikeButtonFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const tiktokLikeEditElementButtonFont = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                tiktokLikeEditElementButtonFont.style.color = color;
+                break;
             
             case 'tiktokLikeBackgroundColor':
                 if(fromPickr === false){
@@ -5607,6 +6348,33 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 }
                 const referEditElementButton = document.querySelector('.selected-raffleleader-section').querySelector('button');
                 referEditElementButton.style.backgroundColor = color;
+                break;
+
+            case 'referButtonFontColor':
+                if(fromPickr === false){
+                    if(pickrReferButtonFont === undefined){
+                        pickrReferButtonFont = Pickr.create({
+                            el: referColorGradientButtonFont,
+                            theme: 'classic', // or 'monolith', or 'nano'
+                            default: color,
+                            useAsButton: true,
+                            padding: 15,
+                            components: {
+                                hue: true,
+                                opacity: true,
+                            }
+                        });
+                    } else {
+                        pickrReferButtonFont.setColor(color);
+                        const hexBoxClick = document.getElementById('referButtonFontColorClick');
+                        hexBoxClick.style.backgroundColor = color;
+                    }
+                } else {
+                    const hexBoxText = document.getElementById('referButtonFontColorForm');
+                    hexBoxText.value = color;
+                }
+                const referEditElementButtonFont = document.querySelector('.selected-raffleleader-section').querySelector('button');
+                referEditElementButtonFont.style.color = color;
                 break;
             
             case 'referBackgroundColor':

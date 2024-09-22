@@ -93,7 +93,7 @@ h2 {
 .inactive-additional-entry{
     /* opacity: 0.5; */
     /* filter: greyscale(100%); */
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 
 .completed-additional-entry{

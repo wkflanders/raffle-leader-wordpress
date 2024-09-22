@@ -131,6 +131,11 @@ document.addEventListener("raffleLoaded", () => {
   }
 
   async function handleAdditionalEntry(event) {
+    if (event.currentTarget.parentNode.parentNode.classList.contains('inactive-additional-entry')) {
+      alert('Please enter an email first!');
+      return;
+    }
+
     const entryBtn = event.target;
     entryBtn.disabled = true;
 

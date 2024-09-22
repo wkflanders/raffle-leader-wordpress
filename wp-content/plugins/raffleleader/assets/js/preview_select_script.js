@@ -385,7 +385,6 @@ function previewSelect(){
 
         const entryFontColorForm = document.getElementById('entryFontColorForm');
         const entryFormBackgroundColorForm = document.getElementById('entryFormBackgroundColorForm');
-        const entryButtonFontColorForm = document.getElementById('entryButtonFontColorForm');
         const entryButtonColorForm = document.getElementById('entryButtonColorForm');
 
         //entry type button
@@ -440,6 +439,7 @@ function previewSelect(){
         entryFormBorderHexBox.style.backgroundColor = entryFormBorderColorRGB;
 
         // entry button font color
+        const entryButtonFontColorForm = document.getElementById('entryButtonFontColorForm');
         const entryButtonFontHexBox = document.getElementById('entryButtonFontColorClick');
         const entryButtonFontColorRGB = window.getComputedStyle(entryButtonElement).getPropertyValue('color').replace(/^"|"$/g, '');
         const entryButtonFontColorHex = rgbToHex(entryButtonFontColorRGB);
@@ -856,6 +856,14 @@ function previewSelect(){
         XFollowButtonColorForm.value = XFollowButtonColorHex;
         XFollowButtonHexBox.style.backgroundColor = XFollowButtonColorHex;
 
+        // XFollow button font color
+        const XFollowButtonFontColorForm = document.getElementById('XFollowButtonFontColorForm');
+        const XFollowButtonFontHexBox = document.getElementById('XFollowButtonFontColorClick');
+        const XFollowButtonFontColorRGB = window.getComputedStyle(XFollowButtonElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const XFollowButtonFontColorHex = rgbToHex(XFollowButtonFontColorRGB);
+        XFollowButtonFontColorForm.value = XFollowButtonFontColorHex;
+        XFollowButtonFontHexBox.style.backgroundColor = XFollowButtonFontColorHex;
+
         // XFollow background color
         const XFollowBackgroundColorForm = document.getElementById('XFollowBackgroundColorForm');
         const XFollowBackgroundHexBox = document.getElementById('XFollowBackgroundColorClick');
@@ -999,6 +1007,14 @@ function previewSelect(){
         const XRepostButtonColorHex = rgbToHex(XRepostButtonColorRGB);
         XRepostButtonColorForm.value = XRepostButtonColorHex;
         XRepostButtonHexBox.style.backgroundColor = XRepostButtonColorHex;
+
+        // XFollow repost font color
+        const XRepostButtonFontColorForm = document.getElementById('XRepostButtonFontColorForm');
+        const XRepostButtonFontHexBox = document.getElementById('XRepostButtonFontColorClick');
+        const XRepostButtonFontColorRGB = window.getComputedStyle(XRepostButtonElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const XRepostButtonFontColorHex = rgbToHex(XRepostButtonFontColorRGB);
+        XRepostButtonFontColorForm.value = XRepostButtonFontColorHex;
+        XRepostButtonFontHexBox.style.backgroundColor = XRepostButtonFontColorHex;
 
         // XRepost background color
         const XRepostBackgroundColorForm = document.getElementById('XRepostBackgroundColorForm');
@@ -1145,6 +1161,14 @@ function previewSelect(){
         XLikeButtonColorForm.value = XLikeButtonColorHex;
         XLikeButtonHexBox.style.backgroundColor = XLikeButtonColorHex;
 
+        // XLike button font color
+        const XLikeButtonFontColorForm = document.getElementById('XLikeButtonFontColorForm');
+        const XLikeButtonFontHexBox = document.getElementById('XLikeButtonFontColorClick');
+        const XLikeButtonFontColorRGB = window.getComputedStyle(XLikeButtonElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const XLikeButtonFontColorHex = rgbToHex(XLikeButtonFontColorRGB);
+        XLikeButtonFontColorForm.value = XLikeButtonFontColorHex;
+        XLikeButtonFontHexBox.style.backgroundColor = XLikeButtonFontColorHex;
+
         // XLike background color
         const XLikeBackgroundColorForm = document.getElementById('XLikeBackgroundColorForm');
         const XLikeBackgroundHexBox = document.getElementById('XLikeBackgroundColorClick');
@@ -1289,6 +1313,14 @@ function previewSelect(){
         const instaFollowButtonColorHex = rgbToHex(instaFollowButtonColorRGB);
         instaFollowButtonColorForm.value = instaFollowButtonColorHex;
         instaFollowButtonHexBox.style.backgroundColor = instaFollowButtonColorHex;
+
+        // Insta Follow button font color
+        const instaFollowButtonFontColorForm = document.getElementById('instaFollowButtonFontColorForm');
+        const instaFollowButtonFontHexBox = document.getElementById('instaFollowButtonFontColorClick');
+        const instaFollowButtonFontColorRGB = window.getComputedStyle(instaFollowButtonElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const instaFollowButtonFontColorHex = rgbToHex(instaFollowButtonFontColorRGB);
+        instaFollowButtonFontColorForm.value = instaFollowButtonFontColorHex;
+        instaFollowButtonFontHexBox.style.backgroundColor = instaFollowButtonFontColorHex;
 
         // Insta Follow background color
         const instaFollowBackgroundColorForm = document.getElementById('instaFollowBackgroundColorForm');
@@ -1436,6 +1468,14 @@ function previewSelect(){
         instaCommentButtonColorForm.value = instaCommentButtonColorHex;
         instaCommentButtonHexBox.style.backgroundColor = instaCommentButtonColorHex;
 
+        // Insta Comment button font color
+        const instaCommentButtonFontColorForm = document.getElementById('instaCommentButtonFontColorForm');
+        const instaCommentButtonFontHexBox = document.getElementById('instaCommentButtonFontColorClick');
+        const instaCommentButtonFontColorRGB = window.getComputedStyle(instaCommentButtonElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const instaCommentButtonFontColorHex = rgbToHex(instaCommentButtonFontColorRGB);
+        instaCommentButtonFontColorForm.value = instaCommentButtonFontColorHex;
+        instaCommentButtonFontHexBox.style.backgroundColor = instaCommentButtonFontColorHex;
+
         // Insta Comment background color
         const instaCommentBackgroundColorForm = document.getElementById('instaCommentBackgroundColorForm');
         const instaCommentBackgroundHexBox = document.getElementById('instaCommentBackgroundColorClick');
@@ -1581,6 +1621,14 @@ function previewSelect(){
         instaLikeButtonColorForm.value = instaLikeButtonColorHex;
         instaLikeButtonHexBox.style.backgroundColor = instaLikeButtonColorHex;
 
+        // Insta Like button font color
+        const instaLikeButtonFontColorForm = document.getElementById('instaLikeButtonFontColorForm');
+        const instaLikeButtonFontHexBox = document.getElementById('instaLikeButtonFontColorClick');
+        const instaLikeButtonFontColorRGB = window.getComputedStyle(instaLikeButtonElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const instaLikeButtonFontColorHex = rgbToHex(instaLikeButtonFontColorRGB);
+        instaLikeButtonFontColorForm.value = instaLikeButtonFontColorHex;
+        instaLikeButtonFontHexBox.style.backgroundColor = instaLikeButtonFontColorHex;
+
         // Insta Like background color
         const instaLikeBackgroundColorForm = document.getElementById('instaLikeBackgroundColorForm');
         const instaLikeBackgroundHexBox = document.getElementById('instaLikeBackgroundColorClick');
@@ -1725,6 +1773,14 @@ function previewSelect(){
         const facebookFollowButtonColorHex = rgbToHex(facebookFollowButtonColorRGB);
         facebookFollowButtonColorForm.value = facebookFollowButtonColorHex;
         facebookFollowButtonHexBox.style.backgroundColor = facebookFollowButtonColorHex;
+
+        // Facebook Follow button font color
+        const facebookFollowButtonFontColorForm = document.getElementById('facebookFollowButtonFontColorForm');
+        const facebookFollowButtonFontHexBox = document.getElementById('facebookFollowButtonFontColorClick');
+        const facebookFollowButtonFontColorRGB = window.getComputedStyle(facebookFollowButtonElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const facebookFollowButtonFontColorHex = rgbToHex(facebookFollowButtonFontColorRGB);
+        facebookFollowButtonFontColorForm.value = facebookFollowButtonFontColorHex;
+        facebookFollowButtonFontHexBox.style.backgroundColor = facebookFollowButtonFontColorHex;
 
         // Facebook Follow background color
         const facebookFollowBackgroundColorForm = document.getElementById('facebookFollowBackgroundColorForm');
@@ -1872,6 +1928,14 @@ function previewSelect(){
         facebookCommentButtonColorForm.value = facebookCommentButtonColorHex;
         facebookCommentButtonHexBox.style.backgroundColor = facebookCommentButtonColorHex;
 
+        // Facebook Comment button font color
+        const facebookCommentButtonFontColorForm = document.getElementById('facebookCommentButtonFontColorForm');
+        const facebookCommentButtonFontHexBox = document.getElementById('facebookCommentButtonFontColorClick');
+        const facebookCommentButtonFontColorRGB = window.getComputedStyle(facebookCommentButtonElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const facebookCommentButtonFontColorHex = rgbToHex(facebookCommentButtonFontColorRGB);
+        facebookCommentButtonFontColorForm.value = facebookCommentButtonFontColorHex;
+        facebookCommentButtonFontHexBox.style.backgroundColor = facebookCommentButtonFontColorHex;
+
         // Facebook Comment background color
         const facebookCommentBackgroundColorForm = document.getElementById('facebookCommentBackgroundColorForm');
         const facebookCommentBackgroundHexBox = document.getElementById('facebookCommentBackgroundColorClick');
@@ -2017,6 +2081,14 @@ function previewSelect(){
         const facebookLikeButtonColorHex = rgbToHex(facebookLikeButtonColorRGB);
         facebookLikeButtonColorForm.value = facebookLikeButtonColorHex;
         facebookLikeButtonHexBox.style.backgroundColor = facebookLikeButtonColorHex;
+
+        // Facebook Like button font color
+        const facebookLikeButtonFontColorForm = document.getElementById('facebookLikeButtonFontColorForm');
+        const facebookLikeButtonFontHexBox = document.getElementById('facebookLikeButtonFontColorClick');
+        const facebookLikeButtonFontColorRGB = window.getComputedStyle(facebookLikeButtonElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const facebookLikeButtonFontColorHex = rgbToHex(facebookLikeButtonFontColorRGB);
+        facebookLikeButtonFontColorForm.value = facebookLikeButtonFontColorHex;
+        facebookLikeButtonFontHexBox.style.backgroundColor = facebookLikeButtonFontColorHex;
 
         // Facebook Like background color
         const facebookLikeBackgroundColorForm = document.getElementById('facebookLikeBackgroundColorForm');
@@ -2168,6 +2240,14 @@ function previewSelect(){
         tiktokFollowButtonColorForm.value = tiktokFollowButtonColorHex;
         tiktokFollowButtonHexBox.style.backgroundColor = tiktokFollowButtonColorHex;
 
+        // TikTok Follow button font color
+        const tiktokFollowButtonFontColorForm = document.getElementById('tiktokFollowButtonFontColorForm');
+        const tiktokFollowButtonFontHexBox = document.getElementById('tiktokFollowButtonFontColorClick');
+        const tiktokFollowButtonFontColorRGB = window.getComputedStyle(tiktokFollowButtonElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const tiktokFollowButtonFontColorHex = rgbToHex(tiktokFollowButtonFontColorRGB);
+        tiktokFollowButtonFontColorForm.value = tiktokFollowButtonFontColorHex;
+        tiktokFollowButtonFontHexBox.style.backgroundColor = tiktokFollowButtonFontColorHex;
+
         // Tiktok Follow background color
         const tiktokFollowBackgroundColorForm = document.getElementById('tiktokFollowBackgroundColorForm');
         const tiktokFollowBackgroundHexBox = document.getElementById('tiktokFollowBackgroundColorClick');
@@ -2314,6 +2394,14 @@ function previewSelect(){
         tiktokCommentButtonColorForm.value = tiktokCommentButtonColorHex;
         tiktokCommentButtonHexBox.style.backgroundColor = tiktokCommentButtonColorHex;
 
+        // TikTok Comment button font color
+        const tiktokCommentButtonFontColorForm = document.getElementById('tiktokCommentButtonFontColorForm');
+        const tiktokCommentButtonFontHexBox = document.getElementById('tiktokCommentButtonFontColorClick');
+        const tiktokCommentButtonFontColorRGB = window.getComputedStyle(tiktokCommentButtonElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const tiktokCommentButtonFontColorHex = rgbToHex(tiktokCommentButtonFontColorRGB);
+        tiktokCommentButtonFontColorForm.value = tiktokCommentButtonFontColorHex;
+        tiktokCommentButtonFontHexBox.style.backgroundColor = tiktokCommentButtonFontColorHex;
+
         // Tiktok Comment background color
         const tiktokCommentBackgroundColorForm = document.getElementById('tiktokCommentBackgroundColorForm');
         const tiktokCommentBackgroundHexBox = document.getElementById('tiktokCommentBackgroundColorClick');
@@ -2459,6 +2547,14 @@ function previewSelect(){
         const tiktokLikeButtonColorHex = rgbToHex(tiktokLikeButtonColorRGB);
         tiktokLikeButtonColorForm.value = tiktokLikeButtonColorHex;
         tiktokLikeButtonHexBox.style.backgroundColor = tiktokLikeButtonColorHex;
+
+        // TikTok Like button font color
+        const tiktokLikeButtonFontColorForm = document.getElementById('tiktokLikeButtonFontColorForm');
+        const tiktokLikeButtonFontHexBox = document.getElementById('tiktokLikeButtonFontColorClick');
+        const tiktokLikeButtonFontColorRGB = window.getComputedStyle(tiktokLikeButtonElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const tiktokLikeButtonFontColorHex = rgbToHex(tiktokLikeButtonFontColorRGB);
+        tiktokLikeButtonFontColorForm.value = tiktokLikeButtonFontColorHex;
+        tiktokLikeButtonFontHexBox.style.backgroundColor = tiktokLikeButtonFontColorHex;
 
         // Tiktok Like background color
         const tiktokLikeBackgroundColorForm = document.getElementById('tiktokLikeBackgroundColorForm');
@@ -2700,6 +2796,14 @@ function previewSelect(){
         const referButtonColorHex = rgbToHex(referButtonColorRGB);
         referButtonColorForm.value = referButtonColorHex;
         referButtonHexBox.style.backgroundColor = referButtonColorHex;
+
+        // refer button font color
+        const referButtonFontColorForm = document.getElementById('referButtonFontColorForm');
+        const referButtonFontHexBox = document.getElementById('referButtonFontColorClick');
+        const referButtonFontColorRGB = window.getComputedStyle(referButtonElement).getPropertyValue('color').replace(/^"|"$/g, '');
+        const referButtonFontColorHex = rgbToHex(referButtonFontColorRGB);
+        referButtonFontColorForm.value = referButtonFontColorHex;
+        referButtonFontHexBox.style.backgroundColor = referButtonFontColorHex;
 
         // refer background color
         const referBackgroundColorForm = document.getElementById('referBackgroundColorForm');

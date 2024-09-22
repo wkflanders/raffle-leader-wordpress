@@ -465,6 +465,16 @@
                 </div>
             </div>
             <div class="customize-settings-box">
+                <p>Button Font Color</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-color">
+                        <div id="XFollowColorGradientButtonFont"></div>
+                        <div id="XFollowButtonFontColorClick" class="dropdown-color-click" data-type="XFollowButtonFontColor"></div>
+                        <input id="XFollowButtonFontColorForm" class="color-input" data-type="XFollowButtonFontColor" type="text" name="XFollowButtonFontColor" placeholder="Enter a hexidecimal">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
                 <p>Background Color</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-color">
@@ -727,6 +737,16 @@
                         <div id="XRepostColorGradientButton"></div>
                         <div id="XRepostButtonColorClick" class="dropdown-color-click" data-type="XRepostButtonColor"></div>
                         <input id="XRepostButtonColorForm" class="color-input" data-type="XRepostButtonColor" type="text" name="XRepostButtonColor" placeholder="Enter a hexidecimal">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Button Font Color</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-color">
+                        <div id="XRepostColorGradientButtonFont"></div>
+                        <div id="XRepostButtonFontColorClick" class="dropdown-color-click" data-type="XRepostButtonFontColor"></div>
+                        <input id="XRepostButtonFontColorForm" class="color-input" data-type="XRepostButtonFontColor" type="text" name="XRepostButtonFontColor" placeholder="Enter a hexidecimal">
                     </div>
                 </div>
             </div>
@@ -997,6 +1017,16 @@
                 </div>
             </div>
             <div class="customize-settings-box">
+                <p>Button Font Color</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-color">
+                        <div id="XLikeColorGradientButtonFont"></div>
+                        <div id="XLikeButtonFontColorClick" class="dropdown-color-click" data-type="XLikeButtonFontColor"></div>
+                        <input id="XLikeButtonFontColorForm" class="color-input" data-type="XLikeButtonFontColor" type="text" name="XLikeButtonFontColor" placeholder="Enter a hexidecimal">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
                 <p>Background Color</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-color">
@@ -1259,6 +1289,16 @@
                         <div id="instaFollowColorGradientButton"></div>
                         <div id="instaFollowButtonColorClick" class="dropdown-color-click" data-type="instaFollowButtonColor"></div>
                         <input id="instaFollowButtonColorForm" class="color-input" data-type="instaFollowButtonColor" type="text" name="instaFollowButtonColor" placeholder="Enter a hexidecimal">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Button Font Color</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-color">
+                        <div id="instaFollowColorGradientButtonFont"></div>
+                        <div id="instaFollowButtonFontColorClick" class="dropdown-color-click" data-type="instaFollowButtonFontColor"></div>
+                        <input id="instaFollowButtonFontColorForm" class="color-input" data-type="instaFollowButtonFontColor" type="text" name="instaFollowButtonFontColor" placeholder="Enter a hexidecimal">
                     </div>
                 </div>
             </div>
@@ -1529,6 +1569,16 @@
                 </div>
             </div>
             <div class="customize-settings-box">
+                <p>Button Font Color</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-color">
+                        <div id="instaCommentColorGradientButtonFont"></div>
+                        <div id="instaCommentButtonFontColorClick" class="dropdown-color-click" data-type="instaCommentButtonFontColor"></div>
+                        <input id="instaCommentButtonFontColorForm" class="color-input" data-type="instaCommentButtonFontColor" type="text" name="instaCommentButtonFontColor" placeholder="Enter a hexidecimal">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
                 <p>Background Color</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-color">
@@ -1791,6 +1841,16 @@
                         <div id="instaLikeColorGradientButton"></div>
                         <div id="instaLikeButtonColorClick" class="dropdown-color-click" data-type="instaLikeButtonColor"></div>
                         <input id="instaLikeButtonColorForm" class="color-input" data-type="instaLikeButtonColor" type="text" name="instaLikeButtonColor" placeholder="Enter a hexidecimal">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Button Font Color</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-color">
+                        <div id="instaLikeColorGradientButtonFont"></div>
+                        <div id="instaLikeButtonFontColorClick" class="dropdown-color-click" data-type="instaLikeButtonFontColor"></div>
+                        <input id="instaLikeButtonFontColorForm" class="color-input" data-type="instaLikeButtonFontColor" type="text" name="instaLikeButtonFontColor" placeholder="Enter a hexidecimal">
                     </div>
                 </div>
             </div>
@@ -2061,6 +2121,16 @@
                 </div>
             </div>
             <div class="customize-settings-box">
+                <p>Button Font Color</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-color">
+                        <div id="facebookFollowColorGradientButtonFont"></div>
+                        <div id="facebookFollowButtonFontColorClick" class="dropdown-color-click" data-type="facebookFollowButtonFontColor"></div>
+                        <input id="facebookFollowButtonFontColorForm" class="color-input" data-type="facebookFollowButtonFontColor" type="text" name="facebookFollowButtonFontColor" placeholder="Enter a hexidecimal">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
                 <p>Background Color</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-color">
@@ -2323,6 +2393,16 @@
                         <div id="facebookCommentColorGradientButton"></div>
                         <div id="facebookCommentButtonColorClick" class="dropdown-color-click" data-type="facebookCommentButtonColor"></div>
                         <input id="facebookCommentButtonColorForm" class="color-input" data-type="facebookCommentButtonColor" type="text" name="facebookCommentButtonColor" placeholder="Enter a hexidecimal">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Button Font Color</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-color">
+                        <div id="facebookCommentColorGradientButtonFont"></div>
+                        <div id="facebookCommentButtonFontColorClick" class="dropdown-color-click" data-type="facebookCommentButtonFontColor"></div>
+                        <input id="facebookCommentButtonFontColorForm" class="color-input" data-type="facebookCommentButtonFontColor" type="text" name="facebookCommentButtonFontColor" placeholder="Enter a hexidecimal">
                     </div>
                 </div>
             </div>
@@ -2593,6 +2673,16 @@
                 </div>
             </div>
             <div class="customize-settings-box">
+                <p>Button Font Color</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-color">
+                        <div id="facebookLikeColorGradientButtonFont"></div>
+                        <div id="facebookLikeButtonFontColorClick" class="dropdown-color-click" data-type="facebookLikeButtonFontColor"></div>
+                        <input id="facebookLikeButtonFontColorForm" class="color-input" data-type="facebookLikeButtonFontColor" type="text" name="facebookLikeButtonFontColor" placeholder="Enter a hexidecimal">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
                 <p>Background Color</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-color">
@@ -2855,6 +2945,16 @@
                         <div id="tiktokFollowColorGradientButton"></div>
                         <div id="tiktokFollowButtonColorClick" class="dropdown-color-click" data-type="tiktokFollowButtonColor"></div>
                         <input id="tiktokFollowButtonColorForm" class="color-input" data-type="tiktokFollowButtonColor" type="text" name="tiktokFollowButtonColor" placeholder="Enter a hexidecimal">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Button Font Color</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-color">
+                        <div id="tiktokFollowColorGradientButtonFont"></div>
+                        <div id="tiktokFollowButtonFontColorClick" class="dropdown-color-click" data-type="tiktokFollowButtonFontColor"></div>
+                        <input id="tiktokFollowButtonFontColorForm" class="color-input" data-type="tiktokFollowButtonFontColor" type="text" name="tiktokFollowButtonFontColor" placeholder="Enter a hexidecimal">
                     </div>
                 </div>
             </div>
@@ -3125,6 +3225,16 @@
                 </div>
             </div>
             <div class="customize-settings-box">
+                <p>Button Font Color</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-color">
+                        <div id="tiktokCommentColorGradientButtonFont"></div>
+                        <div id="tiktokCommentButtonFontColorClick" class="dropdown-color-click" data-type="tiktokCommentButtonFontColor"></div>
+                        <input id="tiktokCommentButtonFontColorForm" class="color-input" data-type="tiktokCommentButtonFontColor" type="text" name="tiktokCommentButtonFontColor" placeholder="Enter a hexidecimal">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
                 <p>Background Color</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-color">
@@ -3391,6 +3501,16 @@
                 </div>
             </div>
             <div class="customize-settings-box">
+                <p>Button Font Color</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-color">
+                        <div id="tiktokLikeColorGradientButtonFont"></div>
+                        <div id="tiktokLikeButtonFontColorClick" class="dropdown-color-click" data-type="tiktokLikeButtonFontColor"></div>
+                        <input id="tiktokLikeButtonFontColorForm" class="color-input" data-type="tiktokLikeButtonFontColor" type="text" name="tiktokLikeButtonFontColor" placeholder="Enter a hexidecimal">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
                 <p>Background Color</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-color">
@@ -3653,6 +3773,16 @@
                         <div id="referColorGradientButton"></div>
                         <div id="referButtonColorClick" class="dropdown-color-click" data-type="referButtonColor"></div>
                         <input id="referButtonColorForm" class="color-input" data-type="referButtonColor" type="text" name="referButtonColor" placeholder="Enter a hexidecimal">
+                    </div>
+                </div>
+            </div>
+            <div class="customize-settings-box">
+                <p>Button Font Color</p>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-color">
+                        <div id="referColorGradientButtonFont"></div>
+                        <div id="referButtonFontColorClick" class="dropdown-color-click" data-type="referButtonFontColor"></div>
+                        <input id="referButtonFontColorForm" class="color-input" data-type="referButtonFontColor" type="text" name="referButtonFontColor" placeholder="Enter a hexidecimal">
                     </div>
                 </div>
             </div>

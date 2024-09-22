@@ -124,6 +124,16 @@
   height: auto;
 }
 
+.rl-nav-logo a {
+  display: flex;
+  font-size: 50px;
+  text-decoration: none;
+  color: rgb(172, 172, 172);
+  box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+
 .rl-builder-close a {
   display: flex;
   font-size: 50px;

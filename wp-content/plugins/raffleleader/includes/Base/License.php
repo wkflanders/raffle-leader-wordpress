@@ -9,13 +9,9 @@ use WP_Error;
 class License extends BaseController {
     
     public $licenseCallbacks;
-
-    // Option names to store license key and status
     const LICENSE_KEY_OPTION = 'raffleleader_license_key';
     const LICENSE_STATUS_OPTION = 'raffleleader_license_status';
     const LICENSE_LAST_CHECKED_OPTION = 'raffleleader_license_last_checked';
-
-    // Transient key for caching
     const LICENSE_TRANSIENT_KEY = 'raffleleader_license_validation';
     const LICENSE_TRANSIENT_EXPIRATION = DAY_IN_SECONDS; // 24 hours
 
@@ -47,13 +43,6 @@ class License extends BaseController {
             'raffleleader_license_section'
         );
     }
-
-    /**
-     * Validate the license key by making an API request.
-     *
-     * @param string $input The license key input by the user.
-     * @return string The sanitized license key.
-     */
     public function validateLicenseKey($input){
         // Sanitize the input
         $sanitized_key = sanitize_text_field( $input );
@@ -157,14 +146,6 @@ class License extends BaseController {
             return get_option( self::LICENSE_KEY_OPTION );
         }
     }
-
-    /**
-     * Check if the current license is valid.
-     *
-     * This method uses caching to minimize API calls.
-     *
-     * @return bool True if the license is valid, false otherwise.
-     */
     public function isLicenseValid(){
         // Check if the transient exists
         $cached_status = get_transient( self::LICENSE_TRANSIENT_KEY );
@@ -250,12 +231,6 @@ class License extends BaseController {
         }
     }
 
-    /**
-     * Helper function to check if a string is a valid JSON.
-     *
-     * @param string $string The string to check.
-     * @return bool True if valid JSON, false otherwise.
-     */
     private function is_json($string) {
         json_decode($string);
         return (json_last_error() == JSON_ERROR_NONE);

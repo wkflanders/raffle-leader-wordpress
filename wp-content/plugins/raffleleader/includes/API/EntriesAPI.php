@@ -30,6 +30,7 @@ class EntriesAPI {
         $tableName = $wpdb->prefix . 'raffleleader_entries';
 
         $query = $wpdb->prepare( "SELECT * FROM $tableName WHERE entry_id = %d", $entryID );
+        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         return $wpdb->get_row( $query, ARRAY_A );
     }
 
@@ -58,7 +59,7 @@ class EntriesAPI {
             "SELECT * FROM $tableName WHERE raffle_id = %d AND winner != 'true' ORDER BY $orderby $order LIMIT %d, %d",
             $raffleID, $offset, $per_page
         );
-    
+        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         return $wpdb->get_results($query, ARRAY_A);
     }
 
@@ -70,7 +71,7 @@ class EntriesAPI {
             "SELECT COUNT(*) FROM $tableName WHERE raffle_id = %d",
             $raffleID
         );
-    
+        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         return $wpdb->get_var($query);
     }
     
@@ -91,6 +92,7 @@ class EntriesAPI {
             "SELECT * FROM $tableName WHERE raffle_id = %d ORDER BY RAND() LIMIT 1",
             $raffleID
         );
+        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         $selectedEntry = $wpdb->get_row($query, ARRAY_A);
     
         if ($selectedEntry) {
@@ -113,7 +115,7 @@ class EntriesAPI {
             "SELECT * FROM $entriesTable WHERE raffle_id = %d AND winner = 'true' LIMIT 1",
             $raffleId
         );
-
+        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         return $wpdb->get_row( $query, ARRAY_A );
     }
 
@@ -125,7 +127,7 @@ class EntriesAPI {
             "SELECT * FROM $entriesTable WHERE contestant_id = %d AND raffle_id = %d",
             $contestantID, $raffleID
         );
-
+        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         $results = $wpdb->get_results($query, ARRAY_A);
 
         return $results;

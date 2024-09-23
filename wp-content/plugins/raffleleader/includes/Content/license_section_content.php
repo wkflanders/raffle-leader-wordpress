@@ -1,1 +1,0 @@
-<p class="raffleleader-license-prompt">Please enter your license key to activate all features.</p>

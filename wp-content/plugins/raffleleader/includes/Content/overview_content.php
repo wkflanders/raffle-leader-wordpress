@@ -13,10 +13,10 @@ $contestantsAPI = new ContestantsAPI();
 $entriesAPI = new EntriesAPI();
 
 // Handle bulk actions
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['select_winner']) && isset($_POST['select_winner_nonce']) && isset($_GET['raffle_id'])) {
-        $raffleID = intval($_GET['raffle_id']);
-        if (wp_verify_nonce($_POST['select_winner_nonce'], 'select_winner_action_' . $raffleID)) {
+        $raffleID = isset($_GET['raffle_id']) ? intval($_GET['raffle_id']) : 0;
+        if (wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['select_winner_nonce'])), 'select_winner_action_' . $raffleID)) {
             $entries = $entriesAPI->getRaffleEntries($raffleID);
             if (!empty($entries)) {
                 $currentWinner = $entriesAPI->getEntryByWinner($raffleID);
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     ?>
                     <script type="text/javascript">
                         document.addEventListener('DOMContentLoaded', function () {
-                            window.location.href = <?php echo json_encode($redirect_url); ?>;
+                            window.location.href = <?php echo wp_json_encode($redirect_url); ?>;
                         });
                     </script>
                     <?php
@@ -55,15 +55,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
     // Handle bulk actions
-    elseif (isset($_POST['bulk-raffles-nonce']) && wp_verify_nonce($_POST['bulk-raffles-nonce'], 'bulk-raffles-action')) {
+    elseif (isset($_POST['bulk-raffles-nonce']) && wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['bulk-raffles-nonce'])), 'bulk-raffles-action')) {
         if (current_user_can('manage_options')) {
-            $action = $_POST['action'] != '-1' ? $_POST['action'] : $_POST['action2'];
+            $action = '-1';
+            if (isset($_POST['action']) && $_POST['action'] != '-1') {
+                $action = sanitize_text_field(wp_unslash($_POST['action']));
+            } elseif (isset($_POST['action2']) && $_POST['action2'] != '-1') {
+                $action = sanitize_text_field(wp_unslash($_POST['action2']));
+            }
 
             $raffles_affected = 0;
             switch ($action) {
                 case 'delete':
-                    if (isset($_POST['raffle_id']) && is_array($_POST['raffle_id']) && !empty($_POST['raffle_id'])) {
-                        foreach ($_POST['raffle_id'] as $raffle_id) {
+                    if (isset($_POST['raffle_id']) && is_array($_POST['raffle_id'])) {
+                        $raffle_ids = array_map('intval', wp_unslash($_POST['raffle_id']));
+                        foreach ($raffle_ids as $raffle_id) {
                             $raffle_id = intval($raffle_id);
                             if ($raffleAPI->deleteRaffle($raffle_id)) {
                                 $raffles_affected++;
@@ -72,8 +78,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     }
                     break;
                 case 'duplicate':
-                    if (isset($_POST['raffle_id']) && is_array($_POST['raffle_id']) && !empty($_POST['raffle_id'])) {
-                        foreach ($_POST['raffle_id'] as $raffle_id) {
+                    if (isset($_POST['raffle_id']) && is_array($_POST['raffle_id'])) {
+                        $raffle_ids = array_map('intval', wp_unslash($_POST['raffle_id']));
+                        foreach ($raffle_ids as $raffle_id) {
                             $raffle_id = intval($raffle_id);
                             $new_raffle_id = $raffleAPI->duplicateRaffle($raffle_id);
                             if ($new_raffle_id) {
@@ -85,8 +92,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     }
                     break;
                 case 'restore':
-                    if (isset($_POST['raffle_id']) && is_array($_POST['raffle_id']) && !empty($_POST['raffle_id'])) {
-                        foreach ($_POST['raffle_id'] as $raffle_id) {
+                    if (isset($_POST['raffle_id']) && is_array($_POST['raffle_id'])) {
+                        $raffle_ids = array_map('intval', wp_unslash($_POST['raffle_id']));
+                        foreach ($raffle_ids as $raffle_id) {
                             $raffle_id = intval($raffle_id);
                             if ($raffleAPI->restoreRaffle($raffle_id)) {
                                 $raffles_affected++;
@@ -95,8 +103,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     }
                     break;
                 case 'delete_permanent':
-                    if (isset($_POST['raffle_id']) && is_array($_POST['raffle_id']) && !empty($_POST['raffle_id'])) {
-                        foreach ($_POST['raffle_id'] as $raffle_id) {
+                    if (isset($_POST['raffle_id']) && is_array($_POST['raffle_id'])) {
+                        $raffle_ids = array_map('intval', wp_unslash($_POST['raffle_id']));
+                        foreach ($raffle_ids as $raffle_id) {
                             $raffle_id = intval($raffle_id);
                             if ($raffleAPI->deletePermanently($raffle_id)) {
                                 $raffles_affected++;
@@ -125,10 +134,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 if (isset($_GET['action']) && $_GET['action'] === 'raffle_duplicate' && isset($_GET['raffle_id']) && isset($_GET['duplicate_raffle_nonce'])) {
     $raffle_id = intval($_GET['raffle_id']);
-    if (wp_verify_nonce($_GET['duplicate_raffle_nonce'], 'duplicate_raffle_action')) {
+    if (wp_verify_nonce(sanitize_text_field(wp_unslash($_GET['duplicate_raffle_nonce'])), 'duplicate_raffle_action')) {
         $new_raffle_id = $raffleAPI->duplicateRaffle($raffle_id);
         if ($new_raffle_id) {
-            echo "<script>location.href = '" . esc_js(add_query_arg('raffle_duplicated', '1', $_SERVER['REQUEST_URI'])) . "';</script>";
+            $request_uri = isset($_SERVER['REQUEST_URI']) ? esc_url_raw(wp_unslash($_SERVER['REQUEST_URI'])) : '';
+            echo "<script>location.href = '" . esc_js(add_query_arg('raffle_duplicated', '1', $request_uri)) . "';</script>";
             exit;
         } else {
             wp_die('Failed to duplicate raffle.');
@@ -147,7 +157,7 @@ if (isset($_GET['raffle_duplicated']) && $_GET['raffle_duplicated'] == '1') {
 
 if (isset($_GET['action']) && $_GET['action'] === 'raffle_restore' && isset($_GET['raffle_id']) && isset($_GET['restore_raffle_nonce'])) {
     $raffle_id = intval($_GET['raffle_id']);
-    if (wp_verify_nonce($_GET['restore_raffle_nonce'], 'restore_raffle_action')) {
+    if (wp_verify_nonce(sanitize_text_field(wp_unslash($_GET['restore_raffle_nonce'])), 'restore_raffle_action')) {
         if ($raffleAPI->restoreRaffle($raffle_id)) {
             echo "<script>location.href = '" . esc_js(add_query_arg('raffle_restored', '1', admin_url('admin.php?page=raffleleader_plugin'))) . "';</script>";
             exit;
@@ -168,7 +178,7 @@ if (isset($_GET['raffle_restored']) && $_GET['raffle_restored'] == '1') {
 
 if (isset($_GET['action']) && $_GET['action'] === 'raffle_delete_permanent' && isset($_GET['raffle_id']) && isset($_GET['delete_raffle_permanent_nonce'])) {
     $raffle_id = intval($_GET['raffle_id']);
-    if (wp_verify_nonce($_GET['delete_raffle_permanent_nonce'], 'delete_raffle_permanent_action')) {
+    if (wp_verify_nonce(sanitize_text_field(wp_unslash($_GET['delete_raffle_permanent_nonce'])), 'delete_raffle_permanent_action')) {
         if ($raffleAPI->deletePermanently($raffle_id)) {
             echo "<script>location.href = '" . esc_js(add_query_arg('raffle_deleted_permanently', '1', admin_url('admin.php?page=raffleleader_plugin&view=trash'))) . "';</script>";
             exit;
@@ -187,7 +197,7 @@ if (isset($_GET['raffle_deleted_permanently']) && $_GET['raffle_deleted_permanen
     });
 }
 
-$currentView = isset($_GET['view']) ? sanitize_text_field($_GET['view']) : 'all';
+$currentView = isset($_GET['view']) ? sanitize_text_field(wp_unslash($_GET['view'])) : 'all';
 $onlyDeleted = $currentView === 'trash';
 $raffleID = isset($_GET['raffle_id']) ? intval($_GET['raffle_id']) : 0;
 
@@ -263,7 +273,7 @@ $entryTypeMapping = [
 
     <?php
     if (isset($_GET['bulk_action_performed']) && isset($_GET['raffles_affected'])) {
-        $action = sanitize_text_field($_GET['bulk_action_performed']);
+        $action = sanitize_text_field(wp_unslash($_GET['bulk_action_performed']));
         $count = intval($_GET['raffles_affected']);
         $message = '';
 
@@ -294,7 +304,7 @@ $entryTypeMapping = [
         case 'raffle_details':
             $contestants_per_page = 10;
             $current_page = isset($_GET['paged']) ? max(1, intval($_GET['paged'])) : 1;
-            $search_term = isset($_GET['s']) ? sanitize_text_field($_GET['s']) : '';
+            $search_term = isset($_GET['s']) ? sanitize_text_field(wp_unslash($_GET['s'])) : '';
 
             $contestants = $contestantsAPI->getContestantsForRaffleView($raffleID, array(
                 'per_page' => $contestants_per_page,

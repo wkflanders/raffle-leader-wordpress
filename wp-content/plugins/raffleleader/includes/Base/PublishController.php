@@ -69,7 +69,8 @@ class PublishController extends BaseController
 
     public function loadRaffleData()
     {
-        if (!isset($_GET['security']) || !wp_verify_nonce($_GET['security'], 'nonce')) {
+        $nonce = isset($_GET['security']) ? sanitize_text_field(wp_unslash($_GET['security'])) : '';
+        if (!wp_verify_nonce($nonce, 'nonce')) {
             wp_send_json_error('Nonce verification failed', 403);
             wp_die();
         }
@@ -109,16 +110,16 @@ class PublishController extends BaseController
 
         if (isset($_POST['contestant_email']) && isset($_POST['raffle_id']) && isset($_POST['current_url'])) {
             $raffle_id = intval($_POST['raffle_id']);
-            $email = sanitize_email($_POST['contestant_email']);
-            $referral_code = isset($_POST['referral_code']) ? sanitize_text_field($_POST['referral_code']) : '';
-            $current_url = esc_url_raw($_POST['current_url']);
+            $email = sanitize_email(wp_unslash($_POST['contestant_email']));
+            $referral_code = isset($_POST['referral_code']) ? sanitize_text_field(wp_unslash($_POST['referral_code'])) : '';
+            $current_url = esc_url_raw(wp_unslash($_POST['current_url']));
 
             $contestant = $this->contestantsAPI->getContestantByEmail($email);
 
             if ($contestant) {
                 $contestant_id = $contestant['contestant_id'];
             } else {
-                $ip = $_SERVER['REMOTE_ADDR'];
+                $ip = isset($_SERVER['REMOTE_ADDR']) ? sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR'])) : '';
                 $contestantData = array(
                     'email' => $email,
                     'ip' => $ip,
@@ -209,10 +210,10 @@ class PublishController extends BaseController
         check_ajax_referer('nonce', 'security');
 
         if (isset($_POST['contestant_email'], $_POST['raffle_id'], $_POST['entry_type'], $_POST['entry_details'])) {
-            $email = sanitize_email($_POST['contestant_email']);
+            $email = sanitize_email(wp_unslash($_POST['contestant_email']));
             $raffle_id = intval($_POST['raffle_id']);
-            $entry_type = sanitize_text_field($_POST['entry_type']);
-            $entry_details = sanitize_text_field($_POST['entry_details']);
+            $entry_type = sanitize_text_field(wp_unslash($_POST['entry_type']));
+            $entry_details = sanitize_text_field(wp_unslash($_POST['entry_details']));
 
             $contestant = $this->contestantsAPI->getContestantByEmail($email);
 
@@ -321,7 +322,7 @@ class PublishController extends BaseController
     public function createNewRafflePost()
     {
         if (isset($_GET['raffle_id']) && current_user_can('edit_posts')) {
-            $raffle_id = sanitize_text_field($_GET['raffle_id']);
+            $raffle_id = sanitize_text_field(wp_unslash($_GET['raffle_id']));
             $shortcode = '[raffleleader id=' . $raffle_id . ']';
 
             echo "<script>
@@ -340,7 +341,7 @@ class PublishController extends BaseController
     public function createNewRafflePage()
     {
         if (isset($_GET['raffle_id']) && current_user_can('edit_posts')) {
-            $raffle_id = sanitize_text_field($_GET['raffle_id']);
+            $raffle_id = sanitize_text_field(wp_unslash($_GET['raffle_id']));
             $shortcode = '[raffleleader id=' . $raffle_id . ']';
 
             echo "<script>

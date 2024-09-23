@@ -1,6 +1,6 @@
 <nav class="raffleleader-license-navbar">
     <div class="raffleleader-license-logo-container">
-        <img class="raffleleader-license-logo" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/TEXT-LOGO.svg">
+        <img class="raffleleader-license-logo" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/TEXT-LOGO.svg'); ?>">
     </div>
 </nav>
 <div class="wrap">

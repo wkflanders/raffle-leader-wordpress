@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+#templates {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Overpass', sans-serif;
+}
+
+.rl-template-wrapper {
+    height: 90vh;
+    overflow-y: scroll;
+}
+
+.rl-grid-row {
+    display: flex;
+    align-items: center;
+    height: 60vh;
+    border-bottom: 1px solid #000000;
+    margin: 0;
+    z-index: 50;
+    position: relative;
+}
+
+.rl-template-carousel{
+    display: flex;
+    align-items: center;
+    height: 60vh;
+    scrollbar-width: none;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    z-index: 1;
+    /* box-shadow: inset -10px 0 10px -20px rgba(0,0,0,0.5), inset 15px 0 10px -20px rgba(0,0,0,0.5); */
+    border-left: 1px solid black;
+    overflow-y: hidden;
+    background-color: rgb(247, 247, 247);
+}
+
+.rl-template-carousel::webkit-scrollbar{
+    display: none;
+}
+
+.scroll-grid-btn {
+    transition: margin 0.4s ease-in-out, transform 0.3s ease-in-out;
+    border: none;
+    background: white;
+    cursor: pointer;
+    position: sticky;
+    background-color: rgba(255, 255, 255, 0);
+    z-index: 505;
+}
+
+.scroll-grid-btn-right {
+    left: 96vw;
+}
+
+.scroll-grid-btn-left {
+    left: 16vw;
+}
+
+.scroll-grid-arrow {
+    border: solid rgba(128, 128, 128, 0.815);
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 6px;
+}
+
+.scroll-grid-right {
+    transform: rotate(-45deg);
+}
+
+.scroll-grid-left {
+    transform: rotate(135deg);
+}
+
+.rl-box {
+    --select-text: "Select";
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.rl-box:hover{
+    transform: scale(1.1);
+    border: 2px dashed #5233ff !important;
+    cursor: pointer;
+}
+
+.rl-box:hover::before{
+    content: var(--select-text);
+    position: absolute;
+    color: white;
+    top: 0;
+    left: 1vh;
+    background: #5233ff;
+    padding: 0 1vh;
+    font-size: 1.5vh;
+    border-bottom-left-radius: 1vh;
+    border-bottom-right-radius: 1vh;
+    z-index: 1000;
+}
+
+.rl-template-wrapper .rl-sm {
+    margin-bottom: 2vh;
+}
+
+.rl-template-wrapper .grid-item {
+    display: flex;
+    border: 1px solid #727272;
+    position: relative;
+    border-radius: 0px;
+    height: 50vh;
+    margin-left: 3vw;
+    z-index: 500;
+    flex: 0 0 auto;
+
+}
+
+/* .template-item:hover {
+    transform: scale(1.3);
+    z-index: 500;
+} */
+
+.rl-template-wrapper .label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    margin: 0 0vw 0 2vw;
+    font-weight: 900;
+    text-align: left;
+    width: 200px;
+    line-height: 40px;
+}
+
+.rl-template-wrapper .label > p {
+    margin: 0;
+    font-weight: 400;
+}
+
+.rl-template-wrapper h2 {
+    margin-bottom: 1vh;
+    font-style: normal;
+    font-weight: 1000;
+    font-size: 4vh;
+    color: black;
+}
+
+.rl-template-wrapper p {
+    font-style: normal;
+    font-size: 1.7vh;
+    color: black;
+}
+
+.chosen-template {
+    position: relative;
+    border: 2px solid #1501FE !important;
+    z-index: 100000;
+}
+
+.chosen-template::before {
+    content: "Selected";
+    position: absolute;
+    color: white;
+    top: 0;
+    left: 1vh;
+    background: #1501FE;
+    padding: 0 1vh;
+    font-size: 1.5vh;
+    border-bottom-left-radius: 1vh;
+    border-bottom-right-radius: 1vh;
+    z-index: 100000;
+}
+
+.rl-box.chosen-template:hover {
+    border: 2px solid #1501FE !important; /* Maintains solid border, no dashed */
+    cursor: default;
+}
+
+.rl-box.chosen-template:hover::before {
+    content: "Selected"; /* Keeps "Selected" text, no "Select" */
+    background: #1501FE;
+}

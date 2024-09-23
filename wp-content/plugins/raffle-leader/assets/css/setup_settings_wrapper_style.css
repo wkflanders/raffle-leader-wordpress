@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+
+body {
+    overflow-y: hidden;
+}
+
+#setup {
+    position: relative;
+    z-index: 80;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Overpass', sans-serif;
+    background: rgb(233, 233, 233);
+    overflow: hidden;
+    /* background-color: rgb(233, 233, 233); */
+}
+
+.rl-setup-wrapper{
+    display: flex; 
+}
+
+.customize-box-content{
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.shared-box-content{
+    display: none;
+}
+
+.visible-shared-customize{
+    display: block;
+}
+
+.visible-customize{
+    display: block;
+}
+
+.settings-wrapper {
+    margin-left: auto;
+    position: relative;
+    z-index: 90;
+    left: 100%;
+    transition: all 0.7s ease;
+}
+
+.slide-right-to-left{
+    left: 0%;
+}
+
+.slide-top-to-bottom{
+    bottom: 0%;
+}
+
+.settings-content {
+    background-color: white;
+    width: 22vw;
+    height: 95vh;
+    border-left: 2px solid #1501FE;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.dropdown-wrapper {
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid #1501FE;
+    padding-bottom: 4vh;
+}
+
+.header-box {
+    display: block;
+    border-bottom: 2px solid #1501FE;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.header-box-arrow {
+    border: solid #1501FE;
+    border-width: 0 1.8px 1.8px 0;
+    display: inline-block;
+    padding: 6px;
+}
+
+.header-box-down {
+    transform: rotate(45deg);
+}
+
+.header-dropdown {
+    border: none;
+    background: white;
+    cursor: pointer;
+    padding: 0 1vw;
+    margin-left: auto;
+}
+
+.header-box-title {
+    text-align: center;
+    font-size: 3vh;
+    color: #1501FE;
+    line-height: 3.5vh;
+}
+
+.header-box >  h2 {
+    margin: 2vh 0 !important;
+}

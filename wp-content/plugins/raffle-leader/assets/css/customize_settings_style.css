@@ -1,0 +1,551 @@
+.dropdown-settings-wrapper{
+    padding: 0 2.5vw 0 2.5vw;
+}
+
+.customize-settings-box{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1vh;
+}
+
+.customize-settings-box > p{
+    font-weight: bold;
+    color: gray;
+    margin-bottom: 0.5vh;
+    font-size: 1.8vh;
+}
+
+.dropdown-display{
+    height: 5vh;
+    width: 15.5vw;
+    padding: 0.2vh 2vh 0 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+}
+
+.dropdown-display > p{
+    margin: 0;
+    font-size: 2.6vh;
+}
+
+.dropdown-wrapper-text{
+    color: hsl(0, 0%, 50%);
+    text-align: center;
+    font-weight: 500;
+    padding-top: 1vh;
+    font-size: 1.65vh;
+    margin-bottom: 0;
+}
+
+.dropdown-btn{
+    color: rgb(215, 215, 215);
+    cursor: pointer;
+}
+
+.dropdown-btn:hover{
+    color: rgb(188, 188, 188);
+}
+
+.dropdown-btn:active{
+    color: rgb(215, 215, 215);
+}
+
+.dropdown-content{
+    width: 14vw;
+    margin-left: 0.5vw;
+    padding: 0 2vh 0 2vh;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: auto;
+    max-height: 0;
+    border-color: black;
+    border-style: solid;
+    border-width: 0;
+    transition: max-height 0.5s ease-out, border-width 0.5s ease;
+}
+
+.dropdown-content > ul{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.show-dropdown{
+    max-height: 15vh;
+    border-width: 1px;
+    border-top: 0;
+    
+}
+
+.dropdown-text{
+    width: 15vw;
+    border: none;
+    padding: 0;
+}
+
+input[type="text"]{
+    height: 5.5vh;
+    font-size: 2.5vh;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding-right: 2vh;
+    padding-left: 2vh;
+}
+
+input[type="text"].font-size-input{
+    width: 17.5vw;
+}
+
+input[type="text"].letter-spacing-input{
+    width: 17.5vw;
+}
+
+input[type="text"].line-height-input{
+    width: 17.5vw;
+}
+
+input[type="text"]::placeholder{
+    font-size: 2vh;
+    color: rgb(164, 164, 164);
+}
+
+input[type="number"]{
+    height: 5.5vh;
+    font-size: 2.5vh;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+input[type="number"]::placeholder{
+    font-size: 2vh;
+    color: rgb(164, 164, 164);
+}
+
+.dropdown-edit-text{
+    display: block;
+    height: 15vh;
+    width: 17.5vw;
+}
+
+.text-input{
+    height: 100%;
+    width: 100%;
+    font-size: 2.2vh;
+    margin-bottom: 2vh;
+    resize: none;
+    overflow: auto;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 1vh
+}
+
+.dropdown-inline-btns{
+    border: none;
+    padding: 0;
+    width: 17.5vw;
+}
+
+.dropdown-two-btns{
+    justify-content:space-around; 
+}
+
+.inline-btn{
+    height: 5vh;
+    background-color: rgb(243, 243, 243);
+    padding: 1vh 1vh 1vh 1vh;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.inline-btn:hover{
+    background-color: rgb(217, 217, 217);
+    cursor: pointer;
+}
+
+.inline-btn:active{
+    background-color: rgb(243, 243, 243);
+}
+
+.font-title{
+    font-size: 2vh;
+    color: black;
+}
+
+.font-title:hover{
+    cursor: pointer;
+    color: rgb(128, 128, 128);
+}
+
+.font-title:active{
+    color: black;
+}
+
+.selected-font{
+    font-weight: 900;
+    color: #1501FE;
+}
+
+.selected-font:hover{
+    cursor: default;
+    color: #1501FE;
+}
+
+.dropdown-color{
+    border: 0;
+    width: 17.5vw;
+    padding: 0;
+}
+
+input[type="text"].color-input{
+    width: 14vw;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: 0
+}
+
+.dropdown-color-click{
+    width: 10vw;
+    height: 5.3vh;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: white;
+}
+
+.dropdown-color-click:hover{
+    cursor: pointer;
+}
+
+.inline-btn-style-active{
+    background-color: rgb(196, 196, 196);
+    border: 1px solid black;
+}
+
+.inline-btn-style-active:hover{
+    background-color: rgb(216, 216, 216);
+}
+
+.inline-btn-style-active:active{
+    background-color: rgb(196, 196, 196);
+}
+
+.inline-btn-halign-active{
+    background-color: rgb(196, 196, 196);
+    border: 1px solid black;
+}
+
+.inline-btn-halign-active:hover{
+    background-color: rgb(216, 216, 216);
+}
+
+.inline-btn-halign-active:active{
+    background-color: rgb(196, 196, 196);
+}
+
+.inline-btn-valign-active{
+    background-color: rgb(196, 196, 196);
+    border: 1px solid black;
+}
+
+.inline-btn-valign-active:hover{
+    background-color: rgb(216, 216, 216);
+}
+
+.inline-btn-valign-active:active{
+    background-color: rgb(196, 196, 196);
+}
+
+.inline-btn-orient-active{
+    background-color: rgb(196, 196, 196);
+    border: 1px solid black;
+}
+
+.inline-btn-orient-active:hover{
+    background-color: rgb(216, 216, 216);
+}
+
+.inline-btn-orient-active:active{
+    background-color: rgb(196, 196, 196);
+}
+
+.dropdown-multi-input{
+    border: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 5vw;
+    height: 12vh;
+}
+
+.dropdown-row{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.border-icon{
+    height: 5vh;
+    margin-right: 0.5vw;
+}
+
+.border-stroke-input{
+    width: 5.25vw !important;
+    margin-bottom: 1.5vh;
+    margin-right: 1vw;
+}
+
+.border-radius-input{
+    width: 5.25vw !important;
+    margin-bottom: 1.5vh;
+    margin-right: 1vw;
+}
+
+.dropdown-counter{
+    border: 0;
+    padding: 0;
+    width: 17vw;
+    height: 5vh;
+}
+
+.dropdown-counter-btn{
+    border: 1px solid black;
+    background-color: white;
+    font-size: 2.2vh;
+    height: 100%;
+    width: 100%;
+    text-align: left;
+    padding: 0 0 0 2vh;
+    border-radius: 10px;
+}
+
+.dropdown-counter-btn:hover{
+    background-color: #1501FE;
+    color: white;
+    cursor: pointer;
+}
+
+.dropdown-counter-btn:active{
+    background-color: #1501FE;
+    color: white;
+    cursor: pointer;
+}
+
+.active-counter{
+    border: 3px solid #1501FE;
+}
+
+.dropdown-additional-entry{
+    border: 1px solid black;
+    background-color: white;
+    text-align: left;
+    padding: 0 0 0 2vh;
+    border-radius: 10px;
+    width: 16.5vw;
+    height: 5vh;
+    justify-content: flex-start;
+}
+
+.dropdown-additional-entry:hover{
+    background-color: #1501FE;
+    color: white;
+    cursor: pointer;
+}
+
+.dropdown-additional-entry:hover img{
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'invert\'><feColorMatrix type=\'matrix\' values=\'-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0\'/></filter></svg>#invert");
+    -webkit-filter:invert(100%);
+    filter: invert(100%);
+}
+
+.entry-img {
+    width: 7%;
+    vertical-align: middle;
+}
+
+.entry-text{
+    font-size: 2.2vh !important;
+}
+
+.selected-entry-btn{
+    background-color:#1501FE;
+    color: white;
+}
+
+.selected-entry-btn img{
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'invert\'><feColorMatrix type=\'matrix\' values=\'-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0\'/></filter></svg>#invert");
+    -webkit-filter:invert(100%);
+    filter: invert(100%);
+}
+
+.selected-entry-btn:hover{
+    background-color:#1200dc;
+}
+
+.selected-entry-btn:active{
+    background-color:#1501FE;
+}
+
+.dropdown-image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0;
+    height: 8vh;
+    margin-left: 3vw;
+    margin: 0;
+}
+
+.insert-img-btn{
+    border: 0;
+    background-color:#1501FE;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.7vh;
+    padding: 0.7rem 1.5rem 0.8rem 1.5rem;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-family: "Inter";
+}
+
+.insert-img-btn:hover{
+    background-color:#1200dd; 
+    color: rgb(226, 226, 226);
+    cursor: pointer;
+}
+
+.insert-img-btn:active{
+    background-color:#1501FE;
+    color: white;
+}
+
+.img-details{
+    border: 1px solid gray;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.img-details > p{
+    margin: 0;
+}
+
+.img-url{
+    height: 5vh;
+    width: 14vw;
+    font-size: 1.5vh;
+    line-height: 2;
+}
+
+.img-delete{
+    vertical-align: center;
+    background-color: white;
+    border: 0;
+    padding: 0;
+    margin: 0 1vh 0 0;
+    font-size: 1.5vh;
+    color: red;
+    height: 5vh;
+    width: 3vw;
+    line-height: 2;
+}
+
+.img-delete:hover{
+    cursor: pointer;
+    color: rgb(179, 0, 0);
+}
+
+.img-delete:active{
+    cursor: pointer;
+    color: red;
+}
+
+.delete-display{
+    width: 15.5vw;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    border-color: red;
+    justify-content: center;
+}
+
+.delete-display:hover{
+    background-color: red;
+    cursor: pointer;
+}
+
+.delete-display > span{
+    color: red;
+    font-size: 2.5vh;
+}
+
+.delete-display:hover > span{
+    color: white;
+}
+
+.delete-display:active{
+    background-color: rgb(197, 0, 0);
+}
+
+.confirm-delete{
+    width: 15.5vw;
+    margin-top: 3vh;
+    background-color: red;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.confirm-delete:hover{
+    background-color: rgb(219, 0, 0);
+}
+
+.confirm-delete:active{
+    background-color: red;
+}
+
+.confirm-delete > span{
+    color: white;
+    font-size: 2.5vh;
+}
+
+.cancel-delete{
+    color: gray;
+    text-align: center;
+    font-size: 2.2vh;
+    font-weight: bolder;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+    margin-left: 1.5vw;
+}
+
+.cancel-delete:hover{
+    color: rgb(74, 74, 74);
+    cursor: pointer;
+}
+
+.cancel-delete:active{
+    color: gray;
+}
+
+
+/* ******************************************** */
+
+
+::-webkit-scrollbar {
+    width: 1.2vh; /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(196, 196, 196, 0.493); /* color of the scroll thumb */
+    border-radius: 6px; /* roundness of the scroll thumb */
+    border: 3px solid transparent; /* creates padding around scroll thumb */
+}

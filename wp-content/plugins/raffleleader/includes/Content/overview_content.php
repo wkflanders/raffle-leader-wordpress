@@ -239,7 +239,7 @@ $entryTypeMapping = [
 <nav class="raffleleader-overview-navbar">
     <div class="raffleleader-overview-logo-container">
         <img class="raffleleader-overview-logo"
-            src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/TEXT-LOGO.svg">
+            src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/TEXT-LOGO.svg'); ?>">
     </div>
     <div class="raffleleader-overview-btn-container">
         <button class="raffleleader-overview-create-btn">Create New Raffle</button>
@@ -287,7 +287,7 @@ $entryTypeMapping = [
         }
 
         if (!empty($message)) {
-            echo '<div class="notice notice-success is-dismissible"><p>' . $message . '</p></div>';
+            echo '<div class="notice notice-success is-dismissible"><p>' . esc_html($message) . '</p></div>';
         }
     }
     switch ($currentView) {
@@ -340,14 +340,14 @@ $entryTypeMapping = [
             <div class="tablenav bottom">
                 <div class="tablenav-pages">
                     <?php
-                    echo paginate_links(array(
+                    echo wp_kses_post(paginate_links(array(
                         'base' => add_query_arg('paged', '%#%'),
                         'format' => '',
                         'prev_text' => __('&laquo; Previous'),
                         'next_text' => __('Next &raquo;'),
                         'total' => $total_pages,
                         'current' => $current_page
-                    ));
+                    )));
                     ?>
                 </div>
             </div>
@@ -451,13 +451,13 @@ $entryTypeMapping = [
                     $isWinner = $entry['winner'] === 'true';
                     $rowClass = $isWinner ? 'winner-row' : '';
                     ?>
-                    <tr class="<?php echo $rowClass; ?>">
+                    <tr class="<?php echo esc_attr($rowClass); ?>">
                         <td class="email column-email">
                             <?php
                             $contestantEmail = isset($contestantsById[ $entry['contestant_id'] ]) ? esc_html($contestantsById[ $entry['contestant_id'] ]['email']) : 'Unknown';
                             ?>
                             <a
-                                href="<?php echo esc_url(admin_url('admin.php?page=raffleleader_plugin&raffle_id=' . $raffleID . '&view=raffle_details')) ?>"><?php echo $contestantEmail; ?>
+                                href="<?php echo esc_url(admin_url('admin.php?page=raffleleader_plugin&raffle_id=' . $raffleID . '&view=raffle_details')) ?>"><?php echo esc_html($contestantEmail); ?>
                             </a>
                         </td>
                         <td class="entry-type column-entry-type">
@@ -488,16 +488,16 @@ $entryTypeMapping = [
         </table>
         <div class="tablenav bottom">
             <div class="tablenav-pages">
-                <span class="displaying-num"><?php echo $total_entries; ?> items</span>
+                <span class="displaying-num"><?php echo esc_html($total_entries); ?> items</span>
                 <?php
-                echo paginate_links(array(
+                echo wp_kses_post(paginate_links(array(
                     'base' => add_query_arg('paged', '%#%'),
                     'format' => '',
                     'prev_text' => __('&laquo; Previous'),
                     'next_text' => __('Next &raquo;'),
                     'total' => $total_pages,
                     'current' => $current_page
-                ));
+                )));
                 ?>
             </div>
         </div>
@@ -623,12 +623,12 @@ $entryTypeMapping = [
                                     <?php if ($onlyDeleted): ?>
                                         <span class="restore">
                                             <a
-                                                href="<?php echo wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=raffle_restore&raffle_id=' . $raffle['raffle_id']), 'restore_raffle_action', 'restore_raffle_nonce'); ?>">Restore</a>
+                                                href="<?php echo esc_url(wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=raffle_restore&raffle_id=' . $raffle['raffle_id']), 'restore_raffle_action', 'restore_raffle_nonce')); ?>">Restore</a>
                                             |
                                         </span>
                                         <span class="delete">
                                             <a
-                                                href="<?php echo wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=raffle_delete_permanent&raffle_id=' . $raffle['raffle_id']), 'delete_raffle_permanent_action', 'delete_raffle_permanent_nonce'); ?>">Delete
+                                                href="<?php echo esc_url(wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=raffle_delete_permanent&raffle_id=' . $raffle['raffle_id']), 'delete_raffle_permanent_action', 'delete_raffle_permanent_nonce')); ?>">Delete
                                                 Permanently</a>
                                         </span>
                                     <?php else: ?>
@@ -649,12 +649,12 @@ $entryTypeMapping = [
                                         </span>
                                         <span class="duplicate">
                                             <a
-                                                href="<?php echo wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=raffle_duplicate&raffle_id=' . $raffle['raffle_id']), 'duplicate_raffle_action', 'duplicate_raffle_nonce'); ?>">Duplicate
+                                                href="<?php echo esc_url(wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=raffle_duplicate&raffle_id=' . $raffle['raffle_id']), 'duplicate_raffle_action', 'duplicate_raffle_nonce')); ?>">Duplicate
                                                 |</a>
                                         </span>
                                         <span class="delete">
                                             <a
-                                                href="<?php echo wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=raffle_delete&raffle_id=' . $raffle['raffle_id']), 'delete_raffle_action', 'delete_raffle_nonce'); ?>">Trash</a>
+                                                href="<?php echo esc_url(wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=raffle_delete&raffle_id=' . $raffle['raffle_id']), 'delete_raffle_action', 'delete_raffle_nonce')); ?>">Trash</a>
                                         </span>
                                     <?php endif; ?>
                                 </div>

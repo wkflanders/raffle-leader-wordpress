@@ -35,8 +35,10 @@
     </div>
     <nav id="rlNavbar" class="rl-navbar" style="display: none;">
         <div class="rl-nav-logo">
-            <a href="admin.php?page=raffleleader_plugin"><img class="rl-text-logo"
-                    src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/TEXT-LOGO.svg">
+            <a href="<?php echo esc_url(admin_url('admin.php?page=raffleleader_plugin')); ?>">
+                <img class="rl-text-logo"
+                    src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . 'assets/images/TEXT-LOGO.svg'); ?>"
+                    alt="RaffleLeader Logo">
             </a>
         </div>
         <ul class="rl-nav-tabs">
@@ -350,13 +352,17 @@
                         <div id="dropzone" class="raffleleader-dropzone" style="height: 600px"></div>
                         <div class="raffleleader-footer-wrapper">
                             <div class="raffleleader-footer">
-                                <a class="raffleleader-footer-content raffleleader-rules-and-terms">Raffle Rules and
-                                    Terms</a>
-                                <a class="raffleleader-footer-content rl_link" target="_blank"
-                                    href="https://raffleleader.com">Try <img id="footer-logo"
-                                        class="raffleleader-footer-text-logo"
-                                        src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom-vert.png">
-                                    For Yourself!</a>
+                                <a href="#" class="raffleleader-footer-content raffleleader-rules-and-terms">
+                                    <?php esc_html_e('Raffle Rules and Terms', 'raffleleader'); ?>
+                                </a>
+                                <a class="raffleleader-footer-content rl_link" target="_blank" rel="noopener noreferrer"
+                                    href="<?php echo esc_url('https://raffleleader.com'); ?>">
+                                    <?php esc_html_e('Try', 'raffleleader'); ?>
+                                    <img id="footer-logo" class="raffleleader-footer-text-logo"
+                                        src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . 'assets/images/bottom-vert.png'); ?>"
+                                        alt="<?php esc_attr_e('RaffleLeader Logo', 'raffleleader'); ?>">
+                                    <?php esc_html_e('For Yourself!', 'raffleleader'); ?>
+                                </a>
                             </div>
                         </div>
                     </div>

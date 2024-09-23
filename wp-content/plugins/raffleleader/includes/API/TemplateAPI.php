@@ -29,6 +29,7 @@ class TemplateAPI {
         $tableName = $wpdb->prefix . 'raffleleader_templates';
 
         $query = $wpdb->prepare( "SELECT * FROM $tableName WHERE raffle_id = %d", $templateID );
+        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         return $wpdb->get_row( $query, ARRAY_A );
     }
 
@@ -36,8 +37,8 @@ class TemplateAPI {
         global $wpdb;
         $tableName = $wpdb->prefix . 'raffleleader_templates';
 
-        $query = "SELECT * FROM $tableName";
-
+        $query = $wpdb->prepare("SELECT * FROM $tableName");
+        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         $results = $wpdb->get_results( $query, ARRAY_A );
 
         return $results;

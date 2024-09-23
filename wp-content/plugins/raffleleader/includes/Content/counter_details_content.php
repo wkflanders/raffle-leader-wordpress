@@ -8,14 +8,16 @@
                 <p>Track Time</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-counter">
-                        <button id="counterTimeLeft" class="dropdown-counter-btn" data-type="counterTimeLeft">Time Left</button>
+                        <button id="counterTimeLeft" class="dropdown-counter-btn" data-type="counterTimeLeft">Time
+                            Left</button>
                     </div>
                 </div>
             </div>
             <div class="customize-settings-box">
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-counter">
-                        <button id="counterTimeStart" class="dropdown-counter-btn" data-type="counterTimeStart">Time Until Start</button>
+                        <button id="counterTimeStart" class="dropdown-counter-btn" data-type="counterTimeStart">Time
+                            Until Start</button>
                     </div>
                 </div>
             </div>
@@ -23,14 +25,16 @@
                 <p>Track Entries</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-counter">
-                        <button id="counterUserEntries" class="dropdown-counter-btn" data-type="counterUserEntries">User Entries</button>
+                        <button id="counterUserEntries" class="dropdown-counter-btn" data-type="counterUserEntries">User
+                            Entries</button>
                     </div>
                 </div>
             </div>
             <div class="customize-settings-box">
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-counter">
-                        <button id="counterTotalEntries" class="dropdown-counter-btn" data-type="counterTotalEntries">Total Entries</button>
+                        <button id="counterTotalEntries" class="dropdown-counter-btn"
+                            data-type="counterTotalEntries">Total Entries</button>
                     </div>
                 </div>
             </div>
@@ -87,7 +91,8 @@
                     <div class="dropdown-display dropdown-color">
                         <div id="counterColorGradient"></div>
                         <div id="counterFontColorClick" class="dropdown-color-click" data-type="counterColor"></div>
-                        <input id="counterFontColorForm" class="color-input" data-type="counterColor" type="text" name="counterFontColor" placeholder="Enter a hexidecimal">
+                        <input id="counterFontColorForm" class="color-input" data-type="counterColor" type="text"
+                            name="counterFontColor" placeholder="Enter a hexidecimal">
                     </div>
                 </div>
             </div>
@@ -95,7 +100,8 @@
                 <p>Font Size</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-text">
-                        <input id="counterFontSizeForm" class="font-size-input" data-type="counterFontSize" type="text" name="counterFontSize" placeholder="Enter a font size">
+                        <input id="counterFontSizeForm" class="font-size-input" data-type="counterFontSize" type="text"
+                            name="counterFontSize" placeholder="Enter a font size">
                     </div>
                 </div>
             </div>
@@ -103,7 +109,9 @@
                 <p>Letter Spacing</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-text">
-                        <input id="counterLetterSpacingForm" class="letter-spacing-input" data-type="counterLetterSpacing" type="text" name="counterLetterSpacing" placeholder="Enter letter spacing">
+                        <input id="counterLetterSpacingForm" class="letter-spacing-input"
+                            data-type="counterLetterSpacing" type="text" name="counterLetterSpacing"
+                            placeholder="Enter letter spacing">
                     </div>
                 </div>
             </div>
@@ -111,8 +119,10 @@
                 <p>Text Orientation</p>
                 <div class="customize-settings-dropdown counter-orientation">
                     <div class="dropdown-display dropdown-inline-btns dropdown-two-btns">
-                        <img class="inline-btn horizontal-orient" data-type="counterOrient" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/horizontal-orient.png">
-                        <img class="inline-btn vertical-orient" data-type="counterOrient" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/vertical-orient.png">
+                        <img class="inline-btn horizontal-orient" data-type="counterOrient"
+                            src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/horizontal-orient.png'); ?>">
+                        <img class="inline-btn vertical-orient" data-type="counterOrient"
+                            src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/vertical-orient.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -129,8 +139,10 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-color">
                         <div id="counterColorGradientBackground"></div>
-                        <div id="counterBackgroundColorClick" class="dropdown-color-click" data-type="counterBackgroundColor"></div>
-                        <input id="counterBackgroundColorForm" class="color-input" data-type="counterBackgroundColor" type="text" name="counterBackgroundColor" placeholder="Enter a hexidecimal">
+                        <div id="counterBackgroundColorClick" class="dropdown-color-click"
+                            data-type="counterBackgroundColor"></div>
+                        <input id="counterBackgroundColorForm" class="color-input" data-type="counterBackgroundColor"
+                            type="text" name="counterBackgroundColor" placeholder="Enter a hexidecimal">
                     </div>
                 </div>
             </div>
@@ -139,8 +151,10 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-color dropdown-border-color">
                         <div id="counterColorGradientBorder"></div>
-                        <div id="counterBorderColorClick" class="dropdown-color-click" data-type="counterBorderColor"></div>
-                        <input id="counterBorderColorForm" class="color-input" data-type="counterBorderColor" type="text" name="counterBorderColor" placeholder="Enter a hexidecimal">
+                        <div id="counterBorderColorClick" class="dropdown-color-click" data-type="counterBorderColor">
+                        </div>
+                        <input id="counterBorderColorForm" class="color-input" data-type="counterBorderColor"
+                            type="text" name="counterBorderColor" placeholder="Enter a hexidecimal">
                     </div>
                 </div>
             </div>
@@ -149,16 +163,28 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
-                            <input id="counterBorderTopStroke" class="border-stroke-input" data-type="counterBorderStroke" type="text" name="counterBorderTopStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
-                            <input id="counterBorderBottomStroke" class="border-stroke-input" data-type="counterBorderStroke" type="text" name="counterBorderBottomStroke" placeholder="--">
+                            <img class="border-icon"
+                                src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_border.svg'); ?>">
+                            <input id="counterBorderTopStroke" class="border-stroke-input"
+                                data-type="counterBorderStroke" type="text" name="counterBorderTopStroke"
+                                placeholder="--">
+                            <img class="border-icon"
+                                src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_border.svg'); ?>">
+                            <input id="counterBorderBottomStroke" class="border-stroke-input"
+                                data-type="counterBorderStroke" type="text" name="counterBorderBottomStroke"
+                                placeholder="--">
                         </div>
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
-                            <input id="counterBorderLeftStroke" class="border-stroke-input" data-type="counterBorderStroke" type="text" name="counterBorderLeftStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
-                            <input id="counterBorderRightStroke" class="border-stroke-input" data-type="counterBorderStroke" type="text" name="counterBorderRightStroke" placeholder="--">
+                            <img class="border-icon"
+                                src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/left_border.svg'); ?>">
+                            <input id="counterBorderLeftStroke" class="border-stroke-input"
+                                data-type="counterBorderStroke" type="text" name="counterBorderLeftStroke"
+                                placeholder="--">
+                            <img class="border-icon"
+                                src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/right_border.svg'); ?>">
+                            <input id="counterBorderRightStroke" class="border-stroke-input"
+                                data-type="counterBorderStroke" type="text" name="counterBorderRightStroke"
+                                placeholder="--">
                         </div>
                     </div>
                 </div>
@@ -168,16 +194,28 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
-                            <input id="counterBorderTopLeftRadius" class="border-radius-input" data-type="counterBorderRadius" type="text" name="counterBorderTopLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
-                            <input id="counterBorderTopRightRadius" class="border-radius-input" data-type="counterBorderRadius" type="text" name="counterBorderTopRightRadius" placeholder="--">
+                            <img class="border-icon"
+                                src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_left_border.svg'); ?>">
+                            <input id="counterBorderTopLeftRadius" class="border-radius-input"
+                                data-type="counterBorderRadius" type="text" name="counterBorderTopLeftRadius"
+                                placeholder="--">
+                            <img class="border-icon"
+                                src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_right_border.svg'); ?>">
+                            <input id="counterBorderTopRightRadius" class="border-radius-input"
+                                data-type="counterBorderRadius" type="text" name="counterBorderTopRightRadius"
+                                placeholder="--">
                         </div>
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
-                            <input id="counterBorderBottomLeftRadius" class="border-radius-input" data-type="counterBorderRadius" type="text" name="counterBorderBottomLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
-                            <input id="counterBorderBottomRightRadius" class="border-radius-input" data-type="counterBorderRadius" type="text" name="counterBorderBottomRightRadius" placeholder="--">
+                            <img class="border-icon"
+                                src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_left_border.svg'); ?>">
+                            <input id="counterBorderBottomLeftRadius" class="border-radius-input"
+                                data-type="counterBorderRadius" type="text" name="counterBorderBottomLeftRadius"
+                                placeholder="--">
+                            <img class="border-icon"
+                                src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_right_border.svg'); ?>">
+                            <input id="counterBorderBottomRightRadius" class="border-radius-input"
+                                data-type="counterBorderRadius" type="text" name="counterBorderBottomRightRadius"
+                                placeholder="--">
                         </div>
                     </div>
                 </div>
@@ -187,10 +225,12 @@
                     <div id="counterDelete" class="dropdown-display delete-display" data-type="counterDelete">
                         <span>Delete</span>
                     </div>
-                    <div id="counterConfirmDelete" class="dropdown-display confirm-delete" style="display: none;" data-type="counterDelete">
+                    <div id="counterConfirmDelete" class="dropdown-display confirm-delete" style="display: none;"
+                        data-type="counterDelete">
                         <span>Confirm Delete</span>
                     </div>
-                    <p id="counterCancelDelete" class="cancel-delete" style="display: none;" data-type="counterDelete">Cancel</p>
+                    <p id="counterCancelDelete" class="cancel-delete" style="display: none;" data-type="counterDelete">
+                        Cancel</p>
                 </div>
             </div>
         </div>

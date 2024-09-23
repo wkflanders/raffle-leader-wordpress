@@ -269,15 +269,19 @@ $entryTypeMapping = [
 
         switch ($action) {
             case 'delete':
+                /* translators: %s: number of raffles */
                 $message = sprintf(_n('%s raffle moved to trash.', '%s raffles moved to trash.', $count, 'raffleleader'), number_format_i18n($count));
                 break;
             case 'duplicate':
+                /* translators: %s: number of raffles */
                 $message = sprintf(_n('%s raffle duplicated.', '%s raffles duplicated.', $count, 'raffleleader'), number_format_i18n($count));
                 break;
             case 'restore':
+                /* translators: %s: number of raffles */
                 $message = sprintf(_n('%s raffle restored.', '%s raffles restored.', $count, 'raffleleader'), number_format_i18n($count));
                 break;
             case 'delete_permanent':
+                /* translators: %s: number of raffles */
                 $message = sprintf(_n('%s raffle permanently deleted.', '%s raffles permanently deleted.', $count, 'raffleleader'), number_format_i18n($count));
                 break;
         }

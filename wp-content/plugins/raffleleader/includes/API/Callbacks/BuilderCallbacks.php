@@ -27,12 +27,14 @@ class BuilderCallbacks extends BaseController{
 
         $this->raffleInstance = $this->raffleAPI->updateRaffle( $raffleID, $args );
 
-        if( $raffleID > 0 ){
-
-            $redirectUrl = admin_url('admin.php?page=raffleleader_builder&raffle_id=' . $raffleID);
-
-            echo '<script>window.location.href="' . $redirectUrl . '";</script>';
+        if ($raffleID > 0) {
+            $redirectUrl = admin_url('admin.php?page=raffleleader_builder&raffle_id=' . intval($raffleID));
             
+            ?>
+            <script>
+            window.location.href = <?php echo json_encode(esc_url_raw($redirectUrl)); ?>;
+            </script>
+            <?php
         } else {
             echo 'Error creating new raffle';
         }

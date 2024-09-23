@@ -16,11 +16,11 @@
                 <p>Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="textBoldBtn" class="inline-btn bold-btn" data-type="textfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="textItalicizeBtn" class="inline-btn italicize-btn" data-type="textfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="textUnderlineBtn" class="inline-btn underline-btn" data-type="textfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="textStrikeBtn" class="inline-btn strike-btn" data-type="textfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="textOverlineBtn" class="inline-btn overline-btn" data-type="textfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="textBoldBtn" class="inline-btn bold-btn" data-type="textfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="textItalicizeBtn" class="inline-btn italicize-btn" data-type="textfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="textUnderlineBtn" class="inline-btn underline-btn" data-type="textfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="textStrikeBtn" class="inline-btn strike-btn" data-type="textfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="textOverlineBtn" class="inline-btn overline-btn" data-type="textfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -102,9 +102,9 @@
                 <p>Horizontal Text Alignment</p>
                 <div class="customize-settings-dropdown text">
                     <div class="dropdown-display dropdown-inline-btns text-horizontal-align">
-                        <img class="inline-btn align-left" data-type="textAlign" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left-text-align.png">
-                        <img class="inline-btn align-center" data-type="textAlign" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/center-text-align.png">
-                        <img class="inline-btn align-right" data-type="textAlign" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right-text-align.png">
+                        <img class="inline-btn align-left" data-type="textAlign" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/left-text-align.png'); ?>">
+                        <img class="inline-btn align-center" data-type="textAlign" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/center-text-align.png'); ?>">
+                        <img class="inline-btn align-right" data-type="textAlign" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/right-text-align.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -112,9 +112,9 @@
                 <p>Vertical Text Alignment</p>
                 <div class="customize-settings-dropdown text-vertical-align">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img class="inline-btn align-top" data-type="textVert" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top-vert.png">
-                        <img class="inline-btn align-middle" data-type="textVert" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/center-vert.png">
-                        <img class="inline-btn align-bottom" data-type="textVert" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom-vert.png">
+                        <img class="inline-btn align-top" data-type="textVert" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top-vert.png'); ?>">
+                        <img class="inline-btn align-middle" data-type="textVert" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/center-vert.png'); ?>">
+                        <img class="inline-btn align-bottom" data-type="textVert" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom-vert.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -122,8 +122,8 @@
                 <p>Text Orientation</p>
                 <div class="customize-settings-dropdown text-orientation">
                     <div class="dropdown-display dropdown-inline-btns dropdown-two-btns">
-                        <img class="inline-btn horizontal-orient" data-type="textOrient" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/horizontal-orient.png">
-                        <img class="inline-btn vertical-orient" data-type="textOrient" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/vertical-orient.png">
+                        <img class="inline-btn horizontal-orient" data-type="textOrient" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/horizontal-orient.png'); ?>">
+                        <img class="inline-btn vertical-orient" data-type="textOrient" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/vertical-orient.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -159,15 +159,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_border.svg'); ?>">
                             <input id="borderTopStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" name="textBorderTopStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_border.svg'); ?>">
                             <input id="borderBottomStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" name="textBorderBottomStroke" placeholder="--">
                         </div>
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/left_border.svg'); ?>">
                             <input id="borderLeftStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" name="textBorderLeftStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/right_border.svg'); ?>">
                             <input id="borderRightStroke" class="border-stroke-input" data-type="textBorderStroke" type="text" name="textBorderRightStroke" placeholder="--">
                         </div>
                     </div>
@@ -178,15 +178,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_left_border.svg'); ?>">
                             <input id="borderTopLeftRadius" class="border-radius-input" data-type="textBorderRadius" type="text" name="textBorderTopLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_right_border.svg'); ?>">
                             <input id="borderTopRightRadius" class="border-radius-input" data-type="textBorderRadius" type="text" name="textBorderTopRightRadius" placeholder="--">
                         </div>
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_left_border.svg'); ?>">
                             <input id="borderBottomLeftRadius" class="border-radius-input" data-type="textBorderRadius" type="text" name="textBorderBottomLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_right_border.svg'); ?>">
                             <input id="borderBottomRightRadius" class="border-radius-input" data-type="textBorderRadius" type="text" name="textBorderBottomRightRadius" placeholder="--">
                         </div>
                     </div>

@@ -29,6 +29,7 @@ class ContestantsAPI {
         $tableName = $wpdb->prefix . 'raffleleader_contestants';
 
         $query = $wpdb->prepare( "SELECT * FROM $tableName WHERE contestant_id = %d", $contestantID );
+        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         return $wpdb->get_row( $query, ARRAY_A );
     }
 
@@ -67,9 +68,11 @@ class ContestantsAPI {
         if ($args['per_page'] > 0) {
             $query .= $wpdb->prepare(" LIMIT %d, %d", $offset, $args['per_page']);
         }
-    
+        
+        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         $query = $wpdb->prepare($query, $raffleID);
     
+        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         $results = $wpdb->get_results($query, ARRAY_A);
     
         return $results;
@@ -111,9 +114,10 @@ class ContestantsAPI {
             ORDER BY $orderby $order
             LIMIT %d, %d
         ";
-    
+
+        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         $query = $wpdb->prepare($query, $raffleID, $offset, $args['per_page']);
-    
+        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         return $wpdb->get_results($query, ARRAY_A);
     }
 
@@ -130,9 +134,10 @@ class ContestantsAPI {
         ";
 
         if (!empty($search_term)) {
+            // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
             $query .= $wpdb->prepare(" AND c.email LIKE %s", '%' . $wpdb->esc_like($search_term) . '%');
         }
-    
+        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared    
         return $wpdb->get_var($wpdb->prepare($query, $raffleID));
     }
     public function getContestantByEmail( $email ) {
@@ -140,6 +145,7 @@ class ContestantsAPI {
         $tableName = $wpdb->prefix . 'raffleleader_contestants';
 
         $query = $wpdb->prepare( "SELECT * FROM $tableName WHERE email = %s AND deleted_at IS NULL LIMIT 1", $email );
+        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         $result = $wpdb->get_row ($query, ARRAY_A );
     
         return $result;

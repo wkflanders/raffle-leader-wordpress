@@ -52,6 +52,7 @@ class RaffleAPI {
         $tableName = $wpdb->prefix . 'raffleleader_raffles';
 
         $query = $wpdb->prepare( "SELECT * FROM $tableName WHERE raffle_id = %d", $raffleID );
+        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         return $wpdb->get_row( $query, ARRAY_A );
     }
 
@@ -97,7 +98,7 @@ class RaffleAPI {
             $offset = ( $args['page_number'] - 1 ) * $args['per_page'];
             $query .= $wpdb->prepare( " LIMIT %d, %d", $offset, $args['per_page'] );
         }
-
+        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         $results = $wpdb->get_results( $query, ARRAY_A );
         
         return $results;

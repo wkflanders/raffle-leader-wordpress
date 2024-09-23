@@ -90,15 +90,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_border.svg'); ?>">
                             <input id="entryFormBorderTopStroke" class="border-stroke-input" data-type="entryFormBorderStroke" type="text" name="entryFormBorderTopStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_border.svg'); ?>">
                             <input id="entryFormBorderBottomStroke" class="border-stroke-input" data-type="entryFormBorderStroke" type="text" name="entryFormBorderBottomStroke" placeholder="--">
                         </div>
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/left_border.svg'); ?>">
                             <input id="entryFormBorderLeftStroke" class="border-stroke-input" data-type="entryFormBorderStroke" type="text" name="entryFormBorderLeftStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/right_border.svg'); ?>">
                             <input id="entryFormBorderRightStroke" class="border-stroke-input" data-type="entryFormBorderStroke" type="text" name="entryFormBorderRightStroke" placeholder="--">
                         </div>
                     </div>
@@ -109,15 +109,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_left_border.svg'); ?>">
                             <input id="entryFormBorderTopLeftRadius" class="border-radius-input" data-type="entryFormBorderRadius" type="text" name="entryFormBorderTopLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_right_border.svg'); ?>">
                             <input id="entryFormBorderTopRightRadius" class="border-radius-input" data-type="entryFormBorderRadius" type="text" name="entryFormBorderTopRightRadius" placeholder="--">
                         </div>
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_left_border.svg'); ?>">
                             <input id="entryFormBorderBottomLeftRadius" class="border-radius-input" data-type="entryFormBorderRadius" type="text" name="entryFormBorderBottomLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_right_border.svg'); ?>">
                             <input id="entryFormBorderBottomRightRadius" class="border-radius-input" data-type="entryFormBorderRadius" type="text" name="entryFormBorderBottomRightRadius" placeholder="--">
                         </div>
                     </div>
@@ -158,15 +158,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_border.svg'); ?>">
                             <input id="entryButtonBorderTopStroke" class="border-stroke-input" data-type="entryButtonBorderStroke" type="text" name="entryButtonBorderTopStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_border.svg'); ?>">
                             <input id="entryButtonBorderBottomStroke" class="border-stroke-input" data-type="entryButtonBorderStroke" type="text" name="entryButtonBorderBottomStroke" placeholder="--">
                         </div>
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/left_border.svg'); ?>">
                             <input id="entryButtonBorderLeftStroke" class="border-stroke-input" data-type="entryButtonBorderStroke" type="text" name="entryButtonBorderLeftStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/right_border.svg'); ?>">
                             <input id="entryButtonBorderRightStroke" class="border-stroke-input" data-type="entryButtonBorderStroke" type="text" name="entryButtonBorderRightStroke" placeholder="--">
                         </div>
                     </div>
@@ -177,15 +177,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_left_border.svg'); ?>">
                             <input id="entryButtonBorderTopLeftRadius" class="border-radius-input" data-type="entryButtonBorderRadius" type="text" name="entryButtonBorderTopLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_right_border.svg'); ?>">
                             <input id="entryButtonBorderTopRightRadius" class="border-radius-input" data-type="entryButtonBorderRadius" type="text" name="entryButtonBorderTopRightRadius" placeholder="--">
                         </div>
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_left_border.svg'); ?>">
                             <input id="entryButtonBorderBottomLeftRadius" class="border-radius-input" data-type="entryButtonBorderRadius" type="text" name="entryButtonBorderBottomLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_right_border.svg'); ?>">
                             <input id="entryButtonBorderBottomRightRadius" class="border-radius-input" data-type="entryButtonBorderRadius" type="text" name="entryButtonBorderBottomRightRadius" placeholder="--">
                         </div>
                     </div>
@@ -216,15 +216,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_border.svg'); ?>">
                             <input id="entryBorderTopStroke" class="border-stroke-input" data-type="entryBorderStroke" type="text" name="entryBorderTopStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_border.svg'); ?>">
                             <input id="entryBorderBottomStroke" class="border-stroke-input" data-type="entryBorderStroke" type="text" name="entryBorderBottomStroke" placeholder="--">
                         </div>
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/left_border.svg'); ?>">
                             <input id="entryBorderLeftStroke" class="border-stroke-input" data-type="entryBorderStroke" type="text" name="entryBorderLeftStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/right_border.svg'); ?>">
                             <input id="entryBorderRightStroke" class="border-stroke-input" data-type="entryBorderStroke" type="text" name="entryBorderRightStroke" placeholder="--">
                         </div>
                     </div>
@@ -235,15 +235,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_left_border.svg'); ?>">
                             <input id="entryBorderTopLeftRadius" class="border-radius-input" data-type="entryBorderRadius" type="text" name="entryBorderTopLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_right_border.svg'); ?>">
                             <input id="entryBorderTopRightRadius" class="border-radius-input" data-type="entryBorderRadius" type="text" name="entryBorderTopRightRadius" placeholder="--">
                         </div>
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_left_border.svg'); ?>">
                             <input id="entryBorderBottomLeftRadius" class="border-radius-input" data-type="entryBorderRadius" type="text" name="entryBorderBottomLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_right_border.svg'); ?>">
                             <input id="entryBorderBottomRightRadius" class="border-radius-input" data-type="entryBorderRadius" type="text" name="entryBorderBottomRightRadius" placeholder="--">
                         </div>
                     </div>
@@ -304,11 +304,11 @@
                 <p>Header Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="XFollowHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="XFollowHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="XFollowHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="XFollowHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="XFollowHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="XFollowHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="XFollowHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="XFollowHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="XFollowHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="XFollowHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -324,11 +324,11 @@
                 <p>Subheader Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="XFollowSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="XFollowSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="XFollowSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="XFollowSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="XFollowSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="XFollowSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="XFollowSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="XFollowSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="XFollowSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="XFollowSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -499,15 +499,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_border.svg'); ?>">
                             <input id="XFollowBorderTopStroke" class="border-stroke-input" data-type="XFollowBorderStroke" type="text" name="XFollowBorderTopStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_border.svg'); ?>">
                             <input id="XFollowBorderBottomStroke" class="border-stroke-input" data-type="XFollowBorderStroke" type="text" name="XFollowBorderBottomStroke" placeholder="--">
                         </div>
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/left_border.svg'); ?>">
                             <input id="XFollowBorderLeftStroke" class="border-stroke-input" data-type="XFollowBorderStroke" type="text" name="XFollowBorderLeftStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/right_border.svg'); ?>">
                             <input id="XFollowBorderRightStroke" class="border-stroke-input" data-type="XFollowBorderStroke" type="text" name="XFollowBorderRightStroke" placeholder="--">
                         </div>
                     </div>
@@ -518,15 +518,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_left_border.svg'); ?>">
                             <input id="XFollowBorderTopLeftRadius" class="border-radius-input" data-type="XFollowBorderRadius" type="text" name="XFollowBorderTopLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_right_border.svg'); ?>">
                             <input id="XFollowBorderTopRightRadius" class="border-radius-input" data-type="XFollowBorderRadius" type="text" name="XFollowBorderTopRightRadius" placeholder="--">
                         </div>
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_left_border.svg'); ?>">
                             <input id="XFollowBorderBottomLeftRadius" class="border-radius-input" data-type="XFollowBorderRadius" type="text" name="XFollowBorderBottomLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_right_border.svg'); ?>">
                             <input id="XFollowBorderBottomRightRadius" class="border-radius-input" data-type="XFollowBorderRadius" type="text" name="XFollowBorderBottomRightRadius" placeholder="--">
                         </div>
                     </div>
@@ -579,11 +579,11 @@
                 <p>Header Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="XRepostHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="XRepostHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="XRepostHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="XRepostHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="XRepostHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="XRepostHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="XRepostHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="XRepostHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="XRepostHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="XRepostHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -599,11 +599,11 @@
                 <p>Subheader Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="XRepostSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="XRepostSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="XRepostSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="XRepostSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="XRepostSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="XRepostSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="XRepostSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="XRepostSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="XRepostSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="XRepostSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -775,15 +775,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_border.svg'); ?>">
                             <input id="XRepostBorderTopStroke" class="border-stroke-input" data-type="XRepostBorderStroke" type="text" name="XRepostBorderTopStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_border.svg'); ?>">
                             <input id="XRepostBorderBottomStroke" class="border-stroke-input" data-type="XRepostBorderStroke" type="text" name="XRepostBorderBottomStroke" placeholder="--">
                         </div>
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/left_border.svg'); ?>">
                             <input id="XRepostBorderLeftStroke" class="border-stroke-input" data-type="XRepostBorderStroke" type="text" name="XRepostBorderLeftStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/right_border.svg'); ?>">
                             <input id="XRepostBorderRightStroke" class="border-stroke-input" data-type="XRepostBorderStroke" type="text" name="XRepostBorderRightStroke" placeholder="--">
                         </div>
                     </div>
@@ -794,15 +794,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_left_border.svg'); ?>">
                             <input id="XRepostBorderTopLeftRadius" class="border-radius-input" data-type="XRepostBorderRadius" type="text" name="XRepostBorderTopLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_right_border.svg'); ?>">
                             <input id="XRepostBorderTopRightRadius" class="border-radius-input" data-type="XRepostBorderRadius" type="text" name="XRepostBorderTopRightRadius" placeholder="--">
                         </div>
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_left_border.svg'); ?>">
                             <input id="XRepostBorderBottomLeftRadius" class="border-radius-input" data-type="XRepostBorderRadius" type="text" name="XRepostBorderBottomLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_right_border.svg'); ?>">
                             <input id="XRepostBorderBottomRightRadius" class="border-radius-input" data-type="XRepostBorderRadius" type="text" name="XRepostBorderBottomRightRadius" placeholder="--">
                         </div>
                     </div>
@@ -855,11 +855,11 @@
                 <p>Header Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="XLikeHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="XLikeHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="XLikeHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="XLikeHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="XLikeHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="XLikeHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="XLikeHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="XLikeHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="XLikeHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="XLikeHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -875,11 +875,11 @@
                 <p>Subheader Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="XLikeSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="XLikeSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="XLikeSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="XLikeSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="XLikeSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="XLikeSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="XLikeSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="XLikeSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="XLikeSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="XLikeSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -1051,15 +1051,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_border.svg'); ?>">
                             <input id="XLikeBorderTopStroke" class="border-stroke-input" data-type="XLikeBorderStroke" type="text" name="XLikeBorderTopStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_border.svg'); ?>">
                             <input id="XLikeBorderBottomStroke" class="border-stroke-input" data-type="XLikeBorderStroke" type="text" name="XLikeBorderBottomStroke" placeholder="--">
                         </div>
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/left_border.svg'); ?>">
                             <input id="XLikeBorderLeftStroke" class="border-stroke-input" data-type="XLikeBorderStroke" type="text" name="XLikeBorderLeftStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/right_border.svg'); ?>">
                             <input id="XLikeBorderRightStroke" class="border-stroke-input" data-type="XLikeBorderStroke" type="text" name="XLikeBorderRightStroke" placeholder="--">
                         </div>
                     </div>
@@ -1070,15 +1070,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_left_border.svg'); ?>">
                             <input id="XLikeBorderTopLeftRadius" class="border-radius-input" data-type="XLikeBorderRadius" type="text" name="XLikeBorderTopLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_right_border.svg'); ?>">
                             <input id="XLikeBorderTopRightRadius" class="border-radius-input" data-type="XLikeBorderRadius" type="text" name="XLikeBorderTopRightRadius" placeholder="--">
                         </div>
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_left_border.svg'); ?>">
                             <input id="XLikeBorderBottomLeftRadius" class="border-radius-input" data-type="XLikeBorderRadius" type="text" name="XLikeBorderBottomLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_right_border.svg'); ?>">
                             <input id="XLikeBorderBottomRightRadius" class="border-radius-input" data-type="XLikeBorderRadius" type="text" name="XLikeBorderBottomRightRadius" placeholder="--">
                         </div>
                     </div>
@@ -1131,11 +1131,11 @@
                 <p>Header Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="instaFollowHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="instaFollowHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="instaFollowHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="instaFollowHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="instaFollowHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="instaFollowHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="instaFollowHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="instaFollowHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="instaFollowHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="instaFollowHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -1151,11 +1151,11 @@
                 <p>Subheader Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="instaFollowSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="instaFollowSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="instaFollowSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="instaFollowSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="instaFollowSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="instaFollowSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="instaFollowSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="instaFollowSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="instaFollowSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="instaFollowSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -1327,15 +1327,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_border.svg'); ?>">
                             <input id="instaFollowBorderTopStroke" class="border-stroke-input" data-type="instaFollowBorderStroke" type="text" name="instaFollowBorderTopStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_border.svg'); ?>">
                             <input id="instaFollowBorderBottomStroke" class="border-stroke-input" data-type="instaFollowBorderStroke" type="text" name="instaFollowBorderBottomStroke" placeholder="--">
                         </div>
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/left_border.svg'); ?>">
                             <input id="instaFollowBorderLeftStroke" class="border-stroke-input" data-type="instaFollowBorderStroke" type="text" name="instaFollowBorderLeftStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/right_border.svg'); ?>">
                             <input id="instaFollowBorderRightStroke" class="border-stroke-input" data-type="instaFollowBorderStroke" type="text" name="instaFollowBorderRightStroke" placeholder="--">
                         </div>
                     </div>
@@ -1346,15 +1346,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_left_border.svg'); ?>">
                             <input id="instaFollowBorderTopLeftRadius" class="border-radius-input" data-type="instaFollowBorderRadius" type="text" name="instaFollowBorderTopLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_right_border.svg'); ?>">
                             <input id="instaFollowBorderTopRightRadius" class="border-radius-input" data-type="instaFollowBorderRadius" type="text" name="instaFollowBorderTopRightRadius" placeholder="--">
                         </div>
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_left_border.svg'); ?>">
                             <input id="instaFollowBorderBottomLeftRadius" class="border-radius-input" data-type="instaFollowBorderRadius" type="text" name="instaFollowBorderBottomLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_right_border.svg'); ?>">
                             <input id="instaFollowBorderBottomRightRadius" class="border-radius-input" data-type="instaFollowBorderRadius" type="text" name="instaFollowBorderBottomRightRadius" placeholder="--">
                         </div>
                     </div>
@@ -1407,11 +1407,11 @@
                 <p>Header Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="instaCommentHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="instaCommentHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="instaCommentHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="instaCommentHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="instaCommentHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="instaCommentHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="instaCommentHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="instaCommentHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="instaCommentHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="instaCommentHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -1427,11 +1427,11 @@
                 <p>Subheader Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="instaCommentSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="instaCommentSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="instaCommentSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="instaCommentSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="instaCommentSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="instaCommentSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="instaCommentSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="instaCommentSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="instaCommentSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="instaCommentSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -1603,15 +1603,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_border.svg'); ?>">
                             <input id="instaCommentBorderTopStroke" class="border-stroke-input" data-type="instaCommentBorderStroke" type="text" name="instaCommentBorderTopStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_border.svg'); ?>">
                             <input id="instaCommentBorderBottomStroke" class="border-stroke-input" data-type="instaCommentBorderStroke" type="text" name="instaCommentBorderBottomStroke" placeholder="--">
                         </div>
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/left_border.svg'); ?>">
                             <input id="instaCommentBorderLeftStroke" class="border-stroke-input" data-type="instaCommentBorderStroke" type="text" name="instaCommentBorderLeftStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/right_border.svg'); ?>">
                             <input id="instaCommentBorderRightStroke" class="border-stroke-input" data-type="instaCommentBorderStroke" type="text" name="instaCommentBorderRightStroke" placeholder="--">
                         </div>
                     </div>
@@ -1622,15 +1622,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_left_border.svg'); ?>">
                             <input id="instaCommentBorderTopLeftRadius" class="border-radius-input" data-type="instaCommentBorderRadius" type="text" name="instaCommentBorderTopLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_right_border.svg'); ?>">
                             <input id="instaCommentBorderTopRightRadius" class="border-radius-input" data-type="instaCommentBorderRadius" type="text" name="instaCommentBorderTopRightRadius" placeholder="--">
                         </div>
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_left_border.svg'); ?>">
                             <input id="instaCommentBorderBottomLeftRadius" class="border-radius-input" data-type="instaCommentBorderRadius" type="text" name="instaCommentBorderBottomLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_right_border.svg'); ?>">
                             <input id="instaCommentBorderBottomRightRadius" class="border-radius-input" data-type="instaCommentBorderRadius" type="text" name="instaCommentBorderBottomRightRadius" placeholder="--">
                         </div>
                     </div>
@@ -1683,11 +1683,11 @@
                 <p>Header Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="instaLikeHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="instaLikeHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="instaLikeHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="instaLikeHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="instaLikeHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="instaLikeHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="instaLikeHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="instaLikeHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="instaLikeHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="instaLikeHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -1703,11 +1703,11 @@
                 <p>Subheader Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="instaLikeSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="instaLikeSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="instaLikeSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="instaLikeSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="instaLikeSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="instaLikeSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="instaLikeSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="instaLikeSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="instaLikeSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="instaLikeSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -1879,15 +1879,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_border.svg'); ?>">
                             <input id="instaLikeBorderTopStroke" class="border-stroke-input" data-type="instaLikeBorderStroke" type="text" name="instaLikeBorderTopStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_border.svg'); ?>">
                             <input id="instaLikeBorderBottomStroke" class="border-stroke-input" data-type="instaLikeBorderStroke" type="text" name="instaLikeBorderBottomStroke" placeholder="--">
                         </div>
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/left_border.svg'); ?>">
                             <input id="instaLikeBorderLeftStroke" class="border-stroke-input" data-type="instaLikeBorderStroke" type="text" name="instaLikeBorderLeftStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/right_border.svg'); ?>">
                             <input id="instaLikeBorderRightStroke" class="border-stroke-input" data-type="instaLikeBorderStroke" type="text" name="instaLikeBorderRightStroke" placeholder="--">
                         </div>
                     </div>
@@ -1898,15 +1898,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_left_border.svg'); ?>">
                             <input id="instaLikeBorderTopLeftRadius" class="border-radius-input" data-type="instaLikeBorderRadius" type="text" name="instaLikeBorderTopLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_right_border.svg'); ?>">
                             <input id="instaLikeBorderTopRightRadius" class="border-radius-input" data-type="instaLikeBorderRadius" type="text" name="instaLikeBorderTopRightRadius" placeholder="--">
                         </div>
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_left_border.svg'); ?>">
                             <input id="instaLikeBorderBottomLeftRadius" class="border-radius-input" data-type="instaLikeBorderRadius" type="text" name="instaLikeBorderBottomLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_right_border.svg'); ?>">
                             <input id="instaLikeBorderBottomRightRadius" class="border-radius-input" data-type="instaLikeBorderRadius" type="text" name="instaLikeBorderBottomRightRadius" placeholder="--">
                         </div>
                     </div>
@@ -1959,11 +1959,11 @@
                 <p>Header Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="facebookFollowHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="facebookFollowHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="facebookFollowHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="facebookFollowHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="facebookFollowHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="facebookFollowHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="facebookFollowHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="facebookFollowHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="facebookFollowHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="facebookFollowHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -1979,11 +1979,11 @@
                 <p>Subheader Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="facebookFollowSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="facebookFollowSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="facebookFollowSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="facebookFollowSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="facebookFollowSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="facebookFollowSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="facebookFollowSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="facebookFollowSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="facebookFollowSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="facebookFollowSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -2155,15 +2155,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_border.svg'); ?>">
                             <input id="facebookFollowBorderTopStroke" class="border-stroke-input" data-type="facebookFollowBorderStroke" type="text" name="facebookFollowBorderTopStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_border.svg'); ?>">
                             <input id="facebookFollowBorderBottomStroke" class="border-stroke-input" data-type="facebookFollowBorderStroke" type="text" name="facebookFollowBorderBottomStroke" placeholder="--">
                         </div>
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/left_border.svg'); ?>">
                             <input id="facebookFollowBorderLeftStroke" class="border-stroke-input" data-type="facebookFollowBorderStroke" type="text" name="facebookFollowBorderLeftStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/right_border.svg'); ?>">
                             <input id="facebookFollowBorderRightStroke" class="border-stroke-input" data-type="facebookFollowBorderStroke" type="text" name="facebookFollowBorderRightStroke" placeholder="--">
                         </div>
                     </div>
@@ -2174,15 +2174,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_left_border.svg'); ?>">
                             <input id="facebookFollowBorderTopLeftRadius" class="border-radius-input" data-type="facebookFollowBorderRadius" type="text" name="facebookFollowBorderTopLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_right_border.svg'); ?>">
                             <input id="facebookFollowBorderTopRightRadius" class="border-radius-input" data-type="facebookFollowBorderRadius" type="text" name="facebookFollowBorderTopRightRadius" placeholder="--">
                         </div>
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_left_border.svg'); ?>">
                             <input id="facebookFollowBorderBottomLeftRadius" class="border-radius-input" data-type="facebookFollowBorderRadius" type="text" name="facebookFollowBorderBottomLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_right_border.svg'); ?>">
                             <input id="facebookFollowBorderBottomRightRadius" class="border-radius-input" data-type="facebookFollowBorderRadius" type="text" name="facebookFollowBorderBottomRightRadius" placeholder="--">
                         </div>
                     </div>
@@ -2235,11 +2235,11 @@
                 <p>Header Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="facebookCommenteaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="facebookCommenteaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="facebookCommenteaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="facebookCommenteaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="facebookCommenteaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="facebookCommenteaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="facebookCommenteaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="facebookCommenteaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="facebookCommenteaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="facebookCommenteaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -2255,11 +2255,11 @@
                 <p>Subheader Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="facebookCommentSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="facebookCommentSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="facebookCommentSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="facebookCommentSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="facebookCommentSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="facebookCommentSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="facebookCommentSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="facebookCommentSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="facebookCommentSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="facebookCommentSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -2431,15 +2431,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_border.svg'); ?>">
                             <input id="facebookCommentBorderTopStroke" class="border-stroke-input" data-type="facebookCommentBorderStroke" type="text" name="facebookCommentBorderTopStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_border.svg'); ?>">
                             <input id="facebookCommentBorderBottomStroke" class="border-stroke-input" data-type="facebookCommentBorderStroke" type="text" name="facebookCommentBorderBottomStroke" placeholder="--">
                         </div>
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/left_border.svg'); ?>">
                             <input id="facebookCommentBorderLeftStroke" class="border-stroke-input" data-type="facebookCommentBorderStroke" type="text" name="facebookCommentBorderLeftStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/right_border.svg'); ?>">
                             <input id="facebookCommentBorderRightStroke" class="border-stroke-input" data-type="facebookCommentBorderStroke" type="text" name="facebookCommentBorderRightStroke" placeholder="--">
                         </div>
                     </div>
@@ -2450,15 +2450,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_left_border.svg'); ?>">
                             <input id="facebookCommentBorderTopLeftRadius" class="border-radius-input" data-type="facebookCommentBorderRadius" type="text" name="facebookCommentBorderTopLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_right_border.svg'); ?>">
                             <input id="facebookCommentBorderTopRightRadius" class="border-radius-input" data-type="facebookCommentBorderRadius" type="text" name="facebookCommentBorderTopRightRadius" placeholder="--">
                         </div>
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_left_border.svg'); ?>">
                             <input id="facebookCommentBorderBottomLeftRadius" class="border-radius-input" data-type="facebookCommentBorderRadius" type="text" name="facebookCommentBorderBottomLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_right_border.svg'); ?>">
                             <input id="facebookCommentBorderBottomRightRadius" class="border-radius-input" data-type="facebookCommentBorderRadius" type="text" name="facebookCommentBorderBottomRightRadius" placeholder="--">
                         </div>
                     </div>
@@ -2511,11 +2511,11 @@
                 <p>Header Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="facebookLikeHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="facebookLikeHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="facebookLikeHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="facebookLikeHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="facebookLikeHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="facebookLikeHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="facebookLikeHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="facebookLikeHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="facebookLikeHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="facebookLikeHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -2531,11 +2531,11 @@
                 <p>Subheader Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="facebookLikeSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="facebookLikeSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="facebookLikeSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="facebookLikeSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="facebookLikeSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="facebookLikeSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="facebookLikeSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="facebookLikeSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="facebookLikeSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="facebookLikeSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -2707,15 +2707,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_border.svg'); ?>">
                             <input id="facebookLikeBorderTopStroke" class="border-stroke-input" data-type="facebookLikeBorderStroke" type="text" name="facebookLikeBorderTopStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_border.svg'); ?>">
                             <input id="facebookLikeBorderBottomStroke" class="border-stroke-input" data-type="facebookLikeBorderStroke" type="text" name="facebookLikeBorderBottomStroke" placeholder="--">
                         </div>
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/left_border.svg'); ?>">
                             <input id="facebookLikeBorderLeftStroke" class="border-stroke-input" data-type="facebookLikeBorderStroke" type="text" name="facebookLikeBorderLeftStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/right_border.svg'); ?>">
                             <input id="facebookLikeBorderRightStroke" class="border-stroke-input" data-type="facebookLikeBorderStroke" type="text" name="facebookLikeBorderRightStroke" placeholder="--">
                         </div>
                     </div>
@@ -2726,15 +2726,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_left_border.svg'); ?>">
                             <input id="facebookLikeBorderTopLeftRadius" class="border-radius-input" data-type="facebookLikeBorderRadius" type="text" name="facebookLikeBorderTopLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_right_border.svg'); ?>">
                             <input id="facebookLikeBorderTopRightRadius" class="border-radius-input" data-type="facebookLikeBorderRadius" type="text" name="facebookLikeBorderTopRightRadius" placeholder="--">
                         </div>
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_left_border.svg'); ?>">
                             <input id="facebookLikeBorderBottomLeftRadius" class="border-radius-input" data-type="facebookLikeBorderRadius" type="text" name="facebookLikeBorderBottomLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_right_border.svg'); ?>">
                             <input id="facebookLikeBorderBottomRightRadius" class="border-radius-input" data-type="facebookLikeBorderRadius" type="text" name="facebookLikeBorderBottomRightRadius" placeholder="--">
                         </div>
                     </div>
@@ -2787,11 +2787,11 @@
                 <p>Header Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="tiktokFollowHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="tiktokFollowHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="tiktokFollowHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="tiktokFollowHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="tiktokFollowHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="tiktokFollowHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="tiktokFollowHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="tiktokFollowHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="tiktokFollowHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="tiktokFollowHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -2807,11 +2807,11 @@
                 <p>Subheader Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="tiktokFollowSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="tiktokFollowSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="tiktokFollowSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="tiktokFollowSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="tiktokFollowSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="tiktokFollowSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="tiktokFollowSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="tiktokFollowSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="tiktokFollowSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="tiktokFollowSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -2983,15 +2983,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_border.svg'); ?>">
                             <input id="tiktokFollowBorderTopStroke" class="border-stroke-input" data-type="tiktokFollowBorderStroke" type="text" name="tiktokFollowBorderTopStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_border.svg'); ?>">
                             <input id="tiktokFollowBorderBottomStroke" class="border-stroke-input" data-type="tiktokFollowBorderStroke" type="text" name="tiktokFollowBorderBottomStroke" placeholder="--">
                         </div>
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/left_border.svg'); ?>">
                             <input id="tiktokFollowBorderLeftStroke" class="border-stroke-input" data-type="tiktokFollowBorderStroke" type="text" name="tiktokFollowBorderLeftStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/right_border.svg'); ?>">
                             <input id="tiktokFollowBorderRightStroke" class="border-stroke-input" data-type="tiktokFollowBorderStroke" type="text" name="tiktokFollowBorderRightStroke" placeholder="--">
                         </div>
                     </div>
@@ -3002,15 +3002,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_left_border.svg'); ?>">
                             <input id="tiktokFollowBorderTopLeftRadius" class="border-radius-input" data-type="tiktokFollowBorderRadius" type="text" name="tiktokFollowBorderTopLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_right_border.svg'); ?>">
                             <input id="tiktokFollowBorderTopRightRadius" class="border-radius-input" data-type="tiktokFollowBorderRadius" type="text" name="tiktokFollowBorderTopRightRadius" placeholder="--">
                         </div>
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_left_border.svg'); ?>">
                             <input id="tiktokFollowBorderBottomLeftRadius" class="border-radius-input" data-type="tiktokFollowBorderRadius" type="text" name="tiktokFollowBorderBottomLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_right_border.svg'); ?>">
                             <input id="tiktokFollowBorderBottomRightRadius" class="border-radius-input" data-type="tiktokFollowBorderRadius" type="text" name="tiktokFollowBorderBottomRightRadius" placeholder="--">
                         </div>
                     </div>
@@ -3063,11 +3063,11 @@
                 <p>Header Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="tiktokCommentHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="tiktokCommentHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="tiktokCommentHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="tiktokCommentHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="tiktokCommentHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="tiktokCommentHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="tiktokCommentHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="tiktokCommentHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="tiktokCommentHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="tiktokCommentHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -3083,11 +3083,11 @@
                 <p>Subheader Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="tiktokCommentSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="tiktokCommentSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="tiktokCommentSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="tiktokCommentSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="tiktokCommentSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="tiktokCommentSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="tiktokCommentSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="tiktokCommentSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="tiktokCommentSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="tiktokCommentSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -3259,15 +3259,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_border.svg'); ?>">
                             <input id="tiktokCommentBorderTopStroke" class="border-stroke-input" data-type="tiktokCommentBorderStroke" type="text" name="tiktokCommentBorderTopStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_border.svg'); ?>">
                             <input id="tiktokCommentBorderBottomStroke" class="border-stroke-input" data-type="tiktokCommentBorderStroke" type="text" name="tiktokCommentBorderBottomStroke" placeholder="--">
                         </div>
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/left_border.svg'); ?>">
                             <input id="tiktokCommentBorderLeftStroke" class="border-stroke-input" data-type="tiktokCommentBorderStroke" type="text" name="tiktokCommentBorderLeftStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/right_border.svg'); ?>">
                             <input id="tiktokCommentBorderRightStroke" class="border-stroke-input" data-type="tiktokCommentBorderStroke" type="text" name="tiktokCommentBorderRightStroke" placeholder="--">
                         </div>
                     </div>
@@ -3278,15 +3278,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_left_border.svg'); ?>">
                             <input id="tiktokCommentBorderTopLeftRadius" class="border-radius-input" data-type="tiktokCommentBorderRadius" type="text" name="tiktokCommentBorderTopLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_right_border.svg'); ?>">
                             <input id="tiktokCommentBorderTopRightRadius" class="border-radius-input" data-type="tiktokCommentBorderRadius" type="text" name="tiktokCommentBorderTopRightRadius" placeholder="--">
                         </div>
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_left_border.svg'); ?>">
                             <input id="tiktokCommentBorderBottomLeftRadius" class="border-radius-input" data-type="tiktokCommentBorderRadius" type="text" name="tiktokCommentBorderBottomLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_right_border.svg'); ?>">
                             <input id="tiktokCommentBorderBottomRightRadius" class="border-radius-input" data-type="tiktokCommentBorderRadius" type="text" name="tiktokCommentBorderBottomRightRadius" placeholder="--">
                         </div>
                     </div>
@@ -3339,11 +3339,11 @@
                 <p>Header Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="tiktokLikeHeaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="tiktokLikeHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="tiktokLikeHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="tiktokLikeHeaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="tiktokLikeHeaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="tiktokLikeHeaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="tiktokLikeHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="tiktokLikeHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="tiktokLikeHeaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="tiktokLikeHeaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -3359,11 +3359,11 @@
                 <p>Subheader Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="tiktoktLikeSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="tiktoktLikeSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="tiktoktLikeSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="tiktoktLikeSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="tiktoktLikeSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="tiktoktLikeSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="tiktoktLikeSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="tiktoktLikeSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="tiktoktLikeSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="tiktoktLikeSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -3535,15 +3535,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_border.svg'); ?>">
                             <input id="tiktokLikeBorderTopStroke" class="border-stroke-input" data-type="tiktokLikeBorderStroke" type="text" name="tiktokLikeBorderTopStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_border.svg'); ?>">
                             <input id="tiktokLikeBorderBottomStroke" class="border-stroke-input" data-type="tiktokLikeBorderStroke" type="text" name="tiktokLikeBorderBottomStroke" placeholder="--">
                         </div>
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/left_border.svg'); ?>">
                             <input id="tiktokLikeBorderLeftStroke" class="border-stroke-input" data-type="tiktokLikeBorderStroke" type="text" name="tiktokLikeBorderLeftStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/right_border.svg'); ?>">
                             <input id="tiktokLikeBorderRightStroke" class="border-stroke-input" data-type="tiktokLikeBorderStroke" type="text" name="tiktokLikeBorderRightStroke" placeholder="--">
                         </div>
                     </div>
@@ -3554,15 +3554,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_left_border.svg'); ?>">
                             <input id="tiktokLikeBorderTopLeftRadius" class="border-radius-input" data-type="tiktokLikeBorderRadius" type="text" name="tiktokLikeBorderTopLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_right_border.svg'); ?>">
                             <input id="tiktokLikeBorderTopRightRadius" class="border-radius-input" data-type="tiktokLikeBorderRadius" type="text" name="tiktokLikeBorderTopRightRadius" placeholder="--">
                         </div>
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_left_border.svg'); ?>">
                             <input id="tiktokLikeBorderBottomLeftRadius" class="border-radius-input" data-type="tiktokLikeBorderRadius" type="text" name="tiktokLikeBorderBottomLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_right_border.svg'); ?>">
                             <input id="tiktokLikeBorderBottomRightRadius" class="border-radius-input" data-type="tiktokLikeBorderRadius" type="text" name="tiktokLikeBorderBottomRightRadius" placeholder="--">
                         </div>
                     </div>
@@ -3615,11 +3615,11 @@
                 <p>Header Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="referHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="referHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="referHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="referHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="referHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="referHeaderBoldBtn" class="inline-btn bold-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="referHeaderItalicizeBtn" class="inline-btn italicize-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="referHeaderUnderlineBtn" class="inline-btn underline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="referHeaderStrikeBtn" class="inline-btn strike-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="referHeaderOverlineBtn" class="inline-btn overline-btn" data-type="headerfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -3635,11 +3635,11 @@
                 <p>Subheader Font Style</p>
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-inline-btns">
-                        <img id="referSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bold.png">
-                        <img id="referSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/italicize.png">
-                        <img id="referSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/underline.png">
-                        <img id="referSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/strikethrough.png">
-                        <img id="referSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/overline.png">
+                        <img id="referSubheaderBoldBtn" class="inline-btn bold-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bold.png'); ?>">
+                        <img id="referSubheaderItalicizeBtn" class="inline-btn italicize-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/italicize.png'); ?>">
+                        <img id="referSubheaderUnderlineBtn" class="inline-btn underline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/underline.png'); ?>">
+                        <img id="referSubheaderStrikeBtn" class="inline-btn strike-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/strikethrough.png'); ?>">
+                        <img id="referSubheaderOverlineBtn" class="inline-btn overline-btn" data-type="subheaderfStyle" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/overline.png'); ?>">
                     </div>
                 </div>
             </div>
@@ -3811,15 +3811,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_border.svg'); ?>">
                             <input id="referBorderTopStroke" class="border-stroke-input" data-type="referBorderStroke" type="text" name="referBorderTopStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_border.svg'); ?>">
                             <input id="referBorderBottomStroke" class="border-stroke-input" data-type="referBorderStroke" type="text" name="referBorderBottomStroke" placeholder="--">
                         </div>
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/left_border.svg'); ?>">
                             <input id="referBorderLeftStroke" class="border-stroke-input" data-type="referBorderStroke" type="text" name="referBorderLeftStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/right_border.svg'); ?>">
                             <input id="referBorderRightStroke" class="border-stroke-input" data-type="referBorderStroke" type="text" name="referBorderRightStroke" placeholder="--">
                         </div>
                     </div>
@@ -3830,15 +3830,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_left_border.svg'); ?>">
                             <input id="referBorderTopLeftRadius" class="border-radius-input" data-type="referBorderRadius" type="text" name="referBorderTopLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_right_border.svg'); ?>">
                             <input id="referBorderTopRightRadius" class="border-radius-input" data-type="referBorderRadius" type="text" name="referBorderTopRightRadius" placeholder="--">
                         </div>
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_left_border.svg'); ?>">
                             <input id="referBorderBottomLeftRadius" class="border-radius-input" data-type="referBorderRadius" type="text" name="referBorderBottomLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_right_border.svg'); ?>">
                             <input id="referBorderBottomRightRadius" class="border-radius-input" data-type="referBorderRadius" type="text" name="referBorderBottomRightRadius" placeholder="--">
                         </div>
                     </div>

@@ -32,7 +32,7 @@ class BuilderCallbacks extends BaseController{
             
             ?>
             <script>
-            window.location.href = <?php echo json_encode(esc_url_raw($redirectUrl)); ?>;
+                window.location.href = <?php echo wp_json_encode(esc_url_raw($redirectUrl)); ?>;
             </script>
             <?php
         } else {
@@ -55,10 +55,10 @@ class BuilderCallbacks extends BaseController{
 
             $redirectUrl = admin_url('admin.php?page=raffleleader_builder&raffle_id=' . $raffleID);
 
-            echo json_encode(array('success' => true, 'redirect' => $redirectUrl));
+            echo wp_json_encode(array('success' => true, 'redirect' => $redirectUrl));
             
         } else {
-            echo json_encode(array('success' => false, 'message' => 'Error creating new raffle'));
+            echo wp_json_encode(array('success' => false, 'message' => 'Error creating new raffle'));
         }
 
         wp_die();

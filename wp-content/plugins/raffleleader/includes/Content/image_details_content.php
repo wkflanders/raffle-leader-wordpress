@@ -38,15 +38,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_border.svg'); ?>">
                             <input id="imageBorderTopStroke" class="border-stroke-input" data-type="imageBorderStroke" type="text" name="imageBorderTopStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_border.svg'); ?>">
                             <input id="imageBorderBottomStroke" class="border-stroke-input" data-type="imageBorderStroke" type="text" name="imageBorderBottomStroke" placeholder="--">
                         </div>
                         <div class="dropdown-row">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/left_border.svg'); ?>">
                             <input id="imageBorderLeftStroke" class="border-stroke-input" data-type="imageBorderStroke" type="text" name="imageBorderLeftStroke" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/right_border.svg'); ?>">
                             <input id="imageBorderRightStroke" class="border-stroke-input" data-type="imageBorderStroke" type="text" name="imageBorderRightStroke" placeholder="--">
                         </div>
                     </div>
@@ -57,15 +57,15 @@
                 <div class="customize-settings-dropdown">
                     <div class="dropdown-display dropdown-multi-input">
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_left_border.svg'); ?>">
                             <input id="imageBorderTopLeftRadius" class="border-radius-input" data-type="imageBorderRadius" type="text" name="imageBorderTopLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/top_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/top_right_border.svg'); ?>">
                             <input id="imageBorderTopRightRadius" class="border-radius-input" data-type="imageBorderRadius" type="text" name="imageBorderTopRightRadius" placeholder="--">
                         </div>
                         <div class="dropdown-row row-radius">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_left_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_left_border.svg'); ?>">
                             <input id="imageBorderBottomLeftRadius" class="border-radius-input" data-type="imageBorderRadius" type="text" name="imageBorderBottomLeftRadius" placeholder="--">
-                            <img class="border-icon" src="<?php echo plugin_dir_url(dirname(__FILE__, 2)) ?> ../../assets/images/bottom_right_border.svg">
+                            <img class="border-icon" src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . './assets/images/bottom_right_border.svg'); ?>">
                             <input id="imageBorderBottomRightRadius" class="border-radius-input" data-type="imageBorderRadius" type="text" name="imageBorderBottomRightRadius" placeholder="--">
                         </div>
                     </div>

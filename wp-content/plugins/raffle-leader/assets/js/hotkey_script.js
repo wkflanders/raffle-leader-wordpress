@@ -4,15 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedElement = dropzone.querySelector('.selected-raffleleader-section');
         const isInputActive = event.target.matches('input, textarea') || event.target.isContentEditable;
 
-        if ((event.ctrlKey || event.metaKey) && event.key === 'z') {
+        if ((event.ctrlKey || event.metaKey) && event.key === 'z' && !event.shiftKey) {
             event.preventDefault();
-            window.undoAction();
+            undoAction();
             return;
         }
-
-        if ((event.ctrlKey || event.metaKey) && event.key === 'y') {
+        
+        if ((event.ctrlKey || event.metaKey) && (event.key === 'y' || (event.shiftKey && event.key === 'Z'))) {
             event.preventDefault();
-            window.redoAction();
+            redoAction();
             return;
         }
 

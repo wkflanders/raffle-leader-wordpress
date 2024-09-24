@@ -41,12 +41,18 @@
 .raffleleader-preview-box p.raffleleader-section-p {
     color: gray;
     font-size: 1.3vh;
+    font-family: 'Overpass';
+    font-style: normal;
+    text-transform: none;
 }
 
 .raffleleader-preview-box h2.raffleleader-section-header {
     color: black;
     font-size: 2vh;
     font-weight: bold;
+    font-family: 'Overpass';
+    font-style: normal;
+    text-transform: none;
 }
 
 .raffleleader-dropzone{

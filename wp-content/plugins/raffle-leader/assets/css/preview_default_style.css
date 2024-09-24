@@ -177,7 +177,7 @@
 .raffleleader-footer{
     display: flex;
     flex-direction: row;
-    margin-top: 17px;
+    margin: 5px 0px;
     justify-content: center;
     align-items: center;
     width: 100%;

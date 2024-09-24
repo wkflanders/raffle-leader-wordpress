@@ -229,7 +229,7 @@
     /* border: 1px solid black; */
 }
 
-.raffleleader-text-section > h2 {
+.raffleleader-text-section > h2.raffleleader-text-section-header {
     color: black;
     font-size: 30px;
     padding: 1vh 1vh 1vh 1vh;
@@ -239,7 +239,7 @@
     line-height: 3vh;
 }
 
-.raffleleader-text-section > h2:hover{
+.raffleleader-text-section > h2.raffleleader-text-section-header:hover{
     cursor: default;
 }
 
@@ -255,7 +255,7 @@
     /* border: 1px solid black; */
 }
 
-.raffleleader-counter-section > h2{
+.raffleleader-counter-section > h2.raffleleader-counter-section-header{
     margin: 0;
     font-size: 60px;
     letter-spacing: 1px;
@@ -263,14 +263,14 @@
     position: absolute;
 }
 
-.raffleleader-counter-section > p{
+.raffleleader-counter-section > p.raffleleader-counter-section-p{
     font-size: 1.5vh;
     color: black;
     position: absolute;
 }
 
-.raffleleader-counter-section > h2:hover,
-.raffleleader-counter-section > p:hover{
+.raffleleader-counter-section > h2.raffleleader-counter-section-header:hover,
+.raffleleader-counter-section > p.raffleleader-counter-section-p:hover{
     cursor: default;
 }
 
@@ -285,13 +285,13 @@
     background-color: rgb(255, 255, 255);
 }
 
-.raffleleader-image-section > p{
+.raffleleader-image-section > p.raffleleader-image-section-p{
     font-size: 2.5vh;
     color: darkgray;
     font-weight: bold;
 }
 
-.raffleleader-image-section > p:hover{
+.raffleleader-image-section > p.raffleleader-image-section-p:hover{
     cursor: default;
 }
 
@@ -402,7 +402,7 @@
     left: 8%;
 }
 
-.raffleleader-additional-entry-text-column > h2{
+.raffleleader-additional-entry-text-column > h2.raffleleader-additional-entry-text-column-header{
     transition: width 0.7s ease-in-out, height 0.8s ease-in-out;
     font-size: 20px;
     padding: 0;
@@ -410,7 +410,7 @@
     line-height: 2vh;
 }
 
-.raffleleader-additional-entry-text-column > p{
+.raffleleader-additional-entry-text-column > p.raffleleader-additional-entry-text-column-p{
     transition: width 0.7s ease-in-out, height 0.8s ease-in-out;
     font-size: 12px;
     padding: 0;

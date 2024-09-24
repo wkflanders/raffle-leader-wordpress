@@ -109,7 +109,7 @@ function layoutDrag(){
         switch(ID){
             case 'textBox':
                 return `<div style="height: 100%; width: 100%;" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 class="raffleleader-text-section-header" style="white-space: pre-wrap; text-align: center;">Text</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: center;">Text</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -141,8 +141,8 @@ function layoutDrag(){
 
             case 'counterBox':
                 return `<div style="height: 100%; width: 100%;" data-type="counterDetails" class="raffleleader-counter-section">
-                            <h2 class="raffleleader-counter-section-header">00</h2>
-                            <p class="raffleleader-counter-section-p"style="margin-top: 60px"></p>
+                            <h2 class="raffleleader-section-header">00</h2>
+                            <p class="raffleleader-section-p" style="margin-top: 60px"></p>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -155,7 +155,7 @@ function layoutDrag(){
 
             case 'imageBox':
                 return `<div data-type="imageDetails" class="raffleleader-image-section">
-                            <p class="raffleleader-image-section-p">Insert An Image Here</p>
+                            <p class="raffleleader-section-p">Insert An Image Here</p>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>

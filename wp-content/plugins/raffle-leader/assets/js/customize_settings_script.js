@@ -7509,8 +7509,8 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'XFollowEntry':
                 htmlToInject = `<div data-type="XFollowDetails" class="raffleleader-additional-entry-section">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2 class="raffleleader-additional-entry-text-column-header">Follow us on X/Twitter</h2>
-                                <p class="raffleleader-additional-entry-text-column-p">for an extra entry!</p>
+                                <h2 class="raffleleader-section-header">Follow us on X/Twitter</h2>
+                                <p class="raffleleader-section-p">for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
                                 <button data-link="https://twitter.com/">+1</button>
@@ -7529,8 +7529,8 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'XRepostEntry':
                 htmlToInject = `<div data-type="XRepostDetails" class="raffleleader-additional-entry-section">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2 class="raffleleader-additional-entry-text-column-header">Repost us on X/Twitter</h2>
-                                <p class="raffleleader-additional-entry-text-column-p">for an extra entry!</p>
+                                <h2 class="raffleleader-section-header">Repost us on X/Twitter</h2>
+                                <p class="raffleleader-section-p">for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
                                 <button data-link="https://twitter.com/">+1</button>
@@ -7549,8 +7549,8 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'XLikeEntry':
                 htmlToInject = `<div data-type="XLikeDetails" class="raffleleader-additional-entry-section">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2 class="raffleleader-additional-entry-text-column-header">Like us on X/Twitter</h2>
-                                <p class="raffleleader-additional-entry-text-column-p">for an extra entry!</p>
+                                <h2 class="raffleleader-section-header">Like us on X/Twitter</h2>
+                                <p class="raffleleader-section-p">for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
                                 <button data-link="https://twitter.com/">+1</button>
@@ -7569,8 +7569,8 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'instaFollowEntry':
                 htmlToInject = `<div data-type="instaFollowDetails" class="raffleleader-additional-entry-section">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2 class="raffleleader-additional-entry-text-column-header">Follow us on Instagram</h2>
-                                <p class="raffleleader-additional-entry-text-column-p">for an extra entry!</p>
+                                <h2 class="raffleleader-section-header">Follow us on Instagram</h2>
+                                <p class="raffleleader-section-p">for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
                                 <button data-link="https://instagram.com/">+1</button>
@@ -7589,8 +7589,8 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'instaCommentEntry':
                 htmlToInject = `<div data-type="instaCommentDetails" class="raffleleader-additional-entry-section">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2 class="raffleleader-additional-entry-text-column-header">Leave a comment on Instagram</h2>
-                                <p class="raffleleader-additional-entry-text-column-p">for an extra entry!</p>
+                                <h2 class="raffleleader-section-header">Leave a comment on Instagram</h2>
+                                <p class="raffleleader-section-p">for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
                                 <button data-link="https://instagram.com/">+1</button>
@@ -7609,8 +7609,8 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'instaLikeEntry':
                 htmlToInject = `<div data-type="instaLikeDetails" class="raffleleader-additional-entry-section">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2 class="raffleleader-additional-entry-text-column-header">Like us on Instagram</h2>
-                                <p class="raffleleader-additional-entry-text-column-p">for an extra entry!</p>
+                                <h2 class="raffleleader-section-header">Like us on Instagram</h2>
+                                <p class="raffleleader-section-p">for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
                                 <button data-link="https://instagram.com/">+1</button>
@@ -7629,8 +7629,8 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'facebookFollowEntry':
                 htmlToInject = `<div data-type="facebookFollowDetails" class="raffleleader-additional-entry-section">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2 class="raffleleader-additional-entry-text-column-header">Follow us on Facebook</h2>
-                                <p class="raffleleader-additional-entry-text-column-p">for an extra entry!</p>
+                                <h2 class="raffleleader-section-header">Follow us on Facebook</h2>
+                                <p class="raffleleader-section-p">for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
                                 <button data-link="https://facebook.com/">+1</button>
@@ -7649,8 +7649,8 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'facebookCommentEntry':
                 htmlToInject = `<div data-type="facebookCommentDetails" class="raffleleader-additional-entry-section">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2 class="raffleleader-additional-entry-text-column-header">Leave a comment on Facebook</h2>
-                                <p class="raffleleader-additional-entry-text-column-p">for an extra entry!</p>
+                                <h2 class="raffleleader-section-header">Leave a comment on Facebook</h2>
+                                <p class="raffleleader-section-p">for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
                                 <button data-link="https://facebook.com/">+1</button>
@@ -7669,8 +7669,8 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'facebookLikeEntry':
                 htmlToInject = `<div data-type="facebookLikeDetails" class="raffleleader-additional-entry-section">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2 class="raffleleader-additional-entry-text-column-header">Like us on Facebook</h2>
-                                <p class="raffleleader-additional-entry-text-column-p">for an extra entry!</p>
+                                <h2 class="raffleleader-section-header">Like us on Facebook</h2>
+                                <p class="raffleleader-section-p">for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
                                 <button data-link="https://facebook.com/">+1</button>
@@ -7689,8 +7689,8 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'tiktokFollowEntry':
                 htmlToInject = `<div data-type="tiktokFollowDetails" class="raffleleader-additional-entry-section">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2 class="raffleleader-additional-entry-text-column-header">Follow us on TikTok</h2>
-                                <p class="raffleleader-additional-entry-text-column-p">for an extra entry!</p>
+                                <h2 class="raffleleader-section-header">Follow us on TikTok</h2>
+                                <p class="raffleleader-section-p">for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
                                 <button data-link="https://tiktok.com/">+1</button>
@@ -7709,8 +7709,8 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'tiktokCommentEntry':
                 htmlToInject = `<div data-type="tiktokCommentDetails" class="raffleleader-additional-entry-section">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2 class="raffleleader-additional-entry-text-column-header">Leave a comment on TikTok</h2>
-                                <p class="raffleleader-additional-entry-text-column-p">for an extra entry!</p>
+                                <h2 class="raffleleader-section-header">Leave a comment on TikTok</h2>
+                                <p class="raffleleader-section-p">for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
                                 <button data-link="https://tiktok.com/">+1</button>
@@ -7729,8 +7729,8 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'tiktokLikeEntry':
                 htmlToInject = `<div data-type="tiktokLikeDetails" class="raffleleader-additional-entry-section">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2 class="raffleleader-additional-entry-text-column-header">Like us on TikTok</h2>
-                                <p class="raffleleader-additional-entry-text-column-p">for an extra entry!</p>
+                                <h2 class="raffleleader-section-header">Like us on TikTok</h2>
+                                <p class="raffleleader-section-p">for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
                                 <button data-link="https://tiktok.com/">+1</button>
@@ -7749,8 +7749,8 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             case 'referEntry':
                 htmlToInject = `<div data-type="referDetails" class="raffleleader-additional-entry-section">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2 class="raffleleader-additional-entry-text-column-header">Refer a friend</h2>
-                                <p class="raffleleader-additional-entry-text-column-p">for an extra entry!</p>
+                                <h2 class="raffleleader-section-header">Refer a friend</h2>
+                                <p class="raffleleader-section-p">for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column raffleleader-additional-entry-button-column-refer">
                                 <button">Copy Link</button>

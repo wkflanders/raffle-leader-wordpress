@@ -15,31 +15,31 @@ class Enqueue extends BaseController{
     }
 
     public function loadLicense(){
-        add_action( 'admin_enqueue_scripts', array( $this, 'enqueueLicense' ), 100 );
+        add_action( 'admin_enqueue_scripts', array( $this, 'enqueueLicense' ), 9999 );
     }
 
     public function loadLicenseInfo(){
-        add_action( 'admin_enqueue_scripts', array( $this, 'enqueueLicenseInfo' ), 100 );
+        add_action( 'admin_enqueue_scripts', array( $this, 'enqueueLicenseInfo' ), 9999 );
     }
 
     public function loadRaffleFrontEnd(){
-        add_action( 'wp_enqueue_scripts', array( $this, 'enqueueRaffleFrontEnd' ), 100 );
+        add_action( 'wp_enqueue_scripts', array( $this, 'enqueueRaffleFrontEnd' ), 9999 );
     }
 
     public function loadWPAdminBackEnd(){
-        add_action( 'admin_enqueue_scripts', array( $this, 'enqueueWPAdminBackEnd' ), 100 );
+        add_action( 'admin_enqueue_scripts', array( $this, 'enqueueWPAdminBackEnd' ), 9999 );
     }
 
     public function loadRaffleOverview(){
-        add_action( 'admin_enqueue_scripts', array( $this, 'enqueueRaffleOverview' ), 100 );
+        add_action( 'admin_enqueue_scripts', array( $this, 'enqueueRaffleOverview' ), 9999 );
     }
 
     public function loadSettings(){
-        add_action( 'admin_enqueue_scripts', array( $this, 'enqueueSettings' ), 100 );
+        add_action( 'admin_enqueue_scripts', array( $this, 'enqueueSettings' ), 9999 );
     }
 
     public function loadBuilder(){
-        add_action( 'admin_enqueue_scripts', array( $this, 'enqueueBuilder' ), 100 );
+        add_action( 'admin_enqueue_scripts', array( $this, 'enqueueBuilder' ), 9999 );
     }
 
     public function loadCreateNew(){

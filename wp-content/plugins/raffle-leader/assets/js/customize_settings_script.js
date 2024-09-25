@@ -789,8 +789,8 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                         document.dispatchEvent(customizationSettingChanged);
                     });
                 }
-
                 pickrText.setColorRepresentation('HEX');
+                pickrText.setColor(currentTextFontColor);
                 pickrText.show();
 
                 pickrText.on('change', (color)=>{
@@ -822,6 +822,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrBackground.setColorRepresentation('HEX');
+                pickrBackground.setColor(currentTextBackgroundColor)
                 pickrBackground.show();
 
                 pickrBackground.on('change', (color)=>{
@@ -853,6 +854,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrBorder.setColorRepresentation('HEX');
+                pickrBorder.setColor(currentBorderColor);
                 pickrBorder.show();
 
                 pickrBorder.on('change', (color)=>{
@@ -884,6 +886,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrCounter.setColorRepresentation('HEX');
+                pickrCounter.setColor(currentCounterFontColor);
                 pickrCounter.show();
 
                 pickrCounter.on('change', (color)=>{
@@ -898,7 +901,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 const currentCounterBackgroundColor = document.getElementById('counterBackgroundColorForm').value;
 
                 if(pickrCounterBackground === undefined){
-                    pickerCounterBackground = Pickr.create({
+                    pickrCounterBackground = Pickr.create({
                         el: counterColorGradientBackground,
                         theme: 'classic', // or 'monolith', or 'nano'
                         appClass: 'counter-background-color-pickr',
@@ -914,10 +917,11 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                         document.dispatchEvent(customizationSettingChanged);
                     });
                 }
-                pickerCounterBackground.setColorRepresentation('HEX');
-                pickerCounterBackground.show();
+                pickrCounterBackground.setColorRepresentation('HEX');
+                pickrCounterBackground.setColor(currentCounterBackgroundColor);
+                pickrCounterBackground.show();
 
-                pickerCounterBackground.on('change', (color)=>{
+                pickrCounterBackground.on('change', (color)=>{
                     const selectedColor = '#'.concat(...color.toHEXA());
                     this.style.backgroundColor = selectedColor;
                     
@@ -946,6 +950,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrCounterBorder.setColorRepresentation('HEX');
+                pickrCounterBorder.setColor(counterCurrentBorderColor);
                 pickrCounterBorder.show();
 
                 pickrCounterBorder.on('change', (color)=>{
@@ -977,6 +982,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrImageBorder.setColorRepresentation('HEX');
+                pickrImageBorder.setColor(imageCurrentBorderColor);
                 pickrImageBorder.show();
 
                 pickrImageBorder.on('change', (color)=>{
@@ -1007,6 +1013,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrEntryFont.setColorRepresentation('HEX');
+                pickrEntryFont.setColor(entryCurrentFontColor);
                 pickrEntryFont.show();
 
                 pickrEntryFont.on('change', (color)=>{
@@ -1038,6 +1045,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrEntryFormBackground.setColorRepresentation('HEX');
+                pickrEntryFormBackground.setColor(entryCurrentFormBackgroundColor);
                 pickrEntryFormBackground.show();
 
                 pickrEntryFormBackground.on('change', (color)=>{
@@ -1069,6 +1077,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrEntryFormBorder.setColorRepresentation('HEX');
+                pickrEntryFormBorder.setColor(entryFormCurrentBorderColor);
                 pickrEntryFormBorder.show();
 
                 pickrEntryFormBorder.on('change', (color)=>{
@@ -1100,6 +1109,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrEntryButtonFont.setColorRepresentation('HEX');
+                pickrEntryButtonFont.setColor(entryCurrentButtonFontColor);
                 pickrEntryButtonFont.show();
 
                 pickrEntryButtonFont.on('change', (color)=>{
@@ -1131,6 +1141,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrEntryButtonBorder.setColorRepresentation('HEX');
+                pickrEntryButtonBorder.setColor(entryCurrentButtonBorderColor);
                 pickrEntryButtonBorder.show();
 
                 pickrEntryButtonBorder.on('change', (color)=>{
@@ -1162,6 +1173,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrEntryBtn.setColorRepresentation('HEX');
+                pickrEntryBtn.setColor(entryCurrentButtonColor);
                 pickrEntryBtn.show();
 
                 pickrEntryBtn.on('change', (color)=>{
@@ -1193,6 +1205,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrEntryBackground.setColorRepresentation('HEX');
+                pickrEntryBackground.setColor(entryCurrentBackgroundColor);
                 pickrEntryBackground.show();
 
                 pickrEntryBackground.on('change', (color)=>{
@@ -1224,6 +1237,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrEntryBorder.setColorRepresentation('HEX');
+                pickrEntryBorder.setColor(entryCurrentBorderColor);
                 pickrEntryBorder.show();
 
                 pickrEntryBorder.on('change', (color)=>{
@@ -1255,6 +1269,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrXFollowHeader.setColorRepresentation('HEX');
+                pickrXFollowHeader.setColor(currentXFollowHeaderFontColor);
                 pickrXFollowHeader.show();
 
                 pickrXFollowHeader.on('change', (color)=>{
@@ -1286,6 +1301,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrXFollowSubheader.setColorRepresentation('HEX');
+                pickrXFollowSubheader.setColor(currentXFollowSubheaderFontColor);
                 pickrXFollowSubheader.show();
 
                 pickrXFollowSubheader.on('change', (color)=>{
@@ -1316,6 +1332,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrXFollowButton.setColorRepresentation('HEX');
+                pickrXFollowButton.setColor(currentXFollowButtonColor);
                 pickrXFollowButton.show();
 
                 pickrXFollowButton.on('change', (color)=>{
@@ -1347,6 +1364,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrXFollowButtonFont.setColorRepresentation('HEX');
+                pickrXFollowButtonFont.setColor(currentXFollowButtonFontColor);
                 pickrXFollowButtonFont.show();
 
                 pickrXFollowButtonFont.on('change', (color)=>{
@@ -1378,6 +1396,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrXFollowBackground.setColorRepresentation('HEX');
+                pickrXFollowBackground.setColor(currentXFollowBackgroundColor);
                 pickrXFollowBackground.show();
 
                 pickrXFollowBackground.on('change', (color)=>{
@@ -1409,6 +1428,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrXFollowBorder.setColorRepresentation('HEX');
+                pickrXFollowBorder.setColor(currentXFollowBorderColor);
                 pickrXFollowBorder.show();
 
                 pickrXFollowBorder.on('change', (color)=>{
@@ -1440,6 +1460,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrXRepostHeader.setColorRepresentation('HEX');
+                pickrXRepostHeader.setColor(currentXRepostHeaderFontColor);
                 pickrXRepostHeader.show();
 
                 pickrXRepostHeader.on('change', (color)=>{
@@ -1471,6 +1492,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrXRepostSubheader.setColorRepresentation('HEX');
+                pickrXRepostSubheader.setColor(currentXRepostSubheaderFontColor);
                 pickrXRepostSubheader.show();
 
                 pickrXRepostSubheader.on('change', (color)=>{
@@ -1501,6 +1523,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrXRepostButton.setColorRepresentation('HEX');
+                pickrXRepostButton.setColor(currentXRepostButtonColor);
                 pickrXRepostButton.show();
 
                 pickrXRepostButton.on('change', (color)=>{
@@ -1532,6 +1555,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrXRepostButtonFont.setColorRepresentation('HEX');
+                pickrXRepostButtonFont.setColor(currentXRepostButtonFontColor);
                 pickrXRepostButtonFont.show();
 
                 pickrXRepostButtonFont.on('change', (color)=>{
@@ -1563,6 +1587,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrXRepostBackground.setColorRepresentation('HEX');
+                pickrXRepostBackground.setColor(currentXRepostBackgroundColor);
                 pickrXRepostBackground.show();
 
                 pickrXRepostBackground.on('change', (color)=>{
@@ -1594,6 +1619,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrXRepostBorder.setColorRepresentation('HEX');
+                pickrXRepostBorder.setColor(currentXRepostBorderColor);
                 pickrXRepostBorder.show();
 
                 pickrXRepostBorder.on('change', (color)=>{
@@ -1625,6 +1651,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrXLikeHeader.setColorRepresentation('HEX');
+                pickrXLikeHeader.setColor(currentXLikeHeaderFontColor);
                 pickrXLikeHeader.show();
 
                 pickrXLikeHeader.on('change', (color)=>{
@@ -1656,6 +1683,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrXLikeSubheader.setColorRepresentation('HEX');
+                pickrXLikeSubheader.setColor(currentXLikeSubheaderFontColor);
                 pickrXLikeSubheader.show();
 
                 pickrXLikeSubheader.on('change', (color)=>{
@@ -1686,6 +1714,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrXLikeButton.setColorRepresentation('HEX');
+                pickrXLikeButton.setColor(currentXLikeButtonColor);
                 pickrXLikeButton.show();
 
                 pickrXLikeButton.on('change', (color)=>{
@@ -1717,6 +1746,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrXLikeButtonFont.setColorRepresentation('HEX');
+                pickrXLikeButtonFont.setColor(currentXLikeButtonFontColor);
                 pickrXLikeButtonFont.show();
 
                 pickrXLikeButtonFont.on('change', (color)=>{
@@ -1748,6 +1778,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrXLikeBackground.setColorRepresentation('HEX');
+                pickrXLikeBackground.setColor(currentXLikeBackgroundColor);
                 pickrXLikeBackground.show();
 
                 pickrXLikeBackground.on('change', (color)=>{
@@ -1779,6 +1810,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrXLikeBorder.setColorRepresentation('HEX');
+                pickrXLikeBorder.setColor(currentXLikeBorderColor);
                 pickrXLikeBorder.show();
 
                 pickrXLikeBorder.on('change', (color)=>{
@@ -1810,6 +1842,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrInstaFollowHeader.setColorRepresentation('HEX');
+                pickrInstaFollowHeader.setColor(currentInstaFollowHeaderFontColor);
                 pickrInstaFollowHeader.show();
 
                 pickrInstaFollowHeader.on('change', (color)=>{
@@ -1841,6 +1874,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrInstaFollowSubheader.setColorRepresentation('HEX');
+                pickrInstaFollowSubheader.setColor(currentInstaFollowSubheaderFontColor);
                 pickrInstaFollowSubheader.show();
 
                 pickrInstaFollowSubheader.on('change', (color)=>{
@@ -1871,6 +1905,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrInstaFollowButton.setColorRepresentation('HEX');
+                pickrInstaFollowButton.setColor(currentInstaFollowButtonColor);
                 pickrInstaFollowButton.show();
 
                 pickrInstaFollowButton.on('change', (color)=>{
@@ -1902,6 +1937,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrInstaFollowButtonFont.setColorRepresentation('HEX');
+                pickrInstaFollowButtonFont.setColor(currentInstaFollowButtonFontColor);
                 pickrInstaFollowButtonFont.show();
 
                 pickrInstaFollowButtonFont.on('change', (color)=>{
@@ -1933,6 +1969,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrInstaFollowBackground.setColorRepresentation('HEX');
+                pickrInstaFollowBackground.setColor(currentInstaFollowBackgroundColor);
                 pickrInstaFollowBackground.show();
 
                 pickrInstaFollowBackground.on('change', (color)=>{
@@ -1964,6 +2001,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrInstaFollowBorder.setColorRepresentation('HEX');
+                pickrInstaFollowBorder.setColor(currentInstaFollowBorderColor);
                 pickrInstaFollowBorder.show();
 
                 pickrInstaFollowBorder.on('change', (color)=>{
@@ -1995,6 +2033,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrInstaCommentHeader.setColorRepresentation('HEX');
+                pickrInstaCommentHeader.setColor(currentInstaCommentHeaderFontColor);
                 pickrInstaCommentHeader.show();
 
                 pickrInstaCommentHeader.on('change', (color)=>{
@@ -2026,6 +2065,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrInstaCommentSubheader.setColorRepresentation('HEX');
+                pickrInstaCommentSubheader.setColor(currentInstaCommentSubheaderFontColor);
                 pickrInstaCommentSubheader.show();
 
                 pickrInstaCommentSubheader.on('change', (color)=>{
@@ -2057,6 +2097,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrInstaCommentButton.setColorRepresentation('HEX');
+                pickrInstaCommentButton.setColor(currentInstaCommentButtonColor);
                 pickrInstaCommentButton.show();
 
                 pickrInstaCommentButton.on('change', (color)=>{
@@ -2088,6 +2129,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrInstaCommentButtonFont.setColorRepresentation('HEX');
+                pickrInstaCommentButtonFont.setColor(currentInstaCommentButtonFontColor);
                 pickrInstaCommentButtonFont.show();
 
                 pickrInstaCommentButtonFont.on('change', (color)=>{
@@ -2119,6 +2161,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrInstaCommentBackground.setColorRepresentation('HEX');
+                pickrInstaCommentBackground.setColor(currentInstaCommentBackgroundColor);
                 pickrInstaCommentBackground.show();
 
                 pickrInstaCommentBackground.on('change', (color)=>{
@@ -2150,6 +2193,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrInstaCommentBorder.setColorRepresentation('HEX');
+                pickrInstaCommentBorder.setColor(currentInstaCommentBorderColor);
                 pickrInstaCommentBorder.show();
 
                 pickrInstaCommentBorder.on('change', (color)=>{
@@ -2181,6 +2225,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrInstaLikeHeader.setColorRepresentation('HEX');
+                pickrInstaLikeHeader.setColor(currentInstaLikeHeaderFontColor);
                 pickrInstaLikeHeader.show();
 
                 pickrInstaLikeHeader.on('change', (color)=>{
@@ -2212,6 +2257,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrInstaLikeSubheader.setColorRepresentation('HEX');
+                pickrInstaLikeSubheader.setColor(currentInstaLikeSubheaderFontColor);
                 pickrInstaLikeSubheader.show();
 
                 pickrInstaLikeSubheader.on('change', (color)=>{
@@ -2242,6 +2288,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrInstaLikeButton.setColorRepresentation('HEX');
+                pickrInstaLikeButton.setColor(currentInstaLikeButtonColor);
                 pickrInstaLikeButton.show();
 
                 pickrInstaLikeButton.on('change', (color)=>{
@@ -2273,6 +2320,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrInstaLikeButtonFont.setColorRepresentation('HEX');
+                pickrInstaLikeButtonFont.setColor(currentInstaLikeButtonFontColor);
                 pickrInstaLikeButtonFont.show();
 
                 pickrInstaLikeButtonFont.on('change', (color)=>{
@@ -2304,6 +2352,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrInstaLikeBackground.setColorRepresentation('HEX');
+                pickrInstaLikeBackground.setColor(currentInstaLikeBackgroundColor);
                 pickrInstaLikeBackground.show();
 
                 pickrInstaLikeBackground.on('change', (color)=>{
@@ -2335,6 +2384,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrInstaLikeBorder.setColorRepresentation('HEX');
+                pickrInstaLikeBorder.setColor(currentInstaLikeBorderColor);
                 pickrInstaLikeBorder.show();
 
                 pickrInstaLikeBorder.on('change', (color)=>{
@@ -2366,6 +2416,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrFacebookFollowHeader.setColorRepresentation('HEX');
+                pickrFacebookFollowHeader.setColor(currentFacebookFollowHeaderFontColor);
                 pickrFacebookFollowHeader.show();
 
                 pickrFacebookFollowHeader.on('change', (color)=>{
@@ -2397,6 +2448,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrFacebookFollowSubheader.setColorRepresentation('HEX');
+                pickrFacebookFollowSubheader.setColor(currentFacebookFollowSubheaderFontColor);
                 pickrFacebookFollowSubheader.show();
 
                 pickrFacebookFollowSubheader.on('change', (color)=>{
@@ -2428,6 +2480,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrFacebookFollowButton.setColorRepresentation('HEX');
+                pickrFacebookFollowButton.setColor(currentFacebookFollowButtonColor);
                 pickrFacebookFollowButton.show();
 
                 pickrFacebookFollowButton.on('change', (color)=>{
@@ -2459,6 +2512,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrFacebookFollowButtonFont.setColorRepresentation('HEX');
+                pickrFacebookFollowButtonFont.setColor(currentFacebookFollowButtonFontColor);
                 pickrFacebookFollowButtonFont.show();
 
                 pickrFacebookFollowButtonFont.on('change', (color)=>{
@@ -2490,6 +2544,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrFacebookFollowBackground.setColorRepresentation('HEX');
+                pickrFacebookFollowBackground.setColor(currentFacebookFollowBackgroundColor);
                 pickrFacebookFollowBackground.show();
 
                 pickrFacebookFollowBackground.on('change', (color)=>{
@@ -2521,6 +2576,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrFacebookFollowBorder.setColorRepresentation('HEX');
+                pickrFacebookFollowBorder.setColor(currentFacebookFollowBorderColor);
                 pickrFacebookFollowBorder.show();
 
                 pickrFacebookFollowBorder.on('change', (color)=>{
@@ -2552,6 +2608,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrFacebookCommentHeader.setColorRepresentation('HEX');
+                pickrFacebookCommentHeader.setColor(currentFacebookCommentHeaderFontColor);
                 pickrFacebookCommentHeader.show();
         
                 pickrFacebookCommentHeader.on('change', (color)=>{
@@ -2583,6 +2640,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrFacebookCommentSubheader.setColorRepresentation('HEX');
+                pickrFacebookCommentSubheader.setColor(currentFacebookCommentSubheaderFontColor);
                 pickrFacebookCommentSubheader.show();
         
                 pickrFacebookCommentSubheader.on('change', (color)=>{
@@ -2614,6 +2672,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrFacebookCommentButton.setColorRepresentation('HEX');
+                pickrFacebookCommentButton.setColor(currentFacebookCommentButtonColor);
                 pickrFacebookCommentButton.show();
         
                 pickrFacebookCommentButton.on('change', (color)=>{
@@ -2645,6 +2704,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrFacebookCommentButtonFont.setColorRepresentation('HEX');
+                pickrFacebookCommentButtonFont.setColor(currentFacebookCommentButtonFontColor);
                 pickrFacebookCommentButtonFont.show();
         
                 pickrFacebookCommentButtonFont.on('change', (color)=>{
@@ -2676,6 +2736,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrFacebookCommentBackground.setColorRepresentation('HEX');
+                pickrFacebookCommentBackground.setColor(currentFacebookCommentBackgroundColor);
                 pickrFacebookCommentBackground.show();
         
                 pickrFacebookCommentBackground.on('change', (color)=>{
@@ -2707,6 +2768,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrFacebookCommentBorder.setColorRepresentation('HEX');
+                pickrFacebookCommentBorder.setColor(currentFacebookCommentBorderColor);
                 pickrFacebookCommentBorder.show();
         
                 pickrFacebookCommentBorder.on('change', (color)=>{
@@ -2738,6 +2800,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrFacebookLikeHeader.setColorRepresentation('HEX');
+                pickrFacebookLikeHeader.setColor(currentFacebookLikeHeaderFontColor);
                 pickrFacebookLikeHeader.show();
         
                 pickrFacebookLikeHeader.on('change', (color)=>{
@@ -2769,6 +2832,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrFacebookLikeSubheader.setColorRepresentation('HEX');
+                pickrFacebookLikeSubheader.setColor(currentFacebookLikeSubheaderFontColor);
                 pickrFacebookLikeSubheader.show();
         
                 pickrFacebookLikeSubheader.on('change', (color)=>{
@@ -2800,6 +2864,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrFacebookLikeButton.setColorRepresentation('HEX');
+                pickrFacebookLikeButton.setColor(currentFacebookLikeButtonColor);
                 pickrFacebookLikeButton.show();
         
                 pickrFacebookLikeButton.on('change', (color)=>{
@@ -2831,6 +2896,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrFacebookLikeButtonFont.setColorRepresentation('HEX');
+                pickrFacebookLikeButtonFont.setColor(currentFacebookLikeButtonFontColor);
                 pickrFacebookLikeButtonFont.show();
         
                 pickrFacebookLikeButtonFont.on('change', (color)=>{
@@ -2862,6 +2928,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrFacebookLikeBackground.setColorRepresentation('HEX');
+                pickrFacebookLikeBackground.setColor(currentFacebookLikeBackgroundColor);
                 pickrFacebookLikeBackground.show();
         
                 pickrFacebookLikeBackground.on('change', (color)=>{
@@ -2893,6 +2960,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrFacebookLikeBorder.setColorRepresentation('HEX');
+                pickrFacebookLikeBorder.setColor(currentFacebookLikeBorderColor);
                 pickrFacebookLikeBorder.show();
         
                 pickrFacebookLikeBorder.on('change', (color)=>{
@@ -2924,6 +2992,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrTiktokFollowHeader.setColorRepresentation('HEX');
+                pickrTiktokFollowHeader.setColor(currentTiktokFollowHeaderFontColor);
                 pickrTiktokFollowHeader.show();
             
                 pickrTiktokFollowHeader.on('change', (color)=>{
@@ -2955,6 +3024,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrTiktokFollowSubheader.setColorRepresentation('HEX');
+                pickrTiktokFollowSubheader.setColor(currentTiktokFollowSubheaderFontColor);
                 pickrTiktokFollowSubheader.show();
             
                 pickrTiktokFollowSubheader.on('change', (color)=>{
@@ -2986,6 +3056,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrTiktokFollowButton.setColorRepresentation('HEX');
+                pickrTiktokFollowButton.setColor(currentTiktokFollowButtonColor);
                 pickrTiktokFollowButton.show();
             
                 pickrTiktokFollowButton.on('change', (color)=>{
@@ -3017,6 +3088,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrTiktokFollowButtonFont.setColorRepresentation('HEX');
+                pickrTiktokFollowButtonFont.setColor(currentTiktokFollowButtonFontColor);
                 pickrTiktokFollowButtonFont.show();
             
                 pickrTiktokFollowButtonFont.on('change', (color)=>{
@@ -3048,6 +3120,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrTiktokFollowBackground.setColorRepresentation('HEX');
+                pickrTiktokFollowBackground.setColor(currentTiktokFollowBackgroundColor);
                 pickrTiktokFollowBackground.show();
             
                 pickrTiktokFollowBackground.on('change', (color)=>{
@@ -3079,6 +3152,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrTiktokFollowBorder.setColorRepresentation('HEX');
+                pickrTiktokFollowBorder.setColor(currentTiktokFollowBorderColor);
                 pickrTiktokFollowBorder.show();
             
                 pickrTiktokFollowBorder.on('change', (color)=>{
@@ -3110,6 +3184,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrTiktokCommentHeader.setColorRepresentation('HEX');
+                pickrTiktokCommentHeader.setColor(currentTiktokCommentHeaderFontColor);
                 pickrTiktokCommentHeader.show();
             
                 pickrTiktokCommentHeader.on('change', (color)=>{
@@ -3141,6 +3216,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrTiktokCommentSubheader.setColorRepresentation('HEX');
+                pickrTiktokCommentSubheader.setColor(currentTiktokCommentSubheaderFontColor);
                 pickrTiktokCommentSubheader.show();
             
                 pickrTiktokCommentSubheader.on('change', (color)=>{
@@ -3172,6 +3248,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrTiktokCommentButtonFont.setColorRepresentation('HEX');
+                pickrTiktokCommentButtonFont.setColor(currentTiktokCommentButtonFontColor);
                 pickrTiktokCommentButtonFont.show();
             
                 pickrTiktokCommentButtonFont.on('change', (color)=>{
@@ -3203,6 +3280,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrTiktokCommentButton.setColorRepresentation('HEX');
+                pickrTiktokCommentButton.setColor(currentTiktokCommentButtonColor);
                 pickrTiktokCommentButton.show();
             
                 pickrTiktokCommentButton.on('change', (color)=>{
@@ -3234,6 +3312,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrTiktokCommentBackground.setColorRepresentation('HEX');
+                pickrTiktokCommentBackground.setColor(currentTiktokCommentBackgroundColor);
                 pickrTiktokCommentBackground.show();
             
                 pickrTiktokCommentBackground.on('change', (color)=>{
@@ -3265,6 +3344,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrTiktokCommentBorder.setColorRepresentation('HEX');
+                pickrTiktokCommentBorder.setColor(currentTiktokCommentBorderColor);
                 pickrTiktokCommentBorder.show();
             
                 pickrTiktokCommentBorder.on('change', (color)=>{
@@ -3296,6 +3376,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrTiktokLikeHeader.setColorRepresentation('HEX');
+                pickrTiktokLikeHeader.setColor(currentTiktokLikeHeaderFontColor);
                 pickrTiktokLikeHeader.show();
             
                 pickrTiktokLikeHeader.on('change', (color)=>{
@@ -3327,6 +3408,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrTiktokLikeSubheader.setColorRepresentation('HEX');
+                pickrTiktokLikeSubheader.setColor(currentTiktokLikeSubheaderFontColor);
                 pickrTiktokLikeSubheader.show();
             
                 pickrTiktokLikeSubheader.on('change', (color)=>{
@@ -3358,6 +3440,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrTiktokLikeButton.setColorRepresentation('HEX');
+                pickrTiktokLikeButton.setColor(currentTiktokLikeButtonColor);
                 pickrTiktokLikeButton.show();
             
                 pickrTiktokLikeButton.on('change', (color)=>{
@@ -3389,6 +3472,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrTiktokLikeButtonFont.setColorRepresentation('HEX');
+                pickrTiktokLikeButtonFont.setColor(currentTiktokLikeButtonFontColor);
                 pickrTiktokLikeButtonFont.show();
             
                 pickrTiktokLikeButtonFont.on('change', (color)=>{
@@ -3420,6 +3504,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrTiktokLikeBackground.setColorRepresentation('HEX');
+                pickrTiktokLikeBackground.setColor(currentTiktokLikeBackgroundColor);
                 pickrTiktokLikeBackground.show();
             
                 pickrTiktokLikeBackground.on('change', (color)=>{
@@ -3451,6 +3536,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrTiktokLikeBorder.setColorRepresentation('HEX');
+                pickrTiktokLikeBorder.setColor(currentTiktokLikeBorderColor);
                 pickrTiktokLikeBorder.show();
             
                 pickrTiktokLikeBorder.on('change', (color)=>{
@@ -3482,6 +3568,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrReferHeader.setColorRepresentation('HEX');
+                pickrReferHeader.setColor(this.style.backgroundColor);
                 pickrReferHeader.show();
             
                 pickrReferHeader.on('change', (color)=>{
@@ -3513,6 +3600,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrReferSubheader.setColorRepresentation('HEX');
+                pickrReferSubheader.setColor(currentReferSubheaderFontColor);
                 pickrReferSubheader.show();
             
                 pickrReferSubheader.on('change', (color)=>{
@@ -3544,6 +3632,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrReferButton.setColorRepresentation('HEX');
+                pickrReferButton.setColor(currentReferButtonColor);
                 pickrReferButton.show();
             
                 pickrReferButton.on('change', (color)=>{
@@ -3575,6 +3664,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrReferButtonFont.setColorRepresentation('HEX');
+                pickrReferButtonFont.setColor(currentReferButtonFontColor);
                 pickrReferButtonFont.show();
             
                 pickrReferButtonFont.on('change', (color)=>{
@@ -3606,6 +3696,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrReferBackground.setColorRepresentation('HEX');
+                pickrReferBackground.setColor(currentReferBackgroundColor);
                 pickrReferBackground.show();
             
                 pickrReferBackground.on('change', (color)=>{
@@ -3637,6 +3728,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrReferBorder.setColorRepresentation('HEX');
+                pickrReferBorder.setColor(currentReferBorderColor);
                 pickrReferBorder.show();
             
                 pickrReferBorder.on('change', (color)=>{
@@ -3668,6 +3760,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrRaffleBackground.setColorRepresentation('HEX');
+                pickrRaffleBackground.setColor(currentRaffleBackgroundColor);
                 pickrRaffleBackground.show();
 
                 pickrRaffleBackground.on('change', (color)=>{
@@ -3698,6 +3791,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrFooterFont.setColorRepresentation('HEX');
+                pickrFooterFont.setColor(currentFooterColor);
                 pickrFooterFont.show();
 
                 pickrFooterFont.on('change', (color)=>{
@@ -3729,6 +3823,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                     });
                 }
                 pickrFooterBackground.setColorRepresentation('HEX');
+                pickrFooterBackground.setColor(currentFooterBackgroundColor);
                 pickrFooterBackground.show();
 
                 pickrFooterBackground.on('change', (color)=>{

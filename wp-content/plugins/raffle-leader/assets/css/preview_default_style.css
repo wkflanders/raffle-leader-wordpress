@@ -167,6 +167,7 @@
 }
 
 .raffleleader-footer-wrapper{
+    display: flex;
     background-color: rgb(255, 255, 255);
     height: 50px;
     width: 100%;

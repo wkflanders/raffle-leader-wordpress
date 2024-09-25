@@ -303,6 +303,24 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         additionalEntryQuantity.addEventListener('input', handleEntryQuantity);
     });
 
+    function debounce(func, delay){
+        let timeoutId;
+        return function(...args){
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                func.apply(this, args);
+            }, delay);
+        }
+    }
+
+    const debouncedSaveStateText = debounce(() => {
+        document.dispatchEvent(customizationSettingChanged);
+    }, 250);
+
+    const debouncedSaveStateHex = debounce(() => {
+        document.dispatchEvent(customizationSettingChanged);
+    }, 500);
+
     function openDropDown(event){
         const dropDownBtn = event.target;
         const parentDropDown = dropDownBtn.parentNode.parentNode;
@@ -333,7 +351,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 selectedSubheaderElement.textContent = this.value;
                 break;
         }
-        document.dispatchEvent(customizationSettingChanged);
+        debouncedSaveStateText();
     }
 
     function alignTextLeft(event){
@@ -3844,6 +3862,8 @@ document.addEventListener('generalSettingsLoaded', ()=>{
         const elementType = colorTextForm.getAttribute('data-type');
 
         pickColor(typedColor, elementType, false);
+
+        debouncedSaveStateHex();
     }
 
     function pickColor(color, elementType, fromPickr){

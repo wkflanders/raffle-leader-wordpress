@@ -206,7 +206,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 30px; top: 340px; z-index: 11; width: 233px; height: 96px;" data-section-id="section-i063"><div style="height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center; font-weight: normal; font-family: Urbanist; color: rgb(255, 255, 255); font-size: 70px; line-height: 30px;">Win an</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: center; font-weight: normal; font-family: Urbanist; color: rgb(255, 255, 255); font-size: 70px; line-height: 30px;">Win an</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -216,7 +216,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 30px; top: 417px; z-index: 10; width: 139px; height: 86px;" data-section-id="section-mkf4"><div style="height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center; font-weight: bold; font-family: Urbanist; color: rgb(255, 255, 255); font-size: 70px; line-height: 30px;">alo</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: center; font-weight: bold; font-family: Urbanist; color: rgb(255, 255, 255); font-size: 70px; line-height: 30px;">alo</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -226,7 +226,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 160px; top: 417px; z-index: 10; width: 292px; height: 86px;" data-section-id="section-e9nd"><div style="height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center; font-weight: normal; font-family: Urbanist; color: rgb(255, 255, 255); font-size: 70px; line-height: 30px;">Giftcard!</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: center; font-weight: normal; font-family: Urbanist; color: rgb(255, 255, 255); font-size: 70px; line-height: 30px;">Giftcard!</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -236,7 +236,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 37px; top: 494px; z-index: 10; width: 426px; height: 105px;" data-section-id="section-103t"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0); justify-content: left; align-items: center;" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: left; color: rgb(255, 255, 255); font-weight: normal; justify-content: left; font-size: 14px; line-height: 20px; letter-spacing: 0px;">If you’ve ever thought to yourself “dang, I wish I had $50 to shop at Alo with”, here’s your chance. All you need to do is enter your email and refer a friend. </h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: left; color: rgb(255, 255, 255); font-weight: normal; justify-content: left; font-size: 14px; line-height: 20px; letter-spacing: 0px;">If you’ve ever thought to yourself “dang, I wish I had $50 to shop at Alo with”, here’s your chance. All you need to do is enter your email and refer a friend. </h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -262,8 +262,8 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="width: 500px; height: 90px; position: absolute; left: 0px; top: 710px; z-index: 10;" data-section-id="section-dd7y"><div data-type="referDetails" class="raffleleader-additional-entry-section" style="background-color: rgba(255, 255, 255, 0); border-width: 1px 0px 0px; border-style: solid; border-color: rgb(255, 255, 255);">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2 style="color: rgb(255, 255, 255); font-family: Urbanist; font-size: 23px; font-weight: normal;">Refer-a-friend</h2>
-                                <p style="font-weight: bold;"></p>
+                                <h2 class="raffleleader-section-header" style="color: rgb(255, 255, 255); font-family: Urbanist; font-size: 23px; font-weight: normal;">Refer-a-friend</h2>
+                                <p class="raffleleader-section-p" style="font-weight: bold;"></p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column raffleleader-additional-entry-button-column-refer">
                                 <button style="background-color: rgb(254, 1, 138);">Copy Link</button>
@@ -298,7 +298,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                                 <p class="raffleleader-rules-text"></p>
                                             </div>
                                         <div class="raffleleader-section" style="position: absolute; left: 0px; top: 419px; z-index: 1; width: 500px; height: 67px;"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center; font-family: Orbitron; color: rgb(255, 255, 255); font-size: 52px;">TO</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: center; font-family: Orbitron; color: rgb(255, 255, 255); font-size: 52px;">TO</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -316,7 +316,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 347px; z-index: 10; width: 500px; height: 110px;" data-section-id="n7au"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center; font-family: Orbitron; color: rgb(255, 255, 255); font-size: 52px;">WIN A TICKET</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: center; font-family: Orbitron; color: rgb(255, 255, 255); font-size: 52px;">WIN A TICKET</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -326,7 +326,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 451px; z-index: 1; width: 500px; height: 114px;" data-section-id="7d2o"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center; font-family: Orbitron; color: rgb(255, 255, 255); font-size: 52px;">BONNAROOO!!!</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: center; font-family: Orbitron; color: rgb(255, 255, 255); font-size: 52px;">BONNAROOO!!!</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -336,7 +336,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 26px; top: 537px; z-index: 10; width: 447px; height: 73px;" data-section-id="qsf6"><div style="height: 100%; width: 100%; justify-content: left; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: left; justify-content: left; font-size: 16px; letter-spacing: 0px; font-family: &quot;Open Sans&quot;; line-height: 14px; font-weight: normal;">It's time to hear your favorites LIVE! Enter your email for a chance to win a free ticket to Bonnaroo.</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: left; justify-content: left; font-size: 16px; letter-spacing: 0px; font-family: &quot;Open Sans&quot;; line-height: 14px; font-weight: normal;">It's time to hear your favorites LIVE! Enter your email for a chance to win a free ticket to Bonnaroo.</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -362,8 +362,8 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" data-entry="${raffleID}raffleID" style="width: 500px; height: 75px; position: absolute; left: 0px; top: 703px; z-index: 10;" data-section-id="jrcv"><div data-type="instaFollowDetails" class="raffleleader-additional-entry-section" style="background-color: rgba(255, 255, 255, 0); border-width: 1px 0px 0px; border-style: solid; border-color: rgb(0, 0, 0);">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2 style="color: rgb(255, 255, 255); font-family: Orbitron; font-size: 16px;">Follow us on Instagram</h2>
-                                <p style="color: rgb(0, 0, 0); font-family: Orbitron;">for an extra entry!</p>
+                                <h2 class="raffleleader-section-header" style="color: rgb(255, 255, 255); font-family: Orbitron; font-size: 16px;">Follow us on Instagram</h2>
+                                <p class="raffleleader-section-p" style="color: rgb(0, 0, 0); font-family: Orbitron;">for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
                                 <button data-link="https://instagram.com/" style="background-color: rgb(0, 0, 0);">+1</button>
@@ -378,8 +378,8 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" data-entry="${raffleID}raffleID" style="width: 500px; height: 75px; position: absolute; left: 0px; top: 778px; z-index: 10;" data-section-id="fo1u"><div data-type="tiktokFollowDetails" class="raffleleader-additional-entry-section" style="background-color: rgba(255, 255, 255, 0); border-width: 1px 0px 0px; border-style: solid; border-color: rgb(0, 0, 0);">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2 style="font-family: Orbitron; font-size: 16px; color: rgb(255, 255, 255);">Follow us on TikTok</h2>
-                                <p style="font-family: Orbitron; color: rgb(0, 0, 0);">for an extra entry!</p>
+                                <h2 class="raffleleader-section-header" style="font-family: Orbitron; font-size: 16px; color: rgb(255, 255, 255);">Follow us on TikTok</h2>
+                                <p class="raffleleader-section-p" style="font-family: Orbitron; color: rgb(0, 0, 0);">for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
                                 <button data-link="https://tiktok.com/" style="background-color: rgb(0, 0, 0);">+1</button>
@@ -410,11 +410,11 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                         <div id="dropzone" class="raffleleader-dropzone" style="height: 800px; background-color: rgb(0, 0, 0);">
                                             <div style="display: none;" class="raffleleader-rules-and-terms-preview">
                                                 <button class="rules-and-terms-close-button">×</button>
-                                                <h2>Rules and Terms</h2>
+                                                <h2 class="raffleleader-section-header">Rules and Terms</h2>
                                                 <p class="raffleleader-rules-text"></p>
                                             </div>
                                         <div class="raffleleader-section" style="position: absolute; left: 36px; top: 23px; z-index: 10; width: 423px; height: 117px;" data-section-id="hszn"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center; font-size: 40px; line-height: 40px; font-weight: normal; font-family: Jura; color: rgb(255, 255, 255);">Win a piece from the new collection</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: center; font-size: 40px; line-height: 40px; font-weight: normal; font-family: Jura; color: rgb(255, 255, 255);">Win a piece from the new collection</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -432,7 +432,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 31px; top: 597px; z-index: 10; width: 428px; height: 78px;" data-section-id="ae9l"><div style="height: 100%; width: 100%; justify-content: left; background-color: rgba(255, 255, 255, 0); border-width: 0px; border-style: solid; border-color: rgb(255, 255, 255);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: left; font-weight: normal; font-size: 16px; line-height: 20px; justify-content: left; letter-spacing: 0px; color: rgb(255, 255, 255);">Enter your email for the chance to win any piece from our new collection, including this beautiful ring!</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: left; font-weight: normal; font-size: 16px; line-height: 20px; justify-content: left; letter-spacing: 0px; color: rgb(255, 255, 255);">Enter your email for the chance to win any piece from our new collection, including this beautiful ring!</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -474,11 +474,11 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                         <div id="dropzone" class="raffleleader-dropzone" style="height: 800px; background-color: rgb(7, 7, 45);">
                                             <div style="display: none;" class="raffleleader-rules-and-terms-preview">
                                                 <button class="rules-and-terms-close-button">×</button>
-                                                <h2>Rules and Terms</h2>
+                                                <h2 class="raffleleader-section-header">Rules and Terms</h2>
                                                 <p class="raffleleader-rules-text"></p>
                                             </div>
                                         <div class="raffleleader-section" style="position: absolute; left: 44px; top: 0px; z-index: 10; width: 417px; height: 272px;" data-section-id="tx0a"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0); justify-content: left;" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: left; font-size: 52px; line-height: 60px; color: rgb(255, 255, 255); justify-content: left;">Win a ticket to the NFL game of your choice!</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: left; font-size: 52px; line-height: 60px; color: rgb(255, 255, 255); justify-content: left;">Win a ticket to the NFL game of your choice!</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -488,7 +488,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 44px; top: 235px; z-index: 10; width: 405px; height: 81px;" data-section-id="3wjt"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0); justify-content: left;" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: left; font-weight: normal; font-size: 14px; line-height: 16px; letter-spacing: 0px; color: rgb(255, 255, 255); justify-content: left;">One lucky winner will win a ticket to the NFL game of their choosing. All you need to do is enter your email.</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: left; font-weight: normal; font-size: 14px; line-height: 16px; letter-spacing: 0px; color: rgb(255, 255, 255); justify-content: left;">One lucky winner will win a ticket to the NFL game of their choosing. All you need to do is enter your email.</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -538,11 +538,11 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                         <div id="dropzone" class="raffleleader-dropzone" style="height: 800px;">
                                             <div style="display: none;" class="raffleleader-rules-and-terms-preview">
                                                 <button class="rules-and-terms-close-button">×</button>
-                                                <h2>Rules and Terms</h2>
+                                                <h2 class="raffleleader-section-header">Rules and Terms</h2>
                                                 <p class="raffleleader-rules-text"></p>
                                             </div>
                                         <div class="raffleleader-section" style="position: absolute; left: 0px; top: 598px; z-index: 15; width: 500px; height: 202px;" data-section-id="u9ae"><div style="height: 100%; width: 100%; border-top-left-radius: 50px; border-top-right-radius: 50px; border-top: 1px solid rgb(60, 67, 74);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center;"></h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: center;"></h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -567,7 +567,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 47px; top: 624px; z-index: 17; width: 409px; height: 67px;" data-section-id="974o"><div style="height: 100%; width: 100%; justify-content: center; border-top: 0px solid rgb(60, 67, 74); border-top-left-radius: 0px; border-top-right-radius: 0px; text-align: center;" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: left; font-weight: normal; justify-content: left; font-size: 14px; letter-spacing: 0px; line-height: 18px;">Life is full of beautiful moments. Enter to win this giveaway and never miss one again. Type in your email below to enter.</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: left; font-weight: normal; justify-content: left; font-size: 14px; letter-spacing: 0px; line-height: 18px;">Life is full of beautiful moments. Enter to win this giveaway and never miss one again. Type in your email below to enter.</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -585,7 +585,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 18px; top: 15px; z-index: 10; width: 462px; height: 80px;" data-section-id="csqc"><div style="height: 100%; width: 100%; background-color: rgba(255, 255, 255, 0); border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0); border-radius: 100px;" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center; font-family: Roboto; font-size: 32px;">WIN A NEW GOPRO!</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: center; font-family: Roboto; font-size: 32px;">WIN A NEW GOPRO!</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -612,7 +612,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                         <div id="dropzone" class="raffleleader-dropzone" style="height: 600px">
                                             <div style="display: none;" class="raffleleader-rules-and-terms-preview">
                                                 <button class="rules-and-terms-close-button">&times;</button>
-                                                <h2>Rules and Terms</h2>
+                                                <h2 class="raffleleader-section-header">Rules and Terms</h2>
                                                 <p class="raffleleader-rules-text"></p>
                                             </div>
                                         </div>
@@ -633,11 +633,11 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                         <div id="dropzone" class="raffleleader-dropzone" style="height: 800px;">
                                             <div style="display: none;" class="raffleleader-rules-and-terms-preview">
                                                 <button class="rules-and-terms-close-button">×</button>
-                                                <h2>Rules and Terms</h2>
+                                                <h2 class="raffleleader-section-header">Rules and Terms</h2>
                                                 <p class="raffleleader-rules-text"></p>
                                             </div>
                                         <div class="raffleleader-section" style="position: absolute; left: 0px; top: 0px; z-index: 10; width: 500px; height: 95px;" data-section-id="ezec"><div style="height: 100%; width: 100%; border-bottom: 1px solid rgb(60, 67, 74);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center;">Header</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: center;">Header</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -647,7 +647,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 95px; z-index: 10; width: 500px; height: 75px;" data-section-id="4bsl"><div style="height: 100%; width: 100%; border-bottom: 1px solid rgb(60, 67, 74);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center; font-size: 22px;">Subheader</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: center; font-size: 22px;">Subheader</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -657,7 +657,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="width: 500px; height: 294px; position: absolute; left: 0px; top: 170px; z-index: 10;" data-section-id="ckeo"><div data-type="imageDetails" class="raffleleader-image-section" style="border-bottom: 1px solid rgb(60, 67, 74);">
-                            <p>Insert An Image Here</p>
+                            <p class="raffleleader-section-p" >Insert An Image Here</p>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -667,7 +667,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 464px; z-index: 10; width: 500px; height: 81px;" data-section-id="2kz0"><div style="height: 100%; width: 100%; justify-content: left; text-align: center;" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: left; justify-content: left; font-size: 14px; letter-spacing: 0px; line-height: 20px; font-weight: normal;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed libero sagittis, pretium ipsum ut, rhoncus nisi. Sed mollis arcuousi.</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: left; justify-content: left; font-size: 14px; letter-spacing: 0px; line-height: 20px; font-weight: normal;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed libero sagittis, pretium ipsum ut, rhoncus nisi. Sed mollis arcuousi.</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -693,8 +693,8 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" id="${raffleID}raffleID" style="width: 500px; height: 89px; position: absolute; left: 0px; top: 632px; z-index: 10;" data-section-id="ba47"><div data-type="XFollowDetails" class="raffleleader-additional-entry-section" style="border-bottom: 1px solid rgb(60, 67, 74);">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2>Follow us on X/Twitter</h2>
-                                <p>for an extra entry!</p>
+                                <h2 class="raffleleader-section-header">Follow us on X/Twitter</h2>
+                                <p class="raffleleader-section-p">for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
                                 <button data-link="https://twitter.com/">+1</button>
@@ -709,8 +709,8 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" id="${raffleID}raffleID" style="width: 500px; height: 79px; position: absolute; left: 0px; top: 721px; z-index: 10;" data-section-id="nghr"><div data-type="XRepostDetails" class="raffleleader-additional-entry-section">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2>Give us a repost</h2>
-                                <p>for an extra entry!</p>
+                                <h2 class="raffleleader-section-header">Give us a repost</h2>
+                                <p class="raffleleader-section-p">for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
                                 <button data-link="https://twitter.com/">+1</button>
@@ -741,11 +741,11 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                         <div id="dropzone" class="raffleleader-dropzone" style="height: 800px;">
                                             <div style="display: none;" class="raffleleader-rules-and-terms-preview">
                                                 <button class="rules-and-terms-close-button">×</button>
-                                                <h2>Rules and Terms</h2>
+                                                <h2 class="raffleleader-section-header">Rules and Terms</h2>
                                                 <p class="raffleleader-rules-text"></p>
                                             </div>
                                         <div class="raffleleader-section" style="position: absolute; left: 0px; top: 0px; z-index: 10; width: 500px; height: 95px;" data-section-id="qlfe"><div style="height: 100%; width: 100%; border-bottom: 1px solid rgb(60, 67, 74);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center;">Header</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: center;">Header</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -755,7 +755,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 95px; z-index: 10; width: 500px; height: 75px;" data-section-id="rf66"><div style="height: 100%; width: 100%; border-bottom: 1px solid rgb(60, 67, 74);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center; font-size: 22px;">Subheader</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: center; font-size: 22px;">Subheader</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -765,7 +765,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="width: 500px; height: 294px; position: absolute; left: 0px; top: 170px; z-index: 10;" data-section-id="7t0f"><div data-type="imageDetails" class="raffleleader-image-section" style="border-bottom: 1px solid rgb(60, 67, 74);">
-                            <p>Insert An Image Here</p>
+                            <p class="raffleleader-section-p">Insert An Image Here</p>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -775,7 +775,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 464px; z-index: 10; width: 500px; height: 81px;" data-section-id="qios"><div style="height: 100%; width: 100%; justify-content: left; text-align: center;" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: left; justify-content: left; font-size: 14px; letter-spacing: 0px; line-height: 20px; font-weight: normal;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed libero sagittis, pretium ipsum ut, rhoncus nisi. Sed mollis arcuousi.</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: left; justify-content: left; font-size: 14px; letter-spacing: 0px; line-height: 20px; font-weight: normal;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed libero sagittis, pretium ipsum ut, rhoncus nisi. Sed mollis arcuousi.</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -801,8 +801,8 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" id="${raffleID}raffleID" style="width: 500px; height: 81px; position: absolute; left: 0px; top: 632px; z-index: 10;" data-section-id="wyug"><div data-type="instaFollowDetails" class="raffleleader-additional-entry-section" style="border-bottom: 1px solid rgb(60, 67, 74);">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2>Follow us on Instagram</h2>
-                                <p>for an extra entry!</p>
+                                <h2 class="raffleleader-section-header">Follow us on Instagram</h2>
+                                <p class="raffleleader-section-p">for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
                                 <button data-link="https://instagram.com/">+1</button>
@@ -817,8 +817,8 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" id="${raffleID}raffleID" style="width: 500px; height: 87px; position: absolute; left: 0px; top: 713px; z-index: 10;" data-section-id="4yc6"><div data-type="instaLikeDetails" class="raffleleader-additional-entry-section">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2>Like us on Instagram</h2>
-                                <p>for an extra entry!</p>
+                                <h2 class="raffleleader-section-header">Like us on Instagram</h2>
+                                <p class="raffleleader-section-p">for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
                                 <button data-link="https://instagram.com/">+1</button>
@@ -849,11 +849,11 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                         <div id="dropzone" class="raffleleader-dropzone" style="height: 800px;">
                                             <div style="display: none;" class="raffleleader-rules-and-terms-preview">
                                                 <button class="rules-and-terms-close-button">×</button>
-                                                <h2>Rules and Terms</h2>
+                                                <h2 class="raffleleader-section-header">Rules and Terms</h2>
                                                 <p class="raffleleader-rules-text"></p>
                                             </div>
                                         <div class="raffleleader-section" style="position: absolute; left: 0px; top: 0px; z-index: 10; width: 500px; height: 95px;" data-section-id="ibao"><div style="height: 100%; width: 100%; border-bottom: 1px solid rgb(60, 67, 74);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center;">Header</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: center;">Header</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -863,7 +863,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 95px; z-index: 10; width: 500px; height: 75px;" data-section-id="dy5v"><div style="height: 100%; width: 100%; border-bottom: 1px solid rgb(60, 67, 74);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center; font-size: 22px;">Subheader</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: center; font-size: 22px;">Subheader</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -873,7 +873,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="width: 500px; height: 294px; position: absolute; left: 0px; top: 170px; z-index: 10;" data-section-id="zvgn"><div data-type="imageDetails" class="raffleleader-image-section" style="border-bottom: 1px solid rgb(60, 67, 74);">
-                            <p>Insert An Image Here</p>
+                            <p class="raffleleader-section-p">Insert An Image Here</p>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -883,7 +883,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 464px; z-index: 10; width: 500px; height: 81px;" data-section-id="o2y5"><div style="height: 100%; width: 100%; justify-content: left; text-align: center;" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: left; justify-content: left; font-size: 14px; letter-spacing: 0px; line-height: 20px; font-weight: normal;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed libero sagittis, pretium ipsum ut, rhoncus nisi. Sed mollis arcuousi.</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: left; justify-content: left; font-size: 14px; letter-spacing: 0px; line-height: 20px; font-weight: normal;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed libero sagittis, pretium ipsum ut, rhoncus nisi. Sed mollis arcuousi.</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -909,8 +909,8 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" id="${raffleID}raffleID" style="width: 500px; height: 82px; position: absolute; left: 0px; top: 632px; z-index: 10;" data-section-id="8xlo"><div data-type="tiktokFollowDetails" class="raffleleader-additional-entry-section" style="border-bottom: 1px solid rgb(60, 67, 74);">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2>Follow us on TikTok</h2>
-                                <p>for an extra entry!</p>
+                                <h2 class="raffleleader-section-header">Follow us on TikTok</h2>
+                                <p class="raffleleader-section-p">for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
                                 <button data-link="https://tiktok.com/">+1</button>
@@ -925,8 +925,8 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" id="${raffleID}raffleID" style="width: 500px; height: 86px; position: absolute; left: 0px; top: 714px; z-index: 10;" data-section-id="phdo"><div data-type="tiktokLikeDetails" class="raffleleader-additional-entry-section">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2>Like one of our videos</h2>
-                                <p>for an extra entry!</p>
+                                <h2 class="raffleleader-section-header">Like one of our videos</h2>
+                                <p class="raffleleader-section-p">for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column">
                                 <button data-link="https://tiktok.com/">+1</button>
@@ -957,11 +957,11 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                         <div id="dropzone" class="raffleleader-dropzone" style="height: 800px;">
                                             <div style="display: none;" class="raffleleader-rules-and-terms-preview">
                                                 <button class="rules-and-terms-close-button">×</button>
-                                                <h2>Rules and Terms</h2>
+                                                <h2 class="raffleleader-section-header">Rules and Terms</h2>
                                                 <p class="raffleleader-rules-text"></p>
                                             </div>
                                         <div class="raffleleader-section" style="position: absolute; left: 0px; top: 0px; z-index: 10; width: 500px; height: 95px;" data-section-id="kgvb"><div style="height: 100%; width: 100%; border-bottom: 1px solid rgb(60, 67, 74);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center;">Header</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: center;">Header</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -971,7 +971,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 95px; z-index: 10; width: 500px; height: 75px;" data-section-id="com5"><div style="height: 100%; width: 100%; border-bottom: 1px solid rgb(60, 67, 74);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center; font-size: 22px;">Subheader</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: center; font-size: 22px;">Subheader</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -981,7 +981,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="width: 500px; height: 326px; position: absolute; left: 0px; top: 170px; z-index: 10;" data-section-id="qr7w"><div data-type="imageDetails" class="raffleleader-image-section" style="border-bottom: 1px solid rgb(60, 67, 74);">
-                            <p>Insert An Image Here</p>
+                            <p class="raffleleader-section-p">Insert An Image Here</p>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -991,7 +991,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 496px; z-index: 10; width: 500px; height: 182px;" data-section-id="chca"><div style="height: 100%; width: 100%; justify-content: left; text-align: center;" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: left; justify-content: left; font-size: 14px; letter-spacing: 0px; line-height: 23px; font-weight: normal;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed libero sagittis, pretium ipsum ut, rhoncus nisi. Sed mollis arcuousi.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed libero sagittis, pretium ipsum ut, rhoncus nisi. Sed mollis arcuousi.</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: left; justify-content: left; font-size: 14px; letter-spacing: 0px; line-height: 23px; font-weight: normal;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed libero sagittis, pretium ipsum ut, rhoncus nisi. Sed mollis arcuousi.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed libero sagittis, pretium ipsum ut, rhoncus nisi. Sed mollis arcuousi.</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -1033,11 +1033,11 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                                         <div id="dropzone" class="raffleleader-dropzone" style="height: 750px;">
                                             <div style="display: none;" class="raffleleader-rules-and-terms-preview">
                                                 <button class="rules-and-terms-close-button">×</button>
-                                                <h2>Rules and Terms</h2>
+                                                <h2 class="raffleleader-section-header">Rules and Terms</h2>
                                                 <p class="raffleleader-rules-text"></p>
                                             </div>
                                         <div class="raffleleader-section" style="position: absolute; left: 0px; top: 0px; z-index: 10; width: 500px; height: 95px;" data-section-id="8l1q"><div style="height: 100%; width: 100%; border-bottom: 1px solid rgb(60, 67, 74);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center;">Header</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: center;">Header</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -1047,7 +1047,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 95px; z-index: 10; width: 500px; height: 75px;" data-section-id="mw0f"><div style="height: 100%; width: 100%; border-bottom: 1px solid rgb(60, 67, 74);" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: center; font-size: 22px;">Subheader</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: center; font-size: 22px;">Subheader</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -1057,7 +1057,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="width: 500px; height: 294px; position: absolute; left: 0px; top: 170px; z-index: 10;" data-section-id="w528"><div data-type="imageDetails" class="raffleleader-image-section" style="border-bottom: 1px solid rgb(60, 67, 74);">
-                            <p>Insert An Image Here</p>
+                            <p class="raffleleader-section-p">Insert An Image Here</p>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -1067,7 +1067,7 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-bottom-right"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" style="position: absolute; left: 0px; top: 464px; z-index: 10; width: 500px; height: 91px;" data-section-id="tpaz"><div style="height: 100%; width: 100%; justify-content: left; text-align: center;" data-type="textDetails" class="raffleleader-text-section">
-                            <h2 style="white-space: pre-wrap; text-align: left; justify-content: left; font-size: 14px; letter-spacing: 0px; line-height: 20px; font-weight: normal;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed libero sagittis, pretium ipsum ut, rhoncus nisi. Sed mollis arcuousi.</h2>
+                            <h2 class="raffleleader-section-header" style="white-space: pre-wrap; text-align: left; justify-content: left; font-size: 14px; letter-spacing: 0px; line-height: 20px; font-weight: normal;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed libero sagittis, pretium ipsum ut, rhoncus nisi. Sed mollis arcuousi.</h2>
                         </div>
                         <div style="display: none;" class="raffleleader-layer-handle-container">
                             <div class="raffleleader-to-top-handle"></div>
@@ -1093,8 +1093,8 @@ document.addEventListener("generalSettingsLoaded", ()=>{
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-left"></div>
                         <div style="display: none;" class="raffleleader-resize-handle raffleleader-resize-top-right"></div></div><div class="raffleleader-section" id="${raffleID}raffleID" style="width: 500px; height: 101px; position: absolute; left: 0px; top: 649px; z-index: 10;" data-section-id="ipzb"><div data-type="referDetails" class="raffleleader-additional-entry-section">
                             <div class="raffleleader-additional-entry-text-column">
-                                <h2>Refer a friend</h2>
-                                <p>for an extra entry!</p>
+                                <h2 class="raffleleader-section-header">Refer a friend</h2>
+                                <p class="raffleleader-section-p">for an extra entry!</p>
                             </div>
                             <div class="raffleleader-additional-entry-button-column raffleleader-additional-entry-button-column-refer">
                                 <button style="background-color: rgb(21, 1, 254);">Copy Link</button>

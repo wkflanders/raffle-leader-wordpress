@@ -87,10 +87,10 @@ class BuilderCallbacks extends BaseController
 
     public function builderContent()
     {
-        if (!isset($_GET['_wpnonce']) || !wp_verify_nonce($_GET['_wpnonce'], 'verify_raffle_id_action')) {
+        if (!isset($_GET['_wpnonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_GET['_wpnonce'])), 'verify_raffle_id_action')) {
             wp_die('Security check failed', 'Security Error', array('response' => 403));
         }
-        
+
         $raffle_id = isset($_GET['raffle_id']) ? intval($_GET['raffle_id']) : 0;
 
         if (!$raffle_id) {

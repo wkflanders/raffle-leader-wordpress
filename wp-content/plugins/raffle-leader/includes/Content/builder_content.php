@@ -58,6 +58,85 @@
     <div class="rl-tab-content">
         <?php require plugin_dir_path(__FILE__) . 'templates_content.php' ?>
         <div id="setup" class="rl-tab-pane">
+            <!-- New Toolbar Inside 'Set Up' Tab -->
+            <div id="rlToolbar" class="rl-toolbar">
+
+                <!-- Toolbar Sections -->
+                <!-- Section 1: Drag & Drop Items -->
+                <div class="toolbar-section">
+                    <p>Drag & drop to add sections to your raffle</p>
+                    <div id="textBox" draggable="true" class="toolbar_item">
+                        <p>+ Text</p>
+                    </div>
+                    <div id="entryBox" draggable="true" class="toolbar_item">
+                        <p>+ Entry</p>
+                    </div>
+                    <div id="counterBox" draggable="true" class="toolbar_item">
+                        <p>+ Counter</p>
+                    </div>
+                    <div id="imageBox" draggable="true" class="toolbar_item">
+                        <p>+ Image</p>
+                    </div>
+                </div>
+
+                <!-- Section 2: Size Adjustment -->
+                <div class="toolbar-section">
+                    <p>Adjust your raffle's size:</p>
+                    <div class="layout-size-row-wrapper">
+                        <div class="layout-size-row layout-size-input">
+                            <input id="layoutWidthForm" class="layout-size-form" type="text" name="layoutWidth"
+                                placeholder="Width">
+                            <p>X</p>
+                            <input id="layoutHeightForm" class="layout-size-form" type="text" name="layoutHeight"
+                                placeholder="Height">
+                        </div>
+                    </div>
+                    <div class="layout-size-row layout-size-error">
+                        <p class="layout-min-width-error layout-size-error-width-text" style="display: none;">
+                            Width must be ≥ 500px!</p>
+                        <p class="layout-max-width-error layout-size-error-width-text" style="display: none;">
+                            Width must be ≤ 2000px!</p>
+                        <p class="layout-min-height-error" style="display: none;">Height must be ≥ 100px!</p>
+                        <p class="layout-max-height-error" style="display: none;">Height must be ≤ 2000px!</p>
+                    </div>
+                </div>
+
+                <!-- Section 3: Color Picker -->
+                <div class="toolbar-section">
+                    <p>Background Color:</p>
+                    <div class="customize-settings-dropdown">
+                        <div class="dropdown-display dropdown-color">
+                            <div id="raffleGradientBackground"></div>
+                            <div id="raffleBackgroundColorClick" class="dropdown-color-click"
+                                data-type="raffleBackgroundColor"></div>
+                            <input id="raffleBackgroundColorForm" class="color-input" data-type="raffleBackgroundColor"
+                                type="text" name="raffleBackgroundColor" placeholder="Enter a hexidecimal">
+                        </div>
+                    </div>
+                </div>
+                <div class="toolbar-section">
+                    <p>Footer Color:</p>
+                    <div class="customize-settings-dropdown">
+                        <div class="dropdown-display dropdown-color">
+                            <div id="footerFontGradientBackground"></div>
+                            <div id="footerFontColorClick" class="dropdown-color-click" data-type="footerFontColor">
+                            </div>
+                            <input id="footerFontColorForm" class="color-input" data-type="footerFontColor" type="text"
+                                name="footerFontColor" placeholder="Enter a hexidecimal">
+                        </div>
+                    </div>
+                </div>
+                <div class="customize-settings-dropdown">
+                    <div class="dropdown-display dropdown-color">
+                        <div id="footerGradientBackground"></div>
+                        <div id="footerBackgroundColorClick" class="dropdown-color-click"
+                            data-type="footerBackgroundColor"></div>
+                        <input id="footerBackgroundColorForm" class="color-input" data-type="footerBackgroundColor"
+                            type="text" name="footerBackgroundColor" placeholder="Enter a hexidecimal">
+                    </div>
+                </div>
+            </div>
+
             <div id="setupWrapper" class="rl-setup-wrapper">
                 <div class="raffle-options-wrapper">
                     <div class="raffle-options raffle-layout">
@@ -103,7 +182,7 @@
                                 <p class="layout-max-height-error" style="display: none;">Height must be ≤ 2000px!</p>
                             </div>
                         </div>
-                        <div class="layout-box layout-bg-color">
+                        <!-- <div class="layout-box layout-bg-color">
                             <p>Adjust your raffle's background color</p>
                             <div class="customize-settings-box">
                                 <p>Background Color</p>
@@ -118,8 +197,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="layout-box layout-bg-color">
+                        </div> -->
+                        <!-- <div class="layout-box layout-bg-color">
                             <div class="customize-settings-box">
                                 <p>Footer Color</p>
                                 <div class="customize-settings-dropdown">
@@ -132,8 +211,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="layout-box layout-bg-color">
+                        </div> -->
+                        <!-- <div class="layout-box layout-bg-color">
                             <div class="customize-settings-box">
                                 <p>Footer Background Color</p>
                                 <div class="customize-settings-dropdown">
@@ -147,7 +226,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="raffle-options raffle-settings">
                         <div class="header-box raffle-options-header">

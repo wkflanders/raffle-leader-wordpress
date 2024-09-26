@@ -13,9 +13,9 @@ $contestantsAPI = new ContestantsAPI();
 $entriesAPI = new EntriesAPI();
 
 if (isset($_GET['action']) && $_GET['action'] === 'delete') {
-    $nonce = isset($_GET['_wpnonce']) ? $_GET['_wpnonce'] : '';
+    $nonce = isset($_GET['_wpnonce']) ? sanitize_text_field(wp_unslash($_GET['_wpnonce'])) : '';
     $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
-    $type = isset($_GET['type']) ? sanitize_text_field($_GET['type']) : '';
+    $type = isset($_GET['type']) ? sanitize_text_field(wp_unslash($_GET['type'])) : '';
     $raffleID = isset($_GET['raffle_id']) ? intval($_GET['raffle_id']) : 0;
 
     if ($id && $type && $raffleID) {
@@ -267,9 +267,9 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
 }
 
 if (isset($_GET['action']) && $_GET['action'] === 'delete') {
-    $nonce = isset($_GET['_wpnonce']) ? $_GET['_wpnonce'] : '';
+    $nonce = isset($_GET['_wpnonce']) ? sanitize_text_field(wp_unslash($_GET['_wpnonce'])) : '';
     $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
-    $type = isset($_GET['type']) ? sanitize_text_field($_GET['type']) : '';
+    $type = isset($_GET['type']) ? sanitize_text_field(wp_unslash($_GET['type'])) : '';
     $raffleID = isset($_GET['raffle_id']) ? intval($_GET['raffle_id']) : 0;
 
     if ($id && $type && $raffleID) {
@@ -662,7 +662,7 @@ $entryTypeMapping = [
                         $select_winner_nonce = wp_create_nonce('select_winner_action_' . $raffleID);
                         ?>
                         <form method="post">
-                            <input type="hidden" name="select_winner_nonce" value="<?php echo $select_winner_nonce; ?>">
+                            <input type="hidden" name="select_winner_nonce" value="<?php echo esc_attr($select_winner_nonce); ?>">
                             <input type="submit" name="select_winner" class="button" value="Select Winner">
                         </form>
                     </div>
@@ -694,7 +694,7 @@ $entryTypeMapping = [
                                 <td class="email column-email">
                                     <?php
                                     $contestantEmail = isset($contestantsById[ $entry['contestant_id'] ]) ? esc_html($contestantsById[ $entry['contestant_id'] ]['email']) : 'Unknown';
-                                    echo $contestantEmail;
+                                    echo esc_html($contestantEmail);
                                     ?>
                                     <div class="row-actions">
                                         <span class="delete">

@@ -2,7 +2,7 @@
 Contributors: @raffleleader
 Donate link: https://raffleleader.com
 Tags: giveaway, raffle, marketing, leads, customizable
-Requires at least: 5.0
+Requires at least: 6.0
 Tested up to: 6.6.2
 Stable tag: 1.0.0
 Requires PHP: 7.0

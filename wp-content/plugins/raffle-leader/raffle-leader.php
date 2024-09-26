@@ -6,7 +6,8 @@
 /**
  * Plugin Name: Raffle Leader
  * Plugin URI: https://raffleleader.com
- * Version: 1.0.2
+ * Version: 1.0.0
+ * License: GPLv2 or later
  * Description: Easily create beautiful giveaways exactly to your liking with the best WordPress giveaway marketing plugin.
  * Author: Raffle Leader Team
  * Author URI: https://raffleleader.com

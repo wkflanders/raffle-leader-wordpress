@@ -61,9 +61,6 @@ document.addEventListener('generalSettingsLoaded', ()=>{
             const preview = document.getElementById('preview');
             let HTMLContent = raffleData.content
             
-            const raffleIdRegex = /id="(\d+)raffleID"/g;
-            HTMLContent = HTMLContent.replace(raffleIdRegex, `id="${raffleID}raffleID"`);
-            
             preview.outerHTML = HTMLContent;
 
             const templateBox = document.getElementById(raffleData.template_id);

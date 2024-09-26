@@ -39,7 +39,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 raffleContainer.style.transform = 'scale(1)';
             }
 
-            const HTMLContent = raffleData.content;
+            let HTMLContent = raffleData.content;
+
+            const raffleIdRegex = /id="(\d+)raffleID"/g;
+            HTMLContent = HTMLContent.replace(raffleIdRegex, `id="${raffleID}raffleID"`);
             raffleContainer.innerHTML = HTMLContent;
 
             const preview = raffleContainer.querySelector('.raffleleader-preview-box');

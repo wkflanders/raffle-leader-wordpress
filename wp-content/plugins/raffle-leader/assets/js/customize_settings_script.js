@@ -3990,8 +3990,8 @@ document.addEventListener('generalSettingsLoaded', ()=>{
 
             case 'counterBackgroundColor':
                 if(fromPickr === false){
-                    if(pickerCounterBackground === undefined){
-                        pickerCounterBackground = Pickr.create({
+                    if(pickrCounterBackground === undefined){
+                        pickrCounterBackground = Pickr.create({
                             el: counterColorGradientBackground,
                             theme: 'classic', // or 'monolith', or 'nano'
                             default: color,
@@ -4003,7 +4003,7 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                             }
                         });
                     } else {
-                        pickerCounterBackground.setColor(color);
+                        pickrCounterBackground.setColor(color);
                         const hexBoxClick = document.getElementById('counterBackgroundColorClick');
                         hexBoxClick.style.backgroundColor = color;
                     }

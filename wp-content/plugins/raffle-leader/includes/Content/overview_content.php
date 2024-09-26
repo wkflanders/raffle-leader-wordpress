@@ -870,7 +870,21 @@ $entryTypeMapping = [
                                             <?php echo esc_html($raffle['name']); ?>
                                         <?php else: ?>
                                             <a
-                                                href="<?php echo esc_url(admin_url('admin.php?page=raffleleader_builder&raffle_id=' . $raffle['raffle_id'])); ?>"><?php echo esc_html($raffle['name']); ?></a>
+                                                href="<?php 
+                                                $builder_nonce = wp_create_nonce('verify_raffle_id_action');
+                                                $edit_url = add_query_arg(
+                                                    array(
+                                                        'page' => 'raffleleader_builder',
+                                                        'raffle_id' => $raffle['raffle_id'],
+                                                        '_wpnonce' => $builder_nonce
+                                                    ),
+                                                    admin_url('admin.php')
+                                                ); 
+                                                echo esc_url($edit_url);  
+                                                ?>"
+                                                >
+                                                <?php echo esc_html($raffle['name']); ?>
+                                            </a>
                                         <?php endif; ?>
                                     </strong>
                                     <div class="row-actions">
@@ -888,7 +902,18 @@ $entryTypeMapping = [
                                         <?php else: ?>
                                             <span class="edit">
                                                 <a
-                                                    href="<?php echo esc_url(admin_url('admin.php?page=raffleleader_builder&raffle_id=' . $raffle['raffle_id'])) ?>">Edit
+                                                    href="<?php
+                                                    $builder_nonce = wp_create_nonce('verify_raffle_id_action');
+                                                    $edit_url = add_query_arg(
+                                                        array(
+                                                            'page' => 'raffleleader_builder',
+                                                            'raffle_id' => $raffle['raffle_id'],
+                                                            '_wpnonce' => $builder_nonce
+                                                        ),
+                                                        admin_url('admin.php')
+                                                    ); 
+                                                    echo esc_url($edit_url); 
+                                                    ?>">Edit
                                                     |</a>
                                             </span>
                                             <span class="contestants">

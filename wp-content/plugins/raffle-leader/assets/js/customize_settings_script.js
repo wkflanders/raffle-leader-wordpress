@@ -504,10 +504,11 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 counterSection.style.flexDirection = 'row';
                 
                 // counterNumber.style.right = '60%';
-                counterNumber.style.marginRight = `30px`;
+                counterNumber.style.marginRight = `20px`;
+                counterNumber.style.position = 'relative';
                 
-                counterText.style.marginLeft = `30px`;
                 counterText.style.marginTop = '0';
+                counterText.style.position = 'relative';
 
                 document.querySelector('.inline-btn-orient-active').classList.remove('inline-btn-orient-active');;
                 inputHBtn.classList.add('inline-btn-orient-active');
@@ -542,9 +543,11 @@ document.addEventListener('generalSettingsLoaded', ()=>{
                 counterSection.style.flexDirection = 'column';
                 
                 counterNumber.style.marginRight = '0';
+                counterNumber.style.position = 'absolute';
                 
                 counterText.style.marginLeft = '0';
                 counterText.style.marginTop = '60px';
+                cpimterText.style.position = 'absolute';
                 
 
                 document.querySelector('.inline-btn-orient-active').classList.remove('inline-btn-orient-active');;

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         fetch(raffleleader_load_raffle_object.ajax_url + '?action=loadRaffleData&raffle_id=' + raffleID + '&security=' + encodeURIComponent(raffleleader_load_raffle_object.security))
         .then(response => {
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                throw new Error('Network response was not ok', response);
             }
             return response.json();
         })

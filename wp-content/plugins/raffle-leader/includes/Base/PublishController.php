@@ -37,6 +37,8 @@ class PublishController extends BaseController
         add_action('wp_ajax_handleReferral', array($this, 'handleReferral'));
         add_action('wp_ajax_nopriv_handleReferral', array($this, 'handleReferral'));
 
+        add_action('wp_ajax_refresh_nonce', array($this, 'refresh_nonce_callback'));
+        add_action('wp_ajax_nopriv_refresh_nonce', array($this, 'refresh_nonce_callback'));
         // Add button and modal for the classic editor
         add_action('media_buttons', array($this, 'addClassicEditorButton'), 15);
         add_action('admin_footer', array($this, 'addClassicEditorModal'));
@@ -47,6 +49,12 @@ class PublishController extends BaseController
         // Add for creating posts/pages
         add_action('admin_footer', array($this, 'createNewRafflePost'));
         add_action('admin_footer', array($this, 'createNewRafflePage'));
+    }
+
+    public function refresh_nonce_callback()
+    {
+        $new_nonce = wp_create_nonce('load_raffle_data');
+        wp_send_json_success(['new_nonce' => $new_nonce]);
     }
 
     public function shortcodeHandler($atts)
@@ -70,7 +78,7 @@ class PublishController extends BaseController
     public function loadRaffleData()
     {
         $nonce = isset($_GET['security']) ? sanitize_text_field(wp_unslash($_GET['security'])) : '';
-        if (!wp_verify_nonce($nonce, 'nonce')) {
+        if (!wp_verify_nonce($nonce, 'load_raffle_data')) {
             wp_send_json_error('Nonce verification failed', 403);
             wp_die();
         }

@@ -57,7 +57,7 @@ class Enqueue extends BaseController{
             wp_enqueue_script( 'raffleleader_load_raffle_script', $this->plugin_url . '/assets/js/raffle_load_script.js', array(), wp_rand(111, 9999) );
             wp_localize_script( 'raffleleader_load_raffle_script', 'raffleleader_load_raffle_object', array( 
                 'ajax_url' => admin_url( 'admin-ajax.php' ),
-                'security' => wp_create_nonce( 'nonce' ),
+                'security' => wp_create_nonce( 'load_raffle_data' ),
              ) );
 
             wp_enqueue_script( 'raffleleader_raffle_entry_script', $this->plugin_url . '/assets/js/raffle_entry_script.js', array(), wp_rand(111, 9999) );

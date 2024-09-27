@@ -64,30 +64,37 @@
                 <!-- Toolbar Sections -->
                 <!-- Section 1: Drag & Drop Items -->
                 <div class="toolbar-section">
-                    <p>Drag & drop to add sections to your raffle</p>
-                    <div id="textBox" draggable="true" class="toolbar_item">
-                        <p>+ Text</p>
+                    <!-- <p>Drag & drop to add sections to your raffle</p> -->
+                    <div id="textBox" draggable="true" class="layout-option-box layout-option-box-toolbar">
+                        <p>T</p>
                     </div>
-                    <div id="entryBox" draggable="true" class="toolbar_item">
-                        <p>+ Entry</p>
+                    
+                    <div id="entryBox" draggable="true" class="layout-option-box layout-option-box-toolbar">
+                        <p>+1</p>
                     </div>
-                    <div id="counterBox" draggable="true" class="toolbar_item">
-                        <p>+ Counter</p>
+                    <div id="counterBox" draggable="true" class="layout-option-box layout-option-box-toolbar">
+                        <img draggable= "false" class="toolbar-icon"
+                        src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . 'assets/images/counter_toolbar.png'); ?>"
+                        alt="RaffleLeader Logo">
                     </div>
-                    <div id="imageBox" draggable="true" class="toolbar_item">
-                        <p>+ Image</p>
+                    <div id="imageBox" draggable="true" class="layout-option-box layout-option-box-toolbar">
+                        <img draggable= "false" class="toolbar-icon"
+                        src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . 'assets/images/image_toolbar.png'); ?>"
+                        alt="RaffleLeader Logo">
                     </div>
                 </div>
 
                 <!-- Section 2: Size Adjustment -->
                 <div class="toolbar-section">
-                    <p>Adjust your raffle's size:</p>
-                    <div class="layout-size-row-wrapper">
-                        <div class="layout-size-row layout-size-input">
-                            <input id="layoutWidthForm" class="layout-size-form" type="text" name="layoutWidth"
+                    <img draggable= "false" class="toolbar-icon"
+                        src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . 'assets/images/crop_toolbar.png'); ?>"
+                        alt="RaffleLeader Logo">
+                    <div class="layout-size-row-wrapper new-test">
+                        <div class="toolbar-size-input"> 
+                            <input id="layoutWidthForm" class="layout-size-form toolbar-size-form" type="text" name="layoutWidth"
                                 placeholder="Width">
                             <p>X</p>
-                            <input id="layoutHeightForm" class="layout-size-form" type="text" name="layoutHeight"
+                            <input id="layoutHeightForm" class="layout-size-form toolbar-size-form" type="text" name="layoutHeight"
                                 placeholder="Height">
                         </div>
                     </div>
@@ -102,43 +109,54 @@
                 </div>
 
                 <!-- Section 3: Color Picker -->
-                <div class="toolbar-section">
+                <div class="toolbar-section toolbar-color-section">
                     <p>Background Color:</p>
                     <div class="customize-settings-dropdown">
                         <div class="dropdown-display dropdown-color">
                             <div id="raffleGradientBackground"></div>
-                            <div id="raffleBackgroundColorClick" class="dropdown-color-click"
+                            <div id="raffleBackgroundColorClick" class="dropdown-color-click shrink-test"
                                 data-type="raffleBackgroundColor"></div>
-                            <input id="raffleBackgroundColorForm" class="color-input" data-type="raffleBackgroundColor"
+                            <input id="raffleBackgroundColorForm" class="color-input shrink-test" data-type="raffleBackgroundColor"
                                 type="text" name="raffleBackgroundColor" placeholder="Enter a hexidecimal">
                         </div>
                     </div>
-                </div>
-                <div class="toolbar-section">
-                    <p>Footer Color:</p>
+                    <p>Footer Font Color:</p>
                     <div class="customize-settings-dropdown">
                         <div class="dropdown-display dropdown-color">
                             <div id="footerFontGradientBackground"></div>
-                            <div id="footerFontColorClick" class="dropdown-color-click" data-type="footerFontColor">
+                            <div id="footerFontColorClick" class="dropdown-color-click shrink-test" data-type="footerFontColor">
                             </div>
-                            <input id="footerFontColorForm" class="color-input" data-type="footerFontColor" type="text"
+                            <input id="footerFontColorForm" class="color-input shrink-test" data-type="footerFontColor" type="text"
                                 name="footerFontColor" placeholder="Enter a hexidecimal">
                         </div>
                     </div>
-                </div>
-                <div class="customize-settings-dropdown">
-                    <div class="dropdown-display dropdown-color">
-                        <div id="footerGradientBackground"></div>
-                        <div id="footerBackgroundColorClick" class="dropdown-color-click"
-                            data-type="footerBackgroundColor"></div>
-                        <input id="footerBackgroundColorForm" class="color-input" data-type="footerBackgroundColor"
-                            type="text" name="footerBackgroundColor" placeholder="Enter a hexidecimal">
+                    <p>Background Footer Color:
+                    <div class="customize-settings-dropdown">
+                        <div class="dropdown-display dropdown-color shrink-test">
+                            <div id="footerGradientBackground"></div>
+                            <div id="footerBackgroundColorClick" class="dropdown-color-click shrink-test"
+                                data-type="footerBackgroundColor"></div>
+                            <input id="footerBackgroundColorForm" class="color-input shrink-test" data-type="footerBackgroundColor"
+                                type="text" name="footerBackgroundColor" placeholder="Enter a hexidecimal">
+                        </div>
                     </div>
                 </div>
+                <!-- Section 4: Settings and Terms -->
+                <!-- <div class="toolbar-section">
+                        <div class="header-box raffle-options-header">
+                            <h2 class="header-box-title">Settings</h2>
+                        </div>
+                        <div class="general-settings-options">
+                            <a href="#dateAndTime" class="settings-tab-open"><button class="general-settings-btn">Date
+                                    and Time</button></a>
+                            <a href="#rulesAndTerms" class="settings-tab-open"><button
+                                    class="general-settings-btn">Rules and Terms</button></a>
+                        </div>
+                    </div> -->
             </div>
 
             <div id="setupWrapper" class="rl-setup-wrapper">
-                <div class="raffle-options-wrapper">
+                <!-- <div class="raffle-options-wrapper">
                     <div class="raffle-options raffle-layout">
                         <div class="header-box raffle-options-header">
                             <h2 class="header-box-title">Layout</h2>
@@ -181,7 +199,7 @@
                                 <p class="layout-min-height-error" style="display: none;">Height must be ≥ 100px!</p>
                                 <p class="layout-max-height-error" style="display: none;">Height must be ≤ 2000px!</p>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- <div class="layout-box layout-bg-color">
                             <p>Adjust your raffle's background color</p>
                             <div class="customize-settings-box">
@@ -227,7 +245,7 @@
                                 </div>
                             </div>
                         </div> -->
-                    </div>
+                    <!-- </div>
                     <div class="raffle-options raffle-settings">
                         <div class="header-box raffle-options-header">
                             <h2 class="header-box-title">Settings</h2>
@@ -236,15 +254,15 @@
                             <a href="#dateAndTime" class="settings-tab-open"><button class="general-settings-btn">Date
                                     and Time</button></a>
                             <a href="#rulesAndTerms" class="settings-tab-open"><button
-                                    class="general-settings-btn">Rules and Terms</button></a>
+                                    class="general-settings-btn">Rules and Terms</button></a> -->
                             <!-- <a href="#emailSettings" class="settings-tab-open general-settings-deactivated"><button class="general-settings-btn">Email Settings</button></a>
                             <a href="#successSettings" class="settings-tab-open general-settings-deactivated"><button class="general-settings-btn">Success Settings</button></a>
                             <a href="#GPDR" class="settings-tab-open general-settings-deactivated"><button class="general-settings-btn">GPDR Consent</button></a>
                             <a href="#recaptcha" class="settings-tab-open general-settings-deactivated"><button class="general-settings-btn">Recaptcha</button></a>
                             <a href="#webhooks" class="settings-tab-open general-settings-deactivated"><button class="general-settings-btn">Webhooks</button></a> -->
-                        </div>
-                    </div>
-                </div>
+                        <!-- </div>
+                    </div> -->
+                <!-- </div> -->
                 <div class="general-settings-wrapper">
                     <div class="general-settings-menu" id='dateAndTime'>
                         <div class="header-box settings-menu-header">

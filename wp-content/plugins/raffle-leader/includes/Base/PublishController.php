@@ -70,7 +70,7 @@ class PublishController extends BaseController
     public function loadRaffleData()
     {
         $nonce = isset($_GET['security']) ? sanitize_text_field(wp_unslash($_GET['security'])) : '';
-        if (!wp_verify_nonce($nonce, 'nonce')) {
+        if (!wp_verify_nonce($nonce, 'load_raffle_data')) {
             wp_send_json_error('Nonce verification failed', 403);
             wp_die();
         }

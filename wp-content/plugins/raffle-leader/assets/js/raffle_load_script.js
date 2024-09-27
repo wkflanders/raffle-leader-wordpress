@@ -9,18 +9,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const raffleLoaded = new CustomEvent("raffleLoaded");
 
   if (raffleID) {
-    const url = new URL(raffleleader_load_raffle_object.ajax_url);
+    const timestamp = new Date().getTime();
+    const url = new URL(
+      raffleleader_load_raffle_object.ajax_url + "?_=" + timestamp
+    );
     url.searchParams.append("action", "loadRaffleData");
     url.searchParams.append("raffle_id", raffleID);
     url.searchParams.append(
       "security",
       raffleleader_load_raffle_object.security
     );
-    url.searchParams.append("_", new Date().getTime()); // Cache busting
 
-    console.log("Fetching raffle data from:", url.toString());
-
-    fetch(url)
+    fetch(url, {
+      credentials: "same-origin", // This ensures cookies are sent with the request
+    })
       .then((response) => {
         if (!response.ok) {
           return response.text().then((text) => {
@@ -34,19 +36,47 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((data) => {
         console.log("Received raffle data:", data);
         loadPreview(data);
-        return data;
-      })
-      .then((data) => {
         loadDateAndTimeAndCounters(data);
-        return data;
       })
       .catch((error) => {
         console.error("Error:", error);
-        raffleContainer.innerHTML = `<p>Error loading raffle data. Please try refreshing the page. Error: ${error.message}</p>`;
+        if (error.message.includes("403")) {
+          // If it's a 403 error, try refreshing the nonce
+          refreshNonce()
+            .then(() => {
+              // Retry the fetch with the new nonce
+              loadRaffleData();
+            })
+            .catch((refreshError) => {
+              console.error("Error refreshing nonce:", refreshError);
+              raffleContainer.innerHTML = `<p>Error loading raffle data. Please try refreshing the page. Error: ${error.message}</p>`;
+            });
+        } else {
+          raffleContainer.innerHTML = `<p>Error loading raffle data. Please try refreshing the page. Error: ${error.message}</p>`;
+        }
       });
   } else {
     console.error("No raffle ID found");
     raffleContainer.innerHTML = "<p>Error: No raffle ID provided.</p>";
+  }
+
+  function refreshNonce() {
+    return fetch(raffleleader_load_raffle_object.ajax_url, {
+      method: "POST",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: "action=refresh_nonce",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          raffleleader_load_raffle_object.security = data.data.new_nonce;
+        } else {
+          throw new Error("Failed to refresh nonce");
+        }
+      });
   }
 
   function loadPreview(raffleData) {

@@ -142,17 +142,18 @@
                     </div>
                 </div>
                 <!-- Section 4: Settings and Terms -->
-                <!-- <div class="toolbar-section">
-                        <div class="header-box raffle-options-header">
-                            <h2 class="header-box-title">Settings</h2>
-                        </div>
-                        <div class="general-settings-options">
-                            <a href="#dateAndTime" class="settings-tab-open"><button class="general-settings-btn">Date
-                                    and Time</button></a>
+                <div class="toolbar-section">
+                       
+                        <a href="#dateAndTime" class="settings-tab-open"><button class="general-settings-btn"><img draggable= "false" class="toolbar-icon"
+                        src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . 'assets/images/settings_toolbar.png'); ?>"
+                        alt="RaffleLeader Logo"></button></a>
                             <a href="#rulesAndTerms" class="settings-tab-open"><button
-                                    class="general-settings-btn">Rules and Terms</button></a>
-                        </div>
-                    </div> -->
+                                    class="general-settings-btn"> <img draggable= "false" class="toolbar-icon"
+                        src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . 'assets/images/rules_toolbar.png'); ?>"
+                        alt="RaffleLeader Logo">
+                    </button></a>
+                    
+                    </div>
             </div>
 
             <div id="setupWrapper" class="rl-setup-wrapper">

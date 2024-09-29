@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return response.json();
       })
       .then((data) => {
-        console.log("Received raffle data:", data);
+        console.log("Received raffle data");
         loadPreview(data);
         loadDateAndTimeAndCounters(data);
       })

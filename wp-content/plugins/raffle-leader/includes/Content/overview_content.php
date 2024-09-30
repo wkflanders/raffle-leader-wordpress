@@ -28,15 +28,12 @@ if (isset($_GET['action']) && $_GET['action'] === 'delete') {
                 break;
             case 'contestant':
                 if (wp_verify_nonce($nonce, 'delete_contestant_' . $id)) {
-                    // Get all entries for this contestant
                     $contestant_entries = $entriesAPI->getEntriesByContestantId($id, $raffle_id);
 
-                    // Delete all entries for this contestant
                     foreach ($contestant_entries as $entry) {
                         $entriesAPI->deleteEntry($entry['entry_id']);
                     }
 
-                    // Delete the contestant
                     $contestantsAPI->deleteContestant($id);
 
                     $redirect_view = 'raffle_details';
@@ -53,7 +50,6 @@ if (isset($_GET['action']) && $_GET['action'] === 'delete') {
 
             $redirect_url = esc_url_raw($redirect_url);
 
-            // Output the JavaScript redirect and exit
             echo '<meta http-equiv="refresh" content="0;url=' . esc_url($redirect_url) . '">';
             exit;
         }
@@ -170,7 +166,7 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
                 'raffles_affected' => $raffles_affected
             ), admin_url('admin.php'));
 
-            echo "<script>location.href = '" . esc_js($redirect_url) . "';</script>";
+            echo '<meta http-equiv="refresh" content="0;url=' . esc_url($redirect_url) . '">';
             exit;
         } else {
             wp_die('You do not have sufficient permissions to access this page.');
@@ -315,41 +311,41 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
     }
 }
 
-if (isset($_GET['action']) && $_GET['action'] === 'delete') {
-    $nonce = isset($_GET['_wpnonce']) ? sanitize_text_field(wp_unslash($_GET['_wpnonce'])) : '';
-    $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
-    $type = isset($_GET['type']) ? sanitize_text_field(wp_unslash($_GET['type'])) : '';
-    $raffle_id = isset($_GET['raffle_id']) ? intval($_GET['raffle_id']) : 0;
+// if (isset($_GET['action']) && $_GET['action'] === 'delete') {
+//     $nonce = isset($_GET['_wpnonce']) ? sanitize_text_field(wp_unslash($_GET['_wpnonce'])) : '';
+//     $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+//     $type = isset($_GET['type']) ? sanitize_text_field(wp_unslash($_GET['type'])) : '';
+//     $raffle_id = isset($_GET['raffle_id']) ? intval($_GET['raffle_id']) : 0;
 
-    if ($id && $type && $raffle_id) {
-        switch ($type) {
-            case 'entry':
-                if (wp_verify_nonce($nonce, 'delete_entry_' . $id)) {
-                    $entriesAPI->deleteEntry($id);
-                    $redirect_view = 'entry_details';
-                }
-                break;
-            case 'contestant':
-                if (wp_verify_nonce($nonce, 'delete_contestant_' . $id)) {
-                    $contestantsAPI->deleteContestant($id);
-                    $redirect_view = 'raffle_details';
-                }
-                break;
-        }
+//     if ($id && $type && $raffle_id) {
+//         switch ($type) {
+//             case 'entry':
+//                 if (wp_verify_nonce($nonce, 'delete_entry_' . $id)) {
+//                     $entriesAPI->deleteEntry($id);
+//                     $redirect_view = 'entry_details';
+//                 }
+//                 break;
+//             case 'contestant':
+//                 if (wp_verify_nonce($nonce, 'delete_contestant_' . $id)) {
+//                     $contestantsAPI->deleteContestant($id);
+//                     $redirect_view = 'raffle_details';
+//                 }
+//                 break;
+//         }
 
-        if (isset($redirect_view)) {
-            $redirect_url = add_query_arg(array(
-                'page' => 'raffleleader_plugin',
-                'raffle_id' => $raffle_id,
-                'view' => $redirect_view,
-                'deleted' => '1'
-            ), admin_url('admin.php'));
+//         if (isset($redirect_view)) {
+//             $redirect_url = add_query_arg(array(
+//                 'page' => 'raffleleader_plugin',
+//                 'raffle_id' => $raffle_id,
+//                 'view' => $redirect_view,
+//                 'deleted' => '1'
+//             ), admin_url('admin.php'));
 
-            echo "<script>location.href = '" . esc_js($redirect_url) . "';</script>";
-            exit;
-        }
-    }
-}
+//             echo "<script>location.href = '" . esc_js($redirect_url) . "';</script>";
+//             exit;
+//         }
+//     }
+// }
 
 if (isset($_GET['action']) && $_GET['action'] === 'raffle_duplicate' && isset($_GET['raffle_id']) && isset($_GET['duplicate_raffle_nonce'])) {
     $raffle_id = intval($_GET['raffle_id']);
@@ -378,8 +374,13 @@ if (isset($_GET['action']) && $_GET['action'] === 'raffle_restore' && isset($_GE
     $raffle_id = intval($_GET['raffle_id']);
     if (wp_verify_nonce(sanitize_text_field(wp_unslash($_GET['restore_raffle_nonce'])), 'restore_raffle_action')) {
         if ($raffleAPI->restoreRaffle($raffle_id)) {
-            echo "<script>location.href = '" . esc_js(add_query_arg('raffle_restored', '1', admin_url('admin.php?page=raffleleader_plugin'))) . "';</script>";
-            exit;
+            $redirect_url = add_query_arg(array(
+                'page' => 'raffleleader_plugin',
+                'raffle_id' => $raffle_id,
+                'view' => 'trash',
+                'raffle_restored' => 1
+            ), admin_url('admin.php'));
+            echo '<meta http-equiv="refresh" content="0;url=' . esc_url($redirect_url) . '">';            exit;
         } else {
             wp_die('Failed to restore raffle.');
         }
@@ -399,7 +400,13 @@ if (isset($_GET['action']) && $_GET['action'] === 'raffle_delete_permanent' && i
     $raffle_id = intval($_GET['raffle_id']);
     if (wp_verify_nonce(sanitize_text_field(wp_unslash($_GET['delete_raffle_permanent_nonce'])), 'delete_raffle_permanent_action')) {
         if ($raffleAPI->deletePermanently($raffle_id)) {
-            echo "<script>location.href = '" . esc_js(add_query_arg('raffle_deleted_permanently', '1', admin_url('admin.php?page=raffleleader_plugin&view=trash'))) . "';</script>";
+            $redirect_url = add_query_arg(array(
+                'page' => 'raffleleader_plugin',
+                'raffle_id' => $raffle_id,
+                'view' => 'trash',
+                'raffle_deleted_permanently' => 1
+            ), admin_url('admin.php'));
+            echo '<meta http-equiv="refresh" content="0;url=' . esc_url($redirect_url) . '">';
             exit;
         } else {
             wp_die('Failed to permanently delete raffle.');

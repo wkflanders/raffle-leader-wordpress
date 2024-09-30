@@ -11,6 +11,27 @@ $raffleAPI = new RaffleAPI();
 $contestantsAPI = new ContestantsAPI();
 $entriesAPI = new EntriesAPI();
 
+if (isset($_GET['action']) && $_GET['action'] === 'trash' && isset($_GET['raffle_id']) && isset($_GET['_wpnonce'])) {
+    $raffle_id = intval($_GET['raffle_id']);
+    $nonce = sanitize_text_field(wp_unslash($_GET['_wpnonce']));
+
+    if (wp_verify_nonce($nonce, 'trash_raffle_' . $raffle_id) && current_user_can('delete_post', $raffle_id)) {
+        $raffleAPI->deleteRaffle($raffle_id);
+        $redirect_url = add_query_arg(array(
+            'page' => 'raffleleader_plugin',
+            'trashed' => '1'
+        ), admin_url('admin.php'));
+
+        echo '<script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function() {
+                window.location.href = "' . esc_js($redirect_url) . '";
+            });
+        </script>';
+        return;
+    }
+}
+
+
 if (isset($_GET['action']) && $_GET['action'] === 'delete') {
     $nonce = isset($_GET['_wpnonce']) ? sanitize_text_field(wp_unslash($_GET['_wpnonce'])) : '';
     $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
@@ -769,7 +790,6 @@ $entryTypeMapping = [
             <?php
             break;
 
-
         default:
             ?>
             <form id="raffles-filter" method="post">
@@ -941,7 +961,7 @@ $entryTypeMapping = [
                                             </span>
                                             <span class="delete">
                                                 <a
-                                                    href="<?php echo esc_url(wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=raffle_delete&raffle_id=' . $raffle['raffle_id']), 'delete_raffle_action', 'delete_raffle_nonce')); ?>">Trash</a>
+                                                    href="<?php echo esc_url(wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=trash&raffle_id=' . $raffle['raffle_id']), 'trash_raffle_' . $raffle['raffle_id'])); ?>">Trash</a>
                                             </span>
                                         <?php endif; ?>
                                     </div>

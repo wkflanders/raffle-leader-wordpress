@@ -64,34 +64,40 @@ class PublishController extends BaseController
         if (!current_user_can('manage_options')) {
             wp_die('You do not have sufficient permissions to access this page.');
         }
-    
+
         $raffle_id = isset($_GET['raffle_id']) ? intval($_GET['raffle_id']) : 0;
-    
-        if (!$raffle_id || !wp_verify_nonce($_GET['export_nonce'], 'export_csv_action_' . $raffle_id)) {
+        $export_nonce = isset($_GET['export_nonce']) ? sanitize_text_field(wp_unslash($_GET['export_nonce'])) : '';
+
+        if (!$raffle_id || !wp_verify_nonce($export_nonce, 'export_csv_action_' . $raffle_id)) {
             wp_die('Invalid request');
         }
-    
+
         $contestantsAPI = new ContestantsAPI();
         $contestants = $contestantsAPI->getContestantsForRaffleView($raffle_id, array(
-            'per_page' => -1, // Get all contestants
+            'per_page' => -1,
             'orderby' => 'created_at',
             'order' => 'DESC',
         ));
-    
+
         header('Content-Type: text/csv');
         header('Content-Disposition: attachment; filename="raffle_' . $raffle_id . '_emails.csv"');
         header('Pragma: no-cache');
         header('Expires: 0');
-    
-        $output = fopen('php://output', 'w');
-        fputcsv($output, array('Email'));
-    
+
+        $csv_data = "Email\n"; // CSV header
+
         foreach ($contestants as $contestant) {
-            fputcsv($output, array($contestant['email']));
+            $csv_data .= '"' . $this->esc_csv($contestant['email']) . "\"\n";
         }
-    
-        fclose($output);
+
+        echo $csv_data; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         exit;
+    }
+
+    // Helper function to escape CSV values
+    function esc_csv($value)
+    {
+        return str_replace('"', '""', $value);
     }
 
     public function shortcodeHandler($atts)

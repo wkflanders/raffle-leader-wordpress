@@ -28,7 +28,7 @@ class EntriesAPI {
     public function getEntry( $entryID ){
         global $wpdb;
         $tableName = $wpdb->prefix . 'raffleleader_entries';
-
+        // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
         $query = $wpdb->prepare( "SELECT * FROM $tableName WHERE entry_id = %d", $entryID );
         // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         return $wpdb->get_row( $query, ARRAY_A );
@@ -54,8 +54,8 @@ class EntriesAPI {
     
         $offset = max(0, $offset);
         $per_page = max(1, intval($args['per_page']));
-    
         $query = $wpdb->prepare(
+            // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
             "SELECT * FROM $tableName WHERE raffle_id = %d AND winner != 'true' ORDER BY $orderby $order LIMIT %d, %d",
             $raffleID, $offset, $per_page
         );
@@ -66,8 +66,9 @@ class EntriesAPI {
     public function getTotalEntriesCount($raffleID) {
         global $wpdb;
         $tableName = $wpdb->prefix . 'raffleleader_entries';
-    
+        
         $query = $wpdb->prepare(
+            // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
             "SELECT COUNT(*) FROM $tableName WHERE raffle_id = %d",
             $raffleID
         );
@@ -80,15 +81,14 @@ class EntriesAPI {
         global $wpdb;
         $tableName = $wpdb->prefix . 'raffleleader_entries';
     
-        // Reset the winner column for all entries in this raffle
         $wpdb->update(
             $tableName,
             ['winner' => ''],
             ['raffle_id' => $raffleID]
         );
     
-        // Select a random entry
         $query = $wpdb->prepare(
+            // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
             "SELECT * FROM $tableName WHERE raffle_id = %d ORDER BY RAND() LIMIT 1",
             $raffleID
         );
@@ -96,7 +96,6 @@ class EntriesAPI {
         $selectedEntry = $wpdb->get_row($query, ARRAY_A);
     
         if ($selectedEntry) {
-            // Update the winner column for the selected entry
             $wpdb->update(
                 $tableName,
                 ['winner' => '1'], // Mark this entry as the winner
@@ -110,8 +109,8 @@ class EntriesAPI {
     public function getEntryByWinner($raffleId){
         global $wpdb;
         $entriesTable = $wpdb->prefix . 'raffleleader_entries';
-
         $query = $wpdb->prepare(
+            // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
             "SELECT * FROM $entriesTable WHERE raffle_id = %d AND winner = 'true' LIMIT 1",
             $raffleId
         );
@@ -124,6 +123,7 @@ class EntriesAPI {
         $entriesTable = $wpdb->prefix . 'raffleleader_entries';
 
         $query = $wpdb->prepare(
+            // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
             "SELECT * FROM $entriesTable WHERE contestant_id = %d AND raffle_id = %d",
             $contestantID, $raffleID
         );

@@ -54,13 +54,13 @@ class Enqueue extends BaseController{
     public function enqueueRaffleFrontEnd(){
         global $post;
         if( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, 'raffleleader' ) ){
-            wp_enqueue_script( 'raffleleader_load_raffle_script', $this->plugin_url . '/assets/js/raffle_load_script.js', array(), wp_rand(111, 9999) );
+            wp_enqueue_script( 'raffleleader_load_raffle_script', $this->plugin_url . '/assets/js/raffle_load_script.js', array(), wp_rand(111, 9999), true );
             wp_localize_script( 'raffleleader_load_raffle_script', 'raffleleader_load_raffle_object', array( 
                 'ajax_url' => admin_url( 'admin-ajax.php' ),
                 'security' => wp_create_nonce( 'load_raffle_data' ),
              ) );
 
-            wp_enqueue_script( 'raffleleader_raffle_entry_script', $this->plugin_url . '/assets/js/raffle_entry_script.js', array(), wp_rand(111, 9999) );
+            wp_enqueue_script( 'raffleleader_raffle_entry_script', $this->plugin_url . '/assets/js/raffle_entry_script.js', array(), wp_rand(111, 9999), true );
             wp_localize_script( 'raffleleader_raffle_entry_script', 'raffleleader_raffle_entry_object', array( 
                 'ajax_url' => admin_url( 'admin-ajax.php' ),
                 'security' => wp_create_nonce( 'nonce' ),
@@ -76,7 +76,7 @@ class Enqueue extends BaseController{
 
     public function enqueueWPAdminBackEnd(){
         wp_enqueue_style( 'raffleleader_classic_editor_style', $this->plugin_url . '/assets/css/classic_editor_style.css', array(), wp_rand(111, 9999) );
-        wp_enqueue_script( 'raffleleader_classic_editor_script', $this->plugin_url . '/assets/js/classic_editor_script.js', array(), wp_rand(111, 9999) );
+        wp_enqueue_script( 'raffleleader_classic_editor_script', $this->plugin_url . '/assets/js/classic_editor_script.js', array(), wp_rand(111, 9999), true );
         wp_localize_script( 'raffleleader_classic_editor_script', 'raffleleader_classic_editor_script_object', array( 
             'ajax_url' => admin_url( 'admin-ajax.php' ),
             'security' => wp_create_nonce( 'nonce' ),
@@ -101,7 +101,7 @@ class Enqueue extends BaseController{
 
     public function enqueueSettings(){
         wp_enqueue_style( 'raffleleader_settings_style', $this->plugin_url . '/assets/css/settings_style.css', array(), wp_rand(111, 9999) );
-        wp_enqueue_script( 'raffleleader_settings_script', $this->plugin_url . '/assets/js/settings_script.js', array(), wp_rand(111, 9999) );             
+        wp_enqueue_script( 'raffleleader_settings_script', $this->plugin_url . '/assets/js/settings_script.js', array(), wp_rand(111, 9999), true );             
     }
 
     public function enqueueBuilder(){
@@ -122,14 +122,14 @@ class Enqueue extends BaseController{
         wp_enqueue_style( 'raffleleader_tutorial_style', $this->plugin_url . '/assets/css/tutorial_style.css', array(), wp_rand(111, 9999) );
 
         // Loading JS libraries
-        wp_enqueue_script( 'raffleleader_pickr_script', 'https://cdn.jsdelivr.net/npm/@simonwep/pickr@1.8.0/dist/pickr.min.js', array(), wp_rand(111, 9999) );
+        wp_enqueue_script( 'raffleleader_pickr_script', 'https://cdn.jsdelivr.net/npm/@simonwep/pickr@1.8.0/dist/pickr.min.js', array(), wp_rand(111, 9999), true );
         wp_enqueue_script( 'moment-js', 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js', array(), '2.29.1', true);
         wp_enqueue_script( 'moment-timezone-js', 'https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data-1970-2030.min.js', array('moment-js'), '0.5.33', true);
         wp_enqueue_script('intro-js', 'https://cdn.jsdelivr.net/npm/intro.js@4.0.0/minified/intro.min.js', array(), '4.0.0', true);
 
-        wp_enqueue_script( 'raffleleader_builder_drag_script', $this->plugin_url . '/assets/js/builder_drag_script.js', array(), wp_rand(111, 9999) );
+        wp_enqueue_script( 'raffleleader_builder_drag_script', $this->plugin_url . '/assets/js/builder_drag_script.js', array(), wp_rand(111, 9999), true );
 
-        wp_enqueue_script( 'raffleleader_builder_navbar_script', $this->plugin_url . '/assets/js/builder_nav_script.js', array(), wp_rand(111, 9999) );
+        wp_enqueue_script( 'raffleleader_builder_navbar_script', $this->plugin_url . '/assets/js/builder_nav_script.js', array(), wp_rand(111, 9999), true );
                 
         wp_enqueue_script( 'raffleleader_preview_select_script', $this->plugin_url . '/assets/js/preview_select_script.js', array(), wp_rand(111, 9999), true );
 
@@ -137,43 +137,43 @@ class Enqueue extends BaseController{
 
         wp_enqueue_script( 'raffleleader_preview_reposition_script', $this->plugin_url . '/assets/js/preview_reposition_script.js', array(), wp_rand(111, 9999), true );
         
-        wp_enqueue_script( 'raffleleader_preview_load_script', $this->plugin_url . '/assets/js/preview_load_script.js', array(), wp_rand(111, 9999) );
+        wp_enqueue_script( 'raffleleader_preview_load_script', $this->plugin_url . '/assets/js/preview_load_script.js', array(), wp_rand(111, 9999), true );
 
         wp_enqueue_script( 'raffleleader_customize_settings_script', $this->plugin_url . '/assets/js/customize_settings_script.js', array( 'raffleleader_preview_reposition_script', 'raffleleader_preview_select_script' ), wp_rand(111, 9999), true );
 
-        wp_enqueue_script( 'raffleleader_preview_size_script', $this->plugin_url . '/assets/js/preview_size_script.js', array(), wp_rand(111, 9999) );
+        wp_enqueue_script( 'raffleleader_preview_size_script', $this->plugin_url . '/assets/js/preview_size_script.js', array(), wp_rand(111, 9999), true );
 
-        wp_enqueue_script( 'raffleleader_setup_general_settings_script', $this->plugin_url . '/assets/js/setup_general_settings_script.js', array(), wp_rand(111, 9999) );
+        wp_enqueue_script( 'raffleleader_setup_general_settings_script', $this->plugin_url . '/assets/js/setup_general_settings_script.js', array(), wp_rand(111, 9999), true );
         
-        wp_enqueue_script( 'raffleleader_preview_layers_script', $this->plugin_url . '/assets/js/preview_layers_script.js', array(), wp_rand(111, 9999) );
+        wp_enqueue_script( 'raffleleader_preview_layers_script', $this->plugin_url . '/assets/js/preview_layers_script.js', array(), wp_rand(111, 9999), true );
 
-        wp_enqueue_script( 'raffleleader_hotkey_script', $this->plugin_url . '/assets/js/hotkey_script.js', array(), wp_rand(111, 9999) );
+        wp_enqueue_script( 'raffleleader_hotkey_script', $this->plugin_url . '/assets/js/hotkey_script.js', array(), wp_rand(111, 9999), true );
 
-        wp_enqueue_script( 'raffleleader_preview_save_script', $this->plugin_url . '/assets/js/preview_save_script.js', array(), wp_rand(111, 9999) );
+        wp_enqueue_script( 'raffleleader_preview_save_script', $this->plugin_url . '/assets/js/preview_save_script.js', array(), wp_rand(111, 9999), true );
         wp_localize_script( 'raffleleader_preview_save_script', 'raffleleader_preview_save_object', array( 
             'ajax_url' => admin_url( 'admin-ajax.php' ),
             'security' => wp_create_nonce( 'nonce' ),
          ) );
 
-        wp_enqueue_script( 'raffleleader_template_select_script', $this->plugin_url . '/assets/js/template_select_script.js', array(), wp_rand(111, 9999) );
+        wp_enqueue_script( 'raffleleader_template_select_script', $this->plugin_url . '/assets/js/template_select_script.js', array(), wp_rand(111, 9999), true );
         wp_localize_script( 'raffleleader_template_select_script', 'raffleleader_template_select_object', array( 
             'ajax_url' => admin_url( 'admin-ajax.php' ),
             'security' => wp_create_nonce( 'nonce' ),
          ) );
 
-        wp_enqueue_script( 'raffleleader_publish_script', $this->plugin_url . '/assets/js/publish_script.js', array(), wp_rand(111, 9999) );
+        wp_enqueue_script( 'raffleleader_publish_script', $this->plugin_url . '/assets/js/publish_script.js', array(), wp_rand(111, 9999), true );
         wp_localize_script( 'raffleleader_publish_script', 'raffleleader_publish_object', array(
             'newPostUrl' => admin_url( 'post-new.php' ),
             'editPostUrl' => admin_url( 'edit.php' ),
         ) );
 
-        wp_enqueue_script( 'raffleleader_manage_state_script', $this->plugin_url . '/assets/js/manage_state_script.js', array( 'raffleleader_preview_select_script' ), wp_rand(111, 9999) );
+        wp_enqueue_script( 'raffleleader_manage_state_script', $this->plugin_url . '/assets/js/manage_state_script.js', array( 'raffleleader_preview_select_script' ), wp_rand(111, 9999), true );
             
         wp_enqueue_media();
     }
 
     public function enqueueRaffleOverview(){
-        wp_enqueue_script( 'raffleleader_overview_script', $this->plugin_url . '/assets/js/overview_script.js', array(), wp_rand(111, 9999) );
+        wp_enqueue_script( 'raffleleader_overview_script', $this->plugin_url . '/assets/js/overview_script.js', array(), wp_rand(111, 9999), true );
         wp_localize_script( 'raffleleader_overview_script', 'raffleleader_overview_object', array(
             'ajax_url' => admin_url( 'admin-ajax.php' ),
             'security' => wp_create_nonce( 'nonce' ),

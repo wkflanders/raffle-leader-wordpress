@@ -275,8 +275,6 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
                         $entries_affected++;
                     }
                 }
-            } else {
-                error_log(implode(',', $_POST['entry_id']));
             }
 
             $redirect_url = add_query_arg(array(

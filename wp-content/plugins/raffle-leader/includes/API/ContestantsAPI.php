@@ -115,11 +115,13 @@ class ContestantsAPI {
         // Only add LIMIT clause if we're not exporting all records
         if ($args['per_page'] > 0) {
             $query .= " LIMIT %d, %d";
+            // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared    
             $query = $wpdb->prepare($query, $raffleID, $offset, $args['per_page']);
         } else {
+            // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared    
             $query = $wpdb->prepare($query, $raffleID);
         }
-    
+        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         return $wpdb->get_results($query, ARRAY_A);
     }
 

@@ -28,6 +28,7 @@ class ContestantsAPI {
         global $wpdb;
         $tableName = $wpdb->prefix . 'raffleleader_contestants';
 
+        // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
         $query = $wpdb->prepare( "SELECT * FROM $tableName WHERE contestant_id = %d", $contestantID );
         // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         return $wpdb->get_row( $query, ARRAY_A );
@@ -147,7 +148,7 @@ class ContestantsAPI {
     public function getContestantByEmail( $email ) {
         global $wpdb;
         $tableName = $wpdb->prefix . 'raffleleader_contestants';
-
+        // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared        
         $query = $wpdb->prepare( "SELECT * FROM $tableName WHERE email = %s AND deleted_at IS NULL LIMIT 1", $email );
         // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         $result = $wpdb->get_row ($query, ARRAY_A );

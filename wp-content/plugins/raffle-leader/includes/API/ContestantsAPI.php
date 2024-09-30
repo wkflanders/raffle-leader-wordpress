@@ -49,12 +49,10 @@ class ContestantsAPI {
         $args = wp_parse_args($args, $defaults);
         $offset = ($args['page_number'] - 1) * $args['per_page'];
     
-        // Validate the orderby and order values
         $valid_orderby_columns = ['contestant_id', 'name', 'email']; // Add valid columns as needed
         $orderby = in_array($args['orderby'], $valid_orderby_columns) ? $args['orderby'] : 'contestant_id';
         $order = strtoupper($args['order']) === 'DESC' ? 'DESC' : 'ASC';
     
-        // Prepare the base query
         $query = "
             SELECT c.*, COUNT(e.entry_id) AS entries_count
             FROM $contestantsTable c
@@ -104,20 +102,24 @@ class ContestantsAPI {
             LEFT JOIN $entriesTable e ON c.contestant_id = e.contestant_id
             WHERE e.raffle_id = %d AND c.deleted_at IS NULL
         ";
-
+    
         if (!empty($args['search_term'])) {
             $query .= $wpdb->prepare(" AND c.email LIKE %s", '%' . $wpdb->esc_like($args['search_term']) . '%');
         }
-
+    
         $query .= "
             GROUP BY c.contestant_id
             ORDER BY $orderby $order
-            LIMIT %d, %d
         ";
-
-        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
-        $query = $wpdb->prepare($query, $raffleID, $offset, $args['per_page']);
-        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+    
+        // Only add LIMIT clause if we're not exporting all records
+        if ($args['per_page'] > 0) {
+            $query .= " LIMIT %d, %d";
+            $query = $wpdb->prepare($query, $raffleID, $offset, $args['per_page']);
+        } else {
+            $query = $wpdb->prepare($query, $raffleID);
+        }
+    
         return $wpdb->get_results($query, ARRAY_A);
     }
 

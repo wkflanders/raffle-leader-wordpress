@@ -332,8 +332,9 @@ input[type="text"].toolbar-size-form {
 }
 
 .toolbar-icon {
- margin-top: 4px;
- width: 18px;
+ 
+ width: .8vw;
+ aspect-ratio: square;
 }
 
 .layout-option-box-toolbar {

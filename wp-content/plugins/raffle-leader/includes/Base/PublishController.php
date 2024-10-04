@@ -37,8 +37,8 @@ class PublishController extends BaseController
         add_action('wp_ajax_handleReferral', array($this, 'handleReferral'));
         add_action('wp_ajax_nopriv_handleReferral', array($this, 'handleReferral'));
 
-        add_action('wp_ajax_refresh_nonce', array($this, 'refresh_nonce_callback'));
-        add_action('wp_ajax_nopriv_refresh_nonce', array($this, 'refresh_nonce_callback'));
+        add_action('wp_ajax_refresh_nonce', array($this, 'refreshNonce'));
+        add_action('wp_ajax_nopriv_refresh_nonce', array($this, 'refreshNonce'));
         // Add button and modal for the classic editor
         add_action('media_buttons', array($this, 'addClassicEditorButton'), 15);
         add_action('admin_footer', array($this, 'addClassicEditorModal'));
@@ -49,12 +49,55 @@ class PublishController extends BaseController
         // Add for creating posts/pages
         add_action('admin_footer', array($this, 'createNewRafflePost'));
         add_action('admin_footer', array($this, 'createNewRafflePage'));
+
+        add_action('admin_post_export_raffle_emails', array($this, 'handleExportRaffleEmails'));
     }
 
-    public function refresh_nonce_callback()
+    public function refreshNonce()
     {
         $new_nonce = wp_create_nonce('load_raffle_data');
-        wp_send_json_success(['new_nonce' => $new_nonce]);
+        wp_send_json_success([ 'new_nonce' => $new_nonce ]);
+    }
+
+    public function handleExportRaffleEmails()
+    {
+        if (!current_user_can('manage_options')) {
+            wp_die('You do not have sufficient permissions to access this page.');
+        }
+
+        $raffle_id = isset($_GET['raffle_id']) ? intval($_GET['raffle_id']) : 0;
+        $export_nonce = isset($_GET['export_nonce']) ? sanitize_text_field(wp_unslash($_GET['export_nonce'])) : '';
+
+        if (!$raffle_id || !wp_verify_nonce($export_nonce, 'export_csv_action_' . $raffle_id)) {
+            wp_die('Invalid request');
+        }
+
+        $contestantsAPI = new ContestantsAPI();
+        $contestants = $contestantsAPI->getContestantsForRaffleView($raffle_id, array(
+            'per_page' => -1,
+            'orderby' => 'created_at',
+            'order' => 'DESC',
+        ));
+
+        header('Content-Type: text/csv');
+        header('Content-Disposition: attachment; filename="raffle_' . $raffle_id . '_emails.csv"');
+        header('Pragma: no-cache');
+        header('Expires: 0');
+
+        $csv_data = "Email\n"; // CSV header
+
+        foreach ($contestants as $contestant) {
+            $csv_data .= '"' . $this->esc_csv($contestant['email']) . "\"\n";
+        }
+
+        echo $csv_data; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        exit;
+    }
+
+    // Helper function to escape CSV values
+    function esc_csv($value)
+    {
+        return str_replace('"', '""', $value);
     }
 
     public function shortcodeHandler($atts)

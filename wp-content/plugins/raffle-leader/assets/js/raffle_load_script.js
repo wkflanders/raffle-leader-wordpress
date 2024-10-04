@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     fetch(url, {
-      credentials: "same-origin", // This ensures cookies are sent with the request
+      credentials: "same-origin",
     })
       .then((response) => {
         if (!response.ok) {
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return response.json();
       })
       .then((data) => {
-        console.log("Received raffle data:", data);
+        console.log("Received raffle data for raffle with id: ", raffleID);
         loadPreview(data);
         loadDateAndTimeAndCounters(data);
       })

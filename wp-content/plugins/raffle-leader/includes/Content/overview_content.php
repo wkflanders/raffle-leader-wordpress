@@ -1,5 +1,4 @@
 <?php
-// Prevent direct access to this file
 if (!defined('ABSPATH')) {
     exit;
 }
@@ -12,13 +11,34 @@ $raffleAPI = new RaffleAPI();
 $contestantsAPI = new ContestantsAPI();
 $entriesAPI = new EntriesAPI();
 
+if (isset($_GET['action']) && $_GET['action'] === 'trash' && isset($_GET['raffle_id']) && isset($_GET['_wpnonce'])) {
+    $raffle_id = intval($_GET['raffle_id']);
+    $nonce = sanitize_text_field(wp_unslash($_GET['_wpnonce']));
+
+    if (wp_verify_nonce($nonce, 'trash_raffle_' . $raffle_id) && current_user_can('delete_post', $raffle_id)) {
+        $raffleAPI->deleteRaffle($raffle_id);
+        $redirect_url = add_query_arg(array(
+            'page' => 'raffleleader_plugin',
+            'trashed' => '1'
+        ), admin_url('admin.php'));
+
+        echo '<script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function() {
+                window.location.href = "' . esc_js($redirect_url) . '";
+            });
+        </script>';
+        return;
+    }
+}
+
+
 if (isset($_GET['action']) && $_GET['action'] === 'delete') {
     $nonce = isset($_GET['_wpnonce']) ? sanitize_text_field(wp_unslash($_GET['_wpnonce'])) : '';
     $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
     $type = isset($_GET['type']) ? sanitize_text_field(wp_unslash($_GET['type'])) : '';
-    $raffleID = isset($_GET['raffle_id']) ? intval($_GET['raffle_id']) : 0;
+    $raffle_id = isset($_GET['raffle_id']) ? intval($_GET['raffle_id']) : 0;
 
-    if ($id && $type && $raffleID) {
+    if ($id && $type && $raffle_id) {
         switch ($type) {
             case 'entry':
                 if (wp_verify_nonce($nonce, 'delete_entry_' . $id)) {
@@ -28,15 +48,12 @@ if (isset($_GET['action']) && $_GET['action'] === 'delete') {
                 break;
             case 'contestant':
                 if (wp_verify_nonce($nonce, 'delete_contestant_' . $id)) {
-                    // Get all entries for this contestant
-                    $contestant_entries = $entriesAPI->getEntriesByContestantId($id, $raffleID);
+                    $contestant_entries = $entriesAPI->getEntriesByContestantId($id, $raffle_id);
 
-                    // Delete all entries for this contestant
                     foreach ($contestant_entries as $entry) {
                         $entriesAPI->deleteEntry($entry['entry_id']);
                     }
 
-                    // Delete the contestant
                     $contestantsAPI->deleteContestant($id);
 
                     $redirect_view = 'raffle_details';
@@ -47,11 +64,13 @@ if (isset($_GET['action']) && $_GET['action'] === 'delete') {
         if (isset($redirect_view)) {
             $redirect_url = add_query_arg(array(
                 'page' => 'raffleleader_plugin',
-                'raffle_id' => $raffleID,
+                'raffle_id' => $raffle_id,
                 'view' => $redirect_view,
             ), admin_url('admin.php'));
 
-            echo "<script>window.location.href = '" . esc_js($redirect_url) . "';</script>";
+            $redirect_url = esc_url_raw($redirect_url);
+
+            echo '<meta http-equiv="refresh" content="0;url=' . esc_url($redirect_url) . '">';
             exit;
         }
     }
@@ -59,11 +78,11 @@ if (isset($_GET['action']) && $_GET['action'] === 'delete') {
 
 if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['select_winner']) && isset($_POST['select_winner_nonce']) && isset($_GET['raffle_id'])) {
-        $raffleID = isset($_GET['raffle_id']) ? intval($_GET['raffle_id']) : 0;
-        if (wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['select_winner_nonce'])), 'select_winner_action_' . $raffleID)) {
-            $entries = $entriesAPI->getRaffleEntries($raffleID);
+        $raffle_id = isset($_GET['raffle_id']) ? intval($_GET['raffle_id']) : 0;
+        if (wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['select_winner_nonce'])), 'select_winner_action_' . $raffle_id)) {
+            $entries = $entriesAPI->getRaffleEntries($raffle_id);
             if (!empty($entries)) {
-                $currentWinner = $entriesAPI->getEntryByWinner($raffleID);
+                $currentWinner = $entriesAPI->getEntryByWinner($raffle_id);
                 if ($currentWinner) {
                     $entriesAPI->updateEntry($currentWinner['entry_id'], [ 'winner' => 'false' ]);
                 }
@@ -74,12 +93,11 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
 
                 $redirect_url = add_query_arg(array(
                     'page' => 'raffleleader_plugin',
-                    'raffle_id' => $raffleID,
+                    'raffle_id' => $raffle_id,
                     'view' => 'entry_details',
                     'winner_selected' => '1',
                 ), admin_url('admin.php'));
 
-                // Set up the JavaScript redirect
                 add_action('admin_footer', function () use ($redirect_url) {
                     ?>
                     <script type="text/javascript">
@@ -159,7 +177,6 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
                     break;
             }
 
-            // Redirect with appropriate message
             $redirect_url = add_query_arg(array(
                 'page' => 'raffleleader_plugin',
                 'view' => $onlyDeleted ? 'trash' : 'all',
@@ -167,7 +184,7 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
                 'raffles_affected' => $raffles_affected
             ), admin_url('admin.php'));
 
-            echo "<script>location.href = '" . esc_js($redirect_url) . "';</script>";
+            echo '<meta http-equiv="refresh" content="0;url=' . esc_url($redirect_url) . '">';
             exit;
         } else {
             wp_die('You do not have sufficient permissions to access this page.');
@@ -181,29 +198,27 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
                 $action = sanitize_text_field(wp_unslash($_POST['action2']));
             }
 
+            $raffle_id = isset($_POST['raffle_id']) ? intval($_POST['raffle_id']) : 0;
+
             $contestants_affected = 0;
             if ($action === 'delete' && isset($_POST['contestant_id']) && is_array($_POST['contestant_id'])) {
                 $contestant_ids = array_map('intval', wp_unslash($_POST['contestant_id']));
                 foreach ($contestant_ids as $contestant_id) {
-                    // Get all entries for this contestant
-                    $contestant_entries = $entriesAPI->getEntriesByContestantId($contestant_id, $raffleID);
+                    $contestant_entries = $entriesAPI->getEntriesByContestantId($contestant_id, $raffle_id);
 
-                    // Delete all entries for this contestant
                     foreach ($contestant_entries as $entry) {
                         $entriesAPI->deleteEntry($entry['entry_id']);
                     }
 
-                    // Delete the contestant
                     if ($contestantsAPI->deleteContestant($contestant_id)) {
                         $contestants_affected++;
                     }
                 }
             }
 
-            // Set up the JavaScript redirect
             $redirect_url = add_query_arg(array(
                 'page' => 'raffleleader_plugin',
-                'raffle_id' => $raffleID,
+                'raffle_id' => $raffle_id,
                 'view' => 'raffle_details',
                 'bulk_action_performed' => $action,
                 'contestants_affected' => $contestants_affected
@@ -221,9 +236,7 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
 
             return;
         }
-    }
-    // New bulk action for deleting contestants
-    elseif (isset($_POST['bulk-contestants-nonce']) && wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['bulk-contestants-nonce'])), 'bulk-contestants-action')) {
+    } elseif (isset($_POST['bulk-contestants-nonce']) && wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['bulk-contestants-nonce'])), 'bulk-contestants-action')) {
         if (current_user_can('manage_options')) {
             $action = '-1';
             if (isset($_POST['action']) && $_POST['action'] != '-1') {
@@ -232,6 +245,8 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
                 $action = sanitize_text_field(wp_unslash($_POST['action2']));
             }
 
+            $raffle_id = isset($_POST['raffle_id']) ? intval($_POST['raffle_id']) : 0;
+
             $contestants_affected = 0;
             if ($action === 'delete' && isset($_POST['contestant_id']) && is_array($_POST['contestant_id'])) {
                 $contestant_ids = array_map('intval', wp_unslash($_POST['contestant_id']));
@@ -242,10 +257,9 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
                 }
             }
 
-            // Set up the JavaScript redirect
             $redirect_url = add_query_arg(array(
                 'page' => 'raffleleader_plugin',
-                'raffle_id' => $raffleID,
+                'raffle_id' => $raffle_id,
                 'view' => 'raffle_details',
                 'bulk_action_performed' => $action,
                 'contestants_affected' => $contestants_affected
@@ -263,41 +277,46 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
 
             return;
         }
-    }
-}
+    } elseif (isset($_POST['bulk-entries-nonce']) && wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['bulk-entries-nonce'])), 'bulk-entries-action')) {
+        if (current_user_can('manage_options')) {
+            $action = '-1';
+            if (isset($_POST['action']) && $_POST['action'] != '-1') {
+                $action = sanitize_text_field(wp_unslash($_POST['action']));
+            } elseif (isset($_POST['action2']) && $_POST['action2'] != '-1') {
+                $action = sanitize_text_field(wp_unslash($_POST['action2']));
+            }
 
-if (isset($_GET['action']) && $_GET['action'] === 'delete') {
-    $nonce = isset($_GET['_wpnonce']) ? sanitize_text_field(wp_unslash($_GET['_wpnonce'])) : '';
-    $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
-    $type = isset($_GET['type']) ? sanitize_text_field(wp_unslash($_GET['type'])) : '';
-    $raffleID = isset($_GET['raffle_id']) ? intval($_GET['raffle_id']) : 0;
+            $raffle_id = isset($_POST['raffle_id']) ? intval($_POST['raffle_id']) : 0;
+            $entries_affected = 0;
 
-    if ($id && $type && $raffleID) {
-        switch ($type) {
-            case 'entry':
-                if (wp_verify_nonce($nonce, 'delete_entry_' . $id)) {
-                    $entriesAPI->deleteEntry($id);
-                    $redirect_view = 'entry_details';
+            if ($action === 'delete' && isset($_POST['entry_id']) && is_array($_POST['entry_id'])) {
+                $entry_ids = array_map('intval', wp_unslash($_POST['entry_id']));
+                foreach ($entry_ids as $entry_id) {
+                    if ($entriesAPI->deleteEntry($entry_id)) {
+                        $entries_affected++;
+                    }
                 }
-                break;
-            case 'contestant':
-                if (wp_verify_nonce($nonce, 'delete_contestant_' . $id)) {
-                    $contestantsAPI->deleteContestant($id);
-                    $redirect_view = 'raffle_details';
-                }
-                break;
-        }
+            }
 
-        if (isset($redirect_view)) {
             $redirect_url = add_query_arg(array(
                 'page' => 'raffleleader_plugin',
-                'raffle_id' => $raffleID,
-                'view' => $redirect_view,
-                'deleted' => '1'
+                'raffle_id' => $raffle_id,
+                'view' => 'entry_details',
+                'bulk_action_performed' => $action,
+                'entries_affected' => $entries_affected
             ), admin_url('admin.php'));
 
-            echo "<script>location.href = '" . esc_js($redirect_url) . "';</script>";
-            exit;
+            add_action('admin_footer', function () use ($redirect_url) {
+                ?>
+                <script type="text/javascript">
+                    document.addEventListener('DOMContentLoaded', function () {
+                        window.location.href = <?php echo wp_json_encode($redirect_url); ?>;
+                    });
+                </script>
+                <?php
+            });
+
+            return;
         }
     }
 }
@@ -318,7 +337,6 @@ if (isset($_GET['action']) && $_GET['action'] === 'raffle_duplicate' && isset($_
     }
 }
 
-// Add a success message if a raffle was duplicated
 if (isset($_GET['raffle_duplicated']) && $_GET['raffle_duplicated'] == '1') {
     add_action('admin_notices', function () {
         echo '<div class="notice notice-success is-dismissible"><p>Raffle duplicated successfully!</p></div>';
@@ -329,7 +347,13 @@ if (isset($_GET['action']) && $_GET['action'] === 'raffle_restore' && isset($_GE
     $raffle_id = intval($_GET['raffle_id']);
     if (wp_verify_nonce(sanitize_text_field(wp_unslash($_GET['restore_raffle_nonce'])), 'restore_raffle_action')) {
         if ($raffleAPI->restoreRaffle($raffle_id)) {
-            echo "<script>location.href = '" . esc_js(add_query_arg('raffle_restored', '1', admin_url('admin.php?page=raffleleader_plugin'))) . "';</script>";
+            $redirect_url = add_query_arg(array(
+                'page' => 'raffleleader_plugin',
+                'raffle_id' => $raffle_id,
+                'view' => 'trash',
+                'raffle_restored' => 1
+            ), admin_url('admin.php'));
+            echo '<meta http-equiv="refresh" content="0;url=' . esc_url($redirect_url) . '">';
             exit;
         } else {
             wp_die('Failed to restore raffle.');
@@ -339,7 +363,6 @@ if (isset($_GET['action']) && $_GET['action'] === 'raffle_restore' && isset($_GE
     }
 }
 
-// Add a success message if a raffle was restored
 if (isset($_GET['raffle_restored']) && $_GET['raffle_restored'] == '1') {
     add_action('admin_notices', function () {
         echo '<div class="notice notice-success is-dismissible"><p>Raffle restored successfully!</p></div>';
@@ -350,7 +373,13 @@ if (isset($_GET['action']) && $_GET['action'] === 'raffle_delete_permanent' && i
     $raffle_id = intval($_GET['raffle_id']);
     if (wp_verify_nonce(sanitize_text_field(wp_unslash($_GET['delete_raffle_permanent_nonce'])), 'delete_raffle_permanent_action')) {
         if ($raffleAPI->deletePermanently($raffle_id)) {
-            echo "<script>location.href = '" . esc_js(add_query_arg('raffle_deleted_permanently', '1', admin_url('admin.php?page=raffleleader_plugin&view=trash'))) . "';</script>";
+            $redirect_url = add_query_arg(array(
+                'page' => 'raffleleader_plugin',
+                'raffle_id' => $raffle_id,
+                'view' => 'trash',
+                'raffle_deleted_permanently' => 1
+            ), admin_url('admin.php'));
+            echo '<meta http-equiv="refresh" content="0;url=' . esc_url($redirect_url) . '">';
             exit;
         } else {
             wp_die('Failed to permanently delete raffle.');
@@ -360,7 +389,6 @@ if (isset($_GET['action']) && $_GET['action'] === 'raffle_delete_permanent' && i
     }
 }
 
-// Add a success message if a raffle was permanently deleted
 if (isset($_GET['raffle_deleted_permanently']) && $_GET['raffle_deleted_permanently'] == '1') {
     add_action('admin_notices', function () {
         echo '<div class="notice notice-success is-dismissible"><p>Raffle permanently deleted successfully!</p></div>';
@@ -369,18 +397,17 @@ if (isset($_GET['raffle_deleted_permanently']) && $_GET['raffle_deleted_permanen
 
 $currentView = isset($_GET['view']) ? sanitize_text_field(wp_unslash($_GET['view'])) : 'all';
 $onlyDeleted = $currentView === 'trash';
-$raffleID = isset($_GET['raffle_id']) ? intval($_GET['raffle_id']) : 0;
+$raffle_id = isset($_GET['raffle_id']) ? intval($_GET['raffle_id']) : 0;
 
-// Fetch raffles or entries based on the current view
 if ($currentView === 'raffle_details' || $currentView === 'entry_details') {
-    if ($raffleID) {
-        $entries = $entriesAPI->getRaffleEntries($raffleID);
+    if ($raffle_id) {
+        $entries = $entriesAPI->getRaffleEntries($raffle_id);
         usort($entries, function ($a, $b) {
             return strcmp($b['winner'], $a['winner']);
         });
 
         $contestantIDs = array_column($entries, 'contestant_id');
-        $contestants = $contestantsAPI->getMultipleContestants($raffleID, array(
+        $contestants = $contestantsAPI->getMultipleContestants($raffle_id, array(
             'per_page' => -1,
             'orderby' => 'contestant_id',
             'order' => 'ASC',
@@ -476,7 +503,7 @@ $entryTypeMapping = [
             $current_page = isset($_GET['paged']) ? max(1, intval($_GET['paged'])) : 1;
             $search_term = isset($_GET['s']) ? sanitize_text_field(wp_unslash($_GET['s'])) : '';
 
-            $contestants = $contestantsAPI->getContestantsForRaffleView($raffleID, array(
+            $contestants = $contestantsAPI->getContestantsForRaffleView($raffle_id, array(
                 'per_page' => $contestants_per_page,
                 'page_number' => $current_page,
                 'orderby' => 'created_at',
@@ -484,12 +511,20 @@ $entryTypeMapping = [
                 'search_term' => $search_term
             ));
 
-            $total_contestants = $contestantsAPI->getTotalContestantsCount($raffleID, $search_term);
+            $total_contestants = $contestantsAPI->getTotalContestantsCount($raffle_id, $search_term);
             $total_pages = ceil($total_contestants / $contestants_per_page);
 
+            $export_nonce = wp_create_nonce('export_csv_action_' . $raffle_id);
             ?>
+            <div style="clear: both;">
+                <a href="<?php echo esc_url(wp_nonce_url(admin_url('admin-post.php?action=export_raffle_emails&raffle_id=' . $raffle_id), 'export_csv_action_' . $raffle_id, 'export_nonce')); ?>"
+                    class="page-title-action">
+                    Export CSV
+                </a>
+            </div>
             <form id="contestants-filter" method="post">
                 <?php wp_nonce_field('bulk-contestants-action', 'bulk-contestants-nonce'); ?>
+                <input type="hidden" name="raffle_id" value="<?php echo esc_attr($raffle_id); ?>">
                 <div class="tablenav top">
                     <div class="alignleft actions bulkactions">
                         <label for="bulk-action-selector-top" class="screen-reader-text">Select bulk action</label>
@@ -522,13 +557,13 @@ $entryTypeMapping = [
                                     <div class="row-actions">
                                         <span class="delete">
                                             <a
-                                                href="<?php echo esc_url(wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=delete&id=' . $contestant['contestant_id'] . '&type=contestant&raffle_id=' . $raffleID), 'delete_contestant_' . $contestant['contestant_id'])); ?>">Delete</a>
+                                                href="<?php echo esc_url(wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=delete&id=' . $contestant['contestant_id'] . '&type=contestant&raffle_id=' . $raffle_id), 'delete_contestant_' . $contestant['contestant_id'])); ?>">Delete</a>
                                         </span>
                                     </div>
                                 </td>
                                 <td class="entries column-entries">
                                     <a
-                                        href="<?php echo esc_url(admin_url('admin.php?page=raffleleader_plugin&raffle_id=' . $raffleID . '&view=entry_details')) ?>">
+                                        href="<?php echo esc_url(admin_url('admin.php?page=raffleleader_plugin&raffle_id=' . $raffle_id . '&view=entry_details')) ?>">
                                         <?php echo intval($contestant['entries_count']); ?>
                                     </a>
                                 </td>
@@ -570,37 +605,32 @@ $entryTypeMapping = [
             <?php
             break;
 
-
         case 'entry_details':
             $entries_per_page = 10;
             $current_page = isset($_GET['paged']) ? max(1, intval($_GET['paged'])) : 1;
             $offset = ($current_page - 1) * $entries_per_page;
 
-            // First, get the winner entry
-            $winner_entry = $entriesAPI->getEntryByWinner($raffleID);
+            $winner_entry = $entriesAPI->getEntryByWinner($raffle_id);
 
-            // Then, get other entries
-            $other_entries = $entriesAPI->getRaffleEntries($raffleID, array(
+            $other_entries = $entriesAPI->getRaffleEntries($raffle_id, array(
                 'per_page' => $entries_per_page,
                 'page_number' => $current_page,
                 'orderby' => 'entry_date',
                 'order' => 'DESC'
             ));
 
-            // Combine winner and other entries
             $entries = array();
             if ($winner_entry) {
                 $entries[] = $winner_entry;
             }
             foreach ($other_entries as $entry) {
                 if ($winner_entry && $entry['entry_id'] == $winner_entry['entry_id']) {
-                    continue; // Skip the winner entry if it's already added
+                    continue;
                 }
                 $entries[] = $entry;
             }
 
-            // Get total number of entries for pagination
-            $total_entries = $entriesAPI->getTotalEntriesCount($raffleID);
+            $total_entries = $entriesAPI->getTotalEntriesCount($raffle_id);
             $total_pages = ceil($total_entries / $entries_per_page);
             ?>
             <style>
@@ -630,24 +660,35 @@ $entryTypeMapping = [
 
                 .wp-list-table .winner-row {
                     background-color: #e6ffe6 !important;
-                    /* Light green background */
                     font-weight: bold;
                 }
 
                 .wp-list-table .winner-row td {
                     border-top: 2px solid #4CAF50;
-                    /* Green top border */
                     border-bottom: 2px solid #4CAF50;
-                    /* Green bottom border */
                 }
 
                 .tablenav-pages {
                     float: right;
                     margin: 1em 0;
                 }
+
+                .select-winner-container {
+                    clear: both;
+                }
             </style>
+            <div class="select-winner-container">
+                <?php
+                $select_winner_nonce = wp_create_nonce('select_winner_action_' . $raffle_id);
+                ?>
+                <form method="post">
+                    <input type="hidden" name="select_winner_nonce" value="<?php echo esc_attr($select_winner_nonce); ?>">
+                    <input type="submit" name="select_winner" class="button" value="Select Winner">
+                </form>
+            </div>
             <form id="entries-filter" method="post">
                 <?php wp_nonce_field('bulk-entries-action', 'bulk-entries-nonce'); ?>
+                <input type="hidden" name="raffle_id" value="<?php echo esc_attr($raffle_id); ?>">
                 <div class="tablenav top">
                     <div class="alignleft actions bulkactions">
                         <label for="bulk-action-selector-top" class="screen-reader-text">Select bulk action</label>
@@ -656,15 +697,6 @@ $entryTypeMapping = [
                             <option value="delete">Delete</option>
                         </select>
                         <input type="submit" id="doaction" class="button action" value="Apply">
-                    </div>
-                    <div class="alignleft">
-                        <?php
-                        $select_winner_nonce = wp_create_nonce('select_winner_action_' . $raffleID);
-                        ?>
-                        <form method="post">
-                            <input type="hidden" name="select_winner_nonce" value="<?php echo esc_attr($select_winner_nonce); ?>">
-                            <input type="submit" name="select_winner" class="button" value="Select Winner">
-                        </form>
                     </div>
                 </div>
                 <table class="wp-list-table widefat fixed striped posts">
@@ -699,7 +731,7 @@ $entryTypeMapping = [
                                     <div class="row-actions">
                                         <span class="delete">
                                             <a style="font-weight: normal;"
-                                                href="<?php echo esc_url(wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=delete&id=' . $entry['entry_id'] . '&type=entry&raffle_id=' . $raffleID), 'delete_entry_' . $entry['entry_id'])); ?>">Delete</a>
+                                                href="<?php echo esc_url(wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=delete&id=' . $entry['entry_id'] . '&type=entry&raffle_id=' . $raffle_id), 'delete_entry_' . $entry['entry_id'])); ?>">Delete</a>
                                         </span>
                                     </div>
                                 </td>
@@ -757,7 +789,6 @@ $entryTypeMapping = [
             </form>
             <?php
             break;
-
 
         default:
             ?>
@@ -869,20 +900,18 @@ $entryTypeMapping = [
                                         <?php if ($onlyDeleted): ?>
                                             <?php echo esc_html($raffle['name']); ?>
                                         <?php else: ?>
-                                            <a
-                                                href="<?php 
-                                                $builder_nonce = wp_create_nonce('verify_raffle_id_action');
-                                                $edit_url = add_query_arg(
-                                                    array(
-                                                        'page' => 'raffleleader_builder',
-                                                        'raffle_id' => $raffle['raffle_id'],
-                                                        '_wpnonce' => $builder_nonce
-                                                    ),
-                                                    admin_url('admin.php')
-                                                ); 
-                                                echo esc_url($edit_url);  
-                                                ?>"
-                                                >
+                                            <a href="<?php
+                                            $builder_nonce = wp_create_nonce('verify_raffle_id_action');
+                                            $edit_url = add_query_arg(
+                                                array(
+                                                    'page' => 'raffleleader_builder',
+                                                    'raffle_id' => $raffle['raffle_id'],
+                                                    '_wpnonce' => $builder_nonce
+                                                ),
+                                                admin_url('admin.php')
+                                            );
+                                            echo esc_url($edit_url);
+                                            ?>">
                                                 <?php echo esc_html($raffle['name']); ?>
                                             </a>
                                         <?php endif; ?>
@@ -901,19 +930,18 @@ $entryTypeMapping = [
                                             </span>
                                         <?php else: ?>
                                             <span class="edit">
-                                                <a
-                                                    href="<?php
-                                                    $builder_nonce = wp_create_nonce('verify_raffle_id_action');
-                                                    $edit_url = add_query_arg(
-                                                        array(
-                                                            'page' => 'raffleleader_builder',
-                                                            'raffle_id' => $raffle['raffle_id'],
-                                                            '_wpnonce' => $builder_nonce
-                                                        ),
-                                                        admin_url('admin.php')
-                                                    ); 
-                                                    echo esc_url($edit_url); 
-                                                    ?>">Edit
+                                                <a href="<?php
+                                                $builder_nonce = wp_create_nonce('verify_raffle_id_action');
+                                                $edit_url = add_query_arg(
+                                                    array(
+                                                        'page' => 'raffleleader_builder',
+                                                        'raffle_id' => $raffle['raffle_id'],
+                                                        '_wpnonce' => $builder_nonce
+                                                    ),
+                                                    admin_url('admin.php')
+                                                );
+                                                echo esc_url($edit_url);
+                                                ?>">Edit
                                                     |</a>
                                             </span>
                                             <span class="contestants">
@@ -933,7 +961,7 @@ $entryTypeMapping = [
                                             </span>
                                             <span class="delete">
                                                 <a
-                                                    href="<?php echo esc_url(wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=raffle_delete&raffle_id=' . $raffle['raffle_id']), 'delete_raffle_action', 'delete_raffle_nonce')); ?>">Trash</a>
+                                                    href="<?php echo esc_url(wp_nonce_url(admin_url('admin.php?page=raffleleader_plugin&action=trash&raffle_id=' . $raffle['raffle_id']), 'trash_raffle_' . $raffle['raffle_id'])); ?>">Trash</a>
                                             </span>
                                         <?php endif; ?>
                                     </div>

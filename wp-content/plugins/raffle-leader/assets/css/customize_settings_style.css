@@ -211,9 +211,9 @@ input[type="text"].color-input{
     margin-left: 0
 }
 input[type="text"].shrink-test{
-    width: 9vw;
+    width: 140px;
     min-height: 0;
-    height: 1.8vw;
+    height: 38px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     margin-left: 0;
@@ -548,8 +548,8 @@ input[type="text"].shrink-test{
 }
 
 .shrink-test {
-    width: 1.5vw;
-    height: 1.8vw;
+    width: 25px;
+    height: 36px;
 }
   
 

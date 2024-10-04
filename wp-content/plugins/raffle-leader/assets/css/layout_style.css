@@ -97,8 +97,8 @@
   
 }
 .new-test {
-  max-width: 50%;
-  margin-left: 1vw;
+  max-width: fit-content;
+  margin-left: 2vw;
   /* align-items: center; */
   justify-content: center;
   /* background-color: #0e00aa; */
@@ -120,7 +120,7 @@
 .toolbar-size-input {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  
   align-items: center;
   width: 100%;
   margin-top: 0vh;
@@ -167,8 +167,8 @@ input[type="text"].toolbar-size-form {
   font-weight: 800;
   font-size: medium;
   color: blue;
-  width: 60%;
-  height: 1.8vw;
+  width: 100px;
+  height: 33px;
   min-height: 0%;
   border: 1px solid blue;
   padding: .8vh;
@@ -184,8 +184,10 @@ input[type="text"].toolbar-size-form {
 }
 
 .layout-size-error > p {
-  width: 9vw;
+  margin-left: 10px;
   color: red;
+  width: max-content;
+
 }
 
 .general-settings-options {
@@ -261,8 +263,7 @@ input[type="text"].toolbar-size-form {
   align-items: center;
   background-color: white;
   border-bottom: 2px solid #1501fe;
-  
-  height: 6vh; /* Reduced height */
+  height: 50px;
   box-sizing: border-box;
   z-index: 999;
   position: relative;
@@ -275,7 +276,7 @@ input[type="text"].toolbar-size-form {
   margin-right: 0;
   
   /* border-right: 2px solid #1501fe;  */
-  max-height: 6vh;
+  max-height: 48px;
   margin-right: 1vw;
   width: auto;
   /* max-width: 20%; */
@@ -283,9 +284,9 @@ input[type="text"].toolbar-size-form {
 }
 
 .toolbar-section p {
-  margin: 0 0vw 0 0;
-  font-size: 1.6vh;
-  font-weight: 700;
+  
+  font-size: .7vw;
+  font-weight: 600;
   margin-right: 1;
   color: blue;
 }
@@ -294,7 +295,7 @@ input[type="text"].toolbar-size-form {
 }
 .toolbar-color-section p {
   margin: 0 1vw 0 1vw;
-  font-size: smaller;
+  
 
 }
 
@@ -332,28 +333,32 @@ input[type="text"].toolbar-size-form {
 }
 
 .toolbar-icon {
- 
- width: .8vw;
- aspect-ratio: square;
+  width: 20px;
+  height: 20px;
+  margin-left: 22px;
+  margin-top: 14px;
+}
+.toolbar-non-drag-icons {
+  margin-left: 0px;
+  margin-top: 0px;
 }
 
 .layout-option-box-toolbar {
   border: none;
   background-color: white;
-  width: auto;
-  max-height: 1.8vh;
-  align-items: center;
+  width: 64px;
+  height: 48px;
   border-radius: 0px;
-  padding: 2vh;
   margin: 0;
 }
 
 .layout-option-box-toolbar> p {
 color: #1501fe;
-/* margin: 1vh 0 1vh 2vh; */
+margin-left: 22px;
+margin-top: 12px;
 align-items: center;
 font-weight: bold;
-font-size: 2vh;
+font-size: 20px;
 }
 
 .shrink-test {

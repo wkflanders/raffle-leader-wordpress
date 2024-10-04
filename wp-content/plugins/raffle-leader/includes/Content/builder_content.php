@@ -66,7 +66,9 @@
                 <div class="toolbar-section">
                     <!-- <p>Drag & drop to add sections to your raffle</p> -->
                     <div id="textBox" draggable="true" class="layout-option-box layout-option-box-toolbar">
-                        <p>T</p>
+                    <img draggable= "false" class="toolbar-icon"
+                        src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . 'assets/images/text_toolbar.png'); ?>"
+                        alt="RaffleLeader Logo">
                     </div>
                     
                     <div id="entryBox" draggable="true" class="layout-option-box layout-option-box-toolbar">
@@ -86,7 +88,7 @@
 
                 <!-- Section 2: Size Adjustment -->
                 <div class="toolbar-section">
-                    <img draggable= "false" class="toolbar-icon"
+                    <img draggable= "false" class="toolbar-icon toolbar-non-drag-icons"
                         src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . 'assets/images/crop_toolbar.png'); ?>"
                         alt="RaffleLeader Logo">
                     <div class="layout-size-row-wrapper new-test">
@@ -144,11 +146,11 @@
                 <!-- Section 4: Settings and Terms -->
                 <div class="toolbar-section">
                        
-                        <a href="#dateAndTime" class="settings-tab-open"><button class="general-settings-btn"><img draggable= "false" class="toolbar-icon"
+                        <a href="#dateAndTime" class="settings-tab-open"><button class="general-settings-btn"><img draggable= "false" class="toolbar-icon toolbar-non-drag-icons"
                         src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . 'assets/images/settings_toolbar.png'); ?>"
                         alt="RaffleLeader Logo"></button></a>
                             <a href="#rulesAndTerms" class="settings-tab-open"><button
-                                    class="general-settings-btn"> <img draggable= "false" class="toolbar-icon"
+                                    class="general-settings-btn"> <img draggable= "false" class="toolbar-icon toolbar-non-drag-icons"
                         src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . 'assets/images/rules_toolbar.png'); ?>"
                         alt="RaffleLeader Logo">
                     </button></a>

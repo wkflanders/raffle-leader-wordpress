@@ -91,7 +91,7 @@
                     <img draggable= "false" class="toolbar-icon toolbar-non-drag-icons"
                         src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . 'assets/images/crop_toolbar.png'); ?>"
                         alt="RaffleLeader Logo">
-                    <div class="layout-size-row-wrapper new-test">
+                    <div class="layout-size-row-wrapper toolbar-x-modifier">
                         <div class="toolbar-size-input"> 
                             <input id="layoutWidthForm" class="layout-size-form toolbar-size-form" type="text" name="layoutWidth"
                                 placeholder="Width">
@@ -116,9 +116,9 @@
                     <div class="customize-settings-dropdown">
                         <div class="dropdown-display dropdown-color">
                             <div id="raffleGradientBackground"></div>
-                            <div id="raffleBackgroundColorClick" class="dropdown-color-click shrink-test"
+                            <div id="raffleBackgroundColorClick" class="dropdown-color-click toolbar-color-input-modifier"
                                 data-type="raffleBackgroundColor"></div>
-                            <input id="raffleBackgroundColorForm" class="color-input shrink-test" data-type="raffleBackgroundColor"
+                            <input id="raffleBackgroundColorForm" class="color-input toolbar-color-input-modifier" data-type="raffleBackgroundColor"
                                 type="text" name="raffleBackgroundColor" placeholder="Enter a hexidecimal">
                         </div>
                     </div>
@@ -126,19 +126,19 @@
                     <div class="customize-settings-dropdown">
                         <div class="dropdown-display dropdown-color">
                             <div id="footerFontGradientBackground"></div>
-                            <div id="footerFontColorClick" class="dropdown-color-click shrink-test" data-type="footerFontColor">
+                            <div id="footerFontColorClick" class="dropdown-color-click toolbar-color-input-modifier" data-type="footerFontColor">
                             </div>
-                            <input id="footerFontColorForm" class="color-input shrink-test" data-type="footerFontColor" type="text"
+                            <input id="footerFontColorForm" class="color-input toolbar-color-input-modifier" data-type="footerFontColor" type="text"
                                 name="footerFontColor" placeholder="Enter a hexidecimal">
                         </div>
                     </div>
                     <p>Background Footer Color:
                     <div class="customize-settings-dropdown">
-                        <div class="dropdown-display dropdown-color shrink-test">
+                        <div class="dropdown-display dropdown-color toolbar-color-input-modifier">
                             <div id="footerGradientBackground"></div>
-                            <div id="footerBackgroundColorClick" class="dropdown-color-click shrink-test"
+                            <div id="footerBackgroundColorClick" class="dropdown-color-click toolbar-color-input-modifier"
                                 data-type="footerBackgroundColor"></div>
-                            <input id="footerBackgroundColorForm" class="color-input shrink-test" data-type="footerBackgroundColor"
+                            <input id="footerBackgroundColorForm" class="color-input toolbar-color-input-modifier" data-type="footerBackgroundColor"
                                 type="text" name="footerBackgroundColor" placeholder="Enter a hexidecimal">
                         </div>
                     </div>

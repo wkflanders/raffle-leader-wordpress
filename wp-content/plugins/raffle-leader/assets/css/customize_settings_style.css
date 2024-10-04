@@ -210,7 +210,7 @@ input[type="text"].color-input{
     border-bottom-left-radius: 0;
     margin-left: 0
 }
-input[type="text"].shrink-test{
+input[type="text"].toolbar-color-input-modifier{
     width: 140px;
     min-height: 0;
     height: 38px;
@@ -547,7 +547,7 @@ input[type="text"].shrink-test{
     color: gray;
 }
 
-.shrink-test {
+.toolbar-color-input-modifier {
     width: 25px;
     height: 36px;
 }

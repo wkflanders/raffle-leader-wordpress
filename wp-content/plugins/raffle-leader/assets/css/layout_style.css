@@ -96,7 +96,7 @@
   justify-content: center;
   
 }
-.new-test {
+.toolbar-x-modifier {
   max-width: fit-content;
   margin-left: 2vw;
   /* align-items: center; */
@@ -361,7 +361,7 @@ font-weight: bold;
 font-size: 20px;
 }
 
-.shrink-test {
+.toolbar-color-input-modifier {
   width: 2vw;
   height: 1vw;
 }

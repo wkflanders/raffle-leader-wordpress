@@ -32,7 +32,17 @@ document.addEventListener('generalSettingsLoaded', ()=>{
     const templatesTab = navBar.querySelector('.rl-nav-tabs').querySelector('.templates-tab');
     const setupTab = navBar.querySelector('.rl-nav-tabs').querySelector('.setup-tab');
 
-    fetch('/wp-admin/admin-ajax.php?action=loadBuilderData&raffle_id=' + raffleID)
+    fetch(raffleleader_preview_load_object.ajax_url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+            action: "loadBuilderData",
+            raffle_id: raffleID,
+            security: raffleleader_preview_load_object.security,
+        }),
+    })
     .then(response => response.json())
     .then(data => {
         loadName(data);

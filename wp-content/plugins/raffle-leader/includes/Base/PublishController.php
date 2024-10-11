@@ -333,7 +333,7 @@ class PublishController extends BaseController
                     ),
                 )
             ),
-            esc_html__('Add Raffle', 'raffleleader')
+            esc_html__('Add Raffle', 'raffle-leader')
         );
     }
 

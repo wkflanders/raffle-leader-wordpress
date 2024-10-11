@@ -477,19 +477,19 @@ $entryTypeMapping = [
         switch ($action) {
             case 'delete':
                 /* translators: %s: number of raffles */
-                $message = sprintf(_n('%s raffle moved to trash.', '%s raffles moved to trash.', $count, 'raffleleader'), number_format_i18n($count));
+                $message = sprintf(_n('%s raffle moved to trash.', '%s raffles moved to trash.', $count, 'raffle-leader'), number_format_i18n($count));
                 break;
             case 'duplicate':
                 /* translators: %s: number of raffles */
-                $message = sprintf(_n('%s raffle duplicated.', '%s raffles duplicated.', $count, 'raffleleader'), number_format_i18n($count));
+                $message = sprintf(_n('%s raffle duplicated.', '%s raffles duplicated.', $count, 'raffle-leader'), number_format_i18n($count));
                 break;
             case 'restore':
                 /* translators: %s: number of raffles */
-                $message = sprintf(_n('%s raffle restored.', '%s raffles restored.', $count, 'raffleleader'), number_format_i18n($count));
+                $message = sprintf(_n('%s raffle restored.', '%s raffles restored.', $count, 'raffle-leader'), number_format_i18n($count));
                 break;
             case 'delete_permanent':
                 /* translators: %s: number of raffles */
-                $message = sprintf(_n('%s raffle permanently deleted.', '%s raffles permanently deleted.', $count, 'raffleleader'), number_format_i18n($count));
+                $message = sprintf(_n('%s raffle permanently deleted.', '%s raffles permanently deleted.', $count, 'raffle-leader'), number_format_i18n($count));
                 break;
         }
 
@@ -593,8 +593,8 @@ $entryTypeMapping = [
                         echo wp_kses_post(paginate_links(array(
                             'base' => add_query_arg('paged', '%#%'),
                             'format' => '',
-                            'prev_text' => __('&laquo; Previous'),
-                            'next_text' => __('Next &raquo;'),
+                            'prev_text' => __('&laquo; Previous', 'raffle-leader'),
+                            'next_text' => __('Next &raquo;', 'raffle-leader'),
                             'total' => $total_pages,
                             'current' => $current_page
                         )));
@@ -778,8 +778,8 @@ $entryTypeMapping = [
                         echo wp_kses_post(paginate_links(array(
                             'base' => add_query_arg('paged', '%#%'),
                             'format' => '',
-                            'prev_text' => __('&laquo; Previous'),
-                            'next_text' => __('Next &raquo;'),
+                            'prev_text' => __('&laquo; Previous', 'raffle-leader'),
+                            'next_text' => __('Next &raquo;', 'raffle-leader'),
                             'total' => $total_pages,
                             'current' => $current_page
                         )));

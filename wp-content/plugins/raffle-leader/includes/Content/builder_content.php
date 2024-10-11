@@ -353,15 +353,15 @@
                         <div class="raffleleader-footer-wrapper">
                             <div class="raffleleader-footer">
                                 <a href="#" class="raffleleader-footer-content raffleleader-rules-and-terms">
-                                    <?php esc_html_e('Raffle Rules and Terms', 'raffleleader'); ?>
+                                    <?php esc_html_e('Raffle Rules and Terms', 'raffle-leader'); ?>
                                 </a>
                                 <a class="raffleleader-footer-content rl_link" target="_blank" rel="noopener noreferrer"
                                     href="<?php echo esc_url('https://raffleleader.com'); ?>">
-                                    <?php esc_html_e('Try', 'raffleleader'); ?>
+                                    <?php esc_html_e('Try', 'raffle-leader'); ?>
                                     <img id="footer-logo" class="raffleleader-footer-text-logo"
                                         src="<?php echo esc_url(plugin_dir_url(dirname(__FILE__, 2)) . 'assets/images/bottom-vert.png'); ?>"
-                                        alt="<?php esc_attr_e('RaffleLeader Logo', 'raffleleader'); ?>">
-                                    <?php esc_html_e('For Yourself!', 'raffleleader'); ?>
+                                        alt="<?php esc_attr_e('RaffleLeader Logo', 'raffle-leader'); ?>">
+                                    <?php esc_html_e('For Yourself!', 'raffle-leader'); ?>
                                 </a>
                             </div>
                         </div>

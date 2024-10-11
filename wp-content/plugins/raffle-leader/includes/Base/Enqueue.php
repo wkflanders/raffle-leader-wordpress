@@ -169,6 +169,7 @@ class Enqueue extends BaseController{
         wp_localize_script( 'raffleleader_publish_script', 'raffleleader_publish_object', array(
             'newPostUrl' => admin_url( 'post-new.php' ),
             'editPostUrl' => admin_url( 'edit.php' ),
+            'nonce' => wp_create_nonce('raffle_publish_nonce'),
         ) );
 
         wp_enqueue_script( 'raffleleader_manage_state_script', $this->plugin_url . '/assets/js/manage_state_script.js', array( 'raffleleader_preview_select_script' ), wp_rand(111, 9999), true );

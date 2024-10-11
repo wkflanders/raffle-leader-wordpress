@@ -34,8 +34,6 @@ class PublishController extends BaseController
         add_action('wp_ajax_handleAdditionalEntry', array($this, 'handleAdditionalEntry'));
         add_action('wp_ajax_nopriv_handleAdditionalEntry', array($this, 'handleAdditionalEntry'));
         add_action('wp_ajax_handleClassicEditorModalRaffles', array($this, 'handleClassicEditorModalRaffles'));
-        add_action('wp_ajax_handleReferral', array($this, 'handleReferral'));
-        add_action('wp_ajax_nopriv_handleReferral', array($this, 'handleReferral'));
 
         add_action('wp_ajax_refresh_nonce', array($this, 'refreshNonce'));
         add_action('wp_ajax_nopriv_refresh_nonce', array($this, 'refreshNonce'));
@@ -372,7 +370,11 @@ class PublishController extends BaseController
 
     public function createNewRafflePost()
     {
-        if (isset($_GET['raffle_id']) && current_user_can('edit_posts')) {
+        if (isset($_GET['raffle_id'], $_GET['nonce']) && current_user_can('edit_posts')) {
+            $nonce = sanitize_text_field(wp_unslash($_GET['nonce']));
+            if (!wp_verify_nonce($nonce, 'raffle_publish_nonce')) {
+                wp_die('Security check failed. Invalid nonce.');
+            }
             $raffle_id = sanitize_text_field(wp_unslash($_GET['raffle_id']));
             $shortcode = '[raffleleader id=' . $raffle_id . ']';
 
@@ -391,7 +393,11 @@ class PublishController extends BaseController
 
     public function createNewRafflePage()
     {
-        if (isset($_GET['raffle_id']) && current_user_can('edit_posts')) {
+        if (isset($_GET['raffle_id'], $_GET['nonce']) && current_user_can('edit_posts')) {
+            $nonce = sanitize_text_field(wp_unslash($_GET['nonce']));
+            if (!wp_verify_nonce($nonce, 'raffle_publish_nonce')) {
+                wp_die('Security check failed. Invalid nonce.');
+            }
             $raffle_id = sanitize_text_field(wp_unslash($_GET['raffle_id']));
             $shortcode = '[raffleleader id=' . $raffle_id . ']';
 

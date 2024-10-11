@@ -147,8 +147,6 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
                             $new_raffle_id = $raffleAPI->duplicateRaffle($raffle_id);
                             if ($new_raffle_id) {
                                 $raffles_affected++;
-                            } else {
-                                error_log("Failed to duplicate raffle with ID: " . $raffle_id);
                             }
                         }
                     }

@@ -20,13 +20,11 @@ class RaffleAPI
         $tableName = $wpdb->prefix . 'raffleleader_raffles';
 
         if (!is_array($raffleData) || empty($raffleData)) {
-            error_log("addRaffle: Invalid raffle data");
             return -1;
         }
 
         $keys = array_keys($raffleData);
         if (empty($keys) || !is_string($keys[0])) {
-            error_log("addRaffle: Invalid raffle data structure");
             return -2;
         }
 
@@ -43,7 +41,6 @@ class RaffleAPI
         $result = $wpdb->insert($tableName, $raffleData);
 
         if ($result === false) {
-            error_log("addRaffle: Failed to insert raffle. MySQL error: " . $wpdb->last_error);
             return -3;
         }
 
@@ -113,14 +110,10 @@ class RaffleAPI
     {
         global $wpdb;
 
-        // Debug log
-        error_log("Attempting to duplicate raffle with ID: " . $raffleId);
-
         // Fetch the raffle to be duplicated
         $raffle = $this->getRaffle($raffleId);
 
         if (!$raffle) {
-            error_log("Failed to fetch raffle with ID: " . $raffleId);
             return false;
         }
 
@@ -134,11 +127,8 @@ class RaffleAPI
         $new_raffle_id = $this->addRaffle($raffle);
 
         if ($new_raffle_id <= 0) {
-            error_log("Failed to insert duplicated raffle. Error code: " . $new_raffle_id);
             return false;
         }
-
-        error_log("Successfully duplicated raffle. New raffle ID: " . $new_raffle_id);
 
         return $new_raffle_id;
     }
@@ -167,7 +157,6 @@ class RaffleAPI
             return true;
         } catch (\Exception $e) {
             $wpdb->query('ROLLBACK');
-            error_log("Error in deletePermanently: " . $e->getMessage());
             return false;
         }
     }

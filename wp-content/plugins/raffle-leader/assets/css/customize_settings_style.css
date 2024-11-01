@@ -200,12 +200,27 @@ input[type="number"]::placeholder{
     width: 17.5vw;
     padding: 0;
 }
+.toolbar-section .dropdown-color {
+    width: fit-content;
 
+}
 input[type="text"].color-input{
     width: 14vw;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     margin-left: 0
+}
+input[type="text"].toolbar-color-input-modifier{
+    width: 140px;
+    min-height: 0;
+    height: 38px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 1.1vw;
+    font-weight: 600;
+    background-color: white;
 }
 
 .dropdown-color-click{
@@ -532,6 +547,11 @@ input[type="text"].color-input{
     color: gray;
 }
 
+.toolbar-color-input-modifier {
+    width: 25px;
+    height: 36px;
+}
+  
 
 /* ******************************************** */
 
@@ -549,3 +569,5 @@ input[type="text"].color-input{
     border-radius: 6px; /* roundness of the scroll thumb */
     border: 3px solid transparent; /* creates padding around scroll thumb */
 }
+
+

@@ -1,215 +1,370 @@
-.raffle-options-wrapper{
-    display: block;
-    background-color: rgb(255, 255, 255);
-    height: 90vh;
-    width: 20vw;
-    border-right: 2px solid #1501FE;
-    box-sizing: border-box;
-    overflow-y: auto;
-    overflow: overlay;
-    z-index: 2000;
-    direction: rtl;
+.raffle-options-wrapper {
+  display: block;
+  background-color: rgb(255, 255, 255);
+  height: 90vh;
+  width: 20vw;
+  border-right: 2px solid #1501fe;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow: overlay;
+  z-index: 2000;
+  direction: rtl;
 }
 
-.raffle-options{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    direction: ltr;
-    z-index: 80;
-    width: 100%;
-    background-color: rgb(255, 255, 255);
-    border-bottom: 2px solid #1501FE;
+.raffle-options {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  direction: ltr;
+  z-index: 80;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2px solid #1501fe;
 }
 
-.raffle-options-header{
-    display: block;
-    text-align: center;
+.raffle-options-header {
+  display: block;
+  text-align: center;
 }
 
-.layout-options{
-    display: flex;
-    flex-direction: column;
+.layout-options {
+  display: flex;
+  flex-direction: column;
 }
 
-.layout-options > p{
-    color: hsl(0, 0%, 50%);
-    text-align: center;
-    font-weight: 500;
-    font-size: 1.65vh;
-    padding: 1vh 2vh 0 2vh;
+.layout-options > p {
+  color: hsl(0, 0%, 50%);
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.65vh;
+  padding: 1vh 2vh 0 2vh;
 }
 
-.layout-option-box{
-    border: 1px solid black;
-    opacity: 0.999; /* Fix white square box around draggable */
-    width: auto;
-    border-radius: 15px;
-    margin-bottom: 1vw;
-    margin-left: 3vh;
-    margin-right: 3vh;
+.layout-option-box {
+  border: 1px solid black;
+  opacity: 0.999; /* Fix white square box around draggable */
+  width: auto;
+  border-radius: 15px;
+  margin-bottom: 1vw;
+  margin-left: 3vh;
+  margin-right: 3vh;
 }
 
-.layout-option-box > p{
-    color: black;
-    margin: 1vh 0 1vh 2vh;
-    font-weight: bold;
-    font-size: 2vh;
+
+.layout-box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1vw;
+  margin: 0 3vh 1vw 3vh;
+  justify-content: center;
 }
 
-.layout-box{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1vw;
-    margin: 0 3vh 1vw 3vh;
-    justify-content: center;
+.layout-box .dropdown-display {
+  justify-content: center;
+  width: 16.5vw;
 }
 
-.layout-box .dropdown-display{
-    justify-content: center;
-    width: 16.5vw;
+.layout-box .color-input {
+  width: 13vw !important;
 }
 
-.layout-box .color-input{
-    width: 13vw !important;
+/* .color-input-top {
+    width: 13vw;
+  } */
+
+.layout-box > p {
+  color: gray;
+  text-align: center;
+  font-weight: 500;
+  padding-top: 1vh;
+  font-size: 1.65vh;
+  margin-bottom: 0.5vh;
+  margin-top: 0;
 }
 
-.layout-box > p{
-    color: gray;
-    text-align: center;
-    font-weight: 500;
-    padding-top: 1vh;
-    font-size: 1.65vh;
-    margin-bottom: 0.5vh;
-    margin-top: 0;
+.layout-box > .customize-settings-box div {
+  margin-left: 0;
 }
 
-.layout-box > .customize-settings-box div{
-    margin-left: 0;
+.layout-box > .customize-settings-box p {
+  margin-left: 1.7vw;
+  margin-top: 0.2vh;
 }
 
-.layout-box > .customize-settings-box p{
-    margin-left: 1.7vw;
-    margin-top: 0.2vh;
+.layout-size-row-wrapper {
+  display: flex;
+  justify-content: center;
+  
+}
+.toolbar-x-modifier {
+  max-width: fit-content;
+  margin-left: 2vw;
+  /* align-items: center; */
+  justify-content: center;
+  /* background-color: #0e00aa; */
 }
 
-.layout-size-row-wrapper{
-    display: flex;
-    justify-content: center;
+.layout-size-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.layout-size-input{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
+.layout-size-input > p {
+  margin-top: 2vh;
+  font-weight: 900;
+  font-size: 1.8vh;
+  color: gray;
 }
-
-.layout-size-input > p{
-    margin-top: 2vh;
+.toolbar-size-input {
+  display: flex;
+  flex-direction: row;
+  
+  align-items: center;
+  width: 100%;
+  margin-top: 0vh;
+}
+.toolbar-size-input > p {
+    /* margin-top: 4vh;
+    align-items: center;
+    justify-content: center; */
+    padding: 1vh;
     font-weight: 900;
-    font-size: 1.8vh;
+    font-size: 1.4vh;
     color: gray;
 }
 
-.layout-size-text{
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 0.5vh;
+.layout-size-text {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5vh;
 }
 
-.layout-width-text{
-    margin-right: 45%;
+.layout-width-text {
+  margin-right: 45%;
 }
 
-.layout-size-text > p{
-    vertical-align: center;
-    color: gray;
-    font-weight: 500;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-weight: bold;
-    font-size: 1.8vh;
+.layout-size-text > p {
+  vertical-align: center;
+  color: gray;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 1.8vh;
 }
 
-input[type="text"].layout-size-form{
-    width: 40%;
-    border: 1px solid rgb(0, 0, 0);
-    font-size: 1.7vh;
-    font-weight: 900;
-    color: black;
+input[type="text"].layout-size-form {
+  width: 40%;
+  border: 1px solid rgb(0, 0, 0);
+  font-size: 1.7vh;
+  font-weight: 900;
+  color: black;
+}
+input[type="text"].toolbar-size-form {
+  margin-top: .5vh;
+  font-weight: 800;
+  font-size: medium;
+  color: blue;
+  width: 100px;
+  height: 33px;
+  min-height: 0%;
+  border: 1px solid blue;
+  padding: .8vh;
 }
 
-.layout-size-error{
-    display: flex;
-    flex-direction: row;
+.layout-size-error {
+  display: flex;
+  flex-direction: row;
 }
 
-.layout-size-error-width-text{
-    margin-right: 30%;
+.layout-size-error-width-text {
+  margin-right: 30%;
 }
 
-.layout-size-error > p{
-    width: 5vw;
-    color: red;
+.layout-size-error > p {
+  margin-left: 10px;
+  color: red;
+  width: max-content;
+
 }
 
-.general-settings-options{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+.general-settings-options {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.general-settings-btn{
-    width: 100%;
-    border: 0;
-    border-bottom: 2px solid #1501FE;;
-    background-color: white;
-    color: #1501FE;
-    font-size: 2vh;
-    padding: 3.18vh 0 3.18vh 0;
+.general-settings-btn {
+  width: 100%;
+  border: 0;
+  /* border-bottom: 2px solid #1501fe; */
+  background-color: white;
+  color: #1501fe;
+  font-size: 2vh;
+  margin-left: .5vw;
+  margin-right: .5vw;
+  /* padding: 3.18vh 0 3.18vh 0; */
+}
+.general-settings-btn img {
+    display: block; /* Makes the image a block element */
+    pointer-events: none; /* Prevents the image from blocking click events */
 }
 
-.general-settings-btn:hover{
-    background-color: #1501FE;
-    color: white;
-    cursor: pointer;
+.general-settings-btn:hover {
+  /* background-color: #1501fe; */
+  opacity: 50%;
+  color: white;
+  cursor: pointer;
 }
 
-.general-settings-btn:active{
-    background-color: #0e00aa;
-    color: rgb(208, 208, 208);
-    cursor: pointer;
+.general-settings-btn:active {
+  /* background-color: #0e00aa; */
+  color: rgb(208, 208, 208);
+  cursor: pointer;
 }
 
-.active-settings-btn{
-    background-color: #1501FE;
-    color: white;
+.active-settings-btn {
+  /* background-color: #1501fe; */
+  opacity: 50%;
+  color: white;
 }
 
-.active-settings-btn:hover{
-    background-color: #1100cd;
-    color: rgb(255, 255, 255);
+.active-settings-btn:hover {
+  /* background-color: #1100cd; */
+  color: rgb(255, 255, 255);
 }
 
-.active-settings-btn:active{
-    background-color: #0e00aa;
-    color: rgb(208, 208, 208);
-    cursor: pointer;
+.active-settings-btn:active {
+  /* background-color: #0e00aa; */
+  color: rgb(208, 208, 208);
+  cursor: pointer;
 }
-
 
 ::-webkit-scrollbar {
-    width: 1.2vh; /* width of the entire scrollbar */
+  width: 1.2vh; /* width of the entire scrollbar */
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent; /* color of the tracking area */
+  background: transparent; /* color of the tracking area */
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(196, 196, 196, 0.493); /* color of the scroll thumb */
-    border-radius: 6px; /* roundness of the scroll thumb */
-    border: 3px solid transparent; /* creates padding around scroll thumb */
+  background-color: rgba(196, 196, 196, 0.493); /* color of the scroll thumb */
+  border-radius: 6px; /* roundness of the scroll thumb */
+  border: 3px solid transparent; /* creates padding around scroll thumb */
 }
+
+/* Toolbar Styles */
+.rl-toolbar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-bottom: 2px solid #1501fe;
+  height: 50px;
+  box-sizing: border-box;
+  z-index: 999;
+  position: relative;
+}
+
+.toolbar-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 0;
+  
+  /* border-right: 2px solid #1501fe;  */
+  max-height: 48px;
+  margin-right: 1vw;
+  width: auto;
+  /* max-width: 20%; */
+  background: white;
+}
+
+.toolbar-section p {
+  
+  font-size: .7vw;
+  font-weight: 600;
+  margin-right: 1;
+  color: blue;
+}
+.toolbar-color-section {
+  margin-left: auto;
+}
+.toolbar-color-section p {
+  margin: 0 1vw 0 1vw;
+  
+
+}
+
+
+.toolbar-item {
+  /* border: 0px solid black; */
+  opacity: 0.999; /* Fix white square box around draggable */
+  width: 30vw;
+  border-radius: 15px;
+  margin-bottom: 1vw;
+  margin-left: 1vh;
+  margin-right: 1vh;
+}
+
+.toolbar-item > p {
+  color: black;
+  margin: 1vh 0 1vh 2vh;
+  font-weight: bold;
+  font-size: 2vh;
+}
+
+.toolbar-item input.layout-size-form {
+  width: 5vw;
+  margin-left: 0.5vw;
+  font-size: 1.4vh; /* Reduced font size */
+  font-weight: 900;
+  color: #000;
+}
+
+.toolbar-item label {
+  font-size: 1.4vh; /* Reduced font size */
+  font-weight: 500;
+  color: #333;
+  margin-right: 0.5vw;
+}
+
+.toolbar-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 22px;
+  margin-top: 14px;
+}
+.toolbar-non-drag-icons {
+  margin-left: 0px;
+  margin-top: 0px;
+}
+
+.layout-option-box-toolbar {
+  border: none;
+  background-color: white;
+  width: 64px;
+  height: 48px;
+  border-radius: 0px;
+  margin: 0;
+}
+
+.layout-option-box-toolbar> p {
+color: #1501fe;
+margin-left: 22px;
+margin-top: 12px;
+align-items: center;
+font-weight: bold;
+font-size: 20px;
+}
+
+.toolbar-color-input-modifier {
+  width: 2vw;
+  height: 1vw;
+}
+
+
+
